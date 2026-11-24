@@ -4,7 +4,7 @@ class Names
 	class Auckland
 	{
 		name = "Auckland / Tāmaki Makaurau";
-		position[] = {15307.5, 15127.5};
+		position[] = {12637.5, 15427.5};
 		type = "NameCityCapital";
 		radiusA = 340;
 		radiusB = 340;
@@ -13,7 +13,7 @@ class Names
 	class Wellington
 	{
 		name = "Wellington / Te Whanganui-a-Tara";
-		position[] = {13332.5, 7942.5};
+		position[] = {15957.5, 7037.5};
 		type = "NameCityCapital";
 		radiusA = 320;
 		radiusB = 320;
@@ -22,16 +22,16 @@ class Names
 	class Christchurch
 	{
 		name = "Christchurch / Ōtautahi";
-		position[] = {9532.5, 4967.5};
+		position[] = {11417.5, 4407.5};
 		type = "NameCityCapital";
-		radiusA = 277;
-		radiusB = 277;
+		radiusA = 320;
+		radiusB = 320;
 		angle = 0;
 	};
 	class Hamilton
 	{
 		name = "Hamilton / Kirikiriroa";
-		position[] = {15512.5, 13407.5};
+		position[] = {14112.5, 13727.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -40,7 +40,7 @@ class Names
 	class Tauranga
 	{
 		name = "Tauranga";
-		position[] = {16657.5, 13257.5};
+		position[] = {15372.5, 14067.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -49,7 +49,7 @@ class Names
 	class Dunedin
 	{
 		name = "Dunedin / Ōtepoti";
-		position[] = {5777.5, 1897.5};
+		position[] = {7217.5, 1502.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -58,34 +58,34 @@ class Names
 	class PalmerstonNorth
 	{
 		name = "Palmerston North / Te Papaioea";
-		position[] = {14717.5, 9102.5};
+		position[] = {16512.5, 8897.5};
 		type = "NameCity";
-		radiusA = 204;
-		radiusB = 204;
+		radiusA = 210;
+		radiusB = 210;
 		angle = 0;
 	};
 	class Napier
 	{
 		name = "Napier / Ahuriri";
-		position[] = {16702.5, 10042.5};
+		position[] = {17802.5, 10747.5};
 		type = "NameCity";
-		radiusA = 131;
-		radiusB = 131;
+		radiusA = 145;
+		radiusB = 145;
 		angle = 0;
 	};
 	class Hastings
 	{
 		name = "Hastings / Heretaunga";
-		position[] = {16597.5, 9827.5};
+		position[] = {17852.5, 10472.5};
 		type = "NameVillage";
-		radiusA = 103;
-		radiusB = 103;
+		radiusA = 114;
+		radiusB = 114;
 		angle = 0;
 	};
 	class Nelson
 	{
 		name = "Nelson / Whakatū";
-		position[] = {11397.5, 8417.5};
+		position[] = {13227.5, 8007.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -94,7 +94,7 @@ class Names
 	class Rotorua
 	{
 		name = "Rotorua";
-		position[] = {16552.5, 12492.5};
+		position[] = {15832.5, 13227.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -103,7 +103,7 @@ class Names
 	class NewPlymouth
 	{
 		name = "New Plymouth / Ngāmotu";
-		position[] = {13427.5, 11722.5};
+		position[] = {13262.5, 11087.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -112,7 +112,7 @@ class Names
 	class Whangarei
 	{
 		name = "Whangārei";
-		position[] = {15287.5, 17117.5};
+		position[] = {11142.5, 17492.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -121,7 +121,7 @@ class Names
 	class Invercargill
 	{
 		name = "Invercargill / Waihōpai";
-		position[] = {2852.5, 1787.5};
+		position[] = {3622.5, 1802.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -130,7 +130,7 @@ class Names
 	class Queenstown
 	{
 		name = "Queenstown / Tāhuna";
-		position[] = {3882.5, 3937.5};
+		position[] = {4592.5, 4057.5};
 		type = "NameCity";
 		radiusA = 210;
 		radiusB = 210;
@@ -139,7 +139,7 @@ class Names
 	class Whanganui
 	{
 		name = "Whanganui";
-		position[] = {14217.5, 9992.5};
+		position[] = {15352.5, 9607.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -148,7 +148,7 @@ class Names
 	class Gisborne
 	{
 		name = "Gisborne / Tūranganui-a-Kiwa";
-		position[] = {18507.5, 11002.5};
+		position[] = {18887.5, 12532.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -157,7 +157,7 @@ class Names
 	class Blenheim
 	{
 		name = "Blenheim / Waiharakeke";
-		position[] = {12122.5, 7792.5};
+		position[] = {14217.5, 7202.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -166,7 +166,7 @@ class Names
 	class Picton
 	{
 		name = "Picton / Waitohi";
-		position[] = {12277.5, 8142.5};
+		position[] = {14357.5, 7572.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -175,7 +175,7 @@ class Names
 	class Kaikoura
 	{
 		name = "Kaikōura";
-		position[] = {11342.5, 6467.5};
+		position[] = {13442.5, 5817.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -184,7 +184,7 @@ class Names
 	class Taupo
 	{
 		name = "Taupō";
-		position[] = {16072.5, 11657.5};
+		position[] = {15972.5, 12152.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -193,7 +193,7 @@ class Names
 	class Timaru
 	{
 		name = "Timaru / Te Tihi-o-Maru";
-		position[] = {7387.5, 4067.5};
+		position[] = {8902.5, 3687.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -202,7 +202,7 @@ class Names
 	class Oamaru
 	{
 		name = "Ōamaru";
-		position[] = {6722.5, 3017.5};
+		position[] = {8227.5, 2617.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -211,7 +211,7 @@ class Names
 	class Greymouth
 	{
 		name = "Greymouth / Māwhera";
-		position[] = {8277.5, 7232.5};
+		position[] = {9532.5, 7127.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -220,7 +220,7 @@ class Names
 	class Westport
 	{
 		name = "Westport / Kawatiri";
-		position[] = {9077.5, 8232.5};
+		position[] = {10387.5, 8132.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -229,7 +229,7 @@ class Names
 	class Hokitika
 	{
 		name = "Hokitika";
-		position[] = {7842.5, 6877.5};
+		position[] = {9057.5, 6792.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -238,7 +238,7 @@ class Names
 	class FranzJosef
 	{
 		name = "Franz Josef / Waiau";
-		position[] = {6542.5, 6077.5};
+		position[] = {7572.5, 6072.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -247,7 +247,7 @@ class Names
 	class Masterton
 	{
 		name = "Masterton / Whakaoriori";
-		position[] = {14497.5, 8092.5};
+		position[] = {17037.5, 7752.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -256,7 +256,7 @@ class Names
 	class Ashburton
 	{
 		name = "Ashburton / Hakatere";
-		position[] = {8247.5, 4677.5};
+		position[] = {9872.5, 4262.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -265,7 +265,7 @@ class Names
 	class Wanaka
 	{
 		name = "Wānaka";
-		position[] = {4622.5, 4302.5};
+		position[] = {5447.5, 4362.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -274,7 +274,7 @@ class Names
 	class TeAnau
 	{
 		name = "Te Anau";
-		position[] = {2527.5, 3647.5};
+		position[] = {2957.5, 3927.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -283,7 +283,7 @@ class Names
 	class Gore
 	{
 		name = "Gore / Maruawai";
-		position[] = {3732.5, 2092.5};
+		position[] = {4672.5, 2012.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -292,7 +292,7 @@ class Names
 	class Twizel
 	{
 		name = "Twizel";
-		position[] = {6032.5, 4687.5};
+		position[] = {7137.5, 4592.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -301,7 +301,7 @@ class Names
 	class HanmerSprings
 	{
 		name = "Hanmer Springs";
-		position[] = {10242.5, 6547.5};
+		position[] = {12072.5, 6072.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -310,7 +310,7 @@ class Names
 	class Kaitaia
 	{
 		name = "Kaitāia";
-		position[] = {14252.5, 18492.5};
+		position[] = {9092.5, 18472.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -319,7 +319,7 @@ class Names
 	class Paihia
 	{
 		name = "Paihia";
-		position[] = {15202.5, 17927.5};
+		position[] = {10457.5, 18297.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -328,7 +328,7 @@ class Names
 	class Whakatane
 	{
 		name = "Whakatāne";
-		position[] = {17552.5, 12517.5};
+		position[] = {16807.5, 13687.5};
 		type = "NameVillage";
 		radiusA = 165;
 		radiusB = 165;
@@ -337,7 +337,7 @@ class Names
 	class Thames
 	{
 		name = "Thames / Pārāwai";
-		position[] = {16152.5, 14382.5};
+		position[] = {14037.5, 15017.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -346,7 +346,7 @@ class Names
 	class Taumarunui
 	{
 		name = "Taumarunui";
-		position[] = {14977.5, 11622.5};
+		position[] = {14902.5, 11637.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -355,7 +355,7 @@ class Names
 	class WaiouruArmyCamp
 	{
 		name = "Waiouru Army Camp";
-		position[] = {15202.5, 10507.5};
+		position[] = {15952.5, 10577.5};
 		type = "NameLocal";
 		radiusA = 170;
 		radiusB = 170;
@@ -364,19 +364,19 @@ class Names
 	class BurnhamMilitaryCamp
 	{
 		name = "Burnham Military Camp";
-		position[] = {9087.5, 4952.5};
+		position[] = {10872.5, 4457.5};
 		type = "NameLocal";
-		radiusA = 121;
-		radiusB = 121;
+		radiusA = 140;
+		radiusB = 140;
 		angle = 0;
 	};
 	class RnzafBaseOhakea
 	{
 		name = "RNZAF Base Ōhakea";
-		position[] = {14512.5, 9417.5};
+		position[] = {16072.5, 9142.5};
 		type = "NameLocal";
-		radiusA = 136;
-		radiusB = 136;
+		radiusA = 140;
+		radiusB = 140;
 		angle = 0;
 	};
 };

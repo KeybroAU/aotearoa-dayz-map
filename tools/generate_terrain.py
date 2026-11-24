@@ -59,6 +59,16 @@ KM_PER_DEG_LON = 111.32 * math.cos(math.radians(LAT0))
 # Turning the country clockwise lays its length along the map diagonal; north-up wastes more sea.
 ROTATION_DEG = -16.0
 
+# Reshape for more land: bend the North Island anticlockwise around Wellington and widen both
+# islands across the country's long axis. Coastlines keep their shape; Cook Strait stays open.
+NI_BEND_DEG = 30.0
+NI_PIVOT = (174.8, -41.3)
+NI_OFFSET_KM = (20.0, 0.0)
+WIDEN = 1.3
+AXIS_DEG = 72.0  # long axis of the country, anticlockwise from east
+NORTH, SOUTH, STEWART = 1, 2, 3
+ISLAND_SEEDS = {NORTH: (174.76, -36.85), SOUTH: (172.64, -43.53)}
+
 MAX_HEIGHT = 480.0  # height of the broad Southern Alps around Aoraki / Mt Cook, before detail
 BROAD_SIGMA = 22.0  # grid cells
 MIDDLE_SIGMA = 8.0
@@ -131,14 +141,91 @@ def rotate(x: np.ndarray, y: np.ndarray, deg: float) -> tuple[np.ndarray, np.nda
     return x * math.cos(t) - y * math.sin(t), x * math.sin(t) + y * math.cos(t)
 
 
-def projection(mosaic: np.ndarray, tx0: int, ty0: int) -> dict:
-    """Scale and centre that fit the rotated land into the map with MARGIN_M of sea."""
-    rows, cols = np.nonzero(mosaic[::4, ::4] > 0.5)
-    lon, lat = tile_to_lonlat(tx0 + (cols * 4 + 0.5) / 256, ty0 + (rows * 4 + 0.5) / 256, ZOOM)
+class Earth:
+    """Real elevation mosaic plus which island (North, South, Stewart) every pixel belongs to."""
+
+    def __init__(self):
+        self.mosaic, self.tx0, self.ty0 = build_mosaic()
+        self.island = self._islands()
+
+    def to_px(self, lon, lat):
+        px, py = lonlat_to_tile(np.asarray(lon, dtype=np.float64), np.asarray(lat, dtype=np.float64), ZOOM)
+        return (px - self.tx0) * 256 - 0.5, (py - self.ty0) * 256 - 0.5
+
+    def island_at(self, lon, lat) -> np.ndarray:
+        px, py = self.to_px(lon, lat)
+        r = np.clip(np.rint(py), 0, self.island.shape[0] - 1).astype(np.int32)
+        c = np.clip(np.rint(px), 0, self.island.shape[1] - 1).astype(np.int32)
+        return self.island[r, c]
+
+    def height_at(self, lon, lat) -> np.ndarray:
+        px, py = self.to_px(lon, lat)
+        return ndimage.map_coordinates(self.mosaic, [py, px], order=1, mode="nearest").astype(np.float32)
+
+    def _islands(self) -> np.ndarray:
+        land = ndimage.binary_opening(self.mosaic > 0.5)
+        lab, _ = ndimage.label(land)
+        ids = {}
+        for isl, (lon, lat) in ISLAND_SEEDS.items():
+            px, py = self.to_px(lon, lat)
+            ids[isl] = lab[int(round(float(py))), int(round(float(px)))]
+        row_lat = tile_to_lonlat(np.zeros(lab.shape[0]), self.ty0 + (np.arange(lab.shape[0]) + 0.5) / 256, ZOOM)[1]
+        south = lab[row_lat < -46.65]
+        south = south[(south != 0) & (south != ids[SOUTH])]
+        ids[STEWART] = int(np.bincount(south).argmax())
+        main = np.zeros(lab.shape, dtype=np.uint8)
+        for isl, label in ids.items():
+            main[lab == label] = isl
+        # Everything else (small islands and sea) belongs to the nearest main island.
+        coarse = main[::4, ::4]
+        _, (ri, ci) = ndimage.distance_transform_edt(coarse == 0, return_indices=True)
+        nearest = coarse[ri, ci]
+        nearest = np.repeat(np.repeat(nearest, 4, axis=0), 4, axis=1)[: main.shape[0], : main.shape[1]]
+        return np.where(main > 0, main, nearest)
+
+
+_EARTH: Earth | None = None
+
+
+def earth() -> Earth:
+    global _EARTH
+    if _EARTH is None:
+        _EARTH = Earth()
+    return _EARTH
+
+
+def reshape_forward(xk: np.ndarray, yk: np.ndarray, isl: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Real local km to the reshaped, rotated frame."""
+    xk, yk = np.array(xk, dtype=np.float64), np.array(yk, dtype=np.float64)
+    isl = np.broadcast_to(isl, xk.shape)
+    px, py = (NI_PIVOT[0] - LON0) * KM_PER_DEG_LON, (NI_PIVOT[1] - LAT0) * KM_PER_DEG_LAT
+    ni = isl == NORTH
+    bx, by = rotate(xk[ni] - px, yk[ni] - py, NI_BEND_DEG)
+    xk[ni], yk[ni] = bx + px + NI_OFFSET_KM[0], by + py + NI_OFFSET_KM[1]
+    a, b = rotate(xk, yk, -AXIS_DEG)
+    xk, yk = rotate(a, b * WIDEN, AXIS_DEG)
+    return rotate(xk, yk, ROTATION_DEG)
+
+
+def reshape_inverse(u: np.ndarray, v: np.ndarray, isl: int) -> tuple[np.ndarray, np.ndarray]:
+    xk, yk = rotate(u, v, -ROTATION_DEG)
+    a, b = rotate(xk, yk, -AXIS_DEG)
+    xk, yk = rotate(a, b / WIDEN, AXIS_DEG)
+    if isl == NORTH:
+        px, py = (NI_PIVOT[0] - LON0) * KM_PER_DEG_LON, (NI_PIVOT[1] - LAT0) * KM_PER_DEG_LAT
+        bx, by = rotate(xk - NI_OFFSET_KM[0] - px, yk - NI_OFFSET_KM[1] - py, -NI_BEND_DEG)
+        xk, yk = bx + px, by + py
+    return xk, yk
+
+
+def projection() -> dict:
+    """Scale and centre that fit the reshaped land into the map with MARGIN_M of sea."""
+    e = earth()
+    rows, cols = np.nonzero(e.mosaic[::4, ::4] > 0.5)
+    lon, lat = tile_to_lonlat(e.tx0 + (cols * 4 + 0.5) / 256, e.ty0 + (rows * 4 + 0.5) / 256, ZOOM)
     inside = (lon >= LON_W) & (lon <= LON_E) & (lat <= LAT_N) & (lat >= LAT_S)
-    xk = (lon[inside] - LON0) * KM_PER_DEG_LON
-    yk = (lat[inside] - LAT0) * KM_PER_DEG_LAT
-    u, v = rotate(xk, yk, ROTATION_DEG)
+    lon, lat = lon[inside], lat[inside]
+    u, v = reshape_forward((lon - LON0) * KM_PER_DEG_LON, (lat - LAT0) * KM_PER_DEG_LAT, e.island_at(lon, lat))
     span_km = max(np.ptp(u), np.ptp(v))
     return {
         "real_m_per_game_m": float(span_km * 1000.0 / (SIZE_M - 2 * MARGIN_M)),
@@ -149,19 +236,41 @@ def projection(mosaic: np.ndarray, tx0: int, ty0: int) -> dict:
 
 
 def game_to_lonlat(gx: np.ndarray, gy: np.ndarray, proj: dict) -> tuple[np.ndarray, np.ndarray]:
-    """Game metres relative to the map centre (y north) to longitude and latitude."""
+    """Game metres relative to the map centre (y north) to longitude and latitude.
+
+    Each island has its own transform, so try each and keep the one whose source point lies on
+    that island, preferring land over sea where reshaped islands' surrounding seas overlap.
+    """
+    e = earth()
     scale = proj["real_m_per_game_m"] / 1000.0
-    u = gx * scale + proj["centre_u_km"]
-    v = gy * scale + proj["centre_v_km"]
-    xk, yk = rotate(u, v, -ROTATION_DEG)
-    return LON0 + xk / KM_PER_DEG_LON, LAT0 + yk / KM_PER_DEG_LAT
+    u = np.asarray(gx, dtype=np.float64) * scale + proj["centre_u_km"]
+    v = np.asarray(gy, dtype=np.float64) * scale + proj["centre_v_km"]
+    lon = np.full(u.shape, np.nan)
+    lat = np.full(u.shape, np.nan)
+    for want_land in (True, False):
+        for isl in (NORTH, SOUTH, STEWART):
+            todo = np.isnan(lon)
+            if not todo.any():
+                break
+            xk, yk = reshape_inverse(u[todo], v[todo], isl)
+            clon, clat = LON0 + xk / KM_PER_DEG_LON, LAT0 + yk / KM_PER_DEG_LAT
+            ok = e.island_at(clon, clat) == isl
+            if want_land:
+                ok &= e.height_at(clon, clat) > 0.5
+            idx = np.flatnonzero(todo)[ok]
+            lon.flat[idx], lat.flat[idx] = clon[ok], clat[ok]
+    todo = np.isnan(lon)
+    if todo.any():
+        xk, yk = reshape_inverse(u[todo], v[todo], SOUTH)
+        lon[todo], lat[todo] = LON0 + xk / KM_PER_DEG_LON, LAT0 + yk / KM_PER_DEG_LAT
+    return lon, lat
 
 
 def lonlat_to_world(lon: np.ndarray, lat: np.ndarray, proj: dict) -> tuple[np.ndarray, np.ndarray]:
     """Longitude and latitude to world metres (origin at the south-west corner, y north)."""
-    xk = (lon - LON0) * KM_PER_DEG_LON
-    yk = (lat - LAT0) * KM_PER_DEG_LAT
-    u, v = rotate(xk, yk, ROTATION_DEG)
+    xk = (np.asarray(lon) - LON0) * KM_PER_DEG_LON
+    yk = (np.asarray(lat) - LAT0) * KM_PER_DEG_LAT
+    u, v = reshape_forward(xk, yk, earth().island_at(lon, lat))
     scale = proj["real_m_per_game_m"] / 1000.0
     return (u - proj["centre_u_km"]) / scale + SIZE_M / 2, (v - proj["centre_v_km"]) / scale + SIZE_M / 2
 
@@ -172,12 +281,13 @@ def game_grid() -> tuple[np.ndarray, np.ndarray]:
     return np.meshgrid(centres, -centres)
 
 
-def sample_real_heights(mosaic: np.ndarray, tx0: int, ty0: int, proj: dict) -> np.ndarray:
-    lon, lat = game_to_lonlat(*game_grid(), proj)
-    px, py = lonlat_to_tile(lon, lat, ZOOM)
-    px = (px - tx0) * 256 - 0.5
-    py = (py - ty0) * 256 - 0.5
-    return ndimage.map_coordinates(mosaic, [py, px], order=1, mode="nearest").astype(np.float32)
+def sample_real_heights(proj: dict) -> np.ndarray:
+    gx, gy = game_grid()
+    out = np.empty(gx.shape, dtype=np.float32)
+    for r0 in range(0, GRID, 512):
+        lon, lat = game_to_lonlat(gx[r0:r0 + 512], gy[r0:r0 + 512], proj)
+        out[r0:r0 + 512] = earth().height_at(lon, lat)
+    return out
 
 
 def fbm(shape: tuple[int, int], wavelength: float, octaves: int, rng: np.random.Generator,
@@ -414,19 +524,17 @@ def main() -> None:
                     help="surface mask size in pixels; Terrain Builder wants the satellite/mask size, e.g. 20480")
     args = ap.parse_args()
 
-    mosaic, tx0, ty0 = build_mosaic()
-    proj = projection(mosaic, tx0, ty0)
+    proj = projection()
     scale = proj["real_m_per_game_m"]
-    print(f"Land span {proj['span_km']:.0f} km after {ROTATION_DEG:g} deg rotation, "
-          f"1 game m = {scale:.1f} real m")
+    print(f"Land span {proj['span_km']:.0f} km after reshaping, 1 game m = {scale:.1f} real m")
 
-    cached = CACHE_DIR / f"real_{GRID}_{ROTATION_DEG:g}_{MARGIN_M:g}.npy"
+    key = f"{GRID}_{ROTATION_DEG:g}_{MARGIN_M:g}_{NI_BEND_DEG:g}_{NI_OFFSET_KM[0]:g}_{NI_OFFSET_KM[1]:g}_{WIDEN:g}_{AXIS_DEG:g}"
+    cached = CACHE_DIR / f"real_{key}.npy"
     if cached.exists():
         real = np.load(cached)
     else:
-        real = sample_real_heights(mosaic, tx0, ty0, proj)
+        real = sample_real_heights(proj)
         np.save(cached, real)
-    del mosaic
     h, land = build_heights(real)
 
     grid = towns_mod.Grid(SIZE_M, CELL, GRID)
@@ -466,6 +574,8 @@ def main() -> None:
         "source": "Terrarium elevation tiles, AWS Open Data (Mapzen/Nextzen), zoom %d" % ZOOM,
         "bounds_lonlat": [LON_W, LAT_S, LON_E, LAT_N],
         "rotation_deg_clockwise": -ROTATION_DEG,
+        "reshape": {"north_island_bend_deg_anticlockwise": NI_BEND_DEG, "bend_pivot_lonlat": NI_PIVOT,
+                    "north_island_offset_km": NI_OFFSET_KM, "widen": WIDEN, "long_axis_deg": AXIS_DEG},
         "centre_lonlat": [round(float(c), 4) for c in game_to_lonlat(np.array(0.0), np.array(0.0), proj)],
         "projection": proj,
         "seed": SEED,
