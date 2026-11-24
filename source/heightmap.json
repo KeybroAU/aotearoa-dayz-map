@@ -5,7 +5,7 @@
   "easting": 200000,
   "northing": 0,
   "png_black_m": -54.0,
-  "png_white_m": 476.0,
+  "png_white_m": 443.0,
   "sea_level_m": 0.0,
   "real_metres_per_game_metre": 65.06,
   "source": "Terrarium elevation tiles, AWS Open Data (Mapzen/Nextzen), zoom 9",

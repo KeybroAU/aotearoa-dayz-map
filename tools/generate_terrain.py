@@ -8,7 +8,11 @@ adds game-scale detail, and writes:
   source/heightmap_4096.png   16-bit grayscale, see heightmap.json for the range
   source/heightmap.json       height range, grid and projection details
   source/mask_<size>.png      surface mask using the colours in layers.cfg
-  preview/*.png               shaded relief, surface mask and slope previews
+  source/towns.csv            town positions in world and Terrain Builder coordinates
+  source/objects/towns_tb.txt Terrain Builder object import for the town buildings
+  source/objects/towns_spawner.json  the same buildings as a cfggameplay.json object spawner
+  config/names.hpp            CfgWorlds Names class with the town labels
+  preview/*.png               shaded relief, surface mask, slope, town overview and close-ups
   <out>/heightmap_4096.asc    ESRI ASCII grid for Terrain Builder (--asc only)
 
 Run from anywhere:  python generate_terrain.py [--asc] [--mask-size 20480]
@@ -28,6 +32,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 from scipy import ndimage
+
+import towns as towns_mod
 
 MAP_DIR = Path(__file__).resolve().parent.parent
 SOURCE_DIR = MAP_DIR / "source"
@@ -67,6 +73,8 @@ EASTING = 200000
 NORTHING = 0
 
 SEED = 1840
+
+DETAIL_TOWNS = ["Auckland", "Wellington", "Christchurch", "Queenstown"]
 
 
 def lonlat_to_tile(lon: np.ndarray, lat: np.ndarray, z: int) -> tuple[np.ndarray, np.ndarray]:
@@ -147,6 +155,15 @@ def game_to_lonlat(gx: np.ndarray, gy: np.ndarray, proj: dict) -> tuple[np.ndarr
     v = gy * scale + proj["centre_v_km"]
     xk, yk = rotate(u, v, -ROTATION_DEG)
     return LON0 + xk / KM_PER_DEG_LON, LAT0 + yk / KM_PER_DEG_LAT
+
+
+def lonlat_to_world(lon: np.ndarray, lat: np.ndarray, proj: dict) -> tuple[np.ndarray, np.ndarray]:
+    """Longitude and latitude to world metres (origin at the south-west corner, y north)."""
+    xk = (lon - LON0) * KM_PER_DEG_LON
+    yk = (lat - LAT0) * KM_PER_DEG_LAT
+    u, v = rotate(xk, yk, ROTATION_DEG)
+    scale = proj["real_m_per_game_m"] / 1000.0
+    return (u - proj["centre_u_km"]) / scale + SIZE_M / 2, (v - proj["centre_v_km"]) / scale + SIZE_M / 2
 
 
 def game_grid() -> tuple[np.ndarray, np.ndarray]:
@@ -411,6 +428,18 @@ def main() -> None:
         np.save(cached, real)
     del mosaic
     h, land = build_heights(real)
+
+    grid = towns_mod.Grid(SIZE_M, CELL, GRID)
+    towns = towns_mod.load_towns()
+    towns_mod.place_towns(towns, lambda lon, lat: lonlat_to_world(lon, lat, proj), land, grid)
+    h = towns_mod.flatten_towns(h, land, towns, grid)
+    h = np.where(land, limit_slope(np.where(land, h, 0.0), MAX_SLOPE_DEG), h)
+    towns_mod.layout_towns(towns, h, land, grid, SEED + 3)
+    for t in towns:
+        moved = f", moved {t.moved_m:.0f} m inland" if t.moved_m > 1 else ""
+        print(f"  {t.name}: {len(t.buildings)} buildings, radius {t.radius:.0f} m{moved}")
+    print(f"Towns: {len(towns)}, buildings: {sum(len(t.buildings) for t in towns)}")
+
     slope = slope_degrees(h)
     land_slope = slope[land]
     print(f"Height range {h.min():.1f} .. {h.max():.1f} m, land {land.mean() * 100:.1f}% of map "
@@ -442,12 +471,24 @@ def main() -> None:
     }, indent=2) + "\n")
 
     idx = build_mask(h, land, proj)
+    idx[towns_mod.town_mask(towns, grid) & land & (idx != 0)] = 1
     mask = idx if args.mask_size == GRID else upscale_mask(idx, args.mask_size)
     Image.fromarray(mask_to_rgb(mask)).save(SOURCE_DIR / f"mask_{args.mask_size}.png", optimize=True)
     write_layers_cfg(SOURCE_DIR / "layers.cfg")
     write_legend(SOURCE_DIR / "mapLegend.png")
 
-    shaded_relief(h, 2048).save(PREVIEW_DIR / "relief_2048.png", optimize=True)
+    towns_mod.write_towns_csv(towns, SOURCE_DIR / "towns.csv", EASTING, NORTHING)
+    towns_mod.write_names_hpp(towns, MAP_DIR / "config" / "names.hpp")
+    towns_mod.write_terrain_builder_objects(towns, SOURCE_DIR / "objects" / "towns_tb.txt", EASTING, NORTHING)
+    towns_mod.write_object_spawner(towns, SOURCE_DIR / "objects" / "towns_spawner.json")
+
+    relief = shaded_relief(h, 2048)
+    relief.save(PREVIEW_DIR / "relief_2048.png", optimize=True)
+    towns_mod.draw_overview(relief, towns, SIZE_M).save(PREVIEW_DIR / "towns_2048.png", optimize=True)
+    for name in DETAIL_TOWNS:
+        town = next(t for t in towns if t.name == name)
+        towns_mod.draw_town_detail(h, town, grid).save(
+            PREVIEW_DIR / f"town_{town.class_name.lower()}.png", optimize=True)
     Image.fromarray(mask_to_rgb(idx)).resize((2048, 2048), Image.NEAREST).save(
         PREVIEW_DIR / "mask_2048.png", optimize=True)
     slope_img = np.clip(slope / 50.0 * 255, 0, 255).astype(np.uint8)

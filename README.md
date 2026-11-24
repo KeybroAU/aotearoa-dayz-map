@@ -12,7 +12,7 @@ A 20 km DayZ terrain based on New Zealand, for a new server. The coastline and t
 | Heightmap grid | 4096 x 4096, 5 m cells |
 | Real to game | 1 game metre is about 65 real metres |
 | Land area | about 66 km2 (16% of the square) |
-| Highest point | 475 m (Southern Alps) |
+| Highest point | 442 m (Southern Alps) |
 | Steepest slope | 40 degrees |
 | Orientation | Turned 16 degrees clockwise so the country fits the diagonal |
 
@@ -30,6 +30,13 @@ New Zealand is about 1500 km long, so a 20 km map shrinks it a lot, and real hei
 | `preview/` | Shaded relief, surface mask and slope (white is 50 degrees) |
 | `tools/generate_terrain.py` | Builds everything above from real elevation data |
 | `tools/png_to_asc.py` | Turns the PNG heightmap into the `.asc` file Terrain Builder imports |
+
+| `tools/towns.csv` | Town list: name, real latitude and longitude, size tier, optional radius |
+| `tools/towns.py` | Town placement, flattening, building layout and output writers |
+| `source/towns.csv` | Generated town positions in world and Terrain Builder coordinates |
+| `source/objects/towns_tb.txt` | Town buildings for Terrain Builder's object import |
+| `source/objects/towns_spawner.json` | The same buildings as a DayZ object spawner file |
+| `config/names.hpp` | Town labels for the in-game map (`CfgWorlds` `Names` class) |
 
 The `.asc` heightmap is about 115 MB, so it is not committed. To make it:
 
@@ -56,6 +63,31 @@ That writes `source/heightmap_4096.asc`.
 
 The material paths in `layers.cfg` point at vanilla `DZ\surfaces\data\terrain` files. Check that each one exists on your P: drive before you generate layers, and swap any that don't. Terrain Builder allows only a few surfaces per tile, so if layer generation reports too many surfaces on a tile, merge similar layers (for example, farmland into pasture).
 
+## Towns
+
+![Towns](preview/towns_2048.png)
+
+42 places from `tools/towns.csv`, with about 1,950 buildings:
+
+- Main cities: Auckland, Wellington, Christchurch
+- Cities: Hamilton, Tauranga, Dunedin, Palmerston North, Napier, Nelson, Rotorua, New Plymouth, Whangārei, Invercargill, Queenstown
+- Towns and villages: Hastings, Whanganui, Gisborne, Blenheim, Picton, Kaikōura, Taupō, Timaru, Ōamaru, Greymouth, Westport, Hokitika, Franz Josef, Masterton, Ashburton, Wānaka, Te Anau, Gore, Twizel, Hanmer Springs, Kaitaia, Paihia, Whakatāne, Thames, Taumarunui
+- Military bases: Waiouru Army Camp, Burnham Military Camp, RNZAF Base Ohakea
+
+Each town is placed from its real latitude and longitude. Coastal towns are moved inland until at least 70% of the town is on land. Neighbouring towns are shrunk so they don't overlap. The ground is flattened to a gentle tilt of 3 degrees or less, then blended back into the hills. Buildings sit on a street grid of 45 m blocks with 12 m streets: hospital, police, fire station, church and pub nearest the middle, then tenements and offices in the cities, then houses.
+
+Town sizes are much bigger than true scale would give, so they're worth looting. To add, remove or resize a place, edit `tools/towns.csv` (tiers: `capital`, `city`, `town`, `village`, `military`) and rerun the generator.
+
+Close-ups (1 px per metre): [Auckland](preview/town_auckland.png), [Wellington](preview/town_wellington.png), [Christchurch](preview/town_christchurch.png), [Queenstown](preview/town_queenstown.png).
+
+Things to check:
+
+- Building names in `tools/towns.py` are vanilla DayZ classes. The Terrain Builder file uses the model name in lowercase (`land_house_1w01` becomes `house_1w01`). Match these to the templates in your library.
+- Terrain Builder import format is `"template";x;y;yaw;pitch;roll;scale;z offset;`, with the 200000 easting already added.
+- Streets are gaps only. Roads still need drawing in Terrain Builder.
+- `towns_spawner.json` lets you try the towns on a test server before rebuilding the WRP. Add it to `objectSpawnersArr` in `cfggameplay.json`.
+- Names are ASCII, without macrons, in case the DayZ map font lacks those characters.
+
 ## Terrain Builder setup
 
 These steps assume DayZ Tools is installed and the P: drive is mounted with game data extracted.
@@ -72,9 +104,10 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
 5. Make the mask at full size: run `python tools/generate_terrain.py --mask-size 20480`. This downloads the elevation tiles again (about 50 MB) and takes a few minutes. Import `source\mask_20480.png` as the surface mask.
 6. Point the layers config at `source\layers.cfg`.
 7. You still need a satellite image. Until there's a real one, a full-size copy of the mask works as a placeholder. Import it as the satellite image.
-8. **Generate Layers**, then **Export WRP** to `P:\maps\aotearoa\world\aotearoa.wrp`.
+8. **Import Objects** from `source\objects\towns_tb.txt` once your template library has the building models.
+9. **Generate Layers**, then **Export WRP** to `P:\maps\aotearoa\world\aotearoa.wrp`.
 
-Still to do: the world `config.cpp`, roads, towns, forests and other objects, a satellite texture, and the server mission files (`mapgrouppos.xml`, player spawns and economy files).
+Still to do: the world `config.cpp` (include `config\names.hpp`), roads, forests and other objects, a satellite texture, and the server mission files (`mapgrouppos.xml`, player spawns and economy files).
 
 ## Regenerating
 
