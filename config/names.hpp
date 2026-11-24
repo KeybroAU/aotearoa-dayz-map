@@ -3,7 +3,7 @@ class Names
 {
 	class Auckland
 	{
-		name = "Auckland";
+		name = "Auckland / Tāmaki Makaurau";
 		position[] = {15307.5, 15127.5};
 		type = "NameCityCapital";
 		radiusA = 340;
@@ -12,7 +12,7 @@ class Names
 	};
 	class Wellington
 	{
-		name = "Wellington";
+		name = "Wellington / Te Whanganui-a-Tara";
 		position[] = {13332.5, 7942.5};
 		type = "NameCityCapital";
 		radiusA = 320;
@@ -21,7 +21,7 @@ class Names
 	};
 	class Christchurch
 	{
-		name = "Christchurch";
+		name = "Christchurch / Ōtautahi";
 		position[] = {9532.5, 4967.5};
 		type = "NameCityCapital";
 		radiusA = 277;
@@ -30,7 +30,7 @@ class Names
 	};
 	class Hamilton
 	{
-		name = "Hamilton";
+		name = "Hamilton / Kirikiriroa";
 		position[] = {15512.5, 13407.5};
 		type = "NameCity";
 		radiusA = 210;
@@ -48,7 +48,7 @@ class Names
 	};
 	class Dunedin
 	{
-		name = "Dunedin";
+		name = "Dunedin / Ōtepoti";
 		position[] = {5777.5, 1897.5};
 		type = "NameCity";
 		radiusA = 210;
@@ -57,7 +57,7 @@ class Names
 	};
 	class PalmerstonNorth
 	{
-		name = "Palmerston North";
+		name = "Palmerston North / Te Papaioea";
 		position[] = {14717.5, 9102.5};
 		type = "NameCity";
 		radiusA = 204;
@@ -66,7 +66,7 @@ class Names
 	};
 	class Napier
 	{
-		name = "Napier";
+		name = "Napier / Ahuriri";
 		position[] = {16702.5, 10042.5};
 		type = "NameCity";
 		radiusA = 131;
@@ -75,7 +75,7 @@ class Names
 	};
 	class Hastings
 	{
-		name = "Hastings";
+		name = "Hastings / Heretaunga";
 		position[] = {16597.5, 9827.5};
 		type = "NameVillage";
 		radiusA = 103;
@@ -84,7 +84,7 @@ class Names
 	};
 	class Nelson
 	{
-		name = "Nelson";
+		name = "Nelson / Whakatū";
 		position[] = {11397.5, 8417.5};
 		type = "NameCity";
 		radiusA = 210;
@@ -102,7 +102,7 @@ class Names
 	};
 	class NewPlymouth
 	{
-		name = "New Plymouth";
+		name = "New Plymouth / Ngāmotu";
 		position[] = {13427.5, 11722.5};
 		type = "NameCity";
 		radiusA = 210;
@@ -111,7 +111,7 @@ class Names
 	};
 	class Whangarei
 	{
-		name = "Whangarei";
+		name = "Whangārei";
 		position[] = {15287.5, 17117.5};
 		type = "NameCity";
 		radiusA = 210;
@@ -120,7 +120,7 @@ class Names
 	};
 	class Invercargill
 	{
-		name = "Invercargill";
+		name = "Invercargill / Waihōpai";
 		position[] = {2852.5, 1787.5};
 		type = "NameCity";
 		radiusA = 210;
@@ -129,7 +129,7 @@ class Names
 	};
 	class Queenstown
 	{
-		name = "Queenstown";
+		name = "Queenstown / Tāhuna";
 		position[] = {3882.5, 3937.5};
 		type = "NameCity";
 		radiusA = 210;
@@ -147,7 +147,7 @@ class Names
 	};
 	class Gisborne
 	{
-		name = "Gisborne";
+		name = "Gisborne / Tūranganui-a-Kiwa";
 		position[] = {18507.5, 11002.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -156,7 +156,7 @@ class Names
 	};
 	class Blenheim
 	{
-		name = "Blenheim";
+		name = "Blenheim / Waiharakeke";
 		position[] = {12122.5, 7792.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -165,7 +165,7 @@ class Names
 	};
 	class Picton
 	{
-		name = "Picton";
+		name = "Picton / Waitohi";
 		position[] = {12277.5, 8142.5};
 		type = "NameVillage";
 		radiusA = 110;
@@ -174,7 +174,7 @@ class Names
 	};
 	class Kaikoura
 	{
-		name = "Kaikoura";
+		name = "Kaikōura";
 		position[] = {11342.5, 6467.5};
 		type = "NameVillage";
 		radiusA = 110;
@@ -183,7 +183,7 @@ class Names
 	};
 	class Taupo
 	{
-		name = "Taupo";
+		name = "Taupō";
 		position[] = {16072.5, 11657.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -192,7 +192,7 @@ class Names
 	};
 	class Timaru
 	{
-		name = "Timaru";
+		name = "Timaru / Te Tihi-o-Maru";
 		position[] = {7387.5, 4067.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -201,7 +201,7 @@ class Names
 	};
 	class Oamaru
 	{
-		name = "Oamaru";
+		name = "Ōamaru";
 		position[] = {6722.5, 3017.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -210,7 +210,7 @@ class Names
 	};
 	class Greymouth
 	{
-		name = "Greymouth";
+		name = "Greymouth / Māwhera";
 		position[] = {8277.5, 7232.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -219,7 +219,7 @@ class Names
 	};
 	class Westport
 	{
-		name = "Westport";
+		name = "Westport / Kawatiri";
 		position[] = {9077.5, 8232.5};
 		type = "NameVillage";
 		radiusA = 110;
@@ -237,7 +237,7 @@ class Names
 	};
 	class FranzJosef
 	{
-		name = "Franz Josef";
+		name = "Franz Josef / Waiau";
 		position[] = {6542.5, 6077.5};
 		type = "NameVillage";
 		radiusA = 110;
@@ -246,7 +246,7 @@ class Names
 	};
 	class Masterton
 	{
-		name = "Masterton";
+		name = "Masterton / Whakaoriori";
 		position[] = {14497.5, 8092.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -255,7 +255,7 @@ class Names
 	};
 	class Ashburton
 	{
-		name = "Ashburton";
+		name = "Ashburton / Hakatere";
 		position[] = {8247.5, 4677.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -264,7 +264,7 @@ class Names
 	};
 	class Wanaka
 	{
-		name = "Wanaka";
+		name = "Wānaka";
 		position[] = {4622.5, 4302.5};
 		type = "NameVillage";
 		radiusA = 110;
@@ -282,7 +282,7 @@ class Names
 	};
 	class Gore
 	{
-		name = "Gore";
+		name = "Gore / Maruawai";
 		position[] = {3732.5, 2092.5};
 		type = "NameVillage";
 		radiusA = 110;
@@ -309,7 +309,7 @@ class Names
 	};
 	class Kaitaia
 	{
-		name = "Kaitaia";
+		name = "Kaitāia";
 		position[] = {14252.5, 18492.5};
 		type = "NameVillage";
 		radiusA = 110;
@@ -327,7 +327,7 @@ class Names
 	};
 	class Whakatane
 	{
-		name = "Whakatane";
+		name = "Whakatāne";
 		position[] = {17552.5, 12517.5};
 		type = "NameVillage";
 		radiusA = 165;
@@ -336,7 +336,7 @@ class Names
 	};
 	class Thames
 	{
-		name = "Thames";
+		name = "Thames / Pārāwai";
 		position[] = {16152.5, 14382.5};
 		type = "NameVillage";
 		radiusA = 110;
@@ -372,7 +372,7 @@ class Names
 	};
 	class RnzafBaseOhakea
 	{
-		name = "RNZAF Base Ohakea";
+		name = "RNZAF Base Ōhakea";
 		position[] = {14512.5, 9417.5};
 		type = "NameLocal";
 		radiusA = 136;

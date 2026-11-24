@@ -315,7 +315,7 @@ def build_mask(h: np.ndarray, land: np.ndarray, proj: dict) -> np.ndarray:
     idx[(h > 560) | ((h > 450) & (patch < -0.3))] = 6
     idx[plateau & (h > 260)] = 8
     idx[slope > 36] = 7
-    idx[(h < 3.2) & (dist_land < 120) & (slope < 8)] = 0
+    idx[(h < 3.2) & (dist_land < 45) & (slope < 8)] = 0
     idx[~land] = 0
     return idx
 
@@ -467,6 +467,7 @@ def main() -> None:
         "bounds_lonlat": [LON_W, LAT_S, LON_E, LAT_N],
         "rotation_deg_clockwise": -ROTATION_DEG,
         "centre_lonlat": [round(float(c), 4) for c in game_to_lonlat(np.array(0.0), np.array(0.0), proj)],
+        "projection": proj,
         "seed": SEED,
     }, indent=2) + "\n")
 

@@ -10,6 +10,7 @@ from __future__ import annotations
 import csv
 import json
 import math
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
@@ -93,20 +94,27 @@ class Town:
     y: float = 0.0
     moved_m: float = 0.0
     grid_angle: float = 0.0
+    maori: str = ""
     buildings: list[Building] = field(default_factory=list)
 
     @property
     def class_name(self) -> str:
-        return "".join(ch for ch in self.name.title() if ch.isalnum())
+        ascii_name = unicodedata.normalize("NFKD", self.name).encode("ascii", "ignore").decode()
+        return "".join(ch for ch in ascii_name.title() if ch.isalnum())
+
+    @property
+    def label(self) -> str:
+        return f"{self.name} / {self.maori}" if self.maori else self.name
 
 
 def load_towns() -> list[Town]:
     towns = []
-    with TOWNS_CSV.open(newline="") as f:
+    with TOWNS_CSV.open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             tier = row["tier"].strip()
             radius = float(row["radius"]) if row.get("radius", "").strip() else TIERS[tier]["radius"]
-            towns.append(Town(row["name"].strip(), float(row["lat"]), float(row["lon"]), tier, radius))
+            towns.append(Town(row["name"].strip(), float(row["lat"]), float(row["lon"]), tier, radius,
+                              maori=(row.get("maori") or "").strip()))
     return towns
 
 
@@ -308,7 +316,7 @@ def write_names_hpp(towns: list[Town], path: Path) -> None:
         lines += [
             f"\tclass {t.class_name}",
             "\t{",
-            f'\t\tname = "{t.name}";',
+            f'\t\tname = "{t.label}";',
             f"\t\tposition[] = {{{t.x:.1f}, {t.y:.1f}}};",
             f'\t\ttype = "{TIERS[t.tier]["name_type"]}";',
             f"\t\tradiusA = {t.radius:.0f};",
@@ -318,16 +326,16 @@ def write_names_hpp(towns: list[Town], path: Path) -> None:
         ]
     lines += ["};", ""]
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("\n".join(lines), newline="\r\n")
+    path.write_text("\n".join(lines), encoding="utf-8", newline="\r\n")
 
 
 def write_towns_csv(towns: list[Town], path: Path, easting: float, northing: float) -> None:
-    with path.open("w", newline="") as f:
+    with path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["name", "tier", "x", "y", "tb_x", "tb_y", "z", "radius", "buildings", "moved_m"])
+        w.writerow(["name", "maori", "tier", "x", "y", "tb_x", "tb_y", "z", "radius", "buildings", "moved_m"])
         for t in towns:
             z = t.buildings[0].z if t.buildings else 0.0
-            w.writerow([t.name, t.tier, f"{t.x:.1f}", f"{t.y:.1f}", f"{t.x + easting:.1f}",
+            w.writerow([t.name, t.maori, t.tier, f"{t.x:.1f}", f"{t.y:.1f}", f"{t.x + easting:.1f}",
                         f"{t.y + northing:.1f}", f"{z:.1f}", f"{t.radius:.0f}", len(t.buildings),
                         f"{t.moved_m:.0f}"])
 
@@ -353,6 +361,19 @@ def write_object_spawner(towns: list[Town], path: Path) -> None:
     path.write_text(json.dumps({"Objects": objects}, indent=1) + "\n")
 
 
+def _font(size: int):
+    from PIL import ImageFont
+
+    # Pillow's built-in font has no macrons, so prefer a system font that does.
+    for name in ("DejaVuSans.ttf", "arial.ttf", "Arial.ttf", "LiberationSans-Regular.ttf",
+                 "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"):
+        try:
+            return ImageFont.truetype(name, size)
+        except OSError:
+            continue
+    return ImageFont.load_default(size)
+
+
 def draw_overview(img: Image.Image, towns: list[Town], size_m: float) -> Image.Image:
     img = img.copy()
     d = ImageDraw.Draw(img)
@@ -364,7 +385,7 @@ def draw_overview(img: Image.Image, towns: list[Town], size_m: float) -> Image.I
     for t in towns:
         px, py = t.x * f, (size_m - t.y) * f
         colour = (255, 255, 0) if t.tier == "military" else (255, 255, 255)
-        d.text((px + t.radius * f + 4, py - 6), t.name, fill=colour, stroke_width=2, stroke_fill=(0, 0, 0))
+        d.text((px + t.radius * f + 4, py - 6), t.label, fill=colour, font=_font(13), stroke_width=2, stroke_fill=(0, 0, 0))
     return img
 
 
@@ -390,6 +411,6 @@ def draw_town_detail(h: np.ndarray, town: Town, grid: Grid, span: float = 900.0)
             pts.append((ex - x0, y1 - ey))
         colour = (230, 230, 220) if b.cls in FOOTPRINTS and b.cls.startswith("Land_House") else (220, 90, 60)
         d.polygon(pts, fill=colour, outline=(40, 40, 40))
-    d.text((8, 8), f"{town.name}  ({len(town.buildings)} buildings, radius {town.radius:.0f} m)",
-           fill=(255, 255, 255), stroke_width=2, stroke_fill=(0, 0, 0))
+    d.text((8, 8), f"{town.label}  ({len(town.buildings)} buildings, radius {town.radius:.0f} m)",
+           fill=(255, 255, 255), stroke_width=2, stroke_fill=(0, 0, 0), font=_font(16))
     return img

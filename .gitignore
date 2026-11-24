@@ -1,3 +1,4 @@
 __pycache__/
 *.asc
 source/mask_20480.png
+source/satellite_*.png
