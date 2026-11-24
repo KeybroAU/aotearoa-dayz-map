@@ -1,0 +1,24 @@
+{
+  "grid": 4096,
+  "cell_size_m": 5.0,
+  "terrain_size_m": 20480.0,
+  "easting": 200000,
+  "northing": 0,
+  "png_black_m": -54.0,
+  "png_white_m": 476.0,
+  "sea_level_m": 0.0,
+  "real_metres_per_game_metre": 65.06,
+  "source": "Terrarium elevation tiles, AWS Open Data (Mapzen/Nextzen), zoom 9",
+  "bounds_lonlat": [
+    166.35,
+    -47.35,
+    178.65,
+    -34.3
+  ],
+  "rotation_deg_clockwise": 16.0,
+  "centre_lonlat": [
+    172.0408,
+    -40.4347
+  ],
+  "seed": 1840
+}
