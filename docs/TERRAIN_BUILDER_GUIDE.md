@@ -55,6 +55,7 @@ Menu names are from the Steam version of DayZ Tools. If a menu has moved in your
   - Name: `aotearoa`
   - Location: `P:\maps\aotearoa\source`
 - [ ] Save straight away (**File → Save project**). Save often from here on; Terrain Builder can crash on big imports.
+- The console may say `Can not enumerate files in directory 'p:\maps\aotearoa\source\aotearoa.cache\'`. That's normal for a new project: the cache folder is made on the first save or import. Create the empty folder yourself if you want the message gone.
 
 ---
 
