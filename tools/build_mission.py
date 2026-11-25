@@ -3,7 +3,8 @@
 Reads the generated terrain (source/heightmap_4096.png, mask_4096.png, towns.csv, roads.json,
 pois.json) and writes mission/dayzOffline.aotearoa/ with player spawns, vehicle and crash
 events, infected zones, the Whakaari contaminated area, init.c and a cfggameplay snippet,
-plus mission/serverDZ.cfg. economy.py adds loot positions and tiers, animals and weather. Copy the rest of the mission (db/, cfgeconomycore.xml and so on)
+plus mission/serverDZ.cfg. economy.py adds loot positions and tiers, animals and weather;
+server_files.py adds starting gear, server messages and launch scripts. Copy the rest of the mission (db/, cfgeconomycore.xml and so on)
 from vanilla dayzOffline.chernarusplus; see the README.
 
     python build_mission.py
@@ -22,6 +23,7 @@ from scipy import ndimage
 
 import economy
 import generate_terrain as g
+import server_files
 
 MISSION = "dayzOffline.aotearoa"
 OUT = g.MAP_DIR / "mission"
@@ -38,6 +40,7 @@ INFECTED_ZONES = {
     "town": ("InfectedVillage", 2.6, 2, 5),
     "village": ("InfectedVillage", 2.4, 1, 3),
     "military": ("InfectedMilitary", 3.0, 2, 5),
+    "hamlet": ("InfectedVillage", 2.0, 1, 2),
 }
 # Monthly temperature range (deg C, January first), roughly Canterbury.
 MIN_TEMPS = [12, 12, 10, 7, 4, 2, 1, 2, 4, 6, 8, 11]
@@ -170,10 +173,12 @@ def events(h, idx, land, slope, towns, roads, pois, rng):
         px, py = x + 3.5 * math.sin(side), y + 3.5 * math.cos(side)
         ev.setdefault(VEHICLES[i % len(VEHICLES)], []).append((px, py, hd))
 
-    # Boats tied up off each port pad.
+    # Boats tied up off each port, ferry terminal and boat ramp.
     for p in pois:
-        if p["kind"] != "port":
+        if p["kind"] not in ("port", "ferry", "ramp"):
             continue
+        want = 3 if p["kind"] == "ferry" else 1
+        placed = 0
         pts = np.array(p["surfaces"][0]["points"])
         for (ax, ay), (bx, by) in zip(pts, np.roll(pts, -1, axis=0)):
             mx, my = (ax + bx) / 2, (ay + by) / 2
@@ -181,8 +186,15 @@ def events(h, idx, land, slope, towns, roads, pois, rng):
             norm = math.hypot(nx, ny) or 1.0
             ox, oy = mx + nx / norm * 25.0, my + ny / norm * 25.0
             r, c = cell(ox, oy)
-            if h[r, c] < -1.0:
-                ev.setdefault("VehicleBoat", []).append((ox, oy, math.degrees(math.atan2(bx - ax, by - ay)) % 360))
+            for k in range(want - placed):
+                along = (k - (want - placed - 1) / 2) * 14.0
+                ux, uy = (bx - ax) / (math.hypot(bx - ax, by - ay) or 1.0), (by - ay) / (math.hypot(bx - ax, by - ay) or 1.0)
+                qx, qy = ox + ux * along, oy + uy * along
+                r, c = cell(qx, qy)
+                if h[r, c] < -1.0:
+                    ev.setdefault("VehicleBoat", []).append((qx, qy, math.degrees(math.atan2(bx - ax, by - ay)) % 360))
+                    placed += 1
+            if placed >= want:
                 break
 
     # Helicopter crashes in open country well away from towns and roads.
@@ -205,6 +217,24 @@ def events(h, idx, land, slope, towns, roads, pois, rng):
             (ax, ay), (bx, by) = streets[r]["points"][0], streets[r]["points"][-1]
             ev.setdefault("StaticPoliceCar", []).append(((ax + bx) / 2, (ay + by) / 2,
                                                          math.degrees(math.atan2(bx - ax, by - ay)) % 360))
+    # Civilian cars parked along town streets, on the left kerb.
+    for t in towns:
+        if t["tier"] not in ("capital", "city", "town", "village"):
+            continue
+        streets = [r for r in roads["roads"] if r["kind"] == "street" and r["ref"] == class_name(t["name"])]
+        share = {"capital": 0.5, "city": 0.4, "town": 0.35, "village": 0.3}[t["tier"]]
+        for k in rng.permutation(len(streets))[:max(1, int(len(streets) * share))]:
+            pts = np.array(streets[k]["points"])
+            if len(pts) < 2:
+                continue
+            i = int(rng.integers(len(pts) - 1))
+            (ax, ay), (bx, by) = pts[i], pts[i + 1]
+            hd = math.degrees(math.atan2(bx - ax, by - ay)) % 360
+            side = math.radians(hd - 90.0)
+            f = float(rng.uniform(0.3, 0.7))
+            px, py = ax + f * (bx - ax) + 4.0 * math.sin(side), ay + f * (by - ay) + 4.0 * math.cos(side)
+            ev.setdefault(VEHICLES[int(rng.integers(len(VEHICLES)))], []).append((px, py, hd))
+
     bases = [t for t in towns if t["tier"] == "military"]
     for x, y, hd, _ in highway_samples(roads, 150.0):
         for b in bases:
@@ -256,7 +286,11 @@ def infected_zones(land, towns, pois, rng):
     for p in pois:
         if p["kind"] == "farm":
             scatter(p["x"], p["y"], 20.0, 1, "InfectedSolitude", 1, 2, 30.0)
-        elif p["kind"] in ("port", "industrial"):
+        elif p["kind"] in ("bach", "hut"):
+            scatter(p["x"], p["y"], 25.0, 1, "InfectedSolitude", 1, 2, 30.0)
+        elif p["kind"] in ("surfclub", "campground", "station"):
+            scatter(p["x"], p["y"], 30.0, 1, "InfectedVillage", 1, 3)
+        elif p["kind"] in ("port", "industrial", "ferry"):
             scatter(p["x"], p["y"], 60.0, 2, "InfectedIndustrial", 2, 4)
         elif p["kind"] == "airfield":
             kind = "InfectedMilitary" if "Ōhakea" in p["label"] else "InfectedIndustrial"
@@ -331,7 +365,8 @@ def write_gameplay_snippet(path):
             "objectSpawnersArr": ["aotearoa/towns_spawner.json", "aotearoa/pois_spawner.json"],
             "environmentMinTemps": MIN_TEMPS,
             "environmentMaxTemps": MAX_TEMPS,
-        }
+        },
+        "PlayerData": {"spawnGearPresetFiles": server_files.preset_files()},
     }
     path.write_text(json.dumps(data, indent=4) + "\n")
 
@@ -509,6 +544,7 @@ def main() -> None:
     write_effect_area(h, land, pois, out / "cfgeffectarea.json")
     write_gameplay_snippet(out / "cfggameplay.worldsdata.json")
     economy.build(out, h, idx, land, towns, pois, rng)
+    server_files.write(out, OUT / "server")
 
     draw_preview(spawns, ev, zones).save(g.PREVIEW_DIR / "mission_2048.png", optimize=True)
     print(f"Spawn points: {len(spawns)}")
