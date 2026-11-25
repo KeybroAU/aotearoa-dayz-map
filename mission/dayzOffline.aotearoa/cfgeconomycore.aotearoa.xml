@@ -1,0 +1,4 @@
+<!-- Add inside <economycore> in cfgeconomycore.xml to load the New Zealand loot changes. -->
+<ce folder="aotearoa_ce">
+    <file name="types.xml" type="types" />
+</ce>

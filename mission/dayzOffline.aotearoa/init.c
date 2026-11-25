@@ -24,7 +24,7 @@ void main()
 
 	// Loot positions: once the world is built, uncomment the next line, start the server once,
 	// and copy storage_1/export/mapgrouppos.xml into this mission folder. Then comment it out.
-	// GetCEApi().ExportProxyData(Vector(10240, 0, 10240), 20480);
+	// GetCEApi().ExportProxyData(Vector(12800, 0, 12800), 25600);
 }
 
 class CustomMission: MissionServer

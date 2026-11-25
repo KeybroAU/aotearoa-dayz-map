@@ -1,13 +1,13 @@
 {
   "grid": 4096,
-  "cell_size_m": 5.0,
-  "terrain_size_m": 20480.0,
+  "cell_size_m": 6.25,
+  "terrain_size_m": 25600.0,
   "easting": 200000,
   "northing": 0,
   "png_black_m": -54.0,
-  "png_white_m": 447.0,
+  "png_white_m": 533.0,
   "sea_level_m": 0.0,
-  "real_metres_per_game_metre": 75.05,
+  "real_metres_per_game_metre": 59.98,
   "source": "Terrarium elevation tiles, AWS Open Data (Mapzen/Nextzen), zoom 9",
   "bounds_lonlat": [
     166.35,
@@ -35,7 +35,7 @@
     -40.8342
   ],
   "projection": {
-    "real_m_per_game_m": 75.0496475101316,
+    "real_m_per_game_m": 59.97717663518017,
     "centre_u_km": 4.264803739135175,
     "centre_v_km": -1.0205276032878032,
     "span_km": 1439.4522392443241
