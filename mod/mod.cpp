@@ -1,4 +1,10 @@
 name = "Aotearoa";
 author = "KeybroAU";
-version = "0.1";
-overview = "A 20 km terrain shaped on New Zealand, with bilingual place names.";
+version = "0.2";
+overview = "A 25.6 km terrain shaped on New Zealand, with bilingual place names, volcanoes, the Interislander and the main trunk railway.";
+picture = "maps\aotearoa\data\branding\logo_512_ca.paa";
+logo = "maps\aotearoa\data\branding\icon_128_ca.paa";
+logoSmall = "maps\aotearoa\data\branding\icon_64_ca.paa";
+logoOver = "maps\aotearoa\data\branding\icon_128_ca.paa";
+tooltip = "Aotearoa";
+action = "https://github.com/KeybroAU/aotearoa-dayz-map";

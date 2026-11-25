@@ -30,6 +30,8 @@ class CfgWorlds
 	class aotearoa: ChernarusPlus
 	{
 		description = "Aotearoa";
+		pictureMap = "maps\aotearoa\data\branding\map_picture_co.paa";
+		pictureShot = "maps\aotearoa\data\branding\loading_1_co.paa";
 		worldName = "maps\aotearoa\world\aotearoa.wrp";
 		mapSize = 25600;
 		centerPosition[] = {12800, 12800, 0};
