@@ -1,6 +1,6 @@
 name = "Aotearoa";
 author = "KeybroAU";
-version = "0.4.0";
+version = "0.5.0";
 overview = "A 25.6 km terrain shaped on New Zealand, with bilingual place names, volcanoes, the Interislander and the main trunk railway.";
 picture = "maps\aotearoa\data\branding\logo_512_ca.paa";
 logo = "maps\aotearoa\data\branding\icon_128_ca.paa";

@@ -2,14 +2,25 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
-## Unreleased
+## 0.5.0 - 2026-11-25
 
 ### Added
 - In-game map item: a new mod, `@AotearoaMap`, with the class `AotearoaMap` (built on `ChernarusMap`). It has its own cover, a labelled sheet with the 1 km grid, and a legend listing every town and named place with its grid square. It takes over the vanilla map's loot spawns. `pack.bat` packs, signs and loads it; pass `--no-map-item` to leave it out
-- The world now sets its own map name and textures, so a vanilla `ChernarusMap` shows Aotearoa too
-- A map item zip on each release
-- Rakaia township on SH1 and the Main North Line, between Christchurch and Ashburton
+- Every starting gear preset carries the map, and each trading post has a navigation stall selling it, plus compasses, binoculars, chemlights and torches (Expansion market and trader files, TraderPlus price snippet)
+- 2D map labels for 24 rivers, 16 peaks and ranges, 15 lakes, 13 seas, bays and harbours, and the 19 railway stations (`tools/labels.py`). They also appear on the player map and the map item
+- Rakaia township on SH1 and the Main North Line, on the north bank of the Rakaia River
 - Rakaia Huts, the fishing settlement at the Rakaia river mouth, with baches, sheds and a gravel lane
+- Sign model hand-off: `docs/models/SIGNS_BRIEF.md`, the two sign materials and a dimensioned reference sheet (`tools/sign_handoff.py`)
+- A map item zip on each release; the models zip now has the sign reference sheet
+
+### Changed
+- Loot is scaled to the map's loot points (52% of Chernarus's), so each building holds about as much as on Chernarus. `pack.bat --vanilla-loot` keeps vanilla amounts
+- Farm utes fill any land more than 1 km from a vehicle (worst gap 1.7 km, now 1.06 km)
+- The world sets its own map name and textures, so a vanilla `ChernarusMap` shows Aotearoa too
+- Map labels use the location types DayZ's map styles (`Capital`, `City`, `Village`, `Local`)
+
+### Fixed
+- Trader site grid squares in `mission/mods/README.md` now count from the north, like the in-game map
 
 ## 0.4.0 - 2026-11-25
 
