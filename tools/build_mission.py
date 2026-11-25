@@ -362,7 +362,6 @@ def write_effect_area(h, land, pois, path):
 def write_gameplay_snippet(path):
     data = {
         "WorldsData": {
-            "objectSpawnersArr": ["aotearoa/towns_spawner.json", "aotearoa/pois_spawner.json"],
             "environmentMinTemps": MIN_TEMPS,
             "environmentMaxTemps": MAX_TEMPS,
         },
