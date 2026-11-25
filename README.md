@@ -281,7 +281,9 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
 
 Loot scales every item's `nominal` and `min` in `types.xml`. Vehicles scale the `Vehicle*` events in `events.xml`. Infected scale the `Infected*` events and `ZombieMaxCount` in `globals.xml`. Fine-tune any one with `--loot`, `--vehicles` or `--infected` and a factor, for example `pack.bat --difficulty hard --vehicles 1`.
 
-**Town name signs:** every road into a named town gets a green New Zealand place-name sign 20 m outside the town, on the left verge, with the town's Māori name below where it has one. There are 137 signs over 51 towns. The textures, config classes and positions are generated already. They need one model, `structures\sign_town\sign_town.p3d`, which you make from `docs/models/sign_town.obj` in a few minutes (see [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md), item 2). Until that file exists, `pack.bat` leaves the signs out and says so.
+**Road signs:** every road into a named town gets a green New Zealand place-name sign, with the Māori name below where the town has one. The map also has State Highway shields, 50 and 100 km/h signs at town edges, Give Way signs where side roads meet highways, and One Lane Bridge signs. That's 790 signs in all, each on the left verge facing its traffic. The textures, config classes and positions are generated already. They need two simple models, which you make from `docs/models/sign_town.obj` and `sign_post.obj` (see [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md), item 2). Until those exist, `pack.bat` leaves the signs out and says so.
+
+**Custom buildings:** `tools/make_models.py` writes enterable blockout models, ready to import into Object Builder, for a Kiwi bach, a DOC hut, a woolshed and a corner dairy, with their textures and config classes. See [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md).
 
 ![Town signs](preview/signs_sheet.png)
 

@@ -9,7 +9,7 @@ Sizes are in game metres. The map is about 60 times smaller than New Zealand, bu
 | # | Model | Why | Stand-in now | Size (L x W x H) |
 |---|---|---|---|---|
 | 1 | Lake water plane | Lakes have no water surface without it | `aotearoa_water_50` (missing) | 50 x 50 x 0 |
-| 2 | NZ road signs (set) | Instantly reads as New Zealand | none | 1 to 3 m tall |
+| 2 | NZ road signs (set) | Instantly reads as New Zealand | placed, textures done; 2 simple models to make | 1 to 3 m tall |
 | 3 | Kiwi bach | 14 bach clusters, holiday parks | `Land_House_1W0x` | 9 x 7 x 4.5 |
 | 4 | Woolshed | 70 farms | `Land_Barn_Metal_Big`, `Land_Farm_CowshedA` | 30 x 14 x 7 |
 | 5 | Corner dairy (shop) | Every town | `Land_City_Store` in some slots | 12 x 9 x 4.5 |
@@ -45,7 +45,7 @@ Follow the DayZ Samples on the P: drive (`P:\DZ\samples\` or the DayZ Tools "Sam
 - doors: `class AnimationSources` and `class Doors` entries copied from a vanilla house with the same door count.
 - loot: after the model is in, add loot points with the DayZ Tools economy editor, or copy a similar vanilla building's entry in `mapgroupproto.xml` and move the points.
 
-**Folders:** put each model in `P:\maps\aotearoa\structures\<name>\`. It is packed into the same PBO; `pack.bat` picks it up because it's under the map folder. Add `structures` to `PACKED` in `tools/pack_mod.py`.
+**Folders:** put each model in `P:\maps\aotearoa\structures\<name>\`. It is packed into the same PBO; `pack.bat` already packs `structures\`.
 
 ---
 
@@ -59,37 +59,43 @@ Follow the DayZ Samples on the P: drive (`P:\DZ\samples\` or the DayZ Tools "Sam
 
 ## 2. NZ road signs
 
-A small set of simple models, each a post with a sign face. Each needs Geometry and Fire Geometry, but no Roadway.
+**Done apart from two simple models.** `tools/signs.py`, which `build_mission.py` runs, already draws every texture, writes the config classes and places the signs:
 
-| Sign | Look |
-|---|---|
-| State Highway shield | Red shield, white border, white number. One model with a texture per number (1, 2, 3, 4, 5, 6, 7, 8, 27, 45, 57, 73, 83, 94) or a number decal. |
-| Place name | Green rectangle, white text: town name, plus the Māori name below where there is one. One texture per town, or a generic blank. |
-| Give Way | White inverted triangle with a red border |
-| 100 km/h and 50 km/h | White circle with a red ring |
-| Rural fire danger | Half-dial "Fire Danger Today", needle on high |
-| One Lane Bridge | Red-and-white rectangular sign |
+| Sign | Look | Where | Count |
+|---|---|---|---|
+| Place name | Green board, white town name, Māori name below | Every highway, gravel road and track into a named town, 20 m outside it | 136 over all 51 towns |
+| State Highway shield | Red shield, white number | Every 2 km along each highway, facing alternate ways, and just past each town for drivers leaving | 149 |
+| 50 km/h | White circle, red ring | Town edge, for drivers coming in | 117 |
+| 100 km/h | White circle, red ring | Town edge, for drivers leaving | 116 |
+| Give Way | White triangle, red border | Every side road where it meets a highway | 235 |
+| One Lane Bridge | Yellow diamond | Both ends of every back-road bridge and of the bridges on rural South Island highways (SH6, 7, 8, 63, 65, 73, 83, 94) | 37 |
 
-- **Placement (to add once they exist):** shields every 2 km on highways, Give Way at each street-to-highway join, One Lane Bridge at each bridge. `source/roads.json` has everything needed. A new function in `tools/details.py`, like `power_lines`, would write `roadsigns_tb.txt`.
+Every sign stands on the left verge (New Zealand drives on the left), faces the traffic it is for, and keeps clear of roads and buildings. `preview/signs_sheet.png` shows every face.
 
-### Place name signs (done apart from the model)
+Files:
+- `data/signs/sign_<Town>.png`: the place-name textures (1024 x 1024, face in the top half, grey back below).
+- `data/signs/post_<Sign>.png`: the other textures (512 x 1024 with alpha, face in the top half, the grey back with the same outline below).
+- `config/signs.hpp`: classes `Land_Aotearoa_Sign_<Town>` and `Land_Aotearoa_SignPost_<Sign>`, each setting `hiddenSelectionsTextures`.
+- `mission/dayzOffline.aotearoa/aotearoa/signs_spawner.json` and `roadsigns_spawner.json`: the positions.
 
-The place name sign is already built except for its `.p3d`. `tools/signs.py`, which `build_mission.py` runs, does the following:
+The signs are loaded with the object spawner, not placed in Terrain Builder, because a world object can't change its texture per copy. `pack.bat` converts the textures (`_co.paa` for the place names, `_ca.paa` with alpha for the rest). It adds each spawner to `cfggameplay.json` once its model exists, and until then prints a note and leaves those signs out.
 
-- Draws one texture per town in `data/signs/sign_<Town>.png`. The green face is the top half and plain grey is the bottom half. `preview/signs_sheet.png` shows them all.
-- Writes a config class per town to `config/signs.hpp` (included in `config.cpp`). Each class is `Land_Aotearoa_Sign_<Town>`, which inherits `Land_Aotearoa_Sign_Base` and sets `hiddenSelectionsTextures` to that town's texture.
-- Places a sign on every highway, gravel road and track where it enters a named town. A sign stands 20 m outside the edge, on the left verge, facing incoming traffic, and clear of roads and buildings. The signs go in `mission/dayzOffline.aotearoa/aotearoa/signs_spawner.json`: 137 signs over all 51 towns.
+**Making the two models.** `tools/make_models.py` writes the OBJ files.
 
-The signs are loaded with the object spawner, not placed in Terrain Builder, because a world object can't change its texture per copy. `pack.bat` converts the textures to `_co.paa`. Once the model exists, it also adds the spawner to `cfggameplay.json`. Until then it prints a note and leaves the signs out.
+| Model | OBJ | Save as |
+|---|---|---|
+| Place-name board, 2.4 x 1.2 m on two posts | `docs/models/sign_town.obj` | `P:\maps\aotearoa\structures\sign_town\sign_town.p3d` |
+| 1 m square cut-out sign on one post | `docs/models/sign_post.obj` | `P:\maps\aotearoa\structures\sign_post\sign_post.p3d` |
 
-**Making the model:**
+For each one:
 
-1. In Object Builder, use **File → Import → Wavefront OBJ** to import `docs/models/sign_town.obj`. It is a 2.4 × 1.2 m board, its bottom edge 1.1 m up, on two posts, with metres as units and y up.
-2. In LOD 0 (resolution), select the faces of the `camo` group and name the selection **`camo`**. Give every face the texture `maps\aotearoa\data\signs\sign_Wellington_co.paa` (any town works; the config swaps it). The UVs already map the face onto the top half and the back and posts onto the grey half.
-3. Add a **Geometry** LOD: one box around the board and posts, with mass (about 40 kg), so players and cars collide with it.
-4. Add a **Fire Geometry** LOD: a copy of the Geometry LOD.
-5. Save the model as `P:\maps\aotearoa\structures\sign_town\sign_town.p3d`.
-6. Check the facing. With yaw 0 the face should look north, which is +z in Object Builder's top view. If a test sign shows its back to the traffic, rotate the model 180° in Object Builder. If the text reads backwards, mirror the face UVs. No other file needs changing.
+1. In Object Builder, use **File → Import → Wavefront OBJ** to import the OBJ into LOD 0 (resolution). Units are metres and y is up.
+2. Select the faces of the `camo` group and name the selection **`camo`**. For the place-name board, the `back` and `posts` faces use the same texture.
+3. Give the faces any texture of the right kind. For the board use `maps\aotearoa\data\signs\sign_Wellington_co.paa`. For the post sign use `maps\aotearoa\data\signs\post_SH1_ca.paa`, with an alpha-tested material (copy a vanilla fence or foliage rvmat) so the shield, circle, triangle and diamond outlines are cut out. The config swaps the texture per sign, and the UVs are already set.
+4. Import `docs/models/<name>_geometry.obj` into a new **Geometry** LOD. Each group is one convex component, so name them `Component01`, `Component02` and so on. Give the LOD a mass (about 40 kg).
+5. Copy the Geometry LOD to a **Fire Geometry** LOD.
+6. Save to the path in the table.
+7. Check the facing. With yaw 0 the face should look north, which is +z in Object Builder's top view. If a test sign shows its back to the traffic, rotate the model 180°. If the text reads backwards, mirror the face UVs. No other file needs changing.
 
 ## 3. Kiwi bach
 
@@ -97,6 +103,7 @@ The signs are loaded with the object spawner, not placed in Terrain Builder, bec
 - 2 rooms plus a bathroom, 2 doors.
 - Colours: faded pastel paint (mint, cream, sky blue), rusty roof.
 - **Swap in:** in `tools/pois.py`, `place_baches` picks from `towns_mod.HOUSES`; use `Land_Aotearoa_Bach` there, and also in the holiday parks.
+- **Starting model:** `docs/models/bach.obj` (with `_geometry.obj` and `_roadway.obj`) is a ready blockout with open doorways, at the size above. Import it as in [Building models from the OBJ files](#building-models-from-the-obj-files), then add detail. Class: `Land_Aotearoa_Bach`. Render: `preview/models_bach.png`.
 
 ## 4. Woolshed
 
@@ -104,18 +111,21 @@ The signs are loaded with the object spawner, not placed in Terrain Builder, bec
 - Inside: a slatted shearing board, holding pens and a wool press (props can be simple boxes).
 - 2 to 3 big doors.
 - **Swap in:** in `tools/pois.py`, `place_farms` chooses between barn and cowshed; add the woolshed as a third choice, more common in the South Island.
+- **Starting model:** `docs/models/woolshed.obj` (with `_geometry.obj` and `_roadway.obj`) is a ready blockout with open doorways, at the size above. Import it as in [Building models from the OBJ files](#building-models-from-the-obj-files), then add detail. Class: `Land_Aotearoa_Woolshed`. Render: `preview/models_woolshed.png`.
 
 ## 5. Corner dairy
 
 - A small single-storey shop with a flat roof and a parapet, a big front window, a striped awning, an ice-cream sign board out front, and a flat behind.
 - Inside: shelves and a counter. This is a good food and drink loot spot.
 - **Swap in:** add to `SPECIALS` for `town` and `village` in `tools/towns.py`.
+- **Starting model:** `docs/models/dairy.obj` (with `_geometry.obj` and `_roadway.obj`) is a ready blockout with open doorways, at the size above. Import it as in [Building models from the OBJ files](#building-models-from-the-obj-files), then add detail. Class: `Land_Aotearoa_Dairy`. Render: `preview/models_dairy.png`.
 
 ## 6. DOC hut
 
 - A tramping hut: corrugated iron, painted orange or green, with a small veranda, a water tank on a stand, and an intentions book box by the door.
 - Inside: bunks for 6 and a wood stove (the chimney gives off smoke if you add a particle effect).
 - **Swap in:** in `tools/pois.py`, `place_huts` uses `HOUSES[0]`; change it to the hut.
+- **Starting model:** `docs/models/doc_hut.obj` (with `_geometry.obj` and `_roadway.obj`) is a ready blockout with open doorways, at the size above. Import it as in [Building models from the OBJ files](#building-models-from-the-obj-files), then add detail. Class: `Land_Aotearoa_DocHut`. Render: `preview/models_doc_hut.png`.
 
 ## 7. Hobbit hole
 
@@ -153,6 +163,22 @@ The signs are loaded with the object spawner, not placed in Terrain Builder, bec
 - **Swap in:** in `LANDMARK_LAYOUTS["hotel"]` in `tools/pois.py`, replace `Land_Tenement_Big`.
 
 ---
+
+## Building models from the OBJ files
+
+`tools/make_models.py` writes blockout models for the bach, DOC hut, woolshed and corner dairy. Each is a complete, enterable building with open doorways (no doors, so it needs no `model.cfg` or memory points), textured with tiling textures it also generates in `data/models/`. They are simple, a few hundred triangles each. You can use them as they are to get New Zealand buildings in game, or as a correctly sized base to model over.
+
+For each building:
+
+1. **LOD 0 (resolution):** import `docs/models/<name>.obj`. The groups (walls, roof, floor, deck and so on) become named selections. Faces carry their texture from the `.mtl` file. If Object Builder drops the textures, set them from the group names: `maps\aotearoa\data\models\<texture>_co.paa`.
+2. **Geometry:** import `<name>_geometry.obj` into a new Geometry LOD. Each group is one closed convex box. Name them `Component01` and up, set the mass (10,000 for a house), and add the named property `class` = `house`.
+3. **Fire Geometry** and **View Geometry:** copies of the Geometry LOD.
+4. **Roadway:** import `<name>_roadway.obj`, which holds the floors, deck, veranda, steps, bunks and ramp.
+5. **Land Contact:** one point at each corner of the footprint at y = 0.
+6. Save as `P:\maps\aotearoa\structures\<name>\<name>.p3d`. `config/structures.hpp` (included in `config.cpp`) already has its class, `Land_Aotearoa_<Name>`, and `pack.bat` packs `structures\` and converts the textures.
+7. Add the model to your Terrain Builder template library. Then swap it in using the **Swap in** note under the building above, and regenerate.
+
+Run `python tools/make_models.py` again after changing a model in the script. It rewrites the OBJ files, textures, config and renders.
 
 ## Cultural note
 

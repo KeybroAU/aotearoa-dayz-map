@@ -5,7 +5,8 @@ Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/m
 ## Unreleased
 
 ### Added
-- Town name signs on every road into a town: 137 green signs over 51 towns, with Māori names where they exist. Textures, config and positions are generated; the one sign model is made from `docs/models/sign_town.obj`
+- Road signs: green place-name signs on every road into a town (with Māori names), State Highway shields, 50 and 100 km/h signs, Give Way and One Lane Bridge signs. That's 790 signs, generated with their textures and config; two simple sign models are made from `docs/models/`
+- Ready-to-import blockout models for a Kiwi bach, DOC hut, woolshed and corner dairy (`tools/make_models.py`), with tiling textures and config classes
 
 ## 0.3.0 - 2026-11-25
 
