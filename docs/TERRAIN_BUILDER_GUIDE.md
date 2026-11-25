@@ -235,6 +235,8 @@ The textures in `RoadsLib.cfg` are placeholders that point at `DZ\structures\roa
 
 > Check: `P:\maps\aotearoa\data\layers` fills with `s_*.paa` (satellite), `m_*.paa` (mask) and `p_*.rvmat` files.
 
+**"Rvmat conf - LayerRvmatCFG.cpp ... Source file cannot be opened" error.** A material in `layers.cfg` isn't on your P: drive. Check that `P:\DZ\surfaces\data\terrain\` exists and holds the `cp_*.rvmat` files (if the folder is missing, run **Extract Game Data** in DayZ Tools → Tools/P: drive setup). If one file is still missing, swap that line for another `cp_*.rvmat` in that folder, then reload the layers config in the mapframe's **Processing** tab.
+
 **"Too many surfaces on tile" error.** Each 512 px tile can mix only a few surface types, and this map has nine. Fix it by merging similar layers in `layers.cfg` and the mask, in this order until the error goes away:
 1. farmland into pasture
 2. pine into bush

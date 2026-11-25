@@ -444,15 +444,15 @@ def volcano_mask(volcanoes, h: np.ndarray) -> np.ndarray:
 # name, rgb, DayZ surface material. Material paths match the vanilla DZ\surfaces\data\terrain set;
 # confirm against P:\DZ\surfaces\data\terrain before building.
 SURFACES = [
-    ("beach", (255, 230, 140), r"DZ\surfaces\data\terrain\sa_beach.rvmat"),
+    ("beach", (255, 230, 140), r"DZ\surfaces\data\terrain\cp_gravel.rvmat"),
     ("pasture", (120, 190, 60), r"DZ\surfaces\data\terrain\cp_grass.rvmat"),
     ("farmland", (200, 200, 90), r"DZ\surfaces\data\terrain\cp_grass_tall.rvmat"),
     ("bush", (20, 90, 30), r"DZ\surfaces\data\terrain\cp_broadleaf_dense1.rvmat"),
     ("pine", (60, 110, 70), r"DZ\surfaces\data\terrain\cp_conifer_common1.rvmat"),
-    ("tussock", (190, 160, 80), r"DZ\surfaces\data\terrain\sa_grass_brown.rvmat"),
+    ("tussock", (190, 160, 80), r"DZ\surfaces\data\terrain\cp_grass_tall.rvmat"),
     ("scree", (150, 150, 150), r"DZ\surfaces\data\terrain\cp_gravel.rvmat"),
     ("rock", (90, 80, 75), r"DZ\surfaces\data\terrain\cp_rock.rvmat"),
-    ("volcanic", (120, 60, 50), r"DZ\surfaces\data\terrain\sa_volcanic_red.rvmat"),
+    ("volcanic", (120, 60, 50), r"DZ\surfaces\data\terrain\cp_dirt.rvmat"),
 ]
 SURFACE_INDEX = {name: i for i, (name, _, _) in enumerate(SURFACES)}
 
