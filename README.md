@@ -1,3 +1,5 @@
+![Aotearoa, designed by Keybro](.github/banner.png)
+
 # Aotearoa (DayZ terrain)
 
 Designed by Keybro, [Keybrogaming.com](https://keybrogaming.com).
@@ -455,6 +457,8 @@ Give it to new players by adding `AotearoaMap` to a starting gear preset, or sel
 `workshop/` holds what to paste into the Workshop page:
 - `preview.jpg`: the 1024 x 1024 preview image, with the watermark. `python tools/make_branding.py` rebuilds it.
 - `description.txt`: the description in Steam's BBCode, with the [Discord](https://discord.gg/FpsDrBTaX3) link and the note that the mod may not be repacked or included in server packs without permission.
+
+`.github/banner.png` is the 1280 x 640 GitHub banner at the top of this README; upload it under Settings > General > Social preview so links to the repo show it.
 
 In DayZ Tools Publisher, point the preview at `workshop\preview.jpg`, then paste `description.txt` into the Workshop page's description.
 

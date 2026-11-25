@@ -6,7 +6,8 @@ Writes data/branding/: logo_512.png, icon_128.png, icon_64.png (with alpha), loa
 loading_2.jpg (2048 x 1024, logo, strapline and the "Designed by Keybro" / Keybrogaming.com
 watermark added) and map_picture.jpg (the satellite preview with the logo and Keybrogaming.com). Convert them to .paa with ImageToPAA from DayZ Tools; see the README.
 
-Also writes workshop/preview.jpg, the 1024 x 1024 Steam Workshop image (Steam wants a square under 1 MB).
+Also writes workshop/preview.jpg, the 1024 x 1024 Steam Workshop image (Steam wants a square under 1 MB), and
+.github/banner.png, the 1280 x 640 GitHub banner (README header and the repo's social preview).
 """
 
 from __future__ import annotations
@@ -21,6 +22,7 @@ MAP_DIR = Path(__file__).resolve().parents[1]
 OUT = MAP_DIR / "data" / "branding"
 ART = OUT / "art"
 WORKSHOP = MAP_DIR / "workshop"
+BANNER = MAP_DIR / ".github" / "banner.png"
 STRAPLINE = "A New Zealand survival terrain"
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
@@ -53,7 +55,8 @@ def main() -> None:
     sat = watermark.stamp(sat, [watermark.SITE], 26)
     sat.save(OUT / "map_picture.jpg", quality=88)
     workshop(logo)
-    print(f"Wrote {OUT} and {WORKSHOP}")
+    banner(logo)
+    print(f"Wrote {OUT}, {WORKSHOP} and {BANNER}")
 
 
 def workshop(logo: Image.Image, size: int = 1024) -> None:
@@ -83,6 +86,38 @@ def workshop(logo: Image.Image, size: int = 1024) -> None:
     im = watermark.stamp(im, [watermark.CREDIT, watermark.SITE], 40, margin=40, opacity=200)
     WORKSHOP.mkdir(exist_ok=True)
     im.save(WORKSHOP / "preview.jpg", quality=90, optimize=True)
+
+
+def banner(logo: Image.Image, w: int = 1280, h: int = 640) -> None:
+    """Loading-screen art with the logo, title and a large "Designed by Keybro", the satellite map on the right."""
+    art = Image.open(ART / "loading_2.jpg").convert("RGB")
+    scale = max(w / art.size[0], h / art.size[1])
+    art = art.resize((int(art.size[0] * scale) + 1, int(art.size[1] * scale) + 1), Image.LANCZOS)
+    left, top = (art.size[0] - w) // 2, (art.size[1] - h) // 2
+    im = art.crop((left, top, left + w, top + h)).filter(ImageFilter.GaussianBlur(2))
+    shade = Image.linear_gradient("L").rotate(90).resize((w, h)).point(lambda v: 60 + v * 0.6)
+    im = Image.composite(Image.new("RGB", im.size, (8, 12, 10)), im, shade)
+
+    sat = Image.open(MAP_DIR / "preview" / "satellite_2048.png").convert("RGB").resize((470, 470), Image.LANCZOS)
+    frame = Image.new("RGB", (sat.size[0] + 8, sat.size[1] + 8), (235, 232, 220))
+    frame.paste(sat, (4, 4))
+    im.paste(frame, (w - frame.size[0] - 56, (h - frame.size[1]) // 2))
+    badge = logo.resize((210, 210), Image.LANCZOS)
+    im.paste(badge, (56, 48), badge)
+
+    d = ImageDraw.Draw(im)
+    bold = lambda s: ImageFont.truetype(FONT, s) if Path(FONT).exists() else ImageFont.load_default()
+    regular = lambda s: (ImageFont.truetype(watermark.FONT, s) if Path(watermark.FONT).exists()
+                         else ImageFont.load_default())
+    ink, edge = (245, 242, 232), (0, 0, 0)
+    d.text((60, 290), "AOTEAROA", font=bold(96), fill=ink, stroke_width=4, stroke_fill=edge)
+    d.text((64, 410), "A New Zealand survival terrain for DayZ", font=bold(27), fill=(225, 228, 215),
+           stroke_width=2, stroke_fill=edge)
+    d.line([(64, 470), (560, 470)], fill=(200, 170, 100), width=3)
+    d.text((64, 490), watermark.CREDIT, font=bold(46), fill=ink, stroke_width=3, stroke_fill=edge)
+    d.text((66, 552), watermark.SITE, font=regular(30), fill=(200, 210, 190), stroke_width=2, stroke_fill=edge)
+    BANNER.parent.mkdir(exist_ok=True)
+    im.save(BANNER, optimize=True)
 
 
 if __name__ == "__main__":

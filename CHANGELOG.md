@@ -7,6 +7,7 @@ Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/m
 ### Added
 - "Designed by Keybro" and Keybrogaming.com in the corner of the in-game map screen on Aotearoa (`scripts/5_Mission/AotearoaMapMenu.c`, `gui/layouts/aotearoa_map_watermark.layout`)
 - Steam Workshop preview image and description (`workshop/`), with the Discord link and the no-repack notice
+- GitHub banner with "Designed by Keybro" and Keybrogaming.com (`.github/banner.png`), in the README and for the repo's social preview
 - Commits, pull requests and releases post to Discord (`.github/workflows/discord.yml`, secret `DISCORD_WEBHOOK`)
 
 ## 0.6.1 - 2026-11-25
