@@ -96,6 +96,7 @@ LANDMARKS = [
     ("GoodShepherd", "Church of the Good Shepherd", -44.0047, 170.4772, "church"),
     ("MoerakiBoulders", "Moeraki Boulders", -45.3453, 170.8283, "boulders"),
     ("StirlingPoint", "Stirling Point", -46.6145, 168.3589, "signpost"),
+    ("RakaiaHuts", "Rakaia Huts", -43.8990, 172.2120, "fishing_huts"),
 ]
 # Pad size, then (class, along, across, quarter turns) for each building. The Chateau is a
 # tenement until there is a custom model.
@@ -108,7 +109,16 @@ LANDMARK_LAYOUTS = {
     "church": ((30.0, 30.0), [("Land_Church3", 0.0, 4.0, 0)]),
     "boulders": ((40.0, 30.0), [("Land_Shed_W4", -12.0, 8.0, 0)]),
     "signpost": ((30.0, 25.0), [("Land_House_1W02", -6.0, 5.0, 0), ("Land_Shed_W4", 9.0, 5.0, 0)]),
+    # Salmon fishing huts and baches in two rows along a gravel lane, with boat sheds.
+    "fishing_huts": ((100.0, 56.0), [("Land_House_1W01", -40.0, 14.0, 0), ("Land_House_1W04", -24.0, 14.0, 0),
+                                     ("Land_House_1W02", -8.0, 14.0, 0), ("Land_House_1W06", 8.0, 14.0, 0),
+                                     ("Land_House_1W05", 25.0, 14.0, 0), ("Land_House_1W01", 41.0, 14.0, 0),
+                                     ("Land_House_1W03", -32.0, -12.0, 2), ("Land_House_1W02", -14.0, -12.0, 2),
+                                     ("Land_House_1W06", 4.0, -12.0, 2), ("Land_Shed_W4", 20.0, -14.0, 0),
+                                     ("Land_Shed_W4", 30.0, -14.0, 0), ("Land_Shed_W4", 40.0, -14.0, 0)]),
 }
+# Landmark layouts that are really small settlements, and the site kind they count as for loot and infected.
+LANDMARK_KINDS = {"fishing_huts": "bach"}
 BOULDERS = ["r2_boulder1", "r2_boulder2"]
 
 WHAKAARI = ("Whakaari", "Whakaari / White Island", -37.52, 177.18)
@@ -421,11 +431,14 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
             continue
         x, y, hd = spot
         h = flatten_rect(h, land, grid, x, y, hd, length, width, blend=20.0, max_grade=0.05)
-        site = Site("landmark", cls, label, x, y, max(length, width) / 2, hd, "NameLocal")
+        site = Site(LANDMARK_KINDS.get(layout, "landmark"), cls, label, x, y, max(length, width) / 2, hd, "NameLocal")
         for b_cls, along, across, turn in parts:
             site.buildings.append(Building(b_cls, *local_to_world(x, y, hd, along, across), (hd + 90.0 * turn) % 360))
-        site.surfaces.append({"kind": "gravel",
-                              "points": rect_points(x, y, hd, length * 0.6, 8.0, 0.0, -width / 2 + 6.0)})
+        if layout == "fishing_huts":
+            site.surfaces.append({"kind": "gravel", "points": rect_points(x, y, hd, length * 0.95, 6.0, 0.0, 1.0)})
+        else:
+            site.surfaces.append({"kind": "gravel",
+                                  "points": rect_points(x, y, hd, length * 0.6, 8.0, 0.0, -width / 2 + 6.0)})
         if layout == "boulders":
             site.extra["props"] = [(str(rng.choice(BOULDERS)), *local_to_world(x, y, hd, float(rng.uniform(-60, 60)),
                                                                               float(rng.uniform(-40, -20))),

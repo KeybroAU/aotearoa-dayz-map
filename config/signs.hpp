@@ -137,6 +137,10 @@ class Land_Aotearoa_Sign_Queenstown: Land_Aotearoa_Sign_Base
 {
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\signs\sign_Queenstown_co.paa"};
 };
+class Land_Aotearoa_Sign_Rakaia: Land_Aotearoa_Sign_Base
+{
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\signs\sign_Rakaia_co.paa"};
+};
 class Land_Aotearoa_Sign_RnzafBaseOhakea: Land_Aotearoa_Sign_Base
 {
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\signs\sign_RnzafBaseOhakea_co.paa"};

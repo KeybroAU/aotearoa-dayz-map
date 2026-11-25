@@ -8,15 +8,15 @@
     },
     {
         "SafeZoneStatut": "Central Plateau Trading Post",
-        "X": 20428.12,
-        "Y": 16771.88,
+        "X": 20528.12,
+        "Y": 16921.88,
         "Radius": 150.0,
         "Countdown": 30
     },
     {
         "SafeZoneStatut": "Rakaia Trading Post",
-        "X": 11878.12,
-        "Y": 7521.88,
+        "X": 11253.12,
+        "Y": 7671.88,
         "Radius": 150.0,
         "Countdown": 30
     }

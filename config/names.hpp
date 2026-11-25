@@ -262,6 +262,15 @@ class Names
 		radiusB = 165;
 		angle = 0;
 	};
+	class Rakaia
+	{
+		name = "Rakaia";
+		position[] = {11903.1, 7590.6};
+		type = "NameVillage";
+		radiusA = 90;
+		radiusB = 90;
+		angle = 0;
+	};
 	class Ashburton
 	{
 		name = "Ashburton / Hakatere";
@@ -481,7 +490,7 @@ class Names
 	class ChristchurchAirport
 	{
 		name = "Christchurch Airport";
-		position[] = {12534.3, 8347.0};
+		position[] = {12654.3, 8587.0};
 		type = "NameLocal";
 		radiusA = 470;
 		radiusB = 470;
@@ -580,7 +589,7 @@ class Names
 	class PortofTimaru
 	{
 		name = "Port of Timaru";
-		position[] = {10673.1, 6594.4};
+		position[] = {10103.1, 5484.4};
 		type = "NameLocal";
 		radiusA = 65;
 		radiusB = 65;
@@ -782,6 +791,15 @@ class Names
 		type = "NameLocal";
 		radiusA = 15;
 		radiusB = 15;
+		angle = 0;
+	};
+	class RakaiaHuts
+	{
+		name = "Rakaia Huts";
+		position[] = {12202.6, 7230.0};
+		type = "NameLocal";
+		radiusA = 50;
+		radiusB = 50;
 		angle = 0;
 	};
 	class Hobbiton

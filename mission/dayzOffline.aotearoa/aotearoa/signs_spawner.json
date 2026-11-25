@@ -123,12 +123,12 @@
   {
    "name": "Land_Aotearoa_Sign_Hamilton",
    "pos": [
-    18526.82,
-    7.821,
-    18291.32
+    18476.86,
+    5.794,
+    18218.3
    ],
    "ypr": [
-    78.9,
+    147.7,
     0.0,
     0.0
    ],
@@ -138,12 +138,12 @@
   {
    "name": "Land_Aotearoa_Sign_Cambridge",
    "pos": [
-    18479.6,
-    4.651,
-    18306.6
+    18458.62,
+    4.711,
+    18247.71
    ],
    "ypr": [
-    306.9,
+    311.3,
     0.0,
     0.0
    ],
@@ -153,12 +153,12 @@
   {
    "name": "Land_Aotearoa_Sign_Cambridge",
    "pos": [
-    18507.48,
-    9.792,
-    18049.13
+    18498.92,
+    9.107,
+    18059.52
    ],
    "ypr": [
-    219.3,
+    225.0,
     0.0,
     0.0
    ],
@@ -168,12 +168,12 @@
   {
    "name": "Land_Aotearoa_Sign_TeAwamutu",
    "pos": [
-    18498.17,
-    9.6,
-    18007.41
+    18485.96,
+    8.64,
+    18024.96
    ],
    "ypr": [
-    31.0,
+    43.2,
     0.0,
     0.0
    ],
@@ -183,12 +183,12 @@
   {
    "name": "Land_Aotearoa_Sign_TeAwamutu",
    "pos": [
-    18499.99,
-    15.384,
-    17846.56
+    18503.08,
+    15.06,
+    17861.77
    ],
    "ypr": [
-    129.9,
+    133.8,
     0.0,
     0.0
    ],
@@ -199,7 +199,7 @@
    "name": "Land_Aotearoa_Sign_Taupo",
    "pos": [
     19550.76,
-    115.717,
+    115.744,
     16842.15
    ],
    "ypr": [
@@ -274,7 +274,7 @@
    "name": "Land_Aotearoa_Sign_Wellington",
    "pos": [
     17448.1,
-    7.223,
+    7.248,
     12338.25
    ],
    "ypr": [
@@ -349,7 +349,7 @@
    "name": "Land_Aotearoa_Sign_Kaikoura",
    "pos": [
     14885.59,
-    5.227,
+    5.226,
     9895.29
    ],
    "ypr": [
@@ -364,7 +364,7 @@
    "name": "Land_Aotearoa_Sign_Christchurch",
    "pos": [
     13087.83,
-    15.842,
+    0.856,
     8182.14
    ],
    "ypr": [
@@ -406,14 +406,14 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Aotearoa_Sign_Ashburton",
+   "name": "Land_Aotearoa_Sign_BurnhamMilitaryCamp",
    "pos": [
-    11444.71,
-    8.372,
-    7060.03
+    12182.59,
+    16.664,
+    7630.06
    ],
    "ypr": [
-    94.5,
+    269.0,
     0.0,
     0.0
    ],
@@ -421,14 +421,29 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Aotearoa_Sign_BurnhamMilitaryCamp",
+   "name": "Land_Aotearoa_Sign_Rakaia",
    "pos": [
-    12283.6,
-    6.54,
-    7510.54
+    11778.48,
+    34.904,
+    7541.9
    ],
    "ypr": [
-    222.0,
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_Sign_Ashburton",
+   "pos": [
+    11394.77,
+    27.853,
+    7290.4
+   ],
+   "ypr": [
+    45.2,
     0.0,
     0.0
    ],
@@ -453,12 +468,12 @@
   {
    "name": "Land_Aotearoa_Sign_Ashburton",
    "pos": [
-    11097.56,
-    9.647,
-    6990.37
+    11101.53,
+    9.887,
+    6989.86
    ],
    "ypr": [
-    224.3,
+    227.7,
     0.0,
     0.0
    ],
@@ -544,7 +559,7 @@
    "name": "Land_Aotearoa_Sign_Invercargill",
    "pos": [
     4821.9,
-    3.663,
+    3.67,
     2583.1
    ],
    "ypr": [
@@ -558,12 +573,12 @@
   {
    "name": "Land_Aotearoa_Sign_Gore",
    "pos": [
-    5605.14,
-    24.113,
-    3015.61
+    5605.6,
+    24.148,
+    3016.2
    ],
    "ypr": [
-    223.6,
+    225.0,
     0.0,
     0.0
    ],
@@ -633,12 +648,12 @@
   {
    "name": "Land_Aotearoa_Sign_Whakatane",
    "pos": [
-    21335.09,
-    4.218,
-    18098.29
+    21335.89,
+    4.305,
+    18098.0
    ],
    "ypr": [
-    269.2,
+    272.6,
     0.0,
     0.0
    ],
@@ -648,12 +663,12 @@
   {
    "name": "Land_Aotearoa_Sign_Whakatane",
    "pos": [
-    21745.9,
-    3.514,
-    18020.81
+    21738.4,
+    3.845,
+    18005.91
    ],
    "ypr": [
-    93.1,
+    102.7,
     0.0,
     0.0
    ],
@@ -768,9 +783,9 @@
   {
    "name": "Land_Aotearoa_Sign_TeAwamutu",
    "pos": [
-    18320.87,
-    4.069,
-    18118.81
+    18319.29,
+    4.045,
+    18120.04
    ],
    "ypr": [
     37.9,
@@ -783,12 +798,12 @@
   {
    "name": "Land_Aotearoa_Sign_TeAwamutu",
    "pos": [
-    18162.04,
-    12.917,
-    17756.45
+    18164.43,
+    12.962,
+    17756.59
    ],
    "ypr": [
-    206.6,
+    221.3,
     0.0,
     0.0
    ],
@@ -813,12 +828,12 @@
   {
    "name": "Land_Aotearoa_Sign_Stratford",
    "pos": [
-    16354.97,
-    58.007,
-    15726.64
+    16355.99,
+    57.853,
+    15726.94
    ],
    "ypr": [
-    49.8,
+    46.4,
     0.0,
     0.0
    ],
@@ -918,12 +933,12 @@
   {
    "name": "Land_Aotearoa_Sign_Opunake",
    "pos": [
-    15321.33,
-    4.423,
-    15476.78
+    15336.61,
+    5.031,
+    15485.68
    ],
    "ypr": [
-    315.0,
+    320.6,
     0.0,
     0.0
    ],
@@ -934,7 +949,7 @@
    "name": "Land_Aotearoa_Sign_Hawera",
    "pos": [
     16023.72,
-    1.858,
+    1.859,
     15116.9
    ],
    "ypr": [
@@ -948,12 +963,12 @@
   {
    "name": "Land_Aotearoa_Sign_Opunake",
    "pos": [
-    15528.35,
-    3.579,
-    15247.75
+    15533.92,
+    4.097,
+    15254.92
    ],
    "ypr": [
-    132.3,
+    131.9,
     0.0,
     0.0
    ],
@@ -1039,7 +1054,7 @@
    "name": "Land_Aotearoa_Sign_Rotorua",
    "pos": [
     20147.44,
-    108.17,
+    108.202,
     17519.91
    ],
    "ypr": [
@@ -1054,7 +1069,7 @@
    "name": "Land_Aotearoa_Sign_Taupo",
    "pos": [
     19944.5,
-    106.824,
+    106.752,
     16826.9
    ],
    "ypr": [
@@ -1398,12 +1413,12 @@
   {
    "name": "Land_Aotearoa_Sign_Twizel",
    "pos": [
-    8143.82,
-    134.177,
-    6569.24
+    8149.26,
+    133.293,
+    6563.65
    ],
    "ypr": [
-    58.1,
+    45.0,
     0.0,
     0.0
    ],
@@ -1414,7 +1429,7 @@
    "name": "Land_Aotearoa_Sign_Wanaka",
    "pos": [
     6225.56,
-    127.127,
+    127.121,
     5766.86
    ],
    "ypr": [
@@ -1428,12 +1443,12 @@
   {
    "name": "Land_Aotearoa_Sign_Twizel",
    "pos": [
-    7885.17,
-    150.73,
-    6395.02
+    7880.87,
+    150.681,
+    6400.59
    ],
    "ypr": [
-    225.9,
+    220.2,
     0.0,
     0.0
    ],
@@ -1443,12 +1458,12 @@
   {
    "name": "Land_Aotearoa_Sign_Gore",
    "pos": [
-    5894.35,
-    33.242,
-    3126.36
+    5892.27,
+    32.393,
+    3130.91
    ],
    "ypr": [
-    77.2,
+    80.2,
     0.0,
     0.0
    ],
@@ -1548,12 +1563,12 @@
   {
    "name": "Land_Aotearoa_Sign_BurnhamMilitaryCamp",
    "pos": [
-    12194.54,
-    23.718,
-    7761.8
+    12312.85,
+    24.852,
+    7854.16
    ],
    "ypr": [
-    312.3,
+    20.4,
     0.0,
     0.0
    ],
@@ -1593,12 +1608,42 @@
   {
    "name": "Land_Aotearoa_Sign_Whakatane",
    "pos": [
-    21455.46,
-    15.755,
-    17908.7
+    21443.79,
+    15.849,
+    17915.48
    ],
    "ypr": [
-    226.0,
+    223.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_Sign_Cambridge",
+   "pos": [
+    18868.65,
+    25.626,
+    18172.92
+   ],
+   "ypr": [
+    94.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_Sign_Matamata",
+   "pos": [
+    19024.94,
+    11.896,
+    18214.71
+   ],
+   "ypr": [
+    224.8,
     0.0,
     0.0
    ],
@@ -1611,6 +1656,21 @@
     4566.4,
     2.939,
     2260.54
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_Sign_BurnhamMilitaryCamp",
+   "pos": [
+    12297.6,
+    5.405,
+    7501.75
    ],
    "ypr": [
     180.0,
@@ -1861,44 +1921,14 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Aotearoa_Sign_TeAnau",
-   "pos": [
-    3217.93,
-    66.188,
-    4251.35
-   ],
-   "ypr": [
-    234.4,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Aotearoa_Sign_Thames",
-   "pos": [
-    18694.03,
-    3.742,
-    19783.24
-   ],
-   "ypr": [
-    338.8,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
    "name": "Land_Aotearoa_Sign_LintonArmyCamp",
    "pos": [
-    18808.77,
-    95.072,
-    13182.74
+    18808.35,
+    94.985,
+    13183.29
    ],
    "ypr": [
-    174.3,
+    174.7,
     0.0,
     0.0
    ],
@@ -1906,86 +1936,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Aotearoa_Sign_Hastings",
+   "name": "Land_Aotearoa_Sign_Rakaia",
    "pos": [
-    21245.3,
-    24.396,
-    14688.34
-   ],
-   "ypr": [
-    197.1,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Aotearoa_Sign_Whangarei",
-   "pos": [
-    16142.56,
-    12.291,
-    22037.28
-   ],
-   "ypr": [
-    253.7,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Aotearoa_Sign_Cambridge",
-   "pos": [
-    18870.71,
-    25.821,
-    18185.13
-   ],
-   "ypr": [
-    91.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Aotearoa_Sign_Kaitaia",
-   "pos": [
-    14221.57,
-    18.639,
-    23190.93
-   ],
-   "ypr": [
-    186.8,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Aotearoa_Sign_Ashburton",
-   "pos": [
-    11036.22,
-    20.022,
-    7119.61
-   ],
-   "ypr": [
-    254.7,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Aotearoa_Sign_Ashburton",
-   "pos": [
-    11140.0,
-    31.995,
-    7324.02
+    11810.52,
+    40.79,
+    7691.21
    ],
    "ypr": [
     314.7,
@@ -1996,14 +1951,14 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Aotearoa_Sign_Gore",
+   "name": "Land_Aotearoa_Sign_Oamaru",
    "pos": [
-    5586.36,
-    28.821,
-    3098.41
+    9525.17,
+    9.083,
+    5026.71
    ],
    "ypr": [
-    292.7,
+    312.6,
     0.0,
     0.0
    ],
@@ -2011,14 +1966,14 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Aotearoa_Sign_Timaru",
+   "name": "Land_Aotearoa_Sign_Paihia",
    "pos": [
-    10179.49,
-    7.199,
-    6434.87
+    15797.66,
+    4.338,
+    22887.81
    ],
    "ypr": [
-    318.1,
+    181.9,
     0.0,
     0.0
    ],
@@ -2026,14 +1981,59 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Aotearoa_Sign_Huntly",
+   "name": "Land_Aotearoa_Sign_Rakaia",
    "pos": [
-    18108.47,
-    5.756,
-    18841.35
+    11994.77,
+    21.062,
+    7491.17
    ],
    "ypr": [
-    88.3,
+    134.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_Sign_Kaitaia",
+   "pos": [
+    14197.6,
+    16.947,
+    23192.64
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_Sign_Picton",
+   "pos": [
+    15760.04,
+    9.923,
+    12090.48
+   ],
+   "ypr": [
+    38.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_Sign_RnzafBaseOhakea",
+   "pos": [
+    18596.72,
+    8.454,
+    13961.07
+   ],
+   "ypr": [
+    75.5,
     0.0,
     0.0
    ],

@@ -30,6 +30,7 @@ SITE_SYMBOL = {
     "hobbiton": ((250, 200, 0), "●"), "landmark": ((255, 255, 255), "★"), "whakaari": ((200, 40, 40), "☢"),
     "surfclub": ((255, 220, 0), "●"), "campground": ((60, 160, 60), "▲"),
 }
+NAMED_SETTLEMENT = ((235, 225, 200), "●")  # named bach and fishing settlements such as Rakaia Huts
 
 
 def font(path, size):
@@ -39,21 +40,36 @@ def font(path, size):
         return ImageFont.load_default()
 
 
+def find_satellite(given: Path | None = None) -> Path:
+    if given:
+        return given
+    best = max(SOURCE.glob("satellite_*.png"), key=lambda p: p.stat().st_size, default=None)
+    return best or PREVIEW / "satellite_2048.png"
+
+
+def load_towns() -> list[dict]:
+    with (SOURCE / "towns.csv").open(encoding="utf-8") as f:
+        return [t for t in csv.DictReader(f) if t["tier"] != "hamlet"]
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--size", type=int, default=4096)
     ap.add_argument("--satellite", type=Path)
     args = ap.parse_args()
     Image.MAX_IMAGE_PIXELS = None
+    img = render(Image.open(find_satellite(args.satellite)), args.size)
+    out = PREVIEW / f"player_map_{args.size}.jpg"
+    img.save(out, quality=88)
+    print(f"Wrote {out}")
 
-    meta = json.loads((SOURCE / "heightmap.json").read_text())
-    size_m = meta["terrain_size_m"]
-    sat_path = args.satellite or max(SOURCE.glob("satellite_*.png"), key=lambda p: p.stat().st_size, default=None)
-    if sat_path is None:
-        sat_path = PREVIEW / "satellite_2048.png"
-    img = Image.open(sat_path).convert("RGB").resize((args.size, args.size), Image.LANCZOS)
-    k = args.size / size_m
-    s = args.size / 4096
+
+def render(satellite: Image.Image, size: int, text_scale: float = 1.0, legend: bool = True) -> Image.Image:
+    """The labelled map at size x size. text_scale > 1 keeps labels readable on small textures."""
+    size_m = json.loads((SOURCE / "heightmap.json").read_text())["terrain_size_m"]
+    img = satellite.convert("RGB").resize((size, size), Image.LANCZOS)
+    k = size / size_m
+    s = size / 4096 * text_scale
 
     def px(x, y):
         return x * k, (size_m - y) * k
@@ -74,19 +90,19 @@ def main() -> None:
     grid_font = font(FONT_BOLD, int(20 * s))
     for i in range(0, int(size_m // 1000) + 1):
         v = i * 1000 * k
-        d.line([(v, 0), (v, args.size)], fill=(255, 255, 255, 70), width=1)
-        d.line([(0, v), (args.size, v)], fill=(255, 255, 255, 70), width=1)
+        d.line([(v, 0), (v, size)], fill=(255, 255, 255, 70), width=1)
+        d.line([(0, v), (size, v)], fill=(255, 255, 255, 70), width=1)
         if i < size_m // 1000:
             label = f"{i:02d}"
-            for pos in ((v + 6 * s, 4 * s), (v + 6 * s, args.size - 28 * s)):
+            for pos in ((v + 6 * s, 4 * s), (v + 6 * s, size - 28 * s)):
                 d.text(pos, label, font=grid_font, fill=(255, 255, 255, 220), stroke_width=2, stroke_fill=(0, 0, 0, 200))
-            for pos in ((4 * s, v + 6 * s), (args.size - 34 * s, v + 6 * s)) if i else ():
+            for pos in ((4 * s, v + 6 * s), (size - 34 * s, v + 6 * s)) if i else ():
                 d.text(pos, label, font=grid_font, fill=(255, 255, 255, 220), stroke_width=2, stroke_fill=(0, 0, 0, 200))
 
     sym_font = font("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", int(22 * s))
     site_font = font(FONT, int(15 * s))
     for p in json.loads((SOURCE / "pois.json").read_text(encoding="utf-8")):
-        style = SITE_SYMBOL.get(p["kind"])
+        style = SITE_SYMBOL.get(p["kind"]) or (NAMED_SETTLEMENT if p["label"] and p["kind"] == "bach" else None)
         if not style:
             continue
         x, y = px(p["x"], p["y"])
@@ -100,9 +116,7 @@ def main() -> None:
         r = 5 * s
         d.rectangle([x - r, y - r, x + r, y + r], fill=(255, 255, 255, 255), outline=(0, 0, 0, 255), width=2)
 
-    with (SOURCE / "towns.csv").open(encoding="utf-8") as f:
-        towns = [t for t in csv.DictReader(f) if t["tier"] != "hamlet"]
-    for t in sorted(towns, key=lambda t: float(t["radius"])):
+    for t in sorted(load_towns(), key=lambda t: float(t["radius"])):
         scale, dot = TIER_STYLE.get(t["tier"], (1.0, 1.0))
         x, y = px(float(t["x"]), float(t["y"]))
         r = max(4.0, float(t["radius"]) * k) * dot * 0.6
@@ -115,6 +129,8 @@ def main() -> None:
             d.text((x, y + r + 2 * s), t["maori"], font=f2, anchor="ma", fill=(220, 240, 255, 235),
                    stroke_width=2, stroke_fill=(0, 0, 0, 230))
 
+    if not legend:
+        return img
     # Title, legend and scale bar in the empty Tasman Sea.
     title = font(FONT_BOLD, int(64 * s))
     body = font(FONT, int(22 * s))
@@ -144,7 +160,7 @@ def main() -> None:
             d.text((x0 + 55 * s, yy), label, font=body, fill=(255, 255, 255, 255))
         yy += 30 * s
     bar = 2000 * k
-    by = args.size - 120 * s
+    by = size - 120 * s
     d.rectangle([x0, by, x0 + bar, by + 10 * s], fill=(255, 255, 255, 255), outline=(0, 0, 0, 255))
     d.rectangle([x0, by, x0 + bar / 2, by + 10 * s], fill=(0, 0, 0, 255))
     d.text((x0, by - 28 * s), "0", font=body, fill=(255, 255, 255, 255), stroke_width=2, stroke_fill=(0, 0, 0, 255))
@@ -152,10 +168,7 @@ def main() -> None:
            stroke_fill=(0, 0, 0, 255))
     d.text((x0 + bar + 40 * s, by - 40 * s), "N ↑", font=title, fill=(255, 255, 255, 255), stroke_width=2,
            stroke_fill=(0, 0, 0, 255))
-
-    out = PREVIEW / f"player_map_{args.size}.jpg"
-    img.save(out, quality=88)
-    print(f"Wrote {out}")
+    return img
 
 
 if __name__ == "__main__":

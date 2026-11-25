@@ -115,9 +115,9 @@
         "GivenName": "Central Plateau Trading Post Weapons",
         "Role": "Weapons",
         "Position": [
-            20406.74,
-            156.629,
-            16764.87
+            20506.74,
+            147.544,
+            16914.87
         ],
         "Orientation": [
             305,
@@ -137,9 +137,9 @@
         "GivenName": "Central Plateau Trading Post Clothing",
         "Role": "Clothing",
         "Position": [
-            20417.07,
-            156.464,
-            16779.62
+            20517.07,
+            146.426,
+            16929.62
         ],
         "Orientation": [
             305,
@@ -159,9 +159,9 @@
         "GivenName": "Central Plateau Trading Post Medic",
         "Role": "Medic",
         "Position": [
-            20427.39,
-            156.089,
-            16794.36
+            20527.39,
+            145.478,
+            16944.36
         ],
         "Orientation": [
             305,
@@ -181,9 +181,9 @@
         "GivenName": "Central Plateau Trading Post Building",
         "Role": "Building",
         "Position": [
-            20421.49,
-            157.395,
-            16754.55
+            20521.49,
+            147.813,
+            16904.55
         ],
         "Orientation": [
             305,
@@ -203,9 +203,9 @@
         "GivenName": "Central Plateau Trading Post Vehicles",
         "Role": "Vehicles",
         "Position": [
-            20443.77,
-            157.551,
-            16782.89
+            20543.77,
+            145.545,
+            16932.89
         ],
         "Orientation": [
             305,
@@ -225,12 +225,12 @@
         "GivenName": "Rakaia Trading Post Weapons",
         "Role": "Weapons",
         "Position": [
-            11900.59,
-            27.761,
-            7523.1
+            11275.4,
+            63.114,
+            7675.06
         ],
         "Orientation": [
-            140,
+            135,
             0.0,
             0.0
         ],
@@ -247,12 +247,12 @@
         "GivenName": "Rakaia Trading Post Clothing",
         "Role": "Clothing",
         "Position": [
-            11886.8,
-            27.522,
-            7511.53
+            11262.67,
+            62.241,
+            7662.33
         ],
         "Orientation": [
-            140,
+            135,
             0.0,
             0.0
         ],
@@ -269,12 +269,12 @@
         "GivenName": "Rakaia Trading Post Medic",
         "Role": "Medic",
         "Position": [
-            11873.01,
-            27.163,
-            7499.96
+            11249.94,
+            61.33,
+            7649.6
         ],
         "Orientation": [
-            140,
+            135,
             0.0,
             0.0
         ],
@@ -291,12 +291,12 @@
         "GivenName": "Rakaia Trading Post Building",
         "Role": "Building",
         "Position": [
-            11889.02,
-            28.932,
-            7536.89
+            11262.67,
+            64.083,
+            7687.78
         ],
         "Orientation": [
-            140,
+            135,
             0.0,
             0.0
         ],
@@ -313,12 +313,12 @@
         "GivenName": "Rakaia Trading Post Vehicles",
         "Role": "Vehicles",
         "Position": [
-            11860.16,
-            28.726,
-            7515.28
+            11235.8,
+            62.334,
+            7663.74
         ],
         "Orientation": [
-            140,
+            135,
             0.0,
             0.0
         ],

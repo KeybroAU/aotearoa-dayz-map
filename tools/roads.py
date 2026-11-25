@@ -28,7 +28,7 @@ import towns as towns_mod
 HIGHWAYS = [
     ("SH1", ["Kaitāia", "Paihia", "Whangārei", "Auckland", "Huntly", "Hamilton", "Cambridge", "Taupō", "Waiouru Army Camp",
              "Palmerston North", "Wellington"]),
-    ("SH1", ["Picton", "Blenheim", "Kaikōura", "Christchurch", "Burnham Military Camp", "Ashburton",
+    ("SH1", ["Picton", "Blenheim", "Kaikōura", "Christchurch", "Burnham Military Camp", "Rakaia", "Ashburton",
              "Timaru", "Ōamaru", "Dunedin", "Gore", "Invercargill"]),
     ("SH2", ["Auckland", "Thames", "Tauranga", "Whakatāne", "Gisborne", "Napier", "Hastings", "Masterton",
              "Wellington"]),
@@ -62,7 +62,7 @@ KINDS = {
 RAILWAYS = [
     ("NIMT", ["Auckland", "Huntly", "Hamilton", "Te Awamutu", "Taumarunui", "Waiouru Army Camp",
               "Palmerston North", "Wellington"]),
-    ("MNL", ["Picton", "Blenheim", "Kaikōura", "Christchurch", "Ashburton", "Timaru", "Ōamaru",
+    ("MNL", ["Picton", "Blenheim", "Kaikōura", "Christchurch", "Rakaia", "Ashburton", "Timaru", "Ōamaru",
              "Dunedin", "Gore", "Invercargill"]),
 ]
 RAIL_COMFORT_GRADE = 0.025
