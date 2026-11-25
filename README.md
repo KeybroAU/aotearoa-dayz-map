@@ -2,13 +2,16 @@
 
 A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and the big landforms come from real elevation data, so you can pick out the Southern Alps, Fiordland, the Canterbury Plains, Banks Peninsula, the central volcanic plateau with Ruapehu, Ngauruhoe and Tongariro, Mt Taranaki and Stewart Island. On top of that the repo generates:
 
-- 51 towns and bases with bilingual labels
-- state highways and town streets, with bridges, guardrails and power lines
+- 51 towns and bases with bilingual labels, plus 45 small hamlets in the countryside
+- state highways, gravel back roads and town streets, with bridges, guardrails and power lines
+- the North Island Main Trunk and Main North Line railways, with 18 stations
 - lakes with water surfaces, and rivers
-- airfields, ports, ski fields, industrial plants, Devonport Naval Base, the Cape Reinga lighthouse, Hobbiton, farms and Whakaari / White Island
-- forests, hedgerows, farm fences and rocks
+- airfields, ports, the Interislander ferry terminals, boat ramps, ski fields, industrial plants, Devonport Naval Base, the Cape Reinga lighthouse, Hobbiton, farms and Whakaari / White Island
+- baches, surf clubs, holiday parks and DOC huts
+- forests, hedgerows, farm fences and rocks; street lamps, bus stops, back fences, garden trees and abandoned cars
 - a satellite texture coloured from a real satellite photo
-- the server mission files: spawns, loot positions and tiers, New Zealand loot changes, animals and weather
+- the server mission files: spawns, loot positions and tiers, New Zealand loot changes, animals, weather, starting gear, server messages and launch scripts
+- a printable player map, a logo and loading screens, and map checks that run on GitHub
 
 ![Satellite](preview/satellite_2048.png)
 
@@ -64,6 +67,8 @@ Each town is placed from its real latitude and longitude:
 - The ground is flattened to a tilt of 3 degrees or less.
 - Buildings sit on a grid of 45 m blocks with 12 m streets. Hospital, police, fire station, church and pub are nearest the middle, then tenements and offices in the cities, then houses.
 
+Between the named towns are 45 unnamed hamlets of about a dozen houses each, on gentle ground away from the coast. They have no map label and no specials, and gravel roads join them to their neighbours. Set `HAMLET_COUNT` in `tools/towns.py`.
+
 Towns are much bigger than true scale would give, so they're worth looting. To add, remove or resize a place, edit `tools/towns.csv` (tiers: `capital`, `city`, `town`, `village`, `military`) and regenerate.
 
 Close-ups (1 px per metre): [Auckland](preview/town_auckland.png), [Wellington](preview/town_wellington.png), [Christchurch](preview/town_christchurch.png), [Hamilton](preview/town_hamilton.png), [Queenstown](preview/town_queenstown.png).
@@ -72,7 +77,7 @@ Close-ups (1 px per metre): [Auckland](preview/town_auckland.png), [Wellington](
 
 ![Roads](preview/roads_2048.png)
 
-There are 123 km of state highway, 151 km of town streets and 12 km of tracks to sites. Highways follow the real links:
+There are 122 km of state highway, 183 km of town streets, 26 km of gravel back roads and 41 km of tracks to sites. Highways follow the real links:
 
 - SH1 the length of both islands, through Huntly, Cambridge, Waiouru, Burnham and Ōhakea
 - SH2 round the east coast
@@ -84,10 +89,21 @@ There are 123 km of state highway, 151 km of town streets and 12 km of tracks to
 
 Each leg is a least-cost route. It prefers grades under 8%, never crosses the sea or a lake, avoids crossing rivers, enters towns along their streets, and reuses roads already built so highways share corridors. Highways outside towns are cut into the terrain as a smooth road bed.
 
-- `data/roads/roads.shp` holds the centrelines in Terrain Builder coordinates. The `ID` field picks the road type in `data/roads/RoadsLib.cfg` (1 highway 8 m, 2 street 6 m, 3 track 4 m), and the `REF` field holds the highway number or town.
+Gravel back roads join each hamlet, village and town to its two nearest neighbours within 3.5 km. They reuse the highways where they can, so only the stretches off the sealed network become gravel.
+
+- `data/roads/roads.shp` holds the centrelines in Terrain Builder coordinates. The `ID` field picks the road type in `data/roads/RoadsLib.cfg` (1 highway 8 m, 2 street 6 m, 3 track 4 m, 4 gravel 5 m), and the `REF` field holds the highway number or town.
 - `config.cpp` points `newRoadsShape` at the shapefile for the in-game map.
 - Terrain Builder draws the road surfaces from the shapefile and `RoadsLib.cfg`. The satellite also has every road painted on, so roads show even before then.
 - `source/roads.json` has the same lines, plus every point where a road crosses a riverbed. Each crossing gets a bridge (see [World detail](#world-detail)), and the riverbed is left open under it instead of being filled by the road bed.
+
+### Railway
+
+There are 38 km of decorative railway on two lines, with a station just outside each town on the line:
+
+- North Island Main Trunk: Auckland, Huntly, Hamilton, Te Awamutu, Taumarunui, round the west side of Ruapehu to Waiouru, then Palmerston North and Wellington
+- Main North Line and Main South Line: Picton, Blenheim, Kaikōura, Christchurch, Ashburton, Timaru, Ōamaru, Dunedin, Gore and Invercargill
+
+The lines are routed for gentle grades (they cost four times as much per extra 2.5% of grade), stay out of towns, and are cut into the terrain like the highways. `source/roads.json` holds the lines under `rails` and the stations under `stations`. `source/objects/rail_tb.txt` lays 25 m track pieces along them, with bridge pieces at the 13 river crossings. Trains don't run; the track is scenery and a route to follow.
 
 ### Water
 
@@ -114,6 +130,13 @@ River courses are traced on the real drainage (Waikato, Whanganui, Clutha, Waita
 | Hobbiton | A ring of cottages and the Green Dragon (hobbit holes need a custom model) |
 | 70 farms | Farmhouse, barn or cowshed and shed, along the highways |
 | Whakaari / White Island | Volcanic islet off the Bay of Plenty with a crater and a contaminated zone |
+| Interislander Terminal (Wellington), Picton Ferry Terminal | Port-sized pad with warehouse, office, tower and containers. Three boats spawn off each, for crossing Cook Strait. |
+| 16 boat ramps | A ramp into the sea or lake and a shed, near Paihia, Whangārei, Thames, Whakatāne, Gisborne, Ōpunake, Kaikōura, Westport, Greymouth, Ōamaru, Te Anau, Taupō, Wānaka, Queenstown, Picton and Nelson. Each gets a boat where the water is deep enough. |
+| 8 surf clubs | Clubhouse and shed behind the beach near the big coastal cities |
+| 8 holiday parks | Office, shed and tents at Taupō, Rotorua, Wānaka, Te Anau, Queenstown, Hanmer Springs, Franz Josef and Paihia |
+| 14 bach clusters | Rows of four holiday homes behind quiet beaches, away from the towns |
+| 15 DOC huts | A small hut and woodshed on flat benches high in the ranges |
+| 18 railway stations | A station building beside the line at each town on the railway |
 
 Every site is fitted onto dry, open land clear of towns, roads and water, flattened, and joined to the nearest road. Labels for the named sites are in `config/names.hpp`. Close-ups: [Christchurch Airport](preview/satellite_christchurchairport.png), [Lyttelton](preview/satellite_lyttelton.png).
 
@@ -130,8 +153,15 @@ Each group is its own Terrain Builder import in `source/objects/`, so you can br
 | `fences_tb.txt` | A fence round every farm yard, with a gate gap |
 | `hedgerows_tb.txt` | Bush hedges in runs along highways through pasture and farmland |
 | `rocks_tb.txt` | Boulders on slopes over 34 degrees and stones in the riverbeds |
+| `rail_tb.txt` | Railway track pieces and rail bridges |
+| `wrecks_tb.txt` | Abandoned cars on the highway verges |
+| `streetlamps_tb.txt` | Street lamps every 32 m along the town streets |
+| `busstops_tb.txt` | A bus shelter on the longest street of each town |
+| `townwrecks_tb.txt` | Abandoned cars at the kerb in town streets |
+| `gardenfences_tb.txt` | A back fence behind each house |
+| `gardentrees_tb.txt` | Fruit and birch trees in the back gardens |
 
-There are about 60 bridge pieces over 34 crossings, 270 lake tiles, 1,070 power poles, 1,370 guardrail pieces, 3,500 fence panels, 15,800 hedge bushes and 21,000 rocks.
+There are about 70 road bridge pieces over 41 crossings, 270 lake tiles, 990 power poles, 1,500 guardrail pieces, 3,500 farm fence panels, 14,100 hedge bushes, 21,000 rocks, 1,550 rail pieces, 300 wrecks, 4,000 street lamps, 47 bus stops, 6,800 garden fence panels and 1,300 garden trees.
 
 ### Forests
 
@@ -178,6 +208,7 @@ The photo is not stored in this repo; only the colours taken from it are. To use
 | `config/names.hpp` | Map labels for towns and sites |
 | `mod/mod.cpp` | Mod name and description for the `@Aotearoa` folder |
 | `data/roads/` | `roads.shp` and `RoadsLib.cfg` |
+| `data/branding/` | Logo, icons, loading screens and the map picture, with the source art in `art/` |
 | `source/heightmap_4096.png` | 16-bit heightmap. Black is `png_black_m` and white is `png_white_m` in `heightmap.json`. |
 | `source/heightmap.json` | Height range, grid, projection and reshape details |
 | `source/mask_4096.png`, `source/layers.cfg`, `source/mapLegend.png` | Surface mask, its layers and legend |
@@ -188,8 +219,9 @@ The photo is not stored in this repo; only the colours taken from it are. To use
 | `source/objects/*_tb.txt` | Terrain Builder object imports: towns, sites, forest and the world detail groups |
 | `source/objects/*_spawner.json` | Town and site buildings as DayZ object spawner files |
 | `source/sat_tint_512.png` | Regional colour taken from the satellite photo, in map space |
-| `mission/` | Server mission files and a `serverDZ.cfg` template |
-| `preview/` | Satellite, relief, mask, slope, towns, roads, sites, forest and mission maps |
+| `mission/` | Server mission files, a `serverDZ.cfg` template and launch scripts in `mission/server/` |
+| `preview/` | Satellite, relief, mask, slope, towns, roads, sites, forest, mission maps and the player map |
+| `.github/workflows/check.yml` | Runs `tools/check_map.py` on every push |
 | `tools/` | The generators (see [Regenerating](#regenerating)) |
 
 Not committed, because they are too big: `source/heightmap_4096.asc` (about 120 MB), `source/mask_25600.png` and `source/satellite_25600.png`. `build_all.bat` makes them.
@@ -214,6 +246,8 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
    - `pois_tb.txt`
    - `forest_tb.txt` (large, so give it a layer of its own)
    - `bridges_tb.txt`, `powerlines_tb.txt`, `guardrails_tb.txt`, `fences_tb.txt`, `hedgerows_tb.txt`, `rocks_tb.txt`
+   - `rail_tb.txt`, `wrecks_tb.txt`
+   - `streetlamps_tb.txt`, `busstops_tb.txt`, `townwrecks_tb.txt`, `gardenfences_tb.txt`, `gardentrees_tb.txt`
    - `lakes_tb.txt`, with absolute heights, since its last field is the water level
 
    Do this once your template library has the models.
@@ -226,6 +260,7 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
    - Leave out `source\`, `tools\`, `preview\` and `mission\`. They are inputs, not game data.
    - Keep `config.cpp`, `config\`, `data\` and `world\`.
 2. Copy `mod\mod.cpp` into `@Aotearoa\`.
+   - Before packing, convert the images in `data\branding\` with ImageToPAA from DayZ Tools. `logo_512.png` and the icons become `logo_512_ca.paa`, `icon_128_ca.paa` and `icon_64_ca.paa` (they have alpha). `loading_1.jpg` and `map_picture.jpg` become `loading_1_co.paa` and `map_picture_co.paa`. `mod.cpp` and `config.cpp` point at those names.
 3. Sign the PBO with your key if the server verifies signatures.
 
 The world inherits lighting, weather and sounds from Chernarus Plus. It sets a southern latitude (41.5 degrees south), a 25.6 km map grid and a January start date.
@@ -238,8 +273,8 @@ The world inherits lighting, weather and sounds from Chernarus Plus. It sets a s
 |---|---|
 | `init.c` | Vanilla start-up, with the date kept in the southern summer and the loot export line (see below) |
 | `cfgplayerspawnpoints.xml` | 40 spawn bubbles spread along the coasts of the two main islands |
-| `cfgeventspawns.xml` | Cars on the highway verges, boats off the ports, heli crashes in open country, police cars in town streets, military convoys near the bases |
-| `env/zombie_territories.xml` | Infected zones: city, village and military in towns, industrial at ports and airfields, solitude at farms |
+| `cfgeventspawns.xml` | Cars on the highway verges and parked in town streets, boats off the ports, ferry terminals and boat ramps, heli crashes in open country, police cars in town streets, military convoys near the bases |
+| `env/zombie_territories.xml` | Infected zones: city, village and military in towns, village in hamlets, surf clubs, holiday parks and stations, industrial at ports, the ferry terminals and airfields, solitude at farms, baches and huts |
 | `cfgeffectarea.json` | The Whakaari contaminated zone and the mainland safe positions |
 | `cfggameplay.worldsdata.json` | `WorldsData` to merge into `cfggameplay.json`: object spawners and New Zealand temperatures |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
@@ -247,6 +282,9 @@ The world inherits lighting, weather and sounds from Chernarus Plus. It sets a s
 | `loot_tiers.json` | The loot tier of every town and site |
 | `env/*_territories.xml` | Animals: red deer and wild pigs in the bush, sheep on pasture and goats in the high country, cattle, pigs and hens at farms, hares on farmland. No wolves, bears, foxes or roe deer. |
 | `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog |
+| `aotearoa_spawngear_*.json` | Starting gear presets: Farmer (checked shirt, jeans, gumboots), Tramper (rain jacket, cargo pants, hiking boots) and Beach (T-shirt, shorts, sneakers). Each has a rag, a chemlight and an apple. |
+| `db/messages.xml` | A "Kia ora" welcome, a tip about the ferries, and a restart countdown for 4-hourly restarts |
+| `../server/start_server.bat`, `../server/start_server.sh` | Launch loops for Windows and Linux that restart the server when it stops |
 
 ![Loot tiers](preview/loot_tiers_2048.png)
 
@@ -257,8 +295,8 @@ Loot tier 1 is the northern coasts. Tiers rise inland, southwards and above 300 
 To set up a server:
 
 1. Copy vanilla `mpmissions\dayzOffline.chernarusplus` to `mpmissions\dayzOffline.aotearoa`. Copy the generated files over it.
-2. Merge `cfggameplay.worldsdata.json` into the mission's `cfggameplay.json`.
-3. Start the server with `-mod=@Aotearoa` and `serverDZ.cfg`.
+2. Merge `cfggameplay.worldsdata.json` into the mission's `cfggameplay.json`. It sets the object spawners and temperatures under `WorldsData`, and the starting gear under `PlayerData.spawnGearPresetFiles`.
+3. Copy `mission\serverDZ.cfg` and `mission\server\start_server.bat` (or `.sh` on Linux) next to the server executable. Set `passwordAdmin` and run the script. It starts the server with `-mod=@Aotearoa` and restarts it when it stops.
 4. Paste the `<ce>` block from `cfgeconomycore.aotearoa.xml` into `<economycore>` in `cfgeconomycore.xml`.
 5. Paint `areaflags.map` using the tier map (see above). Keep vanilla `cfgenvironment.xml`; the generated `env\` files replace its territories.
 6. Once the world is built, refresh the loot positions:
@@ -271,16 +309,37 @@ To set up a server:
 
 The rest of the economy is vanilla. Change counts in `NZ_TYPES` in `tools/economy.py`, or add your own entries to `aotearoa_ce/types.xml`.
 
+## Player map
+
+![Player map](preview/player_map_4096.jpg)
+
+`preview/player_map_4096.jpg` is a labelled map to print or share with players. It has the satellite image, a 1 km grid numbered like the in-game map, towns with both names, the highways, gravel roads, railway and stations, the main sites and a legend. Make a bigger one from the full satellite with `python tools/build_player_map.py --size 8192`.
+
+## Checks
+
+`tools/check_map.py` runs on GitHub on every push (`.github/workflows/check.yml`). It checks that the heightmap, mask and `config.cpp` agree on size, that every mission XML and JSON file parses, that every building, spawn and event is on the map and on land (boats on water), that every Terrain Builder file is well formed, and that every road type has a `RoadsLib.cfg` entry. Run it yourself after regenerating.
+
 ## Things to check on your P: drive
 
-Class and model names here are vanilla DayZ names that haven't been checked against a real P: drive yet. If one doesn't match, Terrain Builder skips the object or the server logs a missing class. The lists are at the top of each file:
+Class and model names here are vanilla DayZ names that haven't been checked against a real P: drive yet. If one doesn't match, Terrain Builder skips the object or the server logs a missing class.
+
+`tools/check_models.py` does the checking for you. On the machine with the P: drive mounted, list every model:
+
+```bat
+dir /s /b P:\DZ\*.p3d > models.txt
+```
+
+Then run `python tools/check_models.py models.txt`. It lists every model the map uses that isn't on the drive, with the closest names it found. Add `--fix` to write `source/model_fixes.json` with the best guesses. Check that file, then run `--apply` to rewrite the object files. Copy the right names into the tables in `tools/` too, so the next build keeps them.
+
+The lists are at the top of each file:
 
 | Where | What |
 |---|---|
 | `tools/towns.py` | Town buildings (`Land_House_1W01` and so on). Terrain Builder uses the model name in lowercase (`land_house_1w01` becomes `house_1w01`). |
 | `tools/pois.py` | Hangars, tower, containers, warehouse, barns, lift towers, tanks, power station, stacks, lighthouse |
 | `tools/forests.py` | Tree and bush models from `DZ\plants` |
-| `tools/details.py` (`OBJECTS`) | Bridge, power pole, guardrail, fence and rock models. The lake water plane (`aotearoa_water_50`) is a placeholder: vanilla DayZ has no standalone lake surface, so point it at a 50 m water plane model of your own or from a mod. |
+| `tools/pois.py` (rural sites) | Station building (`Land_Rail_Station_Big`), clubhouse, tents and sheds |
+| `tools/details.py` (`OBJECTS`) | Bridge, power pole, guardrail, fence, rock, rail track and rail bridge, street lamp, bus stop, wreck and garden tree models. The rail, lamp, bus stop and wreck names are the least certain. The lake water plane (`aotearoa_water_50`) is a placeholder: vanilla DayZ has no standalone lake surface, so point it at a 50 m water plane model of your own or from a mod. |
 | `tools/economy.py` | Item and animal names |
 | `data/roads/RoadsLib.cfg` | Road textures and materials (placeholders) |
 | `source/layers.cfg` | Surface materials |
@@ -297,7 +356,10 @@ python tools/generate_terrain.py      # terrain, water, towns, roads, sites, for
 python tools/build_satellite.py --size 25600
 python tools/upscale_mask.py 25600
 python tools/png_to_asc.py
-python tools/build_mission.py
+python tools/build_mission.py         # mission, starting gear, messages, launch scripts
+python tools/build_player_map.py      # preview/player_map_4096.jpg
+python tools/make_branding.py         # data/branding from the art and the satellite preview
+python tools/check_map.py
 ```
 
 `generate_terrain.py` downloads [Terrarium elevation tiles](https://registry.opendata.aws/terrain-tiles/) from AWS Open Data into `~/.cache/aotearoa-tiles`. The tiles mix SRTM, GEBCO, LINZ and other sources. It takes about 5 minutes. Each part has its own module and its own settings at the top of the file:
@@ -307,9 +369,10 @@ python tools/build_mission.py
 | `generate_terrain.py` | Shape and height: `STRETCH_X`, `VOLCANOES`, `ROTATION_DEG`, `NI_BEND_DEG`, `WIDEN`, `MAX_HEIGHT`, `MAX_SLOPE_DEG`, `MIDDLE_WEIGHT`, `COAST_RAMP_M`, `SEED` |
 | `water.py` | Lake detection, river size (`RIVER_MIN_CATCHMENT_KM2`) and depth |
 | `towns.py` | Town tiers, block size and building lists |
-| `roads.py` | The highway list (`HIGHWAYS`), road widths and routing costs |
-| `pois.py` | Airfields, ports, ski fields, industrial sites, Hobbiton, Whakaari, farm count |
+| `roads.py` | The highway list (`HIGHWAYS`), the railways (`RAILWAYS`), back road links, road widths and routing costs |
+| `pois.py` | Airfields, ports, ferry terminals, boat ramps, ski fields, industrial sites, surf clubs, holiday parks, baches, huts, Hobbiton, Whakaari, farm count |
 | `forests.py` | Tree lists and spacing |
-| `details.py` | Bridge, lake, power line, guardrail, fence, hedge and rock models and spacing |
+| `details.py` | Bridge, lake, power line, guardrail, fence, hedge, rock, rail, wreck and town detail models and spacing |
 | `build_mission.py` | Spawn, vehicle and crash counts, infected zone density, temperatures |
+| `server_files.py` | Starting gear (`PRESETS`), server messages, restart interval and launch scripts |
 | `economy.py` | Loot changes (`NZ_TYPES`), tier rules, animal herds (`HERDS`), weather |

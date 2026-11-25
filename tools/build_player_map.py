@@ -25,7 +25,7 @@ TIER_STYLE = {  # font scale, dot radius scale
     "capital": (1.8, 1.6), "city": (1.45, 1.3), "town": (1.15, 1.0), "village": (0.9, 0.8), "military": (1.0, 1.0),
 }
 SITE_SYMBOL = {
-    "airfield": ((40, 40, 40), "✈"), "port": ((30, 90, 200), "⚓"), "ferry": ((0, 140, 210), "⛴"),
+    "airfield": ((40, 40, 40), "✈"), "port": ((30, 90, 200), "⚓"), "ferry": ((0, 170, 230), "⇄"),
     "naval": ((20, 40, 120), "⚓"), "industrial": ((120, 80, 40), "■"), "ski": ((255, 255, 255), "▲"),
     "hobbiton": ((250, 200, 0), "●"), "landmark": ((255, 255, 255), "★"), "whakaari": ((200, 40, 40), "☢"),
     "surfclub": ((255, 220, 0), "●"), "campground": ((60, 160, 60), "▲"),
@@ -80,7 +80,7 @@ def main() -> None:
             label = f"{i:02d}"
             for pos in ((v + 6 * s, 4 * s), (v + 6 * s, args.size - 28 * s)):
                 d.text(pos, label, font=grid_font, fill=(255, 255, 255, 220), stroke_width=2, stroke_fill=(0, 0, 0, 200))
-            for pos in ((4 * s, v + 6 * s), (args.size - 34 * s, v + 6 * s)):
+            for pos in ((4 * s, v + 6 * s), (args.size - 34 * s, v + 6 * s)) if i else ():
                 d.text(pos, label, font=grid_font, fill=(255, 255, 255, 220), stroke_width=2, stroke_fill=(0, 0, 0, 200))
 
     sym_font = font("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", int(22 * s))
@@ -125,7 +125,7 @@ def main() -> None:
     yy = y0 + 130 * s
     legend = [("line", (230, 60, 40), "State highway"), ("line", (250, 230, 170), "Gravel road"),
               ("rail", None, "Railway, □ station")]
-    legend += [("sym", SITE_SYMBOL[k_][0], f"{SITE_SYMBOL[k_][1]}  {label}") for k_, label in (
+    legend += [("sym", SITE_SYMBOL[k_][0], (SITE_SYMBOL[k_][1], label)) for k_, label in (
         ("airfield", "Airfield"), ("port", "Port"), ("ferry", "Interislander ferry"), ("industrial", "Industry"),
         ("ski", "Ski field"), ("landmark", "Landmark"), ("surfclub", "Surf club"), ("campground", "Holiday park"),
         ("whakaari", "Toxic zone"))]
@@ -138,16 +138,19 @@ def main() -> None:
             d.line([(x0, yy + 12 * s), (x0 + 40 * s, yy + 12 * s)], fill=(250, 250, 250, 255), width=max(1, int(2 * s)))
             d.text((x0 + 55 * s, yy), text, font=body, fill=(255, 255, 255, 255))
         else:
-            d.text((x0 + 8 * s, yy), text, font=body, fill=colour + (255,), stroke_width=1, stroke_fill=(0, 0, 0, 255))
+            sym, label = text
+            d.text((x0 + 20 * s, yy + 12 * s), sym, font=sym_font, anchor="mm", fill=colour + (255,),
+                   stroke_width=2, stroke_fill=(255, 255, 255, 255) if sum(colour) < 200 else (0, 0, 0, 255))
+            d.text((x0 + 55 * s, yy), label, font=body, fill=(255, 255, 255, 255))
         yy += 30 * s
     bar = 2000 * k
-    by = args.size - 70 * s
+    by = args.size - 120 * s
     d.rectangle([x0, by, x0 + bar, by + 10 * s], fill=(255, 255, 255, 255), outline=(0, 0, 0, 255))
     d.rectangle([x0, by, x0 + bar / 2, by + 10 * s], fill=(0, 0, 0, 255))
     d.text((x0, by - 28 * s), "0", font=body, fill=(255, 255, 255, 255), stroke_width=2, stroke_fill=(0, 0, 0, 255))
     d.text((x0 + bar, by - 28 * s), "2 km", font=body, anchor="ma", fill=(255, 255, 255, 255), stroke_width=2,
            stroke_fill=(0, 0, 0, 255))
-    d.text((x0 + bar + 40 * s, by - 6 * s), "N ↑", font=title, fill=(255, 255, 255, 255), stroke_width=2,
+    d.text((x0 + bar + 40 * s, by - 40 * s), "N ↑", font=title, fill=(255, 255, 255, 255), stroke_width=2,
            stroke_fill=(0, 0, 0, 255))
 
     out = PREVIEW / f"player_map_{args.size}.jpg"
