@@ -1,0 +1,4 @@
+// Banned players for an Aotearoa DayZ server. One player per line:
+//   <Steam64 ID or BattlEye GUID> <optional note>
+// Example:
+//   76561198000000000 Example Player

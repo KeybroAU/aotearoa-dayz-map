@@ -712,6 +712,78 @@ class Names
 		radiusB = 25;
 		angle = 0;
 	};
+	class MilfordSound
+	{
+		name = "Milford Sound / Piopiotahi";
+		position[] = {3738.9, 5841.3};
+		type = "NameLocal";
+		radiusA = 35;
+		radiusB = 35;
+		angle = 0;
+	};
+	class AorakiVillage
+	{
+		name = "Aoraki / Mount Cook Village";
+		position[] = {8022.0, 7394.2};
+		type = "NameLocal";
+		radiusA = 35;
+		radiusB = 35;
+		angle = 0;
+	};
+	class ChateauTongariro
+	{
+		name = "Chateau Tongariro";
+		position[] = {18808.3, 16612.2};
+		type = "NameLocal";
+		radiusA = 30;
+		radiusB = 30;
+		angle = 0;
+	};
+	class WaitomoCaves
+	{
+		name = "Waitomo Caves";
+		position[] = {17848.3, 17544.0};
+		type = "NameLocal";
+		radiusA = 20;
+		radiusB = 20;
+		angle = 0;
+	};
+	class HukaFalls
+	{
+		name = "Huka Falls";
+		position[] = {19887.4, 16928.4};
+		type = "NameLocal";
+		radiusA = 20;
+		radiusB = 20;
+		angle = 0;
+	};
+	class GoodShepherd
+	{
+		name = "Church of the Good Shepherd";
+		position[] = {8771.5, 6895.1};
+		type = "NameLocal";
+		radiusA = 15;
+		radiusB = 15;
+		angle = 0;
+	};
+	class MoerakiBoulders
+	{
+		name = "Moeraki Boulders";
+		position[] = {9381.9, 4503.7};
+		type = "NameLocal";
+		radiusA = 20;
+		radiusB = 20;
+		angle = 0;
+	};
+	class StirlingPoint
+	{
+		name = "Stirling Point";
+		position[] = {4566.3, 2143.9};
+		type = "NameLocal";
+		radiusA = 15;
+		radiusB = 15;
+		angle = 0;
+	};
 	class Hobbiton
 	{
 		name = "Hobbiton";
@@ -814,7 +886,7 @@ class Names
 	class HolidayParkTaupo
 	{
 		name = "Lake Taupō Holiday Park";
-		position[] = {19896.9, 16939.4};
+		position[] = {19596.9, 16939.4};
 		type = "NameLocal";
 		radiusA = 40;
 		radiusB = 40;

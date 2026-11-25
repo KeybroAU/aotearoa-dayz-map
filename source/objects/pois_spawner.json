@@ -5461,6 +5461,306 @@
    "enableCEPersistency": 0
   },
   {
+   "name": "Land_Village_Pub",
+   "pos": [
+    3738.908,
+    97.665,
+    5835.35
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_2W01",
+   "pos": [
+    3714.908,
+    96.218,
+    5833.35
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    3762.908,
+    98.867,
+    5833.35
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    3762.908,
+    98.837,
+    5853.35
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    3712.908,
+    94.703,
+    5855.35
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Village_Pub",
+   "pos": [
+    8027.964,
+    358.755,
+    7394.173
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_2W01",
+   "pos": [
+    8029.964,
+    358.29,
+    7370.173
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    8029.964,
+    359.029,
+    7418.173
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    8009.964,
+    359.981,
+    7418.173
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    8007.964,
+    359.306,
+    7368.173
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Tenement_Big",
+   "pos": [
+    18816.34,
+    173.162,
+    16612.206
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    18794.34,
+    172.826,
+    16634.206
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Village_HealthCare",
+   "pos": [
+    17852.533,
+    31.576,
+    17539.78
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    17851.826,
+    31.979,
+    17560.286
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Village_HealthCare",
+   "pos": [
+    19883.19,
+    107.783,
+    16924.12
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    19903.696,
+    106.867,
+    16924.827
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Church3",
+   "pos": [
+    8774.337,
+    204.04,
+    6892.3
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    9389.868,
+    2.593,
+    4491.686
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    4560.345,
+    1.483,
+    2138.872
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    4575.345,
+    1.3,
+    2138.872
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
    "name": "Land_House_1W01",
    "pos": [
     19112.355,
@@ -5656,7 +5956,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Moh",
+   "name": "Land_Container_1Mo",
    "pos": [
     18066.875,
     2.063,
@@ -5686,7 +5986,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Moh",
+   "name": "Land_Container_1Aoh",
    "pos": [
     18096.875,
     2.133,
@@ -5701,7 +6001,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Mo",
+   "name": "Land_Container_1Aoh",
    "pos": [
     18066.875,
     1.976,
@@ -5716,7 +6016,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Bo",
+   "name": "Land_Container_1Mo",
    "pos": [
     18081.875,
     2.01,
@@ -5731,7 +6031,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Mo",
+   "name": "Land_Container_1Bo",
    "pos": [
     18096.875,
     2.045,
@@ -5791,7 +6091,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Bo",
+   "name": "Land_Container_1Moh",
    "pos": [
     15840.042,
     2.842,
@@ -5806,7 +6106,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Aoh",
+   "name": "Land_Container_1Bo",
    "pos": [
     15850.648,
     2.835,
@@ -5821,7 +6121,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Moh",
+   "name": "Land_Container_1Aoh",
    "pos": [
     15861.255,
     2.827,
@@ -5836,7 +6136,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Bo",
+   "name": "Land_Container_1Mo",
    "pos": [
     15833.678,
     2.932,
@@ -5866,7 +6166,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Container_1Mo",
+   "name": "Land_Container_1Bo",
    "pos": [
     15854.891,
     2.917,
@@ -6363,12 +6663,12 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    19889.804,
-    105.589,
-    16966.245
+    19570.005,
+    126.961,
+    16932.304
    ],
    "ypr": [
-    135.0,
+    45.0,
     0.0,
     0.0
    ],
@@ -6378,8 +6678,23 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    19872.833,
-    106.268,
+    19586.976,
+    126.271,
+    16915.333
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    19589.804,
+    127.126,
     16949.274
    ],
    "ypr": [
@@ -6393,12 +6708,12 @@
   {
    "name": "Land_Mil_Tent_Big1_1",
    "pos": [
-    19906.774,
-    105.386,
-    16946.446
+    19605.36,
+    127.315,
+    16964.831
    ],
    "ypr": [
-    225.0,
+    135.0,
     0.0,
     0.0
    ],
@@ -6408,12 +6723,12 @@
   {
    "name": "Land_Mil_Tent_Big1_1",
    "pos": [
-    19922.331,
-    105.167,
-    16930.89
+    19606.774,
+    126.436,
+    16932.304
    ],
    "ypr": [
-    225.0,
+    135.0,
     0.0,
     0.0
    ],
@@ -6423,27 +6738,12 @@
   {
    "name": "Land_Mil_Tent_Big1_1",
    "pos": [
-    19889.804,
-    106.065,
-    16929.476
+    19622.331,
+    126.625,
+    16947.86
    ],
    "ypr": [
-    225.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Mil_Tent_Big1_1",
-   "pos": [
-    19905.36,
-    105.846,
-    16913.919
-   ],
-   "ypr": [
-    225.0,
+    135.0,
     0.0,
     0.0
    ],
@@ -7081,10 +7381,10 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W03",
+   "name": "Land_House_1W05",
    "pos": [
-    13259.387,
-    4.064,
+    15359.387,
+    3.969,
     12822.456
    ],
    "ypr": [
@@ -7096,10 +7396,10 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W04",
+   "name": "Land_House_1W03",
    "pos": [
-    13269.993,
-    4.058,
+    15369.993,
+    4.252,
     12811.85
    ],
    "ypr": [
@@ -7111,10 +7411,10 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W03",
+   "name": "Land_House_1W02",
    "pos": [
-    13280.6,
-    4.052,
+    15380.6,
+    4.536,
     12801.243
    ],
    "ypr": [
@@ -7128,8 +7428,8 @@
   {
    "name": "Land_House_1W06",
    "pos": [
-    13291.206,
-    4.046,
+    15391.206,
+    4.82,
     12790.637
    ],
    "ypr": [
@@ -7141,269 +7441,14 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W03",
-   "pos": [
-    24852.544,
-    3.579,
-    17665.637
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    24863.15,
-    3.191,
-    17676.243
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    24873.757,
-    2.803,
-    17686.85
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W03",
-   "pos": [
-    24884.363,
-    2.416,
-    17697.456
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    1109.387,
-    7.4,
-    3859.956
-   ],
-   "ypr": [
-    135.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W03",
-   "pos": [
-    1119.993,
-    7.495,
-    3849.35
-   ],
-   "ypr": [
-    135.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    1130.6,
-    7.591,
-    3838.743
-   ],
-   "ypr": [
-    135.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    1141.206,
-    7.686,
-    3828.137
-   ],
-   "ypr": [
-    135.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    18584.387,
-    3.76,
-    20697.456
-   ],
-   "ypr": [
-    135.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    18594.993,
-    3.66,
-    20686.85
-   ],
-   "ypr": [
-    135.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    18605.6,
-    3.561,
-    20676.243
-   ],
-   "ypr": [
-    135.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    18616.206,
-    3.461,
-    20665.637
-   ],
-   "ypr": [
-    135.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
    "name": "Land_House_1W05",
    "pos": [
-    15552.544,
-    6.152,
-    10578.137
+    1630.625,
+    6.227,
+    2942.875
    ],
    "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    15563.15,
-    6.162,
-    10588.743
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    15573.757,
-    6.172,
-    10599.35
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    15584.363,
-    6.182,
-    10609.956
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    1752.544,
-    7.806,
-    4690.637
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    1763.15,
-    7.902,
-    4701.243
-   ],
-   "ypr": [
-    45.0,
+    90.0,
     0.0,
     0.0
    ],
@@ -7413,39 +7458,9 @@
   {
    "name": "Land_House_1W06",
    "pos": [
-    1773.757,
-    7.997,
-    4711.85
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    1784.363,
-    8.093,
-    4722.456
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    3655.625,
-    4.156,
-    6130.375
+    1645.625,
+    6.264,
+    2942.875
    ],
    "ypr": [
     90.0,
@@ -7458,87 +7473,12 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    3670.625,
-    4.427,
-    6130.375
+    1660.625,
+    6.302,
+    2942.875
    ],
    "ypr": [
     90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    3685.625,
-    4.698,
-    6130.375
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    3700.625,
-    4.969,
-    6130.375
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    11969.625,
-    5.83,
-    11774.375
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    11969.625,
-    5.583,
-    11789.375
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    11969.625,
-    5.337,
-    11804.375
-   ],
-   "ypr": [
-    0.0,
     0.0,
     0.0
    ],
@@ -7548,12 +7488,12 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    11969.625,
-    5.09,
-    11819.375
+    1675.625,
+    6.34,
+    2942.875
    ],
    "ypr": [
-    0.0,
+    90.0,
     0.0,
     0.0
    ],
@@ -7561,11 +7501,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W06",
+   "name": "Land_House_1W02",
    "pos": [
     17015.044,
-    5.379,
-    17290.637
+    7.476,
+    17253.137
    ],
    "ypr": [
     45.0,
@@ -7576,11 +7516,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W04",
+   "name": "Land_House_1W06",
    "pos": [
     17025.65,
-    5.366,
-    17301.243
+    7.665,
+    17263.743
    ],
    "ypr": [
     45.0,
@@ -7594,8 +7534,8 @@
    "name": "Land_House_1W02",
    "pos": [
     17036.257,
-    5.354,
-    17311.85
+    7.854,
+    17274.35
    ],
    "ypr": [
     45.0,
@@ -7606,11 +7546,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W05",
+   "name": "Land_House_1W02",
    "pos": [
     17046.863,
-    5.341,
-    17322.456
+    8.042,
+    17284.956
    ],
    "ypr": [
     45.0,
@@ -7623,12 +7563,12 @@
   {
    "name": "Land_House_1W05",
    "pos": [
-    7180.625,
-    9.678,
-    7705.375
+    3627.544,
+    6.75,
+    6040.637
    ],
    "ypr": [
-    90.0,
+    45.0,
     0.0,
     0.0
    ],
@@ -7638,27 +7578,12 @@
   {
    "name": "Land_House_1W05",
    "pos": [
-    7195.625,
-    9.841,
-    7705.375
+    3638.15,
+    6.871,
+    6051.243
    ],
    "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    7210.625,
-    10.004,
-    7705.375
-   ],
-   "ypr": [
-    90.0,
+    45.0,
     0.0,
     0.0
    ],
@@ -7668,12 +7593,12 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    7225.625,
-    10.167,
-    7705.375
+    3648.757,
+    6.991,
+    6061.85
    ],
    "ypr": [
-    90.0,
+    45.0,
     0.0,
     0.0
    ],
@@ -7681,11 +7606,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W06",
+   "name": "Land_House_1W01",
    "pos": [
-    19790.044,
-    2.543,
-    12490.637
+    3659.363,
+    7.112,
+    6072.456
    ],
    "ypr": [
     45.0,
@@ -7698,9 +7623,84 @@
   {
    "name": "Land_House_1W06",
    "pos": [
-    19800.65,
-    2.562,
-    12501.243
+    1818.125,
+    5.738,
+    4780.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    1833.125,
+    5.997,
+    4780.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    1848.125,
+    6.257,
+    4780.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    1863.125,
+    6.517,
+    4780.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    12252.544,
+    6.242,
+    12865.637
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    12263.15,
+    6.05,
+    12876.243
    ],
    "ypr": [
     45.0,
@@ -7713,9 +7713,9 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    19811.257,
-    2.582,
-    12511.85
+    12273.757,
+    5.858,
+    12886.85
    ],
    "ypr": [
     45.0,
@@ -7726,26 +7726,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W03",
+   "name": "Land_House_1W02",
    "pos": [
-    19821.863,
-    2.601,
-    12522.456
-   ],
-   "ypr": [
-    45.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    7827.544,
-    4.823,
-    2928.137
+    12284.363,
+    5.666,
+    12897.456
    ],
    "ypr": [
     45.0,
@@ -7758,9 +7743,249 @@
   {
    "name": "Land_House_1W05",
    "pos": [
-    7838.15,
-    5.024,
-    2938.743
+    2652.544,
+    8.125,
+    5365.637
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    2663.15,
+    8.295,
+    5376.243
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    2673.757,
+    8.465,
+    5386.85
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    2684.363,
+    8.635,
+    5397.456
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    2868.125,
+    2.568,
+    955.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    2883.125,
+    2.819,
+    955.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    2898.125,
+    3.071,
+    955.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    2913.125,
+    3.322,
+    955.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    18621.887,
+    2.678,
+    20697.456
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    18632.493,
+    2.545,
+    20686.85
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    18643.1,
+    2.411,
+    20676.243
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    18653.706,
+    2.278,
+    20665.637
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    22807.125,
+    7.297,
+    18224.375
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    22807.125,
+    6.971,
+    18239.375
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    22807.125,
+    6.645,
+    18254.375
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    22807.125,
+    6.32,
+    18269.375
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    5990.044,
+    5.8,
+    7203.137
    ],
    "ypr": [
     45.0,
@@ -7773,9 +7998,39 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    7848.757,
-    5.226,
-    2949.35
+    6000.65,
+    5.73,
+    7213.743
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    6011.257,
+    5.659,
+    7224.35
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    6021.863,
+    5.589,
+    7234.956
    ],
    "ypr": [
     45.0,
@@ -7788,9 +8043,39 @@
   {
    "name": "Land_House_1W03",
    "pos": [
-    7859.363,
-    5.427,
-    2959.956
+    24102.544,
+    6.394,
+    17665.637
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    24113.15,
+    6.114,
+    17676.243
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    24123.757,
+    5.835,
+    17686.85
    ],
    "ypr": [
     45.0,
@@ -7803,12 +8088,27 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    2905.625,
-    3.933,
-    992.875
+    24134.363,
+    5.556,
+    17697.456
    ],
    "ypr": [
-    90.0,
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    11969.625,
+    7.905,
+    11736.875
+   ],
+   "ypr": [
+    0.0,
     0.0,
     0.0
    ],
@@ -7818,12 +8118,42 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    2920.625,
-    4.093,
-    992.875
+    11969.625,
+    7.575,
+    11751.875
    ],
    "ypr": [
-    90.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    11969.625,
+    7.244,
+    11766.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    11969.625,
+    6.913,
+    11781.875
+   ],
+   "ypr": [
+    0.0,
     0.0,
     0.0
    ],
@@ -7833,12 +8163,12 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    2935.625,
-    4.253,
-    992.875
+    7265.044,
+    10.023,
+    7728.137
    ],
    "ypr": [
-    90.0,
+    45.0,
     0.0,
     0.0
    ],
@@ -7846,14 +8176,29 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W01",
+   "name": "Land_House_1W02",
    "pos": [
-    2950.625,
-    4.414,
-    992.875
+    7275.65,
+    9.943,
+    7738.743
    ],
    "ypr": [
-    90.0,
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    7286.257,
+    9.864,
+    7749.35
+   ],
+   "ypr": [
+    45.0,
     0.0,
     0.0
    ],
@@ -7863,9 +8208,24 @@
   {
    "name": "Land_House_1W03",
    "pos": [
-    15794.625,
-    3.248,
-    21149.375
+    7296.863,
+    9.784,
+    7759.956
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    12265.625,
+    289.16,
+    9434.375
    ],
    "ypr": [
     0.0,
@@ -7876,11 +8236,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W02",
+   "name": "Land_Shed_W4",
    "pos": [
-    15794.625,
-    3.275,
-    21164.375
+    12271.625,
+    288.749,
+    9443.375
    ],
    "ypr": [
     0.0,
@@ -7893,71 +8253,11 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    15794.625,
-    3.303,
-    21179.375
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    15794.625,
-    3.331,
-    21194.375
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    13653.125,
-    367.407,
+    13578.125,
+    363.604,
     10371.875
    ],
    "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    13662.125,
-    366.868,
-    10365.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    4353.125,
-    321.047,
-    4896.875
-   ],
-   "ypr": [
     0.0,
     0.0,
     0.0
@@ -7968,9 +8268,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    4359.125,
-    320.56,
-    4905.875
+    13584.125,
+    364.143,
+    10380.875
    ],
    "ypr": [
     0.0,
@@ -7983,9 +8283,9 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    7240.625,
-    295.785,
-    3884.375
+    10128.125,
+    325.646,
+    8646.875
    ],
    "ypr": [
     90.0,
@@ -7998,9 +8298,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    7249.625,
-    295.723,
-    3878.375
+    10137.125,
+    326.168,
+    8640.875
    ],
    "ypr": [
     90.0,
@@ -8013,69 +8313,9 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    5740.625,
-    384.777,
-    4446.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    5749.625,
-    385.164,
-    4440.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    19953.125,
-    311.846,
-    15921.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    19962.125,
-    311.721,
-    15915.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    11853.125,
-    278.498,
-    10109.375
+    8815.625,
+    263.72,
+    6209.375
    ],
    "ypr": [
     0.0,
@@ -8088,9 +8328,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    11859.125,
-    278.314,
-    10118.375
+    8821.625,
+    263.794,
+    6218.375
    ],
    "ypr": [
     0.0,
@@ -8103,9 +8343,9 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    10990.625,
-    293.298,
-    8759.375
+    5890.625,
+    360.833,
+    4484.375
    ],
    "ypr": [
     0.0,
@@ -8118,9 +8358,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    10996.625,
-    292.849,
-    8768.375
+    5896.625,
+    360.575,
+    4493.375
    ],
    "ypr": [
     0.0,
@@ -8134,38 +8374,8 @@
    "name": "Land_House_1W01",
    "pos": [
     12603.125,
-    316.418,
-    12396.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    12612.125,
-    316.687,
-    12390.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    7953.125,
-    365.862,
-    5384.375
+    290.563,
+    11759.375
    ],
    "ypr": [
     0.0,
@@ -8178,9 +8388,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    7959.125,
-    366.403,
-    5393.375
+    12609.125,
+    290.063,
+    11768.375
    ],
    "ypr": [
     0.0,
@@ -8193,9 +8403,9 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    9753.125,
-    424.819,
-    8121.875
+    7578.125,
+    301.546,
+    5721.875
    ],
    "ypr": [
     90.0,
@@ -8208,102 +8418,12 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    9762.125,
-    424.909,
-    8115.875
+    7587.125,
+    302.051,
+    5715.875
    ],
    "ypr": [
     90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    9340.625,
-    266.938,
-    6171.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    9349.625,
-    266.864,
-    6165.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    6303.125,
-    260.933,
-    6734.375
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    6309.125,
-    261.038,
-    6743.375
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    2515.625,
-    251.254,
-    4671.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    2521.625,
-    251.577,
-    4680.875
-   ],
-   "ypr": [
-    0.0,
     0.0,
     0.0
    ],
@@ -8318,6 +8438,66 @@
     10934.375
    ],
    "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    14862.125,
+    254.513,
+    10928.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    11928.125,
+    277.825,
+    10634.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    11937.125,
+    278.182,
+    10628.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    4465.625,
+    340.538,
+    5009.375
+   ],
+   "ypr": [
     0.0,
     0.0,
     0.0
@@ -8328,9 +8508,39 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    14859.125,
-    254.039,
-    10943.375
+    4471.625,
+    340.556,
+    5018.375
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    20140.625,
+    319.926,
+    15771.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    20146.625,
+    320.435,
+    15780.875
    ],
    "ypr": [
     0.0,
@@ -8348,186 +8558,6 @@
     12921.875
    ],
    "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    18499.625,
-    261.843,
-    12915.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    9088.125,
-    65.599,
-    5308.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    9113.125,
-    64.672,
-    5288.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    9085.125,
-    65.809,
-    5282.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    20838.125,
-    4.045,
-    13808.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    20863.125,
-    3.147,
-    13788.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    20835.125,
-    4.037,
-    13782.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    9888.125,
-    9.839,
-    5408.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    9913.125,
-    8.6,
-    5388.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    9885.125,
-    9.526,
-    5382.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    7091.125,
-    8.776,
-    2481.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    7111.125,
-    9.167,
-    2506.875
-   ],
-   "ypr": [
     0.0,
     0.0,
     0.0
@@ -8538,144 +8568,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    7117.125,
-    8.101,
-    2478.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    15641.125,
-    13.099,
-    22781.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    15661.125,
-    11.953,
-    22806.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    15667.125,
-    12.206,
-    22778.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    9641.125,
-    7.038,
-    9081.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    9661.125,
-    6.581,
-    9106.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    9667.125,
-    7.668,
-    9078.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    4341.125,
-    8.912,
-    2981.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    4361.125,
-    9.674,
-    3006.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    4367.125,
-    8.53,
-    2978.875
+    18496.625,
+    261.094,
+    12930.875
    ],
    "ypr": [
     0.0,
@@ -8688,24 +8583,9 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    10088.125,
-    4.494,
-    9558.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    10113.125,
-    5.77,
-    9538.875
+    6115.625,
+    253.499,
+    6621.875
    ],
    "ypr": [
     90.0,
@@ -8718,54 +8598,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    10085.125,
-    5.123,
-    9532.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    12138.125,
-    17.793,
-    7608.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    12163.125,
-    16.513,
-    7588.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    12135.125,
-    17.214,
-    7582.875
+    6124.625,
+    252.97,
+    6615.875
    ],
    "ypr": [
     90.0,
@@ -8778,24 +8613,9 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    17888.125,
-    12.549,
-    19408.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    17913.125,
-    11.668,
-    19388.875
+    7278.125,
+    296.175,
+    3884.375
    ],
    "ypr": [
     90.0,
@@ -8808,9 +8628,294 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    17885.125,
-    11.522,
-    19382.875
+    7287.125,
+    296.197,
+    3878.375
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    3040.625,
+    250.409,
+    4634.375
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    3046.625,
+    250.841,
+    4643.375
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    11290.625,
+    258.445,
+    8346.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    11299.625,
+    258.396,
+    8340.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    13088.125,
+    65.924,
+    9108.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    13113.125,
+    64.801,
+    9088.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    13085.125,
+    65.01,
+    9082.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    20241.125,
+    197.522,
+    16331.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    20261.125,
+    196.715,
+    16356.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    20267.125,
+    197.861,
+    16328.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    21188.125,
+    27.626,
+    14658.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    21213.125,
+    28.398,
+    14638.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    21185.125,
+    28.669,
+    14632.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    8491.125,
+    126.307,
+    4331.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    8511.125,
+    126.881,
+    4356.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    8517.125,
+    126.513,
+    4328.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    17588.125,
+    11.114,
+    18858.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    17613.125,
+    12.287,
+    18838.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    17585.125,
+    11.98,
+    18832.875
    ],
    "ypr": [
     90.0,
@@ -8823,54 +8928,9 @@
   {
    "name": "Land_House_1W05",
    "pos": [
-    17741.125,
-    65.12,
-    16781.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    17761.125,
-    64.569,
-    16806.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    17767.125,
-    65.681,
-    16778.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    18788.125,
-    32.967,
-    17858.875
+    17788.125,
+    67.66,
+    16708.875
    ],
    "ypr": [
     90.0,
@@ -8883,9 +8943,9 @@
   {
    "name": "Land_Farm_CowshedA",
    "pos": [
-    18813.125,
-    31.848,
-    17838.875
+    17813.125,
+    68.018,
+    16688.875
    ],
    "ypr": [
     90.0,
@@ -8898,9 +8958,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    18785.125,
-    32.049,
-    17832.875
+    17785.125,
+    66.964,
+    16682.875
    ],
    "ypr": [
     90.0,
@@ -8911,11 +8971,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W04",
+   "name": "Land_House_1W01",
    "pos": [
-    23338.125,
-    4.082,
-    16608.875
+    17338.125,
+    8.291,
+    19458.875
    ],
    "ypr": [
     90.0,
@@ -8926,11 +8986,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Farm_CowshedA",
+   "name": "Land_Barn_Metal_Big",
    "pos": [
-    23363.125,
-    3.107,
-    16588.875
+    17363.125,
+    9.2,
+    19438.875
    ],
    "ypr": [
     90.0,
@@ -8943,9 +9003,54 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    23335.125,
-    4.234,
-    16582.875
+    17335.125,
+    8.06,
+    19432.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    4288.125,
+    81.163,
+    3608.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    4313.125,
+    82.247,
+    3588.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    4285.125,
+    82.107,
+    3582.875
    ],
    "ypr": [
     90.0,
@@ -8958,9 +9063,9 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    16741.125,
-    3.887,
-    21431.875
+    7791.125,
+    110.583,
+    4731.875
    ],
    "ypr": [
     0.0,
@@ -8971,11 +9076,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Farm_CowshedA",
+   "name": "Land_Barn_Metal_Big",
    "pos": [
-    16761.125,
-    3.198,
-    21456.875
+    7811.125,
+    109.341,
+    4756.875
    ],
    "ypr": [
     0.0,
@@ -8988,9 +9093,189 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    16767.125,
-    3.456,
-    21428.875
+    7817.125,
+    110.26,
+    4728.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    25041.125,
+    4.35,
+    18631.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    25061.125,
+    3.096,
+    18656.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    25067.125,
+    3.986,
+    18628.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    17541.125,
+    45.998,
+    17081.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    17561.125,
+    46.883,
+    17106.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    17567.125,
+    45.741,
+    17078.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    18088.125,
+    11.994,
+    19358.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    18113.125,
+    12.351,
+    19338.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    18085.125,
+    12.679,
+    19332.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    11941.125,
+    49.249,
+    7881.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    11961.125,
+    49.453,
+    7906.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    11967.125,
+    48.462,
+    7878.875
    ],
    "ypr": [
     0.0,
@@ -9003,9 +9288,9 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    13738.125,
-    5.726,
-    12058.875
+    3988.125,
+    17.443,
+    3058.875
    ],
    "ypr": [
     90.0,
@@ -9018,9 +9303,9 @@
   {
    "name": "Land_Farm_CowshedA",
    "pos": [
-    13763.125,
-    5.564,
-    12038.875
+    4013.125,
+    16.39,
+    3038.875
    ],
    "ypr": [
     90.0,
@@ -9033,9 +9318,279 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    13735.125,
-    6.536,
-    12032.875
+    3985.125,
+    16.481,
+    3032.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    17488.125,
+    7.151,
+    14658.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    17513.125,
+    6.853,
+    14638.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    17485.125,
+    6.159,
+    14632.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    16091.125,
+    14.741,
+    21981.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    16111.125,
+    13.873,
+    22006.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    16117.125,
+    13.712,
+    21978.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    18091.125,
+    4.544,
+    19881.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    18111.125,
+    3.266,
+    19906.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    18117.125,
+    4.046,
+    19878.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    9138.125,
+    6.078,
+    4208.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    9163.125,
+    4.806,
+    4188.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    9135.125,
+    5.628,
+    4182.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    18138.125,
+    74.472,
+    16758.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    18163.125,
+    73.191,
+    16738.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    18135.125,
+    73.932,
+    16732.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    18938.125,
+    21.292,
+    18208.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    18963.125,
+    20.374,
+    18188.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    18935.125,
+    21.512,
+    18182.875
    ],
    "ypr": [
     90.0,
@@ -9048,99 +9603,9 @@
   {
    "name": "Land_House_1W06",
    "pos": [
-    19588.125,
-    134.656,
-    17008.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    19613.125,
-    133.686,
-    16988.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    19585.125,
-    133.655,
-    16982.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    5141.125,
-    11.217,
-    2631.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    5161.125,
-    12.469,
-    2656.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    5167.125,
-    11.574,
-    2628.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    22788.125,
-    5.16,
-    16158.875
+    6738.125,
+    20.727,
+    3008.875
    ],
    "ypr": [
     90.0,
@@ -9153,9 +9618,9 @@
   {
    "name": "Land_Farm_CowshedA",
    "pos": [
-    22813.125,
-    4.226,
-    16138.875
+    6763.125,
+    20.665,
+    2988.875
    ],
    "ypr": [
     90.0,
@@ -9168,9 +9633,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    22785.125,
-    4.147,
-    16132.875
+    6735.125,
+    21.587,
+    2982.875
    ],
    "ypr": [
     90.0,
@@ -9181,11 +9646,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W04",
+   "name": "Land_House_1W01",
    "pos": [
-    15991.125,
-    5.575,
-    15181.875
+    5991.125,
+    30.366,
+    3231.875
    ],
    "ypr": [
     0.0,
@@ -9198,9 +9663,9 @@
   {
    "name": "Land_Barn_Metal_Big",
    "pos": [
-    16011.125,
-    6.64,
-    15206.875
+    6011.125,
+    31.032,
+    3256.875
    ],
    "ypr": [
     0.0,
@@ -9213,57 +9678,12 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    16017.125,
-    5.545,
-    15178.875
+    6017.125,
+    31.413,
+    3228.875
    ],
    "ypr": [
     0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    16688.125,
-    10.254,
-    21108.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    16713.125,
-    11.414,
-    21088.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    16685.125,
-    10.382,
-    21082.875
-   ],
-   "ypr": [
-    90.0,
     0.0,
     0.0
    ],
@@ -9316,191 +9736,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W01",
-   "pos": [
-    20791.125,
-    35.868,
-    14231.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    20811.125,
-    35.637,
-    14256.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    20817.125,
-    36.64,
-    14228.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    18088.125,
-    3.728,
-    19908.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    18113.125,
-    3.81,
-    19888.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    18085.125,
-    4.649,
-    19882.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    20691.125,
-    45.699,
-    14681.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    20711.125,
-    46.385,
-    14706.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    20717.125,
-    45.248,
-    14678.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
    "name": "Land_House_1W06",
    "pos": [
-    8541.125,
-    132.75,
-    4481.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    8561.125,
-    133.201,
-    4506.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    8567.125,
-    132.115,
-    4478.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    18188.125,
-    4.122,
-    13258.875
+    16988.125,
+    56.487,
+    15958.875
    ],
    "ypr": [
     90.0,
@@ -9513,9 +9753,9 @@
   {
    "name": "Land_Barn_Metal_Big",
    "pos": [
-    18213.125,
-    5.398,
-    13238.875
+    17013.125,
+    57.355,
+    15938.875
    ],
    "ypr": [
     90.0,
@@ -9528,9 +9768,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    18185.125,
-    4.747,
-    13232.875
+    16985.125,
+    56.434,
+    15932.875
    ],
    "ypr": [
     90.0,
@@ -9543,9 +9783,9 @@
   {
    "name": "Land_House_1W06",
    "pos": [
-    17038.125,
-    58.136,
-    16008.875
+    5288.125,
+    21.957,
+    2908.875
    ],
    "ypr": [
     90.0,
@@ -9558,9 +9798,9 @@
   {
    "name": "Land_Farm_CowshedA",
    "pos": [
-    17063.125,
-    58.743,
-    15988.875
+    5313.125,
+    21.2,
+    2888.875
    ],
    "ypr": [
     90.0,
@@ -9573,9 +9813,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    17035.125,
-    57.749,
-    15982.875
+    5285.125,
+    20.913,
+    2882.875
    ],
    "ypr": [
     90.0,
@@ -9588,54 +9828,9 @@
   {
    "name": "Land_House_1W06",
    "pos": [
-    17791.125,
-    39.418,
-    17281.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    17811.125,
-    38.561,
-    17306.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    17817.125,
-    38.387,
-    17278.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    15938.125,
-    17.245,
-    22008.875
+    12038.125,
+    9.353,
+    7358.875
    ],
    "ypr": [
     90.0,
@@ -9648,9 +9843,9 @@
   {
    "name": "Land_Barn_Metal_Big",
    "pos": [
-    15963.125,
-    17.808,
-    21988.875
+    12063.125,
+    8.124,
+    7338.875
    ],
    "ypr": [
     90.0,
@@ -9663,279 +9858,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    15935.125,
-    18.286,
-    21982.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    17438.125,
-    2.715,
-    19758.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    17463.125,
-    3.657,
-    19738.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    17435.125,
-    2.979,
-    19732.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    19088.125,
-    75.587,
-    13008.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    19113.125,
-    75.799,
-    12988.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    19085.125,
-    76.554,
-    12982.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    16891.125,
-    8.599,
-    20731.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    16911.125,
-    8.47,
-    20756.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    16917.125,
-    7.661,
-    20728.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    13888.125,
-    8.008,
-    8908.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    13913.125,
-    6.748,
-    8888.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    13885.125,
-    7.303,
-    8882.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    17688.125,
-    22.657,
-    18458.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    17713.125,
-    23.703,
-    18438.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    17685.125,
-    22.599,
-    18432.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    16688.125,
-    7.502,
-    16208.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    16713.125,
-    8.749,
-    16188.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    16685.125,
-    8.243,
-    16182.875
+    12035.125,
+    8.569,
+    7332.875
    ],
    "ypr": [
     90.0,
@@ -9948,54 +9873,9 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    17491.125,
-    12.027,
-    19031.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    17511.125,
-    11.645,
-    19056.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    17517.125,
-    11.296,
-    19028.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W06",
-   "pos": [
-    4688.125,
-    3.564,
-    6908.875
+    16888.125,
+    9.286,
+    20758.875
    ],
    "ypr": [
     90.0,
@@ -10008,9 +9888,9 @@
   {
    "name": "Land_Farm_CowshedA",
    "pos": [
-    4713.125,
-    4.721,
-    6888.875
+    16913.125,
+    8.012,
+    20738.875
    ],
    "ypr": [
     90.0,
@@ -10023,9 +9903,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    4685.125,
-    4.445,
-    6882.875
+    16885.125,
+    8.822,
+    20732.875
    ],
    "ypr": [
     90.0,
@@ -10038,9 +9918,9 @@
   {
    "name": "Land_House_1W03",
    "pos": [
-    9438.125,
-    5.414,
-    4908.875
+    4888.125,
+    3.357,
+    2558.875
    ],
    "ypr": [
     90.0,
@@ -10053,9 +9933,9 @@
   {
    "name": "Land_Barn_Metal_Big",
    "pos": [
-    9463.125,
-    4.158,
-    4888.875
+    4913.125,
+    3.153,
+    2538.875
    ],
    "ypr": [
     90.0,
@@ -10068,279 +9948,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    9435.125,
-    4.779,
-    4882.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    10838.125,
-    9.085,
-    6908.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    10863.125,
-    7.981,
-    6888.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    10835.125,
-    8.156,
-    6882.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    21191.125,
-    28.702,
-    14631.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    21211.125,
-    27.68,
-    14656.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    21217.125,
-    28.793,
-    14628.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    12788.125,
-    4.079,
-    13208.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    12813.125,
-    5.163,
-    13188.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    12785.125,
-    5.021,
-    13182.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    24341.125,
-    4.444,
-    18631.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    24361.125,
-    3.199,
-    18656.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    24367.125,
-    4.112,
-    18628.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    19188.125,
-    31.741,
-    13508.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    19213.125,
-    31.202,
-    13488.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    19185.125,
-    32.312,
-    13482.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W01",
-   "pos": [
-    15888.125,
-    6.549,
-    10958.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    15913.125,
-    5.311,
-    10938.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    15885.125,
-    6.239,
-    10932.875
+    4885.125,
+    2.764,
+    2532.875
    ],
    "ypr": [
     90.0,
@@ -10352,411 +9962,6 @@
   },
   {
    "name": "Land_House_1W02",
-   "pos": [
-    14988.125,
-    31.94,
-    22808.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    15013.125,
-    32.546,
-    22788.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    14985.125,
-    31.422,
-    22782.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W03",
-   "pos": [
-    17541.125,
-    70.596,
-    16231.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    17561.125,
-    70.043,
-    16256.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    17567.125,
-    69.556,
-    16228.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W03",
-   "pos": [
-    20238.125,
-    113.372,
-    17458.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    20263.125,
-    113.424,
-    17438.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    20235.125,
-    112.508,
-    17432.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    16741.125,
-    8.264,
-    19931.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    16761.125,
-    8.697,
-    19956.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    16767.125,
-    7.617,
-    19928.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    8288.125,
-    5.765,
-    3458.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    8313.125,
-    4.564,
-    3438.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    8285.125,
-    4.935,
-    3432.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    10991.125,
-    46.797,
-    9981.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    11011.125,
-    46.599,
-    10006.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    11017.125,
-    47.587,
-    9978.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    10738.125,
-    3.64,
-    10858.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    10763.125,
-    4.908,
-    10838.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    10735.125,
-    4.064,
-    10832.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    11188.125,
-    42.047,
-    7408.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    11213.125,
-    41.237,
-    7388.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    11185.125,
-    41.008,
-    7382.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W02",
-   "pos": [
-    6291.125,
-    42.587,
-    3131.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    6311.125,
-    43.621,
-    3156.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    6317.125,
-    42.775,
-    3128.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
    "pos": [
     24141.125,
     4.984,
@@ -10771,7 +9976,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Barn_Metal_Big",
+   "name": "Land_Farm_CowshedA",
    "pos": [
     24161.125,
     5.034,
@@ -10801,371 +10006,56 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W04",
-   "pos": [
-    15641.125,
-    15.601,
-    22131.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    15661.125,
-    15.543,
-    22156.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    15667.125,
-    14.689,
-    22128.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W04",
-   "pos": [
-    18838.125,
-    25.966,
-    18358.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    18863.125,
-    26.52,
-    18338.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    18835.125,
-    27.006,
-    18332.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W03",
-   "pos": [
-    17241.125,
-    6.897,
-    19231.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    17261.125,
-    6.855,
-    19256.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    17267.125,
-    7.765,
-    19228.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    15291.125,
-    9.68,
-    23381.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    15311.125,
-    8.985,
-    23406.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    15317.125,
-    10.123,
-    23378.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    11691.125,
-    213.537,
-    9831.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    11711.125,
-    214.444,
-    9856.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    11717.125,
-    214.557,
-    9828.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    17588.125,
-    85.321,
-    15408.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    17613.125,
-    84.65,
-    15388.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    17585.125,
-    85.785,
-    15382.875
-   ],
-   "ypr": [
-    90.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W03",
-   "pos": [
-    20441.125,
-    37.621,
-    14381.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Farm_CowshedA",
-   "pos": [
-    20461.125,
-    36.795,
-    14406.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    20467.125,
-    36.785,
-    14378.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_House_1W05",
-   "pos": [
-    10041.125,
-    6.673,
-    6031.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Barn_Metal_Big",
-   "pos": [
-    10061.125,
-    6.496,
-    6056.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
-   "name": "Land_Shed_W4",
-   "pos": [
-    10067.125,
-    5.718,
-    6028.875
-   ],
-   "ypr": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
    "name": "Land_House_1W01",
    "pos": [
-    20091.125,
-    187.452,
-    16431.875
+    16988.125,
+    7.844,
+    16558.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    17013.125,
+    9.041,
+    16538.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    16985.125,
+    8.048,
+    16532.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    20241.125,
+    112.635,
+    17431.875
    ],
    "ypr": [
     0.0,
@@ -11176,11 +10066,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Farm_CowshedA",
+   "name": "Land_Barn_Metal_Big",
    "pos": [
-    20111.125,
-    187.553,
-    16456.875
+    20261.125,
+    113.915,
+    17456.875
    ],
    "ypr": [
     0.0,
@@ -11193,9 +10083,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    20117.125,
-    188.38,
-    16428.875
+    20267.125,
+    113.227,
+    17428.875
    ],
    "ypr": [
     0.0,
@@ -11208,9 +10098,54 @@
   {
    "name": "Land_House_1W02",
    "pos": [
-    16841.125,
-    58.728,
-    15631.875
+    7588.125,
+    9.323,
+    2908.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    7613.125,
+    8.325,
+    2888.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    7585.125,
+    8.334,
+    2882.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    4341.125,
+    6.211,
+    2931.875
    ],
    "ypr": [
     0.0,
@@ -11223,9 +10158,9 @@
   {
    "name": "Land_Farm_CowshedA",
    "pos": [
-    16861.125,
-    58.28,
-    15656.875
+    4361.125,
+    6.766,
+    2956.875
    ],
    "ypr": [
     0.0,
@@ -11238,9 +10173,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    16867.125,
-    59.364,
-    15628.875
+    4367.125,
+    5.652,
+    2928.875
    ],
    "ypr": [
     0.0,
@@ -11251,11 +10186,56 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W03",
+   "name": "Land_House_1W04",
    "pos": [
-    12391.125,
-    26.139,
-    7881.875
+    19188.125,
+    31.741,
+    13508.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    19213.125,
+    31.202,
+    13488.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    19185.125,
+    32.312,
+    13482.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    19941.125,
+    49.622,
+    13881.875
    ],
    "ypr": [
     0.0,
@@ -11268,9 +10248,9 @@
   {
    "name": "Land_Barn_Metal_Big",
    "pos": [
-    12411.125,
-    26.631,
-    7906.875
+    19961.125,
+    49.332,
+    13906.875
    ],
    "ypr": [
     0.0,
@@ -11283,9 +10263,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    12417.125,
-    25.534,
-    7878.875
+    19967.125,
+    50.36,
+    13878.875
    ],
    "ypr": [
     0.0,
@@ -11296,7 +10276,457 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W05",
+   "name": "Land_House_1W02",
+   "pos": [
+    20891.125,
+    143.119,
+    15781.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    20911.125,
+    144.298,
+    15806.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    20917.125,
+    143.284,
+    15778.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    10988.125,
+    19.937,
+    7108.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    11013.125,
+    19.002,
+    7088.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    10985.125,
+    18.925,
+    7082.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    12791.125,
+    86.218,
+    8731.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    12811.125,
+    85.593,
+    8756.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    12817.125,
+    85.173,
+    8728.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    19341.125,
+    57.447,
+    13081.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    19361.125,
+    56.978,
+    13106.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    19367.125,
+    58.069,
+    13078.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    21091.125,
+    6.341,
+    18031.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    21111.125,
+    5.125,
+    18056.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    21117.125,
+    5.535,
+    18028.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    10291.125,
+    4.35,
+    6481.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    10311.125,
+    4.528,
+    6506.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    10317.125,
+    3.672,
+    6478.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    16688.125,
+    52.407,
+    15508.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    16713.125,
+    53.418,
+    15488.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    16685.125,
+    52.301,
+    15482.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    6738.125,
+    6.938,
+    2358.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    6763.125,
+    5.873,
+    2338.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    6735.125,
+    5.983,
+    2332.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    15891.125,
+    7.161,
+    11131.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    15911.125,
+    6.023,
+    11156.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    15917.125,
+    6.26,
+    11128.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    10791.125,
+    6.569,
+    6831.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    10811.125,
+    7.063,
+    6856.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    10817.125,
+    5.965,
+    6828.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
    "pos": [
     16441.125,
     49.151,
@@ -11311,7 +10741,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Farm_CowshedA",
+   "name": "Land_Barn_Metal_Big",
    "pos": [
     16461.125,
     48.094,
@@ -11341,11 +10771,56 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_House_1W04",
+   "name": "Land_House_1W03",
    "pos": [
-    14841.125,
-    26.906,
-    23131.875
+    17538.125,
+    5.565,
+    18458.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    17563.125,
+    6.563,
+    18438.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    17535.125,
+    5.443,
+    18432.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    13341.125,
+    8.96,
+    8681.875
    ],
    "ypr": [
     0.0,
@@ -11356,11 +10831,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Farm_CowshedA",
+   "name": "Land_Barn_Metal_Big",
    "pos": [
-    14861.125,
-    27.97,
-    23156.875
+    13361.125,
+    10.021,
+    8706.875
    ],
    "ypr": [
     0.0,
@@ -11373,9 +10848,54 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    14867.125,
-    27.861,
-    23128.875
+    13367.125,
+    8.925,
+    8678.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    14891.125,
+    3.417,
+    23581.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    14911.125,
+    2.699,
+    23606.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    14917.125,
+    3.228,
+    23578.875
    ],
    "ypr": [
     0.0,
@@ -11388,9 +10908,144 @@
   {
    "name": "Land_House_1W03",
    "pos": [
-    9091.125,
-    7.094,
-    4131.875
+    15888.125,
+    19.403,
+    22658.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    15913.125,
+    20.581,
+    22638.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    15885.125,
+    20.262,
+    22632.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    24291.125,
+    4.429,
+    18631.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    24311.125,
+    3.598,
+    18656.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    24317.125,
+    4.743,
+    18628.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    23288.125,
+    5.22,
+    16708.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    23313.125,
+    4.371,
+    16688.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    23285.125,
+    5.515,
+    16682.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    11141.125,
+    40.939,
+    7381.875
    ],
    "ypr": [
     0.0,
@@ -11403,9 +11058,9 @@
   {
    "name": "Land_Farm_CowshedA",
    "pos": [
-    9111.125,
-    6.94,
-    4156.875
+    11161.125,
+    41.899,
+    7406.875
    ],
    "ypr": [
     0.0,
@@ -11418,9 +11073,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    9117.125,
-    6.147,
-    4128.875
+    11167.125,
+    40.768,
+    7378.875
    ],
    "ypr": [
     0.0,
@@ -11433,9 +11088,9 @@
   {
    "name": "Land_House_1W05",
    "pos": [
-    16041.125,
-    20.025,
-    22381.875
+    20841.125,
+    35.55,
+    14281.875
    ],
    "ypr": [
     0.0,
@@ -11446,11 +11101,11 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Barn_Metal_Big",
+   "name": "Land_Farm_CowshedA",
    "pos": [
-    16061.125,
-    19.573,
-    22406.875
+    20861.125,
+    34.909,
+    14306.875
    ],
    "ypr": [
     0.0,
@@ -11463,9 +11118,9 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    16067.125,
-    20.659,
-    22378.875
+    20867.125,
+    36.039,
+    14278.875
    ],
    "ypr": [
     0.0,
@@ -11478,9 +11133,144 @@
   {
    "name": "Land_House_1W01",
    "pos": [
-    13088.125,
-    65.924,
-    9108.875
+    22791.125,
+    160.814,
+    17431.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    22811.125,
+    162.069,
+    17456.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    22817.125,
+    161.183,
+    17428.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    16691.125,
+    8.423,
+    16181.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    16711.125,
+    8.135,
+    16206.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    16717.125,
+    9.162,
+    16178.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    15291.125,
+    50.971,
+    22881.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    15311.125,
+    51.409,
+    22906.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    15317.125,
+    50.776,
+    22878.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    20588.125,
+    33.45,
+    14108.875
    ],
    "ypr": [
     90.0,
@@ -11493,9 +11283,9 @@
   {
    "name": "Land_Barn_Metal_Big",
    "pos": [
-    13113.125,
-    64.801,
-    9088.875
+    20613.125,
+    32.169,
+    14088.875
    ],
    "ypr": [
     90.0,
@@ -11508,12 +11298,552 @@
   {
    "name": "Land_Shed_W4",
    "pos": [
-    13085.125,
-    65.01,
-    9082.875
+    20585.125,
+    32.882,
+    14082.875
    ],
    "ypr": [
     90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W05",
+   "pos": [
+    17891.125,
+    39.243,
+    17181.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    17911.125,
+    38.712,
+    17206.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    17917.125,
+    39.82,
+    17178.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    18191.125,
+    4.949,
+    13231.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    18211.125,
+    4.847,
+    13256.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    18217.125,
+    5.789,
+    13228.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    5541.125,
+    45.961,
+    3181.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    5561.125,
+    45.123,
+    3206.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    5567.125,
+    44.926,
+    3178.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    9838.125,
+    50.137,
+    6558.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    9863.125,
+    48.941,
+    6538.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    9835.125,
+    49.934,
+    6532.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    17738.125,
+    64.37,
+    16308.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    17763.125,
+    65.019,
+    16288.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    17735.125,
+    63.887,
+    16282.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    18138.125,
+    6.373,
+    18858.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    18163.125,
+    5.529,
+    18838.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    18135.125,
+    5.339,
+    18832.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    8038.125,
+    8.811,
+    3108.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    8063.125,
+    7.535,
+    3088.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    8035.125,
+    8.336,
+    3082.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W01",
+   "pos": [
+    8788.125,
+    5.687,
+    8658.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    8813.125,
+    6.71,
+    8638.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    8785.125,
+    6.665,
+    8632.875
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W06",
+   "pos": [
+    15541.125,
+    6.416,
+    12181.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    15561.125,
+    5.179,
+    12206.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    15567.125,
+    5.65,
+    12178.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W03",
+   "pos": [
+    11591.125,
+    10.336,
+    7181.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    11611.125,
+    10.928,
+    7206.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    11617.125,
+    9.806,
+    7178.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W04",
+   "pos": [
+    19091.125,
+    81.245,
+    14281.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Farm_CowshedA",
+   "pos": [
+    19111.125,
+    82.506,
+    14306.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    19117.125,
+    81.946,
+    14278.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_House_1W02",
+   "pos": [
+    21141.125,
+    214.948,
+    16681.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Barn_Metal_Big",
+   "pos": [
+    21161.125,
+    214.415,
+    16706.875
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    21167.125,
+    215.523,
+    16678.875
+   ],
+   "ypr": [
+    0.0,
     0.0,
     0.0
    ],

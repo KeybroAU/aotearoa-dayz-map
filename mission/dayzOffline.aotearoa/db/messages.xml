@@ -11,6 +11,26 @@
         <text>Tip: the Interislander terminals at Wellington and Picton have boats for crossing Cook Strait.</text>
     </message>
     <message>
+        <delay>5</delay>
+        <repeat>30</repeat>
+        <text>Server rules: no cheating, exploiting or duping. Bans are permanent.</text>
+    </message>
+    <message>
+        <delay>12</delay>
+        <repeat>30</repeat>
+        <text>Server rules: no racism or harassment in chat or on voice. Kia pai te noho.</text>
+    </message>
+    <message>
+        <delay>20</delay>
+        <repeat>30</repeat>
+        <text>Server rules: no combat logging. Log out somewhere safe and wait out the timer.</text>
+    </message>
+    <message>
+        <delay>27</delay>
+        <repeat>30</repeat>
+        <text>Server rules: base building is allowed away from military bases, airfields and ports.</text>
+    </message>
+    <message>
         <deadline>240</deadline>
         <shutdown>1</shutdown>
         <text>The server restarts in #tmin minutes.</text>

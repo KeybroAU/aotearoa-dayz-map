@@ -1,0 +1,4 @@
+// Whitelisted players (enableWhitelist = 1 in serverDZ.cfg) for an Aotearoa DayZ server. One player per line:
+//   <Steam64 ID or BattlEye GUID> <optional note>
+// Example:
+//   76561198000000000 Example Player
