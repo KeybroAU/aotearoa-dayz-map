@@ -121,10 +121,20 @@ def main() -> None:
         check(f"class Road{spec['id']:04d}" in lib, f"{kind} has RoadsLib entry Road{spec['id']:04d}")
     check(all(r["kind"] in roads["kinds"] for r in roads["roads"]), f"{len(roads['roads'])} roads use known kinds")
 
-    print("Town signs")
+    print("Signs and models")
     signs = json.loads((MISSION / "aotearoa" / "signs_spawner.json").read_text(encoding="utf-8"))["Objects"]
+    posts = json.loads((MISSION / "aotearoa" / "roadsigns_spawner.json").read_text(encoding="utf-8"))["Objects"]
     hpp = (MAP_DIR / "config" / "signs.hpp").read_text(encoding="utf-8")
     classes = set(re.findall(r"class (Land_Aotearoa_Sign_\w+):", hpp)) - {"Land_Aotearoa_Sign_Base"}
+    post_classes = set(re.findall(r"class (Land_Aotearoa_SignPost_\w+):", hpp)) - {"Land_Aotearoa_SignPost_Base"}
+    check(bool(posts) and all(o["name"] in post_classes for o in posts), f"{len(posts)} road signs, all with a config class")
+    check(all(on_map(o["pos"][0], o["pos"][2]) and ground(o["pos"][0], o["pos"][2]) > 0.0 for o in posts),
+          "road signs all on land")
+    check(all((MAP_DIR / "data" / "signs" / f"post_{c.removeprefix('Land_Aotearoa_SignPost_')}.png").exists()
+              for c in post_classes), f"{len(post_classes)} road sign textures in data/signs")
+    for name in ("sign_town", "sign_post", "bach", "doc_hut", "woolshed", "dairy"):
+        check((MAP_DIR / "docs" / "models" / f"{name}.obj").exists(), f"docs/models/{name}.obj")
+    check('#include "config\\structures.hpp"' in cfg, "config.cpp includes config\\structures.hpp")
     check(bool(signs) and all(o["name"] in classes for o in signs), f"{len(signs)} signs, all with a config class")
     check(all(on_map(o["pos"][0], o["pos"][2]) and ground(o["pos"][0], o["pos"][2]) > 0.0 for o in signs),
           "signs all on land")
