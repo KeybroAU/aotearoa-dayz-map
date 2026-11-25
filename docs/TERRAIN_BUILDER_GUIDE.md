@@ -254,6 +254,8 @@ To merge, edit `SURFACE_INDEX` / the layer list in `tools/generate_terrain.py` (
 - [ ] Double-click **`pack.bat`** in `P:\maps\aotearoa` (or run `pack.bat --key aotearoa --zip` to sign and zip as well).
 - [ ] When it finishes, copy everything in **`dist\server\`** into your DayZ Server folder, set `passwordAdmin` in `serverDZ.cfg`, and run `start_server.bat`.
 - [ ] Give players **`dist\@Aotearoa`** (or `dist\Aotearoa_mod.zip`).
+- [ ] Optional: add `--difficulty easy` or `--difficulty hard` to scale loot, vehicles and infected (see the README).
+- [ ] Set `RConPassword` in `dist\server\profiles\BattlEye\BEServer_x64.cfg` if you use an RCon tool, and add admins' and banned players' IDs to `whitelist.txt` / `ban.txt` as needed.
 
 It does the image conversion, packing, signing and mission merging in steps 11 to 13 for you. Then skip to the in-game checks at the end of step 13. If it fails, the step that failed is printed above the error, and you can do that step by hand below.
 

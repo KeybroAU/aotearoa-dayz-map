@@ -6,6 +6,7 @@ A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and
 - state highways, gravel back roads and town streets, with bridges, guardrails and power lines
 - the North Island Main Trunk and Main North Line railways, with 18 stations
 - lakes with water surfaces, and rivers
+- landmarks: Milford Sound, Aoraki / Mount Cook Village, Chateau Tongariro, Waitomo Caves, Huka Falls, the Church of the Good Shepherd, Moeraki Boulders and Stirling Point
 - airfields, ports, the Interislander ferry terminals, boat ramps, ski fields, industrial plants, Devonport Naval Base, the Cape Reinga lighthouse, Hobbiton, farms and Whakaari / White Island
 - baches, surf clubs, holiday parks and DOC huts
 - forests, hedgerows, farm fences and rocks; street lamps, bus stops, back fences, garden trees and abandoned cars
@@ -127,6 +128,12 @@ River courses are traced on the real drainage (Waikato, Whanganui, Clutha, Waita
 | Tiwai Point Smelter | Four potline sheds, transformer and office |
 | Devonport Naval Base | Waterfront pad with barracks, guardhouse, tower, warehouse and containers |
 | Cape Reinga / Te Rerenga Wairua | Lighthouse at the top of the North Island |
+| Milford Sound / Piopiotahi, Aoraki / Mount Cook Village | Lodge (pub), three houses, shed and car park |
+| Chateau Tongariro | A big hotel at the foot of Ruapehu (a tenement until there is a custom model) |
+| Waitomo Caves, Huka Falls | Visitor centre, shed and car park |
+| Church of the Good Shepherd | The little church by Lake Tekapo |
+| Moeraki Boulders | Boulders scattered along the beach, with a shed and car park |
+| Stirling Point | The café and shed at the bottom of the South Island, at Bluff |
 | Hobbiton | A ring of cottages and the Green Dragon (hobbit holes need a custom model) |
 | 70 farms | Farmhouse, barn or cowshed and shed, along the highways |
 | Whakaari / White Island | Volcanic islet off the Bay of Plenty with a crater and a contaminated zone |
@@ -222,6 +229,9 @@ The photo is not stored in this repo; only the colours taken from it are. To use
 | `mission/` | Server mission files, a `serverDZ.cfg` template and launch scripts in `mission/server/` |
 | `preview/` | Satellite, relief, mask, slope, towns, roads, sites, forest, mission maps and the player map |
 | `.github/workflows/check.yml` | Runs `tools/check_map.py` on every push |
+| `.github/workflows/release.yml` | Builds a GitHub release when a `v*` tag is pushed |
+| `VERSION`, `CHANGELOG.md` | The current version and what changed in each |
+| `docs/` | The Terrain Builder walkthrough and the custom models plan |
 | `tools/` | The generators (see [Regenerating](#regenerating)) |
 
 Not committed, because they are too big: `source/heightmap_4096.asc` (about 120 MB), `source/mask_25600.png` and `source/satellite_25600.png`. `build_all.bat` makes them.
@@ -261,6 +271,16 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
 - `dist\@Aotearoa\`: the mod for clients and the server
 - `dist\server\`: a ready server folder. It holds the mod, keys, `serverDZ.cfg`, the launch scripts, and `mpmissions\dayzOffline.aotearoa`, which is vanilla Chernarus with every Aotearoa file copied over it and `cfggameplay.json` and `cfgeconomycore.xml` already merged. Copy its contents into your DayZ Server folder.
 
+**Difficulty:** `pack.bat --difficulty easy` or `--difficulty hard` scales the vanilla amounts in the server folder. Normal leaves them as they are.
+
+| | Loot | Vehicles | Infected |
+|---|---|---|---|
+| easy | x1.5 | x1.5 | x0.6 |
+| normal | x1 | x1 | x1 |
+| hard | x0.6 | x0.6 | x1.5 |
+
+Loot scales every item's `nominal` and `min` in `types.xml`. Vehicles scale the `Vehicle*` events in `events.xml`. Infected scale the `Infected*` events and `ZombieMaxCount` in `globals.xml`. Fine-tune any one with `--loot`, `--vehicles` or `--infected` and a factor, for example `pack.bat --difficulty hard --vehicles 1`.
+
 It finds DayZ Tools and the DayZ Server's vanilla mission in their Steam folders; pass `--tools` or `--vanilla-mission` if yours are elsewhere. Run `python tools/pack_mod.py --help` for all options. The signing key goes in `keys\` and is never committed.
 
 By hand:
@@ -292,8 +312,10 @@ The world inherits lighting, weather and sounds from Chernarus Plus. It sets a s
 | `env/*_territories.xml` | Animals: red deer and wild pigs in the bush, sheep on pasture and goats in the high country, cattle, pigs and hens at farms, hares on farmland. No wolves, bears, foxes or roe deer. |
 | `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog |
 | `aotearoa_spawngear_*.json` | Starting gear presets: Farmer (checked shirt, jeans, gumboots), Tramper (rain jacket, cargo pants, hiking boots) and Beach (T-shirt, shorts, sneakers). Each has a rag, a chemlight and an apple. |
-| `db/messages.xml` | A "Kia ora" welcome, a tip about the ferries, and a restart countdown for 4-hourly restarts |
+| `db/messages.xml` | A "Kia ora" welcome, a tip about the ferries, server rules every 30 minutes, and a restart countdown for 4-hourly restarts. Edit `RULES` in `tools/server_files.py` for your own rules. |
 | `../server/start_server.bat`, `../server/start_server.sh` | Launch loops for Windows and Linux that restart the server when it stops |
+| `../server/ban.txt`, `../server/whitelist.txt` | Empty ban and whitelist files with the format explained. The whitelist only applies once you set `enableWhitelist = 1` in `serverDZ.cfg`. |
+| `../server/battleye/BEServer_x64.cfg` | BattlEye RCon settings (password and port 2306) for admin tools. It goes in `profiles\BattlEye\`; `pack.bat` puts it there. |
 
 ![Loot tiers](preview/loot_tiers_2048.png)
 
@@ -323,6 +345,31 @@ The rest of the economy is vanilla. Change counts in `NZ_TYPES` in `tools/econom
 ![Player map](preview/player_map_4096.jpg)
 
 `preview/player_map_4096.jpg` is a labelled map to print or share with players. It has the satellite image, a 1 km grid numbered like the in-game map, towns with both names, the highways, gravel roads, railway and stations, the main sites and a legend. Make a bigger one from the full satellite with `python tools/build_player_map.py --size 8192`.
+
+## Releases
+
+Each version is a [GitHub release](https://github.com/KeybroAU/aotearoa-dayz-map/releases) with:
+- the mission files
+- the heightmap as `.asc`
+- the player map
+- a source zip
+
+To make one:
+
+1. Add a section for the new version at the top of `CHANGELOG.md`.
+2. Put the same version in `VERSION` and in `mod/mod.cpp`. The checks fail if they differ.
+3. Commit, then tag and push: `git tag v0.4.0 && git push origin v0.4.0`.
+
+GitHub runs the checks, builds the files and publishes the release with that version's changelog as its notes.
+
+## Custom models
+
+[docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md) is a brief for a modeller. It covers New Zealand models the map would benefit from, in priority order:
+- the lake water plane and NZ road signs
+- a bach, a woolshed, a corner dairy and a DOC hut
+- Hobbit holes, the Interislander, the Sky Tower, the Beehive and the Chateau
+
+For each one it gives the size and the parts it needs, plus where the map uses a stand-in today.
 
 ## Checks
 
