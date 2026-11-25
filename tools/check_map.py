@@ -179,6 +179,11 @@ def main() -> None:
     missing = sorted(n for n in labelled if f'"{n}' not in names_hpp)
     check(not missing, f"{len(labelled)} towns and places labelled on the 2D map"
           + (f" (missing: {', '.join(missing[:5])})" if missing else ""))
+    features = json.loads((SOURCE / "labels.json").read_text(encoding="utf-8"))
+    check(bool(features) and all(f"class {lb['class']}" in names_hpp for lb in features)
+          and all(on_map(*lb["xy"]) for lb in features), f"{len(features)} rivers, peaks, water and stations labelled")
+    old_types = re.findall(r'type = "(Name\w+)"', names_hpp)
+    check(not old_types, "map labels use the DayZ location types" + (f" ({old_types[0]} found)" if old_types else ""))
 
     print()
     if failures:

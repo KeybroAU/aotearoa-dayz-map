@@ -752,6 +752,9 @@ def main() -> None:
         args.asc.mkdir(parents=True, exist_ok=True)
         write_asc(h, args.asc / "heightmap_4096.asc")
         print(f"Wrote {args.asc / 'heightmap_4096.asc'}")
+    import labels
+
+    labels.main()
     print("Done")
 
 

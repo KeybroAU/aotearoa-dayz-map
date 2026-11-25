@@ -395,7 +395,11 @@ The paper map players pick up is its own mod, `@AotearoaMap`, with the class **`
 - **Back (legend panel):** the key, then all 52 towns and 56 named places with their grid squares, for example `Rakaia ..... 11-18`.
 - **Cover:** a folded road-map cover.
 
-Unfolding it opens DayZ's 2D map, which the game draws from the terrain. Its labels come from `config/names.hpp`, which holds every town, military camp and named site (109 labels).
+Unfolding it opens DayZ's 2D map, which the game draws from the terrain. Its labels come from `config/names.hpp`, which has 195 of them:
+- every town, military camp and named site;
+- from `tools/labels.py`: 24 named rivers, 16 peaks and ranges, 15 lakes, 13 seas, bays and harbours, and the 19 railway stations.
+
+Rivers are snapped onto the traced channels, peaks to the local high point, and seas to open water. The labels use the location types that DayZ's map styles (`Capital`, `City`, `Village`, `Local`, `Marine`, `Hill`, `RailroadStation`). The rivers, peaks and seas are also drawn on the player map and on the map item's sheet. To add a feature, append it to `RIVERS`, `PEAKS` or `SEAS` in `tools/labels.py` and run `python tools/labels.py`.
 
 | File | What it is |
 |---|---|

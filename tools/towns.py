@@ -22,11 +22,11 @@ from scipy import ndimage
 TOWNS_CSV = Path(__file__).resolve().parent / "towns.csv"
 
 TIERS = {
-    "capital": {"radius": 320.0, "name_type": "NameCityCapital", "big_share": 0.45},
-    "city": {"radius": 210.0, "name_type": "NameCity", "big_share": 0.30},
-    "town": {"radius": 165.0, "name_type": "NameVillage", "big_share": 0.12},
-    "village": {"radius": 110.0, "name_type": "NameVillage", "big_share": 0.0},
-    "military": {"radius": 140.0, "name_type": "NameLocal", "big_share": 0.0},
+    "capital": {"radius": 320.0, "name_type": "Capital", "big_share": 0.45},
+    "city": {"radius": 210.0, "name_type": "City", "big_share": 0.30},
+    "town": {"radius": 165.0, "name_type": "Village", "big_share": 0.12},
+    "village": {"radius": 110.0, "name_type": "Village", "big_share": 0.0},
+    "military": {"radius": 140.0, "name_type": "Local", "big_share": 0.0},
     "hamlet": {"radius": 70.0, "name_type": "", "big_share": 0.0},
 }
 MIN_LAND_SHARE = 0.7

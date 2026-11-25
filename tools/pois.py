@@ -166,7 +166,7 @@ class Site:
     y: float
     radius: float
     heading: float = 0.0
-    name_type: str = "NameLocal"
+    name_type: str = "Local"
     buildings: list[Building] = field(default_factory=list)
     surfaces: list[dict] = field(default_factory=list)  # {"kind": asphalt|concrete|gravel, "points": [...]}
     extra: dict = field(default_factory=dict)
@@ -298,7 +298,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
             continue
         x, y, hd = spot
         h = flatten_rect(h, land, grid, x, y, hd, length, width, blend=50.0)
-        site = Site("airfield", cls, label, x, y, length / 2, hd, "NameLocal")
+        site = Site("airfield", cls, label, x, y, length / 2, hd, "Local")
         site.surfaces.append({"kind": "asphalt", "points": rect_points(x, y, hd, RUNWAY_LENGTH, RUNWAY_WIDTH)})
         apron_c = RUNWAY_WIDTH / 2 + 25.0 + APRON[1] / 2
         site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, APRON[0], APRON[1], 0.0, apron_c)})
@@ -366,7 +366,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
             continue
         x, y, hd = spot
         h = flatten_rect(h, land, grid, x, y, hd, *INDUSTRIAL_PAD, blend=40.0)
-        site = Site("industrial", cls, label, x, y, INDUSTRIAL_PAD[0] / 2, hd, "NameLocal")
+        site = Site("industrial", cls, label, x, y, INDUSTRIAL_PAD[0] / 2, hd, "Local")
         site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, *INDUSTRIAL_PAD)})
         for along, across, cls_b, turn in INDUSTRIAL_LAYOUTS[layout]:
             bx, by = local_to_world(x, y, hd, along, across)
@@ -414,7 +414,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
     if spot:
         x, y, hd = spot
         h = flatten_rect(h, land, grid, x, y, hd, 40.0, 40.0, blend=20.0, max_grade=0.05)
-        site = Site("landmark", cls, label, x, y, 25.0, hd, "NameLocal")
+        site = Site("landmark", cls, label, x, y, 25.0, hd, "Local")
         site.buildings.append(Building("Land_Lighthouse", x, y, hd))
         site.buildings.append(Building("Land_Shed_W4", *local_to_world(x, y, hd, -14.0, 12.0), hd))
         site.surfaces.append({"kind": "gravel", "points": rect_points(x, y, hd, 30.0, 8.0, 0.0, -16.0)})
@@ -431,7 +431,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
             continue
         x, y, hd = spot
         h = flatten_rect(h, land, grid, x, y, hd, length, width, blend=20.0, max_grade=0.05)
-        site = Site(LANDMARK_KINDS.get(layout, "landmark"), cls, label, x, y, max(length, width) / 2, hd, "NameLocal")
+        site = Site(LANDMARK_KINDS.get(layout, "landmark"), cls, label, x, y, max(length, width) / 2, hd, "Local")
         for b_cls, along, across, turn in parts:
             site.buildings.append(Building(b_cls, *local_to_world(x, y, hd, along, across), (hd + 90.0 * turn) % 360))
         if layout == "fishing_huts":
@@ -453,7 +453,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
     if spot:
         x, y, hd = spot
         h = flatten_rect(h, land, grid, x, y, hd, 140.0, 110.0, blend=40.0, max_grade=0.05)
-        site = Site("hobbiton", cls, label, x, y, 80.0, hd, "NameVillage")
+        site = Site("hobbiton", cls, label, x, y, 80.0, hd, "Village")
         # Hobbit holes need a custom model; ordinary cottages stand in until there is one.
         for k in range(9):
             ang = 2 * math.pi * k / 9
@@ -524,7 +524,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         x, y, hd = spot
         h = flatten_rect(h, land, grid, x, y, hd, 40.0, 30.0, blend=20.0, min_z=2.0)
         site = Site("surfclub", f"SurfClub{t.class_name}", f"{t.name} Surf Life Saving Club", x, y, 22.0, hd,
-                    "NameLocal")
+                    "Local")
         site.buildings.append(Building("Land_Village_HealthCare", x, y, hd))
         site.buildings.append(Building("Land_Shed_W4", *local_to_world(x, y, hd, 14.0, -8.0), hd))
         site.surfaces.append({"kind": "gravel", "points": rect_points(x, y, hd, 30.0, 8.0, 0.0, -14.0)})
@@ -539,7 +539,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
             continue
         x, y, hd = spot
         h = flatten_rect(h, land, grid, x, y, hd, 70.0, 50.0, blend=25.0, max_grade=0.03)
-        site = Site("campground", f"HolidayPark{t.class_name}", label, x, y, 40.0, hd, "NameLocal")
+        site = Site("campground", f"HolidayPark{t.class_name}", label, x, y, 40.0, hd, "Local")
         site.buildings.append(Building(towns_mod.HOUSES[0][0], *local_to_world(x, y, hd, -24.0, -14.0), hd))
         site.buildings.append(Building("Land_Shed_W4", *local_to_world(x, y, hd, -24.0, 10.0), hd))
         for k in range(4):
@@ -618,7 +618,7 @@ def place_ski_field(h, land, ok, slope, grid, cls, label, tx, ty) -> Site | None
     if best is None:
         return None
     x, y, hd = best
-    site = Site("ski", cls, label, x, y, 120.0, hd, "NameLocal")
+    site = Site("ski", cls, label, x, y, 120.0, hd, "Local")
     site.buildings.append(Building("Land_Village_Pub", x, y, hd))
     site.surfaces.append({"kind": "gravel", "points": rect_points(x, y, hd, 50.0, 30.0)})
 
@@ -794,7 +794,7 @@ def make_whakaari(h, land, grid, lonlat_to_world):
     land = land.copy()
     h[win] = np.where(d < WHAKAARI_RADIUS * 1.4, np.maximum(h[win], island), h[win])
     land[win] |= (d < WHAKAARI_RADIUS) & (h[win] > 0.3)
-    site = Site("whakaari", cls, label, x, y, WHAKAARI_RADIUS, 0.0, "NameLocal")
+    site = Site("whakaari", cls, label, x, y, WHAKAARI_RADIUS, 0.0, "Local")
     site.extra["zone"] = {"radius": WHAKAARI_RADIUS + 60.0, "crater_radius": 95.0}
     print(f"  Whakaari islet at {x:.0f}, {y:.0f}")
     return h, land, site

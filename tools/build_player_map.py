@@ -21,6 +21,7 @@ SOURCE = MAP_DIR / "source"
 PREVIEW = MAP_DIR / "preview"
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT_ITALIC = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf"
 TIER_STYLE = {  # font scale, dot radius scale
     "capital": (1.8, 1.6), "city": (1.45, 1.3), "town": (1.15, 1.0), "village": (0.9, 0.8), "military": (1.0, 1.0),
 }
@@ -115,6 +116,24 @@ def render(satellite: Image.Image, size: int, text_scale: float = 1.0, legend: b
         x, y = px(st["x"], st["y"])
         r = 5 * s
         d.rectangle([x - r, y - r, x + r, y + r], fill=(255, 255, 255, 255), outline=(0, 0, 0, 255), width=2)
+
+    labels_path = SOURCE / "labels.json"
+    features = json.loads(labels_path.read_text(encoding="utf-8")) if labels_path.exists() else []
+    water_font = font(FONT_ITALIC, int(15 * s))
+    sea_font = font(FONT_ITALIC, int(30 * s))
+    peak_font = font(FONT, int(14 * s))
+    for lb in features:
+        x, y = px(*lb["xy"])
+        if lb["kind"] in ("river", "lake"):
+            d.text((x, y), lb["name"], font=water_font, anchor="mm", fill=(190, 225, 255, 240),
+                   stroke_width=2, stroke_fill=(10, 40, 80, 220))
+        elif lb["kind"] == "sea":
+            d.text((x, y), lb["name"], font=sea_font, anchor="mm", fill=(170, 205, 240, 200))
+        elif lb["kind"] == "peak":
+            d.text((x, y), "▲", font=sym_font, anchor="mm", fill=(120, 80, 50, 255), stroke_width=2,
+                   stroke_fill=(255, 255, 255, 230))
+            d.text((x + 12 * s, y), lb["name"], font=peak_font, anchor="lm", fill=(255, 250, 235, 240),
+                   stroke_width=2, stroke_fill=(60, 40, 20, 220))
 
     for t in sorted(load_towns(), key=lambda t: float(t["radius"])):
         scale, dot = TIER_STYLE.get(t["tier"], (1.0, 1.0))

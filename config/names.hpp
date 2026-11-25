@@ -5,7 +5,7 @@ class Names
 	{
 		name = "Auckland / Tāmaki Makaurau";
 		position[] = {17178.1, 20146.9};
-		type = "NameCityCapital";
+		type = "Capital";
 		radiusA = 340;
 		radiusB = 340;
 		angle = 0;
@@ -14,7 +14,7 @@ class Names
 	{
 		name = "Wellington / Te Whanganui-a-Tara";
 		position[] = {17246.9, 12028.1};
-		type = "NameCityCapital";
+		type = "Capital";
 		radiusA = 320;
 		radiusB = 320;
 		angle = 0;
@@ -23,7 +23,7 @@ class Names
 	{
 		name = "Christchurch / Ōtautahi";
 		position[] = {12996.9, 7828.1};
-		type = "NameCityCapital";
+		type = "Capital";
 		radiusA = 320;
 		radiusB = 320;
 		angle = 0;
@@ -32,7 +32,7 @@ class Names
 	{
 		name = "Hamilton / Kirikiriroa";
 		position[] = {18196.9, 18415.6};
-		type = "NameCityCapital";
+		type = "Capital";
 		radiusA = 300;
 		radiusB = 300;
 		angle = 0;
@@ -41,7 +41,7 @@ class Names
 	{
 		name = "Tauranga";
 		position[] = {19934.4, 18603.1};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -50,7 +50,7 @@ class Names
 	{
 		name = "Dunedin / Ōtepoti";
 		position[] = {8803.1, 3503.1};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -59,7 +59,7 @@ class Names
 	{
 		name = "Palmerston North / Te Papaioea";
 		position[] = {18840.6, 13690.6};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -68,7 +68,7 @@ class Names
 	{
 		name = "Napier / Ahuriri";
 		position[] = {21340.6, 15259.4};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -77,7 +77,7 @@ class Names
 	{
 		name = "Hastings / Heretaunga";
 		position[] = {21228.1, 14896.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -86,7 +86,7 @@ class Names
 	{
 		name = "Nelson / Whakatū";
 		position[] = {14278.1, 11990.6};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -95,7 +95,7 @@ class Names
 	{
 		name = "Rotorua";
 		position[] = {20103.1, 17771.9};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -104,7 +104,7 @@ class Names
 	{
 		name = "New Plymouth / Ngāmotu";
 		position[] = {15834.4, 16040.6};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -113,7 +113,7 @@ class Names
 	{
 		name = "Whangārei";
 		position[] = {16315.6, 22221.9};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -122,7 +122,7 @@ class Names
 	{
 		name = "Invercargill / Waihōpai";
 		position[] = {4578.1, 2515.6};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -131,7 +131,7 @@ class Names
 	{
 		name = "Queenstown / Tāhuna";
 		position[] = {5184.4, 5065.6};
-		type = "NameCity";
+		type = "City";
 		radiusA = 210;
 		radiusB = 210;
 		angle = 0;
@@ -140,7 +140,7 @@ class Names
 	{
 		name = "Whanganui";
 		position[] = {17740.6, 14465.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -149,7 +149,7 @@ class Names
 	{
 		name = "Gisborne / Tūranganui-a-Kiwa";
 		position[] = {23578.1, 16803.1};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -158,7 +158,7 @@ class Names
 	{
 		name = "Blenheim / Waiharakeke";
 		position[] = {15603.1, 11546.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -167,7 +167,7 @@ class Names
 	{
 		name = "Picton / Waitohi";
 		position[] = {15678.1, 11959.4};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -176,7 +176,7 @@ class Names
 	{
 		name = "Eltham";
 		position[] = {16271.9, 15403.1};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 120;
 		radiusB = 120;
 		angle = 0;
@@ -185,7 +185,7 @@ class Names
 	{
 		name = "Kaikōura";
 		position[] = {15040.6, 9921.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -194,7 +194,7 @@ class Names
 	{
 		name = "Taupō";
 		position[] = {19746.9, 16759.4};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -203,7 +203,7 @@ class Names
 	{
 		name = "Timaru / Te Tihi-o-Maru";
 		position[] = {10253.1, 6234.4};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -212,7 +212,7 @@ class Names
 	{
 		name = "Ōamaru";
 		position[] = {9715.6, 4940.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -221,7 +221,7 @@ class Names
 	{
 		name = "Greymouth / Māwhera";
 		position[] = {10203.1, 9809.4};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -230,7 +230,7 @@ class Names
 	{
 		name = "Westport / Kawatiri";
 		position[] = {10965.6, 11096.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -239,7 +239,7 @@ class Names
 	{
 		name = "Hokitika";
 		position[] = {9728.1, 9315.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -248,7 +248,7 @@ class Names
 	{
 		name = "Franz Josef / Waiau";
 		position[] = {8171.9, 8090.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -257,7 +257,7 @@ class Names
 	{
 		name = "Masterton / Whakaoriori";
 		position[] = {18934.4, 12565.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -266,7 +266,7 @@ class Names
 	{
 		name = "Rakaia";
 		position[] = {11903.1, 7590.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 90;
 		radiusB = 90;
 		angle = 0;
@@ -275,7 +275,7 @@ class Names
 	{
 		name = "Ashburton / Hakatere";
 		position[] = {11246.9, 7140.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -284,7 +284,7 @@ class Names
 	{
 		name = "Wānaka";
 		position[] = {6109.4, 5665.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -293,7 +293,7 @@ class Names
 	{
 		name = "Te Anau";
 		position[] = {3328.1, 4359.4};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -302,7 +302,7 @@ class Names
 	{
 		name = "Gore / Maruawai";
 		position[] = {5740.6, 3096.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -311,7 +311,7 @@ class Names
 	{
 		name = "Twizel";
 		position[] = {8009.4, 6490.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -320,7 +320,7 @@ class Names
 	{
 		name = "Hanmer Springs";
 		position[] = {13378.1, 9684.4};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -329,7 +329,7 @@ class Names
 	{
 		name = "Kaitāia";
 		position[] = {14228.1, 23346.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -338,7 +338,7 @@ class Names
 	{
 		name = "Paihia";
 		position[] = {15853.1, 23034.4};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -347,7 +347,7 @@ class Names
 	{
 		name = "Whakatāne";
 		position[] = {21546.9, 18096.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -356,7 +356,7 @@ class Names
 	{
 		name = "Thames / Pārāwai";
 		position[] = {18715.6, 19628.1};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -365,7 +365,7 @@ class Names
 	{
 		name = "Taumarunui";
 		position[] = {18159.4, 16396.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -374,7 +374,7 @@ class Names
 	{
 		name = "Waiouru Army Camp";
 		position[] = {18959.4, 15303.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 170;
 		radiusB = 170;
 		angle = 0;
@@ -383,7 +383,7 @@ class Names
 	{
 		name = "Burnham Military Camp";
 		position[] = {12359.4, 7678.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 140;
 		radiusB = 140;
 		angle = 0;
@@ -392,7 +392,7 @@ class Names
 	{
 		name = "RNZAF Base Ōhakea";
 		position[] = {18409.4, 13959.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 140;
 		radiusB = 140;
 		angle = 0;
@@ -401,7 +401,7 @@ class Names
 	{
 		name = "Hāwera";
 		position[] = {16234.4, 15090.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -410,7 +410,7 @@ class Names
 	{
 		name = "Stratford / Whakaahurangi";
 		position[] = {16215.6, 15653.1};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -419,7 +419,7 @@ class Names
 	{
 		name = "Ōpunake";
 		position[] = {15409.4, 15346.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -428,7 +428,7 @@ class Names
 	{
 		name = "Cambridge / Kemureti";
 		position[] = {18659.4, 18196.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -437,7 +437,7 @@ class Names
 	{
 		name = "Te Awamutu";
 		position[] = {18303.1, 17915.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -446,7 +446,7 @@ class Names
 	{
 		name = "Matamata";
 		position[] = {19165.6, 18371.9};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 165;
 		radiusB = 165;
 		angle = 0;
@@ -455,7 +455,7 @@ class Names
 	{
 		name = "Huntly / Rāhui Pōkeka";
 		position[] = {17953.1, 18840.6};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 110;
 		radiusB = 110;
 		angle = 0;
@@ -464,7 +464,7 @@ class Names
 	{
 		name = "Linton Army Camp";
 		position[] = {18696.9, 13328.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 140;
 		radiusB = 140;
 		angle = 0;
@@ -473,7 +473,7 @@ class Names
 	{
 		name = "Whakaari / White Island";
 		position[] = {21931.1, 18909.9};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 260;
 		radiusB = 260;
 		angle = 0;
@@ -482,7 +482,7 @@ class Names
 	{
 		name = "Auckland Airport";
 		position[] = {16666.9, 20540.3};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 470;
 		radiusB = 470;
 		angle = 0;
@@ -491,7 +491,7 @@ class Names
 	{
 		name = "Christchurch Airport";
 		position[] = {12654.3, 8587.0};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 470;
 		radiusB = 470;
 		angle = 0;
@@ -500,7 +500,7 @@ class Names
 	{
 		name = "Ōhakea Airfield";
 		position[] = {18648.4, 14978.8};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 470;
 		radiusB = 470;
 		angle = 0;
@@ -509,7 +509,7 @@ class Names
 	{
 		name = "Port of Auckland";
 		position[] = {17058.1, 20566.9};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -518,7 +518,7 @@ class Names
 	{
 		name = "Port of Wellington";
 		position[] = {16406.9, 12238.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -527,7 +527,7 @@ class Names
 	{
 		name = "Lyttelton";
 		position[] = {12726.9, 7498.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -536,7 +536,7 @@ class Names
 	{
 		name = "Port Chalmers";
 		position[] = {9163.1, 3533.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -545,7 +545,7 @@ class Names
 	{
 		name = "Port of Tauranga";
 		position[] = {19544.4, 18723.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -554,7 +554,7 @@ class Names
 	{
 		name = "Port of Napier";
 		position[] = {21520.6, 14989.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -563,7 +563,7 @@ class Names
 	{
 		name = "Port of Picton";
 		position[] = {15828.1, 11839.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -572,7 +572,7 @@ class Names
 	{
 		name = "Port of Nelson";
 		position[] = {15118.1, 12440.6};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -581,7 +581,7 @@ class Names
 	{
 		name = "Bluff";
 		position[] = {4638.1, 2215.6};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -590,7 +590,7 @@ class Names
 	{
 		name = "Port of Timaru";
 		position[] = {10103.1, 5484.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -599,7 +599,7 @@ class Names
 	{
 		name = "Port Taranaki";
 		position[] = {15234.4, 15590.6};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -608,7 +608,7 @@ class Names
 	{
 		name = "The Remarkables";
 		position[] = {5077.3, 5980.7};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 120;
 		radiusB = 120;
 		angle = 0;
@@ -617,7 +617,7 @@ class Names
 	{
 		name = "Coronet Peak";
 		position[] = {7167.8, 6776.7};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 120;
 		radiusB = 120;
 		angle = 0;
@@ -626,7 +626,7 @@ class Names
 	{
 		name = "Mt Hutt";
 		position[] = {8903.6, 7773.5};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 120;
 		radiusB = 120;
 		angle = 0;
@@ -635,7 +635,7 @@ class Names
 	{
 		name = "Whakapapa";
 		position[] = {18741.8, 15753.8};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 120;
 		radiusB = 120;
 		angle = 0;
@@ -644,7 +644,7 @@ class Names
 	{
 		name = "Fonterra Whareroa";
 		position[] = {16553.5, 15051.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 85;
 		radiusB = 85;
 		angle = 0;
@@ -653,7 +653,7 @@ class Names
 	{
 		name = "Fonterra Eltham";
 		position[] = {16500.3, 15585.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 85;
 		radiusB = 85;
 		angle = 0;
@@ -662,7 +662,7 @@ class Names
 	{
 		name = "Marsden Point Refinery";
 		position[] = {16655.5, 22096.3};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 85;
 		radiusB = 85;
 		angle = 0;
@@ -671,7 +671,7 @@ class Names
 	{
 		name = "Huntly Power Station";
 		position[] = {17745.4, 18743.8};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 85;
 		radiusB = 85;
 		angle = 0;
@@ -680,7 +680,7 @@ class Names
 	{
 		name = "Glenbrook Steel Mill";
 		position[] = {17225.2, 19406.9};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 85;
 		radiusB = 85;
 		angle = 0;
@@ -689,7 +689,7 @@ class Names
 	{
 		name = "Kinleith Mill";
 		position[] = {19494.2, 17603.6};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 85;
 		radiusB = 85;
 		angle = 0;
@@ -698,7 +698,7 @@ class Names
 	{
 		name = "Tiwai Point Smelter";
 		position[] = {4827.8, 2229.0};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 85;
 		radiusB = 85;
 		angle = 0;
@@ -707,7 +707,7 @@ class Names
 	{
 		name = "Devonport Naval Base";
 		position[] = {17615.8, 20003.8};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -716,7 +716,7 @@ class Names
 	{
 		name = "Cape Reinga / Te Rerenga Wairua";
 		position[] = {13098.3, 24572.5};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 25;
 		radiusB = 25;
 		angle = 0;
@@ -725,7 +725,7 @@ class Names
 	{
 		name = "Milford Sound / Piopiotahi";
 		position[] = {3738.9, 5841.3};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 35;
 		radiusB = 35;
 		angle = 0;
@@ -734,7 +734,7 @@ class Names
 	{
 		name = "Aoraki / Mount Cook Village";
 		position[] = {8022.0, 7394.2};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 35;
 		radiusB = 35;
 		angle = 0;
@@ -743,7 +743,7 @@ class Names
 	{
 		name = "Chateau Tongariro";
 		position[] = {18808.3, 16612.2};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 30;
 		radiusB = 30;
 		angle = 0;
@@ -752,7 +752,7 @@ class Names
 	{
 		name = "Waitomo Caves";
 		position[] = {17848.3, 17544.0};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 20;
 		radiusB = 20;
 		angle = 0;
@@ -761,7 +761,7 @@ class Names
 	{
 		name = "Huka Falls";
 		position[] = {19887.4, 16928.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 20;
 		radiusB = 20;
 		angle = 0;
@@ -770,7 +770,7 @@ class Names
 	{
 		name = "Church of the Good Shepherd";
 		position[] = {8771.5, 6895.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 15;
 		radiusB = 15;
 		angle = 0;
@@ -779,7 +779,7 @@ class Names
 	{
 		name = "Moeraki Boulders";
 		position[] = {9381.9, 4503.7};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 20;
 		radiusB = 20;
 		angle = 0;
@@ -788,7 +788,7 @@ class Names
 	{
 		name = "Stirling Point";
 		position[] = {4566.3, 2143.9};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 15;
 		radiusB = 15;
 		angle = 0;
@@ -797,7 +797,7 @@ class Names
 	{
 		name = "Rakaia Huts";
 		position[] = {12202.6, 7230.0};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 50;
 		radiusB = 50;
 		angle = 0;
@@ -806,7 +806,7 @@ class Names
 	{
 		name = "Hobbiton";
 		position[] = {19067.4, 18100.8};
-		type = "NameVillage";
+		type = "Village";
 		radiusA = 80;
 		radiusB = 80;
 		angle = 0;
@@ -815,7 +815,7 @@ class Names
 	{
 		name = "Interislander Terminal";
 		position[] = {18116.9, 11998.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -824,7 +824,7 @@ class Names
 	{
 		name = "Picton Ferry Terminal";
 		position[] = {15888.1, 11959.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 65;
 		radiusB = 65;
 		angle = 0;
@@ -833,7 +833,7 @@ class Names
 	{
 		name = "Auckland Surf Life Saving Club";
 		position[] = {16838.1, 19926.9};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 22;
 		radiusB = 22;
 		angle = 0;
@@ -842,7 +842,7 @@ class Names
 	{
 		name = "Tauranga Surf Life Saving Club";
 		position[] = {19654.4, 18623.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 22;
 		radiusB = 22;
 		angle = 0;
@@ -851,7 +851,7 @@ class Names
 	{
 		name = "Gisborne Surf Life Saving Club";
 		position[] = {23358.1, 16763.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 22;
 		radiusB = 22;
 		angle = 0;
@@ -860,7 +860,7 @@ class Names
 	{
 		name = "Napier Surf Life Saving Club";
 		position[] = {21340.6, 15539.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 22;
 		radiusB = 22;
 		angle = 0;
@@ -869,7 +869,7 @@ class Names
 	{
 		name = "New Plymouth Surf Life Saving Club";
 		position[] = {15474.4, 15860.6};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 22;
 		radiusB = 22;
 		angle = 0;
@@ -878,7 +878,7 @@ class Names
 	{
 		name = "Christchurch Surf Life Saving Club";
 		position[] = {13336.9, 7628.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 22;
 		radiusB = 22;
 		angle = 0;
@@ -887,7 +887,7 @@ class Names
 	{
 		name = "Dunedin Surf Life Saving Club";
 		position[] = {9023.1, 3663.1};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 22;
 		radiusB = 22;
 		angle = 0;
@@ -896,7 +896,7 @@ class Names
 	{
 		name = "Whangārei Surf Life Saving Club";
 		position[] = {16615.6, 22241.9};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 22;
 		radiusB = 22;
 		angle = 0;
@@ -905,7 +905,7 @@ class Names
 	{
 		name = "Lake Taupō Holiday Park";
 		position[] = {19596.9, 16939.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 40;
 		radiusB = 40;
 		angle = 0;
@@ -914,7 +914,7 @@ class Names
 	{
 		name = "Rotorua Holiday Park";
 		position[] = {20283.1, 17561.9};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 40;
 		radiusB = 40;
 		angle = 0;
@@ -923,7 +923,7 @@ class Names
 	{
 		name = "Wānaka Lakeview Holiday Park";
 		position[] = {6109.4, 5455.6};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 40;
 		radiusB = 40;
 		angle = 0;
@@ -932,7 +932,7 @@ class Names
 	{
 		name = "Te Anau Holiday Park";
 		position[] = {3238.1, 4539.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 40;
 		radiusB = 40;
 		angle = 0;
@@ -941,7 +941,7 @@ class Names
 	{
 		name = "Queenstown Holiday Park";
 		position[] = {4884.4, 5065.6};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 40;
 		radiusB = 40;
 		angle = 0;
@@ -950,7 +950,7 @@ class Names
 	{
 		name = "Hanmer Springs Holiday Park";
 		position[] = {13228.1, 9834.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 40;
 		radiusB = 40;
 		angle = 0;
@@ -959,7 +959,7 @@ class Names
 	{
 		name = "Franz Josef Holiday Park";
 		position[] = {8021.9, 8210.6};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 40;
 		radiusB = 40;
 		angle = 0;
@@ -968,9 +968,792 @@ class Names
 	{
 		name = "Bay of Islands Holiday Park";
 		position[] = {15673.1, 23034.4};
-		type = "NameLocal";
+		type = "Local";
 		radiusA = 40;
 		radiusB = 40;
+		angle = 0;
+	// Rivers, peaks, water and stations: tools/labels.py
+	class LabelWaikatoRiver
+	{
+		name = "Waikato River";
+		position[] = {18146.9, 18940.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWhanganuiRiver
+	{
+		name = "Whanganui River";
+		position[] = {17803.1, 15165.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelRangitikeiRiver
+	{
+		name = "Rangitīkei River";
+		position[] = {18621.9, 14234.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelManawatuRiver
+	{
+		name = "Manawatū River";
+		position[] = {18578.1, 13628.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelRuamahangaRiver
+	{
+		name = "Ruamāhanga River";
+		position[] = {18540.6, 12146.9};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelMokauRiver
+	{
+		name = "Mōkau River";
+		position[] = {17146.9, 16746.9};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelRangitaikiRiver
+	{
+		name = "Rangitaiki River";
+		position[] = {21159.4, 17490.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelMohakaRiver
+	{
+		name = "Mohaka River";
+		position[] = {21284.4, 16090.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTukitukiRiver
+	{
+		name = "Tukituki River";
+		position[] = {21034.4, 14784.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWaihouRiver
+	{
+		name = "Waihou River";
+		position[] = {18821.9, 19128.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWairauRiver
+	{
+		name = "Wairau River";
+		position[] = {14990.6, 11503.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelMotuekaRiver
+	{
+		name = "Motueka River";
+		position[] = {13490.6, 12128.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelBullerRiver
+	{
+		name = "Buller River / Kawatiri";
+		position[] = {11765.6, 11003.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelGreyRiver
+	{
+		name = "Grey River / Māwheranui";
+		position[] = {10578.1, 9909.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWaiauUwhaRiver
+	{
+		name = "Waiau Uwha River";
+		position[] = {14009.4, 9359.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWaimakaririRiver
+	{
+		name = "Waimakariri River";
+		position[] = {12578.1, 8071.9};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelRakaiaRiver
+	{
+		name = "Rakaia River";
+		position[] = {11546.9, 7565.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelRangitataRiver
+	{
+		name = "Rangitata River";
+		position[] = {10340.6, 7115.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWaitakiRiver
+	{
+		name = "Waitaki River";
+		position[] = {9203.1, 5434.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTaieriRiver
+	{
+		name = "Taieri River";
+		position[] = {8084.4, 3409.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelCluthaRiver
+	{
+		name = "Clutha River / Mata-Au";
+		position[] = {6978.1, 3046.9};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelMatauraRiver
+	{
+		name = "Mataura River";
+		position[] = {5553.1, 2909.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelOretiRiver
+	{
+		name = "Ōreti River";
+		position[] = {4465.6, 2915.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWaiauRiver
+	{
+		name = "Waiau River";
+		position[] = {3340.6, 3228.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelAoraki
+	{
+		name = "Aoraki / Mount Cook";
+		position[] = {8340.6, 7484.4};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTititea
+	{
+		name = "Tititea / Mount Aspiring";
+		position[] = {5103.1, 6003.1};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelRuapehu
+	{
+		name = "Ruapehu";
+		position[] = {18696.9, 15709.4};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTongariro
+	{
+		name = "Tongariro";
+		position[] = {18696.9, 15709.4};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelNgauruhoe
+	{
+		name = "Ngāuruhoe";
+		position[] = {18696.9, 15709.4};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTaranakiMaunga
+	{
+		name = "Taranaki Maunga";
+		position[] = {15859.4, 15559.4};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTapuaeoUenuku
+	{
+		name = "Tapuae-o-Uenuku";
+		position[] = {14896.9, 10628.1};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelHikurangi
+	{
+		name = "Hikurangi";
+		position[] = {23415.6, 18065.6};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelMountOwen
+	{
+		name = "Mount Owen";
+		position[] = {12821.9, 11503.1};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelPikirakatahi
+	{
+		name = "Pikirakatahi / Mount Earnslaw";
+		position[] = {4915.6, 6071.9};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelMountTutoko
+	{
+		name = "Mount Tutoko";
+		position[] = {3965.6, 5615.6};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelKaimanawaRange
+	{
+		name = "Kaimanawa Range";
+		position[] = {19696.9, 15909.4};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTararuaRange
+	{
+		name = "Tararua Range";
+		position[] = {18496.9, 12890.6};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelRuahineRange
+	{
+		name = "Ruahine Range";
+		position[] = {19815.6, 14740.6};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelKaikouraRanges
+	{
+		name = "Kaikōura Ranges";
+		position[] = {14896.9, 10628.1};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelSouthernAlps
+	{
+		name = "Southern Alps / Kā Tiritiri o te Moana";
+		position[] = {9734.4, 8121.9};
+		type = "Hill";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeWaikare
+	{
+		name = "Lake Waikare";
+		position[] = {18030.0, 19072.0};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeRotorua
+	{
+		name = "Lake Rotorua";
+		position[] = {20137.4, 17876.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeTarawera
+	{
+		name = "Lake Tarawera";
+		position[] = {20453.2, 17661.2};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeTaupo
+	{
+		name = "Lake Taupō";
+		position[] = {19409.1, 16550.2};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeBrunner
+	{
+		name = "Lake Brunner";
+		position[] = {10657.5, 9506.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeTekapo
+	{
+		name = "Lake Tekapo";
+		position[] = {8850.4, 7195.8};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakePukaki
+	{
+		name = "Lake Pukaki";
+		position[] = {8147.3, 6874.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeOhau
+	{
+		name = "Lake Ōhau";
+		position[] = {7518.8, 6549.5};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeWanaka
+	{
+		name = "Lake Wānaka";
+		position[] = {6116.7, 6104.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeBenmore
+	{
+		name = "Lake Benmore";
+		position[] = {8254.4, 6236.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeHawea
+	{
+		name = "Lake Hāwea";
+		position[] = {6403.7, 5999.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeAviemore
+	{
+		name = "Lake Aviemore";
+		position[] = {8414.7, 5820.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeWakatipu
+	{
+		name = "Lake Wakatipu";
+		position[] = {4904.8, 5044.0};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeTeAnau
+	{
+		name = "Lake Te Anau";
+		position[] = {3403.8, 4641.2};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelLakeManapouri
+	{
+		name = "Lake Manapōuri";
+		position[] = {3020.7, 4176.0};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTasmanSea
+	{
+		name = "Tasman Sea";
+		position[] = {10765.6, 14340.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelPacificOcean
+	{
+		name = "Pacific Ocean";
+		position[] = {21578.1, 10653.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelHaurakiGulf
+	{
+		name = "Hauraki Gulf / Tīkapa Moana";
+		position[] = {17740.6, 20603.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelBayofPlenty
+	{
+		name = "Bay of Plenty / Te Moana-a-Toi";
+		position[] = {21378.1, 18671.9};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelHawkeBay
+	{
+		name = "Hawke Bay";
+		position[] = {21971.9, 15534.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelCookStrait
+	{
+		name = "Cook Strait / Te Moana-o-Raukawa";
+		position[] = {16565.6, 12128.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelGoldenBay
+	{
+		name = "Golden Bay / Mohua";
+		position[] = {13415.6, 13046.9};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTasmanBay
+	{
+		name = "Tasman Bay / Te Tai-o-Aorere";
+		position[] = {13978.1, 12496.9};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelPegasusBay
+	{
+		name = "Pegasus Bay";
+		position[] = {13615.6, 8253.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelCanterburyBight
+	{
+		name = "Canterbury Bight";
+		position[] = {11453.1, 6228.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelFoveauxStrait
+	{
+		name = "Foveaux Strait / Te Ara a Kiwa";
+		position[] = {4271.9, 1984.4};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelKaiparaHarbour
+	{
+		name = "Kaipara Harbour";
+		position[] = {15878.1, 20853.1};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelManukauHarbour
+	{
+		name = "Manukau Harbour";
+		position[] = {16628.1, 19665.6};
+		type = "Marine";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelAucklandStation
+	{
+		name = "Auckland Station";
+		position[] = {17371.9, 19815.6};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelHuntlyStation
+	{
+		name = "Huntly Station";
+		position[] = {17871.9, 18971.9};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelHamiltonStation
+	{
+		name = "Hamilton Station";
+		position[] = {18028.1, 18715.6};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTeAwamutuStation
+	{
+		name = "Te Awamutu Station";
+		position[] = {18271.9, 18109.4};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTaumarunuiStation
+	{
+		name = "Taumarunui Station";
+		position[] = {18171.9, 16553.1};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWaiouruArmyCampStation
+	{
+		name = "Waiouru Army Camp Station";
+		position[] = {18834.4, 15478.1};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelPalmerstonNorthStation
+	{
+		name = "Palmerston North Station";
+		position[] = {18859.4, 13946.9};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWellingtonStation
+	{
+		name = "Wellington Station";
+		position[] = {17496.9, 12290.6};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelPictonStation
+	{
+		name = "Picton Station";
+		position[] = {15653.1, 11809.4};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelBlenheimStation
+	{
+		name = "Blenheim Station";
+		position[] = {15640.6, 11753.1};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelKaikouraStation
+	{
+		name = "Kaikōura Station";
+		position[] = {15090.6, 10065.6};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelChristchurchStation
+	{
+		name = "Christchurch Station";
+		position[] = {13146.9, 8134.4};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelRakaiaStation
+	{
+		name = "Rakaia Station";
+		position[] = {12034.4, 7621.9};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelAshburtonStation
+	{
+		name = "Ashburton Station";
+		position[] = {11421.9, 7259.4};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelTimaruStation
+	{
+		name = "Timaru Station";
+		position[] = {10396.9, 6390.6};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelOamaruStation
+	{
+		name = "Ōamaru Station";
+		position[] = {9796.9, 5134.4};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelDunedinStation
+	{
+		name = "Dunedin Station";
+		position[] = {8940.6, 3715.6};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelGoreStation
+	{
+		name = "Gore Station";
+		position[] = {5896.9, 3115.6};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelInvercargillStation
+	{
+		name = "Invercargill Station";
+		position[] = {4803.1, 2628.1};
+		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
 		angle = 0;
 	};
 };
