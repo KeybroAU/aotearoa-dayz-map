@@ -1,0 +1,79 @@
+[
+ {
+  "label": "Sky Tower",
+  "kind": "landmark",
+  "x": 17225.3,
+  "y": 20206.5,
+  "objects": 3
+ },
+ {
+  "label": "Harbour Bridge",
+  "kind": "landmark",
+  "x": 17123.4,
+  "y": 19955.0,
+  "objects": 3
+ },
+ {
+  "label": "Parliament Buildings",
+  "kind": "landmark",
+  "x": 17329.9,
+  "y": 12016.9,
+  "objects": 2
+ },
+ {
+  "label": "ChristChurch Cathedral",
+  "kind": "landmark",
+  "x": 13137.3,
+  "y": 7908.9,
+  "objects": 1
+ },
+ {
+  "label": "Interislander wreck",
+  "kind": "wreck",
+  "x": 18772.2,
+  "y": 11539.2,
+  "objects": 6
+ },
+ {
+  "label": "Hercules crash site",
+  "kind": "wreck",
+  "x": 18087.8,
+  "y": 16039.8,
+  "objects": 1
+ },
+ {
+  "label": "Waiouru Army Camp",
+  "kind": "military",
+  "x": 18959.4,
+  "y": 15303.1,
+  "objects": 10
+ },
+ {
+  "label": "Burnham Military Camp",
+  "kind": "military",
+  "x": 12359.4,
+  "y": 7678.1,
+  "objects": 7
+ },
+ {
+  "label": "Linton Army Camp",
+  "kind": "military",
+  "x": 18696.9,
+  "y": 13328.1,
+  "objects": 7
+ },
+ {
+  "label": "RNZAF Base Ōhakea",
+  "kind": "military",
+  "x": 18409.4,
+  "y": 13959.4,
+  "objects": 6
+ },
+ {
+  "label": "Waiouru Ammunition Area",
+  "kind": "gas",
+  "x": 19361.2,
+  "y": 16455.0,
+  "objects": 8
+ }
+]

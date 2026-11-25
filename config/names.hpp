@@ -744,8 +744,8 @@ class Names
 		name = "Chateau Tongariro";
 		position[] = {18808.3, 16612.2};
 		type = "Local";
-		radiusA = 30;
-		radiusB = 30;
+		radiusA = 35;
+		radiusB = 35;
 		angle = 0;
 	};
 	class WaitomoCaves
@@ -1752,6 +1752,69 @@ class Names
 		name = "Invercargill Station";
 		position[] = {4803.1, 2628.1};
 		type = "RailroadStation";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelSkyTower
+	{
+		name = "Sky Tower";
+		position[] = {17225.3, 20206.5};
+		type = "Local";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelHarbourBridge
+	{
+		name = "Harbour Bridge";
+		position[] = {17123.4, 19955.0};
+		type = "Local";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelParliamentBuildings
+	{
+		name = "Parliament Buildings";
+		position[] = {17329.9, 12016.9};
+		type = "Local";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelChristChurchCathedral
+	{
+		name = "ChristChurch Cathedral";
+		position[] = {13137.3, 7908.9};
+		type = "Local";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelInterislanderwreck
+	{
+		name = "Interislander wreck";
+		position[] = {18772.2, 11539.2};
+		type = "Local";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelHerculescrashsite
+	{
+		name = "Hercules crash site";
+		position[] = {18087.8, 16039.8};
+		type = "Local";
+		radiusA = 100;
+		radiusB = 100;
+		angle = 0;
+	};
+	class LabelWaiouruAmmunitionArea
+	{
+		name = "Waiouru Ammunition Area";
+		position[] = {19361.2, 16455.0};
+		type = "Local";
 		radiusA = 100;
 		radiusB = 100;
 		angle = 0;

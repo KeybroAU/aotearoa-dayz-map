@@ -5,21 +5,15 @@ void main()
 	if ( ce )
 		ce.InitOffline();
 
-	// Keep the date in the southern summer (January to February).
+	// Seasons. The date follows the server clock (serverTime = "SystemTime"), so the seasons are
+	// New Zealand's: summer in January, snow storms and short days in July. To stay in one
+	// season, set pin_month to a month (1 = January, mid-summer; 7 = July, mid-winter).
+	int pin_month = 0;
 	int year, month, day, hour, minute;
-	int reset_month = 1, reset_day = 10;
 	GetGame().GetWorld().GetDate(year, month, day, hour, minute);
-	if ((month == reset_month) && (day < reset_day))
+	if (pin_month > 0 && month != pin_month)
 	{
-		GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
-	}
-	else if ((month == reset_month + 1) && (day > reset_day))
-	{
-		GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
-	}
-	else if ((month < reset_month) || (month > reset_month + 1))
-	{
-		GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
+		GetGame().GetWorld().SetDate(year, pin_month, 10, hour, minute);
 	}
 
 	// Loot positions: once the world is built, uncomment the next line, start the server once,

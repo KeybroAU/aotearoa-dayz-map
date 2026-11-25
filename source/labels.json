@@ -884,5 +884,75 @@
    2628.1
   ],
   "class": "LabelInvercargillStation"
+ },
+ {
+  "name": "Sky Tower",
+  "kind": "place",
+  "type": "Local",
+  "xy": [
+   17225.3,
+   20206.5
+  ],
+  "class": "LabelSkyTower"
+ },
+ {
+  "name": "Harbour Bridge",
+  "kind": "place",
+  "type": "Local",
+  "xy": [
+   17123.4,
+   19955.0
+  ],
+  "class": "LabelHarbourBridge"
+ },
+ {
+  "name": "Parliament Buildings",
+  "kind": "place",
+  "type": "Local",
+  "xy": [
+   17329.9,
+   12016.9
+  ],
+  "class": "LabelParliamentBuildings"
+ },
+ {
+  "name": "ChristChurch Cathedral",
+  "kind": "place",
+  "type": "Local",
+  "xy": [
+   13137.3,
+   7908.9
+  ],
+  "class": "LabelChristChurchCathedral"
+ },
+ {
+  "name": "Interislander wreck",
+  "kind": "place",
+  "type": "Local",
+  "xy": [
+   18772.2,
+   11539.2
+  ],
+  "class": "LabelInterislanderwreck"
+ },
+ {
+  "name": "Hercules crash site",
+  "kind": "place",
+  "type": "Local",
+  "xy": [
+   18087.8,
+   16039.8
+  ],
+  "class": "LabelHerculescrashsite"
+ },
+ {
+  "name": "Waiouru Ammunition Area",
+  "kind": "place",
+  "type": "Local",
+  "xy": [
+   19361.2,
+   16455.0
+  ],
+  "class": "LabelWaiouruAmmunitionArea"
  }
 ]
