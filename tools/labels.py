@@ -164,8 +164,12 @@ def build() -> list[dict]:
 
 def update(labels: list[dict], path: Path = NAMES) -> None:
     text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
-    text = text.split("\n" + MARK)[0].rstrip()
-    if text.endswith("};"):
+    if "\n" + MARK in text:
+        text = text.split("\n" + MARK)[0].rstrip()
+    else:
+        text = text.rstrip()
+        if not text.endswith("};"):
+            raise SystemExit(f"{path} does not end with the Names class's closing brace")
         text = text[:-2].rstrip()
     for old, new in TYPES.items():
         text = text.replace(f'type = "{old}";', f'type = "{new}";')

@@ -60,12 +60,12 @@ from pathlib import Path
 MAP_DIR = Path(__file__).resolve().parents[1]
 PREFIX = "maps\\aotearoa"
 MISSION = "dayzOffline.aotearoa"
-PACKED = ["config.cpp", "$PBOPREFIX$", "config", "data", "gui", "scripts", "structures", "world"]
+PACKED = ["config.cpp", "$PBOPREFIX$", "config", "data", "gui", "navmesh", "scripts", "structures", "world"]
 # Spawner files that need a custom model before they can load.
 MODEL_SPAWNERS = [("structures/sign_town/sign_town.p3d", "aotearoa/signs_spawner.json", "town name signs"),
                   ("structures/sign_post/sign_post.p3d", "aotearoa/roadsigns_spawner.json", "road signs")]
 SKIP_IN_DATA = ["branding/art"]
-COPY_DIRECT = "*.paa,*.rvmat,*.wrp,*.png,*.jpg,*.shp,*.shx,*.dbf,*.cfg,*.hpp,*.txt,*.c,*.layout"
+COPY_DIRECT = "*.paa,*.rvmat,*.wrp,*.png,*.jpg,*.shp,*.shx,*.dbf,*.cfg,*.hpp,*.txt,*.c,*.xml,*.nm,*.layout"
 BRANDING = [("logo_512.png", "logo_512_ca.paa"), ("icon_128.png", "icon_128_ca.paa"),
             ("icon_64.png", "icon_64_ca.paa"), ("loading_1.jpg", "loading_1_co.paa"),
             ("loading_2.jpg", "loading_2_co.paa"), ("map_picture.jpg", "map_picture_co.paa")]
@@ -75,6 +75,11 @@ MAPITEM_MOD = "@AotearoaMap"
 STEAM_DIRS = [Path(r"C:\Program Files (x86)\Steam\steamapps\common"), Path(r"C:\Program Files\Steam\steamapps\common")]
 SETPIECES = "setpieces_spawner.json"
 MERGED_AWAY = ["cfggameplay.worldsdata.json", "cfgeconomycore.aotearoa.xml"]
+# Vanilla mission files that hold Chernarus positions. Bohemia's custom terrain guide says to replace
+# them: the clusters (fruit trees, mushrooms) come from ExportClusterData once the world is built,
+# and areaflags.map is painted for this map in the economy editor (or left out).
+CHERNARUS_ONLY = ["areaflags.map", "mapgroupdirt.xml", "cfgundergroundtriggers.json"]
+CHERNARUS_CLUSTERS = "mapgroupcluster*.xml"
 
 # Factors on vanilla amounts: loot (types nominal/min), vehicles (events nominal/min/max), infected
 # (Infected* events and ZombieMaxCount).
@@ -277,7 +282,21 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[st
         warnings.append("No vanilla dayzOffline.chernarusplus found, so the mission folder holds only the Aotearoa "
                         "files. Copy vanilla over it first (keep the Aotearoa files), or rerun with --vanilla-mission.")
         dest.mkdir(parents=True)
+    for name in CHERNARUS_ONLY:
+        (dest / name).unlink(missing_ok=True)
+    for f in dest.glob(CHERNARUS_CLUSTERS):
+        f.write_text('<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\n<map>\n</map>\n', encoding="utf-8")
+    (dest / "mapgroupdirt.xml").write_text('<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\n<map>\n</map>\n',
+                                           encoding="utf-8")
+    (dest / "cfgundergroundtriggers.json").write_text('{\n    "Triggers": []\n}\n', encoding="utf-8")
+    for f in dest.iterdir():
+        # A Linux server is case sensitive, so vanilla's cfgEffectArea.json would stay beside ours.
+        if f.name.lower() == "cfgeffectarea.json":
+            f.unlink()
     shutil.copytree(gen, dest, dirs_exist_ok=True, ignore=shutil.ignore_patterns(*MERGED_AWAY))
+    if not (dest / "areaflags.map").exists():
+        warnings.append("No areaflags.map, so loot uses no area flags. Paint one for this map in the economy "
+                        "editor (preview/loot_tiers_2048.png is the guide) and put it in mission/" + MISSION + ".")
 
     extra = json.loads((gen / "cfggameplay.worldsdata.json").read_text(encoding="utf-8"))
     spawner_files = []

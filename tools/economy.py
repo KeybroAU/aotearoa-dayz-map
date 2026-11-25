@@ -280,11 +280,12 @@ WEATHER = """<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
         <changelimits min="0.0" max="0.6" />
     </windDirection>
     <snowfall>
+        <!-- Off here; scripts/4_World/AotearoaData.c raises the limit in June to August. -->
         <current actual="0.0" time="0" duration="32768" />
         <limits min="0.0" max="0.0" />
         <timelimits min="300" max="3600" />
-        <changelimits min="0.0" max="0.0" />
-        <thresholds min="1.0" max="1.0" end="120" />
+        <changelimits min="0.0" max="0.5" />
+        <thresholds min="0.85" max="1.0" end="120" />
     </snowfall>
     <storm density="1.0" threshold="0.8" timeout="30" />
 </weather>

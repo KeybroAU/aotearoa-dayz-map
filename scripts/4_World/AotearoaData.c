@@ -13,9 +13,21 @@ class AotearoaData : ChernarusPlusData
 	protected static const ref array<int> CLEAR_CHANCE = {38, 38, 34, 30, 26, 22, 20, 22, 26, 28, 32, 36};
 	protected static const ref array<int> BAD_ROLL = {84, 84, 80, 76, 72, 68, 65, 68, 70, 72, 78, 82};
 
+	// Distant artillery is heard from these points. Chernarus's list has two inside this map, so
+	// fire from out at sea past the map edges instead.
+	protected static const ref array<vector> AOTEAROA_ARTY_STRIKE_POS =
+	{
+		"-500.00 150.00 12000.00",
+		"-500.00 150.00 20000.00",
+		"26100.00 150.00 9000.00",
+		"26100.00 150.00 18000.00",
+		"12000.00 150.00 -500.00"
+	};
+
 	override void Init()
 	{
 		super.Init();
+		m_FiringPos = AOTEAROA_ARTY_STRIKE_POS;
 
 		// Long days in January, short in July (Christchurch).
 		m_Sunrise_Jan = 6.1;

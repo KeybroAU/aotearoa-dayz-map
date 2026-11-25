@@ -58,7 +58,7 @@ BIG = [
 ]
 SPECIALS = {
     "capital": ["Land_City_Hospital", "Land_City_PoliceStation", "Land_City_FireStation",
-                "Land_Church1", "Land_Village_Pub", "Land_Village_Pub", "Land_City_Store"],
+                "Land_Church1_Yellow", "Land_Village_Pub", "Land_Village_Pub", "Land_City_Store"],
     "city": ["Land_City_Hospital", "Land_City_PoliceStation", "Land_City_FireStation",
              "Land_Church2_1", "Land_Village_Pub"],
     "town": ["Land_Village_HealthCare", "Land_Village_PoliceStation", "Land_Church3",
@@ -72,7 +72,7 @@ SPECIALS = {
 FOOTPRINTS = {name: (w, l) for name, w, l in HOUSES + BIG}
 FOOTPRINTS.update({
     "Land_City_Hospital": (30, 42), "Land_City_PoliceStation": (20, 30),
-    "Land_City_FireStation": (18, 30), "Land_Church1": (16, 30), "Land_Church2_1": (14, 26),
+    "Land_City_FireStation": (18, 30), "Land_Church1_Yellow": (16, 30), "Land_Church2_1": (14, 26),
     "Land_Church3": (12, 22), "Land_Village_Pub": (12, 18), "Land_Village_HealthCare": (12, 20),
     "Land_Village_PoliceStation": (12, 18), "Land_Mil_Guardhouse1": (8, 10),
     "Land_Mil_Barracks1": (10, 30), "Land_Mil_Barracks2": (10, 30), "Land_Mil_Barracks3": (12, 30),

@@ -27,17 +27,17 @@ OBJECTS = {
     "bridge": ("Land_Bridge_Wood_25", 25.0),
     "water": ("aotearoa_water_50", 50.0),  # square water plane, top surface at the model origin
     "power_pole": ("Land_Power_Pole_Wood1", 40.0),
-    "guardrail": ("Land_Wall_Railing_4", 4.0),
+    "guardrail": ("Land_Wall_Railing_1", 2.4),
     "fence": ("Land_Wall_Fen1_5", 5.0),
     "rail": ("Land_Rail_Track_25", 25.0),
-    "rail_bridge": ("Land_Rail_Bridge_25", 25.0),
+    "rail_bridge": ("Land_Rail_Bridge_40", 40.0),
     "street_lamp": ("Land_Lamp_City1", 32.0),
     "bus_stop": "Land_BusStation_Wall",
     "wrecks": ["Land_Wreck_Volha_Blue", "Land_Wreck_Lada_Red", "Land_Wreck_S1023_Blue", "Land_Wreck_Sed01_Aban1_White",
                "Land_Wreck_HB01_Aban1_Blue", "Land_Wreck_V3S"],
-    "garden_trees": ["t_malusdomestica_1s", "t_prunusavium_1s", "t_betulapendula_1fb"],
-    "rocks": ["r2_boulder1", "r2_boulder2", "r2_rock1"],
-    "stones": ["r2_stone1", "r2_stone2"],
+    "garden_trees": ["t_malusdomestica_1s", "t_prunusdomestica_2s", "t_betulapendula_1fb"],
+    "rocks": ["stone2", "stone4", "rock_apart2"],
+    "stones": ["stone3", "stone5"],
 }
 
 POWER_OFFSET_M = 14.0

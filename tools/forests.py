@@ -18,10 +18,12 @@ from pathlib import Path
 import numpy as np
 from scipy import ndimage
 
-BUSH_TREES = ["t_fagussylvatica_2f", "t_fagussylvatica_3f", "t_betulapendula_2w", "t_quercusrobur_3s",
-              "t_carpinusbetulus_2s", "t_acerplatanoides_2s"]
-UNDERSTOREY = ["b_corylusavellana_2s", "b_sambucusnigra_1s", "b_crataegusmonogyna_2s", "b_rosacanina_2s"]
-PINE_TREES = ["t_pinussylvestris_3d", "t_pinussylvestris_3f", "t_pinussylvestris_2d"]
+# Native bush leans on beech (standing in for Nothofagus) with cycads from the Takistan DLC as tree
+# ferns; plantations mix Takistan's Brutian pine (the nearest to radiata) with Scots pine.
+BUSH_TREES = ["t_fagussylvatica_2f", "t_fagussylvatica_3f", "t_fagussylvatica_2s", "t_betulapendula_2w",
+              "t_quercusrobur_3s", "t_carpinus_2s"]
+UNDERSTOREY = ["b_corylusavellana_2s", "b_cycas_2s", "b_crataeguslaevigata_2s", "b_cycas_2s"]
+PINE_TREES = ["t_pinusbrutia_2s", "t_pinusbrutia_2sb", "t_pinussylvestris_3f", "t_pinussylvestris_2s"]
 EDGE_BUSHES = ["b_corylusavellana_1f", "b_prunusspinosa_2s", "b_sambucusnigra_1s"]
 
 BUSH_SPACING = 10.0

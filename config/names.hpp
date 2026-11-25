@@ -972,6 +972,7 @@ class Names
 		radiusA = 40;
 		radiusB = 40;
 		angle = 0;
+	};
 	// Rivers, peaks, water and stations: tools/labels.py
 	class LabelWaikatoRiver
 	{

@@ -375,7 +375,7 @@ def infected_zones(land, towns, pois, rng):
 # Vanilla infected types for particular buildings and set pieces.
 BUILDING_INFECTED = {"Land_City_PoliceStation": "InfectedPolice", "Land_Village_PoliceStation": "InfectedPolice",
                      "Land_City_Hospital": "InfectedMedic", "Land_Village_HealthCare": "InfectedMedic",
-                     "Land_City_FireStation": "InfectedFirefighter", "Land_Church1": "InfectedReligious",
+                     "Land_City_FireStation": "InfectedFirefighter", "Land_Church1_Yellow": "InfectedReligious",
                      "Land_Church2_1": "InfectedReligious", "Land_Church3": "InfectedReligious"}
 SETPIECE_INFECTED = {"military": ("InfectedArmy", 2, 4), "gas": ("InfectedNBC", 2, 4), "wreck": ("InfectedArmy", 1, 3),
                      "landmark": ("InfectedCity", 2, 4)}
@@ -516,9 +516,11 @@ void main()
 		GetGame().GetWorld().SetDate(year, pin_month, 10, hour, minute);
 	}
 
-	// Loot positions: once the world is built, uncomment the next line, start the server once,
-	// and copy storage_1/export/mapgrouppos.xml into this mission folder. Then comment it out.
+	// Loot positions: once the world is built, uncomment the next two lines, start the server
+	// once, and copy storage_1/export/mapgrouppos.xml and the mapgroupcluster*.xml files (fruit
+	// trees, mushrooms) into this mission folder. Then comment them out again.
 	// GetCEApi().ExportProxyData(Vector(12800, 0, 12800), 25600);
+	// GetCEApi().ExportClusterData();
 }
 
 class CustomMission: MissionServer
@@ -679,7 +681,7 @@ def main() -> None:
     event_groups.write_groups(eg["groups"], out / "cfgeventgroups.xml")
     zones = infected_zones(land, towns, pois, rng) + special_infected(sp["pieces"], rng)
     write_zombie_territories(zones, out / "env" / "zombie_territories.xml")
-    write_effect_area(h, land, pois, out / "cfgeffectarea.json", sp["gas"])
+    write_effect_area(h, land, pois, out / "cfgEffectArea.json", sp["gas"])
     write_gameplay_snippet(out / "cfggameplay.worldsdata.json")
     economy.build(out, h, idx, land, towns, pois, rng)
     server_files.write(out, OUT / "server")

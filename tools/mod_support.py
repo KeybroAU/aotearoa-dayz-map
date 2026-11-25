@@ -124,7 +124,7 @@ def _compound(site: TraderSite) -> None:
     if site.kind == "trader":
         put("Land_Container_1Bo", -24.0, -17.0, 90.0)
         put("Land_Container_1Mo", -16.0, -17.0, 90.0)
-        put("Land_Tank_Medium", 25.0, 15.0)
+        put("Land_Tank_Medium_Stairs", 25.0, 15.0)
     else:
         put("Land_Container_1Aoh", 0.0, -8.0, 90.0)
 
@@ -248,7 +248,7 @@ def build(h, towns, roads, pois, cell, size_m) -> list[TraderSite]:
 
 
 FOOT = {"Land_Mil_Tent_Big1_1": (6.0, 12.0), "Land_Shed_W4": (9.0, 12.0), "Land_Container_1Bo": (2.5, 6.0),
-        "Land_Container_1Mo": (2.5, 6.0), "Land_Container_1Aoh": (2.5, 6.0), "Land_Tank_Medium": (5.0, 5.0),
+        "Land_Container_1Mo": (2.5, 6.0), "Land_Container_1Aoh": (2.5, 6.0), "Land_Tank_Medium_Stairs": (5.0, 5.0),
         "Land_Wall_Fen1_5": (0.3, 5.0)}
 
 

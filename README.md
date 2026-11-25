@@ -344,7 +344,7 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 | `cfgeventspawns.xml` | Cars on the highway verges and parked in town streets, farm utes and trucks on the back roads and farm tracks, boats off the ports, ferry terminals and boat ramps, heli crashes in open country, police cars in town streets, military convoys near the bases, police roadblocks on the highways into the cities and towns, pile-ups on State Highway 1 and the other highways, derailed trains on the main lines, motorbikes and plank piles, and the dynamic gas zones |
 | `cfgeventgroups.xml` | The convoy, roadblock, pile-up and train groups those events spawn (`tools/event_groups.py`) |
 | `env/zombie_territories.xml` | Infected zones: city, village and army in towns, police at police stations, medics at hospitals, firefighters at fire stations, priests at churches, hard army at Waiouru, village in hamlets, surf clubs, holiday parks and stations, industrial at ports, the ferry terminals and airfields, solitude at farms, baches and huts |
-| `cfgeffectarea.json` | The Whakaari and Waiouru Ammunition Area contaminated zones and their safe positions |
+| `cfgEffectArea.json` | The Whakaari and Waiouru Ammunition Area contaminated zones and their safe positions |
 | `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
 | `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes: hunting rifles, .22 and .308 ammo, fishing gear and gumboots common; military rifles scarce |

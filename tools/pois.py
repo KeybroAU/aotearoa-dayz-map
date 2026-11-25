@@ -66,22 +66,22 @@ INDUSTRIAL = [
 INDUSTRIAL_PAD = (170.0, 110.0)
 # layout: (along, across, class, quarter turns) relative to the pad centre; containers fill the rest.
 INDUSTRIAL_LAYOUTS = {
-    "dairy": [(-50.0, 20.0, "Land_Warehouse", 1), (-15.0, 20.0, "Land_Warehouse", 1),
-              (20.0, 20.0, "Land_Warehouse", 1), (55.0, 25.0, "Land_Barn_Metal_Big", 1),
+    "dairy": [(-50.0, 20.0, "Land_Factory_Small", 1), (-15.0, 20.0, "Land_Factory_Small", 1),
+              (20.0, 20.0, "Land_Factory_Small", 1), (55.0, 25.0, "Land_Barn_Metal_Big", 1),
               (-55.0, -32.0, "Land_Office2", 0), (5.0, -35.0, "Land_Shed_W4", 0)],
     "refinery": [(-55.0, 25.0, "Land_Tank_Big", 0), (-20.0, 25.0, "Land_Tank_Big", 0),
-                 (15.0, 25.0, "Land_Tank_Big", 0), (-55.0, -10.0, "Land_Tank_Medium", 0),
-                 (-30.0, -10.0, "Land_Tank_Medium", 0), (55.0, 20.0, "Land_Workshop1", 0),
-                 (55.0, -30.0, "Land_Office2", 0), (0.0, -35.0, "Land_Warehouse", 0)],
+                 (15.0, 25.0, "Land_Tank_Big", 0), (-55.0, -10.0, "Land_Tank_Medium_Stairs", 0),
+                 (-30.0, -10.0, "Land_Tank_Medium_Stairs", 0), (55.0, 20.0, "Land_Workshop1", 0),
+                 (55.0, -30.0, "Land_Office2", 0), (0.0, -35.0, "Land_Factory_Small", 0)],
     "power": [(-35.0, 15.0, "Land_Power_Station", 0), (35.0, 30.0, "Land_Smokestack_Big", 0),
-              (45.0, -10.0, "Land_Power_TransformerStation", 0), (-55.0, -35.0, "Land_Office2", 0),
+              (45.0, -10.0, "Land_Power_Transformer_Build", 0), (-55.0, -35.0, "Land_Office2", 0),
               (10.0, -35.0, "Land_Workshop1", 0)],
-    "mill": [(-35.0, 20.0, "Land_Warehouse", 1), (0.0, 20.0, "Land_Warehouse", 1), (35.0, 20.0, "Land_Warehouse", 1),
+    "mill": [(-35.0, 20.0, "Land_Factory_Small", 1), (0.0, 20.0, "Land_Factory_Small", 1), (35.0, 20.0, "Land_Factory_Small", 1),
              (65.0, 25.0, "Land_Smokestack_Big", 0), (-55.0, -32.0, "Land_Office2", 0),
              (5.0, -32.0, "Land_Workshop1", 0)],
-    "smelter": [(-45.0, 20.0, "Land_Warehouse", 0), (0.0, 20.0, "Land_Warehouse", 0), (45.0, 20.0, "Land_Warehouse", 0),
-                (-45.0, -15.0, "Land_Warehouse", 0), (-55.0, -40.0, "Land_Office2", 0),
-                (60.0, -25.0, "Land_Power_TransformerStation", 0)],
+    "smelter": [(-45.0, 20.0, "Land_Factory_Small", 0), (0.0, 20.0, "Land_Factory_Small", 0), (45.0, 20.0, "Land_Factory_Small", 0),
+                (-45.0, -15.0, "Land_Factory_Small", 0), (-55.0, -40.0, "Land_Office2", 0),
+                (60.0, -25.0, "Land_Power_Transformer_Build", 0)],
 }
 
 NAVAL = ("DevonportNavalBase", "Devonport Naval Base", -36.8290, 174.7870, "Auckland")
@@ -119,7 +119,7 @@ LANDMARK_LAYOUTS = {
 }
 # Landmark layouts that are really small settlements, and the site kind they count as for loot and infected.
 LANDMARK_KINDS = {"fishing_huts": "bach"}
-BOULDERS = ["r2_boulder1", "r2_boulder2"]
+BOULDERS = ["stone1", "stone2"]
 
 WHAKAARI = ("Whakaari", "Whakaari / White Island", -37.52, 177.18)
 WHAKAARI_RADIUS = 260.0
@@ -145,11 +145,11 @@ FARM_SPACING = 320.0
 FOOTPRINTS = {
     "Land_Airfield_Hangar_Green": (30, 40), "Land_Mil_ATC_Big": (14, 14),
     "Land_Airfield_ServiceHangar_L": (18, 28), "Land_Container_1Bo": (3, 12), "Land_Container_1Mo": (3, 12),
-    "Land_Container_1Moh": (3, 12), "Land_Container_1Aoh": (3, 12), "Land_Warehouse": (24, 48),
+    "Land_Container_1Moh": (3, 12), "Land_Container_1Aoh": (3, 12), "Land_Factory_Small": (24, 48),
     "Land_Barn_Metal_Big": (16, 28), "Land_Farm_CowshedA": (12, 30), "Land_Shed_W4": (6, 8),
-    "Land_Power_Pole_Wood1": (1, 1), "Land_Office2": (16, 28), "Land_Workshop1": (12, 20),
-    "Land_Tank_Big": (24, 24), "Land_Tank_Medium": (14, 14), "Land_Power_Station": (40, 60),
-    "Land_Smokestack_Big": (10, 10), "Land_Power_TransformerStation": (8, 10), "Land_Lighthouse": (10, 10),
+    "Land_Power_Pole_Wood1_Amp": (1, 1), "Land_Office2": (16, 28), "Land_Workshop1": (12, 20),
+    "Land_Tank_Big": (24, 24), "Land_Tank_Medium_Stairs": (14, 14), "Land_Power_Station": (40, 60),
+    "Land_Smokestack_Big": (10, 10), "Land_Power_Transformer_Build": (8, 10), "Land_Lighthouse": (10, 10),
     "Land_Mil_Barracks1": (10, 32), "Land_Mil_Barracks2": (10, 32), "Land_Mil_Guardhouse1": (6, 8),
     "Land_Rail_Station_Big": (12, 30),
     "Land_Hotel": (20, 50),
@@ -340,7 +340,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
                 bx, by = local_to_world(x, y, hd, -50.0 + col * 15.0, -26.0 + row * 9.0)
                 site.buildings.append(Building(CONTAINERS[rng.integers(len(CONTAINERS))], bx, by, hd % 360))
         bx, by = local_to_world(x, y, hd, 25.0, 18.0)
-        site.buildings.append(Building("Land_Warehouse", bx, by, (hd + 90.0) % 360))
+        site.buildings.append(Building("Land_Factory_Small", bx, by, (hd + 90.0) % 360))
         sites.append(site)
         mark(blocked, grid, x, y, hd, *PORT_PAD)
         print(f"  {label}: port")
@@ -396,7 +396,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         site = Site("naval", cls, label, x, y, PORT_PAD[0] / 2, hd)
         site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, *PORT_PAD)})
         for along, across, cls_b, turn in ((-40.0, 18.0, "Land_Mil_Barracks1", 1), (-15.0, 18.0, "Land_Mil_Barracks2", 1),
-                                           (25.0, 18.0, "Land_Warehouse", 0), (-50.0, -22.0, "Land_Mil_Guardhouse1", 0),
+                                           (25.0, 18.0, "Land_Factory_Small", 0), (-50.0, -22.0, "Land_Mil_Guardhouse1", 0),
                                            (0.0, -20.0, "Land_Mil_ATC_Small", 0)):
             bx, by = local_to_world(x, y, hd, along, across)
             site.buildings.append(Building(cls_b, bx, by, (hd + 90.0 * turn) % 360))
@@ -482,7 +482,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         h = flatten_rect(h, land, grid, x, y, hd, *PORT_PAD, blend=25.0, min_z=2.0)
         site = Site("ferry", cls, label, x, y, PORT_PAD[0] / 2, hd)
         site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, *PORT_PAD)})
-        for along, across, cls_b, turn in ((-30.0, 18.0, "Land_Warehouse", 0), (35.0, 20.0, "Land_Office2", 1),
+        for along, across, cls_b, turn in ((-30.0, 18.0, "Land_Factory_Small", 0), (35.0, 20.0, "Land_Office2", 1),
                                            (40.0, -20.0, "Land_Mil_ATC_Small", 0)):
             site.buildings.append(Building(cls_b, *local_to_world(x, y, hd, along, across), (hd + 90.0 * turn) % 360))
         for k in range(6):
@@ -637,7 +637,7 @@ def place_ski_field(h, land, ok, slope, grid, cls, label, tx, ty) -> Site | None
         if not (0 <= rr < grid.n and 0 <= cc < grid.n) or not land[int(rr), int(cc)]:
             break
         towers.append((px, py))
-        site.buildings.append(Building("Land_Power_Pole_Wood1", px, py, math.degrees(math.atan2(ux, uy)) % 360))
+        site.buildings.append(Building("Land_Power_Pole_Wood1_Amp", px, py, math.degrees(math.atan2(ux, uy)) % 360))
     site.extra["lift"] = [[round(px, 1), round(py, 1)] for px, py in [(x, y)] + towers]
     return site
 
