@@ -6,7 +6,7 @@ streets rather than cutting through blocks, and reuses roads already built so ro
 corridors. Town streets come from the block grid in towns.py. Highways outside towns are graded
 into the terrain as a smooth road bed.
 
-Writes source/roads/roads.shp with RoadsLib.cfg for Terrain Builder, source/roads.json (used by
+Writes data/roads/roads.shp with RoadsLib.cfg (packed into the PBO for the world config), source/roads.json (used by
 the satellite and forest builders) and source/roads_4096.png (road footprint).
 """
 
@@ -354,7 +354,7 @@ def road_footprint(roads: list[Road], grid) -> np.ndarray:
 def write_outputs(roads: list[Road], footprint: np.ndarray, source_dir: Path, easting: float, northing: float) -> None:
     import shapefile
 
-    out = source_dir / "roads"
+    out = source_dir.parent / "data" / "roads"
     out.mkdir(parents=True, exist_ok=True)
     with shapefile.Writer(str(out / "roads"), shapeType=shapefile.POLYLINE) as w:
         w.field("ID", "N", 4)

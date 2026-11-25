@@ -33,6 +33,7 @@ class CfgWorlds
 		worldName = "maps\aotearoa\world\aotearoa.wrp";
 		mapSize = 20480;
 		centerPosition[] = {10240, 10240, 0};
+		newRoadsShape = "\maps\aotearoa\data\roads\roads.shp";
 
 		// The engine counts northern latitudes as negative, so a southern one is positive.
 		latitude = 41.5;
