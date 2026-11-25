@@ -613,6 +613,7 @@ def main() -> None:
     grid = towns_mod.Grid(SIZE_M, CELL, GRID)
     towns = towns_mod.load_towns()
     towns_mod.place_towns(towns, lambda lon, lat: lonlat_to_world(lon, lat, proj), land & ~lake_mask, grid)
+    towns += towns_mod.make_hamlets(towns, h, land & ~lake_mask, grid, SEED + 4)
     h, river_w = water.carve_rivers(h, real, land, lake_mask, CELL, towns_mod.town_mask(towns, grid))
     river_mask = river_w > 0.5
     dry = land & ~lake_mask & ~river_mask
@@ -623,6 +624,11 @@ def main() -> None:
     h = np.where(land & ~lake_mask, limit_slope(np.where(land, h, 0.0), MAX_SLOPE_DEG), h)
     towns_mod.layout_towns(towns, h, dry, grid, SEED + 3)
     h, roads, road_footprint = roads_mod.build_roads(h, land, lake_mask, river_mask, towns, grid)
+    roads += roads_mod.build_back_roads(h, land, lake_mask, river_mask, towns, grid, roads)
+    rails, stations = roads_mod.build_railways(h, land, lake_mask, river_mask, towns, grid, roads)
+    h = roads_mod.grade_highways(h, land, lake_mask, river_mask, rails, towns, grid)
+    rail_fp = roads_mod.rail_footprint(rails, grid)
+    road_footprint = np.maximum(roads_mod.road_footprint(roads, grid), rail_fp)
 
     def lonlat_to_xy(lon, lat):
         x, y = lonlat_to_world(np.array(lon), np.array(lat), proj)
@@ -630,17 +636,23 @@ def main() -> None:
 
     h, land, sites = pois_mod.build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
                                          lonlat_to_xy, SEED + 5)
+    h, station_sites = pois_mod.make_stations(h, land, stations, grid)
+    sites += station_sites
     roads, road_footprint = roads_mod.add_access_roads(h, land, lake_mask, river_mask, towns, grid, roads, sites)
     h = np.where(land & ~lake_mask, limit_slope(np.where(land, h, 0.0), MAX_SLOPE_DEG), h)
     print(f"Roads: {sum(r.kind == 'highway' for r in roads)} highway pieces, "
-          f"{sum(r.kind == 'street' for r in roads)} streets, {sum(r.kind == 'track' for r in roads)} tracks, "
-          f"{sum(len(r.bridges) for r in roads)} bridges")
+          f"{sum(r.kind == 'street' for r in roads)} streets, {sum(r.kind == 'gravel' for r in roads)} gravel, "
+          f"{sum(r.kind == 'track' for r in roads)} tracks, {sum(len(r.bridges) for r in roads + rails)} bridges, "
+          f"{len(rails)} rail sections, {len(stations)} stations")
     for b in [b for t in towns for b in t.buildings] + [b for st in sites for b in st.buildings]:
         b.z = float(grid.sample(h, b.x, b.y)[0])
+    hamlets = [t for t in towns if t.tier == "hamlet"]
     for t in towns:
-        moved = f", moved {t.moved_m:.0f} m inland" if t.moved_m > 1 else ""
-        print(f"  {t.name}: {len(t.buildings)} buildings, radius {t.radius:.0f} m{moved}")
-    print(f"Towns: {len(towns)}, buildings: {sum(len(t.buildings) for t in towns)}")
+        if t.tier != "hamlet":
+            moved = f", moved {t.moved_m:.0f} m inland" if t.moved_m > 1 else ""
+            print(f"  {t.name}: {len(t.buildings)} buildings, radius {t.radius:.0f} m{moved}")
+    print(f"Hamlets: {len(hamlets)}, buildings: {sum(len(t.buildings) for t in hamlets)}")
+    print(f"Towns: {len(towns) - len(hamlets)}, buildings: {sum(len(t.buildings) for t in towns if t.tier != 'hamlet')}")
 
     slope = slope_degrees(h)
     land_slope = slope[land]
@@ -679,6 +691,7 @@ def main() -> None:
     idx = build_mask(h, land, proj)
     idx[towns_mod.town_mask(towns, grid) & land & (idx != 0)] = 1
     idx[river_mask] = SURFACE_INDEX["scree"]
+    idx[(rail_fp > 0) & land] = SURFACE_INDEX["scree"]
     idx[lake_mask] = SURFACE_INDEX["beach"]
     idx[pois_mod.whakaari_mask(sites, grid) & land] = SURFACE_INDEX["volcanic"]
     idx[volcano_mask(volcanoes, h) & land & ~towns_mod.town_mask(towns, grid)] = SURFACE_INDEX["volcanic"]
@@ -687,7 +700,8 @@ def main() -> None:
             pr, pc = grid.to_cell(*np.array(surf["points"]).T)
             rr, cc = draw.polygon(pr, pc, shape=idx.shape)
             idx[rr, cc] = SURFACE_INDEX["scree"]
-    exclude = (ndimage.binary_dilation(road_footprint > 0, iterations=2) | towns_mod.town_mask(towns, grid)
+    exclude = (ndimage.binary_dilation((road_footprint > 0) | (rail_fp > 0), iterations=2)
+               | towns_mod.town_mask(towns, grid)
                | lake_mask | river_mask)
     for st in sites:
         win, wx, wy = grid.window(st.x, st.y, st.radius + 20.0)
@@ -696,8 +710,8 @@ def main() -> None:
     forests_mod.write_forest(trees, SOURCE_DIR / "objects" / "forest_tb.txt", EASTING, NORTHING)
     Image.fromarray(forests_mod.density_preview(trees, SIZE_M)).save(PREVIEW_DIR / "forest_density_1024.png")
     print(f"Trees and bushes: {len(trees)}")
-    detail = details_mod.build_details(h, idx, land, lake_mask, river_mask, road_footprint, towns, roads, sites,
-                                       lakes, grid, SURFACE_INDEX, SEED + 9)
+    detail = details_mod.build_details(h, idx, land, lake_mask, river_mask, np.maximum(road_footprint, rail_fp),
+                                       towns, roads, rails, sites, lakes, grid, SURFACE_INDEX, SEED + 9)
     details_mod.write_details(detail, SOURCE_DIR / "objects", EASTING, NORTHING)
     print("Detail objects: " + ", ".join(f"{k} {len(v)}" for k, v in detail.items()))
 
@@ -706,14 +720,14 @@ def main() -> None:
     water_img[..., 1] = np.clip(river_w * 255, 0, 255).astype(np.uint8)
     Image.fromarray(water_img).save(SOURCE_DIR / "water_4096.png", optimize=True)
     water.write_lakes(lakes, SOURCE_DIR / "lakes.json", EASTING, NORTHING)
-    roads_mod.write_outputs(roads, road_footprint, SOURCE_DIR, EASTING, NORTHING)
+    roads_mod.write_outputs(roads, road_footprint, SOURCE_DIR, EASTING, NORTHING, rails, stations)
     mask = idx if args.mask_size == GRID else upscale_mask(idx, args.mask_size)
     Image.fromarray(mask_to_rgb(mask)).save(SOURCE_DIR / f"mask_{args.mask_size}.png", optimize=True)
     write_layers_cfg(SOURCE_DIR / "layers.cfg")
     write_legend(SOURCE_DIR / "mapLegend.png")
 
     towns_mod.write_towns_csv(towns, SOURCE_DIR / "towns.csv", EASTING, NORTHING)
-    towns_mod.write_names_hpp(towns + [st for st in sites if st.label], MAP_DIR / "config" / "names.hpp")
+    towns_mod.write_names_hpp(towns + [st for st in sites if st.label and st.name_type], MAP_DIR / "config" / "names.hpp")
     towns_mod.write_terrain_builder_objects(towns, SOURCE_DIR / "objects" / "towns_tb.txt", EASTING, NORTHING)
     towns_mod.write_object_spawner(towns, SOURCE_DIR / "objects" / "towns_spawner.json")
     towns_mod.write_terrain_builder_objects(sites, SOURCE_DIR / "objects" / "pois_tb.txt", EASTING, NORTHING)
@@ -723,7 +737,7 @@ def main() -> None:
     relief = shaded_relief(h, 2048, lake_mask, river_w)
     relief.save(PREVIEW_DIR / "relief_2048.png", optimize=True)
     towns_mod.draw_overview(relief, towns, SIZE_M).save(PREVIEW_DIR / "towns_2048.png", optimize=True)
-    roads_mod.draw_preview(relief, roads, SIZE_M).save(PREVIEW_DIR / "roads_2048.png", optimize=True)
+    roads_mod.draw_preview(relief, roads + rails, SIZE_M).save(PREVIEW_DIR / "roads_2048.png", optimize=True)
     pois_mod.draw_preview(relief, sites, SIZE_M).save(PREVIEW_DIR / "pois_2048.png", optimize=True)
     for name in DETAIL_TOWNS:
         town = next(t for t in towns if t.name == name)

@@ -206,14 +206,20 @@ def draw_roads(img: Image.Image, mpp: float) -> None:
     d = ImageDraw.Draw(img)
     # Verges first so every road sits on a strip of worn gravel, then the seal on top.
     for layer, extra, colours in (("verge", 3.0, {"highway": (128, 120, 100), "street": (120, 116, 104),
-                                                   "track": (120, 112, 92)}),
+                                                   "track": (120, 112, 92), "gravel": (128, 118, 96)}),
                                   ("seal", 0.0, {"highway": (62, 62, 64), "street": (78, 78, 78),
-                                                 "track": (146, 132, 104)})):
+                                                 "track": (146, 132, 104), "gravel": (158, 146, 120)})):
         for road in data["roads"]:
             width = data["kinds"][road["kind"]]["width"] + extra
             px = max(1, int(round(width / mpp)))
             pts = [(x / mpp, (g.SIZE_M - y) / mpp) for x, y in road["points"]]
             d.line(pts, fill=colours[road["kind"]], width=px, joint="curve")
+    # Rail: a ballast bed with the dark line of the sleepers down the middle.
+    for colour, width in (((112, 104, 96), 5.0), ((70, 62, 54), 2.6)):
+        px = max(1, int(round(width / mpp)))
+        for line in data.get("rails", []):
+            pts = [(x / mpp, (g.SIZE_M - y) / mpp) for x, y in line["points"]]
+            d.line(pts, fill=colour, width=px, joint="curve")
 
 
 def draw_surfaces(img: Image.Image, mpp: float) -> None:

@@ -55,7 +55,20 @@ KINDS = {
     "highway": {"id": 1, "width": 8.0},
     "street": {"id": 2, "width": 6.0},
     "track": {"id": 3, "width": 4.0},
+    "gravel": {"id": 4, "width": 5.0},
 }
+
+# Rail lines, routed station to station. Stations sit just outside each town.
+RAILWAYS = [
+    ("NIMT", ["Auckland", "Huntly", "Hamilton", "Te Awamutu", "Taumarunui", "Waiouru Army Camp",
+              "Palmerston North", "Wellington"]),
+    ("MNL", ["Picton", "Blenheim", "Kaikōura", "Christchurch", "Ashburton", "Timaru", "Ōamaru",
+             "Dunedin", "Gore", "Invercargill"]),
+]
+RAIL_COMFORT_GRADE = 0.025
+RAIL_WIDTH_M = 5.0
+BACK_ROAD_LINKS = 2
+BACK_ROAD_MAX_M = 3500.0
 ACCESS_SEARCH_M = 1500.0
 WINDOW_MARGIN_M = 2500.0
 COMFORT_GRADE = 0.08
@@ -292,7 +305,7 @@ def add_access_roads(h, land, lake_mask, river_mask, towns, grid, roads: list[Ro
         if len(world) < 2:
             continue
         pts = chaikin(measure.approximate_polygon(world, tolerance=2.0), 2)
-        kind = "street" if site.kind in ("airfield", "port", "industrial", "naval") else "track"
+        kind = "street" if site.kind in ("airfield", "port", "industrial", "naval", "ferry", "station") else "track"
         road = Road(kind, site.class_name, [(float(x), float(y)) for x, y in pts])
         road.bridges = find_bridges(pts, river_mask, grid)
         roads.append(road)
@@ -344,6 +357,132 @@ def grade_highways(h, land, lake_mask, river_mask, roads, towns, grid) -> np.nda
     return np.where(w > 0, h * (1 - w) + bed * w, h).astype(np.float32)
 
 
+def build_back_roads(h, land, lake_mask, river_mask, towns, grid, roads: list[Road]) -> list[Road]:
+    """Gravel roads linking each hamlet and small town to its nearest neighbours."""
+    cost = base_cost(h, land, lake_mask, river_mask, towns, grid)
+    used = road_footprint(roads, grid) > 0
+    cost = np.where(used & np.isfinite(cost), np.minimum(cost, cost * REUSE_FACTOR + 0.2), cost)
+    street_lines = {t.name: town_streets(t) for t in towns}
+    pairs = set()
+    for ia, a in enumerate(towns):
+        if a.tier not in ("hamlet", "village", "town"):
+            continue
+        others = sorted((math.hypot(a.x - b.x, a.y - b.y), ib) for ib, b in enumerate(towns) if ib != ia)
+        for d, ib in others[:BACK_ROAD_LINKS]:
+            if d <= BACK_ROAD_MAX_M:
+                pairs.add((min(ia, ib), max(ia, ib)))
+    out = []
+    for ia, ib in sorted(pairs):
+        ta, tb = towns[ia], towns[ib]
+        a = tuple(int(round(float(v))) for v in grid.to_cell(ta.x, ta.y))
+        b = tuple(int(round(float(v))) for v in grid.to_cell(tb.x, tb.y))
+        if not (np.isfinite(cost[a]) and np.isfinite(cost[b])):
+            continue
+        path = route(cost, a, b, grid.cell)
+        if path is None:
+            continue
+        rr, cc = np.array(path).T
+        world = np.stack([(cc + 0.5) * grid.cell, grid.size_m - (rr + 0.5) * grid.cell], -1)
+        # Only the stretches not already on a road become new gravel.
+        for piece in _runs(world, ~used[rr, cc]):
+            smooth = chaikin(measure.approximate_polygon(piece, tolerance=3.0), 2)
+            for part in clip_to_outside(smooth, towns):
+                part = snap_ends(part, towns, street_lines)
+                road = Road("gravel", f"{ta.class_name}-{tb.class_name}"[:24],
+                            [(float(x), float(y)) for x, y in part])
+                road.bridges = find_bridges(part, river_mask, grid)
+                out.append(road)
+        keep = np.zeros(cost.shape, dtype=bool)
+        keep[rr, cc] = True
+        keep = ndimage.binary_dilation(keep, iterations=1)
+        cost = np.where(keep & np.isfinite(cost), np.minimum(cost, cost * REUSE_FACTOR + 0.2), cost)
+        used |= keep
+    return out
+
+
+def _runs(points: np.ndarray, mask: np.ndarray, min_len: int = 6) -> list[np.ndarray]:
+    """Runs of consecutive points where mask is true, each extended one point into its neighbours."""
+    out, start = [], None
+    for i, m in enumerate(list(mask) + [False]):
+        if m and start is None:
+            start = i
+        elif not m and start is not None:
+            if i - start >= min_len:
+                out.append(points[max(0, start - 1):min(len(points), i + 1)])
+            start = None
+    return out
+
+
+def station_point(t, toward) -> tuple[float, float]:
+    dx, dy = toward[0] - t.x, toward[1] - t.y
+    d = math.hypot(dx, dy) or 1.0
+    r = t.radius + 45.0
+    return t.x + dx / d * r, t.y + dy / d * r
+
+
+def build_railways(h, land, lake_mask, river_mask, towns, grid, roads: list[Road]) -> tuple[list[Road], list[dict]]:
+    """Rail lines between towns on gentle grades, kept out of towns; returns the lines and stations."""
+    gy, gx = np.gradient(h, grid.cell)
+    grade = np.hypot(gx, gy)
+    cost = 1.0 + 2.0 * (grade / RAIL_COMFORT_GRADE) ** 2
+    cost = np.minimum(cost, 2000.0)
+    cost[river_mask] += RIVER_CROSSING_COST * 2
+    cost[road_footprint(roads, grid) > 0] += 40.0
+    cost[~land | lake_mask] = np.inf
+    cost[towns_mod.town_mask(towns, grid)] = np.inf
+    by_name = {t.name: t for t in towns}
+    lines, stations = [], []
+    placed: dict[str, tuple[float, float]] = {}
+    for ref, chain in RAILWAYS:
+        for a_name, b_name in zip(chain, chain[1:]):
+            ta, tb = by_name[a_name], by_name[b_name]
+            sa = placed.get(a_name) or _open_cell(cost, grid, station_point(ta, (tb.x, tb.y)))
+            sb = _open_cell(cost, grid, station_point(tb, (ta.x, ta.y)))
+            if sa is None or sb is None:
+                print(f"  {ref} {a_name} - {b_name}: station not on open land")
+                continue
+            placed[a_name], placed[b_name] = sa, sb
+            a = tuple(int(round(float(v))) for v in grid.to_cell(*sa))
+            b = tuple(int(round(float(v))) for v in grid.to_cell(*sb))
+            path = route(cost, a, b, grid.cell)
+            if path is None:
+                print(f"  {ref} {a_name} - {b_name}: no route")
+                continue
+            rr, cc = np.array(path).T
+            world = np.stack([(cc + 0.5) * grid.cell, grid.size_m - (rr + 0.5) * grid.cell], -1)
+            smooth = chaikin(measure.approximate_polygon(world, tolerance=4.0), 3)
+            line = Road("rail", ref, [(float(x), float(y)) for x, y in smooth])
+            line.bridges = find_bridges(smooth, river_mask, grid)
+            lines.append(line)
+            for t, (x, y), other in ((ta, sa, tb), (tb, sb, ta)):
+                if not any(st["town"] == t.name for st in stations):
+                    hd = math.degrees(math.atan2(other.x - t.x, other.y - t.y)) % 360
+                    stations.append({"town": t.name, "x": x, "y": y, "heading": round(hd % 180, 1)})
+            print(f"  {ref} {a_name} - {b_name}: {len(path) * grid.cell / 1000:.1f} km of rail")
+    return lines, stations
+
+
+def _open_cell(cost, grid, p, reach_m: float = 250.0):
+    """The nearest routable point to p, or None if there is none within reach."""
+    win, wx, wy = grid.window(p[0], p[1], reach_m)
+    d = np.where(np.isfinite(cost[win]), np.hypot(wx - p[0], wy - p[1]), np.inf)
+    if not np.isfinite(d.min()):
+        return None
+    k = np.unravel_index(np.argmin(d), d.shape)
+    return float(wx[k]), float(wy[k])
+
+
+def rail_footprint(lines: list[Road], grid) -> np.ndarray:
+    centre = np.zeros((grid.n, grid.n), dtype=bool)
+    for line in lines:
+        dense = densify(np.array(line.points), grid.cell * 0.5)
+        r, c = grid.to_cell(dense[:, 0], dense[:, 1])
+        centre[np.clip(np.rint(r).astype(int), 0, grid.n - 1), np.clip(np.rint(c).astype(int), 0, grid.n - 1)] = True
+    if not centre.any():
+        return np.zeros((grid.n, grid.n), dtype=np.float32)
+    return (ndimage.distance_transform_edt(~centre) * grid.cell <= RAIL_WIDTH_M / 2 + grid.cell / 2).astype(np.float32)
+
+
 def road_footprint(roads: list[Road], grid) -> np.ndarray:
     """1 within each road's half width of its centreline, else 0."""
     out = np.zeros((grid.n, grid.n), dtype=np.float32)
@@ -361,7 +500,8 @@ def road_footprint(roads: list[Road], grid) -> np.ndarray:
     return out
 
 
-def write_outputs(roads: list[Road], footprint: np.ndarray, source_dir: Path, easting: float, northing: float) -> None:
+def write_outputs(roads: list[Road], footprint: np.ndarray, source_dir: Path, easting: float, northing: float,
+                  rails: list[Road] = (), stations: list[dict] = ()) -> None:
     import shapefile
 
     out = source_dir.parent / "data" / "roads"
@@ -380,6 +520,10 @@ def write_outputs(roads: list[Road], footprint: np.ndarray, source_dir: Path, ea
                   for r in roads],
         "bridges": [{"ref": r.ref, "x": round(x, 1), "y": round(y, 1), "heading": round(hd, 1), "span": round(sp, 1)}
                     for r in roads for x, y, hd, sp in r.bridges],
+        "rails": [{"ref": r.ref, "points": [[round(x, 1), round(y, 1)] for x, y in r.points],
+                   "bridges": [{"x": round(x, 1), "y": round(y, 1), "heading": round(hd, 1), "span": round(sp, 1)}
+                               for x, y, hd, sp in r.bridges]} for r in rails],
+        "stations": [{**st, "x": round(st["x"], 1), "y": round(st["y"], 1)} for st in stations],
     }
     (source_dir / "roads.json").write_text(json.dumps(data, ensure_ascii=False) + "\n", encoding="utf-8")
     Image.fromarray((footprint * 255).astype(np.uint8)).save(source_dir / "roads_4096.png", optimize=True)
@@ -423,6 +567,17 @@ class RoadTypesLibrary
 \t\tLeftWayCount = 0;
 \t\tRightWayCount = 0;
 \t};
+\tclass Road0004
+\t{
+\t\twidth = 5;
+\t\tmainStrTex = "DZ\\structures\\roads\\data\\gravel_ca.paa";
+\t\tmainTerTex = "DZ\\structures\\roads\\data\\gravel_end_ca.paa";
+\t\tmainMat = "DZ\\structures\\roads\\data\\gravel.rvmat";
+\t\tmap = "track";
+\t\tAILineCount = 1;
+\t\tLeftWayCount = 1;
+\t\tRightWayCount = 1;
+\t};
 };
 """
 
@@ -437,6 +592,11 @@ def draw_preview(relief: Image.Image, roads: list[Road], size_m: float) -> Image
             d.line(pts, fill=(230, 60, 40), width=3)
         elif road.kind == "street":
             d.line(pts, fill=(250, 250, 250), width=1)
+        elif road.kind == "gravel":
+            d.line(pts, fill=(235, 205, 140), width=2)
+        elif road.kind == "rail":
+            d.line(pts, fill=(30, 30, 30), width=3)
+            d.line(pts, fill=(240, 240, 240), width=1)
         else:
             d.line(pts, fill=(200, 170, 110), width=1)
     for road in roads:
