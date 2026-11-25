@@ -31,8 +31,8 @@ class CfgWorlds
 	{
 		description = "Aotearoa";
 		worldName = "maps\aotearoa\world\aotearoa.wrp";
-		mapSize = 20480;
-		centerPosition[] = {10240, 10240, 0};
+		mapSize = 25600;
+		centerPosition[] = {12800, 12800, 0};
 		newRoadsShape = "\maps\aotearoa\data\roads\roads.shp";
 
 		// The engine counts northern latitudes as negative, so a southern one is positive.
@@ -45,7 +45,7 @@ class CfgWorlds
 		class Grid: Grid
 		{
 			offsetX = 0;
-			offsetY = 20480;
+			offsetY = 25600;
 			class Zoom1
 			{
 				zoomMax = 0.15;

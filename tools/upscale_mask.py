@@ -1,4 +1,4 @@
-"""Upscale source/mask_4096.png to the 20480 mask Terrain Builder wants, without regenerating.
+"""Upscale source/mask_4096.png to the 25600 mask Terrain Builder wants, without regenerating.
 
     python upscale_mask.py [size]
 """
@@ -12,7 +12,7 @@ import generate_terrain as g
 
 
 def main() -> None:
-    size = int(sys.argv[1]) if len(sys.argv) > 1 else 20480
+    size = int(sys.argv[1]) if len(sys.argv) > 1 else 25600
     rgb = np.asarray(Image.open(g.SOURCE_DIR / "mask_4096.png").convert("RGB")).astype(int)
     lut = np.array([s[1] for s in g.SURFACES])
     idx = np.argmin(((rgb[..., None, :] - lut[None, None]) ** 2).sum(-1), axis=-1).astype(np.uint8)

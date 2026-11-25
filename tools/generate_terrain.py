@@ -2,7 +2,7 @@
 
 Downloads public Terrarium elevation tiles (AWS Open Data, derived from SRTM,
 GEBCO, LINZ and others), fits the North and South Islands north-up into a
-20480 m square, compresses the relief so slopes are playable at DayZ scale,
+25600 m square, compresses the relief so slopes are playable at DayZ scale,
 adds game-scale detail, and writes:
 
   source/heightmap_4096.png   16-bit grayscale, see heightmap.json for the range
@@ -15,7 +15,7 @@ adds game-scale detail, and writes:
   preview/*.png               shaded relief, surface mask, slope, town overview and close-ups
   <out>/heightmap_4096.asc    ESRI ASCII grid for Terrain Builder (--asc only)
 
-Run from anywhere:  python generate_terrain.py [--asc] [--mask-size 20480]
+Run from anywhere:  python generate_terrain.py [--asc] [--mask-size 25600]
 """
 
 from __future__ import annotations
@@ -34,6 +34,7 @@ from PIL import Image
 from scipy import ndimage
 from skimage import draw
 
+import details as details_mod
 import forests as forests_mod
 import pois as pois_mod
 import roads as roads_mod
@@ -49,9 +50,9 @@ TILE_URL = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.
 ZOOM = 9
 
 GRID = 4096
-CELL = 5.0
+CELL = 6.25
 SIZE_M = GRID * CELL
-MARGIN_M = 650.0
+MARGIN_M = 800.0
 
 # Mainland New Zealand plus Stewart Island; the Chathams and outlying islands are left out.
 LAT_N, LAT_S = -34.30, -47.35
@@ -76,7 +77,7 @@ AXIS_DEG = 72.0  # long axis of the country, anticlockwise from east
 NORTH, SOUTH, STEWART = 1, 2, 3
 ISLAND_SEEDS = {NORTH: (174.76, -36.85), SOUTH: (172.64, -43.53)}
 
-MAX_HEIGHT = 480.0  # height of the broad Southern Alps around Aoraki / Mt Cook, before detail
+MAX_HEIGHT = 520.0  # height of the broad Southern Alps around Aoraki / Mt Cook, before detail
 BROAD_SIGMA = 22.0  # grid cells
 MIDDLE_SIGMA = 8.0
 MIDDLE_WEIGHT = 0.35
@@ -90,6 +91,15 @@ EASTING = 200000
 NORTHING = 0
 
 SEED = 1840
+
+# Volcanic cones stand out as landmarks instead of being smoothed into the plateau.
+# name, lat, lon, peak height (m), base radius (game m), crater radius (game m)
+VOLCANOES = [
+    ("Taranaki", -39.2964, 174.0642, 300.0, 600.0, 0.0),
+    ("Ruapehu", -39.2817, 175.5685, 520.0, 900.0, 60.0),
+    ("Ngauruhoe", -39.1569, 175.6322, 440.0, 720.0, 30.0),
+    ("Tongariro", -39.1300, 175.6420, 360.0, 600.0, 0.0),
+]
 
 DETAIL_TOWNS = ["Auckland", "Wellington", "Christchurch", "Hamilton", "Queenstown"]
 
@@ -353,7 +363,7 @@ def slope_degrees(h: np.ndarray) -> np.ndarray:
     return np.degrees(np.arctan(np.hypot(gx, gy)))
 
 
-def build_heights(real: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+def build_heights(real: np.ndarray, volcanoes: list[tuple] = ()) -> tuple[np.ndarray, np.ndarray]:
     rng = np.random.default_rng(SEED)
     land = clean_land_mask(real)
     dist_land = ndimage.distance_transform_edt(land) * CELL
@@ -379,6 +389,7 @@ def build_heights(real: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
         + ridges * mountain * (0.06 * base)
     )
     h = base + detail
+    h = add_volcanoes(h, land, volcanoes)
 
     coast = smoothstep(dist_land / COAST_RAMP_M)
     beach = 0.6 + np.minimum(dist_land, 60.0) * 0.03
@@ -392,6 +403,42 @@ def build_heights(real: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     seabed = -shelf + fbm(real.shape, 300.0, 3, rng) * np.minimum(dist_sea / 200.0, 1.0) * 2.0
     h = np.where(land, h, np.minimum(seabed, -0.3))
     return h.astype(np.float32), land
+
+
+def add_volcanoes(h: np.ndarray, land: np.ndarray, volcanoes) -> np.ndarray:
+    """Raise each cone to its peak height, blending into the ground around its base."""
+    h = h.copy()
+    for _, x, y, peak, radius, crater in volcanoes:
+        r0, c0 = (SIZE_M - y) / CELL, x / CELL
+        k = int(radius / CELL) + 2
+        ra, rb = max(0, int(r0) - k), min(GRID, int(r0) + k + 1)
+        ca, cb = max(0, int(c0) - k), min(GRID, int(c0) + k + 1)
+        rr, cc = np.mgrid[ra:rb, ca:cb]
+        d = np.hypot((rr + 0.5 - r0) * CELL, (cc + 0.5 - c0) * CELL)
+        t = np.clip(1.0 - d / radius, 0.0, 1.0)
+        # Slightly concave flanks; the summit gradient (1.3 * peak / radius) stays under MAX_SLOPE_DEG
+        # so the slope limiter doesn't grind the top off.
+        cone = peak * t ** 1.3
+        if crater > 0:
+            cone -= np.clip(1.0 - d / crater, 0.0, 1.0) ** 0.7 * min(35.0, crater * 0.5)
+        sub = h[ra:rb, ca:cb]
+        w = smoothstep(t * 2.5)
+        h[ra:rb, ca:cb] = np.where(land[ra:rb, ca:cb], np.maximum(sub, sub * (1 - w) + cone * w), sub)
+    return h
+
+
+def volcano_mask(volcanoes, h: np.ndarray) -> np.ndarray:
+    """Bare scoria on the upper cones."""
+    m = np.zeros(h.shape, dtype=bool)
+    for _, x, y, peak, radius, _ in volcanoes:
+        r0, c0 = (SIZE_M - y) / CELL, x / CELL
+        k = int(radius / CELL) + 2
+        ra, rb = max(0, int(r0) - k), min(GRID, int(r0) + k + 1)
+        ca, cb = max(0, int(c0) - k), min(GRID, int(c0) + k + 1)
+        rr, cc = np.mgrid[ra:rb, ca:cb]
+        d = np.hypot((rr + 0.5 - r0) * CELL, (cc + 0.5 - c0) * CELL)
+        m[ra:rb, ca:cb] |= (d < radius * 0.45) & (h[ra:rb, ca:cb] > peak * 0.45)
+    return m
 
 
 # name, rgb, DayZ surface material. Material paths match the vanilla DZ\surfaces\data\terrain set;
@@ -536,21 +583,25 @@ def main() -> None:
     ap.add_argument("--asc", type=Path, nargs="?", const=SOURCE_DIR, default=None,
                     help="also write heightmap_4096.asc into this folder (default: source/)")
     ap.add_argument("--mask-size", type=int, default=4096,
-                    help="surface mask size in pixels; Terrain Builder wants the satellite/mask size, e.g. 20480")
+                    help="surface mask size in pixels; Terrain Builder wants the satellite/mask size, e.g. 25600")
     args = ap.parse_args()
 
     proj = projection()
     scale = proj["real_m_per_game_m"]
     print(f"Land span {proj['span_km']:.0f} km after reshaping, 1 game m = {scale:.1f} real m")
 
-    key = f"{GRID}_{ROTATION_DEG:g}_{MARGIN_M:g}_{NI_BEND_DEG:g}_{NI_OFFSET_KM[0]:g}_{NI_OFFSET_KM[1]:g}_{WIDEN:g}_{AXIS_DEG:g}_{STRETCH_X:g}"
+    key = f"{GRID}_{CELL:g}_{ROTATION_DEG:g}_{MARGIN_M:g}_{NI_BEND_DEG:g}_{NI_OFFSET_KM[0]:g}_{NI_OFFSET_KM[1]:g}_{WIDEN:g}_{AXIS_DEG:g}_{STRETCH_X:g}"
     cached = CACHE_DIR / f"real_{key}.npy"
     if cached.exists():
         real = np.load(cached)
     else:
         real = sample_real_heights(proj)
         np.save(cached, real)
-    h, land = build_heights(real)
+    volcanoes = []
+    for name, lat, lon, peak, radius, crater in VOLCANOES:
+        x, y = lonlat_to_world(np.array(lon), np.array(lat), proj)
+        volcanoes.append((name, float(x), float(y), peak, radius, crater))
+    h, land = build_heights(real, volcanoes)
 
     def world_to_lonlat(x, y):
         return game_to_lonlat(np.asarray(x) - SIZE_M / 2, np.asarray(y) - SIZE_M / 2, proj)
@@ -630,6 +681,7 @@ def main() -> None:
     idx[river_mask] = SURFACE_INDEX["scree"]
     idx[lake_mask] = SURFACE_INDEX["beach"]
     idx[pois_mod.whakaari_mask(sites, grid) & land] = SURFACE_INDEX["volcanic"]
+    idx[volcano_mask(volcanoes, h) & land & ~towns_mod.town_mask(towns, grid)] = SURFACE_INDEX["volcanic"]
     for st in sites:
         for surf in st.surfaces:
             pr, pc = grid.to_cell(*np.array(surf["points"]).T)
@@ -644,6 +696,10 @@ def main() -> None:
     forests_mod.write_forest(trees, SOURCE_DIR / "objects" / "forest_tb.txt", EASTING, NORTHING)
     Image.fromarray(forests_mod.density_preview(trees, SIZE_M)).save(PREVIEW_DIR / "forest_density_1024.png")
     print(f"Trees and bushes: {len(trees)}")
+    detail = details_mod.build_details(h, idx, land, lake_mask, river_mask, road_footprint, towns, roads, sites,
+                                       lakes, grid, SURFACE_INDEX, SEED + 9)
+    details_mod.write_details(detail, SOURCE_DIR / "objects", EASTING, NORTHING)
+    print("Detail objects: " + ", ".join(f"{k} {len(v)}" for k, v in detail.items()))
 
     water_img = np.zeros((GRID, GRID, 3), dtype=np.uint8)
     water_img[..., 0] = lake_mask * 255

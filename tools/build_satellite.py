@@ -2,9 +2,9 @@
 
 Reads source/heightmap_4096.png, source/mask_4096.png, source/water_4096.png, source/sat_tint_512.png,
 tools/satellite_palette.json, source/roads.json and source/objects/towns_spawner.json, and writes
-source/satellite_<size>.png plus previews. Terrain Builder wants 20480 (1 m per pixel):
+source/satellite_<size>.png plus previews. Terrain Builder wants 25600 (1 m per pixel):
 
-    python build_satellite.py --size 20480
+    python build_satellite.py --size 25600
 
 That needs about 5 GB of memory. The default 4096 is for a quick look.
 """
