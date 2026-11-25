@@ -29,6 +29,10 @@ Options:
                           test on a world without the Terrain Builder objects; otherwise every building doubles.
   --difficulty LEVEL      easy, normal (default, vanilla amounts) or hard; scales loot, vehicles and infected
   --loot/--vehicles/--infected X   fine-tune one of those by a factor (overrides the difficulty for it)
+  --traders               load the four trader compounds (vanilla objects) from their spawner file
+  --expansion             set the server up for DayZ Expansion: trader NPCs, trader zones, and the safe zone
+                          and spawn snippets (implies --traders; see mission/mods/README.md)
+  --traderplus            copy the TraderPlus trader and safe area snippets (implies --traders)
   --skip-pbo              build only the server folder (reuses dist/@Aotearoa if it is there)
   --zip                   also write dist/Aotearoa_mod.zip and dist/Aotearoa_server.zip
   --dry-run               print what would run without running it
@@ -203,7 +207,7 @@ def merge_dicts(base: dict, extra: dict) -> dict:
     return base
 
 
-def build_mission(dest: Path, vanilla: Path | None, spawners: bool) -> list[str]:
+def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[str]) -> list[str]:
     """Vanilla Chernarus mission + generated files + merged configs. Returns warnings."""
     warnings = []
     gen = MAP_DIR / "mission" / MISSION
@@ -226,6 +230,12 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool) -> list[str]
             (dest / spawner).unlink(missing_ok=True)
             warnings.append(f"No {model}, so the {what} are left out. Make it from docs/models/ "
                             "(docs/CUSTOM_MODELS.md, item 2) and pack again.")
+    if "traders" in mods:
+        spawner_files.append("aotearoa/traders_spawner.json")
+    else:
+        (dest / "aotearoa" / "traders_spawner.json").unlink(missing_ok=True)
+    if "expansion" in mods:
+        shutil.copytree(MAP_DIR / "mission" / "mods" / "expansion" / "mpmissions" / MISSION, dest, dirs_exist_ok=True)
     if spawners:
         (dest / "aotearoa").mkdir(exist_ok=True)
         for f in ("towns_spawner.json", "pois_spawner.json"):
@@ -320,7 +330,8 @@ def apply_difficulty(mission: Path, factors: dict) -> list[str]:
     return done
 
 
-def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool, factors: dict) -> list[str]:
+def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool, factors: dict,
+                 mods: set[str]) -> list[str]:
     server = out / "server"
     print(f"  server folder {server}")
     if DRY:
@@ -330,7 +341,21 @@ def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool,
         shutil.copytree(mod_dir, server / "@Aotearoa", dirs_exist_ok=True)
         if (mod_dir / "keys").exists():
             shutil.copytree(mod_dir / "keys", server / "keys", dirs_exist_ok=True)
-    warnings = build_mission(server / "mpmissions" / MISSION, vanilla, spawners)
+    warnings = build_mission(server / "mpmissions" / MISSION, vanilla, spawners, mods)
+    mod_src = MAP_DIR / "mission" / "mods"
+    if mods & {"expansion", "traderplus"}:
+        shutil.rmtree(server / "mod_support", ignore_errors=True)
+        (server / "mod_support").mkdir()
+        shutil.copy2(mod_src / "README.md", server / "mod_support" / "README.md")
+    if "expansion" in mods:
+        shutil.copytree(mod_src / "expansion" / "profiles", server / "profiles", dirs_exist_ok=True)
+        shutil.copytree(mod_src / "expansion" / "snippets", server / "mod_support" / "expansion", dirs_exist_ok=True)
+        warnings.append("Expansion: after the first start, paste the arrays in mod_support/expansion/ into "
+                        "SafeZoneSettings.json and SpawnSettings.json (see mod_support/README.md).")
+    if "traderplus" in mods:
+        shutil.copytree(mod_src / "traderplus" / "snippets", server / "mod_support" / "traderplus", dirs_exist_ok=True)
+        warnings.append("TraderPlus: paste the arrays in mod_support/traderplus/ into your TraderPlus configs "
+                        "(see mod_support/README.md).")
     for line in apply_difficulty(server / "mpmissions" / MISSION, factors):
         print(f"  {line}")
     if not mod_dir.exists():
@@ -359,6 +384,9 @@ def main() -> None:
     ap.add_argument("--loot", type=float)
     ap.add_argument("--vehicles", type=float)
     ap.add_argument("--infected", type=float)
+    ap.add_argument("--traders", action="store_true")
+    ap.add_argument("--expansion", action="store_true")
+    ap.add_argument("--traderplus", action="store_true")
     ap.add_argument("--skip-pbo", action="store_true")
     ap.add_argument("--zip", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
@@ -394,7 +422,11 @@ def main() -> None:
         if getattr(args, k) is not None:
             factors[k] = getattr(args, k)
     print(f"  difficulty {args.difficulty}: " + ", ".join(f"{k} x{v}" for k, v in factors.items()))
-    warnings = build_server(out, mod_dir, vanilla, args.spawners, factors)
+    mods = {m for m in ("traders", "expansion", "traderplus") if getattr(args, m)}
+    if mods:
+        mods.add("traders")
+        print("  mod support: " + ", ".join(sorted(mods)))
+    warnings = build_server(out, mod_dir, vanilla, args.spawners, factors, mods)
 
     if args.zip and not DRY:
         for name, src in (("Aotearoa_mod", mod_dir), ("Aotearoa_server", out / "server")):
