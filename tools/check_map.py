@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -120,6 +121,20 @@ def main() -> None:
     for kind, spec in roads["kinds"].items():
         check(f"class Road{spec['id']:04d}" in lib, f"{kind} has RoadsLib entry Road{spec['id']:04d}")
     check(all(r["kind"] in roads["kinds"] for r in roads["roads"]), f"{len(roads['roads'])} roads use known kinds")
+
+    print("Trader sites")
+    traders = json.loads((MISSION / "aotearoa" / "traders_spawner.json").read_text(encoding="utf-8"))["Objects"]
+    check(bool(traders) and all(on_map(o["pos"][0], o["pos"][2]) and ground(o["pos"][0], o["pos"][2]) > 0.0
+                                for o in traders), f"{len(traders)} trader compound objects, all on land")
+    mods = MAP_DIR / "mission" / "mods"
+    zones = [json.loads(f.read_text(encoding="utf-8")) for f in (mods / "expansion" / "profiles" / "ExpansionMod" / "TraderZones").glob("*.json")]
+    maps = list((mods / "expansion" / "mpmissions" / "dayzOffline.aotearoa" / "expansion" / "traders").glob("*.map"))
+    check(len(zones) == len(maps) >= 3, f"{len(zones)} Expansion trader zones and {len(maps)} trader files")
+    circles = json.loads((mods / "expansion" / "snippets" / "SafeZoneSettings.CircleZones.json").read_text(encoding="utf-8"))
+    ev_pos = [(float(p.get("x")), float(p.get("z"))) for ev in events.iter("event") if ev.get("name").startswith("Vehicle")
+              for p in ev.iter("pos")]
+    inside = sum(any(math.hypot(x - c["Center"][0], y - c["Center"][2]) < c["Radius"] for c in circles) for x, y in ev_pos)
+    check(inside == 0, f"no vehicle spawns inside the {len(circles)} safe zones ({inside} found)")
 
     print("Signs and models")
     signs = json.loads((MISSION / "aotearoa" / "signs_spawner.json").read_text(encoding="utf-8"))["Objects"]

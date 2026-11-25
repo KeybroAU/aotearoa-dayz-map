@@ -1,0 +1,14 @@
+{
+    "m_Version": 7,
+    "m_DisplayName": "Mackenzie Black Market",
+    "m_ZoneName": "Aotearoa_MackenzieBlackMarket",
+    "Position": [
+        7028.12,
+        222.78,
+        4346.88
+    ],
+    "Radius": 60.0,
+    "BuyPricePercent": 130.0,
+    "SellPricePercent": -1.0,
+    "Stock": {}
+}

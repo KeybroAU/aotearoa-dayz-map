@@ -4,7 +4,7 @@ Reads the generated terrain (source/heightmap_4096.png, mask_4096.png, towns.csv
 pois.json) and writes mission/dayzOffline.aotearoa/ with player spawns, vehicle and crash
 events, infected zones, the Whakaari contaminated area, init.c and a cfggameplay snippet,
 plus mission/serverDZ.cfg. economy.py adds loot positions and tiers, animals and weather;
-server_files.py adds starting gear, server messages and launch scripts; signs.py the road signs. Copy the rest of the mission (db/, cfgeconomycore.xml and so on)
+server_files.py adds starting gear, server messages and launch scripts; signs.py the road signs; mod_support.py trader sites for server mods. Copy the rest of the mission (db/, cfgeconomycore.xml and so on)
 from vanilla dayzOffline.chernarusplus; see the README.
 
     python build_mission.py
@@ -22,6 +22,7 @@ from PIL import Image
 from scipy import ndimage
 
 import economy
+import mod_support
 import generate_terrain as g
 import server_files
 import signs
@@ -538,7 +539,10 @@ def main() -> None:
 
     spawns = spawn_points(h, land, slope, towns, pois, rng)
     write_spawns(spawns, out / "cfgplayerspawnpoints.xml")
+    traders = mod_support.build(h, towns, roads, pois, g.CELL, g.SIZE_M)
     ev = events(h, idx, land, slope, towns, roads, pois, rng)
+    safe = [(x, y, r + 50.0) for x, y, r in mod_support.safe_zones(traders)]
+    ev = {name: [p for p in pts if outside(safe, p[0], p[1])] for name, pts in ev.items()}
     write_events(ev, out / "cfgeventspawns.xml")
     zones = infected_zones(land, towns, pois, rng)
     write_zombie_territories(zones, out / "env" / "zombie_territories.xml")
@@ -554,6 +558,7 @@ def main() -> None:
         print(f"  {name}: {len(ev[name])}")
     print(f"Infected zones: {len(zones)}")
     print(signs.summary(road_signs, towns))
+    print("Trader sites: " + ", ".join(t.name for t in traders))
     print(f"Wrote {out}")
 
 

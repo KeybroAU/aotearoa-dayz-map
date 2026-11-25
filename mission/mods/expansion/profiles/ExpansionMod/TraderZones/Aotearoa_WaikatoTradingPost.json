@@ -1,0 +1,14 @@
+{
+    "m_Version": 7,
+    "m_DisplayName": "Waikato Trading Post",
+    "m_ZoneName": "Aotearoa_WaikatoTradingPost",
+    "Position": [
+        17678.12,
+        14.3,
+        19296.88
+    ],
+    "Radius": 150.0,
+    "BuyPricePercent": 100.0,
+    "SellPricePercent": -1.0,
+    "Stock": {}
+}

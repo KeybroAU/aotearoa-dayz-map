@@ -1,0 +1,14 @@
+{
+    "m_Version": 7,
+    "m_DisplayName": "Central Plateau Trading Post",
+    "m_ZoneName": "Aotearoa_CentralPlateauTradingPost",
+    "Position": [
+        20428.12,
+        157.28,
+        16771.88
+    ],
+    "Radius": 150.0,
+    "BuyPricePercent": 100.0,
+    "SellPricePercent": -1.0,
+    "Stock": {}
+}

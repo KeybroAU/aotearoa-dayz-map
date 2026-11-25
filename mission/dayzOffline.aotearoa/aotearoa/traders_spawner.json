@@ -1,0 +1,2434 @@
+{
+ "Objects": [
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17685.05,
+    12.73,
+    19262.35
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17681.22,
+    13.182,
+    19265.56
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17677.39,
+    13.639,
+    19268.77
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17673.56,
+    14.073,
+    19271.99
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17669.73,
+    14.499,
+    19275.2
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17658.24,
+    15.648,
+    19284.84
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17654.41,
+    15.985,
+    19288.06
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17650.58,
+    16.287,
+    19291.27
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17646.75,
+    16.561,
+    19294.48
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17642.92,
+    16.803,
+    19297.7
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17713.33,
+    11.92,
+    19296.05
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17709.5,
+    12.224,
+    19299.27
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17705.67,
+    12.521,
+    19302.48
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17701.84,
+    12.824,
+    19305.69
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17698.01,
+    13.124,
+    19308.91
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17694.18,
+    13.422,
+    19312.12
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17690.35,
+    13.724,
+    19315.33
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17686.52,
+    14.019,
+    19318.55
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17682.69,
+    14.315,
+    19321.76
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17678.86,
+    14.604,
+    19324.98
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17675.03,
+    14.892,
+    19328.19
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17671.2,
+    15.17,
+    19331.4
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17713.64,
+    11.801,
+    19292.53
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17710.43,
+    11.867,
+    19288.7
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17707.21,
+    11.935,
+    19284.87
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17704.0,
+    12.023,
+    19281.04
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17700.78,
+    12.107,
+    19277.21
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17697.57,
+    12.2,
+    19273.38
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17694.36,
+    12.287,
+    19269.55
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17691.14,
+    12.38,
+    19265.72
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17667.68,
+    15.383,
+    19331.1
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17664.46,
+    15.547,
+    19327.27
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17661.25,
+    15.721,
+    19323.44
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17658.04,
+    15.907,
+    19319.61
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17654.82,
+    16.095,
+    19315.78
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17651.61,
+    16.286,
+    19311.95
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17648.39,
+    16.482,
+    19308.12
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    17645.18,
+    16.671,
+    19304.28
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    17686.77,
+    13.216,
+    19279.18
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    17672.98,
+    14.597,
+    19290.75
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    17659.19,
+    15.766,
+    19302.32
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    17698.34,
+    12.751,
+    19292.97
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    17672.05,
+    14.972,
+    19317.64
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Container_1Bo",
+   "pos": [
+    17707.44,
+    12.213,
+    19294.47
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Container_1Mo",
+   "pos": [
+    17701.31,
+    12.72,
+    19299.61
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Tank_Medium",
+   "pos": [
+    17649.33,
+    16.426,
+    19301.45
+   ],
+   "ypr": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20394.33,
+    156.423,
+    16761.97
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20397.2,
+    156.33,
+    16766.06
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20400.07,
+    156.242,
+    16770.16
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20402.93,
+    156.157,
+    16774.25
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20405.8,
+    156.051,
+    16778.35
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20414.41,
+    155.708,
+    16790.64
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20417.27,
+    155.584,
+    16794.73
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20420.14,
+    155.453,
+    16798.83
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20423.01,
+    155.327,
+    16802.92
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20425.88,
+    155.204,
+    16807.02
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20430.37,
+    158.14,
+    16736.73
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20433.24,
+    158.14,
+    16740.83
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20436.11,
+    158.159,
+    16744.92
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20438.98,
+    158.205,
+    16749.02
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20441.84,
+    158.26,
+    16753.11
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20444.71,
+    158.32,
+    16757.21
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20447.58,
+    158.378,
+    16761.3
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20450.45,
+    158.426,
+    16765.4
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20453.32,
+    158.456,
+    16769.5
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20456.18,
+    158.447,
+    16773.59
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20459.05,
+    158.391,
+    16777.69
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20461.92,
+    158.294,
+    16781.78
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20426.89,
+    158.036,
+    16736.12
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20422.8,
+    157.818,
+    16738.98
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20418.7,
+    157.609,
+    16741.85
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20414.6,
+    157.412,
+    16744.72
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20410.51,
+    157.224,
+    16747.59
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20406.41,
+    157.037,
+    16750.46
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20402.32,
+    156.863,
+    16753.32
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20398.22,
+    156.695,
+    16756.19
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20461.31,
+    158.065,
+    16785.26
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20457.21,
+    157.759,
+    16788.13
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20453.11,
+    157.421,
+    16791.0
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20449.02,
+    157.079,
+    16793.87
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20444.92,
+    156.721,
+    16796.74
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20440.83,
+    156.355,
+    16799.6
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20436.73,
+    155.992,
+    16802.47
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    20432.64,
+    155.626,
+    16805.34
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    20411.25,
+    156.866,
+    16761.72
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    20421.57,
+    156.814,
+    16776.46
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    20431.9,
+    156.502,
+    16791.21
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    20425.99,
+    157.63,
+    16751.39
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    20448.28,
+    157.897,
+    16779.74
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Container_1Bo",
+   "pos": [
+    20428.28,
+    157.913,
+    16742.46
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Container_1Mo",
+   "pos": [
+    20432.87,
+    157.948,
+    16749.02
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Tank_Medium",
+   "pos": [
+    20430.18,
+    155.796,
+    16800.96
+   ],
+   "ypr": [
+    305.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11913.33,
+    27.259,
+    7522.7
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11909.5,
+    27.223,
+    7519.48
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11905.67,
+    27.174,
+    7516.27
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11901.84,
+    27.113,
+    7513.06
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11898.01,
+    27.034,
+    7509.84
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11886.52,
+    26.739,
+    7500.2
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11882.69,
+    26.621,
+    7496.99
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11878.86,
+    26.502,
+    7493.77
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11875.03,
+    26.37,
+    7490.56
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11871.2,
+    26.242,
+    7487.35
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11885.05,
+    30.053,
+    7556.4
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11881.22,
+    30.062,
+    7553.19
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11877.39,
+    30.065,
+    7549.98
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11873.56,
+    30.064,
+    7546.76
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11869.73,
+    30.055,
+    7543.55
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11865.9,
+    30.041,
+    7540.33
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11862.07,
+    30.022,
+    7537.12
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11858.24,
+    29.995,
+    7533.91
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11854.41,
+    29.966,
+    7530.69
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11850.58,
+    29.938,
+    7527.48
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11846.75,
+    29.912,
+    7524.27
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11842.92,
+    29.879,
+    7521.05
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11888.57,
+    29.882,
+    7556.1
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11891.79,
+    29.562,
+    7552.27
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11895.0,
+    29.249,
+    7548.44
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11898.21,
+    28.945,
+    7544.61
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11901.43,
+    28.638,
+    7540.78
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11904.64,
+    28.332,
+    7536.95
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11907.86,
+    28.021,
+    7533.12
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11911.07,
+    27.702,
+    7529.28
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11842.61,
+    29.657,
+    7517.53
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11845.82,
+    29.236,
+    7513.7
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11849.04,
+    28.812,
+    7509.87
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11852.25,
+    28.394,
+    7506.04
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11855.47,
+    27.969,
+    7502.21
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11858.68,
+    27.553,
+    7498.38
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11861.89,
+    27.137,
+    7494.55
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    11865.11,
+    26.717,
+    7490.72
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    11897.06,
+    28.124,
+    7527.32
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    11883.27,
+    27.918,
+    7515.75
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    11869.48,
+    27.592,
+    7504.18
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    11885.49,
+    29.286,
+    7541.11
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Shed_W4",
+   "pos": [
+    11856.62,
+    29.156,
+    7519.5
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Container_1Bo",
+   "pos": [
+    11885.58,
+    29.736,
+    7550.32
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Container_1Mo",
+   "pos": [
+    11879.45,
+    29.739,
+    7545.18
+   ],
+   "ypr": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Tank_Medium",
+   "pos": [
+    11868.62,
+    26.877,
+    7494.31
+   ],
+   "ypr": [
+    140.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7007.97,
+    223.239,
+    4345.11
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7011.51,
+    223.118,
+    4348.64
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7025.65,
+    222.478,
+    4362.78
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7029.19,
+    222.279,
+    4366.32
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7026.36,
+    223.097,
+    4326.72
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7029.89,
+    222.941,
+    4330.26
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7033.43,
+    222.797,
+    4333.79
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7036.96,
+    222.672,
+    4337.33
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7040.5,
+    222.548,
+    4340.86
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7044.03,
+    222.437,
+    4344.4
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7047.57,
+    222.332,
+    4347.94
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7022.82,
+    223.227,
+    4326.72
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7019.29,
+    223.299,
+    4330.26
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7015.75,
+    223.334,
+    4333.79
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7012.22,
+    223.346,
+    4337.33
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7008.68,
+    223.326,
+    4340.86
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7048.28,
+    222.259,
+    4352.18
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7044.74,
+    222.242,
+    4355.71
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7041.21,
+    222.213,
+    4359.25
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7037.67,
+    222.179,
+    4362.78
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wall_Fen1_5",
+   "pos": [
+    7034.14,
+    222.158,
+    4366.32
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    7016.81,
+    223.113,
+    4344.05
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    7030.95,
+    222.462,
+    4358.19
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Container_1Aoh",
+   "pos": [
+    7033.78,
+    222.719,
+    4341.22
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  }
+ ]
+}

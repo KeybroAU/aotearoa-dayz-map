@@ -1,0 +1,23 @@
+[
+    {
+        "SafeZoneStatut": "Waikato Trading Post",
+        "X": 17678.12,
+        "Y": 19296.88,
+        "Radius": 150.0,
+        "Countdown": 30
+    },
+    {
+        "SafeZoneStatut": "Central Plateau Trading Post",
+        "X": 20428.12,
+        "Y": 16771.88,
+        "Radius": 150.0,
+        "Countdown": 30
+    },
+    {
+        "SafeZoneStatut": "Rakaia Trading Post",
+        "X": 11878.12,
+        "Y": 7521.88,
+        "Radius": 150.0,
+        "Countdown": 30
+    }
+]
