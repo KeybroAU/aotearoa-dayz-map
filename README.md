@@ -5,7 +5,7 @@ A 20 km DayZ terrain based on New Zealand, for a new server. The coastline and t
 - 42 towns and bases with bilingual labels
 - state highways and town streets
 - lakes and rivers
-- airfields, ports, ski fields, Hobbiton, farms and Whakaari / White Island
+- airfields, ports, ski fields, Fonterra dairy factories, Hobbiton, farms and Whakaari / White Island
 - forests
 - a satellite texture coloured from a real satellite photo
 - the server mission files
@@ -46,11 +46,11 @@ The country keeps its true north-up layout. It is stretched 1.4 times east-west,
 
 ![Towns](preview/towns_2048.png)
 
-42 places from `tools/towns.csv`, with about 1,900 buildings:
+43 places from `tools/towns.csv`, with about 2,000 buildings:
 
-- Main cities: Auckland, Wellington, Christchurch
-- Cities: Hamilton, Tauranga, Dunedin, Palmerston North, Napier, Nelson, Rotorua, New Plymouth, Whangārei, Invercargill, Queenstown
-- Towns and villages: Hastings, Whanganui, Gisborne, Blenheim, Picton, Kaikōura, Taupō, Timaru, Ōamaru, Greymouth, Westport, Hokitika, Franz Josef, Masterton, Ashburton, Wānaka, Te Anau, Gore, Twizel, Hanmer Springs, Kaitāia, Paihia, Whakatāne, Thames, Taumarunui
+- Main cities: Auckland, Wellington, Christchurch, Hamilton / Kirikiriroa
+- Cities: Tauranga, Dunedin, Palmerston North, Napier, Nelson, Rotorua, New Plymouth, Whangārei, Invercargill, Queenstown
+- Towns and villages: Hastings, Whanganui, Gisborne, Blenheim, Picton, Kaikōura, Taupō, Timaru, Ōamaru, Greymouth, Westport, Hokitika, Franz Josef, Masterton, Ashburton, Wānaka, Te Anau, Gore, Twizel, Hanmer Springs, Kaitāia, Paihia, Whakatāne, Thames, Taumarunui, Eltham
 - Military bases: Waiouru Army Camp, Burnham Military Camp, RNZAF Base Ōhakea
 
 Map labels show both names where a town has a separate te reo Māori name, for example "Christchurch / Ōtautahi" and "Queenstown / Tāhuna". Places whose name is already Māori, like Rotorua and Taupō, show one name. Edit the `maori` column in `tools/towns.csv` to change a label.
@@ -64,17 +64,17 @@ Each town is placed from its real latitude and longitude:
 
 Towns are much bigger than true scale would give, so they're worth looting. To add, remove or resize a place, edit `tools/towns.csv` (tiers: `capital`, `city`, `town`, `village`, `military`) and regenerate.
 
-Close-ups (1 px per metre): [Auckland](preview/town_auckland.png), [Wellington](preview/town_wellington.png), [Christchurch](preview/town_christchurch.png), [Queenstown](preview/town_queenstown.png).
+Close-ups (1 px per metre): [Auckland](preview/town_auckland.png), [Wellington](preview/town_wellington.png), [Christchurch](preview/town_christchurch.png), [Hamilton](preview/town_hamilton.png), [Queenstown](preview/town_queenstown.png).
 
 ### Roads
 
 ![Roads](preview/roads_2048.png)
 
-There are 98 km of state highway, 116 km of town streets and 11 km of tracks to sites. Highways follow the real links:
+There are 97 km of state highway, 125 km of town streets and 11 km of tracks to sites. Highways follow the real links:
 
 - SH1 the length of both islands, through Waiouru, Burnham and Ōhakea
 - SH2 round the east coast
-- SH3, SH4 and SH5 in the North Island
+- SH3 (through Eltham), SH4 and SH5 in the North Island
 - SH6 down the West Coast and over Haast Pass to Wānaka and Queenstown
 - SH7 over Lewis Pass and SH73 over Arthur's Pass
 - SH8 and SH83 through the Mackenzie Country
@@ -102,6 +102,7 @@ River courses are traced on the real drainage (Waikato, Whanganui, Clutha, Waita
 | Auckland Airport, Christchurch Airport, Ōhakea Airfield | 900 m runway, apron, two hangars, service hangar, tower |
 | 11 ports (Auckland, Wellington, Lyttelton, Port Chalmers, Tauranga, Napier, Picton, Nelson, Bluff, Timaru, Port Taranaki) | Concrete pad on the shore, container rows, warehouse |
 | The Remarkables, Coronet Peak, Mt Hutt, Whakapapa | Lodge, car park and a lift line up the fall line |
+| Fonterra Whareroa (near Hāwera), Fonterra Eltham | Industrial dairy factories: concrete yard, three warehouses, a big shed, office and containers |
 | Hobbiton | A ring of cottages and the Green Dragon (hobbit holes need a custom model) |
 | 70 farms | Farmhouse, barn or cowshed and shed, along the highways |
 | Whakaari / White Island | Volcanic islet off the Bay of Plenty with a crater and a contaminated zone |
@@ -112,7 +113,7 @@ Every site is fitted onto dry, open land clear of towns, roads and water, flatte
 
 ![Forest density](preview/forest_density_1024.png)
 
-There are about 234,000 trees and bushes. Native bush is an irregular mix of broadleaf trees with an understorey and a bushy edge. Pine is planted in straight rows like radiata plantations, with each stand turned its own way. Trees stay off roads, towns, sites, water and slopes over 38 degrees.
+There are about 233,000 trees and bushes. Native bush is an irregular mix of broadleaf trees with an understorey and a bushy edge. Pine is planted in straight rows like radiata plantations, with each stand turned its own way. Trees stay off roads, towns, sites, water and slopes over 38 degrees.
 
 ### Surfaces
 
@@ -270,6 +271,6 @@ python tools/build_mission.py
 | `water.py` | Lake detection, river size (`RIVER_MIN_CATCHMENT_KM2`) and depth |
 | `towns.py` | Town tiers, block size and building lists |
 | `roads.py` | The highway list (`HIGHWAYS`), road widths and routing costs |
-| `pois.py` | Airfields, ports, ski fields, Hobbiton, Whakaari, farm count |
+| `pois.py` | Airfields, ports, ski fields, industrial sites, Hobbiton, Whakaari, farm count |
 | `forests.py` | Tree lists and spacing |
 | `build_mission.py` | Spawn, vehicle and crash counts, infected zone density, temperatures |

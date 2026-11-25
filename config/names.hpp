@@ -32,9 +32,9 @@ class Names
 	{
 		name = "Hamilton / Kirikiriroa";
 		position[] = {14552.5, 14727.5};
-		type = "NameCity";
-		radiusA = 210;
-		radiusB = 210;
+		type = "NameCityCapital";
+		radiusA = 300;
+		radiusB = 300;
 		angle = 0;
 	};
 	class Tauranga
@@ -167,6 +167,15 @@ class Names
 	{
 		name = "Picton / Waitohi";
 		position[] = {12542.5, 9567.5};
+		type = "NameVillage";
+		radiusA = 110;
+		radiusB = 110;
+		angle = 0;
+	};
+	class Eltham
+	{
+		name = "Eltham";
+		position[] = {13012.5, 12312.5};
 		type = "NameVillage";
 		radiusA = 110;
 		radiusB = 110;
@@ -409,7 +418,7 @@ class Names
 	class OhakeaAirfield
 	{
 		name = "Ōhakea Airfield";
-		position[] = {13521.9, 12186.5};
+		position[] = {15981.9, 10386.5};
 		type = "NameLocal";
 		radiusA = 470;
 		radiusB = 470;
@@ -508,7 +517,7 @@ class Names
 	class PortTaranaki
 	{
 		name = "Port Taranaki";
-		position[] = {12292.5, 12672.5};
+		position[] = {12352.5, 12702.5};
 		type = "NameLocal";
 		radiusA = 65;
 		radiusB = 65;
@@ -548,6 +557,24 @@ class Names
 		type = "NameLocal";
 		radiusA = 120;
 		radiusB = 120;
+		angle = 0;
+	};
+	class FonterraWhareroa
+	{
+		name = "Fonterra Whareroa";
+		position[] = {13111.9, 12039.2};
+		type = "NameLocal";
+		radiusA = 85;
+		radiusB = 85;
+		angle = 0;
+	};
+	class FonterraEltham
+	{
+		name = "Fonterra Eltham";
+		position[] = {13245.4, 12425.9};
+		type = "NameLocal";
+		radiusA = 85;
+		radiusB = 85;
 		angle = 0;
 	};
 	class Hobbiton
