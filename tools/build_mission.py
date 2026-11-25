@@ -33,6 +33,7 @@ SPAWN_COUNT = 40
 HELI_CRASHES = 24
 VEHICLE_SPACING_M = 450.0
 RURAL_VEHICLE_SPACING_M = 1200.0  # farm utes and trucks along the back roads and farm tracks
+MAX_VEHICLE_GAP_M = 1000.0  # fill_vehicle_gaps adds a ute wherever land is further than this from a vehicle
 RURAL_VEHICLES = ["VehicleOffroad02", "VehicleTruck01", "VehicleOffroadHatchback"]
 
 VEHICLES = ["VehicleCivilianSedan", "VehicleSedan02", "VehicleHatchback02", "VehicleOffroadHatchback",
@@ -275,6 +276,44 @@ def class_name(name: str) -> str:
 
     ascii_name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
     return "".join(ch for ch in ascii_name.title() if ch.isalnum())
+
+
+def fill_vehicle_gaps(ev, h, land, slope, roads, zones, safe):
+    """Add farm utes where land is more than MAX_VEHICLE_GAP_M from any vehicle: on the nearest road
+    within 800 m, else on flat open ground. Returns how many were added."""
+    from scipy.spatial import cKDTree
+
+    step = int(50 / g.CELL)
+    rr, cc = np.nonzero(land[::step, ::step])
+    land_xy = np.column_stack([(cc * step + 0.5) * g.CELL, g.SIZE_M - (rr * step + 0.5) * g.CELL])
+    road_pts = np.array([p for r in roads["roads"] for p in r["points"]])
+    road_tree = cKDTree(road_pts)
+    cars = [(x, y) for name, pts in ev.items() if name.startswith("Vehicle") and name != "VehicleBoat"
+            for x, y, _ in pts]
+    added, tried = 0, set()
+    while True:
+        gap, _ = cKDTree(cars).query(land_xy)
+        order = np.argsort(-gap)
+        i = next((int(j) for j in order[:200] if gap[j] > MAX_VEHICLE_GAP_M and int(j) not in tried), None)
+        if i is None:
+            return added
+        tried.add(i)
+        x, y = land_xy[i]
+        d, k = road_tree.query((x, y))
+        hd = 0.0
+        if d < 800.0:
+            x, y = road_pts[k]
+            nb = road_pts[min(k + 1, len(road_pts) - 1)] if k + 1 < len(road_pts) else road_pts[k - 1]
+            hd = math.degrees(math.atan2(nb[0] - x, nb[1] - y)) % 360
+            side = math.radians(hd - 90.0)
+            x, y = x + 3.0 * math.sin(side), y + 3.0 * math.cos(side)
+        r, c = int((g.SIZE_M - y) / g.CELL), int(x / g.CELL)
+        if not (0 <= r < h.shape[0] and 0 <= c < h.shape[1]) or not land[r, c] or slope[r, c] > 15.0 \
+                or not outside(zones, x, y) or not outside(safe, x, y):
+            continue
+        ev.setdefault("VehicleOffroadHatchback", []).append((float(x), float(y), hd))
+        cars.append((x, y))
+        added += 1
 
 
 def write_events(ev, path):
@@ -565,6 +604,7 @@ def main() -> None:
     ev = events(h, idx, land, slope, towns, roads, pois, rng)
     safe = [(x, y, r + 50.0) for x, y, r in mod_support.safe_zones(traders)]
     ev = {name: [p for p in pts if outside(safe, p[0], p[1])] for name, pts in ev.items()}
+    filled = fill_vehicle_gaps(ev, h, land, slope, roads, keep_out(towns, pois, 60.0), safe)
     write_events(ev, out / "cfgeventspawns.xml")
     zones = infected_zones(land, towns, pois, rng)
     write_zombie_territories(zones, out / "env" / "zombie_territories.xml")
@@ -578,6 +618,7 @@ def main() -> None:
     print(f"Spawn points: {len(spawns)}")
     for name in sorted(ev):
         print(f"  {name}: {len(ev[name])}")
+    print(f"  ({filled} farm utes added to close gaps over {MAX_VEHICLE_GAP_M:.0f} m)")
     print(f"Infected zones: {len(zones)}")
     print(signs.summary(road_signs, towns))
     print("Trader sites: " + ", ".join(t.name for t in traders))

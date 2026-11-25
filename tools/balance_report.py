@@ -20,6 +20,8 @@ from PIL import Image, ImageDraw
 from scipy import ndimage
 from scipy.spatial import cKDTree
 
+import pack_mod
+
 MAP_DIR = Path(__file__).resolve().parents[1]
 SOURCE = MAP_DIR / "source"
 MISSION = MAP_DIR / "mission" / "dayzOffline.aotearoa"
@@ -114,7 +116,11 @@ def main() -> None:
             by_tier[tier_of_town.get(t["name"], 0)] += 1
         else:
             by_tier["sites"] += 1
-    lines += ["## Loot", "", f"{len(groups):,} loot buildings.", "", "| Loot tier | Buildings |", "|---|---|"]
+    density, points, vanilla_points = pack_mod.loot_density()
+    lines += ["## Loot", "", f"{len(groups):,} loot buildings with {points:,} loot points, {density:.0%} of "
+              f"Chernarus's {vanilla_points:,}. `pack.bat` scales loot by {min(1.0, max(0.3, density)):.2f} so each "
+              "building holds about as much as on Chernarus (`--vanilla-loot` turns this off).", "",
+              "| Loot tier | Buildings |", "|---|---|"]
     lines += [f"| {k} | {v:,} |" for k, v in sorted(by_tier.items(), key=lambda kv: str(kv[0]))]
     lines += ["", "Most loot buildings:", "", "| Town | Buildings | Tier |", "|---|---|---|"]
     lines += [f"| {k} | {v} | {tier_of_town.get(k, '?')} |" for k, v in by_town.most_common(8)]

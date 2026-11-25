@@ -271,15 +271,17 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
 - `dist\@Aotearoa\`: the mod for clients and the server
 - `dist\server\`: a ready server folder. It holds the mod, keys, `serverDZ.cfg`, the launch scripts, and `mpmissions\dayzOffline.aotearoa`, which is vanilla Chernarus with every Aotearoa file copied over it and `cfggameplay.json` and `cfgeconomycore.xml` already merged. Copy its contents into your DayZ Server folder.
 
-**Difficulty:** `pack.bat --difficulty easy` or `--difficulty hard` scales the vanilla amounts in the server folder. Normal leaves them as they are.
+**Loot density:** Aotearoa has 88,195 loot points, 52% of Chernarus's. At vanilla amounts, every building would hold about twice the loot. So `pack.bat` first scales loot by 0.52, which gives each building about the same loot as on Chernarus. It works the factor out from `mapgrouppos.xml` and the vanilla per-building counts in `tools/loot_points.json`. Pass `--vanilla-loot` to keep vanilla amounts.
 
-| | Loot | Vehicles | Infected |
+**Difficulty:** `pack.bat --difficulty easy` or `--difficulty hard` then scales the amounts in the server folder. Normal keeps the vanilla feel.
+
+| | Loot (after the density factor) | Vehicles | Infected |
 |---|---|---|---|
 | easy | x1.5 | x1.5 | x0.6 |
 | normal | x1 | x1 | x1 |
 | hard | x0.6 | x0.6 | x1.5 |
 
-Loot scales every item's `nominal` and `min` in `types.xml`. Vehicles scale the `Vehicle*` events in `events.xml`. Infected scale the `Infected*` events and `ZombieMaxCount` in `globals.xml`. Fine-tune any one with `--loot`, `--vehicles` or `--infected` and a factor, for example `pack.bat --difficulty hard --vehicles 1`.
+Loot scales every item's `nominal` and `min` in `types.xml`. `--loot X` sets the whole loot factor and replaces the density factor. Vehicles scale the `Vehicle*` events in `events.xml`. Infected scale the `Infected*` events and `ZombieMaxCount` in `globals.xml`. Fine-tune any one with `--loot`, `--vehicles` or `--infected` and a factor, for example `pack.bat --difficulty hard --vehicles 1`.
 
 **Road signs:** every road into a named town gets a green New Zealand place-name sign, with the Māori name below where the town has one. The map also has State Highway shields, 50 and 100 km/h signs at town edges, Give Way signs where side roads meet highways, and One Lane Bridge signs. That's 797 signs in all, each on the left verge facing its traffic. The textures, config classes and positions are generated already. They need two simple models, which you make from `docs/models/sign_town.obj` and `sign_post.obj` (see [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md), item 2). Until those exist, `pack.bat` leaves the signs out and says so.
 
@@ -378,7 +380,7 @@ Code Lock, BaseBuildingPlus and similar mods need nothing map-specific. [mission
 - the distance from any land to the nearest vehicle;
 - infected zones.
 
-Right now nothing is over its limit. The busiest cell has 991 objects, the spawners send 952 objects, and no land is more than 1.5 km from a vehicle.
+Right now nothing is over its limit. The busiest cell has 986 objects and the spawners send 962 objects. `build_mission.py` adds farm utes wherever land is more than 1 km from a vehicle; the worst gap is now 1.06 km (was 1.7 km). Loot is scaled to the map's loot points (see "Loot density" above).
 
 ## Player map
 

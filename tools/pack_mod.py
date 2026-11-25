@@ -29,7 +29,9 @@ Options:
   --key NAME              sign with keys/NAME.biprivatekey, creating it if needed
   --spawners              also load the town and site buildings from object spawner files. Only for a quick
                           test on a world without the Terrain Builder objects; otherwise every building doubles.
-  --difficulty LEVEL      easy, normal (default, vanilla amounts) or hard; scales loot, vehicles and infected
+  --difficulty LEVEL      easy, normal (default, vanilla feel) or hard; scales loot, vehicles and infected
+  --vanilla-loot          keep vanilla loot amounts. Without it, loot is scaled to this map's loot points
+                          (about half of Chernarus's), so each building holds as much as on Chernarus.
   --loot/--vehicles/--infected X   fine-tune one of those by a factor (overrides the difficulty for it)
   --traders               load the four trader compounds (vanilla objects) from their spawner file
   --expansion             set the server up for DayZ Expansion: trader NPCs, trader zones, and the safe zone
@@ -80,6 +82,14 @@ DIFFICULTY = {
 }
 
 DRY = False
+
+
+def loot_density() -> tuple[float, int, int]:
+    """This map's loot points over Chernarus's, from mapgrouppos.xml and the vanilla per-building counts."""
+    data = json.loads((MAP_DIR / "tools" / "loot_points.json").read_text(encoding="utf-8"))
+    names = re.findall(r'<group name="([^"]+)"', (MAP_DIR / "mission" / MISSION / "mapgrouppos.xml").read_text(encoding="utf-8"))
+    points = sum(data["points"].get(n, 0) for n in names)
+    return points / data["chernarus_points"], points, data["chernarus_points"]
 
 
 def run(cmd: list, cwd: Path | None = None) -> None:
@@ -461,6 +471,7 @@ def main() -> None:
     ap.add_argument("--loot", type=float)
     ap.add_argument("--vehicles", type=float)
     ap.add_argument("--infected", type=float)
+    ap.add_argument("--vanilla-loot", action="store_true")
     ap.add_argument("--traders", action="store_true")
     ap.add_argument("--expansion", action="store_true")
     ap.add_argument("--traderplus", action="store_true")
@@ -505,6 +516,10 @@ def main() -> None:
     vanilla = find_vanilla(args.vanilla_mission)
     print(f"  vanilla mission: {vanilla or 'not found'}")
     factors = dict(DIFFICULTY[args.difficulty])
+    if not args.vanilla_loot:
+        density, points, vanilla_points = loot_density()
+        factors["loot"] = round(factors["loot"] * min(1.0, max(0.3, density)), 2)
+        print(f"  loot points: {points:,} ({density:.0%} of Chernarus's {vanilla_points:,}); loot scaled to match")
     for k in factors:
         if getattr(args, k) is not None:
             factors[k] = getattr(args, k)

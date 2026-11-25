@@ -46,13 +46,13 @@ Object spawner files (created at server start, sent to every client):
 |---|---|
 | roadsigns_spawner.json | 661 |
 | signs_spawner.json | 136 |
-| traders_spawner.json | 162 |
+| traders_spawner.json | 165 |
 
-Total 959 (warn above 3,000).
+Total 962 (warn above 3,000).
 
 ## Loot
 
-3,944 loot buildings.
+3,944 loot buildings with 88,195 loot points, 52% of Chernarus's 168,333. `pack.bat` scales loot by 0.52 so each building holds about as much as on Chernarus (`--vanilla-loot` turns this off).
 
 | Loot tier | Buildings |
 |---|---|
@@ -83,21 +83,21 @@ Most loot buildings:
 | VehicleCivilianSedan | 76 |
 | VehicleHatchback02 | 71 |
 | VehicleOffroad02 | 86 |
-| VehicleOffroadHatchback | 82 |
+| VehicleOffroadHatchback | 86 |
 | VehicleSedan02 | 72 |
 | VehicleTruck01 | 89 |
 
-Distance from any land to the nearest vehicle spawn: median 308 m, 95th percentile 759 m, worst 1,745 m. 0.0% of land is over 2,500 m away.
+Distance from any land to the nearest vehicle spawn: median 305 m, 95th percentile 732 m, worst 1,056 m. 0.0% of land is over 2,500 m away.
 
 Largest areas without a vehicle:
 
 | Gap | Where |
 |---|---|
-| 1,745 m | 1.9 km from Thames |
-| 1,158 m | 1.5 km from Te Anau |
 | 1,056 m | 1.1 km from Whakatāne |
-| 1,053 m | 1.1 km from Kaikōura |
 | 1,048 m | 2.5 km from Gisborne |
+| 1,043 m | 1.1 km from Twizel |
+| 1,023 m | 0.5 km from Waiouru Army Camp |
+| 1,000 m | 1.5 km from Te Anau |
 
 ## Infected
 
