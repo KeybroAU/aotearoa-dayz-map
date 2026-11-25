@@ -30,6 +30,7 @@ SITE_SYMBOL = {
     "naval": ((20, 40, 120), "⚓"), "industrial": ((120, 80, 40), "■"), "ski": ((255, 255, 255), "▲"),
     "hobbiton": ((250, 200, 0), "●"), "landmark": ((255, 255, 255), "★"), "whakaari": ((200, 40, 40), "☢"),
     "surfclub": ((255, 220, 0), "●"), "campground": ((60, 160, 60), "▲"),
+    "wreck": ((210, 210, 210), "✖"), "military": ((120, 150, 70), "✪"), "gas": ((220, 230, 0), "☢"),
 }
 NAMED_SETTLEMENT = ((235, 225, 200), "●")  # named bach and fishing settlements such as Rakaia Huts
 
@@ -46,6 +47,15 @@ def find_satellite(given: Path | None = None) -> Path:
         return given
     best = max(SOURCE.glob("satellite_*.png"), key=lambda p: p.stat().st_size, default=None)
     return best or PREVIEW / "satellite_2048.png"
+
+
+def load_sites() -> list[dict]:
+    """The sites from pois.json plus the set pieces (landmarks, wrecks, base extensions)."""
+    sites = json.loads((SOURCE / "pois.json").read_text(encoding="utf-8"))
+    extra = SOURCE / "setpieces.json"
+    if extra.exists():
+        sites += [p for p in json.loads(extra.read_text(encoding="utf-8")) if p["kind"] != "military"]
+    return sites
 
 
 def load_towns() -> list[dict]:
@@ -102,7 +112,7 @@ def render(satellite: Image.Image, size: int, text_scale: float = 1.0, legend: b
 
     sym_font = font("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", int(22 * s))
     site_font = font(FONT, int(15 * s))
-    for p in json.loads((SOURCE / "pois.json").read_text(encoding="utf-8")):
+    for p in load_sites():
         style = SITE_SYMBOL.get(p["kind"]) or (NAMED_SETTLEMENT if p["label"] and p["kind"] == "bach" else None)
         if not style:
             continue

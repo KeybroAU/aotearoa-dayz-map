@@ -42,7 +42,7 @@ def grid_ref(x: float, y: float, size_m: float) -> str:
 
 def places(size_m: float) -> tuple[list[tuple], list[tuple]]:
     towns = [(t["name"], t["tier"], grid_ref(float(t["x"]), float(t["y"]), size_m)) for t in pm.load_towns()]
-    pois = json.loads((pm.SOURCE / "pois.json").read_text(encoding="utf-8"))
+    pois = pm.load_sites()
     sites = [(p["label"], p["kind"], grid_ref(p["x"], p["y"], size_m)) for p in pois if p["label"]]
     return sorted(towns), sorted(sites)
 

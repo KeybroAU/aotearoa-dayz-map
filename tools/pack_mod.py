@@ -29,6 +29,8 @@ Options:
   --key NAME              sign with keys/NAME.biprivatekey, creating it if needed
   --spawners              also load the town and site buildings from object spawner files. Only for a quick
                           test on a world without the Terrain Builder objects; otherwise every building doubles.
+  --setpieces-in-wrp      don't load the set pieces (landmarks, Interislander wreck, base extensions) from
+                          their spawner file, because you imported source/objects/setpieces_tb.txt into the WRP
   --difficulty LEVEL      easy, normal (default, vanilla feel) or hard; scales loot, vehicles and infected
   --vanilla-loot          keep vanilla loot amounts. Without it, loot is scaled to this map's loot points
                           (about half of Chernarus's), so each building holds as much as on Chernarus.
@@ -58,12 +60,12 @@ from pathlib import Path
 MAP_DIR = Path(__file__).resolve().parents[1]
 PREFIX = "maps\\aotearoa"
 MISSION = "dayzOffline.aotearoa"
-PACKED = ["config.cpp", "$PBOPREFIX$", "config", "data", "structures", "world"]
+PACKED = ["config.cpp", "$PBOPREFIX$", "config", "data", "scripts", "structures", "world"]
 # Spawner files that need a custom model before they can load.
 MODEL_SPAWNERS = [("structures/sign_town/sign_town.p3d", "aotearoa/signs_spawner.json", "town name signs"),
                   ("structures/sign_post/sign_post.p3d", "aotearoa/roadsigns_spawner.json", "road signs")]
 SKIP_IN_DATA = ["branding/art"]
-COPY_DIRECT = "*.paa,*.rvmat,*.wrp,*.png,*.jpg,*.shp,*.shx,*.dbf,*.cfg,*.hpp,*.txt"
+COPY_DIRECT = "*.paa,*.rvmat,*.wrp,*.png,*.jpg,*.shp,*.shx,*.dbf,*.cfg,*.hpp,*.txt,*.c"
 BRANDING = [("logo_512.png", "logo_512_ca.paa"), ("icon_128.png", "icon_128_ca.paa"),
             ("icon_64.png", "icon_64_ca.paa"), ("loading_1.jpg", "loading_1_co.paa"),
             ("loading_2.jpg", "loading_2_co.paa"), ("map_picture.jpg", "map_picture_co.paa")]
@@ -71,6 +73,7 @@ MAPITEM = MAP_DIR / "mapitem"
 MAPITEM_PREFIX = "aotearoa_map"
 MAPITEM_MOD = "@AotearoaMap"
 STEAM_DIRS = [Path(r"C:\Program Files (x86)\Steam\steamapps\common"), Path(r"C:\Program Files\Steam\steamapps\common")]
+SETPIECES = "setpieces_spawner.json"
 MERGED_AWAY = ["cfggameplay.worldsdata.json", "cfgeconomycore.aotearoa.xml"]
 
 # Factors on vanilla amounts: loot (types nominal/min), vehicles (events nominal/min/max), infected
@@ -261,7 +264,8 @@ def merge_dicts(base: dict, extra: dict) -> dict:
     return base
 
 
-def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[str], map_item: bool) -> list[str]:
+def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[str], map_item: bool,
+                  setpieces: bool = True) -> list[str]:
     """Vanilla Chernarus mission + generated files + merged configs. Returns warnings."""
     warnings = []
     gen = MAP_DIR / "mission" / MISSION
@@ -295,6 +299,10 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[st
         for f in ("towns_spawner.json", "pois_spawner.json"):
             shutil.copy2(MAP_DIR / "source" / "objects" / f, dest / "aotearoa" / f)
         spawner_files += ["aotearoa/towns_spawner.json", "aotearoa/pois_spawner.json"]
+    if setpieces and (MAP_DIR / "source" / "objects" / SETPIECES).exists():
+        (dest / "aotearoa").mkdir(exist_ok=True)
+        shutil.copy2(MAP_DIR / "source" / "objects" / SETPIECES, dest / "aotearoa" / SETPIECES)
+        spawner_files.append(f"aotearoa/{SETPIECES}")
     if spawner_files:
         extra["WorldsData"]["objectSpawnersArr"] = spawner_files
     gameplay = dest / "cfggameplay.json"
@@ -351,6 +359,45 @@ def _scale(el, tags, f) -> None:
                 node.text = str(max(1, round(v * f)))
 
 
+# New Zealand changes to vanilla db/events.xml, applied before the difficulty factors. Animals:
+# no wolves, bears, roe deer or foxes; far more sheep, and red deer, goats and wild pigs as the pests
+# they are. Events: more of the wrecks, convoys, roadblocks and trains this map has groups for, and
+# the police car wrecks switched on.
+NZ_EVENTS = {
+    "AnimalWolf": {"nominal": 0, "min": 0, "max": 0, "active": 0},
+    "AnimalBear": {"nominal": 0, "min": 0, "max": 0, "active": 0},
+    "AnimalRoeDeer": {"nominal": 0, "min": 0, "max": 0, "active": 0},
+    "AmbientFox": {"nominal": 0, "max": 0, "active": 0},
+    "AnimalSheep": {"nominal": 14, "max": 6},
+    "AnimalDeer": {"nominal": 16},
+    "AnimalGoat": {"nominal": 12},
+    "AnimalCow": {"nominal": 10},
+    "AnimalWildBoar": {"nominal": 10},
+    "AmbientHare": {"max": 50},
+    "StaticHeliCrash": {"nominal": 5},
+    "StaticMilitaryConvoy": {"nominal": 8},
+    "StaticPoliceSituation": {"nominal": 10},
+    "StaticTrain": {"nominal": 4},
+    "StaticPoliceCar": {"nominal": 12, "active": 1},
+}
+
+
+def apply_nz_events(mission: Path) -> list[str]:
+    events = mission / "db" / "events.xml"
+    if not events.exists():
+        return ["no db/events.xml, so the New Zealand animal and event changes are not applied"]
+    tree = _xml(events)
+    done = 0
+    for ev in tree.getroot().iter("event"):
+        for tag, value in NZ_EVENTS.get(ev.get("name", ""), {}).items():
+            node = ev.find(tag)
+            if node is not None:
+                node.text = str(value)
+                done += 1
+    _write_xml(tree, events)
+    return [f"New Zealand events: {done} values changed on {len(NZ_EVENTS)} events (no wolves or bears)"]
+
+
 def apply_difficulty(mission: Path, factors: dict) -> list[str]:
     """Scale loot, vehicle and infected amounts in the merged mission. Returns what changed."""
     done = []
@@ -405,7 +452,7 @@ def drop_map_item(server: Path) -> None:
 
 
 def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool, factors: dict,
-                 mods: set[str], map_dir: Path | None) -> list[str]:
+                 mods: set[str], map_dir: Path | None, setpieces: bool = True) -> list[str]:
     server = out / "server"
     print(f"  server folder {server}")
     if DRY:
@@ -420,7 +467,7 @@ def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool,
         if (map_dir / "keys").exists():
             shutil.copytree(map_dir / "keys", server / "keys", dirs_exist_ok=True)
     map_item = bool(map_dir and map_dir.exists())
-    warnings = build_mission(server / "mpmissions" / MISSION, vanilla, spawners, mods, map_item)
+    warnings = build_mission(server / "mpmissions" / MISSION, vanilla, spawners, mods, map_item, setpieces)
     if map_dir and not map_item:
         warnings.append(f"No dist/{MAPITEM_MOD} yet, so the server runs without the map item. Run without --skip-pbo.")
     mod_src = MAP_DIR / "mission" / "mods"
@@ -439,7 +486,7 @@ def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool,
                         "(see mod_support/README.md).")
     if not map_item:
         drop_map_item(server)
-    for line in apply_difficulty(server / "mpmissions" / MISSION, factors):
+    for line in apply_nz_events(server / "mpmissions" / MISSION) + apply_difficulty(server / "mpmissions" / MISSION, factors):
         print(f"  {line}")
     if not mod_dir.exists():
         warnings.append("No dist/@Aotearoa yet, so the server folder has no mod. Run without --skip-pbo.")
@@ -467,6 +514,7 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=MAP_DIR / "dist")
     ap.add_argument("--key")
     ap.add_argument("--spawners", action="store_true")
+    ap.add_argument("--setpieces-in-wrp", action="store_true")
     ap.add_argument("--difficulty", choices=sorted(DIFFICULTY), default="normal")
     ap.add_argument("--loot", type=float)
     ap.add_argument("--vehicles", type=float)
@@ -528,7 +576,8 @@ def main() -> None:
     if mods:
         mods.add("traders")
         print("  mod support: " + ", ".join(sorted(mods)))
-    warnings = build_server(out, mod_dir, vanilla, args.spawners, factors, mods, map_dir)
+    warnings = build_server(out, mod_dir, vanilla, args.spawners, factors, mods, map_dir,
+                            setpieces=not args.setpieces_in_wrp)
 
     if args.zip and not DRY:
         for name, src in (("Aotearoa_mod", mod_dir), ("AotearoaMap_mod", out / MAPITEM_MOD),

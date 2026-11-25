@@ -98,13 +98,13 @@ LANDMARKS = [
     ("StirlingPoint", "Stirling Point", -46.6145, 168.3589, "signpost"),
     ("RakaiaHuts", "Rakaia Huts", -43.8990, 172.2120, "fishing_huts"),
 ]
-# Pad size, then (class, along, across, quarter turns) for each building. The Chateau is a
-# tenement until there is a custom model.
+# Pad size, then (class, along, across, quarter turns) for each building. The Chateau is vanilla's
+# grand hotel.
 LANDMARK_LAYOUTS = {
     "lodge": ((70.0, 50.0), [("Land_Village_Pub", 0.0, 6.0, 0), ("Land_House_2W01", -24.0, 8.0, 0),
                              ("Land_House_1W03", 24.0, 8.0, 0), ("Land_House_1W01", 24.0, -12.0, 2),
                              ("Land_Shed_W4", -26.0, -14.0, 0)]),
-    "hotel": ((60.0, 50.0), [("Land_Tenement_Big", 0.0, 8.0, 1), ("Land_Shed_W4", 22.0, -14.0, 0)]),
+    "hotel": ((70.0, 60.0), [("Land_Hotel", 0.0, 8.0, 0), ("Land_Shed_W4", 28.0, -16.0, 0)]),
     "visitor": ((40.0, 35.0), [("Land_Village_HealthCare", 0.0, 6.0, 0), ("Land_Shed_W4", 14.0, -9.0, 0)]),
     "church": ((30.0, 30.0), [("Land_Church3", 0.0, 4.0, 0)]),
     "boulders": ((40.0, 30.0), [("Land_Shed_W4", -12.0, 8.0, 0)]),
@@ -152,6 +152,7 @@ FOOTPRINTS = {
     "Land_Smokestack_Big": (10, 10), "Land_Power_TransformerStation": (8, 10), "Land_Lighthouse": (10, 10),
     "Land_Mil_Barracks1": (10, 32), "Land_Mil_Barracks2": (10, 32), "Land_Mil_Guardhouse1": (6, 8),
     "Land_Rail_Station_Big": (12, 30),
+    "Land_Hotel": (20, 50),
 }
 towns_mod.FOOTPRINTS.update(FOOTPRINTS)
 CONTAINERS = ["Land_Container_1Bo", "Land_Container_1Mo", "Land_Container_1Moh", "Land_Container_1Aoh"]

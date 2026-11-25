@@ -96,7 +96,9 @@ def main() -> None:
         check(not bad and off == 0 and lines, f"{f.name}: {len(lines)} objects, {len(bad)} malformed, {off} off the map")
     for f in sorted((SOURCE / "objects").glob("*_spawner.json")):
         objs = json.loads(f.read_text(encoding="utf-8"))["Objects"]
-        wet = sum(ground(o["pos"][0], o["pos"][2]) < 0.0 for o in objs)
+        # The Interislander wreck and the Harbour Bridge stand in the sea on purpose.
+        wet = sum(ground(o["pos"][0], o["pos"][2]) < 0.0 for o in objs
+                  if not re.search(r"Ship_Big|Bridge_Metal", o["name"]))
         off = sum(not on_map(o["pos"][0], o["pos"][2]) for o in objs)
         check(off == 0 and wet <= len(objs) * 0.01, f"{f.name}: {len(objs)} buildings, {wet} in the sea, {off} off the map")
 
@@ -186,6 +188,17 @@ def main() -> None:
           and all(on_map(*lb["xy"]) for lb in features), f"{len(features)} rivers, peaks, water and stations labelled")
     old_types = re.findall(r'type = "(Name\w+)"', names_hpp)
     check(not old_types, "map labels use the DayZ location types" + (f" ({old_types[0]} found)" if old_types else ""))
+
+    groups = {gr.get("name") for gr in ET.parse(MISSION / "cfgeventgroups.xml").getroot().iter("group")}
+    used = {p.get("group") for p in ET.parse(MISSION / "cfgeventspawns.xml").getroot().iter("pos") if p.get("group")}
+    check(bool(used) and used <= groups, f"{len(used)} event spawns use the {len(groups)} groups in cfgeventgroups.xml"
+          + (f" (unknown: {sorted(used - groups)[:3]})" if used - groups else ""))
+    zombie_names = {z.get("name") for z in ET.parse(MISSION / "env" / "zombie_territories.xml").getroot().iter("zone")}
+    check("InfectedMilitary" not in zombie_names, "infected zones use vanilla names (no InfectedMilitary)")
+    pieces = json.loads((SOURCE / "objects" / "setpieces_spawner.json").read_text())["Objects"]
+    check(bool(pieces) and all(on_map(o["pos"][0], o["pos"][2]) for o in pieces), f"{len(pieces)} set piece objects on the map")
+    check(all((MAP_DIR / "scripts" / d / f).exists() for d, f in (("4_World", "AotearoaData.c"), ("5_Mission", "AotearoaMission.c")))
+          and "maps/aotearoa/scripts/4_World" in cfg, "weather and season scripts are in the mod")
 
     print()
     if failures:

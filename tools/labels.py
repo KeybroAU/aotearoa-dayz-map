@@ -3,7 +3,8 @@
     python labels.py
 
 Adds named rivers (snapped onto the traced river channels), peaks (snapped to the local high point),
-lakes, bays and straits (kept only where there is open water) and railway stations. It also sets
+lakes, bays and straits (kept only where there is open water), railway stations and the set pieces
+from source/setpieces.json (build_mission.py runs it again after placing them). It also sets
 every label to the location types the DayZ map styles (Capital, City, Village, Local, ...), not the
 older Arma ones. generate_terrain.py runs it after writing names.hpp; running it again replaces the
 block it added. Writes source/labels.json for the player map.
@@ -143,6 +144,11 @@ def build() -> list[dict]:
     for st in roads.get("stations", []):
         labels.append({"name": f"{st['town']} Station", "kind": "station", "type": "RailroadStation",
                        "xy": (st["x"], st["y"])})
+
+    extra = SOURCE / "setpieces.json"
+    for p in json.loads(extra.read_text(encoding="utf-8")) if extra.exists() else []:
+        if p["kind"] != "military":
+            labels.append({"name": p["label"], "kind": "place", "type": "Local", "xy": (p["x"], p["y"])})
 
     seen = set()
     for lb in labels:

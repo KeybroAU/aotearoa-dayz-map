@@ -33,7 +33,11 @@ SKIP = {"aotearoa_water_50"}  # shipped with the mod, not on the P: drive
 
 def model_key(name: str) -> str:
     name = name.strip().strip('"')
-    return name[5:].lower() if name.lower().startswith("land_") else name.lower()
+    low = name.lower()
+    for prefix in ("land_", "staticobj_"):
+        if low.startswith(prefix):
+            return low[len(prefix):]
+    return low
 
 
 def used_models() -> Counter:
