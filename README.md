@@ -129,7 +129,7 @@ River courses are traced on the real drainage (Waikato, Whanganui, Clutha, Waita
 | Devonport Naval Base | Waterfront pad with barracks, guardhouse, tower, warehouse and containers |
 | Cape Reinga / Te Rerenga Wairua | Lighthouse at the top of the North Island |
 | Milford Sound / Piopiotahi, Aoraki / Mount Cook Village | Lodge (pub), three houses, shed and car park |
-| Chateau Tongariro | A big hotel at the foot of Ruapehu (a tenement until there is a custom model) |
+| Chateau Tongariro | Vanilla's grand hotel at the foot of Ruapehu |
 | Waitomo Caves, Huka Falls | Visitor centre, shed and car park |
 | Church of the Good Shepherd | The little church by Lake Tekapo |
 | Moeraki Boulders | Boulders scattered along the beach, with a shed and car park |
@@ -144,6 +144,23 @@ River courses are traced on the real drainage (Waikato, Whanganui, Clutha, Waita
 | 14 bach clusters | Rows of four holiday homes behind quiet beaches, away from the towns |
 | 15 DOC huts | A small hut and woodshed on flat benches high in the ranges |
 | 18 railway stations | A station building beside the line at each town on the railway |
+
+### Landmarks, wrecks and bases
+
+`tools/setpieces.py` adds set pieces built only from vanilla objects, so they need no custom models. `build_mission.py` places them on flat, clear ground after the towns and sites:
+
+| Set piece | What's there |
+|---|---|
+| Sky Tower | Vanilla's TV tower, all three pieces stacked (about 150 m), in central Auckland |
+| Harbour Bridge | Steel truss spans over the shortest water crossing near Auckland's centre |
+| Parliament Buildings | The municipal office and an office block in Wellington, both lootable |
+| ChristChurch Cathedral | A ruined church in Christchurch, after the 2011 earthquake |
+| Interislander wreck | The big ship wreck aground in the shallows off Wellington, like the Wahine in 1968, with a lifeboat on the beach |
+| Hercules crash site | A crashed C-130 1 to 2.6 km from Ōhakea |
+| Waiouru, Burnham, Linton, Ōhakea | Extra barracks, tents, guardhouses and towers round each base. Military infected, tier 4 loot. |
+| Waiouru Ammunition Area | Bunkers, a fortified nest and towers in the desert east of the camp, inside a 200 m static gas zone |
+
+They go to `source/objects/setpieces_tb.txt` for Terrain Builder and to `setpieces_spawner.json`, which `pack.bat` adds to the mission's object spawner so they appear before the world is rebuilt (pass `--setpieces-in-wrp` once they are in the world). They are on the 2D map, the player map and the map item's legend.
 
 Every site is fitted onto dry, open land clear of towns, roads and water, flattened, and joined to the nearest road. Labels for the named sites are in `config/names.hpp`. Close-ups: [Christchurch Airport](preview/satellite_christchurchairport.png), [Lyttelton](preview/satellite_lyttelton.png).
 
@@ -300,7 +317,17 @@ By hand:
    - Before packing, convert the images in `data\branding\` with ImageToPAA from DayZ Tools. `logo_512.png` and the icons become `logo_512_ca.paa`, `icon_128_ca.paa` and `icon_64_ca.paa` (they have alpha). `loading_1.jpg` and `map_picture.jpg` become `loading_1_co.paa` and `map_picture_co.paa`. `mod.cpp` and `config.cpp` point at those names.
 3. Sign the PBO with your key if the server verifies signatures.
 
-The world inherits lighting, weather and sounds from Chernarus Plus. It sets a southern latitude (41.5 degrees south), a 25.6 km map grid and a January start date.
+The world inherits lighting and sounds from Chernarus Plus. It sets a southern latitude (41.5 degrees south) and a 25.6 km map grid.
+
+### Wildlife, weather and events
+
+**Wildlife:** no wolves, bears, roe deer or foxes. `pack.bat` turns those events off in the server's `events.xml` and raises sheep to 14 herds, red deer 16, goats 12, cattle 10 and wild pigs 10. Red deer keep mostly to the bush above 100 m (65% of herds), goats to steep bush, tussock and scree.
+
+**Weather and seasons:** the mod's world scripts (`scripts/4_World/AotearoaData.c`) give the map its own climate. Months follow the server date, so July is winter: lows of 1 degree in July to 12 in January and highs of 10 to 23 degrees (roughly Canterbury), short winter days (sunrise 8:00, sunset 17:10) and long summer ones (6:05 to 21:00). Temperature drops 4 degrees per 100 m of height, so the Southern Alps are freezing (the game's heights are about a seventh of the real ones). Westerly fronts bring rain most days, spring is the most changeable, and winter storms bring light snow. DayZ has one snowfall for the whole map, so it falls everywhere then; the snowcaps on the Alps are painted on the satellite texture.
+
+**Events:** five military convoys sit on the roads round each base, police roadblocks close the highway into each city and town, pile-ups block State Highway 1 and the other highways, and twelve derailed trains lie on the main lines. Heli crashes, convoys, roadblocks, police cars and trains are all more common than on Chernarus.
+
+**Contaminated zones:** static gas covers Whakaari and the Waiouru Ammunition Area. The dynamic gas event (vanilla's) drops zones at the bases, airfields, industrial sites and ports, and in open back country.
 
 ## Server setup
 
@@ -308,17 +335,18 @@ The world inherits lighting, weather and sounds from Chernarus Plus. It sets a s
 
 | File | What it holds |
 |---|---|
-| `init.c` | Vanilla start-up, with the date kept in the southern summer and the loot export line (see below) |
+| `init.c` | Vanilla start-up, with real southern seasons from the server date (set `pin_month` to fix one month) and the loot export line (see below) |
 | `cfgplayerspawnpoints.xml` | 40 spawn bubbles spread along the coasts of the two main islands |
-| `cfgeventspawns.xml` | Cars on the highway verges and parked in town streets, farm utes and trucks on the back roads and farm tracks, boats off the ports, ferry terminals and boat ramps, heli crashes in open country, police cars in town streets, military convoys near the bases |
-| `env/zombie_territories.xml` | Infected zones: city, village and military in towns, village in hamlets, surf clubs, holiday parks and stations, industrial at ports, the ferry terminals and airfields, solitude at farms, baches and huts |
-| `cfgeffectarea.json` | The Whakaari contaminated zone and the mainland safe positions |
+| `cfgeventspawns.xml` | Cars on the highway verges and parked in town streets, farm utes and trucks on the back roads and farm tracks, boats off the ports, ferry terminals and boat ramps, heli crashes in open country, police cars in town streets, military convoys near the bases, police roadblocks on the highways into the cities and towns, pile-ups on State Highway 1 and the other highways, derailed trains on the main lines, motorbikes and plank piles, and the dynamic gas zones |
+| `cfgeventgroups.xml` | The convoy, roadblock, pile-up and train groups those events spawn (`tools/event_groups.py`) |
+| `env/zombie_territories.xml` | Infected zones: city, village and army in towns, police at police stations, medics at hospitals, firefighters at fire stations, priests at churches, hard army at Waiouru, village in hamlets, surf clubs, holiday parks and stations, industrial at ports, the ferry terminals and airfields, solitude at farms, baches and huts |
+| `cfgeffectarea.json` | The Whakaari and Waiouru Ammunition Area contaminated zones and their safe positions |
 | `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
 | `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes: hunting rifles, .22 and .308 ammo, fishing gear and gumboots common; military rifles scarce |
 | `loot_tiers.json` | The loot tier of every town and site |
 | `env/*_territories.xml` | Animals: red deer and wild pigs in the bush, sheep on pasture and goats in the high country, cattle, pigs and hens at farms, hares on farmland. No wolves, bears, foxes or roe deer. |
-| `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog |
+| `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog (the seasons come from the world scripts, see below) |
 | `aotearoa_spawngear_*.json` | Starting gear presets: Farmer (checked shirt, jeans, gumboots), Tramper (rain jacket, cargo pants, hiking boots) and Beach (T-shirt, shorts, sneakers). Each has a rag, a chemlight and an apple. |
 | `db/messages.xml` | A "Kia ora" welcome, a tip about the ferries, server rules every 30 minutes, and a restart countdown for 4-hourly restarts. Edit `RULES` in `tools/server_files.py` for your own rules. |
 | `../server/start_server.bat`, `../server/start_server.sh` | Launch loops for Windows and Linux that restart the server when it stops |

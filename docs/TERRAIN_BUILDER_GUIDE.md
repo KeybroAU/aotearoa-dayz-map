@@ -175,6 +175,7 @@ Put each file on its own layer so you can hide, re-import or delete it on its ow
 |---|---|---|
 | towns | `towns_tb.txt` | 3,143 |
 | sites | `pois_tb.txt` | 786 |
+| setpieces | `setpieces_tb.txt` | 54 |
 | bridges | `bridges_tb.txt` | 72 |
 | rail | `rail_tb.txt` | 1,545 |
 | powerlines | `powerlines_tb.txt` | 989 |
@@ -192,6 +193,8 @@ Put each file on its own layer so you can hide, re-import or delete it on its ow
 | lakes | `lakes_tb.txt` | 267, see below |
 
 - [ ] After each import, glance at the log/status. If it says templates were missing, note the names and fix them (step 1 checker, or step 6 libraries), then delete that layer's objects and import again.
+
+**Set pieces.** `setpieces_tb.txt` holds the landmarks, the Interislander wreck, the Hercules crash and the base extensions. Until they are in the world, the mission spawns them with the object spawner. Once you have exported the world with them, pack with `pack.bat --setpieces-in-wrp` so they are not spawned twice.
 
 **Lakes.** `lakes_tb.txt` places a 50 m water plane per tile, and its last field is the lake's **absolute** water level, not an offset from the ground. Either:
 - after importing, select all objects in the `lakes` layer and switch them to absolute height in the object properties, or
