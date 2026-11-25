@@ -1,7 +1,7 @@
 """Points of interest for the Aotearoa terrain.
 
-Airfields with runways, container ports, ski fields with lift lines, Hobbiton, farms along the
-highways, and Whakaari / White Island as a volcanic islet with a contaminated zone. Each site
+Airfields with runways, container ports, ski fields with lift lines, industrial plants, the
+Devonport naval base, the Cape Reinga lighthouse, Hobbiton, farms along the highways, and Whakaari / White Island as a volcanic islet with a contaminated zone. Each site
 is fitted onto dry land clear of towns, roads and water, flattened, and given vanilla DayZ
 objects (class names to check against your P: drive, like the town buildings).
 
@@ -15,6 +15,7 @@ import json
 import math
 from dataclasses import dataclass, field
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Callable
 
 import numpy as np
@@ -53,11 +54,38 @@ LIFT_LENGTH = 420.0
 
 HOBBITON = ("Hobbiton", "Hobbiton", -37.8721, 175.6829)
 INDUSTRIAL = [
-    # name, label, lat, lon
-    ("FonterraWhareroa", "Fonterra Whareroa", -39.6130, 174.2620),
-    ("FonterraEltham", "Fonterra Eltham", -39.4320, 174.2960),
+    # name, label, lat, lon, layout
+    ("FonterraWhareroa", "Fonterra Whareroa", -39.6130, 174.2620, "dairy"),
+    ("FonterraEltham", "Fonterra Eltham", -39.4320, 174.2960, "dairy"),
+    ("MarsdenPoint", "Marsden Point Refinery", -35.8350, 174.4970, "refinery"),
+    ("HuntlyPowerStation", "Huntly Power Station", -37.5450, 175.1530, "power"),
+    ("GlenbrookSteelMill", "Glenbrook Steel Mill", -37.2070, 174.7460, "mill"),
+    ("KinleithMill", "Kinleith Mill", -38.2720, 175.9000, "mill"),
+    ("TiwaiPointSmelter", "Tiwai Point Smelter", -46.5900, 168.3800, "smelter"),
 ]
 INDUSTRIAL_PAD = (170.0, 110.0)
+# layout: (along, across, class, quarter turns) relative to the pad centre; containers fill the rest.
+INDUSTRIAL_LAYOUTS = {
+    "dairy": [(-50.0, 20.0, "Land_Warehouse", 1), (-15.0, 20.0, "Land_Warehouse", 1),
+              (20.0, 20.0, "Land_Warehouse", 1), (55.0, 25.0, "Land_Barn_Metal_Big", 1),
+              (-55.0, -32.0, "Land_Office2", 0), (5.0, -35.0, "Land_Shed_W4", 0)],
+    "refinery": [(-55.0, 25.0, "Land_Tank_Big", 0), (-20.0, 25.0, "Land_Tank_Big", 0),
+                 (15.0, 25.0, "Land_Tank_Big", 0), (-55.0, -10.0, "Land_Tank_Medium", 0),
+                 (-30.0, -10.0, "Land_Tank_Medium", 0), (55.0, 20.0, "Land_Workshop1", 0),
+                 (55.0, -30.0, "Land_Office2", 0), (0.0, -35.0, "Land_Warehouse", 0)],
+    "power": [(-35.0, 15.0, "Land_Power_Station", 0), (35.0, 30.0, "Land_Smokestack_Big", 0),
+              (45.0, -10.0, "Land_Power_TransformerStation", 0), (-55.0, -35.0, "Land_Office2", 0),
+              (10.0, -35.0, "Land_Workshop1", 0)],
+    "mill": [(-35.0, 20.0, "Land_Warehouse", 1), (0.0, 20.0, "Land_Warehouse", 1), (35.0, 20.0, "Land_Warehouse", 1),
+             (65.0, 25.0, "Land_Smokestack_Big", 0), (-55.0, -32.0, "Land_Office2", 0),
+             (5.0, -32.0, "Land_Workshop1", 0)],
+    "smelter": [(-45.0, 20.0, "Land_Warehouse", 0), (0.0, 20.0, "Land_Warehouse", 0), (45.0, 20.0, "Land_Warehouse", 0),
+                (-45.0, -15.0, "Land_Warehouse", 0), (-55.0, -40.0, "Land_Office2", 0),
+                (60.0, -25.0, "Land_Power_TransformerStation", 0)],
+}
+
+NAVAL = ("DevonportNavalBase", "Devonport Naval Base", -36.8290, 174.7870, "Auckland")
+LIGHTHOUSE = ("CapeReinga", "Cape Reinga / Te Rerenga Wairua", -34.4267, 172.6777)
 
 WHAKAARI = ("Whakaari", "Whakaari / White Island", -37.52, 177.18)
 WHAKAARI_RADIUS = 260.0
@@ -71,7 +99,10 @@ FOOTPRINTS = {
     "Land_Airfield_ServiceHangar_L": (18, 28), "Land_Container_1Bo": (3, 12), "Land_Container_1Mo": (3, 12),
     "Land_Container_1Moh": (3, 12), "Land_Container_1Aoh": (3, 12), "Land_Warehouse": (24, 48),
     "Land_Barn_Metal_Big": (16, 28), "Land_Farm_CowshedA": (12, 30), "Land_Shed_W4": (6, 8),
-    "Land_Power_Pole_Wood1": (1, 1),
+    "Land_Power_Pole_Wood1": (1, 1), "Land_Office2": (16, 28), "Land_Workshop1": (12, 20),
+    "Land_Tank_Big": (24, 24), "Land_Tank_Medium": (14, 14), "Land_Power_Station": (40, 60),
+    "Land_Smokestack_Big": (10, 10), "Land_Power_TransformerStation": (8, 10), "Land_Lighthouse": (10, 10),
+    "Land_Mil_Barracks1": (10, 32), "Land_Mil_Barracks2": (10, 32), "Land_Mil_Guardhouse1": (6, 8),
 }
 towns_mod.FOOTPRINTS.update(FOOTPRINTS)
 CONTAINERS = ["Land_Container_1Bo", "Land_Container_1Mo", "Land_Container_1Moh", "Land_Container_1Aoh"]
@@ -241,7 +272,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         near_coast = (dist_sea > 25.0) & (dist_sea < 45.0)
         port_ok = land & ~blocked
         spot = None
-        for search in (t.radius + 500.0, t.radius + 1200.0):
+        for search in (t.radius + 500.0, t.radius + 1200.0, t.radius + 2200.0):
             spot = find_port(port_ok, near_coast, h, dist_sea, grid, t, search)
             if spot:
                 break
@@ -278,7 +309,7 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         mark(blocked, grid, site.x, site.y, site.heading, 60.0, 40.0, pad=800.0)
         print(f"  {label}: lodge at {grid.sample(h, site.x, site.y)[0]:.0f} m")
 
-    for cls, label, lat, lon in INDUSTRIAL:
+    for cls, label, lat, lon, layout in INDUSTRIAL:
         tx, ty = lonlat_to_world(lon, lat)
         spot = find_rect(ok(), h, grid, tx, ty, 1500.0, *INDUSTRIAL_PAD)
         if spot is None:
@@ -288,18 +319,59 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         h = flatten_rect(h, land, grid, x, y, hd, *INDUSTRIAL_PAD, blend=40.0)
         site = Site("industrial", cls, label, x, y, INDUSTRIAL_PAD[0] / 2, hd, "NameLocal")
         site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, *INDUSTRIAL_PAD)})
-        for along, across, cls_b, turn in ((-50.0, 20.0, "Land_Warehouse", 1), (-15.0, 20.0, "Land_Warehouse", 1),
-                                           (20.0, 20.0, "Land_Warehouse", 1), (55.0, 25.0, "Land_Barn_Metal_Big", 1),
-                                           (-55.0, -32.0, "Land_Office2", 0), (5.0, -35.0, "Land_Shed_W4", 0)):
+        for along, across, cls_b, turn in INDUSTRIAL_LAYOUTS[layout]:
             bx, by = local_to_world(x, y, hd, along, across)
             site.buildings.append(Building(cls_b, bx, by, (hd + 90.0 * turn) % 360))
-        for k in range(8):
+        for k in range(8 if layout == "dairy" else 4):
             bx, by = local_to_world(x, y, hd, 25.0 + (k % 4) * 15.0, -32.0 - (k // 4) * 9.0)
             site.buildings.append(Building(CONTAINERS[rng.integers(len(CONTAINERS))], bx, by, hd % 360))
+        site.extra["layout"] = layout
         site.extra["entrance"] = local_to_world(x, y, hd, 0.0, -INDUSTRIAL_PAD[1] / 2 - 20.0)
         sites.append(site)
         mark(blocked, grid, x, y, hd, *INDUSTRIAL_PAD)
         print(f"  {label}: industrial site")
+
+    cls, label, lat, lon, near = NAVAL
+    tx, ty = lonlat_to_world(lon, lat)
+    target = SimpleNamespace(x=tx, y=ty, radius=0.0)
+    near_coast = (dist_sea > 25.0) & (dist_sea < 45.0)
+    spot = None
+    for search in (500.0, 1200.0):
+        spot = find_port(land & ~blocked, near_coast, h, dist_sea, grid, target, search)
+        if spot:
+            break
+    if spot:
+        x, y, hd = spot
+        h = flatten_rect(h, land, grid, x, y, hd, *PORT_PAD, blend=25.0, min_z=2.0)
+        site = Site("naval", cls, label, x, y, PORT_PAD[0] / 2, hd)
+        site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, *PORT_PAD)})
+        for along, across, cls_b, turn in ((-40.0, 18.0, "Land_Mil_Barracks1", 1), (-15.0, 18.0, "Land_Mil_Barracks2", 1),
+                                           (25.0, 18.0, "Land_Warehouse", 0), (-50.0, -22.0, "Land_Mil_Guardhouse1", 0),
+                                           (0.0, -20.0, "Land_Mil_ATC_Small", 0)):
+            bx, by = local_to_world(x, y, hd, along, across)
+            site.buildings.append(Building(cls_b, bx, by, (hd + 90.0 * turn) % 360))
+        for k in range(6):
+            bx, by = local_to_world(x, y, hd, 20.0 + (k % 3) * 15.0, -18.0 - (k // 3) * 9.0)
+            site.buildings.append(Building(CONTAINERS[rng.integers(len(CONTAINERS))], bx, by, hd % 360))
+        sites.append(site)
+        mark(blocked, grid, x, y, hd, *PORT_PAD)
+        print(f"  {label}: naval base")
+    else:
+        print(f"  {label}: no coastal room")
+
+    cls, label, lat, lon = LIGHTHOUSE
+    tx, ty = lonlat_to_world(lon, lat)
+    spot = find_rect(ok(), h, grid, tx, ty, 900.0, 40.0, 40.0, step=20.0)
+    if spot:
+        x, y, hd = spot
+        h = flatten_rect(h, land, grid, x, y, hd, 40.0, 40.0, blend=20.0, max_grade=0.05)
+        site = Site("landmark", cls, label, x, y, 25.0, hd, "NameLocal")
+        site.buildings.append(Building("Land_Lighthouse", x, y, hd))
+        site.buildings.append(Building("Land_Shed_W4", *local_to_world(x, y, hd, -14.0, 12.0), hd))
+        site.surfaces.append({"kind": "gravel", "points": rect_points(x, y, hd, 30.0, 8.0, 0.0, -16.0)})
+        sites.append(site)
+        mark(blocked, grid, x, y, hd, 40.0, 40.0)
+        print(f"  {label}: lighthouse")
 
     cls, label, lat, lon = HOBBITON
     tx, ty = lonlat_to_world(lon, lat)
@@ -486,7 +558,7 @@ def draw_preview(relief, sites: list[Site], size_m: float):
 
     colours = {"airfield": (40, 40, 40), "port": (30, 90, 200), "ski": (255, 255, 255), "hobbiton": (250, 200, 0),
                "farm": (150, 90, 40), "whakaari": (220, 30, 30),
-               "industrial": (160, 60, 200)}
+               "industrial": (160, 60, 200), "naval": (20, 40, 120), "landmark": (255, 255, 255)}
     img = relief.convert("RGB").copy()
     d = ImageDraw.Draw(img)
     font = towns_mod._font(15)

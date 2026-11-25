@@ -29,6 +29,7 @@ TIERS = {
     "military": {"radius": 140.0, "name_type": "NameLocal", "big_share": 0.0},
 }
 MIN_LAND_SHARE = 0.7
+MAX_PUSH_M = 300.0
 # Tiers whose special buildings are small enough to share a block with two houses.
 HALF_BLOCK_SPECIALS = {"town", "village"}
 
@@ -149,7 +150,24 @@ def place_towns(towns: list[Town], lonlat_to_world: Callable, land: np.ndarray, 
         x, y = lonlat_to_world(np.array(t.lon), np.array(t.lat))
         t.x, t.y = float(x), float(y)
 
-    # Shrink neighbours that would overlap (e.g. Napier and Hastings).
+    # The smaller of two overlapping neighbours steps away from the larger one (Cambridge from
+    # Hamilton), up to MAX_PUSH_M, so big cities keep their size.
+    pushed = {id(t): 0.0 for t in towns}
+    for _ in range(6):
+        for i, a in enumerate(towns):
+            for b in towns[i + 1:]:
+                small, big = (a, b) if a.radius < b.radius else (b, a)
+                dx, dy = small.x - big.x, small.y - big.y
+                d = math.hypot(dx, dy) or 1.0
+                need = (a.radius + b.radius) / 0.9 - d
+                room = MAX_PUSH_M - pushed[id(small)]
+                if need > 0 and room > 0:
+                    step = min(need, room)
+                    small.x += dx / d * step
+                    small.y += dy / d * step
+                    pushed[id(small)] += step
+
+    # Shrink neighbours that still overlap (e.g. Napier and Hastings).
     for _ in range(4):
         for i, a in enumerate(towns):
             for b in towns[i + 1:]:
