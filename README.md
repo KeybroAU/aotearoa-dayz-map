@@ -217,7 +217,7 @@ The photo is not stored in this repo; only the colours taken from it are. To use
 | `source/pois.json` | Sites, their paved areas, lift lines and the Whakaari zone |
 | `source/towns.csv` | Generated town positions in world and Terrain Builder coordinates |
 | `source/objects/*_tb.txt` | Terrain Builder object imports: towns, sites, forest and the world detail groups |
-| `source/objects/*_spawner.json` | Town and site buildings as DayZ object spawner files |
+| `source/objects/*_spawner.json` | Town and site buildings as DayZ object spawner files. Not used by default, because the buildings are already in the world; `pack.bat --spawners` loads them for a quick test on a world without the Terrain Builder objects. |
 | `source/sat_tint_512.png` | Regional colour taken from the satellite photo, in map space |
 | `mission/` | Server mission files, a `serverDZ.cfg` template and launch scripts in `mission/server/` |
 | `preview/` | Satellite, relief, mask, slope, towns, roads, sites, forest, mission maps and the player map |
@@ -256,6 +256,15 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
 
 ## Packing the mod
 
+**One click:** once the world is exported, double-click `pack.bat` (or `pack.bat --key aotearoa --zip` to sign and zip). It converts the branding to `.paa`, packs `aotearoa.pbo` with Addon Builder, signs it, and writes:
+
+- `dist\@Aotearoa\`: the mod for clients and the server
+- `dist\server\`: a ready server folder. It holds the mod, keys, `serverDZ.cfg`, the launch scripts, and `mpmissions\dayzOffline.aotearoa`, which is vanilla Chernarus with every Aotearoa file copied over it and `cfggameplay.json` and `cfgeconomycore.xml` already merged. Copy its contents into your DayZ Server folder.
+
+It finds DayZ Tools and the DayZ Server's vanilla mission in their Steam folders; pass `--tools` or `--vanilla-mission` if yours are elsewhere. Run `python tools/pack_mod.py --help` for all options. The signing key goes in `keys\` and is never committed.
+
+By hand:
+
 1. In Addon Builder, pack `P:\maps\aotearoa` to `@Aotearoa\addons\aotearoa.pbo` with the prefix `maps\aotearoa`.
    - Leave out `source\`, `tools\`, `preview\` and `mission\`. They are inputs, not game data.
    - Keep `config.cpp`, `config\`, `data\` and `world\`.
@@ -276,7 +285,7 @@ The world inherits lighting, weather and sounds from Chernarus Plus. It sets a s
 | `cfgeventspawns.xml` | Cars on the highway verges and parked in town streets, boats off the ports, ferry terminals and boat ramps, heli crashes in open country, police cars in town streets, military convoys near the bases |
 | `env/zombie_territories.xml` | Infected zones: city, village and military in towns, village in hamlets, surf clubs, holiday parks and stations, industrial at ports, the ferry terminals and airfields, solitude at farms, baches and huts |
 | `cfgeffectarea.json` | The Whakaari contaminated zone and the mainland safe positions |
-| `cfggameplay.worldsdata.json` | `WorldsData` to merge into `cfggameplay.json`: object spawners and New Zealand temperatures |
+| `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
 | `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes: hunting rifles, .22 and .308 ammo, fishing gear and gumboots common; military rifles scarce |
 | `loot_tiers.json` | The loot tier of every town and site |
@@ -295,7 +304,7 @@ Loot tier 1 is the northern coasts. Tiers rise inland, southwards and above 300 
 To set up a server:
 
 1. Copy vanilla `mpmissions\dayzOffline.chernarusplus` to `mpmissions\dayzOffline.aotearoa`. Copy the generated files over it.
-2. Merge `cfggameplay.worldsdata.json` into the mission's `cfggameplay.json`. It sets the object spawners and temperatures under `WorldsData`, and the starting gear under `PlayerData.spawnGearPresetFiles`.
+2. Merge `cfggameplay.worldsdata.json` into the mission's `cfggameplay.json`. It sets the temperatures under `WorldsData` and the starting gear under `PlayerData.spawnGearPresetFiles`. (`pack.bat` does this step and steps 1 and 4 for you.)
 3. Copy `mission\serverDZ.cfg` and `mission\server\start_server.bat` (or `.sh` on Linux) next to the server executable. Set `passwordAdmin` and run the script. It starts the server with `-mod=@Aotearoa` and restarts it when it stops.
 4. Paste the `<ce>` block from `cfgeconomycore.aotearoa.xml` into `<economycore>` in `cfgeconomycore.xml`.
 5. Paint `areaflags.map` using the tier map (see above). Keep vanilla `cfgenvironment.xml`; the generated `env\` files replace its territories.

@@ -6,3 +6,5 @@ source/satellite_*.png
 preview/player_map_8192.jpg
 models.txt
 source/model_fixes.json
+dist/
+keys/
