@@ -91,7 +91,7 @@ NORTHING = 0
 
 SEED = 1840
 
-DETAIL_TOWNS = ["Auckland", "Wellington", "Christchurch", "Queenstown"]
+DETAIL_TOWNS = ["Auckland", "Wellington", "Christchurch", "Hamilton", "Queenstown"]
 
 
 def lonlat_to_tile(lon: np.ndarray, lat: np.ndarray, z: int) -> tuple[np.ndarray, np.ndarray]:
