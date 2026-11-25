@@ -856,21 +856,6 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Aotearoa_Sign_Whanganui",
-   "pos": [
-    17834.44,
-    0.135,
-    14273.5
-   ],
-   "ypr": [
-    132.1,
-    0.0,
-    0.0
-   ],
-   "scale": 1.0,
-   "enableCEPersistency": 0
-  },
-  {
    "name": "Land_Aotearoa_Sign_RnzafBaseOhakea",
    "pos": [
     18237.7,

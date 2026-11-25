@@ -1,0 +1,9814 @@
+{
+ "Objects": [
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17395.03,
+    6.564,
+    12266.12
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17515.92,
+    5.7,
+    11929.47
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    13047.4,
+    4.238,
+    8104.1
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    12723.9,
+    6.395,
+    7764.6
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18425.62,
+    1.659,
+    18572.91
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18331.59,
+    4.276,
+    18138.1
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18465.21,
+    4.279,
+    18290.1
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18044.54,
+    3.418,
+    18639.47
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18463.09,
+    3.656,
+    18319.8
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19818.1,
+    1.012,
+    18710.21
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20093.83,
+    5.425,
+    18533.46
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    8638.6,
+    5.1,
+    3463.1
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18811.26,
+    20.867,
+    13571.47
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18990.84,
+    16.369,
+    13769.43
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18681.17,
+    4.731,
+    13760.24
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21278.03,
+    2.312,
+    15107.04
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21181.17,
+    5.237,
+    15329.04
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21120.6,
+    13.618,
+    14798.9
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14132.81,
+    6.319,
+    11916.72
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14426.93,
+    7.859,
+    12068.02
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20035.58,
+    107.857,
+    17614.59
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20248.39,
+    90.656,
+    17845.78
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20155.74,
+    106.272,
+    17573.45
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20116.27,
+    105.54,
+    17606.63
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15684.16,
+    13.497,
+    15961.77
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15981.81,
+    8.473,
+    16116.6
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4740.1,
+    3.649,
+    2579.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4473.1,
+    3.768,
+    2680.1
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5133.9,
+    203.366,
+    4906.6
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5346.4,
+    189.183,
+    5129.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17804.1,
+    1.39,
+    14363.6
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17635.6,
+    3.791,
+    14516.1
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    23413.6,
+    1.424,
+    16755.1
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    23742.6,
+    5.943,
+    16851.1
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15715.16,
+    8.318,
+    11444.03
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15576.64,
+    19.461,
+    12009.95
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15729.36,
+    9.739,
+    11840.27
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15566.04,
+    20.814,
+    11981.67
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15695.42,
+    13.967,
+    11870.67
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16265.4,
+    65.672,
+    15504.1
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16376.94,
+    53.712,
+    15409.6
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14970.96,
+    5.478,
+    9923.67
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15026.81,
+    6.71,
+    9997.9
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19596.66,
+    114.773,
+    16841.77
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19897.14,
+    108.52,
+    16757.63
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10132.6,
+    8.596,
+    6339.4
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10202.6,
+    4.776,
+    6132.4
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    9608.1,
+    4.463,
+    4892.6
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10261.43,
+    3.782,
+    9957.52
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10100.23,
+    1.136,
+    9697.34
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10322.23,
+    13.119,
+    9699.46
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10858.1,
+    5.189,
+    11048.9
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    11073.1,
+    5.472,
+    11084.9
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    11054.6,
+    4.381,
+    11103.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18824.46,
+    31.712,
+    12446.47
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19073.33,
+    44.184,
+    12633.12
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19093.13,
+    47.513,
+    12657.87
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    11136.96,
+    13.173,
+    7021.47
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6039.76,
+    142.979,
+    5586.77
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6166.31,
+    130.313,
+    5731.71
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6070.87,
+    134.651,
+    5694.94
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5835.6,
+    33.233,
+    3103.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    7939.76,
+    145.783,
+    6411.77
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    13289.1,
+    175.303,
+    9677.9
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15774.27,
+    3.825,
+    23104.04
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21648.9,
+    4.99,
+    18046.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21392.9,
+    5.464,
+    18090.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18766.86,
+    3.733,
+    19508.97
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18742.11,
+    3.045,
+    19530.18
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18051.9,
+    75.092,
+    16350.8
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18152.9,
+    71.33,
+    16501.94
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18075.4,
+    74.218,
+    16333.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19050.96,
+    220.146,
+    15143.67
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    12308.9,
+    8.686,
+    7576.1
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    12461.4,
+    8.731,
+    7684.6
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18290.27,
+    4.772,
+    13988.74
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18485.4,
+    2.982,
+    13892.59
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16221.32,
+    13.016,
+    15247.91
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16346.46,
+    0.828,
+    14987.73
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16323.1,
+    65.644,
+    15701.1
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18537.44,
+    8.201,
+    18307.55
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18555.82,
+    11.689,
+    18084.13
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18499.97,
+    6.725,
+    18266.54
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18195.6,
+    11.106,
+    17810.6
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18296.6,
+    4.945,
+    18056.6
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18467.6,
+    11.167,
+    17882.6
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18461.1,
+    9.956,
+    17922.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18462.1,
+    8.813,
+    17979.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19025.96,
+    0.766,
+    18464.87
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19012.53,
+    1.399,
+    18435.18
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17946.6,
+    5.3,
+    18945.6
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18747.4,
+    75.885,
+    13430.1
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4181.03,
+    77.213,
+    3684.02
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4198.7,
+    74.077,
+    3621.09
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4213.55,
+    75.843,
+    3676.24
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    23639.6,
+    9.013,
+    18786.9
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    23682.1,
+    8.537,
+    18797.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19221.6,
+    97.692,
+    17016.9
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19195.1,
+    98.075,
+    16996.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17746.6,
+    44.887,
+    16994.9
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17803.6,
+    47.921,
+    16973.9
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19814.06,
+    46.782,
+    13868.07
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19794.26,
+    47.387,
+    13884.33
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14214.06,
+    2.9,
+    9018.07
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14194.26,
+    4.314,
+    9034.33
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14274.86,
+    2.767,
+    9114.93
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16802.6,
+    15.035,
+    21122.9
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16789.6,
+    12.539,
+    21164.9
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16812.1,
+    17.666,
+    21083.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16813.1,
+    10.785,
+    21197.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    23148.5,
+    10.422,
+    16183.11
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    8970.93,
+    4.972,
+    8754.52
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    9010.52,
+    5.745,
+    8760.88
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17950.6,
+    6.226,
+    11867.92
+   ],
+   "ypr": [
+    108.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    13038.78,
+    59.773,
+    8977.9
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18824.0,
+    1.998,
+    18630.01
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18863.5,
+    1.999,
+    18607.49
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    9202.9,
+    2.473,
+    4130.1
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19270.21,
+    37.984,
+    13369.48
+   ],
+   "ypr": [
+    314.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19288.7,
+    47.624,
+    13242.91
+   ],
+   "ypr": [
+    104.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21973.66,
+    1.106,
+    15965.5
+   ],
+   "ypr": [
+    347.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20678.4,
+    33.103,
+    14250.59
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    13727.44,
+    3.365,
+    12148.21
+   ],
+   "ypr": [
+    246.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5236.21,
+    14.792,
+    2717.81
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6044.7,
+    4.36,
+    7284.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17277.9,
+    4.976,
+    14693.32
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16691.73,
+    2.169,
+    16349.79
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    13294.31,
+    1.6,
+    8544.22
+   ],
+   "ypr": [
+    290.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    13255.69,
+    2.58,
+    8537.08
+   ],
+   "ypr": [
+    110.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    9502.9,
+    101.209,
+    6555.4
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10884.1,
+    61.746,
+    9735.2
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5515.4,
+    291.56,
+    6112.1
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6603.4,
+    114.232,
+    5402.38
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4174.1,
+    27.191,
+    3226.29
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6601.2,
+    27.478,
+    3073.94
+   ],
+   "ypr": [
+    45.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    7278.4,
+    3.89,
+    2669.98
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14816.98,
+    4.562,
+    23505.73
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    22103.04,
+    3.241,
+    17974.48
+   ],
+   "ypr": [
+    142.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21095.86,
+    2.794,
+    18160.58
+   ],
+   "ypr": [
+    246.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18288.3,
+    4.06,
+    18098.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6711.16,
+    21.231,
+    3071.7
+   ],
+   "ypr": [
+    347.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20643.23,
+    231.51,
+    16251.17
+   ],
+   "ypr": [
+    27.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17219.04,
+    6.068,
+    14738.72
+   ],
+   "ypr": [
+    64.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    9294.35,
+    2.729,
+    4234.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16833.64,
+    9.09,
+    20562.2
+   ],
+   "ypr": [
+    205.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19146.6,
+    153.421,
+    14869.35
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15735.12,
+    1.237,
+    11746.6
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15165.9,
+    2.281,
+    12374.4
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10635.4,
+    2.568,
+    6630.4
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15269.16,
+    2.389,
+    15597.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5483.6,
+    290.908,
+    6108.6
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    7176.02,
+    282.879,
+    5980.56
+   ],
+   "ypr": [
+    333.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19157.53,
+    293.185,
+    15706.45
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16391.76,
+    48.526,
+    15761.55
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17383.69,
+    8.378,
+    19530.24
+   ],
+   "ypr": [
+    259.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19519.5,
+    92.243,
+    17499.78
+   ],
+   "ypr": [
+    50.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19249.89,
+    108.487,
+    16920.17
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17919.94,
+    23.736,
+    17475.34
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    8789.9,
+    180.016,
+    6655.02
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    9413.02,
+    1.993,
+    4508.6
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19144.15,
+    17.784,
+    18108.6
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17980.3,
+    1.908,
+    11977.9
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21289.9,
+    2.727,
+    18105.9
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    23411.98,
+    1.275,
+    16635.1
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15515.91,
+    3.435,
+    15248.71
+   ],
+   "ypr": [
+    199.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10650.56,
+    45.993,
+    9568.52
+   ],
+   "ypr": [
+    251.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14500.0,
+    6.837,
+    12137.21
+   ],
+   "ypr": [
+    325.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21358.59,
+    3.266,
+    15524.19
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15471.27,
+    10.935,
+    15895.66
+   ],
+   "ypr": [
+    158.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5991.73,
+    166.856,
+    5506.9
+   ],
+   "ypr": [
+    126.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15252.4,
+    4.133,
+    12374.42
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17024.6,
+    7.95,
+    16775.03
+   ],
+   "ypr": [
+    322.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    12242.96,
+    4.819,
+    12899.26
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    22747.71,
+    1.945,
+    18269.51
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    24169.17,
+    2.804,
+    17689.9
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    11900.57,
+    1.796,
+    11784.73
+   ],
+   "ypr": [
+    112.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    7224.33,
+    1.76,
+    7792.89
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    12150.3,
+    347.768,
+    9731.82
+   ],
+   "ypr": [
+    161.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    9016.4,
+    225.374,
+    6631.6
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5693.43,
+    230.488,
+    5098.8
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    7135.1,
+    284.153,
+    5927.38
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15863.3,
+    5.015,
+    11306.82
+   ],
+   "ypr": [
+    241.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    11824.19,
+    264.612,
+    9716.41
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    3927.88,
+    143.614,
+    4174.88
+   ],
+   "ypr": [
+    33.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19936.11,
+    312.543,
+    15943.61
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6125.27,
+    269.986,
+    6739.29
+   ],
+   "ypr": [
+    225.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    13139.71,
+    63.403,
+    9074.27
+   ],
+   "ypr": [
+    313.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20212.1,
+    197.328,
+    16341.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17899.43,
+    72.669,
+    16794.71
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17395.63,
+    11.057,
+    19484.75
+   ],
+   "ypr": [
+    237.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4243.15,
+    75.406,
+    3647.6
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17625.82,
+    40.596,
+    17038.2
+   ],
+   "ypr": [
+    314.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17502.4,
+    2.119,
+    14555.65
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18075.48,
+    73.958,
+    16655.14
+   ],
+   "ypr": [
+    44.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6747.6,
+    19.43,
+    3044.23
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    6008.6,
+    32.269,
+    3162.08
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17008.6,
+    56.461,
+    15887.07
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5351.02,
+    18.457,
+    2843.06
+   ],
+   "ypr": [
+    333.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    12088.24,
+    6.3,
+    7319.54
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16817.52,
+    11.946,
+    20716.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4856.21,
+    3.704,
+    2584.46
+   ],
+   "ypr": [
+    124.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    24187.94,
+    3.481,
+    17852.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16942.47,
+    3.997,
+    16606.05
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20205.77,
+    111.039,
+    17441.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    7671.17,
+    3.93,
+    2830.41
+   ],
+   "ypr": [
+    316.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4304.37,
+    5.678,
+    2902.75
+   ],
+   "ypr": [
+    57.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19924.25,
+    48.243,
+    13917.97
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20860.29,
+    143.485,
+    15800.73
+   ],
+   "ypr": [
+    133.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19287.1,
+    57.033,
+    13091.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    21159.56,
+    2.413,
+    18112.86
+   ],
+   "ypr": [
+    217.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10350.65,
+    2.665,
+    6457.13
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    16617.56,
+    50.626,
+    15580.86
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15950.51,
+    3.703,
+    11152.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    10875.68,
+    3.004,
+    6782.1
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    13253.98,
+    6.753,
+    8658.52
+   ],
+   "ypr": [
+    72.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    14908.6,
+    4.455,
+    23537.07
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15924.26,
+    19.665,
+    22675.76
+   ],
+   "ypr": [
+    225.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    24262.1,
+    3.946,
+    18641.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    23389.29,
+    1.11,
+    16687.23
+   ],
+   "ypr": [
+    315.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    20786.31,
+    31.267,
+    14343.41
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17860.61,
+    37.017,
+    17225.61
+   ],
+   "ypr": [
+    128.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18080.85,
+    2.445,
+    13241.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17758.6,
+    64.503,
+    16205.9
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    8088.24,
+    5.371,
+    3069.54
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    8797.6,
+    3.778,
+    8694.23
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15487.89,
+    11.064,
+    12148.81
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    11608.6,
+    4.289,
+    7080.9
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    19157.4,
+    84.444,
+    14283.6
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17352.68,
+    1.408,
+    19816.12
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    17867.26,
+    3.517,
+    18982.72
+   ],
+   "ypr": [
+    224.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    18143.4,
+    72.29,
+    16546.6
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15696.08,
+    9.392,
+    11822.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    15112.6,
+    5.992,
+    10055.55
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    5861.83,
+    35.154,
+    3092.64
+   ],
+   "ypr": [
+    117.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_GiveWay",
+   "pos": [
+    4815.9,
+    3.623,
+    2605.76
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    15448.78,
+    10.371,
+    12203.04
+   ],
+   "ypr": [
+    142.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    15409.42,
+    7.675,
+    12271.96
+   ],
+   "ypr": [
+    322.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    13647.2,
+    7.716,
+    12163.15
+   ],
+   "ypr": [
+    172.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    13646.2,
+    6.697,
+    12249.25
+   ],
+   "ypr": [
+    352.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6501.19,
+    217.681,
+    7101.43
+   ],
+   "ypr": [
+    358.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6492.41,
+    220.394,
+    7016.37
+   ],
+   "ypr": [
+    178.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    13246.41,
+    170.79,
+    9640.28
+   ],
+   "ypr": [
+    55.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    13169.32,
+    159.454,
+    9603.07
+   ],
+   "ypr": [
+    235.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    13045.12,
+    61.243,
+    9028.13
+   ],
+   "ypr": [
+    352.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    13044.68,
+    59.507,
+    8949.27
+   ],
+   "ypr": [
+    172.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    8656.17,
+    163.16,
+    6627.92
+   ],
+   "ypr": [
+    115.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    8579.23,
+    156.541,
+    6676.28
+   ],
+   "ypr": [
+    295.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6761.36,
+    141.998,
+    5460.52
+   ],
+   "ypr": [
+    56.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6692.08,
+    126.603,
+    5433.85
+   ],
+   "ypr": [
+    236.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6320.69,
+    123.514,
+    5730.48
+   ],
+   "ypr": [
+    126.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6263.17,
+    126.045,
+    5795.07
+   ],
+   "ypr": [
+    306.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    9864.64,
+    3.252,
+    5207.33
+   ],
+   "ypr": [
+    224.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    9947.08,
+    2.859,
+    5271.77
+   ],
+   "ypr": [
+    44.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    7360.2,
+    1.823,
+    2593.22
+   ],
+   "ypr": [
+    234.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6963.14,
+    17.271,
+    2952.7
+   ],
+   "ypr": [
+    132.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6919.95,
+    15.667,
+    3012.95
+   ],
+   "ypr": [
+    312.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    5393.53,
+    7.481,
+    2575.68
+   ],
+   "ypr": [
+    318.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    5438.62,
+    8.052,
+    2502.08
+   ],
+   "ypr": [
+    138.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    5949.31,
+    1.84,
+    7250.38
+   ],
+   "ypr": [
+    53.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    5886.09,
+    1.94,
+    7214.02
+   ],
+   "ypr": [
+    233.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    5432.0,
+    1.893,
+    6991.46
+   ],
+   "ypr": [
+    59.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    5363.15,
+    2.081,
+    6965.84
+   ],
+   "ypr": [
+    239.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    9463.41,
+    107.213,
+    6655.27
+   ],
+   "ypr": [
+    234.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    9526.59,
+    104.472,
+    6691.13
+   ],
+   "ypr": [
+    54.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6260.6,
+    112.817,
+    5087.32
+   ],
+   "ypr": [
+    41.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6194.0,
+    109.097,
+    5025.08
+   ],
+   "ypr": [
+    221.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6414.42,
+    132.814,
+    4869.43
+   ],
+   "ypr": [
+    290.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    6511.58,
+    103.017,
+    4824.37
+   ],
+   "ypr": [
+    110.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    3302.17,
+    22.927,
+    3290.42
+   ],
+   "ypr": [
+    27.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    3261.23,
+    22.21,
+    3230.18
+   ],
+   "ypr": [
+    207.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    2837.11,
+    126.306,
+    4194.57
+   ],
+   "ypr": [
+    295.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_OneLaneBridge",
+   "pos": [
+    2904.69,
+    106.191,
+    4153.63
+   ],
+   "ypr": [
+    115.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    14347.4,
+    7.203,
+    23414.78
+   ],
+   "ypr": [
+    52.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    14338.2,
+    6.584,
+    23426.62
+   ],
+   "ypr": [
+    232.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15751.04,
+    3.348,
+    23124.16
+   ],
+   "ypr": [
+    313.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15740.73,
+    3.411,
+    23113.26
+   ],
+   "ypr": [
+    133.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16195.65,
+    22.193,
+    22426.67
+   ],
+   "ypr": [
+    312.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16185.54,
+    22.325,
+    22415.59
+   ],
+   "ypr": [
+    132.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15873.13,
+    4.66,
+    22899.55
+   ],
+   "ypr": [
+    173.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15888.04,
+    4.609,
+    22901.25
+   ],
+   "ypr": [
+    353.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16438.78,
+    1.762,
+    22018.36
+   ],
+   "ypr": [
+    132.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16448.86,
+    1.806,
+    22029.46
+   ],
+   "ypr": [
+    312.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16967.14,
+    6.085,
+    20448.19
+   ],
+   "ypr": [
+    314.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16956.64,
+    6.101,
+    20437.47
+   ],
+   "ypr": [
+    134.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    17363.84,
+    1.923,
+    19834.91
+   ],
+   "ypr": [
+    170.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    17378.62,
+    2.001,
+    19837.5
+   ],
+   "ypr": [
+    350.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    17915.37,
+    4.267,
+    18977.08
+   ],
+   "ypr": [
+    307.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    17904.38,
+    4.373,
+    18962.83
+   ],
+   "ypr": [
+    127.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18018.54,
+    4.99,
+    18688.97
+   ],
+   "ypr": [
+    327.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18003.35,
+    4.944,
+    18679.32
+   ],
+   "ypr": [
+    147.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    17989.89,
+    5.516,
+    18709.47
+   ],
+   "ypr": [
+    162.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18503.15,
+    5.817,
+    18291.78
+   ],
+   "ypr": [
+    78.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18500.27,
+    5.802,
+    18306.5
+   ],
+   "ypr": [
+    258.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18486.95,
+    5.566,
+    18282.67
+   ],
+   "ypr": [
+    124.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18520.05,
+    10.163,
+    18064.49
+   ],
+   "ypr": [
+    219.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18531.66,
+    10.615,
+    18054.98
+   ],
+   "ypr": [
+    39.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18487.02,
+    9.198,
+    17984.22
+   ],
+   "ypr": [
+    18.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18472.79,
+    9.195,
+    17988.95
+   ],
+   "ypr": [
+    198.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18481.63,
+    13.268,
+    17864.58
+   ],
+   "ypr": [
+    152.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18494.97,
+    13.536,
+    17871.42
+   ],
+   "ypr": [
+    332.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19571.93,
+    115.359,
+    16841.85
+   ],
+   "ypr": [
+    276.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19570.27,
+    114.951,
+    16826.95
+   ],
+   "ypr": [
+    96.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19937.22,
+    109.956,
+    16758.31
+   ],
+   "ypr": [
+    95.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19938.64,
+    110.449,
+    16773.24
+   ],
+   "ypr": [
+    275.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19084.12,
+    237.01,
+    15454.59
+   ],
+   "ypr": [
+    41.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19072.95,
+    237.848,
+    15464.61
+   ],
+   "ypr": [
+    221.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19045.45,
+    18.691,
+    13809.94
+   ],
+   "ypr": [
+    46.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19035.03,
+    18.986,
+    13820.73
+   ],
+   "ypr": [
+    226.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19030.92,
+    217.133,
+    15121.94
+   ],
+   "ypr": [
+    160.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19045.07,
+    217.441,
+    15126.92
+   ],
+   "ypr": [
+    340.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    17442.34,
+    7.113,
+    12315.41
+   ],
+   "ypr": [
+    17.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    17428.06,
+    6.847,
+    12320.03
+   ],
+   "ypr": [
+    197.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18606.89,
+    4.789,
+    13666.9
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18606.89,
+    5.12,
+    13651.9
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15724.92,
+    0.956,
+    11698.7
+   ],
+   "ypr": [
+    11.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15724.09,
+    8.904,
+    11831.55
+   ],
+   "ypr": [
+    347.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15749.54,
+    8.009,
+    11425.13
+   ],
+   "ypr": [
+    131.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15759.52,
+    7.102,
+    11436.32
+   ],
+   "ypr": [
+    311.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15111.16,
+    5.173,
+    10034.91
+   ],
+   "ypr": [
+    56.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    14908.22,
+    5.549,
+    9898.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    14908.22,
+    5.072,
+    9883.1
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    13076.63,
+    13.175,
+    8159.76
+   ],
+   "ypr": [
+    44.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    13065.93,
+    17.865,
+    8170.28
+   ],
+   "ypr": [
+    224.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    12653.96,
+    6.64,
+    7758.53
+   ],
+   "ypr": [
+    229.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    12663.64,
+    6.733,
+    7747.07
+   ],
+   "ypr": [
+    49.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    12526.92,
+    6.295,
+    7675.94
+   ],
+   "ypr": [
+    84.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    12525.38,
+    6.883,
+    7690.86
+   ],
+   "ypr": [
+    264.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    11423.26,
+    9.731,
+    7061.74
+   ],
+   "ypr": [
+    94.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    11424.44,
+    9.941,
+    7076.69
+   ],
+   "ypr": [
+    274.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    12293.9,
+    6.937,
+    7529.5
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    12304.5,
+    6.341,
+    7518.9
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    10332.79,
+    2.37,
+    6405.95
+   ],
+   "ypr": [
+    33.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    10320.34,
+    2.65,
+    6414.31
+   ],
+   "ypr": [
+    213.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    11112.35,
+    10.98,
+    7005.64
+   ],
+   "ypr": [
+    223.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    11123.31,
+    11.118,
+    6995.39
+   ],
+   "ypr": [
+    43.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    10172.77,
+    4.244,
+    6065.27
+   ],
+   "ypr": [
+    216.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    10188.82,
+    3.359,
+    6053.32
+   ],
+   "ypr": [
+    36.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    9804.09,
+    5.377,
+    5109.06
+   ],
+   "ypr": [
+    35.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    9790.72,
+    5.531,
+    5118.73
+   ],
+   "ypr": [
+    215.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    8952.72,
+    10.113,
+    3684.95
+   ],
+   "ypr": [
+    41.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    8941.55,
+    9.869,
+    3694.96
+   ],
+   "ypr": [
+    221.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    9565.13,
+    3.096,
+    4815.72
+   ],
+   "ypr": [
+    195.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    9581.02,
+    2.892,
+    4811.29
+   ],
+   "ypr": [
+    15.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    8573.1,
+    4.625,
+    3454.61
+   ],
+   "ypr": [
+    268.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    8573.51,
+    4.489,
+    3439.62
+   ],
+   "ypr": [
+    88.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    5865.88,
+    31.516,
+    3142.37
+   ],
+   "ypr": [
+    233.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    4802.9,
+    3.617,
+    2582.59
+   ],
+   "ypr": [
+    85.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    4801.77,
+    3.579,
+    2597.55
+   ],
+   "ypr": [
+    265.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    5620.96,
+    25.254,
+    3031.22
+   ],
+   "ypr": [
+    231.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    5632.24,
+    25.988,
+    3017.19
+   ],
+   "ypr": [
+    51.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18470.08,
+    1.407,
+    18586.27
+   ],
+   "ypr": [
+    84.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18468.52,
+    1.424,
+    18601.19
+   ],
+   "ypr": [
+    264.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18745.71,
+    3.131,
+    19495.45
+   ],
+   "ypr": [
+    171.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18760.55,
+    3.327,
+    19497.58
+   ],
+   "ypr": [
+    351.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19773.56,
+    0.84,
+    18776.62
+   ],
+   "ypr": [
+    318.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19762.35,
+    0.834,
+    18766.65
+   ],
+   "ypr": [
+    138.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    20150.31,
+    5.443,
+    18501.74
+   ],
+   "ypr": [
+    101.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    20153.59,
+    4.941,
+    18517.91
+   ],
+   "ypr": [
+    281.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    21355.94,
+    4.626,
+    18098.73
+   ],
+   "ypr": [
+    267.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    21356.56,
+    5.13,
+    18083.75
+   ],
+   "ypr": [
+    87.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    21724.95,
+    4.01,
+    18022.81
+   ],
+   "ypr": [
+    98.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    21727.11,
+    3.837,
+    18037.66
+   ],
+   "ypr": [
+    278.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    23758.91,
+    5.767,
+    16864.15
+   ],
+   "ypr": [
+    78.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    23755.89,
+    5.713,
+    16878.85
+   ],
+   "ypr": [
+    258.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    23401.9,
+    1.008,
+    16714.66
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    23416.9,
+    0.848,
+    16714.66
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    21350.97,
+    3.125,
+    15490.31
+   ],
+   "ypr": [
+    43.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    21340.14,
+    3.53,
+    15500.69
+   ],
+   "ypr": [
+    223.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    21262.55,
+    1.005,
+    15081.71
+   ],
+   "ypr": [
+    26.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    21249.08,
+    1.182,
+    15088.32
+   ],
+   "ypr": [
+    206.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    21075.92,
+    14.247,
+    14785.79
+   ],
+   "ypr": [
+    251.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    21080.78,
+    14.678,
+    14771.61
+   ],
+   "ypr": [
+    71.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19110.38,
+    46.996,
+    12645.15
+   ],
+   "ypr": [
+    48.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19100.52,
+    48.251,
+    12656.45
+   ],
+   "ypr": [
+    228.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    17555.05,
+    6.962,
+    11875.32
+   ],
+   "ypr": [
+    136.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    17565.88,
+    7.082,
+    11885.69
+   ],
+   "ypr": [
+    316.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18789.4,
+    30.86,
+    12441.76
+   ],
+   "ypr": [
+    226.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18799.78,
+    30.85,
+    12430.93
+   ],
+   "ypr": [
+    46.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18315.21,
+    4.053,
+    18107.23
+   ],
+   "ypr": [
+    22.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18290.56,
+    4.065,
+    18107.78
+   ],
+   "ypr": [
+    197.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16047.98,
+    7.882,
+    16147.03
+   ],
+   "ypr": [
+    269.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18175.54,
+    12.514,
+    17773.72
+   ],
+   "ypr": [
+    221.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18186.86,
+    12.549,
+    17763.88
+   ],
+   "ypr": [
+    41.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16050.41,
+    8.6,
+    16125.98
+   ],
+   "ypr": [
+    89.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16338.5,
+    61.443,
+    15713.94
+   ],
+   "ypr": [
+    58.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16330.56,
+    60.945,
+    15726.66
+   ],
+   "ypr": [
+    238.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16252.4,
+    68.882,
+    15513.18
+   ],
+   "ypr": [
+    117.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16261.66,
+    70.926,
+    15530.91
+   ],
+   "ypr": [
+    297.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16230.97,
+    14.426,
+    15263.0
+   ],
+   "ypr": [
+    198.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16234.16,
+    23.275,
+    15282.21
+   ],
+   "ypr": [
+    187.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    17564.1,
+    3.026,
+    14540.53
+   ],
+   "ypr": [
+    282.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    17560.9,
+    2.88,
+    14525.87
+   ],
+   "ypr": [
+    102.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16375.74,
+    0.886,
+    14961.15
+   ],
+   "ypr": [
+    130.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16385.38,
+    0.913,
+    14972.65
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    17818.82,
+    0.781,
+    14285.86
+   ],
+   "ypr": [
+    107.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    17823.38,
+    0.798,
+    14300.14
+   ],
+   "ypr": [
+    287.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18257.79,
+    5.247,
+    14032.91
+   ],
+   "ypr": [
+    278.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18255.51,
+    5.339,
+    14018.09
+   ],
+   "ypr": [
+    98.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18634.86,
+    2.291,
+    13806.41
+   ],
+   "ypr": [
+    301.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18627.02,
+    2.229,
+    13793.62
+   ],
+   "ypr": [
+    121.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18523.48,
+    1.988,
+    13838.59
+   ],
+   "ypr": [
+    132.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18533.51,
+    2.059,
+    13849.74
+   ],
+   "ypr": [
+    312.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15617.48,
+    12.239,
+    15954.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15617.48,
+    12.888,
+    15939.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15335.6,
+    4.584,
+    15461.92
+   ],
+   "ypr": [
+    317.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15324.51,
+    4.387,
+    15451.82
+   ],
+   "ypr": [
+    137.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16044.64,
+    2.167,
+    15116.19
+   ],
+   "ypr": [
+    273.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16043.84,
+    1.571,
+    15101.21
+   ],
+   "ypr": [
+    93.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15514.12,
+    3.938,
+    15259.88
+   ],
+   "ypr": [
+    127.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15523.25,
+    4.076,
+    15271.78
+   ],
+   "ypr": [
+    307.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19018.31,
+    0.976,
+    18493.3
+   ],
+   "ypr": [
+    309.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19995.6,
+    110.716,
+    17558.46
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    20010.6,
+    110.722,
+    17558.46
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19147.41,
+    13.954,
+    18181.24
+   ],
+   "ypr": [
+    177.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19162.39,
+    13.273,
+    18182.01
+   ],
+   "ypr": [
+    357.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18744.54,
+    69.465,
+    13472.15
+   ],
+   "ypr": [
+    178.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18759.54,
+    68.651,
+    13472.48
+   ],
+   "ypr": [
+    358.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18136.15,
+    71.603,
+    16529.96
+   ],
+   "ypr": [
+    353.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18121.25,
+    71.619,
+    16528.29
+   ],
+   "ypr": [
+    173.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16413.97,
+    54.278,
+    15426.83
+   ],
+   "ypr": [
+    87.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16413.35,
+    54.015,
+    15441.81
+   ],
+   "ypr": [
+    267.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18034.08,
+    75.737,
+    16341.09
+   ],
+   "ypr": [
+    236.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18042.46,
+    75.205,
+    16328.65
+   ],
+   "ypr": [
+    56.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16253.05,
+    14.119,
+    15258.29
+   ],
+   "ypr": [
+    11.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16255.64,
+    20.354,
+    15278.53
+   ],
+   "ypr": [
+    15.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19003.01,
+    1.076,
+    18478.48
+   ],
+   "ypr": [
+    148.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    20145.6,
+    107.687,
+    17540.5
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    20160.6,
+    107.602,
+    17540.5
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    19923.57,
+    107.9,
+    16825.21
+   ],
+   "ypr": [
+    80.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    19921.03,
+    107.351,
+    16839.99
+   ],
+   "ypr": [
+    260.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    21124.79,
+    8.165,
+    15360.6
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    21124.79,
+    7.34,
+    15345.6
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    20304.18,
+    86.626,
+    17901.02
+   ],
+   "ypr": [
+    32.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    20291.52,
+    85.692,
+    17909.08
+   ],
+   "ypr": [
+    212.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15703.55,
+    1.154,
+    11705.97
+   ],
+   "ypr": [
+    190.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15702.4,
+    8.982,
+    11824.68
+   ],
+   "ypr": [
+    168.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    14487.29,
+    7.84,
+    12101.94
+   ],
+   "ypr": [
+    46.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    14476.94,
+    7.181,
+    12112.8
+   ],
+   "ypr": [
+    226.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15567.38,
+    17.769,
+    12036.49
+   ],
+   "ypr": [
+    317.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15556.26,
+    17.945,
+    12026.43
+   ],
+   "ypr": [
+    137.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    14047.7,
+    1.943,
+    11981.64
+   ],
+   "ypr": [
+    314.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    14037.16,
+    1.88,
+    11970.96
+   ],
+   "ypr": [
+    134.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    11102.72,
+    4.475,
+    11095.44
+   ],
+   "ypr": [
+    84.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    11101.18,
+    3.892,
+    11110.36
+   ],
+   "ypr": [
+    264.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    10293.16,
+    4.3,
+    9976.28
+   ],
+   "ypr": [
+    41.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    10281.84,
+    3.582,
+    9986.12
+   ],
+   "ypr": [
+    221.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    10843.53,
+    4.925,
+    11034.01
+   ],
+   "ypr": [
+    231.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    10852.8,
+    5.476,
+    11022.22
+   ],
+   "ypr": [
+    51.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    10082.6,
+    1.058,
+    9662.55
+   ],
+   "ypr": [
+    222.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    10093.72,
+    1.735,
+    9652.49
+   ],
+   "ypr": [
+    42.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    9847.1,
+    3.838,
+    9381.64
+   ],
+   "ypr": [
+    51.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    9837.83,
+    3.426,
+    9393.43
+   ],
+   "ypr": [
+    231.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    9650.83,
+    3.998,
+    9205.36
+   ],
+   "ypr": [
+    218.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    9662.52,
+    4.632,
+    9195.96
+   ],
+   "ypr": [
+    38.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    8249.46,
+    94.729,
+    8201.28
+   ],
+   "ypr": [
+    41.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    8238.14,
+    93.424,
+    8211.12
+   ],
+   "ypr": [
+    221.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    8036.57,
+    92.374,
+    8117.06
+   ],
+   "ypr": [
+    261.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    8038.78,
+    93.878,
+    8102.23
+   ],
+   "ypr": [
+    81.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    6009.15,
+    133.331,
+    5757.66
+   ],
+   "ypr": [
+    314.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    5998.65,
+    133.718,
+    5746.94
+   ],
+   "ypr": [
+    134.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    5411.35,
+    185.449,
+    5125.4
+   ],
+   "ypr": [
+    80.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    5408.96,
+    185.424,
+    5140.2
+   ],
+   "ypr": [
+    260.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    6019.63,
+    150.893,
+    5563.01
+   ],
+   "ypr": [
+    220.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    6030.97,
+    154.396,
+    5553.19
+   ],
+   "ypr": [
+    40.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    5118.96,
+    207.401,
+    4838.21
+   ],
+   "ypr": [
+    185.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    5133.9,
+    206.737,
+    4836.91
+   ],
+   "ypr": [
+    5.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    4439.2,
+    3.287,
+    2708.47
+   ],
+   "ypr": [
+    309.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    4427.71,
+    3.332,
+    2694.6
+   ],
+   "ypr": [
+    129.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    10366.33,
+    18.998,
+    9708.38
+   ],
+   "ypr": [
+    116.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    10373.7,
+    20.562,
+    9723.13
+   ],
+   "ypr": [
+    296.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    13243.47,
+    178.293,
+    9696.89
+   ],
+   "ypr": [
+    279.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    13240.68,
+    177.534,
+    9680.63
+   ],
+   "ypr": [
+    99.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    13246.54,
+    170.511,
+    9654.64
+   ],
+   "ypr": [
+    265.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    10135.17,
+    8.894,
+    6386.29
+   ],
+   "ypr": [
+    318.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    10123.95,
+    9.25,
+    6376.33
+   ],
+   "ypr": [
+    138.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    8129.61,
+    134.595,
+    6556.85
+   ],
+   "ypr": [
+    48.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    8119.71,
+    135.175,
+    6568.11
+   ],
+   "ypr": [
+    228.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    6211.36,
+    127.928,
+    5755.16
+   ],
+   "ypr": [
+    49.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    6201.58,
+    127.975,
+    5766.53
+   ],
+   "ypr": [
+    229.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    7900.59,
+    149.232,
+    6409.16
+   ],
+   "ypr": [
+    227.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    7910.7,
+    148.678,
+    6398.07
+   ],
+   "ypr": [
+    47.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    5876.95,
+    34.19,
+    3119.1
+   ],
+   "ypr": [
+    64.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    3436.84,
+    62.4,
+    4279.46
+   ],
+   "ypr": [
+    127.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    3446.92,
+    62.477,
+    4292.52
+   ],
+   "ypr": [
+    307.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    17872.45,
+    6.985,
+    18363.96
+   ],
+   "ypr": [
+    239.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    17878.51,
+    7.026,
+    18353.6
+   ],
+   "ypr": [
+    59.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    18979.4,
+    31.148,
+    13500.11
+   ],
+   "ypr": [
+    144.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18989.2,
+    31.163,
+    13507.04
+   ],
+   "ypr": [
+    324.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    21046.01,
+    11.013,
+    14829.5
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    21054.5,
+    11.426,
+    14821.01
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    16076.36,
+    21.017,
+    22217.05
+   ],
+   "ypr": [
+    240.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    16082.32,
+    20.551,
+    22206.63
+   ],
+   "ypr": [
+    60.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    23429.86,
+    6.746,
+    16927.67
+   ],
+   "ypr": [
+    275.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    23428.64,
+    6.509,
+    16915.73
+   ],
+   "ypr": [
+    95.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    9648.86,
+    9.681,
+    5122.1
+   ],
+   "ypr": [
+    314.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    9640.4,
+    9.402,
+    5113.59
+   ],
+   "ypr": [
+    134.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    12210.42,
+    20.658,
+    7748.51
+   ],
+   "ypr": [
+    307.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    12203.06,
+    20.692,
+    7739.03
+   ],
+   "ypr": [
+    127.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    14181.54,
+    1.17,
+    23477.67
+   ],
+   "ypr": [
+    316.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    14172.85,
+    1.009,
+    23469.39
+   ],
+   "ypr": [
+    136.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    15739.12,
+    5.378,
+    22958.6
+   ],
+   "ypr": [
+    227.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    15747.28,
+    5.38,
+    22949.8
+   ],
+   "ypr": [
+    47.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed50",
+   "pos": [
+    21471.98,
+    12.722,
+    17924.66
+   ],
+   "ypr": [
+    226.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    21480.32,
+    13.142,
+    17916.03
+   ],
+   "ypr": [
+    46.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_Speed100",
+   "pos": [
+    18280.74,
+    3.927,
+    18103.14
+   ],
+   "ypr": [
+    313.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    15277.61,
+    3.263,
+    23498.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    18980.7,
+    47.579,
+    17430.76
+   ],
+   "ypr": [
+    315.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    19963.38,
+    279.886,
+    16069.39
+   ],
+   "ypr": [
+    26.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    19253.2,
+    102.464,
+    14398.44
+   ],
+   "ypr": [
+    42.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    18038.76,
+    2.871,
+    13137.37
+   ],
+   "ypr": [
+    27.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    13374.04,
+    1.201,
+    8564.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    9169.6,
+    1.981,
+    4028.9
+   ],
+   "ypr": [
+    42.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    7859.91,
+    1.622,
+    2864.72
+   ],
+   "ypr": [
+    85.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    6133.6,
+    39.725,
+    3104.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    18803.42,
+    2.073,
+    19223.2
+   ],
+   "ypr": [
+    153.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    19422.4,
+    6.047,
+    19080.14
+   ],
+   "ypr": [
+    291.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    22598.12,
+    1.19,
+    18166.93
+   ],
+   "ypr": [
+    241.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    22207.36,
+    1.099,
+    16016.93
+   ],
+   "ypr": [
+    75.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    20408.84,
+    42.094,
+    14312.76
+   ],
+   "ypr": [
+    69.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    17245.59,
+    5.12,
+    14708.76
+   ],
+   "ypr": [
+    314.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH27",
+   "pos": [
+    19593.63,
+    99.978,
+    17433.36
+   ],
+   "ypr": [
+    310.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH4",
+   "pos": [
+    17190.87,
+    57.519,
+    15936.76
+   ],
+   "ypr": [
+    79.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH5",
+   "pos": [
+    20641.77,
+    228.918,
+    16234.07
+   ],
+   "ypr": [
+    325.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    14789.75,
+    2.279,
+    12289.98
+   ],
+   "ypr": [
+    54.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    13797.37,
+    2.063,
+    12580.78
+   ],
+   "ypr": [
+    201.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    11474.59,
+    1.725,
+    11332.79
+   ],
+   "ypr": [
+    47.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    10404.55,
+    1.665,
+    10206.71
+   ],
+   "ypr": [
+    2.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    7186.17,
+    1.535,
+    7772.25
+   ],
+   "ypr": [
+    78.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    6437.9,
+    233.699,
+    6981.92
+   ],
+   "ypr": [
+    224.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    5800.01,
+    166.961,
+    5810.3
+   ],
+   "ypr": [
+    301.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    4847.93,
+    140.592,
+    4104.55
+   ],
+   "ypr": [
+    46.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH7",
+   "pos": [
+    11179.95,
+    90.866,
+    9694.73
+   ],
+   "ypr": [
+    276.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH7",
+   "pos": [
+    12942.97,
+    269.893,
+    9945.49
+   ],
+   "ypr": [
+    171.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH73",
+   "pos": [
+    12507.45,
+    313.566,
+    9929.55
+   ],
+   "ypr": [
+    264.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH73",
+   "pos": [
+    10702.5,
+    48.322,
+    9563.96
+   ],
+   "ypr": [
+    63.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH8",
+   "pos": [
+    9322.51,
+    146.137,
+    6546.13
+   ],
+   "ypr": [
+    91.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH8",
+   "pos": [
+    7186.18,
+    283.903,
+    5969.37
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH83",
+   "pos": [
+    9310.98,
+    150.14,
+    6546.5
+   ],
+   "ypr": [
+    91.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH8",
+   "pos": [
+    4997.9,
+    137.408,
+    4216.54
+   ],
+   "ypr": [
+    268.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH94",
+   "pos": [
+    3601.51,
+    89.702,
+    4167.17
+   ],
+   "ypr": [
+    128.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH94",
+   "pos": [
+    4187.39,
+    95.321,
+    3873.07
+   ],
+   "ypr": [
+    350.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    14466.0,
+    4.045,
+    23510.08
+   ],
+   "ypr": [
+    254.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    15632.92,
+    2.811,
+    23219.11
+   ],
+   "ypr": [
+    134.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    16073.79,
+    20.018,
+    22521.89
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    15906.52,
+    13.216,
+    22755.04
+   ],
+   "ypr": [
+    340.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    16528.52,
+    2.661,
+    21895.88
+   ],
+   "ypr": [
+    349.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    16699.23,
+    6.355,
+    21341.94
+   ],
+   "ypr": [
+    162.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    16853.39,
+    8.288,
+    20547.72
+   ],
+   "ypr": [
+    138.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    16829.11,
+    18.773,
+    20902.44
+   ],
+   "ypr": [
+    0.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    17398.1,
+    3.438,
+    19675.99
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    17786.02,
+    3.575,
+    19072.12
+   ],
+   "ypr": [
+    134.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    18481.48,
+    11.084,
+    17911.46
+   ],
+   "ypr": [
+    354.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    18627.56,
+    26.625,
+    17813.2
+   ],
+   "ypr": [
+    278.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    19104.83,
+    47.228,
+    17283.19
+   ],
+   "ypr": [
+    136.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    19425.71,
+    114.334,
+    16876.05
+   ],
+   "ypr": [
+    122.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    19347.04,
+    112.363,
+    16904.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    20082.59,
+    139.804,
+    16684.22
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    19099.86,
+    265.494,
+    15618.63
+   ],
+   "ypr": [
+    194.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    19131.83,
+    38.961,
+    13943.1
+   ],
+   "ypr": [
+    221.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    19069.06,
+    180.533,
+    14974.47
+   ],
+   "ypr": [
+    342.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    17491.23,
+    2.806,
+    12460.75
+   ],
+   "ypr": [
+    223.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    18476.98,
+    2.03,
+    13572.64
+   ],
+   "ypr": [
+    45.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    15696.66,
+    11.552,
+    11845.52
+   ],
+   "ypr": [
+    142.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    15867.59,
+    4.907,
+    11328.69
+   ],
+   "ypr": [
+    319.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    15228.14,
+    1.712,
+    10138.06
+   ],
+   "ypr": [
+    230.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    14787.95,
+    1.043,
+    9794.12
+   ],
+   "ypr": [
+    46.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    14399.56,
+    3.726,
+    9241.42
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    13089.4,
+    25.108,
+    8314.1
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    14058.69,
+    2.841,
+    8894.8
+   ],
+   "ypr": [
+    57.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    12660.44,
+    6.635,
+    7763.8
+   ],
+   "ypr": [
+    233.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    11578.47,
+    4.03,
+    7073.13
+   ],
+   "ypr": [
+    269.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    12200.25,
+    6.78,
+    7402.5
+   ],
+   "ypr": [
+    44.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    10444.89,
+    2.741,
+    6521.69
+   ],
+   "ypr": [
+    248.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    11017.85,
+    4.338,
+    6888.54
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    10116.76,
+    1.178,
+    5922.03
+   ],
+   "ypr": [
+    27.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    9890.78,
+    2.06,
+    5235.43
+   ],
+   "ypr": [
+    224.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    9010.96,
+    2.022,
+    3828.15
+   ],
+   "ypr": [
+    208.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    9479.95,
+    1.95,
+    4697.22
+   ],
+   "ypr": [
+    29.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    8435.44,
+    1.854,
+    3390.08
+   ],
+   "ypr": [
+    57.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    6025.53,
+    33.686,
+    3148.1
+   ],
+   "ypr": [
+    282.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    4926.44,
+    7.063,
+    2677.06
+   ],
+   "ypr": [
+    232.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH1",
+   "pos": [
+    5526.14,
+    18.435,
+    2909.3
+   ],
+   "ypr": [
+    45.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    18637.13,
+    1.927,
+    18604.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    18768.3,
+    3.157,
+    19345.77
+   ],
+   "ypr": [
+    356.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    19669.24,
+    1.31,
+    18882.65
+   ],
+   "ypr": [
+    135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    20293.13,
+    2.382,
+    18454.98
+   ],
+   "ypr": [
+    315.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    21206.25,
+    1.434,
+    18089.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    21873.72,
+    1.945,
+    18004.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    23461.75,
+    1.501,
+    18726.48
+   ],
+   "ypr": [
+    58.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    23872.69,
+    3.638,
+    16971.16
+   ],
+   "ypr": [
+    225.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    23930.68,
+    2.204,
+    18848.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    23393.36,
+    1.116,
+    16516.91
+   ],
+   "ypr": [
+    27.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    23349.75,
+    1.503,
+    16334.58
+   ],
+   "ypr": [
+    186.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    21489.39,
+    1.522,
+    15619.33
+   ],
+   "ypr": [
+    225.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    22928.33,
+    1.524,
+    16092.42
+   ],
+   "ypr": [
+    84.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    20971.38,
+    17.859,
+    14676.52
+   ],
+   "ypr": [
+    36.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    20030.96,
+    60.66,
+    14032.67
+   ],
+   "ypr": [
+    226.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    19170.6,
+    68.706,
+    12803.39
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    19631.19,
+    42.14,
+    13770.93
+   ],
+   "ypr": [
+    46.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    17685.55,
+    2.791,
+    11804.4
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH2",
+   "pos": [
+    18675.49,
+    25.906,
+    12342.55
+   ],
+   "ypr": [
+    60.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    16208.07,
+    6.514,
+    16148.1
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    18094.04,
+    16.073,
+    17645.3
+   ],
+   "ypr": [
+    43.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    16393.42,
+    31.728,
+    15870.66
+   ],
+   "ypr": [
+    184.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    17414.25,
+    1.359,
+    14564.21
+   ],
+   "ypr": [
+    107.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    16501.5,
+    2.359,
+    14885.6
+   ],
+   "ypr": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    17946.88,
+    0.875,
+    14197.09
+   ],
+   "ypr": [
+    306.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    18110.48,
+    2.839,
+    14068.76
+   ],
+   "ypr": [
+    129.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    18493.87,
+    2.098,
+    13865.23
+   ],
+   "ypr": [
+    132.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH3",
+   "pos": [
+    18671.7,
+    3.769,
+    13780.88
+   ],
+   "ypr": [
+    308.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH45",
+   "pos": [
+    15276.9,
+    2.644,
+    15604.26
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH45",
+   "pos": [
+    15893.89,
+    0.874,
+    15114.4
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH45",
+   "pos": [
+    15642.76,
+    1.441,
+    15180.35
+   ],
+   "ypr": [
+    314.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH27",
+   "pos": [
+    18890.57,
+    1.991,
+    18573.72
+   ],
+   "ypr": [
+    121.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH27",
+   "pos": [
+    19912.45,
+    110.294,
+    17433.62
+   ],
+   "ypr": [
+    45.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH27",
+   "pos": [
+    19166.9,
+    22.646,
+    18030.43
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH4",
+   "pos": [
+    18044.9,
+    75.059,
+    16656.56
+   ],
+   "ypr": [
+    135.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH4",
+   "pos": [
+    17939.67,
+    73.84,
+    16785.52
+   ],
+   "ypr": [
+    317.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH4",
+   "pos": [
+    16534.37,
+    50.518,
+    15532.47
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH4",
+   "pos": [
+    17912.14,
+    70.667,
+    16257.81
+   ],
+   "ypr": [
+    44.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH5",
+   "pos": [
+    20208.78,
+    108.717,
+    17401.77
+   ],
+   "ypr": [
+    332.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH5",
+   "pos": [
+    20066.96,
+    98.277,
+    16879.63
+   ],
+   "ypr": [
+    254.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH5",
+   "pos": [
+    20996.88,
+    33.018,
+    15438.41
+   ],
+   "ypr": [
+    132.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH30",
+   "pos": [
+    20320.7,
+    56.112,
+    18085.62
+   ],
+   "ypr": [
+    179.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    15692.55,
+    14.044,
+    11854.58
+   ],
+   "ypr": [
+    157.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    14619.58,
+    4.839,
+    12173.09
+   ],
+   "ypr": [
+    253.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    15459.08,
+    11.85,
+    12143.53
+   ],
+   "ypr": [
+    137.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    13892.09,
+    1.187,
+    12043.94
+   ],
+   "ypr": [
+    132.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    11227.02,
+    1.258,
+    11205.08
+   ],
+   "ypr": [
+    229.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    10347.87,
+    1.267,
+    10119.16
+   ],
+   "ypr": [
+    215.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    10743.11,
+    2.469,
+    10919.64
+   ],
+   "ypr": [
+    44.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    9990.44,
+    1.789,
+    9541.65
+   ],
+   "ypr": [
+    43.8,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    9942.19,
+    1.373,
+    9504.74
+   ],
+   "ypr": [
+    221.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    9525.24,
+    1.634,
+    9114.63
+   ],
+   "ypr": [
+    45.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    9145.02,
+    1.395,
+    8899.43
+   ],
+   "ypr": [
+    225.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    8252.14,
+    49.58,
+    8362.77
+   ],
+   "ypr": [
+    181.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    8757.08,
+    3.024,
+    8701.07
+   ],
+   "ypr": [
+    88.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    7886.51,
+    53.189,
+    8095.6
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    5846.88,
+    147.851,
+    5774.12
+   ],
+   "ypr": [
+    98.5,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    5563.99,
+    194.619,
+    5148.31
+   ],
+   "ypr": [
+    278.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    5929.05,
+    202.064,
+    5445.46
+   ],
+   "ypr": [
+    36.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    5110.6,
+    241.174,
+    4687.5
+   ],
+   "ypr": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    4320.62,
+    86.07,
+    3828.33
+   ],
+   "ypr": [
+    226.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    4333.03,
+    3.247,
+    2819.37
+   ],
+   "ypr": [
+    177.3,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH6",
+   "pos": [
+    4147.54,
+    50.701,
+    3401.73
+   ],
+   "ypr": [
+    1.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH7",
+   "pos": [
+    10527.14,
+    41.379,
+    9700.65
+   ],
+   "ypr": [
+    296.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH7",
+   "pos": [
+    13099.55,
+    195.029,
+    9645.65
+   ],
+   "ypr": [
+    47.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH7",
+   "pos": [
+    13210.55,
+    135.894,
+    9458.22
+   ],
+   "ypr": [
+    358.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH8",
+   "pos": [
+    8273.69,
+    133.647,
+    6605.29
+   ],
+   "ypr": [
+    264.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH8",
+   "pos": [
+    6400.57,
+    129.367,
+    5665.42
+   ],
+   "ypr": [
+    323.4,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH8",
+   "pos": [
+    7804.86,
+    157.582,
+    6292.65
+   ],
+   "ypr": [
+    42.6,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH83",
+   "pos": [
+    10003.21,
+    27.469,
+    6458.1
+   ],
+   "ypr": [
+    90.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH94",
+   "pos": [
+    3562.3,
+    82.378,
+    4197.52
+   ],
+   "ypr": [
+    292.7,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Aotearoa_SignPost_SH94",
+   "pos": [
+    4170.6,
+    99.043,
+    3892.0
+   ],
+   "ypr": [
+    180.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  }
+ ]
+}
