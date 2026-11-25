@@ -52,6 +52,13 @@ SKI_FIELDS = [
 LIFT_LENGTH = 420.0
 
 HOBBITON = ("Hobbiton", "Hobbiton", -37.8721, 175.6829)
+INDUSTRIAL = [
+    # name, label, lat, lon
+    ("FonterraWhareroa", "Fonterra Whareroa", -39.6130, 174.2620),
+    ("FonterraEltham", "Fonterra Eltham", -39.4320, 174.2960),
+]
+INDUSTRIAL_PAD = (170.0, 110.0)
+
 WHAKAARI = ("Whakaari", "Whakaari / White Island", -37.52, 177.18)
 WHAKAARI_RADIUS = 260.0
 WHAKAARI_PEAK = 70.0
@@ -271,6 +278,29 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         mark(blocked, grid, site.x, site.y, site.heading, 60.0, 40.0, pad=800.0)
         print(f"  {label}: lodge at {grid.sample(h, site.x, site.y)[0]:.0f} m")
 
+    for cls, label, lat, lon in INDUSTRIAL:
+        tx, ty = lonlat_to_world(lon, lat)
+        spot = find_rect(ok(), h, grid, tx, ty, 1500.0, *INDUSTRIAL_PAD)
+        if spot is None:
+            print(f"  {label}: no room")
+            continue
+        x, y, hd = spot
+        h = flatten_rect(h, land, grid, x, y, hd, *INDUSTRIAL_PAD, blend=40.0)
+        site = Site("industrial", cls, label, x, y, INDUSTRIAL_PAD[0] / 2, hd, "NameLocal")
+        site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, *INDUSTRIAL_PAD)})
+        for along, across, cls_b, turn in ((-50.0, 20.0, "Land_Warehouse", 1), (-15.0, 20.0, "Land_Warehouse", 1),
+                                           (20.0, 20.0, "Land_Warehouse", 1), (55.0, 25.0, "Land_Barn_Metal_Big", 1),
+                                           (-55.0, -32.0, "Land_Office2", 0), (5.0, -35.0, "Land_Shed_W4", 0)):
+            bx, by = local_to_world(x, y, hd, along, across)
+            site.buildings.append(Building(cls_b, bx, by, (hd + 90.0 * turn) % 360))
+        for k in range(8):
+            bx, by = local_to_world(x, y, hd, 25.0 + (k % 4) * 15.0, -32.0 - (k // 4) * 9.0)
+            site.buildings.append(Building(CONTAINERS[rng.integers(len(CONTAINERS))], bx, by, hd % 360))
+        site.extra["entrance"] = local_to_world(x, y, hd, 0.0, -INDUSTRIAL_PAD[1] / 2 - 20.0)
+        sites.append(site)
+        mark(blocked, grid, x, y, hd, *INDUSTRIAL_PAD)
+        print(f"  {label}: industrial site")
+
     cls, label, lat, lon = HOBBITON
     tx, ty = lonlat_to_world(lon, lat)
     spot = find_rect(ok(), h, grid, tx, ty, 1500.0, 140.0, 110.0, headings=(0.0, 45.0))
@@ -455,7 +485,8 @@ def draw_preview(relief, sites: list[Site], size_m: float):
     from PIL import ImageDraw
 
     colours = {"airfield": (40, 40, 40), "port": (30, 90, 200), "ski": (255, 255, 255), "hobbiton": (250, 200, 0),
-               "farm": (150, 90, 40), "whakaari": (220, 30, 30)}
+               "farm": (150, 90, 40), "whakaari": (220, 30, 30),
+               "industrial": (160, 60, 200)}
     img = relief.convert("RGB").copy()
     d = ImageDraw.Draw(img)
     font = towns_mod._font(15)

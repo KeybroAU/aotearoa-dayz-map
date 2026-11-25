@@ -32,7 +32,7 @@ HIGHWAYS = [
              "Timaru", "Ōamaru", "Dunedin", "Gore", "Invercargill"]),
     ("SH2", ["Auckland", "Thames", "Tauranga", "Whakatāne", "Gisborne", "Napier", "Hastings", "Masterton",
              "Wellington"]),
-    ("SH3", ["Hamilton", "New Plymouth", "Whanganui", "RNZAF Base Ōhakea", "Palmerston North"]),
+    ("SH3", ["Hamilton", "New Plymouth", "Eltham", "Whanganui", "RNZAF Base Ōhakea", "Palmerston North"]),
     ("SH4", ["Hamilton", "Taumarunui", "Whanganui"]),
     ("SH5", ["Hamilton", "Rotorua", "Taupō", "Napier"]),
     ("SH30", ["Rotorua", "Whakatāne"]),
@@ -288,7 +288,7 @@ def add_access_roads(h, land, lake_mask, river_mask, towns, grid, roads: list[Ro
         if len(world) < 2:
             continue
         pts = chaikin(measure.approximate_polygon(world, tolerance=2.0), 2)
-        kind = "street" if site.kind in ("airfield", "port") else "track"
+        kind = "street" if site.kind in ("airfield", "port", "industrial") else "track"
         road = Road(kind, site.class_name, [(float(x), float(y)) for x, y in pts])
         road.bridges = find_bridges(pts, river_mask, grid)
         roads.append(road)

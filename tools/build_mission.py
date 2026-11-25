@@ -255,8 +255,8 @@ def infected_zones(land, towns, pois, rng):
     for p in pois:
         if p["kind"] == "farm":
             scatter(p["x"], p["y"], 20.0, 1, "InfectedSolitude", 1, 2, 30.0)
-        elif p["kind"] == "port":
-            scatter(p["x"], p["y"], 50.0, 2, "InfectedIndustrial", 2, 4)
+        elif p["kind"] in ("port", "industrial"):
+            scatter(p["x"], p["y"], 60.0, 2, "InfectedIndustrial", 2, 4)
         elif p["kind"] == "airfield":
             kind = "InfectedMilitary" if "Ōhakea" in p["label"] else "InfectedIndustrial"
             scatter(p["x"], p["y"], 150.0, 3, kind, 2, 5)
