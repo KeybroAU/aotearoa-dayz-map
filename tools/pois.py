@@ -91,6 +91,20 @@ WHAKAARI = ("Whakaari", "Whakaari / White Island", -37.52, 177.18)
 WHAKAARI_RADIUS = 260.0
 WHAKAARI_PEAK = 70.0
 
+FERRIES = [("InterislanderWellington", "Interislander Terminal", "Wellington"),
+           ("InterislanderPicton", "Picton Ferry Terminal", "Picton")]
+BOAT_RAMPS = ["Paihia", "Whangārei", "Thames", "Whakatāne", "Gisborne", "Ōpunake", "Kaikōura", "Westport",
+              "Greymouth", "Ōamaru", "Te Anau", "Taupō", "Wānaka", "Queenstown", "Picton", "Nelson"]
+RAMP_PAD = (30.0, 8.0)
+SURF_CLUBS = ["Auckland", "Tauranga", "Gisborne", "Napier", "New Plymouth", "Christchurch", "Dunedin", "Whangārei"]
+HOLIDAY_PARKS = [("Taupō", "Lake Taupō Holiday Park"), ("Rotorua", "Rotorua Holiday Park"),
+                 ("Wānaka", "Wānaka Lakeview Holiday Park"), ("Te Anau", "Te Anau Holiday Park"),
+                 ("Queenstown", "Queenstown Holiday Park"), ("Hanmer Springs", "Hanmer Springs Holiday Park"),
+                 ("Franz Josef", "Franz Josef Holiday Park"), ("Paihia", "Bay of Islands Holiday Park")]
+BACH_CLUSTERS = 14
+DOC_HUTS = 16
+STATION_PAD = (34.0, 16.0)
+
 FARM_COUNT = 70
 FARM_SPACING = 320.0
 
@@ -103,6 +117,7 @@ FOOTPRINTS = {
     "Land_Tank_Big": (24, 24), "Land_Tank_Medium": (14, 14), "Land_Power_Station": (40, 60),
     "Land_Smokestack_Big": (10, 10), "Land_Power_TransformerStation": (8, 10), "Land_Lighthouse": (10, 10),
     "Land_Mil_Barracks1": (10, 32), "Land_Mil_Barracks2": (10, 32), "Land_Mil_Guardhouse1": (6, 8),
+    "Land_Rail_Station_Big": (12, 30),
 }
 towns_mod.FOOTPRINTS.update(FOOTPRINTS)
 CONTAINERS = ["Land_Container_1Bo", "Land_Container_1Mo", "Land_Container_1Moh", "Land_Container_1Aoh"]
@@ -391,6 +406,102 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         mark(blocked, grid, x, y, hd, 140.0, 110.0)
         print("  Hobbiton placed")
 
+    # Interislander terminals: the only big boats between the islands start here.
+    for cls, label, near in FERRIES:
+        t = by_name[near]
+        near_coast = (dist_sea > 25.0) & (dist_sea < 45.0)
+        spot = None
+        for search in (t.radius + 500.0, t.radius + 1200.0, t.radius + 2200.0):
+            spot = find_port(land & ~blocked, near_coast, h, dist_sea, grid, t, search)
+            if spot:
+                break
+        if spot is None:
+            print(f"  {label}: no coastal room")
+            continue
+        x, y, hd = spot
+        h = flatten_rect(h, land, grid, x, y, hd, *PORT_PAD, blend=25.0, min_z=2.0)
+        site = Site("ferry", cls, label, x, y, PORT_PAD[0] / 2, hd)
+        site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, *PORT_PAD)})
+        for along, across, cls_b, turn in ((-30.0, 18.0, "Land_Warehouse", 0), (35.0, 20.0, "Land_Office2", 1),
+                                           (40.0, -20.0, "Land_Mil_ATC_Small", 0)):
+            site.buildings.append(Building(cls_b, *local_to_world(x, y, hd, along, across), (hd + 90.0 * turn) % 360))
+        for k in range(6):
+            bx, by = local_to_world(x, y, hd, -50.0 + (k % 3) * 15.0, -18.0 - (k // 3) * 9.0)
+            site.buildings.append(Building(CONTAINERS[rng.integers(len(CONTAINERS))], bx, by, hd % 360))
+        sites.append(site)
+        mark(blocked, grid, x, y, hd, *PORT_PAD)
+        print(f"  {label}: ferry terminal")
+
+    dist_water = ndimage.distance_transform_edt(land & ~lake_mask) * grid.cell
+    near_coast = (dist_water > 8.0) & (dist_water < 25.0)
+    for town_name in BOAT_RAMPS:
+        t = by_name[town_name]
+        spot = None
+        for search in (t.radius + 400.0, t.radius + 1000.0):
+            spot = find_coast_spot(land & ~blocked, near_coast, h, dist_water, grid, t, search, *RAMP_PAD)
+            if spot:
+                break
+        if spot is None:
+            continue
+        x, y, hd = spot
+        h = flatten_rect(h, land, grid, x, y, hd, *RAMP_PAD, blend=12.0, max_grade=0.08, min_z=0.6)
+        site = Site("ramp", f"BoatRamp{t.class_name}", "", x, y, RAMP_PAD[0] / 2, hd, "")
+        site.surfaces.append({"kind": "concrete", "points": rect_points(x, y, hd, *RAMP_PAD)})
+        site.buildings.append(Building("Land_Shed_W4", *local_to_world(x, y, hd, -10.0, 9.0), hd))
+        sites.append(site)
+        mark(blocked, grid, x, y, hd, *RAMP_PAD)
+    print(f"  Boat ramps: {sum(s.kind == 'ramp' for s in sites)}")
+
+    near_beach = (dist_sea > 40.0) & (dist_sea < 90.0) & (h < 12.0)
+    for town_name in SURF_CLUBS:
+        t = by_name[town_name]
+        spot = None
+        for search in (t.radius + 500.0, t.radius + 1200.0):
+            spot = find_coast_spot(ok(), near_beach, h, dist_sea, grid, t, search, 40.0, 30.0)
+            if spot:
+                break
+        if spot is None:
+            continue
+        x, y, hd = spot
+        h = flatten_rect(h, land, grid, x, y, hd, 40.0, 30.0, blend=20.0, min_z=2.0)
+        site = Site("surfclub", f"SurfClub{t.class_name}", f"{t.name} Surf Life Saving Club", x, y, 22.0, hd,
+                    "NameLocal")
+        site.buildings.append(Building("Land_Village_HealthCare", x, y, hd))
+        site.buildings.append(Building("Land_Shed_W4", *local_to_world(x, y, hd, 14.0, -8.0), hd))
+        site.surfaces.append({"kind": "gravel", "points": rect_points(x, y, hd, 30.0, 8.0, 0.0, -14.0)})
+        sites.append(site)
+        mark(blocked, grid, x, y, hd, 40.0, 30.0)
+    print(f"  Surf clubs: {sum(s.kind == 'surfclub' for s in sites)}")
+
+    for town_name, label in HOLIDAY_PARKS:
+        t = by_name[town_name]
+        spot = find_rect(ok(), h, grid, t.x, t.y, t.radius + 900.0, 70.0, 50.0, step=30.0)
+        if spot is None:
+            continue
+        x, y, hd = spot
+        h = flatten_rect(h, land, grid, x, y, hd, 70.0, 50.0, blend=25.0, max_grade=0.03)
+        site = Site("campground", f"HolidayPark{t.class_name}", label, x, y, 40.0, hd, "NameLocal")
+        site.buildings.append(Building(towns_mod.HOUSES[0][0], *local_to_world(x, y, hd, -24.0, -14.0), hd))
+        site.buildings.append(Building("Land_Shed_W4", *local_to_world(x, y, hd, -24.0, 10.0), hd))
+        for k in range(4):
+            site.buildings.append(Building("Land_Mil_Tent_Big1_1",
+                                           *local_to_world(x, y, hd, 2.0 + (k % 2) * 22.0, -12.0 + (k // 2) * 24.0),
+                                           (hd + 90.0) % 360))
+        site.surfaces.append({"kind": "gravel", "points": rect_points(x, y, hd, 60.0, 6.0)})
+        sites.append(site)
+        mark(blocked, grid, x, y, hd, 70.0, 50.0)
+    print(f"  Holiday parks: {sum(s.kind == 'campground' for s in sites)}")
+
+    h, extra = place_baches(h, land, ok(), dist_sea, grid, rng, by_name)
+    for s in extra:
+        mark(blocked, grid, s.x, s.y, s.heading, 60.0, 30.0)
+    sites.extend(extra)
+    print(f"  Bach clusters: {len(extra)}")
+
+    h, extra = place_huts(h, land, ok(), grid, rng)
+    sites.extend(extra)
+    print(f"  DOC huts: {len(extra)}")
+
     h, farms = place_farms(h, land, ok(), road_footprint, grid, rng)
     sites.extend(farms)
     print(f"  Farms: {len(farms)}")
@@ -469,6 +580,104 @@ def place_ski_field(h, land, ok, slope, grid, cls, label, tx, ty) -> Site | None
         site.buildings.append(Building("Land_Power_Pole_Wood1", px, py, math.degrees(math.atan2(ux, uy)) % 360))
     site.extra["lift"] = [[round(px, 1), round(py, 1)] for px, py in [(x, y)] + towers]
     return site
+
+
+def find_coast_spot(ok, band, h, dist_sea, grid, t, search, length, width):
+    """Like find_port, for smaller pads: long side along the shore, inside the band."""
+    best, best_score = None, math.inf
+    step = 20.0
+    n = int(search / step)
+    gy, gx = np.gradient(dist_sea)
+    for i in range(-n, n + 1):
+        for j in range(-n, n + 1):
+            x, y = t.x + i * step, t.y + j * step
+            d = math.hypot(x - t.x, y - t.y)
+            if d > search or d < t.radius + 30.0:
+                continue
+            r, c = grid.to_cell(x, y)
+            r, c = int(round(float(r))), int(round(float(c)))
+            if not (0 <= r < grid.n and 0 <= c < grid.n) or not band[r, c]:
+                continue
+            inland = math.degrees(math.atan2(gx[r, c], -gy[r, c])) % 180
+            # A ramp runs down into the water; everything else lies along the shore.
+            want = inland if length > 3 * width else (inland + 90.0) % 180
+            hd = min(HEADINGS, key=lambda a: min(abs(a - want), 180 - abs(a - want)))
+            if not rect_fits(ok, grid, x, y, hd, length, width, need=0.6 if length > 3 * width else 0.9):
+                continue
+            score = rect_relief(h, grid, x, y, hd, length, width) + 0.01 * d
+            if score < best_score:
+                best, best_score = (x, y, hd), score
+    return best
+
+
+def place_baches(h, land, ok, dist_sea, grid, rng, by_name):
+    """Rows of holiday homes behind quiet beaches, away from the towns."""
+    cand = ok & (dist_sea > 50.0) & (dist_sea < 110.0) & (h < 10.0)
+    rows, cols = np.nonzero(cand[::6, ::6])
+    order = rng.permutation(len(rows))
+    out, taken = [], [(t.x, t.y, t.radius + 700.0) for t in by_name.values()]
+    gy, gx = np.gradient(dist_sea)
+    for k in order:
+        if len(out) >= BACH_CLUSTERS:
+            break
+        r, c = rows[k] * 6, cols[k] * 6
+        x, y = (c + 0.5) * grid.cell, grid.size_m - (r + 0.5) * grid.cell
+        if any(math.hypot(x - a, y - b) < rr for a, b, rr in taken):
+            continue
+        inland = math.degrees(math.atan2(gx[r, c], -gy[r, c])) % 180
+        hd = min(HEADINGS, key=lambda a: min(abs(a - (inland + 90.0) % 180), 180 - abs(a - (inland + 90.0) % 180)))
+        if not rect_fits(ok, grid, x, y, hd, 60.0, 30.0):
+            continue
+        h = flatten_rect(h, land, grid, x, y, hd, 60.0, 30.0, blend=20.0, max_grade=0.04, min_z=2.0)
+        site = Site("bach", f"Baches{len(out) + 1:02d}", "", x, y, 32.0, hd, "")
+        for i in range(4):
+            cls = towns_mod.HOUSES[int(rng.integers(6))][0]
+            site.buildings.append(Building(cls, *local_to_world(x, y, hd, -22.5 + i * 15.0, 4.0), hd))
+        site.surfaces.append({"kind": "gravel", "points": rect_points(x, y, hd, 60.0, 5.0, 0.0, -10.0)})
+        out.append(site)
+        taken.append((x, y, 900.0))
+    return h, out
+
+
+def place_huts(h, land, ok, grid, rng):
+    """Back-country huts high in the ranges, on the few flat benches."""
+    gy, gx = np.gradient(h, grid.cell)
+    slope = np.degrees(np.arctan(np.hypot(gx, gy)))
+    cand = ok & (h > 250.0) & (h < 480.0) & (slope < 10.0)
+    rows, cols = np.nonzero(cand[::6, ::6])
+    order = rng.permutation(len(rows))
+    out, taken = [], []
+    for k in order:
+        if len(out) >= DOC_HUTS:
+            break
+        x, y = (cols[k] * 6 + 0.5) * grid.cell, grid.size_m - (rows[k] * 6 + 0.5) * grid.cell
+        if any(math.hypot(x - a, y - b) < 1200.0 for a, b in taken):
+            continue
+        hd = float(rng.choice([0.0, 90.0]))
+        if not rect_fits(ok, grid, x, y, hd, 24.0, 18.0):
+            continue
+        h = flatten_rect(h, land, grid, x, y, hd, 24.0, 18.0, blend=15.0, max_grade=0.05)
+        site = Site("hut", f"DocHut{len(out) + 1:02d}", "", x, y, 14.0, hd, "")
+        site.buildings.append(Building(towns_mod.HOUSES[0][0], x, y, hd))
+        site.buildings.append(Building("Land_Shed_W4", *local_to_world(x, y, hd, 9.0, 6.0), hd))
+        out.append(site)
+        taken.append((x, y))
+    return h, out
+
+
+def make_stations(h, land, stations, grid):
+    """A station building at each stop on the railway, beside the line."""
+    out = []
+    for st in stations:
+        x, y, hd = st["x"], st["y"], st["heading"]
+        bx, by = local_to_world(x, y, hd, 0.0, 14.0)
+        h = flatten_rect(h, land, grid, bx, by, hd, *STATION_PAD, blend=15.0, max_grade=0.02)
+        site = Site("station", "Station" + "".join(ch for ch in st["town"] if ch.isascii() and ch.isalnum()), "",
+                    bx, by, 18.0, hd, "")
+        site.buildings.append(Building("Land_Rail_Station_Big", bx, by, hd))
+        site.surfaces.append({"kind": "concrete", "points": rect_points(bx, by, hd, STATION_PAD[0], 6.0, 0.0, -8.0)})
+        out.append(site)
+    return h, out
 
 
 def place_farms(h, land, ok, road_footprint, grid, rng):
@@ -558,7 +767,9 @@ def draw_preview(relief, sites: list[Site], size_m: float):
 
     colours = {"airfield": (40, 40, 40), "port": (30, 90, 200), "ski": (255, 255, 255), "hobbiton": (250, 200, 0),
                "farm": (150, 90, 40), "whakaari": (220, 30, 30),
-               "industrial": (160, 60, 200), "naval": (20, 40, 120), "landmark": (255, 255, 255)}
+               "industrial": (160, 60, 200), "naval": (20, 40, 120), "landmark": (255, 255, 255),
+               "ferry": (0, 160, 220), "ramp": (0, 200, 200), "surfclub": (255, 220, 0), "campground": (60, 160, 60),
+               "bach": (230, 140, 90), "hut": (200, 60, 60), "station": (40, 40, 40)}
     img = relief.convert("RGB").copy()
     d = ImageDraw.Draw(img)
     font = towns_mod._font(15)
@@ -567,7 +778,7 @@ def draw_preview(relief, sites: list[Site], size_m: float):
         px, py = s.x * k, (size_m - s.y) * k
         for surf in s.surfaces:
             d.polygon([(a * k, (size_m - b) * k) for a, b in surf["points"]], fill=(70, 70, 70))
-        r = 3 if s.kind == "farm" else 6
+        r = 3 if s.kind in ("farm", "bach", "hut", "ramp", "station") else 6
         d.ellipse([px - r, py - r, px + r, py + r], fill=colours[s.kind], outline=(0, 0, 0))
         if s.label:
             d.text((px + 8, py - 8), s.label, fill=(255, 255, 255), font=font, stroke_width=2, stroke_fill=(0, 0, 0))
