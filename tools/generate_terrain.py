@@ -33,6 +33,7 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
+import roads as roads_mod
 import towns as towns_mod
 import water
 
@@ -565,6 +566,10 @@ def main() -> None:
     h = towns_mod.flatten_towns(h, dry, towns, grid)
     h = np.where(land & ~lake_mask, limit_slope(np.where(land, h, 0.0), MAX_SLOPE_DEG), h)
     towns_mod.layout_towns(towns, h, dry, grid, SEED + 3)
+    h, roads, road_footprint = roads_mod.build_roads(h, land, lake_mask, river_mask, towns, grid)
+    h = np.where(land & ~lake_mask, limit_slope(np.where(land, h, 0.0), MAX_SLOPE_DEG), h)
+    print(f"Roads: {sum(r.kind == 'highway' for r in roads)} highway pieces, "
+          f"{sum(r.kind == 'street' for r in roads)} streets, {sum(len(r.bridges) for r in roads)} bridges")
     for t in towns:
         moved = f", moved {t.moved_m:.0f} m inland" if t.moved_m > 1 else ""
         print(f"  {t.name}: {len(t.buildings)} buildings, radius {t.radius:.0f} m{moved}")
@@ -612,6 +617,7 @@ def main() -> None:
     water_img[..., 1] = np.clip(river_w * 255, 0, 255).astype(np.uint8)
     Image.fromarray(water_img).save(SOURCE_DIR / "water_4096.png", optimize=True)
     water.write_lakes(lakes, SOURCE_DIR / "lakes.json", EASTING, NORTHING)
+    roads_mod.write_outputs(roads, road_footprint, SOURCE_DIR, EASTING, NORTHING)
     mask = idx if args.mask_size == GRID else upscale_mask(idx, args.mask_size)
     Image.fromarray(mask_to_rgb(mask)).save(SOURCE_DIR / f"mask_{args.mask_size}.png", optimize=True)
     write_layers_cfg(SOURCE_DIR / "layers.cfg")
@@ -625,6 +631,7 @@ def main() -> None:
     relief = shaded_relief(h, 2048, lake_mask, river_w)
     relief.save(PREVIEW_DIR / "relief_2048.png", optimize=True)
     towns_mod.draw_overview(relief, towns, SIZE_M).save(PREVIEW_DIR / "towns_2048.png", optimize=True)
+    roads_mod.draw_preview(relief, roads, SIZE_M).save(PREVIEW_DIR / "roads_2048.png", optimize=True)
     for name in DETAIL_TOWNS:
         town = next(t for t in towns if t.name == name)
         towns_mod.draw_town_detail(h, town, grid).save(

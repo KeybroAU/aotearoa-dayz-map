@@ -1,7 +1,7 @@
 """Build the Aotearoa satellite texture from the generated terrain and the photo-sampled colours.
 
 Reads source/heightmap_4096.png, source/mask_4096.png, source/water_4096.png, source/sat_tint_512.png,
-tools/satellite_palette.json and source/objects/towns_spawner.json, and writes
+tools/satellite_palette.json, source/roads.json and source/objects/towns_spawner.json, and writes
 source/satellite_<size>.png plus previews. Terrain Builder wants 20480 (1 m per pixel):
 
     python build_satellite.py --size 20480
@@ -168,6 +168,7 @@ def main() -> None:
 
     img = Image.fromarray(out)
     del out
+    draw_roads(img, mpp)
     draw_towns(img, mpp)
 
     path = g.SOURCE_DIR / f"satellite_{size}.png"
@@ -190,6 +191,19 @@ def urban_weight(land: np.ndarray) -> np.ndarray:
             t = np.clip((r - np.hypot(wx - x, wy - y)) / (0.2 * r), 0, 1)
             w[win] = np.maximum(w[win], t * t * (3 - 2 * t))
     return w * land
+
+
+def draw_roads(img: Image.Image, mpp: float) -> None:
+    data = json.loads((g.SOURCE_DIR / "roads.json").read_text(encoding="utf-8"))
+    d = ImageDraw.Draw(img)
+    # Verges first so every road sits on a strip of worn gravel, then the seal on top.
+    for layer, extra, colours in (("verge", 3.0, {"highway": (128, 120, 100), "street": (120, 116, 104)}),
+                                  ("seal", 0.0, {"highway": (62, 62, 64), "street": (78, 78, 78)})):
+        for road in data["roads"]:
+            width = data["kinds"][road["kind"]]["width"] + extra
+            px = max(1, int(round(width / mpp)))
+            pts = [(x / mpp, (g.SIZE_M - y) / mpp) for x, y in road["points"]]
+            d.line(pts, fill=colours[road["kind"]], width=px, joint="curve")
 
 
 def draw_towns(img: Image.Image, mpp: float) -> None:

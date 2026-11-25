@@ -96,6 +96,7 @@ class Town:
     grid_angle: float = 0.0
     maori: str = ""
     buildings: list[Building] = field(default_factory=list)
+    blocks: list[tuple[int, int]] = field(default_factory=list)  # (i, j) of each laid-out block
 
     @property
     def class_name(self) -> str:
@@ -249,6 +250,7 @@ def layout_towns(towns: list[Town], h: np.ndarray, land: np.ndarray, grid: Grid,
         blocks.sort()
         if not blocks:
             continue
+        t.blocks = [(int(round(u / PITCH - 0.5)), int(round(v / PITCH - 0.5))) for _, u, v in blocks]
 
         tier = TIERS[t.tier]
         specials = list(SPECIALS[t.tier])
