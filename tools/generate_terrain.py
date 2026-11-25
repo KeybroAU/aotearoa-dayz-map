@@ -61,15 +61,17 @@ LON0 = (LON_W + LON_E) / 2
 KM_PER_DEG_LAT = 110.57
 KM_PER_DEG_LON = 111.32 * math.cos(math.radians(LAT0))
 
-# Turning the country clockwise lays its length along the map diagonal; north-up wastes more sea.
-ROTATION_DEG = -16.0
+# The country stays north-up in its true layout. Stretching it east-west makes the islands wider
+# and fills the square map, which is otherwise about 30% wider than the country is.
+ROTATION_DEG = 0.0
+STRETCH_X = 1.4
 
-# Reshape for more land: bend the North Island anticlockwise around Wellington and widen both
-# islands across the country's long axis. Coastlines keep their shape; Cook Strait stays open.
-NI_BEND_DEG = 30.0
+# Optional reshaping (all off): bend the North Island anticlockwise around Wellington, and widen
+# both islands across the country's long axis.
+NI_BEND_DEG = 0.0
 NI_PIVOT = (174.8, -41.3)
-NI_OFFSET_KM = (20.0, 0.0)
-WIDEN = 1.3
+NI_OFFSET_KM = (0.0, 0.0)
+WIDEN = 1.0
 AXIS_DEG = 72.0  # long axis of the country, anticlockwise from east
 NORTH, SOUTH, STEWART = 1, 2, 3
 ISLAND_SEEDS = {NORTH: (174.76, -36.85), SOUTH: (172.64, -43.53)}
@@ -209,12 +211,12 @@ def reshape_forward(xk: np.ndarray, yk: np.ndarray, isl: np.ndarray) -> tuple[np
     xk[ni], yk[ni] = bx + px + NI_OFFSET_KM[0], by + py + NI_OFFSET_KM[1]
     a, b = rotate(xk, yk, -AXIS_DEG)
     xk, yk = rotate(a, b * WIDEN, AXIS_DEG)
-    return rotate(xk, yk, ROTATION_DEG)
+    return rotate(xk * STRETCH_X, yk, ROTATION_DEG)
 
 
 def reshape_inverse(u: np.ndarray, v: np.ndarray, isl: int) -> tuple[np.ndarray, np.ndarray]:
     xk, yk = rotate(u, v, -ROTATION_DEG)
-    a, b = rotate(xk, yk, -AXIS_DEG)
+    a, b = rotate(xk / STRETCH_X, yk, -AXIS_DEG)
     xk, yk = rotate(a, b / WIDEN, AXIS_DEG)
     if isl == NORTH:
         px, py = (NI_PIVOT[0] - LON0) * KM_PER_DEG_LON, (NI_PIVOT[1] - LAT0) * KM_PER_DEG_LAT
@@ -541,7 +543,7 @@ def main() -> None:
     scale = proj["real_m_per_game_m"]
     print(f"Land span {proj['span_km']:.0f} km after reshaping, 1 game m = {scale:.1f} real m")
 
-    key = f"{GRID}_{ROTATION_DEG:g}_{MARGIN_M:g}_{NI_BEND_DEG:g}_{NI_OFFSET_KM[0]:g}_{NI_OFFSET_KM[1]:g}_{WIDEN:g}_{AXIS_DEG:g}"
+    key = f"{GRID}_{ROTATION_DEG:g}_{MARGIN_M:g}_{NI_BEND_DEG:g}_{NI_OFFSET_KM[0]:g}_{NI_OFFSET_KM[1]:g}_{WIDEN:g}_{AXIS_DEG:g}_{STRETCH_X:g}"
     cached = CACHE_DIR / f"real_{key}.npy"
     if cached.exists():
         real = np.load(cached)
@@ -616,7 +618,8 @@ def main() -> None:
         "bounds_lonlat": [LON_W, LAT_S, LON_E, LAT_N],
         "rotation_deg_clockwise": -ROTATION_DEG,
         "reshape": {"north_island_bend_deg_anticlockwise": NI_BEND_DEG, "bend_pivot_lonlat": NI_PIVOT,
-                    "north_island_offset_km": NI_OFFSET_KM, "widen": WIDEN, "long_axis_deg": AXIS_DEG},
+                    "north_island_offset_km": NI_OFFSET_KM, "widen": WIDEN, "long_axis_deg": AXIS_DEG,
+                    "east_west_stretch": STRETCH_X},
         "centre_lonlat": [round(float(c), 4) for c in game_to_lonlat(np.array(0.0), np.array(0.0), proj)],
         "projection": proj,
         "seed": SEED,

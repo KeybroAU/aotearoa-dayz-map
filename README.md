@@ -31,20 +31,14 @@ A 20 km DayZ terrain based on New Zealand, for a new server. The coastline and t
 |---|---|
 | Terrain size | 20480 m x 20480 m |
 | Heightmap grid | 4096 x 4096, 5 m cells |
-| Real to game | 1 game metre is about 64 real metres |
-| Land area | about 90 km2 (21% of the square) |
-| Highest point | 464 m (Southern Alps) |
+| Real to game | 1 game metre is about 75 real metres north-south |
+| Land area | about 69 km2 (17% of the square) |
+| Highest point | 447 m (Southern Alps) |
 | Steepest slope | 40 degrees on dry land |
 
 New Zealand is about 1500 km long, so a 20 km map shrinks it a lot, and real heights would make every range a cliff. Heights are scaled down far more than distances, then capped at 40 degrees so players can still climb the hills.
 
-The country is reshaped to fill more of the square while staying recognisable:
-
-1. Both islands are turned 16 degrees clockwise.
-2. The North Island is bent 30 degrees about Wellington and moved 20 km east.
-3. Both islands are widened by 1.3 across their length.
-
-`heightmap.json` records every step.
+The country keeps its true north-up layout. It is stretched 1.4 times east-west, which makes the islands wider and fills the square map: the real country is about 1.4 times taller than it is wide. Change `STRETCH_X` in `tools/generate_terrain.py` to make it narrower. The settings for turning the map, bending the North Island and widening the islands along their length are still there, all switched off. `heightmap.json` records them.
 
 ## What's on the map
 
@@ -76,7 +70,7 @@ Close-ups (1 px per metre): [Auckland](preview/town_auckland.png), [Wellington](
 
 ![Roads](preview/roads_2048.png)
 
-There are 107 km of state highway, 118 km of town streets and 9 km of tracks to sites. Highways follow the real links:
+There are 98 km of state highway, 116 km of town streets and 11 km of tracks to sites. Highways follow the real links:
 
 - SH1 the length of both islands, through Waiouru, Burnham and Ōhakea
 - SH2 round the east coast
@@ -91,7 +85,7 @@ Each leg is a least-cost route. It prefers grades under 8%, never crosses the se
 - `data/roads/roads.shp` holds the centrelines in Terrain Builder coordinates. The `ID` field picks the road type in `data/roads/RoadsLib.cfg` (1 highway 8 m, 2 street 6 m, 3 track 4 m), and the `REF` field holds the highway number or town.
 - `config.cpp` points `newRoadsShape` at the shapefile for the in-game map.
 - The satellite has every road painted on, so roads are visible and drivable before any road objects are placed. For proper road surfaces, lay road parts along the shapes with Terrain Builder's road tool.
-- `source/roads.json` has the same lines plus 33 points where a highway crosses a riverbed and needs a bridge.
+- `source/roads.json` has the same lines plus 30 points where a highway crosses a riverbed and needs a bridge.
 
 ### Water
 
@@ -118,7 +112,7 @@ Every site is fitted onto dry, open land clear of towns, roads and water, flatte
 
 ![Forest density](preview/forest_density_1024.png)
 
-There are about 290,000 trees and bushes. Native bush is an irregular mix of broadleaf trees with an understorey and a bushy edge. Pine is planted in straight rows like radiata plantations, with each stand turned its own way. Trees stay off roads, towns, sites, water and slopes over 38 degrees.
+There are about 234,000 trees and bushes. Native bush is an irregular mix of broadleaf trees with an understorey and a bushy edge. Pine is planted in straight rows like radiata plantations, with each stand turned its own way. Trees stay off roads, towns, sites, water and slopes over 38 degrees.
 
 ### Surfaces
 

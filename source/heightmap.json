@@ -5,9 +5,9 @@
   "easting": 200000,
   "northing": 0,
   "png_black_m": -54.0,
-  "png_white_m": 464.0,
+  "png_white_m": 447.0,
   "sea_level_m": 0.0,
-  "real_metres_per_game_metre": 63.57,
+  "real_metres_per_game_metre": 75.05,
   "source": "Terrarium elevation tiles, AWS Open Data (Mapzen/Nextzen), zoom 9",
   "bounds_lonlat": [
     166.35,
@@ -15,29 +15,30 @@
     178.65,
     -34.3
   ],
-  "rotation_deg_clockwise": 16.0,
+  "rotation_deg_clockwise": -0.0,
   "reshape": {
-    "north_island_bend_deg_anticlockwise": 30.0,
+    "north_island_bend_deg_anticlockwise": 0.0,
     "bend_pivot_lonlat": [
       174.8,
       -41.3
     ],
     "north_island_offset_km": [
-      20.0,
+      0.0,
       0.0
     ],
-    "widen": 1.3,
-    "long_axis_deg": 72.0
+    "widen": 1.0,
+    "long_axis_deg": 72.0,
+    "east_west_stretch": 1.4
   },
   "centre_lonlat": [
-    171.2717,
-    -40.6687
+    172.5362,
+    -40.8342
   ],
   "projection": {
-    "real_m_per_game_m": 63.5742187436054,
-    "centre_u_km": -120.49650368223536,
-    "centre_v_km": 62.53138495665212,
-    "span_km": 1219.3535155023515
+    "real_m_per_game_m": 75.0496475101316,
+    "centre_u_km": 4.264803739135175,
+    "centre_v_km": -1.0205276032878032,
+    "span_km": 1439.4522392443241
   },
   "seed": 1840
 }
