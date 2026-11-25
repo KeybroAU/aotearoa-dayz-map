@@ -1,6 +1,6 @@
 """Build the Aotearoa satellite texture from the generated terrain and the photo-sampled colours.
 
-Reads source/heightmap_4096.png, source/mask_4096.png, source/sat_tint_512.png,
+Reads source/heightmap_4096.png, source/mask_4096.png, source/water_4096.png, source/sat_tint_512.png,
 tools/satellite_palette.json and source/objects/towns_spawner.json, and writes
 source/satellite_<size>.png plus previews. Terrain Builder wants 20480 (1 m per pixel):
 
@@ -44,6 +44,9 @@ LAYER_STYLE = {
 URBAN = np.array([150, 146, 136], dtype=np.float32)
 ROOF_HOUSE = [(120, 70, 60), (95, 95, 100), (150, 140, 125), (70, 80, 90)]
 ROOF_BIG = (135, 135, 135)
+LAKE = np.array([46, 104, 122], dtype=np.float32)
+GLACIAL = np.array([88, 170, 178], dtype=np.float32)
+RIVER = np.array([92, 128, 134], dtype=np.float32)
 
 
 def load_inputs():
@@ -55,7 +58,8 @@ def load_inputs():
     idx = np.argmin(((mask_rgb[..., None, :] - lut[None, None]) ** 2).sum(-1), axis=-1).astype(np.uint8)
     tint = np.asarray(Image.open(g.SOURCE_DIR / "sat_tint_512.png").convert("RGB")).astype(np.float32)
     palette = json.loads((g.MAP_DIR / "tools" / "satellite_palette.json").read_text())["colours"]
-    return h, idx, tint, palette
+    water = np.asarray(Image.open(g.SOURCE_DIR / "water_4096.png").convert("RGB")).astype(np.float32) / 255.0
+    return h, idx, tint, palette, water[..., 0], water[..., 1]
 
 
 class Lattice:
@@ -75,7 +79,17 @@ def main() -> None:
     size = args.size
     mpp = g.SIZE_M / size
 
-    h, idx, tint, palette = load_inputs()
+    h, idx, tint, palette, lake, river = load_inputs()
+    lake_depth = np.clip(ndimage.distance_transform_edt(lake > 0.5) * g.CELL / 120.0, 0, 1).astype(np.float32)
+    # Snow-fed Mackenzie lakes are milky turquoise; the rest read as ordinary deep lake water.
+    glacial = np.zeros_like(lake)
+    for lk in json.loads((g.SOURCE_DIR / "lakes.json").read_text(encoding="utf-8")):
+        if lk["name"] in ("Pukaki", "Tekapo", "Ōhau"):
+            cx, cy = lk["centre"]
+            r, c = int((g.SIZE_M - cy) / g.CELL), int(cx / g.CELL)
+            lab, _ = ndimage.label(lake > 0.5)
+            if lab[r, c]:
+                glacial[lab == lab[r, c]] = 1.0
     names = [s[0] for s in g.SURFACES]
     mult_lut = np.array([LAYER_STYLE[n][0] for n in names], dtype=np.float32)
     fixed_lut = np.array([LAYER_STYLE[n][1] or (0, 0, 0) for n in names], dtype=np.float32)
@@ -132,6 +146,16 @@ def main() -> None:
         line = SNOWLINE_M + 35.0 * noise(X, Y, 120.0) + 10.0 * noise(X, Y, 20.0)
         sw = np.clip((hs - line) / 30.0, 0, 1)[..., None]
         colour = colour * (1 - sw) + snow * (0.85 + 0.2 * sh[..., None]) * sw
+
+        rw = ndimage.map_coordinates(river, [cr, cc], order=1, mode="nearest")
+        braid = np.clip((rw - 0.75) * 4.0 + 0.9 * noise(X + 4000, Y, 18.0), 0, 1)[..., None]
+        colour = colour * (1 - braid) + RIVER * (0.8 + 0.25 * sh[..., None]) * braid
+
+        lw = np.clip(ndimage.map_coordinates(lake, [cr, cc], order=1, mode="nearest") * 1.6 - 0.3, 0, 1)[..., None]
+        ld = ndimage.map_coordinates(lake_depth, [cr, cc], order=1, mode="nearest")[..., None]
+        gl = ndimage.map_coordinates(glacial, [cr, cc], order=1, mode="nearest")[..., None]
+        lake_colour = (LAKE * (1 - gl) + GLACIAL * gl) * (1.05 - 0.25 * ld)
+        colour = colour * (1 - lw) + lake_colour * lw
 
         depth = np.clip(-hs / 30.0, 0, 1)[..., None]
         water = sea_shallow * (1 - depth) + sea_deep * depth

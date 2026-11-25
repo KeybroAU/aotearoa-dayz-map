@@ -34,6 +34,7 @@ from PIL import Image
 from scipy import ndimage
 
 import towns as towns_mod
+import water
 
 MAP_DIR = Path(__file__).resolve().parent.parent
 SOURCE_DIR = MAP_DIR / "source"
@@ -400,6 +401,7 @@ SURFACES = [
     ("rock", (90, 80, 75), r"DZ\surfaces\data\terrain\cp_rock.rvmat"),
     ("volcanic", (120, 60, 50), r"DZ\surfaces\data\terrain\sa_volcanic_red.rvmat"),
 ]
+SURFACE_INDEX = {name: i for i, (name, _, _) in enumerate(SURFACES)}
 
 
 def build_mask(h: np.ndarray, land: np.ndarray, proj: dict) -> np.ndarray:
@@ -483,7 +485,8 @@ def write_legend(path: Path) -> None:
     img.save(path)
 
 
-def shaded_relief(h: np.ndarray, size: int) -> Image.Image:
+def shaded_relief(h: np.ndarray, size: int, lakes: np.ndarray | None = None,
+                  rivers: np.ndarray | None = None) -> Image.Image:
     f = size / h.shape[0]
     hs = ndimage.zoom(h, f, order=1)
     cell = CELL / f
@@ -504,6 +507,12 @@ def shaded_relief(h: np.ndarray, size: int) -> Image.Image:
     depth = np.clip(-hs / SEA_DEPTH, 0, 1)[..., None]
     sea_rgb = np.array([120, 185, 215]) * (1 - depth) + np.array([25, 60, 110]) * depth
     rgb = np.where(sea[..., None], sea_rgb, rgb)
+    if rivers is not None:
+        rw = np.clip(ndimage.zoom(rivers, f, order=1), 0, 1)[..., None]
+        rgb = rgb * (1 - 0.7 * rw) + np.array([170, 175, 175]) * 0.7 * rw
+    if lakes is not None:
+        lk = ndimage.zoom(lakes.astype(np.float32), f, order=1)[..., None]
+        rgb = rgb * (1 - lk) + np.array([70, 140, 190]) * lk
     return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8))
 
 
@@ -537,12 +546,25 @@ def main() -> None:
         np.save(cached, real)
     h, land = build_heights(real)
 
+    def world_to_lonlat(x, y):
+        return game_to_lonlat(np.asarray(x) - SIZE_M / 2, np.asarray(y) - SIZE_M / 2, proj)
+
+    h, lakes = water.carve_lakes(h, water.detect_lakes(real, land), CELL, SIZE_M, world_to_lonlat)
+    lake_mask = np.zeros(land.shape, dtype=bool)
+    for lk in lakes:
+        lake_mask |= lk.cells
     grid = towns_mod.Grid(SIZE_M, CELL, GRID)
     towns = towns_mod.load_towns()
-    towns_mod.place_towns(towns, lambda lon, lat: lonlat_to_world(lon, lat, proj), land, grid)
-    h = towns_mod.flatten_towns(h, land, towns, grid)
-    h = np.where(land, limit_slope(np.where(land, h, 0.0), MAX_SLOPE_DEG), h)
-    towns_mod.layout_towns(towns, h, land, grid, SEED + 3)
+    towns_mod.place_towns(towns, lambda lon, lat: lonlat_to_world(lon, lat, proj), land & ~lake_mask, grid)
+    h, river_w = water.carve_rivers(h, real, land, lake_mask, CELL, towns_mod.town_mask(towns, grid))
+    river_mask = river_w > 0.5
+    dry = land & ~lake_mask & ~river_mask
+    print(f"Lakes: {', '.join(lk.name or 'unnamed' for lk in lakes)}")
+    print(f"Riverbeds: {river_mask.sum() * CELL * CELL / 1e6:.2f} km2")
+
+    h = towns_mod.flatten_towns(h, dry, towns, grid)
+    h = np.where(land & ~lake_mask, limit_slope(np.where(land, h, 0.0), MAX_SLOPE_DEG), h)
+    towns_mod.layout_towns(towns, h, dry, grid, SEED + 3)
     for t in towns:
         moved = f", moved {t.moved_m:.0f} m inland" if t.moved_m > 1 else ""
         print(f"  {t.name}: {len(t.buildings)} buildings, radius {t.radius:.0f} m{moved}")
@@ -583,6 +605,13 @@ def main() -> None:
 
     idx = build_mask(h, land, proj)
     idx[towns_mod.town_mask(towns, grid) & land & (idx != 0)] = 1
+    idx[river_mask] = SURFACE_INDEX["scree"]
+    idx[lake_mask] = SURFACE_INDEX["beach"]
+    water_img = np.zeros((GRID, GRID, 3), dtype=np.uint8)
+    water_img[..., 0] = lake_mask * 255
+    water_img[..., 1] = np.clip(river_w * 255, 0, 255).astype(np.uint8)
+    Image.fromarray(water_img).save(SOURCE_DIR / "water_4096.png", optimize=True)
+    water.write_lakes(lakes, SOURCE_DIR / "lakes.json", EASTING, NORTHING)
     mask = idx if args.mask_size == GRID else upscale_mask(idx, args.mask_size)
     Image.fromarray(mask_to_rgb(mask)).save(SOURCE_DIR / f"mask_{args.mask_size}.png", optimize=True)
     write_layers_cfg(SOURCE_DIR / "layers.cfg")
@@ -593,7 +622,7 @@ def main() -> None:
     towns_mod.write_terrain_builder_objects(towns, SOURCE_DIR / "objects" / "towns_tb.txt", EASTING, NORTHING)
     towns_mod.write_object_spawner(towns, SOURCE_DIR / "objects" / "towns_spawner.json")
 
-    relief = shaded_relief(h, 2048)
+    relief = shaded_relief(h, 2048, lake_mask, river_w)
     relief.save(PREVIEW_DIR / "relief_2048.png", optimize=True)
     towns_mod.draw_overview(relief, towns, SIZE_M).save(PREVIEW_DIR / "towns_2048.png", optimize=True)
     for name in DETAIL_TOWNS:
