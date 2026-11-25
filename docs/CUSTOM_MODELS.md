@@ -80,7 +80,7 @@ Files:
 
 The signs are loaded with the object spawner, not placed in Terrain Builder, because a world object can't change its texture per copy. `pack.bat` converts the textures (`_co.paa` for the place names, `_ca.paa` with alpha for the rest). It adds each spawner to `cfggameplay.json` once its model exists, and until then prints a note and leaves those signs out.
 
-**Making the two models.** `tools/make_models.py` writes the OBJ files.
+**Making the two models.** [docs/models/SIGNS_BRIEF.md](models/SIGNS_BRIEF.md) is the self-contained brief to hand a modeller, with the reference sheet, the LOD list and the acceptance checks. `tools/make_models.py` writes the OBJ files, and `tools/sign_handoff.py` writes the two rvmat materials and `preview/signs_reference.png`.
 
 | Model | OBJ | Save as |
 |---|---|---|
@@ -91,9 +91,9 @@ For each one:
 
 1. In Object Builder, use **File → Import → Wavefront OBJ** to import the OBJ into LOD 0 (resolution). Units are metres and y is up.
 2. Select the faces of the `camo` group and name the selection **`camo`**. For the place-name board, the `back` and `posts` faces use the same texture.
-3. Give the faces any texture of the right kind. For the board use `maps\aotearoa\data\signs\sign_Wellington_co.paa`. For the post sign use `maps\aotearoa\data\signs\post_SH1_ca.paa`, with an alpha-tested material (copy a vanilla fence or foliage rvmat) so the shield, circle, triangle and diamond outlines are cut out. The config swaps the texture per sign, and the UVs are already set.
+3. Give the faces any texture of the right kind. For the board use `maps\aotearoa\data\signs\sign_Wellington_co.paa` with `maps\aotearoa\data\signs\sign_town.rvmat`. For the post sign use `maps\aotearoa\data\signs\post_SH1_ca.paa` with `sign_post.rvmat`, which is alpha tested so the shield, circle, triangle and diamond outlines are cut out. The config swaps the texture per sign, and the UVs are already set.
 4. Import `docs/models/<name>_geometry.obj` into a new **Geometry** LOD. Each group is one convex component, so name them `Component01`, `Component02` and so on. Give the LOD a mass (about 40 kg).
-5. Copy the Geometry LOD to a **Fire Geometry** LOD.
+5. Copy the Geometry LOD to **Fire Geometry**, **View Geometry** and **Shadow Volume 0** LODs.
 6. Save to the path in the table.
 7. Check the facing. With yaw 0 the face should look north, which is +z in Object Builder's top view. If a test sign shows its back to the traffic, rotate the model 180°. If the text reads backwards, mirror the face UVs. No other file needs changing.
 

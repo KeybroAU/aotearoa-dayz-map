@@ -28,7 +28,7 @@ jobs:
           (cd source && zip -q "../release/aotearoa-${V}-heightmap.zip" heightmap_4096.asc heightmap.json)
           zip -qr "release/aotearoa-${V}-mission.zip" mission
           zip -qr "release/aotearoa-${V}-source.zip" . -x ".git/*" "release/*" "source/heightmap_4096.asc"
-          zip -qr "release/aotearoa-${V}-models.zip" docs/models data/models data/signs docs/CUSTOM_MODELS.md
+          zip -qr "release/aotearoa-${V}-models.zip" docs/models data/models data/signs docs/CUSTOM_MODELS.md preview/signs_reference.png
           zip -qr "release/aotearoa-${V}-map-item.zip" mapitem
           cp preview/player_map_4096.jpg "release/aotearoa-${V}-player-map.jpg"
           python - <<'PY'

@@ -149,6 +149,8 @@ def main() -> None:
               for c in post_classes), f"{len(post_classes)} road sign textures in data/signs")
     for name in ("sign_town", "sign_post", "bach", "doc_hut", "woolshed", "dairy"):
         check((MAP_DIR / "docs" / "models" / f"{name}.obj").exists(), f"docs/models/{name}.obj")
+    check(all((MAP_DIR / "data" / "signs" / f"{n}.rvmat").exists() for n in ("sign_town", "sign_post"))
+          and (MAP_DIR / "docs" / "models" / "SIGNS_BRIEF.md").exists(), "sign materials and modeller brief")
     check('#include "config\\structures.hpp"' in cfg, "config.cpp includes config\\structures.hpp")
     check(bool(signs) and all(o["name"] in classes for o in signs), f"{len(signs)} signs, all with a config class")
     check(all(on_map(o["pos"][0], o["pos"][2]) and ground(o["pos"][0], o["pos"][2]) > 0.0 for o in signs),
