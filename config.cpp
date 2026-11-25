@@ -8,8 +8,14 @@ class CfgPatches
 		units[] = {"aotearoa"};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"DZ_Data", "DZ_Worlds_Chernarusplus_World"};
+		requiredAddons[] = {"DZ_Data", "DZ_Structures", "DZ_Worlds_Chernarusplus_World"};
 	};
+};
+
+class CfgVehicles
+{
+	class HouseNoDestruct;
+	#include "config\signs.hpp"
 };
 
 class CfgWorldList

@@ -4,7 +4,7 @@ Reads the generated terrain (source/heightmap_4096.png, mask_4096.png, towns.csv
 pois.json) and writes mission/dayzOffline.aotearoa/ with player spawns, vehicle and crash
 events, infected zones, the Whakaari contaminated area, init.c and a cfggameplay snippet,
 plus mission/serverDZ.cfg. economy.py adds loot positions and tiers, animals and weather;
-server_files.py adds starting gear, server messages and launch scripts. Copy the rest of the mission (db/, cfgeconomycore.xml and so on)
+server_files.py adds starting gear, server messages and launch scripts; signs.py the town name signs. Copy the rest of the mission (db/, cfgeconomycore.xml and so on)
 from vanilla dayzOffline.chernarusplus; see the README.
 
     python build_mission.py
@@ -24,6 +24,7 @@ from scipy import ndimage
 import economy
 import generate_terrain as g
 import server_files
+import signs
 
 MISSION = "dayzOffline.aotearoa"
 OUT = g.MAP_DIR / "mission"
@@ -545,12 +546,14 @@ def main() -> None:
     write_gameplay_snippet(out / "cfggameplay.worldsdata.json")
     economy.build(out, h, idx, land, towns, pois, rng)
     server_files.write(out, OUT / "server")
+    town_signs = signs.build(h, towns, roads, g.CELL, g.SIZE_M)
 
     draw_preview(spawns, ev, zones).save(g.PREVIEW_DIR / "mission_2048.png", optimize=True)
     print(f"Spawn points: {len(spawns)}")
     for name in sorted(ev):
         print(f"  {name}: {len(ev[name])}")
     print(f"Infected zones: {len(zones)}")
+    print(f"Town signs: {len(town_signs)}")
     print(f"Wrote {out}")
 
 
