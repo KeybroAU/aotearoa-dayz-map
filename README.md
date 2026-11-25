@@ -14,7 +14,7 @@ A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and
 - forests, hedgerows, farm fences and rocks; street lamps, bus stops, back fences, garden trees and abandoned cars
 - a satellite texture coloured from a real satellite photo
 - the server mission files: spawns, loot positions and tiers, New Zealand loot changes, animals, weather, starting gear, server messages and launch scripts
-- a printable player map, a logo and loading screens, and map checks that run on GitHub. The loading screens, map picture, player map and map item carry a "Designed by Keybro" and Keybrogaming.com watermark (`tools/watermark.py`)
+- a printable player map, a logo and loading screens, and map checks that run on GitHub. The loading screens, map picture, player map, map item, Steam Workshop image and the in-game map screen carry a "Designed by Keybro" and Keybrogaming.com watermark (`tools/watermark.py`, `scripts/5_Mission/AotearoaMapMenu.c`)
 
 ![Satellite](preview/satellite_2048.png)
 
@@ -449,6 +449,14 @@ Players need both mods. Pass `--no-map-item` to leave it out.
 The world config also sets `mapTexture*` and `mapDisplayNameKey`. So even a vanilla `ChernarusMap` shows Aotearoa on this terrain, instead of Chernarus.
 
 Give it to new players by adding `AotearoaMap` to a starting gear preset, or sell it at the traders.
+
+## Steam Workshop
+
+`workshop/` holds what to paste into the Workshop page:
+- `preview.jpg`: the 1024 x 1024 preview image, with the watermark. `python tools/make_branding.py` rebuilds it.
+- `description.txt`: the description in Steam's BBCode, with the [Discord](https://discord.gg/FpsDrBTaX3) link and the note that the mod may not be repacked or included in server packs without permission.
+
+In DayZ Tools Publisher, point the preview at `workshop\preview.jpg`, then paste `description.txt` into the Workshop page's description.
 
 ## Releases
 

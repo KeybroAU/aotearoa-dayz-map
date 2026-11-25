@@ -60,12 +60,12 @@ from pathlib import Path
 MAP_DIR = Path(__file__).resolve().parents[1]
 PREFIX = "maps\\aotearoa"
 MISSION = "dayzOffline.aotearoa"
-PACKED = ["config.cpp", "$PBOPREFIX$", "config", "data", "scripts", "structures", "world"]
+PACKED = ["config.cpp", "$PBOPREFIX$", "config", "data", "gui", "scripts", "structures", "world"]
 # Spawner files that need a custom model before they can load.
 MODEL_SPAWNERS = [("structures/sign_town/sign_town.p3d", "aotearoa/signs_spawner.json", "town name signs"),
                   ("structures/sign_post/sign_post.p3d", "aotearoa/roadsigns_spawner.json", "road signs")]
 SKIP_IN_DATA = ["branding/art"]
-COPY_DIRECT = "*.paa,*.rvmat,*.wrp,*.png,*.jpg,*.shp,*.shx,*.dbf,*.cfg,*.hpp,*.txt,*.c"
+COPY_DIRECT = "*.paa,*.rvmat,*.wrp,*.png,*.jpg,*.shp,*.shx,*.dbf,*.cfg,*.hpp,*.txt,*.c,*.layout"
 BRANDING = [("logo_512.png", "logo_512_ca.paa"), ("icon_128.png", "icon_128_ca.paa"),
             ("icon_64.png", "icon_64_ca.paa"), ("loading_1.jpg", "loading_1_co.paa"),
             ("loading_2.jpg", "loading_2_co.paa"), ("map_picture.jpg", "map_picture_co.paa")]

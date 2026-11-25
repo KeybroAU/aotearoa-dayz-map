@@ -2,6 +2,12 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
+## Unreleased
+
+### Added
+- "Designed by Keybro" and Keybrogaming.com in the corner of the in-game map screen on Aotearoa (`scripts/5_Mission/AotearoaMapMenu.c`, `gui/layouts/aotearoa_map_watermark.layout`)
+- Steam Workshop preview image and description (`workshop/`), with the Discord link and the no-repack notice
+
 ## 0.6.1 - 2026-11-25
 
 ### Added

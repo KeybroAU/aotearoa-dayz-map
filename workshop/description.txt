@@ -1,0 +1,29 @@
+[h1]Aotearoa - A New Zealand survival terrain[/h1]
+[b]Designed by Keybro[/b] - [url=https://keybrogaming.com]Keybrogaming.com[/url]
+
+[url=https://discord.gg/FpsDrBTaX3][b]Join the Discord[/b][/url] for updates, bug reports and server info.
+
+A 25.6 km DayZ terrain shaped on New Zealand. The coastline and the big landforms come from real elevation data, so you can find the Southern Alps, Fiordland, the Canterbury Plains, Banks Peninsula, the central volcanic plateau with Ruapehu, Ngauruhoe and Tongariro, Mt Taranaki and Stewart Island.
+
+[h2]On the map[/h2]
+[list]
+[*]51 towns and bases with bilingual English and te reo Māori place names, plus 45 hamlets in the countryside
+[*]State highways, gravel back roads and town streets, with bridges, guardrails and power lines
+[*]The North Island Main Trunk and Main North Line railways, with 18 stations
+[*]Landmarks: Milford Sound, Aoraki / Mount Cook Village, Chateau Tongariro, Waitomo Caves, Huka Falls, the Sky Tower, the Harbour Bridge, Parliament Buildings and more
+[*]Airfields, ports, the Interislander ferry terminals, ski fields, Devonport Naval Base, Hobbiton and Whakaari / White Island
+[*]Military bases at Waiouru, Burnham, Linton and Ōhakea
+[*]Baches, surf clubs, holiday parks and DOC huts
+[*]Native bush, pine plantations, farmland, hedgerows and fences
+[*]New Zealand weather and seasons: westerly rain, short winter days and light snow in winter storms
+[*]New Zealand wildlife: sheep, cattle, red deer, goats and wild pigs. No wolves or bears
+[/list]
+
+[h2]Servers[/h2]
+Ask on the Discord for the server mission files (spawns, loot, events, weather and starting gear) and setup help. Load this mod on both the server and the clients. The paper map item, @AotearoaMap, is a separate optional mod.
+
+[h2]Permissions[/h2]
+[b]The mod may not be repacked or included in server packs without permission.[/b]
+Ask on the [url=https://discord.gg/FpsDrBTaX3]Discord[/url] if you want to use it in a pack.
+
+Designed by Keybro - [url=https://keybrogaming.com]Keybrogaming.com[/url] - [url=https://discord.gg/FpsDrBTaX3]discord.gg/FpsDrBTaX3[/url]

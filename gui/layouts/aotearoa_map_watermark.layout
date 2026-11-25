@@ -1,0 +1,48 @@
+FrameWidgetClass AotearoaMapWatermark {
+ ignorepointer 1
+ position 0 0
+ size 1 1
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ priority 900
+ {
+  TextWidgetClass AotearoaMapCredit {
+   ignorepointer 1
+   color 1 1 1 0.6
+   position 24 52
+   size 600 34
+   halign right_ref
+   valign bottom_ref
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text "Designed by Keybro"
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 30
+   "text halign" right
+   "text valign" center
+  }
+  TextWidgetClass AotearoaMapSite {
+   ignorepointer 1
+   color 1 1 1 0.6
+   position 24 22
+   size 600 28
+   halign right_ref
+   valign bottom_ref
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text "Keybrogaming.com"
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 22
+   "text halign" right
+   "text valign" center
+  }
+ }
+}

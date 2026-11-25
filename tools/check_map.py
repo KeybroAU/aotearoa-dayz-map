@@ -199,6 +199,11 @@ def main() -> None:
     check(bool(pieces) and all(on_map(o["pos"][0], o["pos"][2]) for o in pieces), f"{len(pieces)} set piece objects on the map")
     check(all((MAP_DIR / "scripts" / d / f).exists() for d, f in (("4_World", "AotearoaData.c"), ("5_Mission", "AotearoaMission.c")))
           and "maps/aotearoa/scripts/4_World" in cfg, "weather and season scripts are in the mod")
+    layout = MAP_DIR / "gui" / "layouts" / "aotearoa_map_watermark.layout"
+    menu = (MAP_DIR / "scripts" / "5_Mission" / "AotearoaMapMenu.c").read_text(encoding="utf-8")
+    check(layout.exists() and "maps/aotearoa/gui/layouts/aotearoa_map_watermark.layout" in menu
+          and layout.read_text(encoding="utf-8").count("{") == layout.read_text(encoding="utf-8").count("}"),
+          "in-game map watermark layout is in the mod")
 
     print()
     if failures:
