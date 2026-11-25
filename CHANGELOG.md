@@ -2,6 +2,11 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
+## Unreleased
+
+### Added
+- Town name signs on every road into a town: 137 green signs over 51 towns, with Māori names where they exist. Textures, config and positions are generated; the one sign model is made from `docs/models/sign_town.obj`
+
 ## 0.3.0 - 2026-11-25
 
 ### Added

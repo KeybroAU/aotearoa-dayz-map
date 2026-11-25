@@ -281,13 +281,17 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
 
 Loot scales every item's `nominal` and `min` in `types.xml`. Vehicles scale the `Vehicle*` events in `events.xml`. Infected scale the `Infected*` events and `ZombieMaxCount` in `globals.xml`. Fine-tune any one with `--loot`, `--vehicles` or `--infected` and a factor, for example `pack.bat --difficulty hard --vehicles 1`.
 
+**Town name signs:** every road into a named town gets a green New Zealand place-name sign 20 m outside the town, on the left verge, with the town's Māori name below where it has one. There are 137 signs over 51 towns. The textures, config classes and positions are generated already. They need one model, `structures\sign_town\sign_town.p3d`, which you make from `docs/models/sign_town.obj` in a few minutes (see [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md), item 2). Until that file exists, `pack.bat` leaves the signs out and says so.
+
+![Town signs](preview/signs_sheet.png)
+
 It finds DayZ Tools and the DayZ Server's vanilla mission in their Steam folders; pass `--tools` or `--vanilla-mission` if yours are elsewhere. Run `python tools/pack_mod.py --help` for all options. The signing key goes in `keys\` and is never committed.
 
 By hand:
 
 1. In Addon Builder, pack `P:\maps\aotearoa` to `@Aotearoa\addons\aotearoa.pbo` with the prefix `maps\aotearoa`.
    - Leave out `source\`, `tools\`, `preview\` and `mission\`. They are inputs, not game data.
-   - Keep `config.cpp`, `config\`, `data\` and `world\`.
+   - Keep `config.cpp`, `config\`, `data\`, `structures\` and `world\`.
 2. Copy `mod\mod.cpp` into `@Aotearoa\`.
    - Before packing, convert the images in `data\branding\` with ImageToPAA from DayZ Tools. `logo_512.png` and the icons become `logo_512_ca.paa`, `icon_128_ca.paa` and `icon_64_ca.paa` (they have alpha). `loading_1.jpg` and `map_picture.jpg` become `loading_1_co.paa` and `map_picture_co.paa`. `mod.cpp` and `config.cpp` point at those names.
 3. Sign the PBO with your key if the server verifies signatures.

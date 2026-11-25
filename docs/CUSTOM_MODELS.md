@@ -70,7 +70,26 @@ A small set of simple models, each a post with a sign face. Each needs Geometry 
 | Rural fire danger | Half-dial "Fire Danger Today", needle on high |
 | One Lane Bridge | Red-and-white rectangular sign |
 
-- **Placement (to add once they exist):** shields every 2 km on highways, place names where a highway enters a town (the town radius), Give Way at each street-to-highway join, One Lane Bridge at each bridge. `source/roads.json` has everything needed. A new function in `tools/details.py`, like `power_lines`, would write `roadsigns_tb.txt`.
+- **Placement (to add once they exist):** shields every 2 km on highways, Give Way at each street-to-highway join, One Lane Bridge at each bridge. `source/roads.json` has everything needed. A new function in `tools/details.py`, like `power_lines`, would write `roadsigns_tb.txt`.
+
+### Place name signs (done apart from the model)
+
+The place name sign is already built except for its `.p3d`. `tools/signs.py`, which `build_mission.py` runs, does the following:
+
+- Draws one texture per town in `data/signs/sign_<Town>.png`. The green face is the top half and plain grey is the bottom half. `preview/signs_sheet.png` shows them all.
+- Writes a config class per town to `config/signs.hpp` (included in `config.cpp`). Each class is `Land_Aotearoa_Sign_<Town>`, which inherits `Land_Aotearoa_Sign_Base` and sets `hiddenSelectionsTextures` to that town's texture.
+- Places a sign on every highway, gravel road and track where it enters a named town. A sign stands 20 m outside the edge, on the left verge, facing incoming traffic, and clear of roads and buildings. The signs go in `mission/dayzOffline.aotearoa/aotearoa/signs_spawner.json`: 137 signs over all 51 towns.
+
+The signs are loaded with the object spawner, not placed in Terrain Builder, because a world object can't change its texture per copy. `pack.bat` converts the textures to `_co.paa`. Once the model exists, it also adds the spawner to `cfggameplay.json`. Until then it prints a note and leaves the signs out.
+
+**Making the model:**
+
+1. In Object Builder, use **File → Import → Wavefront OBJ** to import `docs/models/sign_town.obj`. It is a 2.4 × 1.2 m board, its bottom edge 1.1 m up, on two posts, with metres as units and y up.
+2. In LOD 0 (resolution), select the faces of the `camo` group and name the selection **`camo`**. Give every face the texture `maps\aotearoa\data\signs\sign_Wellington_co.paa` (any town works; the config swaps it). The UVs already map the face onto the top half and the back and posts onto the grey half.
+3. Add a **Geometry** LOD: one box around the board and posts, with mass (about 40 kg), so players and cars collide with it.
+4. Add a **Fire Geometry** LOD: a copy of the Geometry LOD.
+5. Save the model as `P:\maps\aotearoa\structures\sign_town\sign_town.p3d`.
+6. Check the facing. With yaw 0 the face should look north, which is +z in Object Builder's top view. If a test sign shows its back to the traffic, rotate the model 180° in Object Builder. If the text reads backwards, mirror the face UVs. No other file needs changing.
 
 ## 3. Kiwi bach
 
