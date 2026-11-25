@@ -308,7 +308,7 @@ The world inherits lighting, weather and sounds from Chernarus Plus. It sets a s
 |---|---|
 | `init.c` | Vanilla start-up, with the date kept in the southern summer and the loot export line (see below) |
 | `cfgplayerspawnpoints.xml` | 40 spawn bubbles spread along the coasts of the two main islands |
-| `cfgeventspawns.xml` | Cars on the highway verges and parked in town streets, boats off the ports, ferry terminals and boat ramps, heli crashes in open country, police cars in town streets, military convoys near the bases |
+| `cfgeventspawns.xml` | Cars on the highway verges and parked in town streets, farm utes and trucks on the back roads and farm tracks, boats off the ports, ferry terminals and boat ramps, heli crashes in open country, police cars in town streets, military convoys near the bases |
 | `env/zombie_territories.xml` | Infected zones: city, village and military in towns, village in hamlets, surf clubs, holiday parks and stations, industrial at ports, the ferry terminals and airfields, solitude at farms, baches and huts |
 | `cfgeffectarea.json` | The Whakaari contaminated zone and the mainland safe positions |
 | `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
@@ -346,6 +346,40 @@ To set up a server:
 
 The rest of the economy is vanilla. Change counts in `NZ_TYPES` in `tools/economy.py`, or add your own entries to `aotearoa_ce/types.xml`.
 
+### Traders, safe zones and server mods
+
+![Trader sites](preview/traders_waikatotradingpost.png)
+
+`tools/mod_support.py` (run by `build_mission.py`) picks four trader sites on flat, clear land away from towns and sites:
+
+| Site | Type |
+|---|---|
+| Waikato Trading Post | Safe zone, between Auckland and Hamilton, by SH1 |
+| Central Plateau Trading Post | Safe zone, outside Taupō |
+| Rakaia Trading Post | Safe zone, between Christchurch and Ashburton |
+| Mackenzie Black Market | No safe zone, up a back road near Twizel, 30% dearer |
+
+Each site has a fenced compound of vanilla tents, a vehicle shed and containers. No car spawns inside a safe zone.
+
+| `pack.bat` option | What it does |
+|---|---|
+| `--traders` | Loads the compounds. Works on any server, with no mods. |
+| `--expansion` | DayZ Expansion: adds trader NPCs and trader zones, plus safe zone and spawn region snippets to paste in |
+| `--traderplus` | TraderPlus: adds trader and safe area snippets to paste in |
+
+Code Lock, BaseBuildingPlus and similar mods need nothing map-specific. [mission/mods/README.md](mission/mods/README.md) has the coordinates and the install steps for each mod.
+
+### Balance and performance
+
+`tools/balance_report.py` writes [docs/BALANCE_REPORT.md](docs/BALANCE_REPORT.md) and `preview/balance_2048.png`. The report covers:
+- objects per 250 m cell, against a 1,500 limit;
+- how many objects the spawners send at login;
+- loot buildings by tier and town;
+- the distance from any land to the nearest vehicle;
+- infected zones.
+
+Right now nothing is over its limit. The busiest cell has 991 objects, the spawners send 952 objects, and no land is more than 1.5 km from a vehicle.
+
 ## Player map
 
 ![Player map](preview/player_map_4096.jpg)
@@ -364,22 +398,32 @@ To make one:
 
 1. Add a section for the new version at the top of `CHANGELOG.md`.
 2. Put the same version in `VERSION` and in `mod/mod.cpp`. The checks fail if they differ.
-3. Commit, then tag and push: `git tag v0.4.0 && git push origin v0.4.0`.
+3. Commit, then tag and push: `git tag v0.5.0 && git push origin v0.5.0`.
 
 GitHub runs the checks, builds the files and publishes the release with that version's changelog as its notes.
 
 ## Custom models
 
 [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md) is a brief for a modeller. It covers New Zealand models the map would benefit from, in priority order:
-- the lake water plane and NZ road signs
-- a bach, a woolshed, a corner dairy and a DOC hut
+- the lake water plane and NZ road signs (the signs are placed and textured; only two simple models are left)
+- a bach, a woolshed, a corner dairy and a DOC hut, each with a ready-to-import blockout from `tools/make_models.py`
 - Hobbit holes, the Interislander, the Sky Tower, the Beehive and the Chateau
 
 For each one it gives the size and the parts it needs, plus where the map uses a stand-in today.
 
 ## Checks
 
-`tools/check_map.py` runs on GitHub on every push (`.github/workflows/check.yml`). It checks that the heightmap, mask and `config.cpp` agree on size, that every mission XML and JSON file parses, that every building, spawn and event is on the map and on land (boats on water), that every Terrain Builder file is well formed, and that every road type has a `RoadsLib.cfg` entry. Run it yourself after regenerating.
+`tools/check_map.py` runs on GitHub on every push (`.github/workflows/check.yml`). It checks that:
+
+- the heightmap, mask and `config.cpp` agree on size;
+- every mission XML and JSON file parses;
+- every building, spawn, event, sign and trader object is on the map and on land (boats on water);
+- every Terrain Builder file is well formed;
+- every road type has a `RoadsLib.cfg` entry;
+- every sign has a config class and a texture;
+- no vehicle spawns inside a safe zone.
+
+Run it yourself after regenerating.
 
 ## Things to check on your P: drive
 
