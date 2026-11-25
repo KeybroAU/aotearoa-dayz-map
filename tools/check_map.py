@@ -9,6 +9,7 @@ well formed, and that every road kind has a RoadsLib entry. Exits non-zero on an
 
 from __future__ import annotations
 
+import csv
 import json
 import re
 import sys
@@ -119,6 +120,21 @@ def main() -> None:
     for kind, spec in roads["kinds"].items():
         check(f"class Road{spec['id']:04d}" in lib, f"{kind} has RoadsLib entry Road{spec['id']:04d}")
     check(all(r["kind"] in roads["kinds"] for r in roads["roads"]), f"{len(roads['roads'])} roads use known kinds")
+
+    print("Town signs")
+    signs = json.loads((MISSION / "aotearoa" / "signs_spawner.json").read_text(encoding="utf-8"))["Objects"]
+    hpp = (MAP_DIR / "config" / "signs.hpp").read_text(encoding="utf-8")
+    classes = set(re.findall(r"class (Land_Aotearoa_Sign_\w+):", hpp)) - {"Land_Aotearoa_Sign_Base"}
+    check(bool(signs) and all(o["name"] in classes for o in signs), f"{len(signs)} signs, all with a config class")
+    check(all(on_map(o["pos"][0], o["pos"][2]) and ground(o["pos"][0], o["pos"][2]) > 0.0 for o in signs),
+          "signs all on land")
+    textures = {c.removeprefix("Land_Aotearoa_Sign_") for c in classes}
+    check(all((MAP_DIR / "data" / "signs" / f"sign_{t}.png").exists() for t in textures),
+          f"{len(textures)} sign textures in data/signs")
+    check('#include "config\\signs.hpp"' in cfg, "config.cpp includes config\\signs.hpp")
+    named = {r["name"] for r in csv.DictReader((SOURCE / "towns.csv").open(encoding="utf-8")) if r["tier"] != "hamlet"}
+    signed = {o["name"] for o in signs}
+    check(len(signed) == len(named), f"{len(signed)}/{len(named)} named towns have a sign")
 
     print()
     if failures:

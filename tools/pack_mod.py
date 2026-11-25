@@ -15,8 +15,9 @@ It writes dist/:
                                          copied over it and cfggameplay.json / cfgeconomycore.xml merged
 
 Steps it runs:
-  1. converts the branding images in data/branding/ to .paa with ImageToPAA
-  2. packs config.cpp, config/, data/ and world/ into aotearoa.pbo with Addon Builder (prefix maps\\aotearoa)
+  1. converts the branding images in data/branding/ and the town sign textures in data/signs/ to .paa
+     with ImageToPAA
+  2. packs config.cpp, config/, data/, structures/ and world/ into aotearoa.pbo with Addon Builder (prefix maps\\aotearoa)
   3. with --key NAME, makes a signing key (once) and signs the PBO
   4. builds the server folder, merging the mission files into a copy of vanilla dayzOffline.chernarusplus
 
@@ -48,7 +49,9 @@ from pathlib import Path
 MAP_DIR = Path(__file__).resolve().parents[1]
 PREFIX = "maps\\aotearoa"
 MISSION = "dayzOffline.aotearoa"
-PACKED = ["config.cpp", "$PBOPREFIX$", "config", "data", "world"]
+PACKED = ["config.cpp", "$PBOPREFIX$", "config", "data", "structures", "world"]
+SIGN_MODEL = MAP_DIR / "structures" / "sign_town" / "sign_town.p3d"
+SIGNS_SPAWNER = "aotearoa/signs_spawner.json"
 SKIP_IN_DATA = ["branding/art"]
 COPY_DIRECT = "*.paa,*.rvmat,*.wrp,*.png,*.jpg,*.shp,*.shx,*.dbf,*.cfg,*.hpp,*.txt"
 BRANDING = [("logo_512.png", "logo_512_ca.paa"), ("icon_128.png", "icon_128_ca.paa"),
@@ -128,6 +131,14 @@ def convert_branding(tools: Path) -> None:
             run([exe, path, src_dir / dst])
 
 
+def convert_signs(tools: Path) -> None:
+    exe = tool(tools, "ImageToPAA", "ImageToPAA.exe")
+    pngs = sorted((MAP_DIR / "data" / "signs").glob("sign_*.png"))
+    for png in pngs:
+        run([exe, png, png.with_name(png.stem + "_co.paa")])
+    print(f"  {len(pngs)} town sign textures")
+
+
 def stage_and_pack(tools: Path, out_addons: Path) -> Path:
     """Copy only the game files to a staging folder on the same drive, then pack that."""
     for need in (MAP_DIR / "world" / "aotearoa.wrp", MAP_DIR / "data" / "layers"):
@@ -203,11 +214,20 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool) -> list[str]
     shutil.copytree(gen, dest, dirs_exist_ok=True, ignore=shutil.ignore_patterns(*MERGED_AWAY))
 
     extra = json.loads((gen / "cfggameplay.worldsdata.json").read_text(encoding="utf-8"))
+    spawner_files = []
+    if SIGN_MODEL.exists():
+        spawner_files.append(SIGNS_SPAWNER)
+    else:
+        (dest / SIGNS_SPAWNER).unlink(missing_ok=True)
+        warnings.append(f"No {SIGN_MODEL.relative_to(MAP_DIR)}, so the town name signs are left out. Make it from "
+                        "docs/models/sign_town.obj (docs/CUSTOM_MODELS.md, item 2) and pack again.")
     if spawners:
         (dest / "aotearoa").mkdir(exist_ok=True)
         for f in ("towns_spawner.json", "pois_spawner.json"):
             shutil.copy2(MAP_DIR / "source" / "objects" / f, dest / "aotearoa" / f)
-        extra["WorldsData"]["objectSpawnersArr"] = ["aotearoa/towns_spawner.json", "aotearoa/pois_spawner.json"]
+        spawner_files += ["aotearoa/towns_spawner.json", "aotearoa/pois_spawner.json"]
+    if spawner_files:
+        extra["WorldsData"]["objectSpawnersArr"] = spawner_files
     gameplay = dest / "cfggameplay.json"
     if gameplay.exists():
         data = json.loads(gameplay.read_text(encoding="utf-8"))
@@ -347,8 +367,9 @@ def main() -> None:
         if tools is None:
             sys.exit("Can't find DayZ Tools. Pass --tools \"C:\\...\\DayZ Tools\".")
         print(f"DayZ Tools: {tools}")
-        print("[1/4] Branding images to .paa")
+        print("[1/4] Branding images and town signs to .paa")
         convert_branding(tools)
+        convert_signs(tools)
         print("[2/4] Packing aotearoa.pbo")
         if not DRY:
             shutil.rmtree(mod_dir, ignore_errors=True)
