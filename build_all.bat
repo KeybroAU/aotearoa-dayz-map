@@ -25,8 +25,10 @@ python build_satellite.py --size 25600 || goto :fail
 echo [5/6] Mission files to mission\dayzOffline.aotearoa...
 python build_mission.py || goto :fail
 
-echo [6/6] Player map and checks...
+echo [6/6] Player map, models, balance report and checks...
 python build_player_map.py --satellite ..\source\satellite_25600.png || goto :fail
+python make_models.py || goto :fail
+python balance_report.py || goto :fail
 python check_map.py || goto :fail
 
 echo.

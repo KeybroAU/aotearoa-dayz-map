@@ -32,6 +32,8 @@ OUT = g.MAP_DIR / "mission"
 SPAWN_COUNT = 40
 HELI_CRASHES = 24
 VEHICLE_SPACING_M = 450.0
+RURAL_VEHICLE_SPACING_M = 1200.0  # farm utes and trucks along the back roads and farm tracks
+RURAL_VEHICLES = ["VehicleOffroad02", "VehicleTruck01", "VehicleOffroadHatchback"]
 
 VEHICLES = ["VehicleCivilianSedan", "VehicleSedan02", "VehicleHatchback02", "VehicleOffroadHatchback",
             "VehicleOffroad02", "VehicleTruck01"]
@@ -174,6 +176,26 @@ def events(h, idx, land, slope, towns, roads, pois, rng):
         side = math.radians(hd - 90.0)
         px, py = x + 3.5 * math.sin(side), y + 3.5 * math.cos(side)
         ev.setdefault(VEHICLES[i % len(VEHICLES)], []).append((px, py, hd))
+
+    # Farm utes and trucks on the back roads and farm tracks, so the back country has transport too.
+    k = 0
+    for r in roads["roads"]:
+        if r["kind"] not in ("gravel", "track"):
+            continue
+        pts = np.array(r["points"])
+        seg = np.hypot(*np.diff(pts, axis=0).T)
+        dist = np.concatenate([[0.0], np.cumsum(seg)])
+        for at in np.arange(RURAL_VEHICLE_SPACING_M / 2, dist[-1] - 100.0, RURAL_VEHICLE_SPACING_M):
+            i = max(0, min(int(np.searchsorted(dist, at) - 1), len(pts) - 2))
+            f = (at - dist[i]) / max(seg[i], 1e-6)
+            x, y = pts[i] + f * (pts[i + 1] - pts[i])
+            if not outside(zones, x, y):
+                continue
+            hd = math.degrees(math.atan2(*(pts[i + 1] - pts[i]))) % 360
+            side = math.radians(hd - 90.0)
+            ev.setdefault(RURAL_VEHICLES[k % len(RURAL_VEHICLES)], []).append(
+                (x + 3.0 * math.sin(side), y + 3.0 * math.cos(side), hd))
+            k += 1
 
     # Boats tied up off each port, ferry terminal and boat ramp.
     for p in pois:
