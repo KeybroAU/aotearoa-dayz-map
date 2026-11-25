@@ -26,13 +26,17 @@ import towns as towns_mod
 
 # Each chain is routed leg by leg, in this order, so later highways join earlier ones.
 HIGHWAYS = [
-    ("SH1", ["Kaitāia", "Paihia", "Whangārei", "Auckland", "Hamilton", "Taupō", "Waiouru Army Camp",
+    ("SH1", ["Kaitāia", "Paihia", "Whangārei", "Auckland", "Huntly", "Hamilton", "Cambridge", "Taupō", "Waiouru Army Camp",
              "Palmerston North", "Wellington"]),
     ("SH1", ["Picton", "Blenheim", "Kaikōura", "Christchurch", "Burnham Military Camp", "Ashburton",
              "Timaru", "Ōamaru", "Dunedin", "Gore", "Invercargill"]),
     ("SH2", ["Auckland", "Thames", "Tauranga", "Whakatāne", "Gisborne", "Napier", "Hastings", "Masterton",
              "Wellington"]),
-    ("SH3", ["Hamilton", "New Plymouth", "Eltham", "Whanganui", "RNZAF Base Ōhakea", "Palmerston North"]),
+    ("SH3", ["Hamilton", "Te Awamutu", "New Plymouth", "Stratford", "Eltham", "Hāwera", "Whanganui", "RNZAF Base Ōhakea",
+             "Palmerston North"]),
+    ("SH45", ["New Plymouth", "Ōpunake", "Hāwera"]),
+    ("SH27", ["Hamilton", "Matamata", "Rotorua"]),
+    ("SH57", ["Palmerston North", "Linton Army Camp"]),
     ("SH4", ["Hamilton", "Taumarunui", "Whanganui"]),
     ("SH5", ["Hamilton", "Rotorua", "Taupō", "Napier"]),
     ("SH30", ["Rotorua", "Whakatāne"]),
@@ -66,7 +70,7 @@ class Road:
     kind: str
     ref: str
     points: list[tuple[float, float]]
-    bridges: list[tuple[float, float, float]] = field(default_factory=list)  # x, y, heading deg
+    bridges: list[tuple[float, float, float, float]] = field(default_factory=list)  # x, y, heading deg, span m
 
 
 def town_streets(t: towns_mod.Town) -> list[list[tuple[float, float]]]:
@@ -128,9 +132,9 @@ def base_cost(h, land, lake_mask, river_mask, towns, grid) -> np.ndarray:
     return cost
 
 
-def route(cost: np.ndarray, a: tuple[int, int], b: tuple[int, int]) -> list[tuple[int, int]] | None:
+def route(cost: np.ndarray, a: tuple[int, int], b: tuple[int, int], cell: float) -> list[tuple[int, int]] | None:
     n = cost.shape[0]
-    margin = int(WINDOW_MARGIN_M / 5.0)
+    margin = int(WINDOW_MARGIN_M / cell)
     for pad in (margin, margin * 3, n):
         r0, r1 = max(0, min(a[0], b[0]) - pad), min(n, max(a[0], b[0]) + pad + 1)
         c0, c1 = max(0, min(a[1], b[1]) - pad), min(n, max(a[1], b[1]) + pad + 1)
@@ -217,7 +221,7 @@ def build_roads(h, land, lake_mask, river_mask, towns, grid) -> tuple[np.ndarray
             rb, cb = grid.to_cell(tb.x, tb.y)
             a, b = (int(round(float(ra))), int(round(float(ca)))), (int(round(float(rb))), int(round(float(cb))))
             cost[a] = cost[b] = 1.0
-            path = route(cost, a, b)
+            path = route(cost, a, b, grid.cell)
             if path is None:
                 print(f"  {ref} {a_name} - {b_name}: no route")
                 continue
@@ -241,7 +245,7 @@ def build_roads(h, land, lake_mask, river_mask, towns, grid) -> tuple[np.ndarray
         for line in street_lines[t.name]:
             roads.append(Road("street", t.class_name, line))
 
-    h = grade_highways(h, land, lake_mask, [r for r in roads if r.kind == "highway"], towns, grid)
+    h = grade_highways(h, land, lake_mask, river_mask, [r for r in roads if r.kind == "highway"], towns, grid)
     footprint = road_footprint(roads, grid)
     return h, roads, footprint
 
@@ -288,14 +292,14 @@ def add_access_roads(h, land, lake_mask, river_mask, towns, grid, roads: list[Ro
         if len(world) < 2:
             continue
         pts = chaikin(measure.approximate_polygon(world, tolerance=2.0), 2)
-        kind = "street" if site.kind in ("airfield", "port", "industrial") else "track"
+        kind = "street" if site.kind in ("airfield", "port", "industrial", "naval") else "track"
         road = Road(kind, site.class_name, [(float(x), float(y)) for x, y in pts])
         road.bridges = find_bridges(pts, river_mask, grid)
         roads.append(road)
     return roads, road_footprint(roads, grid)
 
 
-def find_bridges(points: np.ndarray, river_mask: np.ndarray, grid) -> list[tuple[float, float, float]]:
+def find_bridges(points: np.ndarray, river_mask: np.ndarray, grid) -> list[tuple[float, float, float, float]]:
     dense = densify(points, grid.cell)
     r, c = grid.to_cell(dense[:, 0], dense[:, 1])
     wet = river_mask[np.clip(np.rint(r).astype(int), 0, grid.n - 1), np.clip(np.rint(c).astype(int), 0, grid.n - 1)]
@@ -306,11 +310,12 @@ def find_bridges(points: np.ndarray, river_mask: np.ndarray, grid) -> list[tuple
         i0, i1 = max(0, idx[0] - 1), min(len(dense) - 1, idx[-1] + 1)
         mid = dense[(i0 + i1) // 2]
         dx, dy = dense[i1] - dense[i0]
-        out.append((float(mid[0]), float(mid[1]), float(math.degrees(math.atan2(dx, dy)) % 360)))
+        span = float(np.hypot(dx, dy))
+        out.append((float(mid[0]), float(mid[1]), float(math.degrees(math.atan2(dx, dy)) % 360), span))
     return out
 
 
-def grade_highways(h, land, lake_mask, roads, towns, grid) -> np.ndarray:
+def grade_highways(h, land, lake_mask, river_mask, roads, towns, grid) -> np.ndarray:
     target = np.full(h.shape, np.nan, dtype=np.float32)
     for road in roads:
         dense = densify(np.array(road.points), grid.cell * 0.5)
@@ -331,6 +336,11 @@ def grade_highways(h, land, lake_mask, roads, towns, grid) -> np.ndarray:
     w = np.clip(1.0 - (dist - half) / blend, 0.0, 1.0)
     w = w * w * (3 - 2 * w)
     w[~land | lake_mask | towns_mod.town_mask(towns, grid)] = 0.0
+    # The river keeps flowing under each bridge instead of being filled by the road bed.
+    for road in roads:
+        for x, y, _, span in road.bridges:
+            win, wx, wy = grid.window(x, y, span / 2 + 2 * grid.cell)
+            w[win][(np.hypot(wx - x, wy - y) <= span / 2 + grid.cell) & river_mask[win]] = 0.0
     return np.where(w > 0, h * (1 - w) + bed * w, h).astype(np.float32)
 
 
@@ -368,8 +378,8 @@ def write_outputs(roads: list[Road], footprint: np.ndarray, source_dir: Path, ea
         "kinds": KINDS,
         "roads": [{"kind": r.kind, "ref": r.ref, "points": [[round(x, 1), round(y, 1)] for x, y in r.points]}
                   for r in roads],
-        "bridges": [{"ref": r.ref, "x": round(x, 1), "y": round(y, 1), "heading": round(hd, 1)}
-                    for r in roads for x, y, hd in r.bridges],
+        "bridges": [{"ref": r.ref, "x": round(x, 1), "y": round(y, 1), "heading": round(hd, 1), "span": round(sp, 1)}
+                    for r in roads for x, y, hd, sp in r.bridges],
     }
     (source_dir / "roads.json").write_text(json.dumps(data, ensure_ascii=False) + "\n", encoding="utf-8")
     Image.fromarray((footprint * 255).astype(np.uint8)).save(source_dir / "roads_4096.png", optimize=True)
@@ -430,6 +440,6 @@ def draw_preview(relief: Image.Image, roads: list[Road], size_m: float) -> Image
         else:
             d.line(pts, fill=(200, 170, 110), width=1)
     for road in roads:
-        for x, y, _ in road.bridges:
+        for x, y, _, _ in road.bridges:
             d.ellipse([x * k - 3, (size_m - y) * k - 3, x * k + 3, (size_m - y) * k + 3], outline=(255, 230, 0), width=2)
     return img
