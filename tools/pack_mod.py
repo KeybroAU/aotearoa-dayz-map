@@ -9,16 +9,18 @@ Run it on the Windows machine with DayZ Tools, after the world is exported from 
 It writes dist/:
 
     dist/@Aotearoa/                      the client and server mod: addons/aotearoa.pbo, mod.cpp, keys/
+    dist/@AotearoaMap/                   the map item mod (class AotearoaMap): addons/aotearoa_map.pbo, mod.cpp, keys/
     dist/server/                         drop this into your DayZ Server folder:
-        @Aotearoa/, keys/, serverDZ.cfg, start_server.bat, start_server.sh,
+        @Aotearoa/, @AotearoaMap/, keys/, serverDZ.cfg, start_server.bat, start_server.sh,
         mpmissions/dayzOffline.aotearoa/ vanilla Chernarus mission with every Aotearoa file
                                          copied over it and cfggameplay.json / cfgeconomycore.xml merged
 
 Steps it runs:
-  1. converts the branding images in data/branding/, the sign textures in data/signs/ and the model
-     textures in data/models/ to .paa with ImageToPAA
-  2. packs config.cpp, config/, data/, structures/ and world/ into aotearoa.pbo with Addon Builder (prefix maps\\aotearoa)
-  3. with --key NAME, makes a signing key (once) and signs the PBO
+  1. converts the branding images in data/branding/, the sign textures in data/signs/, the model
+     textures in data/models/ and the map item textures in mapitem/data/ to .paa with ImageToPAA
+  2. packs config.cpp, config/, data/, structures/ and world/ into aotearoa.pbo with Addon Builder (prefix maps\\aotearoa),
+     and mapitem/ into aotearoa_map.pbo (prefix aotearoa_map)
+  3. with --key NAME, makes a signing key (once) and signs the PBOs
   4. builds the server folder, merging the mission files into a copy of vanilla dayzOffline.chernarusplus
 
 Options:
@@ -33,6 +35,7 @@ Options:
   --expansion             set the server up for DayZ Expansion: trader NPCs, trader zones, and the safe zone
                           and spawn snippets (implies --traders; see mission/mods/README.md)
   --traderplus            copy the TraderPlus trader and safe area snippets (implies --traders)
+  --no-map-item           leave out @AotearoaMap (the AotearoaMap item and its loot entries)
   --skip-pbo              build only the server folder (reuses dist/@Aotearoa if it is there)
   --zip                   also write dist/Aotearoa_mod.zip and dist/Aotearoa_server.zip
   --dry-run               print what would run without running it
@@ -62,6 +65,9 @@ COPY_DIRECT = "*.paa,*.rvmat,*.wrp,*.png,*.jpg,*.shp,*.shx,*.dbf,*.cfg,*.hpp,*.t
 BRANDING = [("logo_512.png", "logo_512_ca.paa"), ("icon_128.png", "icon_128_ca.paa"),
             ("icon_64.png", "icon_64_ca.paa"), ("loading_1.jpg", "loading_1_co.paa"),
             ("loading_2.jpg", "loading_2_co.paa"), ("map_picture.jpg", "map_picture_co.paa")]
+MAPITEM = MAP_DIR / "mapitem"
+MAPITEM_PREFIX = "aotearoa_map"
+MAPITEM_MOD = "@AotearoaMap"
 STEAM_DIRS = [Path(r"C:\Program Files (x86)\Steam\steamapps\common"), Path(r"C:\Program Files\Steam\steamapps\common")]
 MERGED_AWAY = ["cfggameplay.worldsdata.json", "cfgeconomycore.aotearoa.xml"]
 
@@ -147,6 +153,44 @@ def convert_textures(tools: Path) -> None:
     print(f"  {len(jobs)} sign and model textures")
 
 
+def convert_map_item(tools: Path) -> None:
+    """Map item textures, for @AotearoaMap and for the world's own mapTexture* (data/mapitem/)."""
+    exe = tool(tools, "ImageToPAA", "ImageToPAA.exe")
+    pngs = sorted((MAPITEM / "data").glob("aotearoa_map_*.png"))
+    if not pngs:
+        sys.exit("No mapitem/data/aotearoa_map_*.png. Run tools/build_map_item.py first.")
+    world_copy = MAP_DIR / "data" / "mapitem"
+    if not DRY:
+        world_copy.mkdir(parents=True, exist_ok=True)
+    for png in pngs:
+        paa = png.with_name(png.stem + "_co.paa")
+        run([exe, png, paa])
+        if not DRY:
+            shutil.copy2(paa, world_copy / paa.name)
+    print(f"  {len(pngs)} map item textures")
+
+
+def pack_map_item(tools: Path, mod_dir: Path) -> Path:
+    stage = MAP_DIR.parent / "_aotearoa_map_pack" / MAPITEM_PREFIX
+    print(f"  staging the map item in {stage}")
+    if not DRY:
+        shutil.rmtree(stage.parent, ignore_errors=True)
+        (stage / "data").mkdir(parents=True)
+        for name in ("config.cpp", "$PBOPREFIX$"):
+            shutil.copy2(MAPITEM / name, stage / name)
+        shutil.copytree(MAPITEM / "scripts", stage / "scripts")
+        for paa in (MAPITEM / "data").glob("*.paa"):
+            shutil.copy2(paa, stage / "data" / paa.name)
+        (mod_dir / "addons").mkdir(parents=True, exist_ok=True)
+        (stage.parent / "include.txt").write_text("*.paa,*.c")
+    run([tool(tools, "AddonBuilder", "AddonBuilder.exe"), stage, mod_dir / "addons", "-clear",
+         f"-prefix={MAPITEM_PREFIX}", f"-include={stage.parent / 'include.txt'}", "-project=P:\\"])
+    if not DRY:
+        shutil.rmtree(stage.parent, ignore_errors=True)
+        shutil.copy2(MAPITEM / "mod.cpp", mod_dir / "mod.cpp")
+    return mod_dir / "addons" / f"{MAPITEM_PREFIX}.pbo"
+
+
 def stage_and_pack(tools: Path, out_addons: Path) -> Path:
     """Copy only the game files to a staging folder on the same drive, then pack that."""
     for need in (MAP_DIR / "world" / "aotearoa.wrp", MAP_DIR / "data" / "layers"):
@@ -207,7 +251,7 @@ def merge_dicts(base: dict, extra: dict) -> dict:
     return base
 
 
-def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[str]) -> list[str]:
+def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[str], map_item: bool) -> list[str]:
     """Vanilla Chernarus mission + generated files + merged configs. Returns warnings."""
     warnings = []
     gen = MAP_DIR / "mission" / MISSION
@@ -253,15 +297,21 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[st
 
     core = dest / "cfgeconomycore.xml"
     block = re.sub(r"<!--.*?-->\s*", "", (gen / "cfgeconomycore.aotearoa.xml").read_text(encoding="utf-8"), flags=re.S)
+    blocks = [("aotearoa_ce", block)]
+    if map_item:
+        shutil.copytree(MAPITEM / "ce", dest / "aotearoa_map_ce", dirs_exist_ok=True)
+        blocks.append(("aotearoa_map_ce", '<ce folder="aotearoa_map_ce">\n    <file name="types.xml" type="types" />\n</ce>'))
     if core.exists():
         text = core.read_text(encoding="utf-8")
-        if 'folder="aotearoa_ce"' not in text:
+        for folder, blk in blocks:
+            if f'folder="{folder}"' in text:
+                continue
             if "</economycore>" not in text:
-                warnings.append("cfgeconomycore.xml has no </economycore>; add the aotearoa_ce block by hand.")
-            else:
-                indented = "\n".join("\t" + ln for ln in block.strip().splitlines())
-                text = text.replace("</economycore>", indented + "\n</economycore>", 1)
-                core.write_text(text, encoding="utf-8")
+                warnings.append(f"cfgeconomycore.xml has no </economycore>; add the {folder} block by hand.")
+                continue
+            indented = "\n".join("\t" + ln for ln in blk.strip().splitlines())
+            text = text.replace("</economycore>", indented + "\n</economycore>", 1)
+        core.write_text(text, encoding="utf-8")
     else:
         warnings.append("No cfgeconomycore.xml in the mission; the New Zealand loot changes won't load until you "
                         "add the aotearoa_ce block from mission/dayzOffline.aotearoa/cfgeconomycore.aotearoa.xml.")
@@ -331,7 +381,7 @@ def apply_difficulty(mission: Path, factors: dict) -> list[str]:
 
 
 def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool, factors: dict,
-                 mods: set[str]) -> list[str]:
+                 mods: set[str], map_dir: Path | None) -> list[str]:
     server = out / "server"
     print(f"  server folder {server}")
     if DRY:
@@ -341,7 +391,14 @@ def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool,
         shutil.copytree(mod_dir, server / "@Aotearoa", dirs_exist_ok=True)
         if (mod_dir / "keys").exists():
             shutil.copytree(mod_dir / "keys", server / "keys", dirs_exist_ok=True)
-    warnings = build_mission(server / "mpmissions" / MISSION, vanilla, spawners, mods)
+    if map_dir and map_dir.exists():
+        shutil.copytree(map_dir, server / MAPITEM_MOD, dirs_exist_ok=True)
+        if (map_dir / "keys").exists():
+            shutil.copytree(map_dir / "keys", server / "keys", dirs_exist_ok=True)
+    map_item = bool(map_dir and map_dir.exists())
+    warnings = build_mission(server / "mpmissions" / MISSION, vanilla, spawners, mods, map_item)
+    if map_dir and not map_item:
+        warnings.append(f"No dist/{MAPITEM_MOD} yet, so the server runs without the map item. Run without --skip-pbo.")
     mod_src = MAP_DIR / "mission" / "mods"
     if mods & {"expansion", "traderplus"}:
         shutil.rmtree(server / "mod_support", ignore_errors=True)
@@ -362,6 +419,10 @@ def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool,
         warnings.append("No dist/@Aotearoa yet, so the server folder has no mod. Run without --skip-pbo.")
     shutil.copy2(MAP_DIR / "mission" / "serverDZ.cfg", server / "serverDZ.cfg")
     shutil.copytree(MAP_DIR / "mission" / "server", server, dirs_exist_ok=True)
+    if not map_item:
+        for script in ("start_server.bat", "start_server.sh"):
+            path = server / script
+            path.write_text(path.read_text().replace(f";{MAPITEM_MOD}", ""))
     be = server / "profiles" / "BattlEye"
     be.mkdir(parents=True, exist_ok=True)
     shutil.move(str(server / "battleye" / "BEServer_x64.cfg"), be / "BEServer_x64.cfg")
@@ -387,6 +448,7 @@ def main() -> None:
     ap.add_argument("--traders", action="store_true")
     ap.add_argument("--expansion", action="store_true")
     ap.add_argument("--traderplus", action="store_true")
+    ap.add_argument("--no-map-item", action="store_true")
     ap.add_argument("--skip-pbo", action="store_true")
     ap.add_argument("--zip", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
@@ -395,6 +457,7 @@ def main() -> None:
 
     out = args.out
     mod_dir = out / "@Aotearoa"
+    map_dir = None if args.no_map_item else out / MAPITEM_MOD
     if not args.skip_pbo:
         tools = find_tools(args.tools)
         if tools is None:
@@ -403,15 +466,23 @@ def main() -> None:
         print("[1/4] Branding images and town signs to .paa")
         convert_branding(tools)
         convert_textures(tools)
-        print("[2/4] Packing aotearoa.pbo")
+        convert_map_item(tools)
+        print("[2/4] Packing aotearoa.pbo" + ("" if args.no_map_item else " and aotearoa_map.pbo"))
         if not DRY:
             shutil.rmtree(mod_dir, ignore_errors=True)
         pbo = stage_and_pack(tools, mod_dir / "addons")
         if not DRY:
             shutil.copy2(MAP_DIR / "mod" / "mod.cpp", mod_dir / "mod.cpp")
+        map_pbo = None
+        if map_dir:
+            if not DRY:
+                shutil.rmtree(map_dir, ignore_errors=True)
+            map_pbo = pack_map_item(tools, map_dir)
         print("[3/4] Signing")
         if args.key:
             sign(tools, args.key, pbo, mod_dir)
+            if map_pbo:
+                sign(tools, args.key, map_pbo, map_dir)
         else:
             print("  skipped (no --key). Servers with verifySignatures = 2 need a signed PBO.")
     print("[4/4] Server folder")
@@ -426,10 +497,11 @@ def main() -> None:
     if mods:
         mods.add("traders")
         print("  mod support: " + ", ".join(sorted(mods)))
-    warnings = build_server(out, mod_dir, vanilla, args.spawners, factors, mods)
+    warnings = build_server(out, mod_dir, vanilla, args.spawners, factors, mods, map_dir)
 
     if args.zip and not DRY:
-        for name, src in (("Aotearoa_mod", mod_dir), ("Aotearoa_server", out / "server")):
+        for name, src in (("Aotearoa_mod", mod_dir), ("AotearoaMap_mod", out / MAPITEM_MOD),
+                          ("Aotearoa_server", out / "server")):
             if src.exists():
                 shutil.make_archive(str(out / name), "zip", src.parent, src.name)
                 print(f"  wrote {out / (name + '.zip')}")

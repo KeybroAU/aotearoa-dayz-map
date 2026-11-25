@@ -51,6 +51,14 @@ class CfgWorlds
 		startDate = "15/01/2027";
 		startTime = "10:00";
 
+		// Vanilla ChernarusMap takes its name and textures from here (otherwise it shows Chernarus).
+		// The AotearoaMap item in @AotearoaMap carries its own copies; see tools/build_map_item.py.
+		mapDisplayNameKey = "Map of Aotearoa";
+		mapDescriptionKey = "A folded road map of Aotearoa New Zealand with a 1 km grid and every town listed on the back.";
+		mapTextureClosed = "maps\aotearoa\data\mapitem\aotearoa_map_closed_co.paa";
+		mapTextureOpened = "maps\aotearoa\data\mapitem\aotearoa_map_opened_co.paa";
+		mapTextureLegend = "maps\aotearoa\data\mapitem\aotearoa_map_legend_co.paa";
+
 		class Grid: Grid
 		{
 			offsetX = 0;

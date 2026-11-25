@@ -8,3 +8,5 @@ models.txt
 source/model_fixes.json
 dist/
 keys/
+data/mapitem/
+mapitem/data/*.paa

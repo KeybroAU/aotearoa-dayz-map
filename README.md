@@ -281,7 +281,7 @@ These steps assume DayZ Tools is installed and the P: drive is mounted with game
 
 Loot scales every item's `nominal` and `min` in `types.xml`. Vehicles scale the `Vehicle*` events in `events.xml`. Infected scale the `Infected*` events and `ZombieMaxCount` in `globals.xml`. Fine-tune any one with `--loot`, `--vehicles` or `--infected` and a factor, for example `pack.bat --difficulty hard --vehicles 1`.
 
-**Road signs:** every road into a named town gets a green New Zealand place-name sign, with the Māori name below where the town has one. The map also has State Highway shields, 50 and 100 km/h signs at town edges, Give Way signs where side roads meet highways, and One Lane Bridge signs. That's 790 signs in all, each on the left verge facing its traffic. The textures, config classes and positions are generated already. They need two simple models, which you make from `docs/models/sign_town.obj` and `sign_post.obj` (see [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md), item 2). Until those exist, `pack.bat` leaves the signs out and says so.
+**Road signs:** every road into a named town gets a green New Zealand place-name sign, with the Māori name below where the town has one. The map also has State Highway shields, 50 and 100 km/h signs at town edges, Give Way signs where side roads meet highways, and One Lane Bridge signs. That's 797 signs in all, each on the left verge facing its traffic. The textures, config classes and positions are generated already. They need two simple models, which you make from `docs/models/sign_town.obj` and `sign_post.obj` (see [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md), item 2). Until those exist, `pack.bat` leaves the signs out and says so.
 
 **Custom buildings:** `tools/make_models.py` writes enterable blockout models, ready to import into Object Builder, for a Kiwi bach, a DOC hut, a woolshed and a corner dairy, with their textures and config classes. See [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md).
 
@@ -386,12 +386,41 @@ Right now nothing is over its limit. The busiest cell has 991 objects, the spawn
 
 `preview/player_map_4096.jpg` is a labelled map to print or share with players. It has the satellite image, a 1 km grid numbered like the in-game map, towns with both names, the highways, gravel roads, railway and stations, the main sites and a legend. Make a bigger one from the full satellite with `python tools/build_player_map.py --size 8192`.
 
+## In-game map item
+
+![Map item: cover, sheet and legend](preview/map_item_sheet.png)
+
+The paper map players pick up is its own mod, `@AotearoaMap`, with the class **`AotearoaMap`**. It is built on vanilla `ChernarusMap`, so it unfolds the same way and keeps markers.
+- **Opened sheet:** the labelled map with the 1 km grid.
+- **Back (legend panel):** the key, then all 52 towns and 56 named places with their grid squares, for example `Rakaia ..... 11-18`.
+- **Cover:** a folded road-map cover.
+
+Unfolding it opens DayZ's 2D map, which the game draws from the terrain. Its labels come from `config/names.hpp`, which holds every town, military camp and named site (109 labels).
+
+| File | What it is |
+|---|---|
+| `mapitem/config.cpp` | `CfgPatches Aotearoa_Map`, `CfgMods` and `class AotearoaMap: ChernarusMap` |
+| `mapitem/scripts/4_World/AotearoaMap.c` | Makes the item use its own name and textures. Vanilla takes them from the loaded terrain, so without it every map looks alike. |
+| `mapitem/data/aotearoa_map_*.png` | The cover, sheet and legend textures, from `tools/build_map_item.py` |
+| `mapitem/ce/types.xml` | Loot: `AotearoaMap` spawns where vanilla maps do, plus towns and villages. Vanilla `ChernarusMap` is set to 0. |
+
+`pack.bat` packs it to `dist\@AotearoaMap\addons\aotearoa_map.pbo` (prefix `aotearoa_map`) and signs it with the same key. In the server folder it also:
+- adds `@AotearoaMap` to the launch scripts (`-mod=@Aotearoa;@AotearoaMap`);
+- copies the loot file to `aotearoa_map_ce\` and registers it in `cfgeconomycore.xml`.
+
+Players need both mods. Pass `--no-map-item` to leave it out.
+
+The world config also sets `mapTexture*` and `mapDisplayNameKey`. So even a vanilla `ChernarusMap` shows Aotearoa on this terrain, instead of Chernarus.
+
+Give it to new players by adding `AotearoaMap` to a starting gear preset, or sell it at the traders.
+
 ## Releases
 
 Each version is a [GitHub release](https://github.com/KeybroAU/aotearoa-dayz-map/releases) with:
 - the mission files
 - the heightmap as `.asc`
 - the player map
+- the map item source (`mapitem/`)
 - a source zip
 
 To make one:

@@ -161,6 +161,25 @@ def main() -> None:
     signed = {o["name"] for o in signs}
     check(len(signed) == len(named), f"{len(signed)}/{len(named)} named towns have a sign")
 
+    print("Map item")
+    item_cfg = (MAP_DIR / "mapitem" / "config.cpp").read_text(encoding="utf-8")
+    check("class AotearoaMap: ChernarusMap" in item_cfg, "mapitem/config.cpp defines AotearoaMap from ChernarusMap")
+    check("class AotearoaMap extends ChernarusMap" in (MAP_DIR / "mapitem" / "scripts" / "4_World" / "AotearoaMap.c")
+          .read_text(encoding="utf-8"), "mapitem/scripts/4_World/AotearoaMap.c")
+    textures = ["closed", "opened", "legend"]
+    check(all((MAP_DIR / "mapitem" / "data" / f"aotearoa_map_{t}.png").exists() for t in textures),
+          "map item textures in mapitem/data (tools/build_map_item.py)")
+    check(all(f"mapitem\\aotearoa_map_{t}_co.paa" in cfg and f"aotearoa_map\\data\\aotearoa_map_{t}_co.paa" in item_cfg
+              for t in textures), "world and item configs point at the map textures")
+    check('name="AotearoaMap"' in (MAP_DIR / "mapitem" / "ce" / "types.xml").read_text(encoding="utf-8"),
+          "mapitem/ce/types.xml spawns AotearoaMap")
+    names_hpp = (MAP_DIR / "config" / "names.hpp").read_text(encoding="utf-8")
+    labelled = {n for n in named} | {p["label"] for p in json.loads((SOURCE / "pois.json").read_text(encoding="utf-8"))
+                                     if p["label"]}
+    missing = sorted(n for n in labelled if f'"{n}' not in names_hpp)
+    check(not missing, f"{len(labelled)} towns and places labelled on the 2D map"
+          + (f" (missing: {', '.join(missing[:5])})" if missing else ""))
+
     print()
     if failures:
         print(f"{len(failures)} check(s) failed")

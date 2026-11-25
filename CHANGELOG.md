@@ -2,6 +2,15 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
+## Unreleased
+
+### Added
+- In-game map item: a new mod, `@AotearoaMap`, with the class `AotearoaMap` (built on `ChernarusMap`). It has its own cover, a labelled sheet with the 1 km grid, and a legend listing every town and named place with its grid square. It takes over the vanilla map's loot spawns. `pack.bat` packs, signs and loads it; pass `--no-map-item` to leave it out
+- The world now sets its own map name and textures, so a vanilla `ChernarusMap` shows Aotearoa too
+- A map item zip on each release
+- Rakaia township on SH1 and the Main North Line, between Christchurch and Ashburton
+- Rakaia Huts, the fishing settlement at the Rakaia river mouth, with baches, sheds and a gravel lane
+
 ## 0.4.0 - 2026-11-25
 
 ### Added
