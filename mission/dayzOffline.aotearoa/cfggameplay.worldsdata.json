@@ -1,0 +1,36 @@
+{
+    "WorldsData": {
+        "objectSpawnersArr": [
+            "aotearoa/towns_spawner.json",
+            "aotearoa/pois_spawner.json"
+        ],
+        "environmentMinTemps": [
+            12,
+            12,
+            10,
+            7,
+            4,
+            2,
+            1,
+            2,
+            4,
+            6,
+            8,
+            11
+        ],
+        "environmentMaxTemps": [
+            23,
+            22,
+            20,
+            17,
+            14,
+            11,
+            10,
+            12,
+            14,
+            17,
+            19,
+            21
+        ]
+    }
+}

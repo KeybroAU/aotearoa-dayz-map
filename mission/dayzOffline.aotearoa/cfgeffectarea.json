@@ -1,0 +1,50 @@
+{
+    "Areas": [
+        {
+            "AreaName": "Whakaari",
+            "Type": "ContaminatedArea_Static",
+            "TriggerType": "ContaminatedTrigger",
+            "Data": {
+                "Pos": [
+                    16777.4,
+                    9.1,
+                    14563.8
+                ],
+                "Radius": 320,
+                "PosHeight": 60,
+                "NegHeight": 20,
+                "InnerRingCount": 2,
+                "InnerPartDist": 50,
+                "OuterRingToggle": 1,
+                "OuterPartDist": 40,
+                "OuterOffset": 0,
+                "VerticalLayers": 0,
+                "VerticalOffset": 0,
+                "ParticleName": "graphics/particles/contaminated_area_gas_bigass"
+            },
+            "PlayerData": {
+                "AroundPartName": "graphics/particles/contaminated_area_gas_around",
+                "TinyPartName": "graphics/particles/contaminated_area_gas_around_tiny",
+                "PPERequesterType": "PPERequester_ContaminatedAreaTint"
+            }
+        }
+    ],
+    "SafePositions": [
+        [
+            16662.5,
+            13757.5
+        ],
+        [
+            16777.5,
+            13707.5
+        ],
+        [
+            16597.5,
+            13702.5
+        ],
+        [
+            16357.5,
+            13762.5
+        ]
+    ]
+}
