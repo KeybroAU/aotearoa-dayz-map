@@ -488,6 +488,7 @@ loginQueueMaxPlayers = 500;
 instanceId = 1;
 storageAutoFix = 1;
 enableCfgGameplayFile = 1;
+enableWhitelist = 0;          // 1 to only admit players listed in whitelist.txt
 
 class Missions
 {
