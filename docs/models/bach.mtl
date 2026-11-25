@@ -1,0 +1,12 @@
+newmtl aotearoa_iron_roof_red
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_iron_roof_red.png
+newmtl aotearoa_timber
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_timber.png
+newmtl aotearoa_weatherboard_mint
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_weatherboard_mint.png
+newmtl aotearoa_window
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_window.png

@@ -16,6 +16,7 @@ class CfgVehicles
 {
 	class HouseNoDestruct;
 	#include "config\signs.hpp"
+	#include "config\structures.hpp"
 };
 
 class CfgWorldList
