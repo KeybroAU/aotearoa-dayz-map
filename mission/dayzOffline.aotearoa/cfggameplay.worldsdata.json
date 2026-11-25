@@ -32,5 +32,12 @@
             19,
             21
         ]
+    },
+    "PlayerData": {
+        "spawnGearPresetFiles": [
+            "aotearoa_spawngear_farmer.json",
+            "aotearoa_spawngear_tramper.json",
+            "aotearoa_spawngear_beach.json"
+        ]
     }
 }

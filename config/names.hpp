@@ -472,7 +472,7 @@ class Names
 	class AucklandAirport
 	{
 		name = "Auckland Airport";
-		position[] = {17326.9, 19160.3};
+		position[] = {16666.9, 20540.3};
 		type = "NameLocal";
 		radiusA = 470;
 		radiusB = 470;
@@ -481,7 +481,7 @@ class Names
 	class ChristchurchAirport
 	{
 		name = "Christchurch Airport";
-		position[] = {12594.3, 8347.0};
+		position[] = {12534.3, 8347.0};
 		type = "NameLocal";
 		radiusA = 470;
 		radiusB = 470;
@@ -490,7 +490,7 @@ class Names
 	class OhakeaAirfield
 	{
 		name = "Ōhakea Airfield";
-		position[] = {19188.4, 14378.8};
+		position[] = {18648.4, 14978.8};
 		type = "NameLocal";
 		radiusA = 470;
 		radiusB = 470;
@@ -508,7 +508,7 @@ class Names
 	class PortofWellington
 	{
 		name = "Port of Wellington";
-		position[] = {17996.9, 11758.1};
+		position[] = {16406.9, 12238.1};
 		type = "NameLocal";
 		radiusA = 65;
 		radiusB = 65;
@@ -661,7 +661,7 @@ class Names
 	class HuntlyPowerStation
 	{
 		name = "Huntly Power Station";
-		position[] = {17865.4, 19183.8};
+		position[] = {17745.4, 18743.8};
 		type = "NameLocal";
 		radiusA = 85;
 		radiusB = 85;
@@ -670,7 +670,7 @@ class Names
 	class GlenbrookSteelMill
 	{
 		name = "Glenbrook Steel Mill";
-		position[] = {17185.2, 19526.9};
+		position[] = {17225.2, 19406.9};
 		type = "NameLocal";
 		radiusA = 85;
 		radiusB = 85;
@@ -719,6 +719,168 @@ class Names
 		type = "NameVillage";
 		radiusA = 80;
 		radiusB = 80;
+		angle = 0;
+	};
+	class InterislanderWellington
+	{
+		name = "Interislander Terminal";
+		position[] = {18116.9, 11998.1};
+		type = "NameLocal";
+		radiusA = 65;
+		radiusB = 65;
+		angle = 0;
+	};
+	class InterislanderPicton
+	{
+		name = "Picton Ferry Terminal";
+		position[] = {15888.1, 11959.4};
+		type = "NameLocal";
+		radiusA = 65;
+		radiusB = 65;
+		angle = 0;
+	};
+	class SurfClubAuckland
+	{
+		name = "Auckland Surf Life Saving Club";
+		position[] = {16838.1, 19926.9};
+		type = "NameLocal";
+		radiusA = 22;
+		radiusB = 22;
+		angle = 0;
+	};
+	class SurfClubTauranga
+	{
+		name = "Tauranga Surf Life Saving Club";
+		position[] = {19654.4, 18623.1};
+		type = "NameLocal";
+		radiusA = 22;
+		radiusB = 22;
+		angle = 0;
+	};
+	class SurfClubGisborne
+	{
+		name = "Gisborne Surf Life Saving Club";
+		position[] = {23358.1, 16763.1};
+		type = "NameLocal";
+		radiusA = 22;
+		radiusB = 22;
+		angle = 0;
+	};
+	class SurfClubNapier
+	{
+		name = "Napier Surf Life Saving Club";
+		position[] = {21340.6, 15539.4};
+		type = "NameLocal";
+		radiusA = 22;
+		radiusB = 22;
+		angle = 0;
+	};
+	class SurfClubNewPlymouth
+	{
+		name = "New Plymouth Surf Life Saving Club";
+		position[] = {15474.4, 15860.6};
+		type = "NameLocal";
+		radiusA = 22;
+		radiusB = 22;
+		angle = 0;
+	};
+	class SurfClubChristchurch
+	{
+		name = "Christchurch Surf Life Saving Club";
+		position[] = {13336.9, 7628.1};
+		type = "NameLocal";
+		radiusA = 22;
+		radiusB = 22;
+		angle = 0;
+	};
+	class SurfClubDunedin
+	{
+		name = "Dunedin Surf Life Saving Club";
+		position[] = {9023.1, 3663.1};
+		type = "NameLocal";
+		radiusA = 22;
+		radiusB = 22;
+		angle = 0;
+	};
+	class SurfClubWhangarei
+	{
+		name = "Whangārei Surf Life Saving Club";
+		position[] = {16615.6, 22241.9};
+		type = "NameLocal";
+		radiusA = 22;
+		radiusB = 22;
+		angle = 0;
+	};
+	class HolidayParkTaupo
+	{
+		name = "Lake Taupō Holiday Park";
+		position[] = {19896.9, 16939.4};
+		type = "NameLocal";
+		radiusA = 40;
+		radiusB = 40;
+		angle = 0;
+	};
+	class HolidayParkRotorua
+	{
+		name = "Rotorua Holiday Park";
+		position[] = {20283.1, 17561.9};
+		type = "NameLocal";
+		radiusA = 40;
+		radiusB = 40;
+		angle = 0;
+	};
+	class HolidayParkWanaka
+	{
+		name = "Wānaka Lakeview Holiday Park";
+		position[] = {6109.4, 5455.6};
+		type = "NameLocal";
+		radiusA = 40;
+		radiusB = 40;
+		angle = 0;
+	};
+	class HolidayParkTeAnau
+	{
+		name = "Te Anau Holiday Park";
+		position[] = {3238.1, 4539.4};
+		type = "NameLocal";
+		radiusA = 40;
+		radiusB = 40;
+		angle = 0;
+	};
+	class HolidayParkQueenstown
+	{
+		name = "Queenstown Holiday Park";
+		position[] = {4884.4, 5065.6};
+		type = "NameLocal";
+		radiusA = 40;
+		radiusB = 40;
+		angle = 0;
+	};
+	class HolidayParkHanmerSprings
+	{
+		name = "Hanmer Springs Holiday Park";
+		position[] = {13228.1, 9834.4};
+		type = "NameLocal";
+		radiusA = 40;
+		radiusB = 40;
+		angle = 0;
+	};
+	class HolidayParkFranzJosef
+	{
+		name = "Franz Josef Holiday Park";
+		position[] = {8021.9, 8210.6};
+		type = "NameLocal";
+		radiusA = 40;
+		radiusB = 40;
+		angle = 0;
+	};
+	class HolidayParkPaihia
+	{
+		name = "Bay of Islands Holiday Park";
+		position[] = {15673.1, 23034.4};
+		type = "NameLocal";
+		radiusA = 40;
+		radiusB = 40;
 		angle = 0;
 	};
 };

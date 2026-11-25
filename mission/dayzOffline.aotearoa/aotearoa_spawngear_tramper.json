@@ -1,0 +1,279 @@
+{
+    "spawnWeight": 2,
+    "name": "Tramper",
+    "characterTypes": [
+        "SurvivorM_Mirek",
+        "SurvivorM_Boris",
+        "SurvivorM_Cyril",
+        "SurvivorM_Denis",
+        "SurvivorM_Elias",
+        "SurvivorM_Francis",
+        "SurvivorM_Guo",
+        "SurvivorM_Hassan",
+        "SurvivorM_Indar",
+        "SurvivorM_Jose",
+        "SurvivorM_Kaito",
+        "SurvivorM_Lewis",
+        "SurvivorM_Manua",
+        "SurvivorM_Niki",
+        "SurvivorM_Oliver",
+        "SurvivorM_Peter",
+        "SurvivorM_Quinn",
+        "SurvivorM_Rolf",
+        "SurvivorM_Seth",
+        "SurvivorM_Taiki",
+        "SurvivorF_Eva",
+        "SurvivorF_Frida",
+        "SurvivorF_Gabi",
+        "SurvivorF_Helga",
+        "SurvivorF_Irena",
+        "SurvivorF_Judy",
+        "SurvivorF_Keiko",
+        "SurvivorF_Linda",
+        "SurvivorF_Maria",
+        "SurvivorF_Naomi",
+        "SurvivorF_Baty"
+    ],
+    "attachmentSlotItemSets": [
+        {
+            "slotName": "Body",
+            "discreteItemSets": [
+                {
+                    "itemType": "Raincoat_Green",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                },
+                {
+                    "itemType": "Raincoat_Orange",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                },
+                {
+                    "itemType": "Raincoat_Yellow",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                },
+                {
+                    "itemType": "Raincoat_Blue",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                }
+            ]
+        },
+        {
+            "slotName": "Legs",
+            "discreteItemSets": [
+                {
+                    "itemType": "CargoPants_Beige",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                },
+                {
+                    "itemType": "CargoPants_Black",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                },
+                {
+                    "itemType": "CargoPants_Green",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                }
+            ]
+        },
+        {
+            "slotName": "Feet",
+            "discreteItemSets": [
+                {
+                    "itemType": "HikingBoots_Brown",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                },
+                {
+                    "itemType": "HikingBoots_Black",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                }
+            ]
+        },
+        {
+            "slotName": "Headgear",
+            "discreteItemSets": [
+                {
+                    "itemType": "BeanieHat_Red",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                },
+                {
+                    "itemType": "BeanieHat_Blue",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                },
+                {
+                    "itemType": "",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.55,
+                        "healthMax": 0.9,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "complexChildrenTypes": [],
+                    "simpleChildrenTypes": [],
+                    "simpleChildrenUseDefaultAttributes": true
+                }
+            ]
+        }
+    ],
+    "discreteUnsortedItemSets": [
+        {
+            "name": "Cargo",
+            "spawnWeight": 1,
+            "attributes": {
+                "healthMin": 0.55,
+                "healthMax": 0.9,
+                "quantityMin": 0.0,
+                "quantityMax": 0.0
+            },
+            "complexChildrenTypes": [
+                {
+                    "itemType": "Rag",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.7,
+                        "healthMax": 1.0,
+                        "quantityMin": 4.0,
+                        "quantityMax": 4.0
+                    },
+                    "quickBarSlot": 0,
+                    "simpleChildrenUseDefaultAttributes": false
+                },
+                {
+                    "itemType": "Chemlight_White",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.7,
+                        "healthMax": 1.0,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "simpleChildrenUseDefaultAttributes": false
+                },
+                {
+                    "itemType": "Apple",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.7,
+                        "healthMax": 1.0,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "simpleChildrenUseDefaultAttributes": false
+                }
+            ],
+            "simpleChildrenUseDefaultAttributes": false,
+            "simpleChildrenTypes": []
+        }
+    ]
+}
