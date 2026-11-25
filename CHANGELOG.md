@@ -2,6 +2,11 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
+## 0.6.1 - 2026-11-25
+
+### Added
+- "Designed by Keybro" and Keybrogaming.com watermarks on the loading screens, map picture, player map and map item (`tools/watermark.py`), and the credit in both mods' descriptions
+
 ## 0.6.0 - 2026-11-25
 
 ### Added
