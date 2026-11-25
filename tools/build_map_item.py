@@ -23,6 +23,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 import build_player_map as pm
+import watermark
 
 MAP_DIR = Path(__file__).resolve().parents[1]
 OUT = MAP_DIR / "mapitem" / "data"
@@ -124,6 +125,8 @@ def legend(w: int, h: int, size_m: float) -> Image.Image:
             end = right - d.textlength(ref, font=body) - 6 * u
             if end > start:
                 d.line([(start, yy + line_h * 0.62), (end, yy + line_h * 0.62)], fill=(170, 160, 140), width=1)
+    d.text((w / 2, h - 18 * u), f"{watermark.CREDIT}  ·  {watermark.SITE}", font=pm.font(pm.FONT, int(16 * u)),
+           anchor="mm", fill=GREEN)
     return img
 
 
@@ -146,8 +149,10 @@ def closed(w: int, h: int, sheet: Image.Image) -> Image.Image:
     crop = sheet.crop((cx - cw // 2, cy - ch // 2, cx + cw // 2, cy + ch // 2)).resize((box_w, box_h), Image.LANCZOS)
     img.paste(crop, (margin, band + margin))
     d.rectangle([margin, band + margin, margin + box_w, band + margin + box_h], outline=INK, width=max(2, int(4 * u)))
-    d.text((w / 2, h - int(70 * u)), "New Zealand  ·  Te Ika-a-Māui  ·  Te Waipounamu",
+    d.text((w / 2, h - int(86 * u)), "New Zealand  ·  Te Ika-a-Māui  ·  Te Waipounamu",
            font=pm.font(pm.FONT_BOLD, int(36 * u)), anchor="mm", fill=INK)
+    d.text((w / 2, h - int(40 * u)), f"{watermark.CREDIT}  ·  {watermark.SITE}",
+           font=pm.font(pm.FONT, int(26 * u)), anchor="mm", fill=GREEN)
     return img
 
 

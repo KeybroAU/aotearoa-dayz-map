@@ -16,6 +16,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
+import watermark
+
 MAP_DIR = Path(__file__).resolve().parents[1]
 SOURCE = MAP_DIR / "source"
 PREVIEW = MAP_DIR / "preview"
@@ -158,6 +160,8 @@ def render(satellite: Image.Image, size: int, text_scale: float = 1.0, legend: b
             d.text((x, y + r + 2 * s), t["maori"], font=f2, anchor="ma", fill=(220, 240, 255, 235),
                    stroke_width=2, stroke_fill=(0, 0, 0, 230))
 
+    img = watermark.stamp(img, [watermark.CREDIT, watermark.SITE], 30 * s, opacity=150)
+    d = ImageDraw.Draw(img, "RGBA")
     if not legend:
         return img
     # Title, legend and scale bar in the empty Tasman Sea.

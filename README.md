@@ -1,5 +1,7 @@
 # Aotearoa (DayZ terrain)
 
+Designed by Keybro, [Keybrogaming.com](https://keybrogaming.com).
+
 A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and the big landforms come from real elevation data, so you can pick out the Southern Alps, Fiordland, the Canterbury Plains, Banks Peninsula, the central volcanic plateau with Ruapehu, Ngauruhoe and Tongariro, Mt Taranaki and Stewart Island. On top of that the repo generates:
 
 - 51 towns and bases with bilingual labels, plus 45 small hamlets in the countryside
@@ -12,7 +14,7 @@ A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and
 - forests, hedgerows, farm fences and rocks; street lamps, bus stops, back fences, garden trees and abandoned cars
 - a satellite texture coloured from a real satellite photo
 - the server mission files: spawns, loot positions and tiers, New Zealand loot changes, animals, weather, starting gear, server messages and launch scripts
-- a printable player map, a logo and loading screens, and map checks that run on GitHub
+- a printable player map, a logo and loading screens, and map checks that run on GitHub. The loading screens, map picture, player map and map item carry a "Designed by Keybro" and Keybrogaming.com watermark (`tools/watermark.py`)
 
 ![Satellite](preview/satellite_2048.png)
 
