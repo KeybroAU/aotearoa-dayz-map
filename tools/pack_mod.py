@@ -26,6 +26,8 @@ Options:
   --key NAME              sign with keys/NAME.biprivatekey, creating it if needed
   --spawners              also load the town and site buildings from object spawner files. Only for a quick
                           test on a world without the Terrain Builder objects; otherwise every building doubles.
+  --difficulty LEVEL      easy, normal (default, vanilla amounts) or hard; scales loot, vehicles and infected
+  --loot/--vehicles/--infected X   fine-tune one of those by a factor (overrides the difficulty for it)
   --skip-pbo              build only the server folder (reuses dist/@Aotearoa if it is there)
   --zip                   also write dist/Aotearoa_mod.zip and dist/Aotearoa_server.zip
   --dry-run               print what would run without running it
@@ -54,6 +56,14 @@ BRANDING = [("logo_512.png", "logo_512_ca.paa"), ("icon_128.png", "icon_128_ca.p
             ("loading_2.jpg", "loading_2_co.paa"), ("map_picture.jpg", "map_picture_co.paa")]
 STEAM_DIRS = [Path(r"C:\Program Files (x86)\Steam\steamapps\common"), Path(r"C:\Program Files\Steam\steamapps\common")]
 MERGED_AWAY = ["cfggameplay.worldsdata.json", "cfgeconomycore.aotearoa.xml"]
+
+# Factors on vanilla amounts: loot (types nominal/min), vehicles (events nominal/min/max), infected
+# (Infected* events and ZombieMaxCount).
+DIFFICULTY = {
+    "easy": {"loot": 1.5, "vehicles": 1.5, "infected": 0.6},
+    "normal": {"loot": 1.0, "vehicles": 1.0, "infected": 1.0},
+    "hard": {"loot": 0.6, "vehicles": 0.6, "infected": 1.5},
+}
 
 DRY = False
 
@@ -223,7 +233,69 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool) -> list[str]
     return warnings
 
 
-def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool) -> list[str]:
+def _xml(path: Path):
+    import xml.etree.ElementTree as ET
+
+    parser = ET.XMLParser(target=ET.TreeBuilder(insert_comments=True))
+    return ET.parse(path, parser)
+
+
+def _write_xml(tree, path: Path) -> None:
+    import xml.etree.ElementTree as ET
+
+    ET.indent(tree, space="    ")
+    tree.write(path, encoding="UTF-8", xml_declaration=True)
+
+
+def _scale(el, tags, f) -> None:
+    for tag in tags:
+        node = el.find(tag)
+        if node is not None and node.text and node.text.strip().lstrip("-").isdigit():
+            v = int(node.text)
+            if v > 0:
+                node.text = str(max(1, round(v * f)))
+
+
+def apply_difficulty(mission: Path, factors: dict) -> list[str]:
+    """Scale loot, vehicle and infected amounts in the merged mission. Returns what changed."""
+    done = []
+    loot, veh, inf = factors["loot"], factors["vehicles"], factors["infected"]
+    if loot != 1.0:
+        n = 0
+        for path in (mission / "db" / "types.xml", mission / "aotearoa_ce" / "types.xml"):
+            if path.exists():
+                tree = _xml(path)
+                for t in tree.getroot().iter("type"):
+                    _scale(t, ("nominal", "min"), loot)
+                    n += 1
+                _write_xml(tree, path)
+        done.append(f"loot x{loot} on {n} item types")
+    events = mission / "db" / "events.xml"
+    if events.exists() and (veh != 1.0 or inf != 1.0):
+        tree = _xml(events)
+        nv = ni = 0
+        for ev in tree.getroot().iter("event"):
+            name = ev.get("name", "")
+            if name.startswith("Vehicle") and veh != 1.0:
+                _scale(ev, ("nominal", "min", "max"), veh)
+                nv += 1
+            elif name.startswith("Infected") and inf != 1.0:
+                _scale(ev, ("nominal", "min", "max"), inf)
+                ni += 1
+        _write_xml(tree, events)
+        done.append(f"vehicles x{veh} on {nv} events, infected x{inf} on {ni} events")
+    glob = mission / "db" / "globals.xml"
+    if glob.exists() and inf != 1.0:
+        tree = _xml(glob)
+        for var in tree.getroot().iter("var"):
+            if var.get("name") == "ZombieMaxCount":
+                var.set("value", str(round(int(var.get("value")) * inf)))
+                done.append(f"ZombieMaxCount {var.get('value')}")
+        _write_xml(tree, glob)
+    return done
+
+
+def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool, factors: dict) -> list[str]:
     server = out / "server"
     print(f"  server folder {server}")
     if DRY:
@@ -234,13 +306,19 @@ def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool)
         if (mod_dir / "keys").exists():
             shutil.copytree(mod_dir / "keys", server / "keys", dirs_exist_ok=True)
     warnings = build_mission(server / "mpmissions" / MISSION, vanilla, spawners)
+    for line in apply_difficulty(server / "mpmissions" / MISSION, factors):
+        print(f"  {line}")
     if not mod_dir.exists():
         warnings.append("No dist/@Aotearoa yet, so the server folder has no mod. Run without --skip-pbo.")
     shutil.copy2(MAP_DIR / "mission" / "serverDZ.cfg", server / "serverDZ.cfg")
-    for f in ("start_server.bat", "start_server.sh"):
-        shutil.copy2(MAP_DIR / "mission" / "server" / f, server / f)
+    shutil.copytree(MAP_DIR / "mission" / "server", server, dirs_exist_ok=True)
+    be = server / "profiles" / "BattlEye"
+    be.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(server / "battleye" / "BEServer_x64.cfg"), be / "BEServer_x64.cfg")
+    shutil.rmtree(server / "battleye", ignore_errors=True)
     if "CHANGE_ME" in (server / "serverDZ.cfg").read_text():
         warnings.append("Set passwordAdmin in dist/server/serverDZ.cfg before going public.")
+    warnings.append("Set RConPassword in dist/server/profiles/BattlEye/BEServer_x64.cfg if you use RCon tools.")
     return warnings
 
 
@@ -252,6 +330,10 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=MAP_DIR / "dist")
     ap.add_argument("--key")
     ap.add_argument("--spawners", action="store_true")
+    ap.add_argument("--difficulty", choices=sorted(DIFFICULTY), default="normal")
+    ap.add_argument("--loot", type=float)
+    ap.add_argument("--vehicles", type=float)
+    ap.add_argument("--infected", type=float)
     ap.add_argument("--skip-pbo", action="store_true")
     ap.add_argument("--zip", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
@@ -281,7 +363,12 @@ def main() -> None:
     print("[4/4] Server folder")
     vanilla = find_vanilla(args.vanilla_mission)
     print(f"  vanilla mission: {vanilla or 'not found'}")
-    warnings = build_server(out, mod_dir, vanilla, args.spawners)
+    factors = dict(DIFFICULTY[args.difficulty])
+    for k in factors:
+        if getattr(args, k) is not None:
+            factors[k] = getattr(args, k)
+    print(f"  difficulty {args.difficulty}: " + ", ".join(f"{k} x{v}" for k, v in factors.items()))
+    warnings = build_server(out, mod_dir, vanilla, args.spawners, factors)
 
     if args.zip and not DRY:
         for name, src in (("Aotearoa_mod", mod_dir), ("Aotearoa_server", out / "server")):
