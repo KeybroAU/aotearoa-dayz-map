@@ -86,6 +86,30 @@ INDUSTRIAL_LAYOUTS = {
 
 NAVAL = ("DevonportNavalBase", "Devonport Naval Base", -36.8290, 174.7870, "Auckland")
 LIGHTHOUSE = ("CapeReinga", "Cape Reinga / Te Rerenga Wairua", -34.4267, 172.6777)
+# Landmarks outside the towns: (class, label, lat, lon, layout).
+LANDMARKS = [
+    ("MilfordSound", "Milford Sound / Piopiotahi", -44.6414, 167.8974, "lodge"),
+    ("AorakiVillage", "Aoraki / Mount Cook Village", -43.7340, 170.0960, "lodge"),
+    ("ChateauTongariro", "Chateau Tongariro", -39.2003, 175.5410, "hotel"),
+    ("WaitomoCaves", "Waitomo Caves", -38.2609, 175.1036, "visitor"),
+    ("HukaFalls", "Huka Falls", -38.6491, 176.0898, "visitor"),
+    ("GoodShepherd", "Church of the Good Shepherd", -44.0047, 170.4772, "church"),
+    ("MoerakiBoulders", "Moeraki Boulders", -45.3453, 170.8283, "boulders"),
+    ("StirlingPoint", "Stirling Point", -46.6145, 168.3589, "signpost"),
+]
+# Pad size, then (class, along, across, quarter turns) for each building. The Chateau is a
+# tenement until there is a custom model.
+LANDMARK_LAYOUTS = {
+    "lodge": ((70.0, 50.0), [("Land_Village_Pub", 0.0, 6.0, 0), ("Land_House_2W01", -24.0, 8.0, 0),
+                             ("Land_House_1W03", 24.0, 8.0, 0), ("Land_House_1W01", 24.0, -12.0, 2),
+                             ("Land_Shed_W4", -26.0, -14.0, 0)]),
+    "hotel": ((60.0, 50.0), [("Land_Tenement_Big", 0.0, 8.0, 1), ("Land_Shed_W4", 22.0, -14.0, 0)]),
+    "visitor": ((40.0, 35.0), [("Land_Village_HealthCare", 0.0, 6.0, 0), ("Land_Shed_W4", 14.0, -9.0, 0)]),
+    "church": ((30.0, 30.0), [("Land_Church3", 0.0, 4.0, 0)]),
+    "boulders": ((40.0, 30.0), [("Land_Shed_W4", -12.0, 8.0, 0)]),
+    "signpost": ((30.0, 25.0), [("Land_House_1W02", -6.0, 5.0, 0), ("Land_Shed_W4", 9.0, 5.0, 0)]),
+}
+BOULDERS = ["r2_boulder1", "r2_boulder2"]
 
 WHAKAARI = ("Whakaari", "Whakaari / White Island", -37.52, 177.18)
 WHAKAARI_RADIUS = 260.0
@@ -387,6 +411,28 @@ def build_pois(h, land, lake_mask, river_mask, road_footprint, towns, grid,
         sites.append(site)
         mark(blocked, grid, x, y, hd, 40.0, 40.0)
         print(f"  {label}: lighthouse")
+
+    for cls, label, lat, lon, layout in LANDMARKS:
+        tx, ty = lonlat_to_world(lon, lat)
+        (length, width), parts = LANDMARK_LAYOUTS[layout]
+        spot = find_rect(ok(), h, grid, tx, ty, 1200.0, length, width, step=20.0)
+        if spot is None:
+            print(f"  {label}: no room")
+            continue
+        x, y, hd = spot
+        h = flatten_rect(h, land, grid, x, y, hd, length, width, blend=20.0, max_grade=0.05)
+        site = Site("landmark", cls, label, x, y, max(length, width) / 2, hd, "NameLocal")
+        for b_cls, along, across, turn in parts:
+            site.buildings.append(Building(b_cls, *local_to_world(x, y, hd, along, across), (hd + 90.0 * turn) % 360))
+        site.surfaces.append({"kind": "gravel",
+                              "points": rect_points(x, y, hd, length * 0.6, 8.0, 0.0, -width / 2 + 6.0)})
+        if layout == "boulders":
+            site.extra["props"] = [(str(rng.choice(BOULDERS)), *local_to_world(x, y, hd, float(rng.uniform(-60, 60)),
+                                                                              float(rng.uniform(-40, -20))),
+                                    float(rng.uniform(0, 360)), float(rng.uniform(0.5, 0.9))) for _ in range(14)]
+        sites.append(site)
+        mark(blocked, grid, x, y, hd, length, width)
+        print(f"  {label}: landmark")
 
     cls, label, lat, lon = HOBBITON
     tx, ty = lonlat_to_world(lon, lat)

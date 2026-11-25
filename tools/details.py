@@ -335,6 +335,7 @@ def build_details(h, idx, land, lake_mask, river_mask, road_footprint, towns, ro
         "rail": railway(rails, h, grid),
         "wrecks": roadside_wrecks(roads, towns, ~land | lake_mask | river_mask | site_mask, grid, rng),
         **town_detail(towns, road_footprint, grid, rng),
+        "props": [(tpl, x, y, yaw, scale, 0.0) for st in sites for tpl, x, y, yaw, scale in st.extra.get("props", [])],
     }
 
 
