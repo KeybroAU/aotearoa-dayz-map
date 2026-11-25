@@ -2,11 +2,18 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
-## Unreleased
+## 0.4.0 - 2026-11-25
 
 ### Added
-- Road signs: green place-name signs on every road into a town (with Māori names), State Highway shields, 50 and 100 km/h signs, Give Way and One Lane Bridge signs. That's 790 signs, generated with their textures and config; two simple sign models are made from `docs/models/`
+- Road signs: green place-name signs on every road into a town (with Māori names), State Highway shields, 50 and 100 km/h signs, Give Way and One Lane Bridge signs. That's 790 signs, generated with their textures and config; the two simple sign models are made from `docs/models/`
 - Ready-to-import blockout models for a Kiwi bach, DOC hut, woolshed and corner dairy (`tools/make_models.py`), with tiling textures and config classes
+- Trader sites for server mods: Waikato, Central Plateau and Rakaia trading posts with safe zones, and a Mackenzie black market. Fenced compounds of vanilla objects, DayZ Expansion trader NPCs, trader zones, safe zone and spawn region snippets, and TraderPlus snippets; `pack.bat --traders`, `--expansion` and `--traderplus`
+- Balance and performance report (`tools/balance_report.py`, `docs/BALANCE_REPORT.md`)
+- A models zip on each release (sign and building OBJ files and textures)
+
+### Changed
+- Farm utes and trucks on the back roads and farm tracks; no land is more than 1.5 km from a vehicle spawn (was 2.6 km)
+- No vehicle spawns inside a safe zone
 
 ## 0.3.0 - 2026-11-25
 
