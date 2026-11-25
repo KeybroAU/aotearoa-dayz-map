@@ -8,7 +8,33 @@ class CfgPatches
 		units[] = {"aotearoa"};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"DZ_Data", "DZ_Structures", "DZ_Worlds_Chernarusplus_World"};
+		requiredAddons[] = {"DZ_Data", "DZ_Scripts", "DZ_Structures", "DZ_Worlds_Chernarusplus_World"};
+	};
+};
+
+// scripts/: the New Zealand climate (AotearoaData) and the hook that selects it for this world.
+class CfgMods
+{
+	class aotearoa
+	{
+		dir = "Aotearoa";
+		name = "Aotearoa";
+		author = "KeybroAU";
+		type = "mod";
+		dependencies[] = {"World", "Mission"};
+		class defs
+		{
+			class worldScriptModule
+			{
+				value = "";
+				files[] = {"maps/aotearoa/scripts/4_World"};
+			};
+			class missionScriptModule
+			{
+				value = "";
+				files[] = {"maps/aotearoa/scripts/5_Mission"};
+			};
+		};
 	};
 };
 
