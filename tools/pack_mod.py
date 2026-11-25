@@ -380,6 +380,20 @@ def apply_difficulty(mission: Path, factors: dict) -> list[str]:
     return done
 
 
+def drop_map_item(server: Path) -> None:
+    """Without @AotearoaMap, take its item out of the starting gear and the Expansion market."""
+    for path in (server / "mpmissions" / MISSION).glob("aotearoa_spawngear_*.json"):
+        preset = json.loads(path.read_text(encoding="utf-8"))
+        for group in preset.get("discreteUnsortedItemSets", []):
+            group["complexChildrenTypes"] = [c for c in group["complexChildrenTypes"] if c["itemType"] != "AotearoaMap"]
+        path.write_text(json.dumps(preset, indent=4) + "\n", encoding="utf-8")
+    market = server / "profiles" / "ExpansionMod" / "Market" / "Aotearoa_Navigation.json"
+    if market.exists():
+        data = json.loads(market.read_text(encoding="utf-8"))
+        data["Items"] = [i for i in data["Items"] if i["ClassName"] != "aotearoamap"]
+        market.write_text(json.dumps(data, indent=4) + "\n", encoding="utf-8")
+
+
 def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool, factors: dict,
                  mods: set[str], map_dir: Path | None) -> list[str]:
     server = out / "server"
@@ -413,6 +427,8 @@ def build_server(out: Path, mod_dir: Path, vanilla: Path | None, spawners: bool,
         shutil.copytree(mod_src / "traderplus" / "snippets", server / "mod_support" / "traderplus", dirs_exist_ok=True)
         warnings.append("TraderPlus: paste the arrays in mod_support/traderplus/ into your TraderPlus configs "
                         "(see mod_support/README.md).")
+    if not map_item:
+        drop_map_item(server)
     for line in apply_difficulty(server / "mpmissions" / MISSION, factors):
         print(f"  {line}")
     if not mod_dir.exists():

@@ -646,6 +646,21 @@
    "enableCEPersistency": 0
   },
   {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    17685.84,
+    13.883,
+    19306.07
+   ],
+   "ypr": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
    "name": "Land_Container_1Bo",
    "pos": [
     17707.44,
@@ -1336,6 +1351,21 @@
    "enableCEPersistency": 0
   },
   {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    20537.95,
+    146.683,
+    16914.99
+   ],
+   "ypr": [
+    35.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
    "name": "Land_Container_1Bo",
    "pos": [
     20528.28,
@@ -2019,6 +2049,21 @@
    ],
    "ypr": [
     135.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Mil_Tent_Big1_1",
+   "pos": [
+    11244.64,
+    63.519,
+    7680.36
+   ],
+   "ypr": [
+    225.0,
     0.0,
     0.0
    ],

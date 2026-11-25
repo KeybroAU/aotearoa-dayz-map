@@ -112,6 +112,28 @@
     {
         "Id": 5,
         "Name": "SurvivorM_Mirek",
+        "GivenName": "Waikato Trading Post Navigation",
+        "Role": "Navigation",
+        "Position": [
+            17682.3,
+            14.069,
+            19301.85
+        ],
+        "Orientation": [
+            220,
+            0.0,
+            0.0
+        ],
+        "Clothes": [
+            "TShirt_Green",
+            "Jeans_Blue",
+            "AthleticShoes_Black",
+            "BaseballCap_Black"
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "SurvivorM_Mirek",
         "GivenName": "Central Plateau Trading Post Weapons",
         "Role": "Weapons",
         "Position": [
@@ -132,7 +154,7 @@
         ]
     },
     {
-        "Id": 6,
+        "Id": 7,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Central Plateau Trading Post Clothing",
         "Role": "Clothing",
@@ -154,7 +176,7 @@
         ]
     },
     {
-        "Id": 7,
+        "Id": 8,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Central Plateau Trading Post Medic",
         "Role": "Medic",
@@ -176,7 +198,7 @@
         ]
     },
     {
-        "Id": 8,
+        "Id": 9,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Central Plateau Trading Post Building",
         "Role": "Building",
@@ -198,7 +220,7 @@
         ]
     },
     {
-        "Id": 9,
+        "Id": 10,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Central Plateau Trading Post Vehicles",
         "Role": "Vehicles",
@@ -220,7 +242,29 @@
         ]
     },
     {
-        "Id": 10,
+        "Id": 11,
+        "Name": "SurvivorM_Mirek",
+        "GivenName": "Central Plateau Trading Post Navigation",
+        "Role": "Navigation",
+        "Position": [
+            20533.45,
+            146.633,
+            16918.15
+        ],
+        "Orientation": [
+            305,
+            0.0,
+            0.0
+        ],
+        "Clothes": [
+            "TShirt_Green",
+            "Jeans_Blue",
+            "AthleticShoes_Black",
+            "BaseballCap_Black"
+        ]
+    },
+    {
+        "Id": 12,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Rakaia Trading Post Weapons",
         "Role": "Weapons",
@@ -242,7 +286,7 @@
         ]
     },
     {
-        "Id": 11,
+        "Id": 13,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Rakaia Trading Post Clothing",
         "Role": "Clothing",
@@ -264,7 +308,7 @@
         ]
     },
     {
-        "Id": 12,
+        "Id": 14,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Rakaia Trading Post Medic",
         "Role": "Medic",
@@ -286,7 +330,7 @@
         ]
     },
     {
-        "Id": 13,
+        "Id": 15,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Rakaia Trading Post Building",
         "Role": "Building",
@@ -308,7 +352,7 @@
         ]
     },
     {
-        "Id": 14,
+        "Id": 16,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Rakaia Trading Post Vehicles",
         "Role": "Vehicles",
@@ -330,7 +374,29 @@
         ]
     },
     {
-        "Id": 15,
+        "Id": 17,
+        "Name": "SurvivorM_Mirek",
+        "GivenName": "Rakaia Trading Post Navigation",
+        "Role": "Navigation",
+        "Position": [
+            11248.53,
+            63.252,
+            7676.47
+        ],
+        "Orientation": [
+            135,
+            0.0,
+            0.0
+        ],
+        "Clothes": [
+            "TShirt_Green",
+            "Jeans_Blue",
+            "AthleticShoes_Black",
+            "BaseballCap_Black"
+        ]
+    },
+    {
+        "Id": 18,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Mackenzie Black Market BlackMarket",
         "Role": "BlackMarket",
@@ -352,7 +418,7 @@
         ]
     },
     {
-        "Id": 16,
+        "Id": 19,
         "Name": "SurvivorM_Mirek",
         "GivenName": "Mackenzie Black Market Weapons",
         "Role": "Weapons",

@@ -44,6 +44,8 @@ PRESETS = {
     },
 }
 CARGO = [("Rag", 4), ("Chemlight_White", 0), ("Apple", 0)]
+# From @AotearoaMap; pack_mod.py takes it out of the presets when packing with --no-map-item.
+MAP_ITEM = "AotearoaMap"
 CHARACTERS = ["SurvivorM_Mirek", "SurvivorM_Boris", "SurvivorM_Cyril", "SurvivorM_Denis", "SurvivorM_Elias",
               "SurvivorM_Francis", "SurvivorM_Guo", "SurvivorM_Hassan", "SurvivorM_Indar", "SurvivorM_Jose",
               "SurvivorM_Kaito", "SurvivorM_Lewis", "SurvivorM_Manua", "SurvivorM_Niki", "SurvivorM_Oliver",
@@ -74,7 +76,7 @@ def spawn_gear() -> list[dict]:
             slots.append({"slotName": slot, "discreteItemSets": items})
         cargo = [{"itemType": cls, "spawnWeight": 1, "attributes": _attrs(0.7, 1.0, float(q), float(q)),
                   "quickBarSlot": i if cls == "Rag" else -1, "simpleChildrenUseDefaultAttributes": False}
-                 for i, (cls, q) in enumerate(CARGO)]
+                 for i, (cls, q) in enumerate(CARGO + [(MAP_ITEM, 0)])]
         presets.append({
             "spawnWeight": p["weight"],
             "name": name,
@@ -125,26 +127,26 @@ MESSAGES = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
 START_BAT = r"""@echo off
 rem Launch loop for an Aotearoa DayZ server. Put this next to DayZServer_x64.exe,
-rem with @Aotearoa in the server folder and dayzOffline.aotearoa in mpmissions.
+rem with @Aotearoa and @AotearoaMap in the server folder and dayzOffline.aotearoa in mpmissions.
 set SERVER_PORT=2302
 set CPU_COUNT=4
 :start
 echo %date% %time% starting Aotearoa
-start "Aotearoa DayZ" /min /wait DayZServer_x64.exe -config=serverDZ.cfg -port=%SERVER_PORT% "-mod=@Aotearoa" -profiles=profiles -cpuCount=%CPU_COUNT% -dologs -adminlog -netlog -freezecheck
+start "Aotearoa DayZ" /min /wait DayZServer_x64.exe -config=serverDZ.cfg -port=%SERVER_PORT% "-mod=@Aotearoa;@AotearoaMap" -profiles=profiles -cpuCount=%CPU_COUNT% -dologs -adminlog -netlog -freezecheck
 timeout /t 10
 goto start
 """
 
 START_SH = """#!/usr/bin/env bash
 # Launch loop for an Aotearoa DayZ server on Linux. Put this next to DayZServer,
-# with @Aotearoa in the server folder and dayzOffline.aotearoa in mpmissions.
+# with @Aotearoa and @AotearoaMap in the server folder and dayzOffline.aotearoa in mpmissions.
 set -u
 cd "$(dirname "$0")"
 SERVER_PORT=${SERVER_PORT:-2302}
 CPU_COUNT=${CPU_COUNT:-4}
 while true; do
     echo "$(date) starting Aotearoa"
-    ./DayZServer -config=serverDZ.cfg -port="$SERVER_PORT" -mod=@Aotearoa -profiles=profiles \\
+    ./DayZServer -config=serverDZ.cfg -port="$SERVER_PORT" "-mod=@Aotearoa;@AotearoaMap" -profiles=profiles \\
         -cpuCount="$CPU_COUNT" -dologs -adminlog -netlog -freezecheck
     sleep 10
 done

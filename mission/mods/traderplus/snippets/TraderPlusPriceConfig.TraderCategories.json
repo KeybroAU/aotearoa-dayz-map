@@ -1,0 +1,13 @@
+[
+    {
+        "CategoryName": "Aotearoa Navigation",
+        "Products": [
+            "AotearoaMap,1,40,1,150,60",
+            "Compass,1,20,1,200,80",
+            "OrienteeringCompass,1,20,1,250,100",
+            "Binoculars,1,15,1,400,150",
+            "Chemlight_White,1,50,1,30,10",
+            "Flashlight,1,20,1,100,40"
+        ]
+    }
+]

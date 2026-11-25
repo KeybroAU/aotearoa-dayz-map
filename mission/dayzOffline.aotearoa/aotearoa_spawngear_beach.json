@@ -298,6 +298,18 @@
                     },
                     "quickBarSlot": -1,
                     "simpleChildrenUseDefaultAttributes": false
+                },
+                {
+                    "itemType": "AotearoaMap",
+                    "spawnWeight": 1,
+                    "attributes": {
+                        "healthMin": 0.7,
+                        "healthMax": 1.0,
+                        "quantityMin": 0.0,
+                        "quantityMax": 0.0
+                    },
+                    "quickBarSlot": -1,
+                    "simpleChildrenUseDefaultAttributes": false
                 }
             ],
             "simpleChildrenUseDefaultAttributes": false,
