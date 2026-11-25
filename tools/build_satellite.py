@@ -21,6 +21,7 @@ from PIL import Image, ImageDraw
 from scipy import ndimage
 
 import generate_terrain as g
+import pois  # noqa: F401  (adds POI building footprints)
 import towns as towns_mod
 
 STRIP = 1024
@@ -44,6 +45,7 @@ LAYER_STYLE = {
 URBAN = np.array([150, 146, 136], dtype=np.float32)
 ROOF_HOUSE = [(120, 70, 60), (95, 95, 100), (150, 140, 125), (70, 80, 90)]
 ROOF_BIG = (135, 135, 135)
+CONTAINER = [(150, 50, 40), (40, 80, 140), (60, 110, 60), (170, 120, 40)]
 LAKE = np.array([46, 104, 122], dtype=np.float32)
 GLACIAL = np.array([88, 170, 178], dtype=np.float32)
 RIVER = np.array([92, 128, 134], dtype=np.float32)
@@ -168,6 +170,7 @@ def main() -> None:
 
     img = Image.fromarray(out)
     del out
+    draw_surfaces(img, mpp)
     draw_roads(img, mpp)
     draw_towns(img, mpp)
 
@@ -177,6 +180,11 @@ def main() -> None:
     img.resize((2048, 2048), Image.LANCZOS).save(g.PREVIEW_DIR / "satellite_2048.png", optimize=True)
     if size >= 8192:
         crop_town(img, "Christchurch", mpp).save(g.PREVIEW_DIR / "satellite_christchurch.png", optimize=True)
+        sites = {s["class"]: s for s in json.loads((g.SOURCE_DIR / "pois.json").read_text(encoding="utf-8"))}
+        for cls, span in (("ChristchurchAirport", 1100.0), ("Lyttelton", 400.0)):
+            if cls in sites:
+                crop_at(img, sites[cls]["x"], sites[cls]["y"], mpp, span).save(
+                    g.PREVIEW_DIR / f"satellite_{cls.lower()}.png", optimize=True)
 
 
 def urban_weight(land: np.ndarray) -> np.ndarray:
@@ -197,8 +205,10 @@ def draw_roads(img: Image.Image, mpp: float) -> None:
     data = json.loads((g.SOURCE_DIR / "roads.json").read_text(encoding="utf-8"))
     d = ImageDraw.Draw(img)
     # Verges first so every road sits on a strip of worn gravel, then the seal on top.
-    for layer, extra, colours in (("verge", 3.0, {"highway": (128, 120, 100), "street": (120, 116, 104)}),
-                                  ("seal", 0.0, {"highway": (62, 62, 64), "street": (78, 78, 78)})):
+    for layer, extra, colours in (("verge", 3.0, {"highway": (128, 120, 100), "street": (120, 116, 104),
+                                                   "track": (120, 112, 92)}),
+                                  ("seal", 0.0, {"highway": (62, 62, 64), "street": (78, 78, 78),
+                                                 "track": (146, 132, 104)})):
         for road in data["roads"]:
             width = data["kinds"][road["kind"]]["width"] + extra
             px = max(1, int(round(width / mpp)))
@@ -206,9 +216,38 @@ def draw_roads(img: Image.Image, mpp: float) -> None:
             d.line(pts, fill=colours[road["kind"]], width=px, joint="curve")
 
 
+def draw_surfaces(img: Image.Image, mpp: float) -> None:
+    """Runways, aprons, port pads and yards from pois.json, with runway markings."""
+    colours = {"asphalt": (58, 58, 60), "concrete": (150, 148, 142), "gravel": (138, 128, 108)}
+    d = ImageDraw.Draw(img)
+    for site in json.loads((g.SOURCE_DIR / "pois.json").read_text(encoding="utf-8")):
+        for surf in site["surfaces"]:
+            d.polygon([(x / mpp, (g.SIZE_M - y) / mpp) for x, y in surf["points"]], fill=colours[surf["kind"]])
+        runway = site.get("runway")
+        if not runway:
+            continue
+        hd = math.radians(site["heading"])
+        ax, ay = math.sin(hd), math.cos(hd)
+        px = max(1, int(round(1.0 / mpp)))
+        half = runway["length"] / 2
+        for s0 in np.arange(-half + 60.0, half - 60.0, 50.0):
+            p0 = (site["x"] + ax * s0, site["y"] + ay * s0)
+            p1 = (site["x"] + ax * (s0 + 25.0), site["y"] + ay * (s0 + 25.0))
+            d.line([(p0[0] / mpp, (g.SIZE_M - p0[1]) / mpp), (p1[0] / mpp, (g.SIZE_M - p1[1]) / mpp)],
+                   fill=(225, 225, 220), width=px)
+        for end in (-1, 1):
+            for off in np.arange(-runway["width"] / 2 + 4.0, runway["width"] / 2 - 3.0, 3.5):
+                c0 = site["x"] + ax * end * (half - 8.0) + ay * off, site["y"] + ay * end * (half - 8.0) - ax * off
+                c1 = site["x"] + ax * end * (half - 30.0) + ay * off, site["y"] + ay * end * (half - 30.0) - ax * off
+                d.line([(c0[0] / mpp, (g.SIZE_M - c0[1]) / mpp), (c1[0] / mpp, (g.SIZE_M - c1[1]) / mpp)],
+                       fill=(225, 225, 220), width=px)
+
+
 def draw_towns(img: Image.Image, mpp: float) -> None:
     d = ImageDraw.Draw(img)
-    objects = json.loads((g.SOURCE_DIR / "objects" / "towns_spawner.json").read_text())["Objects"]
+    objects = []
+    for name in ("towns_spawner.json", "pois_spawner.json"):
+        objects += json.loads((g.SOURCE_DIR / "objects" / name).read_text())["Objects"]
     rng = np.random.default_rng(g.SEED + 12)
     for o in objects:
         w, l = towns_mod.FOOTPRINTS.get(o["name"], (10, 12))
@@ -221,6 +260,8 @@ def draw_towns(img: Image.Image, mpp: float) -> None:
             pts.append((ex / mpp, (g.SIZE_M - ey) / mpp))
         house = o["name"].startswith("Land_House")
         roof = ROOF_HOUSE[rng.integers(len(ROOF_HOUSE))] if house else ROOF_BIG
+        if o["name"].startswith("Land_Container"):
+            roof = CONTAINER[rng.integers(len(CONTAINER))]
         d.polygon(pts, fill=roof)
 
 
@@ -229,7 +270,10 @@ def crop_town(img: Image.Image, name: str, mpp: float, span: float = 900.0) -> I
 
     with (g.SOURCE_DIR / "towns.csv").open(encoding="utf-8") as f:
         row = next(r for r in csv.DictReader(f) if r["name"] == name)
-    x, y = float(row["x"]), float(row["y"])
+    return crop_at(img, float(row["x"]), float(row["y"]), mpp, span)
+
+
+def crop_at(img: Image.Image, x: float, y: float, mpp: float, span: float) -> Image.Image:
     box = [(x - span / 2) / mpp, (g.SIZE_M - y - span / 2) / mpp,
            (x + span / 2) / mpp, (g.SIZE_M - y + span / 2) / mpp]
     return img.crop(tuple(int(v) for v in box)).resize((900, 900), Image.LANCZOS)

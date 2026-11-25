@@ -50,7 +50,9 @@ HIGHWAYS = [
 KINDS = {
     "highway": {"id": 1, "width": 8.0},
     "street": {"id": 2, "width": 6.0},
+    "track": {"id": 3, "width": 4.0},
 }
+ACCESS_SEARCH_M = 1500.0
 WINDOW_MARGIN_M = 2500.0
 COMFORT_GRADE = 0.08
 RIVER_CROSSING_COST = 60.0
@@ -244,6 +246,55 @@ def build_roads(h, land, lake_mask, river_mask, towns, grid) -> tuple[np.ndarray
     return h, roads, footprint
 
 
+def add_access_roads(h, land, lake_mask, river_mask, towns, grid, roads: list[Road], sites) -> tuple[list[Road], np.ndarray]:
+    """Join each site to the nearest road: sealed for airfields and ports, gravel tracks otherwise."""
+    from skimage import draw
+
+    open_cost = base_cost(h, land, lake_mask, river_mask, towns, grid)
+    owner = np.full(open_cost.shape, -1, dtype=np.int32)
+    for i, site in enumerate(sites):
+        for surf in site.surfaces:
+            pr, pc = grid.to_cell(*np.array(surf["points"]).T)
+            rr, cc = draw.polygon(pr, pc, shape=owner.shape)
+            owner[rr, cc] = i
+    cost = np.where(owner >= 0, np.inf, open_cost)
+    footprint = road_footprint(roads, grid) > 0
+    for i, site in enumerate(sites):
+        if site.kind == "whakaari":
+            continue
+        sx, sy = site.extra.get("entrance", (site.x, site.y))
+        r0, c0 = (int(round(float(v))) for v in grid.to_cell(sx, sy))
+        k = int(ACCESS_SEARCH_M / grid.cell)
+        ra, rb = max(0, r0 - k), min(grid.n, r0 + k + 1)
+        ca, cb = max(0, c0 - k), min(grid.n, c0 + k + 1)
+        sub = cost[ra:rb, ca:cb].copy()
+        if "entrance" not in site.extra:
+            # Leave from inside the site's own yard; only an airfield's runway stays off limits.
+            own = owner[ra:rb, ca:cb] == i
+            sub[own] = open_cost[ra:rb, ca:cb][own]
+        sub[r0 - ra, c0 - ca] = 1.0
+        targets = footprint[ra:rb, ca:cb]
+        if not targets.any():
+            continue
+        mcp = graph.MCP_Geometric(sub, fully_connected=True)
+        acc, _ = mcp.find_costs([(r0 - ra, c0 - ca)])
+        acc = np.where(targets, acc, np.inf)
+        end = np.unravel_index(np.argmin(acc), acc.shape)
+        if not np.isfinite(acc[end]):
+            continue
+        path = np.array(mcp.traceback(end))
+        rr, cc = path[:, 0] + ra, path[:, 1] + ca
+        world = np.stack([(cc + 0.5) * grid.cell, grid.size_m - (rr + 0.5) * grid.cell], -1)
+        if len(world) < 2:
+            continue
+        pts = chaikin(measure.approximate_polygon(world, tolerance=2.0), 2)
+        kind = "street" if site.kind in ("airfield", "port") else "track"
+        road = Road(kind, site.class_name, [(float(x), float(y)) for x, y in pts])
+        road.bridges = find_bridges(pts, river_mask, grid)
+        roads.append(road)
+    return roads, road_footprint(roads, grid)
+
+
 def find_bridges(points: np.ndarray, river_mask: np.ndarray, grid) -> list[tuple[float, float, float]]:
     dense = densify(points, grid.cell)
     r, c = grid.to_cell(dense[:, 0], dense[:, 1])
@@ -351,6 +402,17 @@ class RoadTypesLibrary
 \t\tLeftWayCount = 1;
 \t\tRightWayCount = 1;
 \t};
+\tclass Road0003
+\t{
+\t\twidth = 4;
+\t\tmainStrTex = "DZ\\structures\\roads\\data\\dirt_ca.paa";
+\t\tmainTerTex = "DZ\\structures\\roads\\data\\dirt_end_ca.paa";
+\t\tmainMat = "DZ\\structures\\roads\\data\\dirt.rvmat";
+\t\tmap = "track";
+\t\tAILineCount = 1;
+\t\tLeftWayCount = 0;
+\t\tRightWayCount = 0;
+\t};
 };
 """
 
@@ -363,8 +425,10 @@ def draw_preview(relief: Image.Image, roads: list[Road], size_m: float) -> Image
         pts = [(x * k, (size_m - y) * k) for x, y in road.points]
         if road.kind == "highway":
             d.line(pts, fill=(230, 60, 40), width=3)
-        else:
+        elif road.kind == "street":
             d.line(pts, fill=(250, 250, 250), width=1)
+        else:
+            d.line(pts, fill=(200, 170, 110), width=1)
     for road in roads:
         for x, y, _ in road.bridges:
             d.ellipse([x * k - 3, (size_m - y) * k - 3, x * k + 3, (size_m - y) * k + 3], outline=(255, 230, 0), width=2)
