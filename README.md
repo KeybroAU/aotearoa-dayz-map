@@ -475,6 +475,10 @@ To make one:
 
 GitHub runs the checks, builds the files and publishes the release with that version's changelog as its notes.
 
+## Discord updates
+
+`.github/workflows/discord.yml` posts every push (up to 10 commits each), pull request opened, merged or closed, and published release to Discord. It reads the channel's webhook URL from the repo secret `DISCORD_WEBHOOK` (Settings > Secrets and variables > Actions); keep the URL out of the repo, since anyone with it can post to the channel. Without the secret the job does nothing.
+
 ## Custom models
 
 [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md) is a brief for a modeller. It covers New Zealand models the map would benefit from, in priority order:

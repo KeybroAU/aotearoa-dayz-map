@@ -1,0 +1,63 @@
+name: Discord updates
+
+# Posts pushes, pull requests and releases to Discord. Needs the repo secret DISCORD_WEBHOOK
+# (Settings > Secrets and variables > Actions); without it the job does nothing.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    types: [opened, closed, reopened]
+  release:
+    types: [published]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to Discord
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -e
+          if [ -z "$WEBHOOK" ]; then echo "DISCORD_WEBHOOK is not set, skipping"; exit 0; fi
+          case "$EVENT" in
+            push)
+              payload=$(jq '
+                (.ref | sub("^refs/(heads|tags)/"; "")) as $ref
+                | (.commits | length) as $n
+                | select($n > 0 or (.ref | startswith("refs/tags/")))
+                | {username: "Aotearoa GitHub", embeds: [{
+                    title: (if (.ref | startswith("refs/tags/")) then "Tag \($ref) pushed"
+                            else "\($n) new commit\(if $n == 1 then "" else "s" end) on \($ref)" end),
+                    url: .compare,
+                    color: 3066993,
+                    author: {name: .sender.login, icon_url: .sender.avatar_url},
+                    description: ([.commits[-10:][] | "[`\(.id[0:7])`](\(.url)) \(.message | split("\n")[0] | .[0:100]) - \(.author.name)"] | join("\n")),
+                    footer: {text: .repository.full_name}}]}' "$GITHUB_EVENT_PATH")
+              ;;
+            pull_request)
+              payload=$(jq '
+                (if .action == "closed" then (if .pull_request.merged then "merged" else "closed" end) else .action end) as $what
+                | {username: "Aotearoa GitHub", embeds: [{
+                    title: "Pull request #\(.number) \($what): \(.pull_request.title)",
+                    url: .pull_request.html_url,
+                    color: (if $what == "merged" then 10181046 elif $what == "closed" then 15158332 else 3447003 end),
+                    author: {name: .sender.login, icon_url: .sender.avatar_url},
+                    description: "\(.pull_request.head.ref) into \(.pull_request.base.ref)",
+                    footer: {text: .repository.full_name}}]}' "$GITHUB_EVENT_PATH")
+              ;;
+            release)
+              payload=$(jq '
+                {username: "Aotearoa GitHub", embeds: [{
+                  title: "Released \(.release.name // .release.tag_name)",
+                  url: .release.html_url,
+                  color: 15844367,
+                  author: {name: .sender.login, icon_url: .sender.avatar_url},
+                  description: ((.release.body // "") | .[0:3500]),
+                  footer: {text: .repository.full_name}}]}' "$GITHUB_EVENT_PATH")
+              ;;
+          esac
+          if [ -z "$payload" ]; then echo "Nothing to post"; exit 0; fi
+          curl -sSf -H "Content-Type: application/json" -d "$payload" "$WEBHOOK"
