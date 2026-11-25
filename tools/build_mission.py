@@ -3,7 +3,7 @@
 Reads the generated terrain (source/heightmap_4096.png, mask_4096.png, towns.csv, roads.json,
 pois.json) and writes mission/dayzOffline.aotearoa/ with player spawns, vehicle and crash
 events, infected zones, the Whakaari contaminated area, init.c and a cfggameplay snippet,
-plus mission/serverDZ.cfg. Copy the rest of the mission (db/, cfgeconomycore.xml and so on)
+plus mission/serverDZ.cfg. economy.py adds loot positions and tiers, animals and weather. Copy the rest of the mission (db/, cfgeconomycore.xml and so on)
 from vanilla dayzOffline.chernarusplus; see the README.
 
     python build_mission.py
@@ -20,6 +20,7 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
+import economy
 import generate_terrain as g
 
 MISSION = "dayzOffline.aotearoa"
@@ -260,6 +261,10 @@ def infected_zones(land, towns, pois, rng):
         elif p["kind"] == "airfield":
             kind = "InfectedMilitary" if "Ōhakea" in p["label"] else "InfectedIndustrial"
             scatter(p["x"], p["y"], 150.0, 3, kind, 2, 5)
+        elif p["kind"] == "naval":
+            scatter(p["x"], p["y"], 60.0, 3, "InfectedMilitary", 2, 4)
+        elif p["kind"] == "landmark":
+            scatter(p["x"], p["y"], 20.0, 1, "InfectedSolitude", 1, 2, 30.0)
         elif p["kind"] in ("ski", "hobbiton"):
             scatter(p["x"], p["y"], 50.0, 2, "InfectedVillage", 1, 3)
     return zones
@@ -357,7 +362,7 @@ void main()
 
 	// Loot positions: once the world is built, uncomment the next line, start the server once,
 	// and copy storage_1/export/mapgrouppos.xml into this mission folder. Then comment it out.
-	// GetCEApi().ExportProxyData(Vector(10240, 0, 10240), 20480);
+	// GetCEApi().ExportProxyData(Vector(12800, 0, 12800), 25600);
 }
 
 class CustomMission: MissionServer
@@ -429,7 +434,7 @@ SERVER_CFG = """// serverDZ.cfg template for an Aotearoa server. Start the serve
 hostname = "Aotearoa";
 password = "";
 passwordAdmin = "CHANGE_ME";
-description = "A 20 km New Zealand terrain";
+description = "A 25.6 km New Zealand terrain";
 maxPlayers = 60;
 verifySignatures = 2;
 forceSameBuild = 1;
@@ -503,6 +508,7 @@ def main() -> None:
     write_zombie_territories(zones, out / "env" / "zombie_territories.xml")
     write_effect_area(h, land, pois, out / "cfgeffectarea.json")
     write_gameplay_snippet(out / "cfggameplay.worldsdata.json")
+    economy.build(out, h, idx, land, towns, pois, rng)
 
     draw_preview(spawns, ev, zones).save(g.PREVIEW_DIR / "mission_2048.png", optimize=True)
     print(f"Spawn points: {len(spawns)}")
