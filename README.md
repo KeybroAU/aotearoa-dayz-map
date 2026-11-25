@@ -26,7 +26,7 @@ A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and
    - the mission files
 
    It takes about 25 minutes and 8 GB of memory. Run `build_all.bat regen` to rebuild the whole terrain from the elevation data first.
-4. Follow [Terrain Builder setup](#terrain-builder-setup), then [Packing the mod](#packing-the-mod) and [Server setup](#server-setup).
+4. Follow the step-by-step checklist in [docs/TERRAIN_BUILDER_GUIDE.md](docs/TERRAIN_BUILDER_GUIDE.md). It covers Terrain Builder, packing and a test server. The sections below are the short version.
 
 ## Scale
 

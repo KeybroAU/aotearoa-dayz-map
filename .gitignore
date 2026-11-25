@@ -4,3 +4,5 @@ source/mask_20480.png
 source/mask_25600.png
 source/satellite_*.png
 preview/player_map_8192.jpg
+models.txt
+source/model_fixes.json
