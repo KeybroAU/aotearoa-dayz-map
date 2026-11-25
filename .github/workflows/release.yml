@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - name: Check the tag matches VERSION
+        run: test "v$(cat VERSION)" = "${GITHUB_REF_NAME}"
+      - run: python tools/check_map.py
+      - name: Build release files
+        run: |
+          set -e
+          V=$(cat VERSION)
+          mkdir -p release
+          python tools/png_to_asc.py
+          (cd source && zip -q "../release/aotearoa-${V}-heightmap.zip" heightmap_4096.asc heightmap.json)
+          zip -qr "release/aotearoa-${V}-mission.zip" mission
+          zip -qr "release/aotearoa-${V}-source.zip" . -x ".git/*" "release/*" "source/heightmap_4096.asc"
+          cp preview/player_map_4096.jpg "release/aotearoa-${V}-player-map.jpg"
+          python - <<'PY'
+          import re, pathlib
+          v = pathlib.Path("VERSION").read_text().strip()
+          text = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
+          m = re.search(rf"^## {re.escape(v)}\b.*?$(.*?)(?=^## |\Z)", text, re.M | re.S)
+          pathlib.Path("release/notes.md").write_text((m.group(1).strip() if m else "") + "\n", encoding="utf-8")
+          PY
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: Aotearoa ${{ github.ref_name }}
+          body_path: release/notes.md
+          files: |
+            release/*.zip
+            release/*.jpg

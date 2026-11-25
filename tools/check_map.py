@@ -45,6 +45,10 @@ def main() -> None:
     cfg = (MAP_DIR / "config.cpp").read_text()
     m = re.search(r"mapSize\s*=\s*(\d+)", cfg)
     check(bool(m) and int(m.group(1)) == round(size), f"config.cpp mapSize {m.group(1) if m else '?'}")
+    version = (MAP_DIR / "VERSION").read_text().strip()
+    mv = re.search(r'version\s*=\s*"([^"]+)"', (MAP_DIR / "mod" / "mod.cpp").read_text())
+    check(bool(mv) and mv.group(1) == version, f"mod.cpp version {mv.group(1) if mv else '?'} matches VERSION {version}")
+    check(f"## {version} " in (MAP_DIR / "CHANGELOG.md").read_text(encoding="utf-8"), f"CHANGELOG.md has a {version} section")
     bat = (MAP_DIR / "build_all.bat").read_text()
     check(str(round(size)) in bat, "build_all.bat uses the terrain size")
 
