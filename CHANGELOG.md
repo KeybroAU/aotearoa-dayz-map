@@ -2,6 +2,28 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
+## 0.6.0 - 2026-11-25
+
+### Added
+- New Zealand weather and seasons from the mod's world scripts: months follow the server date, with NZ monthly temperatures, short winter and long summer days, 4 degrees colder per 100 m, westerly rain, a changeable spring and light snow in winter storms. Mild sea, lake and river temperatures
+- Event groups (`cfgeventgroups.xml`): five military convoys round each base, police roadblocks on the highway into every city and town, 34 pile-ups on State Highway 1 and the other highways, and twelve derailed trains on the main lines (three military)
+- Set pieces from vanilla objects (`tools/setpieces.py`): the Sky Tower, a Harbour Bridge, Parliament Buildings, ChristChurch Cathedral in ruins, the Interislander wreck off Wellington and a Hercules crash near Ōhakea. On the 2D map, the player map and the map item
+- Bigger military bases at Waiouru, Burnham, Linton and Ōhakea, and the Waiouru Ammunition Area: bunkers inside a static gas zone with hard army infected
+- Dynamic gas zones at the bases, airfields, industrial sites and ports, and in the back country
+- Police, medic, firefighter and priest infected at police stations, hospitals, fire stations and churches
+- Motorbikes in towns and at baches, holiday parks, surf clubs and huts; plank piles at farms, industrial sites, huts, stations and ports
+- `pack.bat --setpieces-in-wrp` for once the set pieces are built into the world
+
+### Changed
+- Wildlife: no wolves, bears, roe deer or foxes. More sheep, red deer, goats, cattle and wild pigs; red deer mostly in the high bush and goats on steep country
+- More heli crashes, convoys, police situations and trains, and the vanilla police car wrecks switched on
+- Chateau Tongariro is vanilla's grand hotel
+
+### Fixed
+- Military convoys spawned nothing (their positions had no group)
+- Military infected used a zone name DayZ does not have, so no soldiers spawned at the bases
+- Building rotations in the generated `mapgrouppos.xml` were mirrored, so loot could spawn outside the walls
+
 ## 0.5.0 - 2026-11-25
 
 ### Added
