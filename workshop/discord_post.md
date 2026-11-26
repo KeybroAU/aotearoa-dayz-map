@@ -1,4 +1,4 @@
-## 🇳🇿 Aotearoa v0.6.2 is out
+## Aotearoa v0.6.2 is out
 
 **Designed by Keybro** · <https://keybrogaming.com>
 
