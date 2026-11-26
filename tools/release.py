@@ -22,11 +22,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CHANGELOG = ROOT / "CHANGELOG.md"
 VERSION = ROOT / "VERSION"
-MOD_FILES = [ROOT / "mod" / "mod.cpp", ROOT / "mapitem" / "mod.cpp"]
+MOD_FILES = [ROOT / "mod" / "mod.cpp", ROOT / "mapitem" / "mod.cpp", ROOT / "wip" / "food" / "mod.cpp"]
 # Release bookkeeping and tooling that a revert keeps at its current state, so the version keeps
 # going up and the release safeguards survive.
-KEEP_ON_REVERT = ["CHANGELOG.md", "VERSION", "mod/mod.cpp", "mapitem/mod.cpp", "tools/release.py",
-                  "tools/backup_releases.py", ".github/workflows/release.yml"]
+KEEP_ON_REVERT = ["CHANGELOG.md", "VERSION", "mod/mod.cpp", "mapitem/mod.cpp", "wip/food/mod.cpp",
+                  "tools/release.py", "tools/backup_releases.py", ".github/workflows/release.yml"]
 UNRELEASED = re.compile(r"^## Unreleased[ \t]*\n(.*?)(?=^## |\Z)", re.M | re.S)
 
 

@@ -2,6 +2,13 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
+## Unreleased
+
+### Changed
+
+- README setup refreshed for the food and drink, the food stashes, the work-in-progress food mod, releases and backups (Quick start, Files, Packing, Server setup and Regenerating)
+- `build_all.bat` now checks the food textures and builds the work-in-progress food copy, and releases bump the work-in-progress mod's version too
+
 ## 0.6.7 - 2026-11-26
 
 ### Added

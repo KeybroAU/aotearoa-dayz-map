@@ -16,6 +16,8 @@ A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and
 - forests, hedgerows, farm fences and rocks; street lamps, bus stops, back fences, garden trees and abandoned cars
 - a satellite texture coloured from a real satellite photo
 - the server mission files: spawns, loot positions and tiers, New Zealand loot changes, animals, weather, starting gear, server messages and launch scripts
+- 31 New Zealand food and drink items (L&P, Whittaker's, Weet-Bix, Marmite, Wattie's and more) that replace vanilla food in the loot, plus food stashes: crashed Countdown trucks on the highways, dairy stock rooms and bach pantries
+- versioned GitHub releases with every old release backed up, so a server can roll back
 - a printable player map, a logo and loading screens, and map checks that run on GitHub. The loading screens, map picture, player map, map item, Steam Workshop image and the in-game map screen carry a "Designed by Keybro" and Keybrogaming.com watermark (`tools/watermark.py`, `scripts/5_Mission/AotearoaMapMenu.c`)
 
 ![Satellite](preview/satellite_2048.png)
@@ -28,11 +30,15 @@ A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and
    - `source\heightmap_4096.asc`
    - `source\mask_25600.png`
    - `source\satellite_25600.png`
-   - the mission files
+   - the mission files, including the food stashes (`mission\dayzOffline.aotearoa\aotearoa\food_stashes.json`)
+
+   It also checks the food and drink textures (`nz_food.py --verify`) and builds the work-in-progress food copy in `wip\food\`.
 
    It takes about 25 minutes and 8 GB of memory. Run `build_all.bat regen` to rebuild the whole terrain from the elevation data first.
 4. Follow the step-by-step checklist in [docs/TERRAIN_BUILDER_GUIDE.md](docs/TERRAIN_BUILDER_GUIDE.md). It covers Terrain Builder, packing and a test server. The sections below are the short version.
-5. Load it in game and work through [docs/IN_GAME_TEST_CHECKLIST.md](docs/IN_GAME_TEST_CHECKLIST.md).
+5. Load it in game and work through [docs/IN_GAME_TEST_CHECKLIST.md](docs/IN_GAME_TEST_CHECKLIST.md), including the New Zealand food and drink and the food stashes.
+6. Optional: to try real label artwork, drop images into `wip\food\labels\`, run `python tools\wip_food.py`, then `pack.bat --wip` and load `dist\@AotearoaFoodWIP` after `@Aotearoa` (see [New Zealand food and drink](#new-zealand-food-and-drink)).
+7. To publish a new version, note the changes under `## Unreleased` in `CHANGELOG.md` and run `python tools\release.py --push` (see [Releases](#releases)).
 
 ## Scale
 
@@ -235,6 +241,8 @@ The photo is not stored in this repo; only the colours taken from it are. To use
 |---|---|
 | `config.cpp`, `$PBOPREFIX$` | World config (`CfgWorlds` class `aotearoa`) and PBO prefix `maps\aotearoa` |
 | `config/names.hpp` | Map labels for towns and sites |
+| `config/food.hpp`, `scripts/4_World/AotearoaFood.c`, `data/food/` | The New Zealand food and drink: config classes, the script that opens the tins, and the label textures (all written by `tools/nz_food.py`) |
+| `scripts/` | The mod's scripts: the southern climate (`4_World/AotearoaData.c`), the food, and the watermarked map screen (`5_Mission/`) |
 | `mod/mod.cpp` | Mod name and description for the `@Aotearoa` folder |
 | `data/roads/` | `roads.shp` and `RoadsLib.cfg` |
 | `data/branding/` | Logo, icons, loading screens and the map picture, with the source art in `art/` |
@@ -249,9 +257,13 @@ The photo is not stored in this repo; only the colours taken from it are. To use
 | `source/objects/*_spawner.json` | Town and site buildings as DayZ object spawner files. Not used by default, because the buildings are already in the world; `pack.bat --spawners` loads them for a quick test on a world without the Terrain Builder objects. |
 | `source/sat_tint_512.png` | Regional colour taken from the satellite photo, in map space |
 | `mission/` | Server mission files, a `serverDZ.cfg` template and launch scripts in `mission/server/` |
+| `wip/food/` | The work-in-progress food test mod (`@AotearoaFoodWIP`) and its label templates. Label images in `wip/food/labels/` are not committed. |
+| `workshop/` | The Steam Workshop description, change notes and Discord post |
 | `preview/` | Satellite, relief, mask, slope, towns, roads, sites, forest, mission maps and the player map |
 | `.github/workflows/check.yml` | Runs `tools/check_map.py` on every push |
-| `.github/workflows/release.yml` | Builds a GitHub release when a `v*` tag is pushed |
+| `.github/workflows/release.yml` | Builds a GitHub release when a `v*` tag is pushed, then copies it into the `release-archive` backup |
+| `.github/workflows/backup.yml` | Weekly backup of every release into `release-archive` (and the mirror repo, if set) |
+| `.github/workflows/discord.yml` | Posts pushes, pull requests and releases to Discord (needs the `DISCORD_WEBHOOK` secret) |
 | `VERSION`, `CHANGELOG.md` | The current version and what changed in each |
 | `docs/` | The Terrain Builder walkthrough and the custom models plan |
 | `tools/` | The generators (see [Regenerating](#regenerating)) |
@@ -309,6 +321,10 @@ Loot scales every item's `nominal` and `min` in `types.xml`. `--loot X` sets the
 
 **Custom buildings:** `tools/make_models.py` writes enterable blockout models, ready to import into Object Builder, for a Kiwi bach, a DOC hut, a woolshed and a corner dairy, with their textures and config classes. See [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md).
 
+**Food and drink:** `pack.bat` converts the 31 label textures in `data\food\` to `.paa` and packs them, with `config\food.hpp` and the food script, into `aotearoa.pbo`, so the New Zealand food needs nothing extra on clients or the server. `pack.bat --wip` also packs the work-in-progress copy as a separate test mod, `dist\@AotearoaFoodWIP` (run `python tools\wip_food.py` first). It is never put in the server folder or a release.
+
+**Food stashes:** the server folder's `cfggameplay.json` loads the Countdown truck crashes (`aotearoa\foodstash_spawner.json`), and `init.c` stocks the stashes. Nothing to set up.
+
 ![Town signs](preview/signs_sheet.png)
 
 It finds DayZ Tools and the DayZ Server's vanilla mission in their Steam folders; pass `--tools` or `--vanilla-mission` if yours are elsewhere. Run `python tools/pack_mod.py --help` for all options. The signing key goes in `keys\` and is never committed.
@@ -317,7 +333,8 @@ By hand:
 
 1. In Addon Builder, pack `P:\maps\aotearoa` to `@Aotearoa\addons\aotearoa.pbo` with the prefix `maps\aotearoa`.
    - Leave out `source\`, `tools\`, `preview\` and `mission\`. They are inputs, not game data.
-   - Keep `config.cpp`, `config\`, `data\`, `structures\` and `world\`.
+   - Keep `config.cpp`, `config\`, `data\`, `scripts\`, `structures\` and `world\`.
+   - Convert each label in `data\food\` to `.paa` with ImageToPAA first (`lp.png` becomes `lp_co.paa`, the name `config\food.hpp` points at).
 2. Copy `mod\mod.cpp` into `@Aotearoa\`.
    - Before packing, convert the images in `data\branding\` with ImageToPAA from DayZ Tools. `logo_512.png` and the icons become `logo_512_ca.paa`, `icon_128_ca.paa` and `icon_64_ca.paa` (they have alpha). `loading_1.jpg` and `map_picture.jpg` become `loading_1_co.paa` and `map_picture_co.paa`. `mod.cpp` and `config.cpp` point at those names.
 3. Sign the PBO with your key if the server verifies signatures.
@@ -340,7 +357,9 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 
 | File | What it holds |
 |---|---|
-| `init.c` | Vanilla start-up, with real southern seasons from the server date (set `pin_month` to fix one month) and the loot export line (see below) |
+| `init.c` | Vanilla start-up, with real southern seasons from the server date (set `pin_month` to fix one month), the loot export line (see below), and the food stash restock (every 45 minutes) |
+| `aotearoa/food_stashes.json` | The 43 food stashes: 8 Countdown truck crashes, 20 dairy stock rooms and 15 bach pantries, each with its position, radius, item count and food (`tools/food_stashes.py`). Delete it to turn the stashes off. |
+| `aotearoa/foodstash_spawner.json` | The truck crash wrecks, trailers and spilled crates, an object spawner that `pack.bat` adds to `cfggameplay.json` |
 | `cfgplayerspawnpoints.xml` | 40 spawn bubbles spread along the coasts of the two main islands |
 | `cfgeventspawns.xml` | Cars on the highway verges and parked in town streets, farm utes and trucks on the back roads and farm tracks, boats off the ports, ferry terminals and boat ramps, heli crashes in open country, police cars in town streets, military convoys near the bases, police roadblocks on the highways into the cities and towns, pile-ups on State Highway 1 and the other highways, derailed trains on the main lines, motorbikes and plank piles, and the dynamic gas zones |
 | `cfgeventgroups.xml` | The convoy, roadblock, pile-up and train groups those events spawn (`tools/event_groups.py`) |
@@ -594,7 +613,9 @@ python tools/generate_terrain.py      # terrain, water, towns, roads, sites, for
 python tools/build_satellite.py --size 25600
 python tools/upscale_mask.py 25600
 python tools/png_to_asc.py
-python tools/build_mission.py         # mission, starting gear, messages, launch scripts
+python tools/nz_food.py               # food and drink labels, config/food.hpp, the food script
+python tools/wip_food.py              # the work-in-progress food copy in wip/food/
+python tools/build_mission.py         # mission, starting gear, messages, launch scripts, food stashes
 python tools/build_player_map.py      # preview/player_map_4096.jpg
 python tools/make_branding.py         # data/branding from the art and the satellite preview
 python tools/check_map.py
@@ -615,5 +636,6 @@ python tools/check_map.py
 | `server_files.py` | Starting gear (`PRESETS`), server messages, restart interval and launch scripts |
 | `labelplace.py` | Keeps map labels from overlapping (player map, map item, towns preview) |
 | `economy.py` | Loot changes (`NZ_TYPES`), tier rules, animal herds (`HERDS`), weather |
-| `nz_food.py` | New Zealand food and drink: names, descriptions, label artwork and loot (`ITEMS`) |
-| `food_stashes.py` | Countdown truck crashes, dairy stock rooms and bach pantries (food stashes restocked by `init.c`) |
+| `nz_food.py` | New Zealand food and drink: names, descriptions, label artwork, loot (`ITEMS`) and where it spawns (`SPAWN`) |
+| `wip_food.py` | The work-in-progress food copy: label fitting (`TILED`, `EXTRA_BANDS`, `MAX_FRONTS`) and the label templates |
+| `food_stashes.py` | Food stashes: truck crash count and spacing (`TRUCKS`, `TRUCK_GAP_M`), what each stash holds and how much (`KINDS`), restock time (`RESTOCK_MINUTES`) |
