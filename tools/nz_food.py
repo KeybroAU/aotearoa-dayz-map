@@ -51,7 +51,11 @@ LAYOUTS = {
     "sardines": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 3),
     "cereal": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
     "bar": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
+    "rice": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
 }
+# Vanilla configs that don't declare the model's retexturable selection: the rice bag's whole model
+# is the "zbytek" selection.
+SELECTIONS = {"rice": "zbytek"}
 # Vanilla chocolate bar textures carry alpha (_ca); the rest are plain colour maps (_co). The bar's UV
 # layout isn't published, so its wrapper is a repeating pattern that reads from any part of the texture.
 SUFFIX = {"bar": "_ca"}
@@ -145,6 +149,11 @@ ITEMS = [
          "Whittaker's Peanut Slab: milk chocolate packed with peanuts.", (15, 12),
          dict(brand="Whittaker's", sub="PEANUT SLAB", tag="since 1951", bg=(250, 200, 30), bg2=(190, 30, 35),
               fg=(120, 20, 25))),
+    Item("risotto", "Aotearoa_RiceRisotto", "Rice", "rice", "Rice Risotto",
+         "Arborio rice for a creamy risotto. Cook it in a pot with water.", (25, 18),
+         dict(brand="Rice Risotto", sub="ARBORIO RICE", tag="creamy & quick", bg=(248, 244, 232),
+              bg2=(40, 120, 60), fg=(150, 30, 35)),
+         usages=["Village", "Town", "Hunting"]),
     Item("weetbix", "Aotearoa_WeetBix", "BoxCerealCrunchin", "cereal", "Sanitarium Weet-Bix",
          "Sanitarium Weet-Bix whole grain wheat biscuits. Three with milk will keep you going.", (23, 18),
          dict(brand="Weet-Bix", sub="WHOLE GRAIN WHEAT BISCUITS", tag="Sanitarium", bg=(250, 200, 35),
@@ -685,7 +694,50 @@ def bar(item: Item, rng) -> Image.Image:
     return im.convert("RGBA")
 
 
-CUSTOM = {"tuna": tuna, "sardines": sardines, "cereal": cereal, "bar": bar}
+def rice(item: Item, rng) -> Image.Image:
+    """Rice bag: the folded ends across the top third, the label band in the middle (front centred
+    at 40% across), and the grains showing along the bottom."""
+    a = item.art
+    w = h = 1024
+    im = Image.new("RGB", (w, h), a["bg"])
+    d = ImageDraw.Draw(im)
+    for k in range(3):
+        x0 = k * w / 3
+        d.rectangle((x0, 0, x0 + w / 3, 0.33 * h), fill=shade(a["bg"], 0.96 - 0.03 * k))
+        d.line((x0 + 0.06 * w, 0.06 * h, x0 + 0.12 * w, 0.26 * h, x0 + 0.21 * w, 0.26 * h, x0 + 0.27 * w, 0.06 * h),
+               fill=shade(a["bg"], 0.82), width=6)
+    d.rectangle((0, 0.33 * h, w, 0.55 * h), fill=a["bg2"])
+    d.rectangle((0, 0.53 * h, w, 0.56 * h), fill=(215, 175, 80))
+    for k in range(4):
+        y = 0.36 * h + k * 0.045 * h
+        d.line((0, y, w, y), fill=shade(a["bg2"], 1.15), width=2)
+    for c in range(3):
+        cx = (c + 0.5) * w / 3
+        text(d, (cx, 0.44 * h), "Packed in New Zealand", "italic", w / 3.6, 0.04 * h, (250, 245, 230))
+    cx = 0.4 * w
+    text(d, (cx, 0.62 * h), a["brand"], "script", 0.5 * w, 0.09 * h, a["fg"], 3, (255, 255, 255))
+    text(d, (cx, 0.69 * h), a["sub"], "sans", 0.4 * w, 0.035 * h, a["bg2"])
+    text(d, (cx, 0.73 * h), a["tag"], "italic", 0.3 * w, 0.025 * h, (90, 80, 60))
+    for side in (0.8,):
+        X, Y, R = side * w, 0.66 * h, 0.08 * w
+        d.ellipse((X - R, Y - R * 0.5, X + R, Y + R * 0.5), fill=(250, 250, 250), outline=(170, 170, 170), width=3)
+        d.ellipse((X - R * 0.8, Y - R * 0.38, X + R * 0.8, Y + R * 0.3), fill=(240, 228, 190))
+        for _ in range(12):
+            gx, gy = X + rng.uniform(-0.6, 0.6) * R, Y + rng.uniform(-0.2, 0.15) * R
+            d.ellipse((gx - 4, gy - 2, gx + 4, gy + 2), fill=(250, 245, 225))
+        d.ellipse((X - R * 0.25, Y - R * 0.15, X + R * 0.05, Y + R * 0.05), fill=(150, 110, 70))
+    d.rectangle((0, 0.75 * h, w, h), fill=(236, 230, 212))
+    for _ in range(2600):
+        gx, gy = rng.uniform(0, w), rng.uniform(0.75 * h, h)
+        L = rng.uniform(7, 11)
+        t = rng.uniform(0, math.pi)
+        dx, dy = math.cos(t) * L / 2, math.sin(t) * L / 2
+        c = rng.randint(225, 252)
+        d.line((gx - dx, gy - dy, gx + dx, gy + dy), fill=(c, c - 4, c - 18), width=5)
+    return wear(im, rng, 6)
+
+
+CUSTOM = {"rice": rice, "tuna": tuna, "sardines": sardines, "cereal": cereal, "bar": bar}
 
 
 def texture(item: Item) -> Image.Image:
@@ -733,6 +785,8 @@ def write_config() -> Path:
 
     def block(cls, base, item, display=True):
         lines = [f"class {cls}: {base}", "{", "\tscope = 2;"]
+        if item.layout in SELECTIONS:
+            lines += [f'\thiddenSelections[] = {{"{SELECTIONS[item.layout]}"}};']
         if display:
             lines += [f'\tdisplayName = "{item.name}";', f'\tdescriptionShort = "{item.desc}";']
         lines += [f'\thiddenSelectionsTextures[] = {{"{TEXTURE.format(item.paa)}"}};', "};"]
@@ -784,8 +838,9 @@ FRONTS = {
     "tin250": ((0.0, 0.758, 0.333, 0.961), 0), "tin100": ((0.0, 0.0, 0.5, 1.0), 0), "bag": ((0.0, 0.0, 1.0, 1.0), 0),
     "tuna": ((0.57, 0.04, 0.98, 0.64), 90), "sardines": ((0.0, 0.51, 0.333, 0.72), 0),
     "cereal": ((0.51, 0.31, 1.0, 1.0), 0), "bar": ((0.0, 0.0, 1.0, 0.25), 0),
+    "rice": ((0.15, 0.33, 0.65, 0.78), 0),
 }
-SHELVES = [("soda", "bar"), ("bag",), ("tin", "tin250", "tin100", "tuna", "sardines", "cereal")]
+SHELVES = [("soda", "bar"), ("bag",), ("tin", "tin250", "tin100", "tuna", "sardines", "cereal", "rice")]
 
 
 def write_showcase(paths: list[Path]) -> Path:

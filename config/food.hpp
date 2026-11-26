@@ -11,6 +11,7 @@ class PeachesCan;
 class PeachesCan_Opened;
 class PorkCan;
 class PorkCan_Opened;
+class Rice;
 class SardinesCan;
 class SardinesCan_Opened;
 class SodaCan_Cola;
@@ -136,6 +137,14 @@ class Aotearoa_Whittakers_PeanutSlab: ZagorkyPeanuts
 	displayName = "Whittaker's Peanut Slab";
 	descriptionShort = "Whittaker's Peanut Slab: milk chocolate packed with peanuts.";
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\whittakers_peanut_ca.paa"};
+};
+class Aotearoa_RiceRisotto: Rice
+{
+	scope = 2;
+	hiddenSelections[] = {"zbytek"};
+	displayName = "Rice Risotto";
+	descriptionShort = "Arborio rice for a creamy risotto. Cook it in a pot with water.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\risotto_co.paa"};
 };
 class Aotearoa_WeetBix: BoxCerealCrunchin
 {

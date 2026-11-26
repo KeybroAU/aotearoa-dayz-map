@@ -427,23 +427,6 @@
         <value name="Tier2" />
         <value name="Tier3" />
     </type>
-    <type name="Rice">
-        <nominal>25</nominal>
-        <lifetime>28800</lifetime>
-        <restock>0</restock>
-        <min>18</min>
-        <quantmin>10</quantmin>
-        <quantmax>100</quantmax>
-        <cost>100</cost>
-        <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
-        <category name="food" />
-        <tag name="shelves" />
-        <usage name="Village" />
-        <usage name="Town" />
-        <usage name="Hunting" />
-        <value name="Tier1" />
-        <value name="Tier2" />
-    </type>
     <type name="Marmalade">
         <nominal>25</nominal>
         <lifetime>14400</lifetime>
@@ -1275,6 +1258,21 @@
         <value name="Tier2" />
         <value name="Tier3" />
     </type>
+    <type name="Rice">
+        <nominal>0</nominal>
+        <lifetime>28800</lifetime>
+        <restock>0</restock>
+        <min>0</min>
+        <quantmin>10</quantmin>
+        <quantmax>100</quantmax>
+        <cost>100</cost>
+        <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
+        <category name="food" />
+        <tag name="shelves" />
+        <usage name="Village" />
+        <value name="Tier1" />
+        <value name="Tier2" />
+    </type>
     <type name="SardinesCan">
         <nominal>0</nominal>
         <lifetime>14400</lifetime>
@@ -1694,6 +1692,23 @@
         <usage name="Office" />
         <usage name="School" />
         <usage name="Lunapark" />
+    </type>
+    <type name="Aotearoa_RiceRisotto">
+        <nominal>25</nominal>
+        <lifetime>28800</lifetime>
+        <restock>0</restock>
+        <min>18</min>
+        <quantmin>10</quantmin>
+        <quantmax>100</quantmax>
+        <cost>100</cost>
+        <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
+        <category name="food" />
+        <tag name="shelves" />
+        <usage name="Village" />
+        <usage name="Town" />
+        <usage name="Hunting" />
+        <value name="Tier1" />
+        <value name="Tier2" />
     </type>
     <type name="Aotearoa_WeetBix">
         <nominal>23</nominal>

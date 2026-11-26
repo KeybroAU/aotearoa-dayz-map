@@ -79,6 +79,7 @@ Spawn each one with your admin tool by its class name, or find it in loot. For e
 | Whittaker's Dark Ghana | `Aotearoa_Whittakers_DarkGhana` | ZagorkyChocolate |  |
 | Whittaker's Peanut Slab | `Aotearoa_Whittakers_PeanutSlab` | ZagorkyPeanuts |  |
 | Sanitarium Weet-Bix | `Aotearoa_WeetBix` | BoxCerealCrunchin |  |
+| Rice Risotto | `Aotearoa_RiceRisotto` | Rice |  |
 | Wattie's Baked Beans | `Aotearoa_Watties_BakedBeans` | BakedBeansCan | yes |
 | Wattie's Spaghetti | `Aotearoa_Watties_Spaghetti` | SpaghettiCan | yes |
 | Wattie's Peach Slices | `Aotearoa_Watties_Peaches` | PeachesCan | yes |
@@ -93,6 +94,7 @@ Things to look at closely, because their texture layouts are guessed or approxim
 - [ ] **Sealord Tuna:** the label is printed on the lid, with the ring pull at one end. Check the ring sits over the model's pull tab.
 - [ ] **Pams Sardines, Palm Corned Beef and Marmite:** the label should wrap the side of the tin, and the lid should look like plain metal.
 - [ ] **Weet-Bix:** the front of the box should show the bowl and the wordmark.
+- [ ] **Rice Risotto:** vanilla rice doesn't retexture its bag, so check the packet shows the green band and the "Rice Risotto" label rather than the plain vanilla bag or a missing texture.
 
 If a texture is sideways, mirrored or in the wrong place, take a screenshot. For a fix, convert the vanilla texture to PNG with DayZ Tools' ImageToPAA (for example `P:\DZ\gear\food\data\zagorky_milk_ca.paa`) and send it; the labels can then be lined up exactly with the vanilla layout.
 

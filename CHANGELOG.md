@@ -2,6 +2,12 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
+## Unreleased
+
+### Changed
+
+- The rice packet is now Rice Risotto (`Aotearoa_RiceRisotto`), with arborio rice on the label. It replaces vanilla rice in the loot
+
 ## 0.6.3 - 2026-11-26
 
 ### Added
