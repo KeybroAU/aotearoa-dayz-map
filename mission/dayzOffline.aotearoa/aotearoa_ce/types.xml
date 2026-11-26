@@ -1513,6 +1513,11 @@
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
+        <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
+        <usage name="School" />
+        <usage name="Office" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1527,6 +1532,11 @@
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
+        <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
+        <usage name="School" />
+        <usage name="Office" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1541,6 +1551,11 @@
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
+        <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
+        <usage name="School" />
+        <usage name="Office" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1555,6 +1570,11 @@
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
+        <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
+        <usage name="School" />
+        <usage name="Office" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1569,6 +1589,11 @@
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
+        <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
+        <usage name="School" />
+        <usage name="Office" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1585,8 +1610,10 @@
         <category name="food" />
         <tag name="shelves" />
         <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Chips_BluebirdSaltVinegar">
@@ -1601,8 +1628,10 @@
         <category name="food" />
         <tag name="shelves" />
         <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Chips_BluebirdChicken">
@@ -1617,8 +1646,10 @@
         <category name="food" />
         <tag name="shelves" />
         <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Chips_MunchosTomato">
@@ -1633,8 +1664,10 @@
         <category name="food" />
         <tag name="shelves" />
         <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Biscuits_ToffeePops">
@@ -1650,8 +1683,9 @@
         <tag name="shelves" />
         <usage name="Town" />
         <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Biscuits_Shrewsburys">
@@ -1667,8 +1701,9 @@
         <tag name="shelves" />
         <usage name="Town" />
         <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Biscuits_ChocolateThins">
@@ -1684,8 +1719,9 @@
         <tag name="shelves" />
         <usage name="Town" />
         <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Lollies_PineappleLumps">
@@ -1701,8 +1737,9 @@
         <tag name="shelves" />
         <usage name="Town" />
         <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Whittakers_CreamyMilk">
@@ -1716,11 +1753,11 @@
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
         <tag name="shelves" />
+        <usage name="Town" />
         <usage name="Village" />
-        <usage name="Hunting" />
-        <usage name="Office" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1736,7 +1773,11 @@
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
         <tag name="shelves" />
-        <usage name="Hunting" />
+        <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
+        <usage name="School" />
+        <usage name="Office" />
     </type>
     <type name="Aotearoa_Whittakers_PeanutSlab">
         <nominal>15</nominal>
@@ -1749,10 +1790,11 @@
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
         <tag name="shelves" />
-        <usage name="Hunting" />
-        <usage name="Office" />
+        <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Industrial" />
         <usage name="School" />
-        <usage name="Lunapark" />
+        <usage name="Office" />
     </type>
     <type name="Aotearoa_RiceRisotto">
         <nominal>25</nominal>
@@ -1765,17 +1807,18 @@
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
         <tag name="shelves" />
-        <usage name="Village" />
         <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Farm" />
         <usage name="Hunting" />
         <value name="Tier1" />
         <value name="Tier2" />
     </type>
     <type name="Aotearoa_Anchor_MilkPowder">
-        <nominal>30</nominal>
+        <nominal>35</nominal>
         <lifetime>28800</lifetime>
         <restock>0</restock>
-        <min>22</min>
+        <min>25</min>
         <quantmin>10</quantmin>
         <quantmax>100</quantmax>
         <cost>100</cost>
@@ -1783,7 +1826,6 @@
         <category name="food" />
         <tag name="shelves" />
         <usage name="Farm" />
-        <usage name="Town" />
         <usage name="Village" />
         <value name="Tier1" />
         <value name="Tier2" />
@@ -1802,7 +1844,6 @@
         <tag name="shelves" />
         <usage name="Farm" />
         <usage name="Village" />
-        <usage name="Town" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1819,7 +1860,9 @@
         <category name="food" />
         <tag name="shelves" />
         <usage name="Town" />
-        <usage name="School" />
+        <usage name="Village" />
+        <usage name="Farm" />
+        <usage name="Hunting" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Watties_BakedBeans">
@@ -1835,6 +1878,7 @@
         <tag name="shelves" />
         <usage name="Town" />
         <usage name="Village" />
+        <usage name="Farm" />
         <usage name="Hunting" />
         <value name="Tier1" />
         <value name="Tier2" />
@@ -1853,7 +1897,8 @@
         <tag name="shelves" />
         <usage name="Town" />
         <usage name="Village" />
-        <usage name="Office" />
+        <usage name="Farm" />
+        <usage name="Hunting" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1871,7 +1916,8 @@
         <tag name="shelves" />
         <usage name="Town" />
         <usage name="Village" />
-        <usage name="School" />
+        <usage name="Farm" />
+        <usage name="Hunting" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1889,8 +1935,8 @@
         <tag name="shelves" />
         <usage name="Town" />
         <usage name="Village" />
-        <usage name="Office" />
-        <usage name="School" />
+        <usage name="Farm" />
+        <usage name="Hunting" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1907,8 +1953,9 @@
         <category name="food" />
         <tag name="shelves" />
         <usage name="Town" />
-        <usage name="Office" />
-        <usage name="School" />
+        <usage name="Village" />
+        <usage name="Farm" />
+        <usage name="Hunting" />
         <value name="Tier1" />
     </type>
     <type name="Aotearoa_Hellers_Bacon">
@@ -1922,7 +1969,10 @@
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
         <tag name="shelves" />
-        <usage name="Military" />
+        <usage name="Town" />
+        <usage name="Village" />
+        <usage name="Farm" />
+        <usage name="Hunting" />
     </type>
     <type name="Aotearoa_Tux_DogFood">
         <nominal>15</nominal>
@@ -1935,10 +1985,8 @@
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
         <tag name="shelves" />
-        <usage name="Town" />
+        <usage name="Farm" />
         <usage name="Village" />
-        <usage name="School" />
-        <usage name="Lunapark" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1954,9 +2002,8 @@
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0" />
         <category name="food" />
         <tag name="shelves" />
-        <usage name="Town" />
+        <usage name="Farm" />
         <usage name="Village" />
-        <usage name="Lunapark" />
         <value name="Tier1" />
         <value name="Tier2" />
         <value name="Tier3" />
@@ -1974,7 +2021,7 @@
         <tag name="shelves" />
         <usage name="Coast" />
         <usage name="Town" />
-        <usage name="Office" />
+        <usage name="Village" />
         <value name="Tier1" />
         <value name="Tier2" />
     </type>

@@ -93,7 +93,7 @@ ITEMS = [
     # Fizzy drinks: one for each vanilla soda can.
     Item("lp", "Aotearoa_SodaCan_LP", "SodaCan_Cola", "soda", "L&P",
          "Lemon & Paeroa. " + SODA + "Sweet, lemony and made in Paeroa since 1907.", (20, 16),
-         dict(brand="L&P", sub="LEMON & PAEROA", tag="Since 1907", bg=(247, 205, 30), bg2=(120, 72, 30),
+         dict(brand="L&P", sub="LEMON & PAEROA", tag="World Famous in New Zealand", bg=(247, 205, 30), bg2=(120, 72, 30),
               fg=(70, 40, 18), motif="lp")),
     Item("freshup", "Aotearoa_SodaCan_FreshUp", "SodaCan_Fronta", "soda", "Fresh Up Apple",
          SODA + "Sparkling apple juice drink.", (20, 16),
@@ -102,11 +102,11 @@ ITEMS = [
     Item("foxton_cream", "Aotearoa_SodaCan_FoxtonCream", "SodaCan_Spite", "soda", "Foxton Fizz Creaming Soda",
          SODA + "Creaming soda from Foxton.", (20, 16),
          dict(brand="Foxton Fizz", sub="CREAMING SODA", tag="Est. 1918", bg=(250, 238, 214), bg2=(226, 80, 140),
-              fg=(140, 30, 80), motif="bubbles")),
+              fg=(140, 30, 80), motif="windmill")),
     Item("foxton_rasp", "Aotearoa_SodaCan_FoxtonRaspberry", "SodaCan_Pipsi", "soda", "Foxton Fizz Raspberry",
          SODA + "Raspberry soda from Foxton.", (20, 16),
          dict(brand="Foxton Fizz", sub="RASPBERRY", tag="Est. 1918", bg=(196, 22, 60), bg2=(250, 160, 190),
-              fg=(255, 255, 255), motif="bubbles")),
+              fg=(255, 255, 255), motif="windmill")),
     Item("liftplus", "Aotearoa_SodaCan_LiftPlus", "SodaCan_Kvass", "soda", "Lift Plus",
          SODA + "Lemon energy drink with guarana.", (20, 16),
          dict(brand="Lift Plus", sub="ENERGY", tag="with guarana", bg=(250, 222, 40), bg2=(20, 70, 160),
@@ -176,7 +176,7 @@ ITEMS = [
     Item("weetbix", "Aotearoa_WeetBix", "BoxCerealCrunchin", "cereal", "Sanitarium Weet-Bix",
          "Sanitarium Weet-Bix whole grain wheat biscuits. Three with milk will keep you going.", (23, 18),
          dict(brand="Weet-Bix", sub="WHOLE GRAIN WHEAT BISCUITS", tag="Sanitarium", bg=(250, 200, 35),
-              bg2=(25, 70, 160), fg=(205, 30, 35))),
+              bg2=(25, 70, 160), fg=(205, 30, 35), slogan="Kiwi kids are Weet-Bix kids")),
     # Wattie's tins.
     Item("watties_beans", "Aotearoa_Watties_BakedBeans", "BakedBeansCan", "tin", "Wattie's Baked Beans",
          "Wattie's baked beans in tomato sauce. 420 g.", (25, 18),
@@ -233,6 +233,30 @@ ITEMS = [
               fg=(210, 30, 40), motif="fish"),
          opened="SardinesCan_Opened", usages=["Coast", "Town", "Village"]),
 ]
+# Where each kind of item spawns, New Zealand style: snacks and fizzy drinks in the dairies, petrol
+# stations and depots (Industrial), schools and offices; dairy and honey on the farms; canned fish on
+# the coast; the pantry staples in houses, baches and huts. Items not listed keep their vanilla usages.
+SPAWN = {
+    "snacks": (["Town", "Village", "Industrial", "School", "Office"],
+               ["bluebird_salted", "bluebird_vinegar", "bluebird_chicken", "munchos", "toffeepops", "shrewsburys",
+                "chocthins", "pineapplelumps", "whittakers_milk", "whittakers_dark", "whittakers_peanut"]),
+    "fizzy": (["Town", "Village", "Industrial", "School", "Office"], ["lp", "freshup", "foxton_cream", "foxton_rasp",
+                                                                       "liftplus"]),
+    "dairy": (["Farm", "Village"], ["anchor_milk", "airborne_honey"]),
+    "fish": (["Coast", "Town", "Village"], ["sealord_tuna", "pams_sardines"]),
+    "pantry": (["Town", "Village", "Farm", "Hunting"], ["risotto", "weetbix", "marmite", "watties_beans",
+                                                         "watties_spaghetti", "watties_peaches", "palm_cornedbeef",
+                                                         "hellers_bacon"]),
+    "pets": (["Farm", "Village"], ["tux_dogfood", "jellimeat"]),
+}
+# Dairy country: more milk powder and honey than vanilla has.
+LOOT = {"anchor_milk": (35, 25), "airborne_honey": (30, 22)}
+for _usages, _keys in SPAWN.values():
+    for _item in ITEMS:
+        if _item.key in _keys:
+            _item.usages = _usages
+for _item in ITEMS:
+    _item.loot = LOOT.get(_item.key, _item.loot)
 ITEM_CLASSES = {i.cls for i in ITEMS} | {i.cls + "_Opened" for i in ITEMS if i.opened}
 
 
@@ -522,7 +546,27 @@ def m_bacon(d, box, a, rng):
         d.line([(x, yy - 0.025 * h) for x, yy in pts], fill=(245, 215, 200), width=int(0.03 * h), joint="curve")
 
 
-MOTIFS = {"bacon": m_bacon, "dog": m_paws, "cat": m_paws, "lumps": m_lumps, "fish": m_fish, "chips": m_chips, "tomatoes": m_tomatoes, "toffeepops": m_biscuits, "shrewsburys": m_biscuits,
+def m_windmill(d, box, a, rng):
+    """Foxton's Dutch windmill, with bubbles rising past it."""
+    m_bubbles(d, box, a, rng)
+    x0, y0, x1, y1 = box
+    w, h = x1 - x0, y1 - y0
+    X, base, top = x0 + 0.5 * w, y1 - 0.02 * h, y0 + 0.55 * h
+    body = shade(a["fg"], 1.0)
+    d.polygon([(X - 0.16 * w, base), (X + 0.16 * w, base), (X + 0.09 * w, top), (X - 0.09 * w, top)], fill=body)
+    d.pieslice((X - 0.1 * w, top - 0.08 * h, X + 0.1 * w, top + 0.08 * h), 180, 360, fill=body)
+    d.rectangle((X - 0.03 * w, base - 0.12 * h, X + 0.03 * w, base), fill=(255, 255, 255))
+    hx, hy = X, top - 0.01 * h
+    for k in range(4):
+        t = math.radians(45 + 90 * k)
+        ex, ey = hx + math.cos(t) * 0.27 * w, hy + math.sin(t) * 0.27 * w
+        px, py = -math.sin(t) * 0.05 * w, math.cos(t) * 0.05 * w
+        d.polygon([(hx, hy), (ex, ey), (ex + px, ey + py), (hx + px * 0.4, hy + py * 0.4)], fill=(250, 245, 230),
+                  outline=body)
+    d.ellipse((hx - 0.025 * w, hy - 0.025 * w, hx + 0.025 * w, hy + 0.025 * w), fill=body)
+
+
+MOTIFS = {"windmill": m_windmill, "bacon": m_bacon, "dog": m_paws, "cat": m_paws, "lumps": m_lumps, "fish": m_fish, "chips": m_chips, "tomatoes": m_tomatoes, "toffeepops": m_biscuits, "shrewsburys": m_biscuits,
           "chocthins": m_biscuits, "bubbles": m_bubbles, "apples": m_apples, "bolt": m_bolt, "lp": m_lp,
           "beans": m_beans, "spaghetti": m_spaghetti, "peaches": m_peaches, "palm": m_palm, "marmite": m_marmite}
 
@@ -565,7 +609,11 @@ def front(w: int, h: int, item: Item, rng) -> Image.Image:
     else:
         kind = "script" if a["brand"] in ("Wattie's", "Griffin's", "Foxton Fizz", "Pascall", "Pams") else "italic"
         stroke = shade(a["bg"], 0.45) if a["fg"] == (255, 255, 255) else (255, 255, 255)
-        text(d, (0.5 * w, brand_y * h), a["brand"], kind, 0.86 * w, brand_h * h, a["fg"], max(3, w // 120), stroke)
+        if a["brand"] == "L&P":
+            d.rounded_rectangle((0.1 * w, (brand_y - 0.13) * h, 0.9 * w, (brand_y + 0.13) * h), radius=int(0.1 * h),
+                                fill=(255, 245, 210), outline=a["fg"], width=max(4, w // 70))
+        text(d, (0.5 * w, brand_y * h), a["brand"], kind, 0.86 * w if a["brand"] != "L&P" else 0.7 * w,
+             brand_h * h if a["brand"] != "L&P" else 0.22 * h, a["fg"], max(3, w // 120), stroke)
         sub_y = 0.42 if not tin else 0.51
         sub_fill = (255, 255, 255) if tin else a["fg"]
         sub_stroke = (255, 255, 255) if sum(sub_fill) < 300 else shade(a["bg2"], 0.5)
@@ -702,6 +750,8 @@ def cereal(item: Item, rng) -> Image.Image:
     fd.polygon([(0, 0.3 * fh), (fw, 0.18 * fh), (fw, 0.34 * fh), (0, 0.46 * fh)], fill=a["bg2"])
     text(fd, (0.5 * fw, 0.13 * fh), a["brand"], "italic", 0.9 * fw, 0.2 * fh, a["fg"], 6, (255, 255, 255))
     text(fd, (0.5 * fw, 0.32 * fh), a["sub"], "sans", 0.86 * fw, 0.06 * fh, (255, 255, 255))
+    if a.get("slogan"):
+        text(fd, (0.5 * fw, 0.46 * fh), a["slogan"], "italic", 0.8 * fw, 0.055 * fh, a["bg2"], 2, (255, 255, 255))
     text(fd, (0.85 * fw, 0.04 * fh), a["tag"], "italic", 0.28 * fw, 0.04 * fh, (40, 90, 40))
     bx, by, br = 0.5 * fw, 0.72 * fh, 0.38 * fw
     fd.ellipse((bx - br, by - br * 0.5, bx + br, by + br * 0.75), fill=(245, 245, 250), outline=(170, 170, 180), width=6)
@@ -742,9 +792,12 @@ def bar(item: Item, rng) -> Image.Image:
     for r in range(rows):
         y = r * rh
         if r % 2 == 0:
+            for yy in (y + rh * 0.04, y + rh * 0.96):
+                d.line((0, yy, w, yy), fill=a["bg2"], width=max(3, int(rh * 0.04)))
             for c in range(2):
-                text(d, ((c + 0.5) * w / 2, y + rh * 0.5), a["brand"], "script",
-                     w / 2.3, rh * 0.75, a["fg"], 3, shade(a["bg"], 0.5))
+                text(d, ((c + 0.5) * w / 2, y + rh * 0.42), a["brand"], "script",
+                     w / 2.3, rh * 0.6, a["fg"], 3, shade(a["bg"], 0.5))
+                text(d, ((c + 0.5) * w / 2, y + rh * 0.82), "EST. 1896", "sans", w / 8, rh * 0.13, a["bg2"])
         else:
             d.rectangle((0, y + rh * 0.08, w, y + rh * 0.92), fill=a["bg2"])
             for c in range(3):
@@ -797,6 +850,18 @@ def rice(item: Item, rng) -> Image.Image:
     return wear(im, rng, 6)
 
 
+def anchor(d, X, Y, s, fill):
+    """A ship's anchor, upright, centred on (X, Y), about 2s tall."""
+    lw = max(3, int(0.16 * s))
+    d.ellipse((X - 0.22 * s, Y - s, X + 0.22 * s, Y - 0.56 * s), outline=fill, width=lw)
+    d.line((X, Y - 0.56 * s, X, Y + 0.85 * s), fill=fill, width=lw)
+    d.line((X - 0.5 * s, Y - 0.3 * s, X + 0.5 * s, Y - 0.3 * s), fill=fill, width=lw)
+    d.arc((X - 0.8 * s, Y - 0.15 * s, X + 0.8 * s, Y + 0.95 * s), 20, 160, fill=fill, width=lw)
+    for side in (-1, 1):
+        tx, ty = X + side * 0.76 * s, Y + 0.55 * s
+        d.polygon([(tx, ty - 0.28 * s), (tx - side * 0.05 * s, ty + 0.05 * s), (tx + side * 0.2 * s, ty)], fill=fill)
+
+
 def milk(item: Item, rng) -> Image.Image:
     """Powdered milk bag: plain body on the left, the label running down the texture (rotated a quarter
     turn) in the middle, and a coloured side band on the right."""
@@ -813,10 +878,8 @@ def milk(item: Item, rng) -> Image.Image:
     text(ld, (0.5 * lab_w, 0.78 * lab_h), a["sub"], "sans", 0.55 * lab_w, 0.18 * lab_h, shade(a["bg"], 0.8))
     for side in (0.12, 0.88):
         X, Y, R = side * lab_w, 0.5 * lab_h, 0.32 * lab_h
-        d2 = ld
-        d2.ellipse((X - R, Y - R, X + R, Y + R), fill=a["bg"])
-        d2.polygon([(X - 0.6 * R, Y + 0.5 * R), (X - 0.2 * R, Y - 0.6 * R), (X + 0.2 * R, Y + 0.1 * R),
-                    (X + 0.6 * R, Y - 0.6 * R), (X + 0.8 * R, Y + 0.5 * R)], fill=(90, 170, 70))
+        ld.ellipse((X - R, Y - R, X + R, Y + R), fill=a["bg"])
+        anchor(ld, X, Y, 0.8 * R, (255, 255, 255))
     im.paste(lab.rotate(-90, expand=True), (int(0.56 * w), 0))
     d.rectangle((int(0.82 * w), 0, w, h), fill=shade(a["bg"], 0.8))
     band = Image.new("RGB", (h, w - int(0.82 * w)), shade(a["bg"], 0.8))
