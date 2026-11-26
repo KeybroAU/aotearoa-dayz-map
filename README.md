@@ -32,6 +32,7 @@ A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and
 
    It takes about 25 minutes and 8 GB of memory. Run `build_all.bat regen` to rebuild the whole terrain from the elevation data first.
 4. Follow the step-by-step checklist in [docs/TERRAIN_BUILDER_GUIDE.md](docs/TERRAIN_BUILDER_GUIDE.md). It covers Terrain Builder, packing and a test server. The sections below are the short version.
+5. Load it in game and work through [docs/IN_GAME_TEST_CHECKLIST.md](docs/IN_GAME_TEST_CHECKLIST.md).
 
 ## Scale
 
@@ -347,7 +348,7 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 | `cfgEffectArea.json` | The Whakaari and Waiouru Ammunition Area contaminated zones and their safe positions |
 | `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
-| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (77 items, plus 17 food and drink items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; honey, milk powder and canned fish; New Zealand food and drink (see below); fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
+| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (75 items, plus 24 food and drink items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; honey, milk powder and canned fish; New Zealand food and drink (see below); fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
 | `loot_tiers.json` | The loot tier of every town and site |
 | `env/*_territories.xml` | Animals: red deer and wild pigs in the bush, sheep on pasture and goats in the high country, cattle, pigs and hens at farms, hares on farmland. No wolves, bears, foxes or roe deer. |
 | `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog (the seasons come from the world scripts, see below) |
@@ -371,12 +372,15 @@ The mod retextures vanilla cans, tins and snack packets as Kiwi brands, and the 
 |---|---|
 | L&P, Fresh Up Apple, Foxton Fizz Creaming Soda, Foxton Fizz Raspberry, Lift Plus | the five vanilla soda cans |
 | Bluebird Ready Salted, Salt & Vinegar, Chicken; Munchos Tomato | Chips |
-| Griffin's Toffee Pops, Shrewsburys, Chocolate Thins | Crackers |
+| Griffin's Toffee Pops, Shrewsburys, Chocolate Thins; Pascall Pineapple Lumps | Crackers |
+| Whittaker's Creamy Milk, Dark Ghana, Peanut Slab | the three Zagorky bars |
+| Sanitarium Weet-Bix | Crunchin cereal |
 | Wattie's Baked Beans, Spaghetti, Peach Slices | Baked Beans, Spaghetti, Peaches |
+| Sealord Tuna, Pams Sardines | Tuna, Sardines |
 | Palm Corned Beef | Pork (250 g tin) |
 | Marmite | Brisket Spread (100 g tin) |
 
-The labels are drawn by `tools/nz_food.py`, which also writes `config/food.hpp` and `scripts/4_World/AotearoaFood.c`. To add or rename an item, or change its loot, edit `ITEMS` there and run `python tools/nz_food.py`, then rebuild the mission. The artwork is original but the names are real brands; rename them in `ITEMS` if a trademark holder objects.
+The labels are drawn by `tools/nz_food.py`, which also writes `preview/nz_food_showcase.png` (the Workshop card's shop shelf), `config/food.hpp` and `scripts/4_World/AotearoaFood.c`. To add or rename an item, or change its loot, edit `ITEMS` there and run `python tools/nz_food.py`, then rebuild the mission. The artwork is original but the names are real brands; rename them in `ITEMS` if a trademark holder objects.
 
 `mission/serverDZ.cfg` is a server config template pointing at the mission.
 
@@ -473,7 +477,7 @@ Give it to new players by adding `AotearoaMap` to a starting gear preset, or sel
 
 `workshop/` holds what to paste into the Workshop page:
 - `preview.jpg`: the 1024 x 1024 preview image, with the watermark. `python tools/make_branding.py` rebuilds it.
-- `screenshots/`: eight 1920 x 1080 feature cards (whole map, both islands, towns, roads and rail, Christchurch, loot, map item) with the watermark. `python tools/make_workshop_shots.py` rebuilds them from the previews; swap in in-game shots once the world is built.
+- `screenshots/`: nine 1920 x 1080 feature cards (whole map, both islands, towns, roads and rail, Christchurch, loot, map item, New Zealand food) with the watermark. `python tools/make_workshop_shots.py` rebuilds them from the previews; swap in in-game shots once the world is built.
 - `discord_post.md`: the release post for Discord (under Discord's 2,000-character limit).
 - `description.txt`: the description in Steam's BBCode, with the [Discord](https://discord.gg/FpsDrBTaX3) link and the note that the mod may not be repacked or included in server packs without permission.
 

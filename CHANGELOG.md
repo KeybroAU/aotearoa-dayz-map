@@ -2,12 +2,13 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
-## Unreleased
+## 0.6.3 - 2026-11-26
 
 ### Added
-- Steam Workshop screenshots (`workshop/screenshots/`, `tools/make_workshop_shots.py`) and a Discord release post (`workshop/discord_post.md`)
-- New Zealand food and drink (`tools/nz_food.py`), 17 retextured vanilla items that replace the vanilla ones in the loot: L&P, Fresh Up Apple, Foxton Fizz Creaming Soda and Raspberry and Lift Plus cans; Bluebird Ready Salted, Salt & Vinegar and Chicken chips and Munchos Tomato; Griffin's Toffee Pops, Shrewsburys and Chocolate Thins; Wattie's Baked Beans, Spaghetti and Peach Slices; Palm Corned Beef; Marmite. Tins keep their label once opened
-- New Zealand loot pass, 77 items: NZDF Steyr AUGs, M4s and FALs at the bases; police Glocks; more hunting rifles, shotguns and farm ammo; mānuka honey, milk powder, canned fish; fishing, fencing and tramping gear; gumboots, raincoats, wool jumpers and beanies. Handguns, the Desert Eagle and the AKM are rarer
+- Nine Steam Workshop screenshots (`workshop/screenshots/`, `tools/make_workshop_shots.py`), including a shop shelf of the New Zealand food, and a Discord release post (`workshop/discord_post.md`)
+- New Zealand food and drink (`tools/nz_food.py`), 24 retextured vanilla items that replace the vanilla ones in the loot: L&P, Fresh Up Apple, Foxton Fizz Creaming Soda and Raspberry and Lift Plus cans; Bluebird Ready Salted, Salt & Vinegar and Chicken chips and Munchos Tomato; Griffin's Toffee Pops, Shrewsburys and Chocolate Thins and Pascall Pineapple Lumps; Whittaker's Creamy Milk, Dark Ghana and Peanut Slab; Sanitarium Weet-Bix; Wattie's Baked Beans, Spaghetti and Peach Slices; Sealord Tuna; Pams Sardines; Palm Corned Beef; Marmite. Tins keep their label once opened
+- In-game test checklist (`docs/IN_GAME_TEST_CHECKLIST.md`)
+- New Zealand loot pass, 75 items: NZDF Steyr AUGs, M4s and FALs at the bases; police Glocks; more hunting rifles, shotguns and farm ammo; mānuka honey and milk powder; fishing, fencing and tramping gear; gumboots, raincoats, wool jumpers and beanies. Handguns, the Desert Eagle and the AKM are rarer
 
 ### Changed
 - Loot changes are built on the vanilla entries (`tools/vanilla_types.xml`, `tools/refresh_vanilla_types.py`), keeping vanilla lifetimes, quantities and shelf tags
