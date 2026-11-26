@@ -13,6 +13,7 @@ Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/m
 - Civilian towns are tier 3 or lower and military areas reach 150 m past the bases (was 400 m): Palmerston North, Queenstown, Rakaia, Twizel, Lyttelton and Rakaia Huts are no longer tier 4
 
 ### Fixed
+- Map labels no longer overlap on the player map, the map item and the towns preview (`tools/labelplace.py`): each name moves round its town or site until it's clear, crowded river and lake names are left off, and the map item uses NZ abbreviations (SLSC, Holiday Pk)
 - The old loot changes spawned every New Zealand weapon fully loaded and every ammo box full, and dropped vanilla's shelf tags
 
 ## 0.6.2 - 2026-11-26

@@ -16,6 +16,8 @@ from pathlib import Path
 from typing import Callable
 
 import numpy as np
+
+import labelplace
 from PIL import Image, ImageDraw
 from scipy import ndimage
 
@@ -434,12 +436,17 @@ def draw_overview(img: Image.Image, towns: list[Town], size_m: float) -> Image.I
         for b in t.buildings:
             px, py = b.x * f, (size_m - b.y) * f
             d.rectangle([px - 1, py - 1, px + 1, py + 1], fill=(200, 40, 40))
-    for t in towns:
-        if getattr(t, "tier", "") == "hamlet":
-            continue
+    placer = labelplace.Placer(d, img.size)
+    named = [t for t in towns if getattr(t, "tier", "") != "hamlet"]
+    for t in named:
+        px, py = t.x * f, (size_m - t.y) * f
+        r = max(3.0, t.radius * f)
+        placer.reserve((px - r, py - r, px + r, py + r))
+    for t in sorted(named, key=lambda t: -t.radius):
         px, py = t.x * f, (size_m - t.y) * f
         colour = (255, 255, 0) if t.tier == "military" else (255, 255, 255)
-        d.text((px + t.radius * f + 4, py - 6), t.label, fill=colour, font=_font(13), stroke_width=2, stroke_fill=(0, 0, 0))
+        placer.label([(t.label, _font(13), colour)], px, py, r=max(3.0, t.radius * f), gap=4,
+                     stroke_fill=(0, 0, 0))
     return img
 
 

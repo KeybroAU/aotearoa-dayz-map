@@ -16,6 +16,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
+import labelplace
 import watermark
 
 MAP_DIR = Path(__file__).resolve().parents[1]
@@ -27,6 +28,10 @@ FONT_ITALIC = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf"
 TIER_STYLE = {  # font scale, dot radius scale
     "capital": (1.8, 1.6), "city": (1.45, 1.3), "town": (1.15, 1.0), "village": (0.9, 0.8), "military": (1.0, 1.0),
 }
+TOWN_ORDER = ["capital", "city", "military", "town", "village"]
+# New Zealand map abbreviations, used where the text is scaled up on a small texture (the map item).
+SHORT = [(" Surf Life Saving Club", " SLSC"), (" Holiday Park", " Holiday Pk"), ("Port of ", "Port "),
+         (" Ferry Terminal", " Ferry")]
 SITE_SYMBOL = {
     "airfield": ((40, 40, 40), "✈"), "port": ((30, 90, 200), "⚓"), "ferry": ((0, 170, 230), "⇄"),
     "naval": ((20, 40, 120), "⚓"), "industrial": ((120, 80, 40), "■"), "ski": ((255, 255, 255), "▲"),
@@ -114,6 +119,13 @@ def render(satellite: Image.Image, size: int, text_scale: float = 1.0, legend: b
 
     sym_font = font("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", int(22 * s))
     site_font = font(FONT, int(15 * s))
+    water_font = font(FONT_ITALIC, int(15 * s))
+    sea_font = font(FONT_ITALIC, int(30 * s))
+    peak_font = font(FONT, int(14 * s))
+    placer = labelplace.Placer(d, img.size, pad=2 * s, stroke=2)
+
+    # Symbols first, reserved so no label covers them.
+    sites = []
     for p in load_sites():
         style = SITE_SYMBOL.get(p["kind"]) or (NAMED_SETTLEMENT if p["label"] and p["kind"] == "bach" else None)
         if not style:
@@ -121,45 +133,76 @@ def render(satellite: Image.Image, size: int, text_scale: float = 1.0, legend: b
         x, y = px(p["x"], p["y"])
         colour, sym = style
         d.text((x, y), sym, font=sym_font, anchor="mm", fill=colour + (255,), stroke_width=2, stroke_fill=(0, 0, 0, 255))
+        placer.reserve((x - 9 * s, y - 9 * s, x + 9 * s, y + 9 * s))
         if p["label"]:
-            d.text((x + 14 * s, y), p["label"], font=site_font, anchor="lm", fill=(255, 255, 255, 235),
-                   stroke_width=2, stroke_fill=(0, 0, 0, 220))
+            label = p["label"]
+            if text_scale > 1:
+                for long, short in SHORT:
+                    label = label.replace(long, short)
+            sites.append((label, x, y))
     for st in roads.get("stations", []):
         x, y = px(st["x"], st["y"])
         r = 5 * s
         d.rectangle([x - r, y - r, x + r, y + r], fill=(255, 255, 255, 255), outline=(0, 0, 0, 255), width=2)
+        placer.reserve((x - r, y - r, x + r, y + r))
 
     labels_path = SOURCE / "labels.json"
     features = json.loads(labels_path.read_text(encoding="utf-8")) if labels_path.exists() else []
-    water_font = font(FONT_ITALIC, int(15 * s))
-    sea_font = font(FONT_ITALIC, int(30 * s))
-    peak_font = font(FONT, int(14 * s))
+    for lb in features:
+        if lb["kind"] == "peak":
+            x, y = px(*lb["xy"])
+            d.text((x, y), "▲", font=sym_font, anchor="mm", fill=(120, 80, 50, 255), stroke_width=2,
+                   stroke_fill=(255, 255, 255, 230))
+            placer.reserve((x - 8 * s, y - 8 * s, x + 8 * s, y + 8 * s))
+
+    towns = sorted(load_towns(), key=lambda t: (TOWN_ORDER.index(t["tier"]) if t["tier"] in TOWN_ORDER
+                                                else len(TOWN_ORDER), -float(t["radius"])))
+    rings = []
+    for t in towns:
+        _, dot = TIER_STYLE.get(t["tier"], (1.0, 1.0))
+        x, y = px(float(t["x"]), float(t["y"]))
+        r = max(4.0, float(t["radius"]) * k) * dot * 0.6
+        rings.append((t, x, y, r))
+    for t, x, y, r in sorted(rings, key=lambda a: -a[3]):
+        d.ellipse([x - r, y - r, x + r, y + r], fill=(255, 245, 200, 90), outline=(0, 0, 0, 230), width=2)
+        placer.reserve((x - r, y - r, x + r, y + r))
+
+    # Labels, most important first: towns, then sites, peaks, water and seas.
+    for t, x, y, r in rings:
+        scale, _ = TIER_STYLE.get(t["tier"], (1.0, 1.0))
+        f1 = font(FONT_BOLD, int(19 * s * scale))
+        name = (t["name"], f1, (255, 255, 255, 255))
+        if t["maori"] and t["tier"] in ("capital", "city", "town"):
+            maori = (t["maori"], font(FONT, int(14 * s * scale)), (220, 240, 255, 235))
+            usual = placer._parts([name], x, y - r - 4 * s, "centre", "bottom") \
+                + placer._parts([maori], x, y + r + 4 * s, "centre", "top")
+            placer.label([name, maori], x, y, r=r, gap=4 * s, first=usual, stroke=max(2, int(3 * s)),
+                         stroke_fill=(0, 0, 0, 255))
+        else:
+            first = placer._parts([name], x, y - r - 4 * s, "centre", "bottom")
+            placer.label([name], x, y, r=r, gap=4 * s, first=first, stroke=max(2, int(3 * s)),
+                         stroke_fill=(0, 0, 0, 255))
+    for label, x, y in sites:
+        placer.label([(label, site_font, (255, 255, 255, 235))], x, y, r=9 * s, gap=4 * s, stroke_fill=(0, 0, 0, 220))
+    for lb in features:
+        x, y = px(*lb["xy"])
+        if lb["kind"] == "peak":
+            placer.label([(lb["name"], peak_font, (255, 250, 235, 240))], x, y, r=8 * s, gap=4 * s,
+                         stroke_fill=(60, 40, 20, 220))
     for lb in features:
         x, y = px(*lb["xy"])
         if lb["kind"] in ("river", "lake"):
-            d.text((x, y), lb["name"], font=water_font, anchor="mm", fill=(190, 225, 255, 240),
-                   stroke_width=2, stroke_fill=(10, 40, 80, 220))
-        elif lb["kind"] == "sea":
-            d.text((x, y), lb["name"], font=sea_font, anchor="mm", fill=(170, 205, 240, 200))
-        elif lb["kind"] == "peak":
-            d.text((x, y), "▲", font=sym_font, anchor="mm", fill=(120, 80, 50, 255), stroke_width=2,
-                   stroke_fill=(255, 255, 255, 230))
-            d.text((x + 12 * s, y), lb["name"], font=peak_font, anchor="lm", fill=(255, 250, 235, 240),
-                   stroke_width=2, stroke_fill=(60, 40, 20, 220))
+            centre = placer._parts([(lb["name"], water_font, (190, 225, 255, 240))], x, y, "centre", "middle")
+            placer.label([(lb["name"], water_font, (190, 225, 255, 240))], x, y, r=4 * s, gap=4 * s, first=centre,
+                         optional=True, stroke_fill=(10, 40, 80, 220))
+    for lb in features:
+        x, y = px(*lb["xy"])
+        if lb["kind"] == "sea":
+            centre = placer._parts([(lb["name"], sea_font, (170, 205, 240, 200))], x, y, "centre", "middle")
+            placer.label([(lb["name"], sea_font, (170, 205, 240, 200))], x, y, r=10 * s, gap=10 * s, first=centre,
+                         stroke=0, optional=True)
 
-    for t in sorted(load_towns(), key=lambda t: float(t["radius"])):
-        scale, dot = TIER_STYLE.get(t["tier"], (1.0, 1.0))
-        x, y = px(float(t["x"]), float(t["y"]))
-        r = max(4.0, float(t["radius"]) * k) * dot * 0.6
-        d.ellipse([x - r, y - r, x + r, y + r], fill=(255, 245, 200, 90), outline=(0, 0, 0, 230), width=2)
-        f1 = font(FONT_BOLD, int(19 * s * scale))
-        d.text((x, y - r - 2 * s), t["name"], font=f1, anchor="md", fill=(255, 255, 255, 255),
-               stroke_width=max(2, int(3 * s)), stroke_fill=(0, 0, 0, 255))
-        if t["maori"] and t["tier"] in ("capital", "city", "town"):
-            f2 = font(FONT, int(14 * s * scale))
-            d.text((x, y + r + 2 * s), t["maori"], font=f2, anchor="ma", fill=(220, 240, 255, 235),
-                   stroke_width=2, stroke_fill=(0, 0, 0, 230))
-
+    render.last = placer
     img = watermark.stamp(img, [watermark.CREDIT, watermark.SITE], 30 * s, opacity=150)
     d = ImageDraw.Draw(img, "RGBA")
     if not legend:

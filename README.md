@@ -564,4 +564,5 @@ python tools/check_map.py
 | `details.py` | Bridge, lake, power line, guardrail, fence, hedge, rock, rail, wreck and town detail models and spacing |
 | `build_mission.py` | Spawn, vehicle and crash counts, infected zone density, temperatures |
 | `server_files.py` | Starting gear (`PRESETS`), server messages, restart interval and launch scripts |
+| `labelplace.py` | Keeps map labels from overlapping (player map, map item, towns preview) |
 | `economy.py` | Loot changes (`NZ_TYPES`), tier rules, animal herds (`HERDS`), weather |
