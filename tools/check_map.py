@@ -73,6 +73,34 @@ def object_names() -> None:
               + (f" (unknown: {', '.join(bad[:5])})" if bad else ""))
 
 
+# From vanilla cfglimitsdefinition.xml.
+USAGES = {"Military", "Police", "Medic", "Firefighter", "Industrial", "Farm", "Coast", "Town", "Village", "Hunting",
+          "Office", "School", "Prison", "Lunapark", "SeasonalEvent", "ContaminatedArea", "Historical"}
+VALUES = {"Tier1", "Tier2", "Tier3", "Tier4", "Unique"}
+
+
+def loot() -> None:
+    """The New Zealand types.xml uses vanilla limits and keeps every vanilla field."""
+    classes = _names(MAP_DIR / "tools" / "dayz_classes.txt")
+    vanilla = {e.get("name"): e for e in ET.parse(MAP_DIR / "tools" / "vanilla_types.xml").getroot().iter("type")}
+    types = list(ET.parse(MISSION / "aotearoa_ce" / "types.xml").getroot().iter("type"))
+    names = [e.get("name") for e in types]
+    check(bool(types) and len(set(names)) == len(names), f"{len(types)} New Zealand loot types, no duplicates")
+    check(all(n.lower() in classes and n in vanilla for n in names), "every loot type is a vanilla DayZ type")
+    bad_limits = sorted({u.get("name") for e in types for u in e.iter("usage")} - USAGES
+                        | {v.get("name") for e in types for v in e.iter("value")} - VALUES)
+    check(not bad_limits, "usages and values are in cfglimitsdefinition.xml" + (f" (unknown: {bad_limits})" if bad_limits else ""))
+    check(all(0 <= int(e.findtext("min")) <= int(e.findtext("nominal")) for e in types), "min is at most nominal")
+    same = ("lifetime", "restock", "quantmin", "quantmax", "cost")
+    changed = [e.get("name") for e in types if any(e.findtext(k) != vanilla[e.get("name")].findtext(k) for k in same)
+               or [c.attrib for c in e.iter("tag")] != [c.attrib for c in vanilla[e.get("name")].iter("tag")]]
+    check(not changed, "lifetimes, quantities and tags match vanilla" + (f" ({changed[:3]})" if changed else ""))
+    tiers = json.loads((MISSION / "loot_tiers.json").read_text(encoding="utf-8"))["towns"]
+    towns = {r["name"]: r["tier"] for r in csv.DictReader((SOURCE / "towns.csv").open(encoding="utf-8"))}
+    hot = sorted(n for n, v in tiers.items() if v > 3 and towns.get(n) != "military")
+    check(not hot, "civilian towns are tier 3 or lower" + (f" ({', '.join(hot[:4])})" if hot else ""))
+
+
 def main() -> None:
     Image.MAX_IMAGE_PIXELS = None
     meta = json.loads((SOURCE / "heightmap.json").read_text())
@@ -246,6 +274,9 @@ def main() -> None:
 
     print("Object names")
     object_names()
+
+    print("Loot")
+    loot()
 
     print()
     if failures:

@@ -2,6 +2,18 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
+## Unreleased
+
+### Added
+- New Zealand loot pass, 79 items: NZDF Steyr AUGs, M4s and FALs at the bases; police Glocks; more hunting rifles, shotguns and farm ammo; mānuka honey, milk powder, canned fish and hut food; fishing, fencing and tramping gear; gumboots, raincoats, wool jumpers and beanies. Handguns, the Desert Eagle and the AKM are rarer
+
+### Changed
+- Loot changes are built on the vanilla entries (`tools/vanilla_types.xml`, `tools/refresh_vanilla_types.py`), keeping vanilla lifetimes, quantities and shelf tags
+- Civilian towns are tier 3 or lower and military areas reach 150 m past the bases (was 400 m): Palmerston North, Queenstown, Rakaia, Twizel, Lyttelton and Rakaia Huts are no longer tier 4
+
+### Fixed
+- The old loot changes spawned every New Zealand weapon fully loaded and every ammo box full, and dropped vanilla's shelf tags
+
 ## 0.6.2 - 2026-11-26
 
 ### Added

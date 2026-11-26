@@ -57,10 +57,10 @@ Total 962 (warn above 3,000).
 
 | Loot tier | Buildings |
 |---|---|
-| 1 | 1,397 |
-| 2 | 1,205 |
-| 3 | 347 |
-| 4 | 243 |
+| 1 | 1,461 |
+| 2 | 1,220 |
+| 3 | 449 |
+| 4 | 62 |
 | sites | 806 |
 
 Most loot buildings:

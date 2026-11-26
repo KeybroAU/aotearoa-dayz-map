@@ -347,7 +347,7 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 | `cfgEffectArea.json` | The Whakaari and Waiouru Ammunition Area contaminated zones and their safe positions |
 | `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
-| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes: hunting rifles, .22 and .308 ammo, fishing gear and gumboots common; military rifles scarce |
+| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (79 items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; honey, milk powder and canned fish; fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
 | `loot_tiers.json` | The loot tier of every town and site |
 | `env/*_territories.xml` | Animals: red deer and wild pigs in the bush, sheep on pasture and goats in the high country, cattle, pigs and hens at farms, hares on farmland. No wolves, bears, foxes or roe deer. |
 | `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog (the seasons come from the world scripts, see below) |
@@ -359,7 +359,7 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 
 ![Loot tiers](preview/loot_tiers_2048.png)
 
-Loot tier 1 is the northern coasts. Tiers rise inland, southwards and above 300 m. Military bases, Ōhakea and Devonport are tier 4. DayZ reads tiers from `areaflags.map`, which you paint in the DayZ Tools economy editor. Use `preview/loot_tiers_2048.png` as the guide for the Value layer.
+Loot tier 1 is the northern coasts. Tiers rise inland, southwards and above 300 m. Military bases and 150 m round them, Ōhakea and Devonport are tier 4. Civilian towns are capped at tier 3, so towns next to a base (Palmerston North, Rakaia) or high in the Alps (Queenstown, Twizel) don't have military loot in every house. DayZ reads tiers from `areaflags.map`, which you paint in the DayZ Tools economy editor. Use `preview/loot_tiers_2048.png` as the guide for the Value layer.
 
 `mission/serverDZ.cfg` is a server config template pointing at the mission.
 
@@ -378,7 +378,7 @@ To set up a server:
 
    The generated `mapgrouppos.xml` works until then. The export gives exact positions.
 
-The rest of the economy is vanilla. Change counts in `NZ_TYPES` in `tools/economy.py`, or add your own entries to `aotearoa_ce/types.xml`.
+The rest of the economy is vanilla. Each entry in `NZ_TYPES` in `tools/economy.py` changes only the count, minimum, usages and tiers of the vanilla entry, kept in `tools/vanilla_types.xml`; lifetimes, quantities, flags and shelf tags stay vanilla. After a DayZ update, run `python tools/refresh_vanilla_types.py` (or pass `--xml` with your server's `db/types.xml`) and rebuild the mission. The map checks reject unknown items, usages or tiers.
 
 ### Traders, safe zones and server mods
 

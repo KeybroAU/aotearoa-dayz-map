@@ -29,31 +29,86 @@ import generate_terrain as g
 
 TIER_COLOURS = {1: (60, 170, 60), 2: (230, 210, 60), 3: (240, 130, 40), 4: (210, 40, 40)}
 
-# Hunting rifles are common and military rifles scarce, as in New Zealand. Each entry replaces the
-# vanilla one of the same name, so every field is given.
-# name: (nominal, min, lifetime, restock, cost, category, usages, values)
+# New Zealand loot changes, applied on top of the vanilla entry of the same name
+# (tools/vanilla_types.xml): name: (nominal, min, usages, values). usages or values None keeps
+# vanilla's; [] values means every tier. Everything else (lifetime, quantities, flags, tags) stays
+# vanilla. Refresh the vanilla copy with tools/refresh_vanilla_types.py.
+ALL = ["Tier1", "Tier2", "Tier3", "Tier4"]
 NZ_TYPES = {
-    "Winchester70": (25, 15, 28800, 0, 100, "weapons", ["Hunting", "Farm", "Village"], ["Tier1", "Tier2", "Tier3"]),
-    "CZ527": (20, 12, 28800, 0, 100, "weapons", ["Hunting", "Farm"], ["Tier2", "Tier3", "Tier4"]),
-    "Ruger1022": (25, 15, 28800, 0, 100, "weapons", ["Hunting", "Farm", "Village", "Town"], ["Tier1", "Tier2"]),
-    "Izh18": (25, 15, 28800, 0, 100, "weapons", ["Hunting", "Farm", "Village"], ["Tier1", "Tier2", "Tier3"]),
-    "Repeater": (15, 8, 28800, 0, 100, "weapons", ["Hunting", "Farm"], ["Tier2", "Tier3"]),
-    "Mosin9130": (12, 6, 28800, 0, 100, "weapons", ["Hunting"], ["Tier2", "Tier3", "Tier4"]),
-    "SKS": (10, 5, 28800, 0, 100, "weapons", ["Hunting", "Police"], ["Tier3", "Tier4"]),
-    "M4A1": (6, 3, 28800, 0, 100, "weapons", ["Military"], ["Tier4"]),
-    "AKM": (5, 2, 28800, 0, 100, "weapons", ["Military"], ["Tier4"]),
-    "FAL": (4, 2, 28800, 0, 100, "weapons", ["Military"], ["Tier4"]),
-    "SVD": (2, 1, 28800, 0, 100, "weapons", ["Military"], ["Tier4"]),
-    "Ammo_308Win": (60, 40, 14400, 0, 100, "weapons", ["Hunting", "Farm", "Village"], ["Tier1", "Tier2", "Tier3", "Tier4"]),
-    "Ammo_22": (60, 40, 14400, 0, 100, "weapons", ["Hunting", "Farm", "Village", "Town"], ["Tier1", "Tier2", "Tier3"]),
-    "HuntingKnife": (40, 25, 14400, 0, 100, "tools", ["Hunting", "Farm", "Village"], ["Tier1", "Tier2", "Tier3", "Tier4"]),
-    "FishingRod": (40, 25, 14400, 0, 100, "tools", ["Coast", "Village", "Farm"], ["Tier1", "Tier2", "Tier3"]),
-    "Hook": (40, 25, 14400, 0, 100, "tools", ["Coast", "Village"], ["Tier1", "Tier2", "Tier3"]),
-    "Wellies_Black": (30, 18, 14400, 0, 100, "clothes", ["Farm", "Village"], ["Tier1", "Tier2", "Tier3"]),
-    "Wellies_Green": (30, 18, 14400, 0, 100, "clothes", ["Farm", "Village"], ["Tier1", "Tier2", "Tier3"]),
-    "HuntingJacket_Brown": (20, 12, 14400, 0, 100, "clothes", ["Hunting"], ["Tier2", "Tier3", "Tier4"]),
-    "HunterPants_Brown": (20, 12, 14400, 0, 100, "clothes", ["Hunting"], ["Tier2", "Tier3", "Tier4"]),
+    # Deer stalking and pest control: hunting rifles and shotguns on every farm.
+    "Winchester70": (20, 12, ["Hunting", "Farm"], ["Tier2", "Tier3", "Tier4"]),
+    "CZ527": (25, 18, ["Farm", "Hunting"], ["Tier2", "Tier3", "Tier4"]),
+    "Mag_CZ527_5rnd": (30, 20, ["Farm", "Hunting"], None),
+    "Ruger1022": (35, 25, ["Farm", "Village", "Town"], ["Tier1", "Tier2"]),
+    "Izh18": (45, 35, ["Farm", "Village", "Hunting"], ["Tier1", "Tier2", "Tier3"]),
+    "Repeater": (25, 18, ["Farm", "Hunting"], ["Tier2", "Tier3"]),
+    "Mosin9130": (25, 18, ["Hunting", "Village"], ["Tier2", "Tier3", "Tier4"]),
+    "SKS": (8, 4, ["Hunting"], ["Tier3", "Tier4"]),
+    "Izh43Shotgun": (35, 28, ["Farm", "Village"], ["Tier1", "Tier2", "Tier3"]),
+    "Mp133Shotgun": (12, 8, ["Police", "Farm"], ["Tier2", "Tier3", "Tier4"]),
+    "Ammo_308Win": (60, 40, ["Farm", "Hunting", "Village"], None),
+    "Ammo_22": (100, 80, ["Town", "Village", "Farm", "Hunting"], None),
+    "Ammo_12gaPellets": (110, 85, None, None),
+    # NZDF: the Steyr AUG was the service rifle, the M4 pattern MARS-L replaced it, the L1A1 (FAL) before.
+    "AugShort": (8, 5, ["Military"], ["Tier3", "Tier4"]),
+    "Aug": (5, 3, ["Military"], ["Tier4"]),
+    "Mag_Aug_30Rnd": (12, 8, ["Military"], ["Tier3", "Tier4"]),
+    "M4A1": (5, 3, ["Military"], ["Tier4"]),
+    "Mag_STANAG_30Rnd": (10, 6, ["Military"], ["Tier3", "Tier4"]),
+    "FAL": (3, 1, ["Military"], ["Tier4"]),
+    "Mag_FAL_20Rnd": (6, 3, ["Military"], ["Tier4"]),
+    "AKM": (2, 1, ["Military"], ["Tier4"]),
+    "SVD": (1, 1, ["Military"], ["Tier4"]),
+    # Handguns are rare in New Zealand; the police carry Glocks.
+    "Glock19": (25, 18, ["Police"], ALL),
+    "MKII": (20, 14, ["Town", "Village", "Farm"], ["Tier1", "Tier2"]),
+    "CZ75": (10, 6, ["Military"], ["Tier2", "Tier3", "Tier4"]),
+    "Deagle": (4, 2, ["Town"], ["Tier2", "Tier3"]),
+    # Dairy country, mānuka honey, kaimoana and tramping-hut food.
+    "Honey": (30, 22, ["Farm", "Village", "Town"], ["Tier1", "Tier2", "Tier3"]),
+    "PowderedMilk": (30, 22, ["Farm", "Town", "Village"], ["Tier1", "Tier2", "Tier3"]),
+    "SardinesCan": (30, 20, ["Coast", "Town", "Village"], None),
+    "TunaCan": (30, 20, ["Coast", "Town", "Office"], None),
+    "PeachesCan": (25, 18, ["Town", "Village", "School"], None),
+    "BakedBeansCan": (25, 18, ["Town", "Village", "Hunting"], None),
+    "Rice": (25, 18, ["Village", "Town", "Hunting"], None),
+    "Marmalade": (25, 18, ["Village", "Town", "School"], None),
+    "Tomato": (25, 18, ["Farm", "Village"], None),
+    "TomatoSeedsPack": (35, 25, ["Farm"], None),
+    # Fishing, fencing and tramping gear.
+    "FishingRod": (45, 30, ["Coast", "Village", "Farm"], None),
+    "Hook": (60, 45, ["Coast", "Village"], None),
+    "HuntingKnife": (60, 50, ["Hunting", "Farm", "Village"], None),
+    "Rope": (110, 90, ["Industrial", "Farm"], None),
+    "BarbedWire": (80, 60, ["Industrial", "Farm"], None),
+    "Compass": (70, 50, ["Hunting", "Military", "Village"], None),
+    "Binoculars": (50, 30, ["Hunting", "Military", "Police", "Farm"], None),
+    "PortableGasStove": (35, 28, ["Hunting", "Farm", "Village"], None),
+    "SmallGasCanister": (40, 30, ["Industrial", "Farm", "Hunting"], None),
+    "Canteen": (30, 20, ["Military", "Hunting"], None),
+    "MountainBag_Blue": (10, 6, ["Village", "Hunting"], None),
+    "MountainBag_Green": (10, 6, ["Village", "Hunting"], None),
+    "MountainBag_Orange": (12, 8, ["Village", "Hunting"], None),
+    "MountainBag_Red": (12, 8, ["Village", "Hunting"], None),
+    # Gumboots, raincoats, wool jumpers and beanies for the weather.
+    **{f"Wellies_{c}": (35, 25, ["Farm", "Village"], None) for c in ("Black", "Brown", "Green", "Grey")},
+    **{f"Raincoat_{c}": (35, 25, ["Coast", "Town", "Village", "Hunting"], None)
+       for c in ("Black", "Blue", "Green", "Orange", "Pink", "Red", "Yellow")},
+    **{f"Sweater_{c}": (30, 22, ["Town", "Village", "Farm", "Hunting"], None) for c in ("Blue", "Gray", "Green", "Red")},
+    **{f"BeanieHat_{c}": (15, 10, ["Village", "Farm", "Hunting", "Town"], None)
+       for c in ("Beige", "Black", "Blue", "Brown", "Green", "Grey", "Pink", "Red")},
+    "HikingBoots_Brown": (35, 25, ["Town", "Village", "Hunting"], None),
+    "HikingBoots_Black": (35, 25, ["Town", "Village", "Hunting"], None),
+    "HuntingJacket_Brown": (20, 12, ["Hunting"], ["Tier2", "Tier3", "Tier4"]),
+    "HuntingJacket_Autumn": (22, 14, ["Hunting"], ["Tier2", "Tier3", "Tier4"]),
+    "HunterPants_Brown": (20, 12, ["Hunting"], ["Tier2", "Tier3", "Tier4"]),
+    "HunterPants_Autumn": (24, 15, ["Hunting"], ["Tier2", "Tier3", "Tier4"]),
 }
+VANILLA_TYPES = Path(__file__).resolve().parent / "vanilla_types.xml"
+# Civilian towns stay at or below this tier, so a town next to a base or high in the Alps doesn't
+# get military loot in every house. Military areas reach out MILITARY_RING_M past the base.
+TOWN_TIER_CAP = 3
+MILITARY_RING_M = 150.0
 
 # Herd settings: (zones per herd, zone radius, smin, smax, dmin, dmax). Goats share the sheep file
 # (vanilla's AnimalGoat and AnimalSheep both use sheep_goat_territories).
@@ -89,7 +144,8 @@ def south_cells(land: np.ndarray, towns) -> np.ndarray:
 
 
 def tier_map(h: np.ndarray, land: np.ndarray, towns, pois) -> np.ndarray:
-    """Tier 1 on the northern coasts, rising inland, southwards and uphill; military areas are 4."""
+    """Tier 1 on the northern coasts, rising inland, southwards and uphill; military areas are 4 and
+    civilian towns at most TOWN_TIER_CAP."""
     south = south_cells(land, towns)
     dist_sea = ndimage.distance_transform_edt(land) * g.CELL
     tier = np.where(dist_sea < 500, 1, np.where(dist_sea < 1500, 2, 3)).astype(np.uint8)
@@ -99,11 +155,16 @@ def tier_map(h: np.ndarray, land: np.ndarray, towns, pois) -> np.ndarray:
     for t in towns:
         if t["tier"] == "military":
             r0, c0 = (g.SIZE_M - float(t["y"])) / g.CELL, float(t["x"]) / g.CELL
-            tier[np.hypot(rows - r0, cols - c0) * g.CELL < float(t["radius"]) + 400] = 4
+            tier[np.hypot(rows - r0, cols - c0) * g.CELL < float(t["radius"]) + MILITARY_RING_M] = 4
     for p in pois:
         if p["kind"] == "naval" or (p["kind"] == "airfield" and "Ōhakea" in p["label"]):
             r0, c0 = (g.SIZE_M - p["y"]) / g.CELL, p["x"] / g.CELL
             tier[np.hypot(rows - r0, cols - c0) * g.CELL < p["radius"] + 60] = 4
+    for t in towns:
+        if t["tier"] != "military":
+            r0, c0 = (g.SIZE_M - float(t["y"])) / g.CELL, float(t["x"]) / g.CELL
+            inside = np.hypot(rows - r0, cols - c0) * g.CELL < float(t["radius"]) + 30
+            tier[inside] = np.minimum(tier[inside], TOWN_TIER_CAP)
     tier[~land] = 0
     return tier
 
@@ -135,27 +196,34 @@ def write_mapgrouppos(path: Path) -> int:
 
 
 def write_types(path: Path) -> None:
-    lines = ['<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>',
-             "<!-- New Zealand loot changes for Aotearoa, generated by tools/economy.py. Loaded after",
-             "     db/types.xml through cfgeconomycore.xml, so these entries replace the vanilla ones. -->",
-             "<types>"]
-    for name, (nominal, mn, life, restock, cost, cat, usages, values) in NZ_TYPES.items():
-        lines += [f'    <type name="{name}">',
-                  f"        <nominal>{nominal}</nominal>",
-                  f"        <lifetime>{life}</lifetime>",
-                  f"        <restock>{restock}</restock>",
-                  f"        <min>{mn}</min>",
-                  "        <quantmin>-1</quantmin>",
-                  "        <quantmax>-1</quantmax>",
-                  f"        <cost>{cost}</cost>",
-                  '        <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>',
-                  f'        <category name="{cat}"/>']
-        lines += [f'        <usage name="{u}"/>' for u in usages]
-        lines += [f'        <value name="{v}"/>' for v in values]
-        lines.append("    </type>")
-    lines += ["</types>", ""]
+    import xml.etree.ElementTree as ET
+
+    vanilla = {e.get("name"): e for e in ET.parse(VANILLA_TYPES).getroot().iter("type")}
+    missing = sorted(set(NZ_TYPES) - set(vanilla))
+    if missing:
+        raise SystemExit(f"Not in {VANILLA_TYPES.name}: {', '.join(missing)}. Run refresh_vanilla_types.py.")
+    root = ET.Element("types")
+    for name, (nominal, mn, usages, values) in NZ_TYPES.items():
+        e = ET.fromstring(ET.tostring(vanilla[name]))
+        e.find("nominal").text, e.find("min").text = str(nominal), str(mn)
+        for kind, names in (("usage", usages), ("value", values)):
+            if names is None:
+                continue
+            for old in e.findall(kind):
+                e.remove(old)
+            for n in names:
+                ET.SubElement(e, kind, name=n)
+        order = ["nominal", "lifetime", "restock", "min", "quantmin", "quantmax", "cost", "flags", "category",
+                 "tag", "usage", "value"]
+        e[:] = sorted(e, key=lambda c: order.index(c.tag) if c.tag in order else len(order))
+        root.append(e)
+    ET.indent(root, space="    ")
+    body = ET.tostring(root, encoding="unicode")
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("\n".join(lines), encoding="utf-8")
+    path.write_text('<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\n'
+                    "<!-- New Zealand loot changes for Aotearoa, generated by tools/economy.py from the vanilla\n"
+                    "     entries. Loaded after db/types.xml through cfgeconomycore.xml, so these replace them. -->\n"
+                    + body + "\n", encoding="utf-8")
 
 
 CORE_SNIPPET = """<!-- Add inside <economycore> in cfgeconomycore.xml to load the New Zealand loot changes. -->
