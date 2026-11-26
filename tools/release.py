@@ -5,7 +5,9 @@
     python tools/release.py --minor --push     # 0.6.x -> 0.7.0 instead of the next patch
     python tools/release.py --revert-to v0.6.2 --push
 
-The tag push starts .github/workflows/release.yml, which builds and publishes the GitHub release.
+Before anything changes it runs `nz_food.py --verify` (food textures, config and script up to date,
+right sizes, no blank pack fronts); look over preview/nz_food_layouts.png too. The tag push starts
+.github/workflows/release.yml, which builds and publishes the GitHub release.
 Releases are never replaced: the script refuses a version whose tag already exists, and the workflow
 refuses to publish over an existing release. --revert-to puts the files back as they were at an
 older tag and releases that as a new version, so every earlier release stays downloadable.
@@ -84,6 +86,9 @@ def main():
     if not notes:
         print("Nothing to release: CHANGELOG.md has no Unreleased changes")
         return
+    pre = subprocess.run([sys.executable, str(ROOT / "tools" / "nz_food.py"), "--verify"], cwd=ROOT)
+    if pre.returncode:
+        sys.exit("Food textures failed the pre-release check; fix them before releasing")
     old = VERSION.read_text().strip()
     new = bump(old, args.minor)
     tag = f"v{new}"

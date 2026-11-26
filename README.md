@@ -506,7 +506,7 @@ python tools/release.py            # dry run: shows the next version and its not
 python tools/release.py --push     # next patch; add --minor for 0.x.0
 ```
 
-It bumps `VERSION`, `mod/mod.cpp` and `mapitem/mod.cpp`, turns the Unreleased section into the new version's section, runs the checks, then commits, tags and pushes. GitHub builds the files and publishes the release with that section as its notes and a `SHA256SUMS` file.
+First it runs `python tools/nz_food.py --verify`, which stops the release if a food texture, `config/food.hpp` or the food script is out of date, a texture is the wrong size for its vanilla layout, or a pack front is blank. `preview/nz_food_layouts.png` shows every texture with its vanilla layout outlined (yellow: the label area, red: the front), so you can eyeball them before releasing. Then it bumps `VERSION`, `mod/mod.cpp` and `mapitem/mod.cpp`, turns the Unreleased section into the new version's section, runs the checks, then commits, tags and pushes. GitHub builds the files and publishes the release with that section as its notes and a `SHA256SUMS` file.
 
 ### Old releases and rolling back
 

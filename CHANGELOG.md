@@ -7,6 +7,7 @@ Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/m
 ### Added
 
 - More New Zealand food and drink, replacing their vanilla items in the loot: Anchor Milk Powder, Airborne Mānuka Honey, Pump Water Bottle, Hellers Bacon, Tux Dog Food and Jellimeat (31 items in all)
+- Pre-release check: `tools/release.py` runs `nz_food.py --verify` first, and `preview/nz_food_layouts.png` shows every food texture with its vanilla layout outlined
 
 ## 0.6.4 - 2026-11-26
 
