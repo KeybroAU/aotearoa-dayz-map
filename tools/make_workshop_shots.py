@@ -49,8 +49,8 @@ SHOTS = [
      ["Paper road map with the 1 km grid", "Every town and site with its grid square",
       "Printable player map included", "Designed for Aotearoa"]),
     ("09_food", "nz_food_showcase.png", None, "Kiwi tucker",
-     ["L&P, Fresh Up, Foxton Fizz and Lift Plus", "Bluebird chips, Munchos and Pineapple Lumps",
-      "Toffee Pops, Shrewsburys and Whittaker's", "Wattie's, Sealord, Weet-Bix and Marmite"]),
+     ["L&P, Fresh Up, Foxton Fizz and Pump water", "Bluebird chips, Munchos and Pineapple Lumps",
+      "Toffee Pops, Whittaker's and Airborne honey", "Wattie's, Sealord, Anchor and Marmite"]),
 ]
 
 

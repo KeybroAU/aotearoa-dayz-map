@@ -17,7 +17,7 @@ A 25.6 km DayZ terrain shaped on New Zealand. The coastline and the big landform
 [*]Native bush, pine plantations, farmland, hedgerows and fences
 [*]New Zealand weather and seasons: westerly rain, short winter days and light snow in winter storms
 [*]New Zealand wildlife: sheep, cattle, red deer, goats and wild pigs. No wolves or bears
-[*]Kiwi food and drink: L&P, Fresh Up, Bluebird chips, Munchos, Pineapple Lumps, Toffee Pops, Shrewsburys, Whittaker's, Weet-Bix, Wattie's, Sealord, Palm Corned Beef, Marmite, Anchor, Airborne honey, Pump water and Hellers bacon
+[*]Kiwi food and drink, 31 items in place of the vanilla ones: L&P, Fresh Up, Foxton Fizz, Lift Plus and Pump water; Bluebird chips, Munchos, Pineapple Lumps, Toffee Pops, Shrewsburys and Whittaker's; Wattie's, Sealord, Pams, Palm Corned Beef, Hellers bacon, Marmite, Weet-Bix, Anchor milk powder, Airborne honey and rice risotto. Even the dog food is Tux
 [/list]
 
 [h2]Servers[/h2]

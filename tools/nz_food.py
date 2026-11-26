@@ -1003,7 +1003,7 @@ FRONTS = {
     "rice": ((0.15, 0.33, 0.65, 0.78), 0), "milk": ((0.56, 0.0, 0.82, 1.0), 90),
     "honey": ((0.0, 0.0, 0.5, 0.25), 0), "bottle": ((0.0, 0.06, 0.333, 0.3), 0),
 }
-SHELVES = [("soda", "bar", "bottle", "honey"), ("bag", "milk"), ("tin", "tin250", "tin100", "tuna", "sardines", "cereal", "rice")]
+SHELVES = [("soda", "bar", "bottle", "honey"), ("bag", "milk", "cereal", "rice"), ("tin", "tin250", "tin100", "tuna", "sardines")]
 
 
 def write_showcase(paths: list[Path]) -> Path:
