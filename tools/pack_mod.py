@@ -17,7 +17,7 @@ It writes dist/:
 
 Steps it runs:
   1. converts the branding images in data/branding/, the sign textures in data/signs/, the model
-     textures in data/models/ and the map item textures in mapitem/data/ to .paa with ImageToPAA
+     textures in data/models/, the food labels in data/food/ and the map item textures in mapitem/data/ to .paa with ImageToPAA
   2. packs config.cpp, config/, data/, structures/ and world/ into aotearoa.pbo with Addon Builder (prefix maps\\aotearoa),
      and mapitem/ into aotearoa_map.pbo (prefix aotearoa_map)
   3. with --key NAME, makes a signing key (once) and signs the PBOs
@@ -161,14 +161,15 @@ def convert_branding(tools: Path) -> None:
 
 
 def convert_textures(tools: Path) -> None:
-    """Sign and model textures: cut-out post signs keep their alpha (_ca), the rest are colour maps (_co)."""
+    """Sign, model and food textures: cut-out post signs keep their alpha (_ca), the rest are colour maps (_co)."""
     exe = tool(tools, "ImageToPAA", "ImageToPAA.exe")
     jobs = [(p, "_co") for p in sorted((MAP_DIR / "data" / "signs").glob("sign_*.png"))]
     jobs += [(p, "_ca") for p in sorted((MAP_DIR / "data" / "signs").glob("post_*.png"))]
     jobs += [(p, "_co") for p in sorted((MAP_DIR / "data" / "models").glob("*.png"))]
+    jobs += [(p, "_co") for p in sorted((MAP_DIR / "data" / "food").glob("*.png"))]
     for png, suffix in jobs:
         run([exe, png, png.with_name(png.stem + suffix + ".paa")])
-    print(f"  {len(jobs)} sign and model textures")
+    print(f"  {len(jobs)} sign, model and food textures")
 
 
 def convert_map_item(tools: Path) -> None:

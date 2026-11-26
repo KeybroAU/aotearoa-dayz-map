@@ -26,6 +26,7 @@ from PIL import Image
 from scipy import ndimage
 
 import generate_terrain as g
+import nz_food
 
 TIER_COLOURS = {1: (60, 170, 60), 2: (230, 210, 60), 3: (240, 130, 40), 4: (210, 40, 40)}
 
@@ -69,8 +70,6 @@ NZ_TYPES = {
     "PowderedMilk": (30, 22, ["Farm", "Town", "Village"], ["Tier1", "Tier2", "Tier3"]),
     "SardinesCan": (30, 20, ["Coast", "Town", "Village"], None),
     "TunaCan": (30, 20, ["Coast", "Town", "Office"], None),
-    "PeachesCan": (25, 18, ["Town", "Village", "School"], None),
-    "BakedBeansCan": (25, 18, ["Town", "Village", "Hunting"], None),
     "Rice": (25, 18, ["Village", "Town", "Hunting"], None),
     "Marmalade": (25, 18, ["Village", "Town", "School"], None),
     "Tomato": (25, 18, ["Farm", "Village"], None),
@@ -195,28 +194,45 @@ def write_mapgrouppos(path: Path) -> int:
     return len(objs)
 
 
+def _entry(src, name: str, nominal: int, mn: int, usages, values):
+    import xml.etree.ElementTree as ET
+
+    e = ET.fromstring(ET.tostring(src))
+    e.set("name", name)
+    e.find("nominal").text, e.find("min").text = str(nominal), str(mn)
+    for kind, names in (("usage", usages), ("value", values)):
+        if names is None:
+            continue
+        for old in e.findall(kind):
+            e.remove(old)
+        for n in names:
+            ET.SubElement(e, kind, name=n)
+    order = ["nominal", "lifetime", "restock", "min", "quantmin", "quantmax", "cost", "flags", "category",
+             "tag", "usage", "value"]
+    e[:] = sorted(e, key=lambda c: order.index(c.tag) if c.tag in order else len(order))
+    e.tail = None
+    return e
+
+
 def write_types(path: Path) -> None:
+    """NZ_TYPES, then the New Zealand food and drink (tools/nz_food.py) in place of the vanilla
+    items they retexture, which drop to nominal 0."""
     import xml.etree.ElementTree as ET
 
     vanilla = {e.get("name"): e for e in ET.parse(VANILLA_TYPES).getroot().iter("type")}
-    missing = sorted(set(NZ_TYPES) - set(vanilla))
+    missing = sorted((set(NZ_TYPES) | set(nz_food.replaced())) - set(vanilla))
     if missing:
         raise SystemExit(f"Not in {VANILLA_TYPES.name}: {', '.join(missing)}. Run refresh_vanilla_types.py.")
+    clash = sorted(set(NZ_TYPES) & set(nz_food.replaced()))
+    if clash:
+        raise SystemExit(f"Set the loot of {', '.join(clash)} in nz_food.ITEMS, not NZ_TYPES.")
     root = ET.Element("types")
     for name, (nominal, mn, usages, values) in NZ_TYPES.items():
-        e = ET.fromstring(ET.tostring(vanilla[name]))
-        e.find("nominal").text, e.find("min").text = str(nominal), str(mn)
-        for kind, names in (("usage", usages), ("value", values)):
-            if names is None:
-                continue
-            for old in e.findall(kind):
-                e.remove(old)
-            for n in names:
-                ET.SubElement(e, kind, name=n)
-        order = ["nominal", "lifetime", "restock", "min", "quantmin", "quantmax", "cost", "flags", "category",
-                 "tag", "usage", "value"]
-        e[:] = sorted(e, key=lambda c: order.index(c.tag) if c.tag in order else len(order))
-        root.append(e)
+        root.append(_entry(vanilla[name], name, nominal, mn, usages, values))
+    for name in nz_food.replaced():
+        root.append(_entry(vanilla[name], name, 0, 0, None, None))
+    for item in nz_food.ITEMS:
+        root.append(_entry(vanilla[item.base], item.cls, item.loot[0], item.loot[1], item.usages, None))
     ET.indent(root, space="    ")
     body = ET.tostring(root, encoding="unicode")
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -393,5 +409,5 @@ def build(out: Path, h, idx, land, towns, pois, rng) -> None:
     draw_tiers(tier, towns, pois).save(g.PREVIEW_DIR / "loot_tiers_2048.png", optimize=True)
     counts = write_territories(out / "env", h, idx, land, towns, pois, rng)
     (out / "cfgweather.xml").write_text(WEATHER, encoding="utf-8")
-    print(f"Loot: {n} building positions, {len(NZ_TYPES)} New Zealand type changes")
+    print(f"Loot: {n} building positions, {len(NZ_TYPES)} New Zealand type changes, {len(nz_food.ITEMS)} NZ food items")
     print("Animal herds: " + ", ".join(f"{k} {v}" for k, v in counts.items()))

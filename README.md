@@ -347,7 +347,7 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 | `cfgEffectArea.json` | The Whakaari and Waiouru Ammunition Area contaminated zones and their safe positions |
 | `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
-| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (79 items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; honey, milk powder and canned fish; fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
+| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (77 items, plus 17 food and drink items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; honey, milk powder and canned fish; New Zealand food and drink (see below); fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
 | `loot_tiers.json` | The loot tier of every town and site |
 | `env/*_territories.xml` | Animals: red deer and wild pigs in the bush, sheep on pasture and goats in the high country, cattle, pigs and hens at farms, hares on farmland. No wolves, bears, foxes or roe deer. |
 | `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog (the seasons come from the world scripts, see below) |
@@ -360,6 +360,23 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 ![Loot tiers](preview/loot_tiers_2048.png)
 
 Loot tier 1 is the northern coasts. Tiers rise inland, southwards and above 300 m. Military bases and 150 m round them, Ōhakea and Devonport are tier 4. Civilian towns are capped at tier 3, so towns next to a base (Palmerston North, Rakaia) or high in the Alps (Queenstown, Twizel) don't have military loot in every house. DayZ reads tiers from `areaflags.map`, which you paint in the DayZ Tools economy editor. Use `preview/loot_tiers_2048.png` as the guide for the Value layer.
+
+### New Zealand food and drink
+
+![New Zealand food and drink](preview/nz_food.png)
+
+The mod retextures vanilla cans, tins and snack packets as Kiwi brands, and the mission's `types.xml` spawns these in place of the vanilla items (which are set to 0). Each one inherits its vanilla item, so the model, nutrition, sounds and actions stay vanilla:
+
+| Item | Replaces |
+|---|---|
+| L&P, Fresh Up Apple, Foxton Fizz Creaming Soda, Foxton Fizz Raspberry, Lift Plus | the five vanilla soda cans |
+| Bluebird Ready Salted, Salt & Vinegar, Chicken; Munchos Tomato | Chips |
+| Griffin's Toffee Pops, Shrewsburys, Chocolate Thins | Crackers |
+| Wattie's Baked Beans, Spaghetti, Peach Slices | Baked Beans, Spaghetti, Peaches |
+| Palm Corned Beef | Pork (250 g tin) |
+| Marmite | Brisket Spread (100 g tin) |
+
+The labels are drawn by `tools/nz_food.py`, which also writes `config/food.hpp` and `scripts/4_World/AotearoaFood.c`. To add or rename an item, or change its loot, edit `ITEMS` there and run `python tools/nz_food.py`, then rebuild the mission. The artwork is original but the names are real brands; rename them in `ITEMS` if a trademark holder objects.
 
 `mission/serverDZ.cfg` is a server config template pointing at the mission.
 
@@ -566,3 +583,4 @@ python tools/check_map.py
 | `server_files.py` | Starting gear (`PRESETS`), server messages, restart interval and launch scripts |
 | `labelplace.py` | Keeps map labels from overlapping (player map, map item, towns preview) |
 | `economy.py` | Loot changes (`NZ_TYPES`), tier rules, animal herds (`HERDS`), weather |
+| `nz_food.py` | New Zealand food and drink: names, descriptions, label artwork and loot (`ITEMS`) |

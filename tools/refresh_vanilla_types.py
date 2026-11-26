@@ -1,4 +1,4 @@
-"""Copy the vanilla types.xml entries that economy.NZ_TYPES changes into tools/vanilla_types.xml.
+"""Copy the vanilla types.xml entries that economy.NZ_TYPES changes and nz_food.ITEMS retexture into tools/vanilla_types.xml.
 
     python refresh_vanilla_types.py [--xml path/to/types.xml]
 
@@ -14,6 +14,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import economy
+import nz_food
 
 URL = ("https://raw.githubusercontent.com/BohemiaInteractive/DayZ-Central-Economy/master/"
        "dayzOffline.chernarusplus/db/types.xml")
@@ -29,11 +30,12 @@ def main() -> None:
         with urllib.request.urlopen(URL, timeout=60) as r:
             text = r.read().decode("utf-8")
     vanilla = {e.get("name"): e for e in ET.fromstring(text).iter("type")}
-    missing = sorted(set(economy.NZ_TYPES) - set(vanilla))
+    names = set(economy.NZ_TYPES) | set(nz_food.replaced())
+    missing = sorted(names - set(vanilla))
     if missing:
         raise SystemExit(f"Not in vanilla types.xml: {', '.join(missing)}")
     root = ET.Element("types")
-    for name in sorted(economy.NZ_TYPES):
+    for name in sorted(names):
         root.append(vanilla[name])
     ET.indent(root, space="    ")
     economy.VANILLA_TYPES.write_text(
@@ -41,7 +43,7 @@ def main() -> None:
         f"<!-- The vanilla entries tools/economy.py changes, from {URL}.\n"
         "     Rebuild with tools/refresh_vanilla_types.py. -->\n" + ET.tostring(root, encoding="unicode") + "\n",
         encoding="utf-8")
-    print(f"Wrote {economy.VANILLA_TYPES}: {len(economy.NZ_TYPES)} entries")
+    print(f"Wrote {economy.VANILLA_TYPES}: {len(names)} entries")
 
 
 if __name__ == "__main__":

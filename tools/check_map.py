@@ -20,6 +20,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import nz_food  # noqa: E402
+
 MAP_DIR = Path(__file__).resolve().parents[1]
 SOURCE = MAP_DIR / "source"
 MISSION = MAP_DIR / "mission" / "dayzOffline.aotearoa"
@@ -86,19 +89,49 @@ def loot() -> None:
     types = list(ET.parse(MISSION / "aotearoa_ce" / "types.xml").getroot().iter("type"))
     names = [e.get("name") for e in types]
     check(bool(types) and len(set(names)) == len(names), f"{len(types)} New Zealand loot types, no duplicates")
-    check(all(n.lower() in classes and n in vanilla for n in names), "every loot type is a vanilla DayZ type")
+    base = {i.cls: i.base for i in nz_food.ITEMS}
+    check(all(n in base or (n.lower() in classes and n in vanilla) for n in names),
+          "every loot type is a vanilla DayZ type or a New Zealand food item")
     bad_limits = sorted({u.get("name") for e in types for u in e.iter("usage")} - USAGES
                         | {v.get("name") for e in types for v in e.iter("value")} - VALUES)
     check(not bad_limits, "usages and values are in cfglimitsdefinition.xml" + (f" (unknown: {bad_limits})" if bad_limits else ""))
     check(all(0 <= int(e.findtext("min")) <= int(e.findtext("nominal")) for e in types), "min is at most nominal")
     same = ("lifetime", "restock", "quantmin", "quantmax", "cost")
-    changed = [e.get("name") for e in types if any(e.findtext(k) != vanilla[e.get("name")].findtext(k) for k in same)
-               or [c.attrib for c in e.iter("tag")] != [c.attrib for c in vanilla[e.get("name")].iter("tag")]]
+    src = {n: vanilla[base.get(n, n)] for n in names}
+    changed = [e.get("name") for e in types if any(e.findtext(k) != src[e.get("name")].findtext(k) for k in same)
+               or [c.attrib for c in e.iter("tag")] != [c.attrib for c in src[e.get("name")].iter("tag")]]
     check(not changed, "lifetimes, quantities and tags match vanilla" + (f" ({changed[:3]})" if changed else ""))
     tiers = json.loads((MISSION / "loot_tiers.json").read_text(encoding="utf-8"))["towns"]
     towns = {r["name"]: r["tier"] for r in csv.DictReader((SOURCE / "towns.csv").open(encoding="utf-8"))}
     hot = sorted(n for n, v in tiers.items() if v > 3 and towns.get(n) != "military")
     check(not hot, "civilian towns are tier 3 or lower" + (f" ({', '.join(hot[:4])})" if hot else ""))
+    by_name = {e.get("name"): e for e in types}
+    check(all(n in by_name and by_name[n].findtext("nominal") == "0" for n in nz_food.replaced()),
+          f"the {len(nz_food.replaced())} vanilla items the New Zealand food replaces are set to nominal 0")
+
+
+def food() -> None:
+    """Every New Zealand food item has a config class, a label texture and, for tins, an opened class."""
+    hpp = (MAP_DIR / "config" / "food.hpp").read_text(encoding="utf-8")
+    script = (MAP_DIR / "scripts" / "4_World" / "AotearoaFood.c").read_text(encoding="utf-8")
+    cfg = (MAP_DIR / "config.cpp").read_text(encoding="utf-8")
+    vanilla = _names(MAP_DIR / "tools" / "dayz_classes.txt")
+    items = nz_food.ITEMS
+    check('#include "config\\food.hpp"' in cfg and all(a in cfg for a in ('"DZ_Gear_Food"', '"DZ_Gear_Drinks"')),
+          "config.cpp includes food.hpp and requires the vanilla food and drink addons")
+    defined = set(re.findall(r"^class (\w+):", hpp, re.M))
+    check(defined == nz_food.ITEM_CLASSES, f"food.hpp defines the {len(nz_food.ITEM_CLASSES)} food classes")
+    bases = {i.base for i in items} | {i.opened for i in items if i.opened}
+    check(all(b.lower() in vanilla for b in bases), "every food item inherits a vanilla class")
+    missing = [i.key for i in items if not (MAP_DIR / "data" / "food" / f"{i.key}.png").exists()
+               or nz_food.TEXTURE.format(i.key) not in hpp]
+    check(not missing, f"{len(items)} food label textures" + (f" (missing: {missing})" if missing else ""))
+    sizes = {i.key: Image.open(MAP_DIR / "data" / "food" / f"{i.key}.png").size for i in items if i.key not in missing}
+    check(all(sizes[i.key] == nz_food.LAYOUTS[i.layout][1] for i in items if i.key in sizes),
+          "food textures match their vanilla layout size")
+    tins = [i for i in items if i.opened]
+    check(all(f'ReplaceEdibleWithNew("{i.cls}_Opened")' in script for i in tins),
+          f"{len(tins)} tins open into their own opened class")
 
 
 def main() -> None:
@@ -277,6 +310,9 @@ def main() -> None:
 
     print("Loot")
     loot()
+
+    print("Food and drink")
+    food()
 
     print()
     if failures:
