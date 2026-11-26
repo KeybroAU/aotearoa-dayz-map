@@ -2,7 +2,7 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
-## Unreleased
+## 0.6.10 - 2026-11-26
 
 ### Fixed
 
