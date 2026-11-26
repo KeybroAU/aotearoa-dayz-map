@@ -19,6 +19,9 @@ It writes:
   wip/food/config.cpp                the AotearoaWIP_* classes
   wip/food/scripts/4_World/AotearoaFoodWIP.c   WIP tins open into WIP opened tins
   wip/food/README.md                 the label list
+  wip/food/templates/<key>.png       a blank label at twice the size it is used, with the safe area,
+                                     the parts that are hidden or cut off, and a faint copy of the
+                                     current artwork to line up against: paint over it and save it in labels/
 
 pack_mod.py --wip converts the textures and packs dist/@AotearoaFoodWIP. Load it after @Aotearoa.
 To move a finished label into the live mod, copy its texture over data/food/<key>.png (and only
@@ -31,7 +34,7 @@ import math
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import nz_food  # noqa: E402
@@ -101,6 +104,69 @@ def apply_label(tex: Image.Image, item, label: Image.Image) -> Image.Image:
         piece = piece.resize((box[2] - box[0], box[3] - box[1]), Image.LANCZOS)
         tex.paste(piece, box[:2])
     return tex
+
+
+# Parts of an upright front that don't show well in game, as fractions (x0, y0, x1, y1) and a note.
+HIDDEN = {
+    "bag": [((0, 0, 1, 0.1), "heat seal: crimped"), ((0, 0.9, 1, 1), "heat seal: crimped")],
+    "soda": [((0, 0, 1, 0.05), "rim"), ((0, 0.95, 1, 1), "rim")],
+    "tin": [((0, 0, 1, 0.04), "rim"), ((0, 0.96, 1, 1), "rim")],
+    "rice": [((0, 0, 1, 0.5), "coloured band across the bag")],
+}
+SAFE = 0.07
+
+
+def write_templates() -> list[Path]:
+    out_dir = WIP / "templates"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    paths = []
+    for item in ITEMS:
+        w, h = slot_shape(item)
+        W, H = 2 * w, 2 * h
+        im = Image.new("RGB", (W, H), (238, 238, 238))
+        live = MAP_DIR / "data" / "food" / f"{item.key}.png"
+        if live.exists():
+            tex = Image.open(live).convert("RGB")
+            (x0, y0, x1, y1), rot = FRONTS[item.layout]
+            tw, th = tex.size
+            face = tex.crop((round(x0 * tw), round(y0 * th), round(x1 * tw), round(y1 * th)))
+            face = (face.rotate(rot, expand=True) if rot else face).resize((W, H)).filter(ImageFilter.GaussianBlur(3))
+            im = Image.blend(im, face, 0.25)
+        d = ImageDraw.Draw(im, "RGBA")
+        for (a, b, c, e), note in HIDDEN.get(item.layout, []):
+            box = (a * W, b * H, c * W, e * H)
+            d.rectangle(box, fill=(220, 40, 40, 50))
+            for x in range(int(box[0]) - H, int(box[2]), 24):
+                d.line((x, box[3], x + (box[3] - box[1]), box[1]), fill=(220, 40, 40, 90), width=2)
+            d.text(((box[0] + box[2]) / 2, (box[1] + box[3]) / 2), note, font=nz_food.font("sans", max(12, H // 40)),
+                   fill=(150, 20, 20), anchor="mm")
+        sx, sy = SAFE * W, SAFE * H
+        for k in range(0, int(W - 2 * sx), 30):
+            d.line((sx + k, sy, sx + min(k + 15, W - 2 * sx), sy), fill=(30, 110, 220), width=3)
+            d.line((sx + k, H - sy, sx + min(k + 15, W - 2 * sx), H - sy), fill=(30, 110, 220), width=3)
+        for k in range(0, int(H - 2 * sy), 30):
+            d.line((sx, sy + k, sx, sy + min(k + 15, H - 2 * sy)), fill=(30, 110, 220), width=3)
+            d.line((W - sx, sy + k, W - sx, sy + min(k + 15, H - 2 * sy)), fill=(30, 110, 220), width=3)
+        d.line((W / 2, 0, W / 2, H), fill=(0, 0, 0, 40), width=1)
+        d.line((0, H / 2, W, H / 2), fill=(0, 0, 0, 40), width=1)
+        d.rectangle((0, 0, W - 1, H - 1), outline=(0, 0, 0), width=4)
+        f = nz_food.font("sans", max(14, min(W, H) // 22))
+        small = nz_food.font("plain", max(12, min(W, H) // 30))
+        lines = [(item.name, f), (f"save as wip/food/labels/{item.key}.png", small),
+                 (f"{W} x {H} px (used at {w} x {h})", small), ("keep text inside the blue dashes", small)]
+        if FRONTS[item.layout][1]:
+            lines.append(("paint it upright: it is turned onto the texture", small))
+        if item.layout in TILED:
+            lines.append(("repeated over the whole wrapper", small))
+        y = H * 0.5 - len(lines) * f.size * 0.7
+        for text, fnt in lines:
+            d.text((W / 2, y), text, font=fnt, fill=(20, 20, 20), anchor="mm", stroke_width=2,
+                   stroke_fill=(255, 255, 255))
+            y += fnt.size * 1.4
+        p = out_dir / f"{item.key}.png"
+        im.quantize(96).save(p, optimize=True)
+        paths.append(p)
+    return paths
 
 
 def write_textures() -> list:
@@ -191,6 +257,10 @@ def readme_text() -> str:
         "`dist/@AotearoaFoodWIP`. Load that after `@Aotearoa` and spawn the `AotearoaWIP_*` classes with an admin "
         "tool. They aren't in the loot, and nothing here goes into a release.",
         "",
+        "`templates/<key>.png` is a blank label for each item at twice the size it is used: paint over it (the "
+        "faint picture is the current artwork, the blue dashes are the safe area for text, and red hatching marks "
+        "parts that are crimped, rimmed or covered) and save the result in `labels/`.",
+        "",
         "To try a label, put an image in `labels/` named after the item's key, such as `labels/lp.png` or "
         "`labels/marmite.jpg`, and run the script again. The image is cropped to the shape below and fitted onto "
         "every front of the pack, over the generated artwork. A flat, straight-on scan or photo of the label works "
@@ -213,6 +283,7 @@ def readme_text() -> str:
 
 def main() -> None:
     labelled = write_textures()
+    templates = write_templates()
     preview = write_preview(labelled)
     (WIP / "config.cpp").write_text(config_text(), encoding="utf-8")
     (WIP / "scripts" / "4_World").mkdir(parents=True, exist_ok=True)
@@ -226,7 +297,7 @@ def main() -> None:
         'Not for public servers. Load after @Aotearoa.";',
         'tooltip = "Aotearoa food WIP";', 'action = "https://github.com/KeybroAU/aotearoa-dayz-map";', ""]))
     print(f"{len(ITEMS)} WIP food and drink items in {WIP.relative_to(MAP_DIR)}, "
-          f"{len(labelled)} with a label from labels/" + (f"; preview in {preview.relative_to(MAP_DIR)}" if preview else ""))
+          f"{len(labelled)} with a label from labels/, {len(templates)} label templates" + (f"; preview in {preview.relative_to(MAP_DIR)}" if preview else ""))
 
 
 if __name__ == "__main__":

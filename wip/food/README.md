@@ -2,6 +2,8 @@
 
 A test copy of every New Zealand food and drink item, for trying real brand label artwork without touching the live items. `python tools/wip_food.py` builds it; `python tools/pack_mod.py --wip` packs it as `dist/@AotearoaFoodWIP`. Load that after `@Aotearoa` and spawn the `AotearoaWIP_*` classes with an admin tool. They aren't in the loot, and nothing here goes into a release.
 
+`templates/<key>.png` is a blank label for each item at twice the size it is used: paint over it (the faint picture is the current artwork, the blue dashes are the safe area for text, and red hatching marks parts that are crimped, rimmed or covered) and save the result in `labels/`.
+
 To try a label, put an image in `labels/` named after the item's key, such as `labels/lp.png` or `labels/marmite.jpg`, and run the script again. The image is cropped to the shape below and fitted onto every front of the pack, over the generated artwork. A flat, straight-on scan or photo of the label works best. `preview.png` shows the live texture next to the WIP one for every item that has a label.
 
 Use artwork you have the right to use. `labels/`, `textures/` and `preview.png` are ignored by git, so brand images stay out of the public repo and the source zip. A finished label moves into the live mod by copying `textures/<key>.png` over `data/food/<key>.png`, but only if the artwork may be published on the Workshop.
