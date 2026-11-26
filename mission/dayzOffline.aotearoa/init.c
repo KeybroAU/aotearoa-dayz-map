@@ -92,14 +92,114 @@ class AotearoaStashes
 	}
 }
 
+// Dynamic events (tools/dynamic_events.py): each restart picks a few sites for the plane crashes,
+// the stranded ferry and the DOC hut stashes. Delete aotearoa/dynamic_events.json to turn them off.
+class AotearoaEventObject
+{
+	string cls;
+	float x;
+	float y;
+	float z;
+	float yaw;
+}
+
+class AotearoaEventLoot
+{
+	float r;
+	int minItems;
+	int maxItems;
+	ref array<string> items;
+}
+
+class AotearoaEventSite
+{
+	string label;
+	float x;
+	float z;
+	ref array<ref AotearoaEventObject> objects;
+	ref AotearoaEventLoot loot;
+}
+
+class AotearoaEvent
+{
+	string kind;
+	string label;
+	int active;
+	ref array<ref AotearoaEventSite> sites;
+}
+
+class AotearoaEventFile
+{
+	ref array<ref AotearoaEvent> events;
+}
+
+class AotearoaEvents
+{
+	void AotearoaEvents()
+	{
+		string path = "$mission:aotearoa/dynamic_events.json";
+		if ( !FileExist( path ) )
+			return;
+		AotearoaEventFile file;
+		JsonFileLoader<AotearoaEventFile>.JsonLoadFile( path, file );
+		if ( !file || !file.events )
+			return;
+		foreach ( AotearoaEvent ev : file.events )
+		{
+			if ( !ev.sites || ev.sites.Count() == 0 )
+				continue;
+			array<int> order = new array<int>;
+			for ( int i = 0; i < ev.sites.Count(); i++ )
+				order.Insert( i );
+			for ( int j = order.Count() - 1; j > 0; j-- )
+				order.SwapItems( j, Math.RandomInt( 0, j + 1 ) );
+			int count = ev.active;
+			if ( count > ev.sites.Count() )
+				count = ev.sites.Count();
+			for ( int k = 0; k < count; k++ )
+				Spawn( ev.sites[order[k]] );
+		}
+	}
+
+	void Spawn( AotearoaEventSite s )
+	{
+		Print( "[Aotearoa] event: " + s.label + " at " + s.x.ToString() + " " + s.z.ToString() );
+		if ( s.objects )
+		{
+			foreach ( AotearoaEventObject o : s.objects )
+			{
+				Object obj = GetGame().CreateObjectEx( o.cls, Vector( o.x, o.y, o.z ), ECE_CREATEPHYSICS | ECE_UPDATEPATHGRAPH );
+				if ( obj )
+				{
+					obj.SetOrientation( Vector( o.yaw, 0, 0 ) );
+					obj.Update();
+				}
+			}
+		}
+		if ( !s.loot || !s.loot.items || s.loot.items.Count() == 0 )
+			return;
+		int want = Math.RandomIntInclusive( s.loot.minItems, s.loot.maxItems );
+		for ( int n = 0; n < want; n++ )
+		{
+			float a = Math.RandomFloat( 0, Math.PI2 );
+			float d = Math.RandomFloat( 0, s.loot.r );
+			float px = s.x + Math.Cos( a ) * d;
+			float pz = s.z + Math.Sin( a ) * d;
+			GetGame().CreateObjectEx( s.loot.items.GetRandomElement(), Vector( px, GetGame().SurfaceY( px, pz ), pz ), ECE_PLACE_ON_SURFACE );
+		}
+	}
+}
+
 class CustomMission: MissionServer
 {
 	ref AotearoaStashes m_FoodStashes;
+	ref AotearoaEvents m_Events;
 
 	override void OnInit()
 	{
 		super.OnInit();
 		m_FoodStashes = new AotearoaStashes();
+		m_Events = new AotearoaEvents();
 	}
 
 	void SetRandomHealth(EntityAI itemEnt)

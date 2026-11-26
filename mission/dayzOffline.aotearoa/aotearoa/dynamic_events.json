@@ -1,0 +1,3010 @@
+{
+ "events": [
+  {
+   "kind": "planecrash",
+   "label": "Air New Zealand cargo plane crash",
+   "active": 2,
+   "sites": [
+    {
+     "label": "Air New Zealand cargo plane crash 1",
+     "x": 7668.94,
+     "z": 3471.17,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 7700.0,
+       "y": 113.88,
+       "z": 3500.0,
+       "yaw": 66.4
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 7669.69,
+       "y": 116.21,
+       "z": 3494.46,
+       "yaw": 285.3
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 7660.51,
+       "y": 116.0,
+       "z": 3480.47,
+       "yaw": 261.7
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 7647.01,
+       "y": 116.07,
+       "z": 3476.42,
+       "yaw": 56.0
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 7637.08,
+       "y": 115.14,
+       "z": 3464.17,
+       "yaw": 255.9
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 7621.58,
+       "y": 114.16,
+       "z": 3464.69,
+       "yaw": 209.7
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 7607.92,
+       "y": 112.51,
+       "z": 3460.98,
+       "yaw": 46.0
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 7592.19,
+       "y": 110.9,
+       "z": 3462.02,
+       "yaw": 143.6
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 2",
+     "x": 24058.27,
+     "z": 17892.63,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 24100.0,
+       "y": 12.9,
+       "z": 17900.0,
+       "yaw": 99.3
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 24070.76,
+       "y": 17.38,
+       "z": 17907.1,
+       "yaw": 236.5
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 24057.8,
+       "y": 19.55,
+       "z": 17914.58,
+       "yaw": 201.2
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 24042.05,
+       "y": 22.94,
+       "z": 17905.03,
+       "yaw": 125.5
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 24028.17,
+       "y": 25.98,
+       "z": 17906.86,
+       "yaw": 101.4
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 24015.0,
+       "y": 29.09,
+       "z": 17913.08,
+       "yaw": 229.7
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 23999.75,
+       "y": 32.73,
+       "z": 17906.6,
+       "yaw": 340.5
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 23989.33,
+       "y": 34.97,
+       "z": 17929.66,
+       "yaw": 117.0
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 3",
+     "x": 12460.67,
+     "z": 12315.78,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 12500.0,
+       "y": 321.31,
+       "z": 12300.0,
+       "yaw": 131.1
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 12470.26,
+       "y": 323.23,
+       "z": 12311.56,
+       "yaw": 219.7
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 12461.15,
+       "y": 323.08,
+       "z": 12322.41,
+       "yaw": 14.7
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 12459.36,
+       "y": 322.54,
+       "z": 12341.64,
+       "yaw": 274.3
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 12440.93,
+       "y": 317.47,
+       "z": 12341.82,
+       "yaw": 41.3
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 12435.8,
+       "y": 316.4,
+       "z": 12357.23,
+       "yaw": 236.8
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 12422.73,
+       "y": 310.08,
+       "z": 12363.54,
+       "yaw": 41.4
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 12416.3,
+       "y": 308.83,
+       "z": 12377.47,
+       "yaw": 59.1
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 4",
+     "x": 15906.97,
+     "z": 21058.2,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 15900.0,
+       "y": 3.46,
+       "z": 21100.0,
+       "yaw": 9.8
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 15892.86,
+       "y": 3.14,
+       "z": 21070.79,
+       "yaw": 25.7
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 15883.99,
+       "y": 2.93,
+       "z": 21058.12,
+       "yaw": 161.3
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 15900.43,
+       "y": 2.7,
+       "z": 21041.06,
+       "yaw": 30.1
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 15885.75,
+       "y": 2.45,
+       "z": 21029.4,
+       "yaw": 297.5
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 15874.61,
+       "y": 2.04,
+       "z": 21017.12,
+       "yaw": 56.7
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 15884.0,
+       "y": 1.53,
+       "z": 21001.28,
+       "yaw": 328.6
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 15879.77,
+       "y": 1.06,
+       "z": 20987.81,
+       "yaw": 261.2
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 5",
+     "x": 1075.26,
+     "z": 3934.41,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 1100.0,
+       "y": 8.51,
+       "z": 3900.0,
+       "yaw": 163.6
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 1084.15,
+       "y": 5.31,
+       "z": 3926.6,
+       "yaw": 291.6
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 1078.5,
+       "y": 4.17,
+       "z": 3939.53,
+       "yaw": 185.1
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 1087.49,
+       "y": 3.53,
+       "z": 3956.78,
+       "yaw": 290.5
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 1076.7,
+       "y": 2.39,
+       "z": 3968.19,
+       "yaw": 7.5
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 1085.08,
+       "y": 1.89,
+       "z": 3985.26,
+       "yaw": 70.7
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 1076.76,
+       "y": 1.19,
+       "z": 3997.4,
+       "yaw": 41.0
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 1065.08,
+       "y": -1.62,
+       "z": 4008.56,
+       "yaw": 8.4
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 6",
+     "x": 10864.54,
+     "z": 8076.79,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 10900.0,
+       "y": 152.37,
+       "z": 8100.0,
+       "yaw": 76.1
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 10868.62,
+       "y": 156.22,
+       "z": 8101.92,
+       "yaw": 277.3
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 10859.82,
+       "y": 160.22,
+       "z": 8079.22,
+       "yaw": 129.7
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 10841.13,
+       "y": 162.79,
+       "z": 8096.43,
+       "yaw": 29.9
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 10832.66,
+       "y": 175.55,
+       "z": 8072.4,
+       "yaw": 74.7
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 10818.18,
+       "y": 182.46,
+       "z": 8072.62,
+       "yaw": 55.4
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 10800.59,
+       "y": 183.13,
+       "z": 8085.4,
+       "yaw": 139.0
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 10790.31,
+       "y": 199.48,
+       "z": 8068.69,
+       "yaw": 236.8
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 7",
+     "x": 4258.52,
+     "z": 5708.7,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 4300.0,
+       "y": 297.57,
+       "z": 5700.0,
+       "yaw": 121.1
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 4270.68,
+       "y": 293.38,
+       "z": 5709.48,
+       "yaw": 221.7
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 4259.95,
+       "y": 288.44,
+       "z": 5718.79,
+       "yaw": 181.6
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 4245.22,
+       "y": 280.96,
+       "z": 5721.49,
+       "yaw": 289.5
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 4239.7,
+       "y": 274.38,
+       "z": 5739.42,
+       "yaw": 306.7
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 4226.69,
+       "y": 265.04,
+       "z": 5744.96,
+       "yaw": 278.8
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 4211.49,
+       "y": 254.72,
+       "z": 5746.88,
+       "yaw": 224.6
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 4201.92,
+       "y": 244.69,
+       "z": 5758.11,
+       "yaw": 264.3
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 8",
+     "x": 15540.49,
+     "z": 12887.48,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 15500.0,
+       "y": 2.8,
+       "z": 12900.0,
+       "yaw": 306.5
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 15527.71,
+       "y": 2.54,
+       "z": 12887.02,
+       "yaw": 281.2
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 15540.64,
+       "y": 1.98,
+       "z": 12880.96,
+       "yaw": 331.1
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 15552.06,
+       "y": 1.57,
+       "z": 12872.85,
+       "yaw": 276.6
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 15559.9,
+       "y": 1.3,
+       "z": 12859.91,
+       "yaw": 349.9
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 15566.93,
+       "y": 0.79,
+       "z": 12845.86,
+       "yaw": 136.2
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 15582.33,
+       "y": -1.81,
+       "z": 12843.14,
+       "yaw": 216.1
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 15592.9,
+       "y": -4.36,
+       "z": 12833.9,
+       "yaw": 229.5
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 9",
+     "x": 18538.45,
+     "z": 20717.81,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 18500.0,
+       "y": 5.01,
+       "z": 20700.0,
+       "yaw": 264.4
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 18529.64,
+       "y": 4.31,
+       "z": 20705.14,
+       "yaw": 265.2
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 18543.42,
+       "y": 3.84,
+       "z": 20708.05,
+       "yaw": 3.1
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 18556.87,
+       "y": 3.36,
+       "z": 20714.43,
+       "yaw": 247.7
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 18571.33,
+       "y": 3.42,
+       "z": 20710.35,
+       "yaw": 84.5
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 18584.78,
+       "y": 3.17,
+       "z": 20716.68,
+       "yaw": 259.5
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 18599.6,
+       "y": 3.12,
+       "z": 20708.93,
+       "yaw": 271.2
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 18614.35,
+       "y": 2.81,
+       "z": 20701.91,
+       "yaw": 329.1
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    },
+    {
+     "label": "Air New Zealand cargo plane crash 10",
+     "x": 6712.82,
+     "z": 6740.39,
+     "objects": [
+      {
+       "cls": "Land_Wreck_C130J_Cargo",
+       "x": 6700.0,
+       "y": 335.65,
+       "z": 6700.0,
+       "yaw": 216.9
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 6722.2,
+       "y": 339.75,
+       "z": 6720.85,
+       "yaw": 178.2
+      },
+      {
+       "cls": "StaticObj_Misc_TirePile",
+       "x": 6734.08,
+       "y": 342.88,
+       "z": 6729.43,
+       "yaw": 342.2
+      },
+      {
+       "cls": "StaticObj_Misc_Tire_Big",
+       "x": 6738.18,
+       "y": 344.94,
+       "z": 6743.86,
+       "yaw": 52.0
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 6736.47,
+       "y": 346.67,
+       "z": 6762.65,
+       "yaw": 331.8
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 6758.4,
+       "y": 347.99,
+       "z": 6763.69,
+       "yaw": 167.3
+      },
+      {
+       "cls": "StaticObj_ShellCrater2_Debris",
+       "x": 6766.92,
+       "y": 347.02,
+       "z": 6774.81,
+       "yaw": 163.7
+      },
+      {
+       "cls": "StaticObj_Misc_Pallets1",
+       "x": 6776.77,
+       "y": 344.7,
+       "z": 6784.92,
+       "yaw": 117.6
+      }
+     ],
+     "loot": {
+      "r": 16.0,
+      "minItems": 8,
+      "maxItems": 12,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Anchor_MilkPowder",
+       "Aotearoa_Airborne_Honey",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "BandageDressing",
+       "FirstAidKit",
+       "Morphine",
+       "Epinephrine",
+       "TetracyclineAntibiotics",
+       "Flashlight",
+       "Battery9V",
+       "Rope",
+       "DuctTape",
+       "CanOpener",
+       "Hatchet",
+       "Roadflare",
+       "Binoculars",
+       "PersonalRadio"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "kind": "ferry",
+   "label": "Stranded Interislander ferry",
+   "active": 1,
+   "sites": [
+    {
+     "label": "Stranded Interislander ferry 1",
+     "x": 17837.52,
+     "z": 20216.9,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 17837.52,
+       "y": 17.14,
+       "z": 20116.9,
+       "yaw": 0.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 17848.92,
+       "y": 27.3,
+       "z": 20116.69,
+       "yaw": 0.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 17857.21,
+       "y": 18.66,
+       "z": 20116.29,
+       "yaw": 0.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 17900.62,
+       "y": 16.81,
+       "z": 20112.59,
+       "yaw": 11.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 17920.6,
+       "y": 18.31,
+       "z": 20110.92,
+       "yaw": 11.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 17837.52,
+       "y": 2.36,
+       "z": 20216.9,
+       "yaw": 130.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 17843.52,
+       "y": 2.41,
+       "z": 20216.9,
+       "yaw": 250.1
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 17834.49,
+       "y": 2.36,
+       "z": 20222.08,
+       "yaw": 84.9
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 17834.58,
+       "y": 2.24,
+       "z": 20211.67,
+       "yaw": 127.8
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    },
+    {
+     "label": "Stranded Interislander ferry 2",
+     "x": 3673.92,
+     "z": 1166.53,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 3673.92,
+       "y": 17.14,
+       "z": 1066.53,
+       "yaw": 300.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 3679.8,
+       "y": 27.3,
+       "z": 1076.29,
+       "yaw": 300.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 3684.29,
+       "y": 18.66,
+       "z": 1083.28,
+       "yaw": 300.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 3709.2,
+       "y": 16.81,
+       "z": 1119.02,
+       "yaw": 311.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 3720.63,
+       "y": 18.31,
+       "z": 1135.5,
+       "yaw": 311.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 3673.92,
+       "y": 2.35,
+       "z": 1166.53,
+       "yaw": 70.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 3679.92,
+       "y": 2.1,
+       "z": 1166.53,
+       "yaw": 173.6
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 3670.89,
+       "y": 2.7,
+       "z": 1171.71,
+       "yaw": 293.3
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 3670.98,
+       "y": 2.28,
+       "z": 1161.3,
+       "yaw": 351.4
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    },
+    {
+     "label": "Stranded Interislander ferry 3",
+     "x": 13755.36,
+     "z": 8723.77,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 13691.08,
+       "y": 17.14,
+       "z": 8647.17,
+       "yaw": 345.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 13702.14,
+       "y": 27.3,
+       "z": 8649.91,
+       "yaw": 345.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 13710.26,
+       "y": 18.66,
+       "z": 8651.67,
+       "yaw": 345.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 13753.15,
+       "y": 16.81,
+       "z": 8659.33,
+       "yaw": 356.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 13772.88,
+       "y": 18.31,
+       "z": 8662.9,
+       "yaw": 356.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 13755.36,
+       "y": 2.07,
+       "z": 8723.77,
+       "yaw": 115.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 13761.36,
+       "y": 2.01,
+       "z": 8723.77,
+       "yaw": 258.8
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 13752.33,
+       "y": 2.39,
+       "z": 8728.95,
+       "yaw": 80.5
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 13752.42,
+       "y": 1.73,
+       "z": 8718.54,
+       "yaw": 271.2
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    },
+    {
+     "label": "Stranded Interislander ferry 4",
+     "x": 24735.31,
+     "z": 17023.57,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 24835.31,
+       "y": 17.14,
+       "z": 17023.57,
+       "yaw": 270.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 24835.52,
+       "y": 27.3,
+       "z": 17034.96,
+       "yaw": 270.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 24835.93,
+       "y": 18.66,
+       "z": 17043.26,
+       "yaw": 270.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 24839.63,
+       "y": 16.81,
+       "z": 17086.67,
+       "yaw": 281.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 24841.29,
+       "y": 18.31,
+       "z": 17106.65,
+       "yaw": 281.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 24735.31,
+       "y": 1.23,
+       "z": 17023.57,
+       "yaw": 40.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 24741.31,
+       "y": 1.27,
+       "z": 17023.57,
+       "yaw": 121.4
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 24732.28,
+       "y": 1.23,
+       "z": 17028.75,
+       "yaw": 141.0
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 24732.37,
+       "y": 1.13,
+       "z": 17018.34,
+       "yaw": 146.7
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    },
+    {
+     "label": "Stranded Interislander ferry 5",
+     "x": 10104.11,
+     "z": 5383.44,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 10154.11,
+       "y": 17.14,
+       "z": 5470.04,
+       "yaw": 270.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 10154.32,
+       "y": 27.3,
+       "z": 5481.43,
+       "yaw": 270.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 10154.72,
+       "y": 18.66,
+       "z": 5489.73,
+       "yaw": 270.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 10158.42,
+       "y": 16.81,
+       "z": 5533.14,
+       "yaw": 281.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 10160.08,
+       "y": 18.31,
+       "z": 5553.12,
+       "yaw": 281.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 10104.11,
+       "y": 1.53,
+       "z": 5383.44,
+       "yaw": 40.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 10110.11,
+       "y": 1.34,
+       "z": 5383.44,
+       "yaw": 18.4
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 10101.08,
+       "y": 1.63,
+       "z": 5388.62,
+       "yaw": 311.3
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 10101.17,
+       "y": 1.62,
+       "z": 5378.21,
+       "yaw": 95.7
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    },
+    {
+     "label": "Stranded Interislander ferry 6",
+     "x": 9834.23,
+     "z": 9415.87,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 9716.77,
+       "y": 17.14,
+       "z": 9373.12,
+       "yaw": 300.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 9722.65,
+       "y": 27.3,
+       "z": 9382.88,
+       "yaw": 300.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 9727.15,
+       "y": 18.66,
+       "z": 9389.86,
+       "yaw": 300.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 9752.06,
+       "y": 16.81,
+       "z": 9425.6,
+       "yaw": 311.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 9763.49,
+       "y": 18.31,
+       "z": 9442.08,
+       "yaw": 311.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 9834.23,
+       "y": 2.1,
+       "z": 9415.87,
+       "yaw": 70.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 9840.23,
+       "y": 2.2,
+       "z": 9415.87,
+       "yaw": 22.9
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 9831.21,
+       "y": 1.65,
+       "z": 9421.05,
+       "yaw": 202.6
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 9831.29,
+       "y": 2.43,
+       "z": 9410.64,
+       "yaw": 340.8
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    },
+    {
+     "label": "Stranded Interislander ferry 7",
+     "x": 1308.13,
+     "z": 4167.37,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 1221.52,
+       "y": 17.14,
+       "z": 4117.37,
+       "yaw": 285.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 1224.68,
+       "y": 27.3,
+       "z": 4128.32,
+       "yaw": 285.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 1227.21,
+       "y": 18.66,
+       "z": 4136.23,
+       "yaw": 285.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 1242.02,
+       "y": 16.81,
+       "z": 4177.21,
+       "yaw": 296.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 1248.8,
+       "y": 18.31,
+       "z": 4196.08,
+       "yaw": 296.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 1308.13,
+       "y": 1.64,
+       "z": 4167.37,
+       "yaw": 55.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 1314.13,
+       "y": 1.94,
+       "z": 4167.37,
+       "yaw": 322.8
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 1305.1,
+       "y": 1.42,
+       "z": 4172.55,
+       "yaw": 63.1
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 1305.18,
+       "y": 1.58,
+       "z": 4162.14,
+       "yaw": 322.6
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    },
+    {
+     "label": "Stranded Interislander ferry 8",
+     "x": 7881.43,
+     "z": 2881.58,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 7864.06,
+       "y": 17.14,
+       "z": 2783.1,
+       "yaw": 315.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 7872.27,
+       "y": 27.3,
+       "z": 2791.01,
+       "yaw": 315.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 7878.42,
+       "y": 18.66,
+       "z": 2796.59,
+       "yaw": 315.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 7911.73,
+       "y": 16.81,
+       "z": 2824.67,
+       "yaw": 326.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 7927.03,
+       "y": 18.31,
+       "z": 2837.62,
+       "yaw": 326.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 7881.43,
+       "y": 2.25,
+       "z": 2881.58,
+       "yaw": 85.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 7887.43,
+       "y": 2.17,
+       "z": 2881.58,
+       "yaw": 230.0
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 7878.4,
+       "y": 2.3,
+       "z": 2886.76,
+       "yaw": 24.4
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 7878.49,
+       "y": 2.17,
+       "z": 2876.35,
+       "yaw": 80.8
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    },
+    {
+     "label": "Stranded Interislander ferry 9",
+     "x": 21845.78,
+     "z": 15933.6,
+     "objects": [
+      {
+       "cls": "Land_Ship_Big_BackB",
+       "x": 21828.42,
+       "y": 17.14,
+       "z": 15835.12,
+       "yaw": 315.0
+      },
+      {
+       "cls": "Land_Ship_Big_Castle",
+       "x": 21836.62,
+       "y": 27.3,
+       "z": 15843.03,
+       "yaw": 315.0
+      },
+      {
+       "cls": "Land_Ship_Big_BackA",
+       "x": 21842.77,
+       "y": 18.66,
+       "z": 15848.61,
+       "yaw": 315.0
+      },
+      {
+       "cls": "Land_Ship_Big_FrontB",
+       "x": 21876.09,
+       "y": 16.81,
+       "z": 15876.69,
+       "yaw": 326.4
+      },
+      {
+       "cls": "Land_Ship_Big_FrontA",
+       "x": 21891.39,
+       "y": 18.31,
+       "z": 15889.65,
+       "yaw": 326.4
+      },
+      {
+       "cls": "StaticObj_Wreck_Ship_Big_Lifeboat",
+       "x": 21845.78,
+       "y": 2.23,
+       "z": 15933.6,
+       "yaw": 85.0
+      },
+      {
+       "cls": "StaticObj_Misc_WoodenCrate",
+       "x": 21851.78,
+       "y": 2.01,
+       "z": 15933.6,
+       "yaw": 64.9
+      },
+      {
+       "cls": "StaticObj_Crates_Small",
+       "x": 21842.75,
+       "y": 2.56,
+       "z": 15938.78,
+       "yaw": 143.1
+      },
+      {
+       "cls": "StaticObj_Misc_Pallet",
+       "x": 21842.84,
+       "y": 2.11,
+       "z": 15928.37,
+       "yaw": 309.7
+      }
+     ],
+     "loot": {
+      "r": 10.0,
+      "minItems": 6,
+      "maxItems": 9,
+      "items": [
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "Aotearoa_SodaCan_LP",
+       "Aotearoa_SodaCan_FreshUp",
+       "Aotearoa_SodaCan_FoxtonCream",
+       "Aotearoa_SodaCan_FoxtonRaspberry",
+       "Aotearoa_SodaCan_LiftPlus",
+       "Aotearoa_SodaCan_V",
+       "Aotearoa_Pump_Water",
+       "Aotearoa_Sealord_Tuna",
+       "Aotearoa_Pams_Sardines",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "CarBattery",
+       "SparkPlug",
+       "TireRepairKit",
+       "FieldShovel",
+       "Raincoat_Orange",
+       "Rope",
+       "BandageDressing",
+       "FirstAidKit"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "kind": "dochut",
+   "label": "DOC hut stash",
+   "active": 4,
+   "sites": [
+    {
+     "label": "DOC hut stash",
+     "x": 12265.6,
+     "z": 9442.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 12265.6,
+       "y": 288.76,
+       "z": 9442.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 13578.1,
+     "z": 10379.9,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 13578.1,
+       "y": 363.91,
+       "z": 10379.9,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 10203.1,
+     "z": 8654.9,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 10203.1,
+       "y": 331.22,
+       "z": 8654.9,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 8853.1,
+     "z": 6217.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 8853.1,
+       "y": 264.72,
+       "z": 6217.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 5965.6,
+     "z": 4492.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 5965.6,
+       "y": 348.69,
+       "z": 4492.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 12603.1,
+     "z": 11767.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 12603.1,
+       "y": 290.17,
+       "z": 11767.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 7578.1,
+     "z": 5692.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 7578.1,
+       "y": 302.04,
+       "z": 5692.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 14853.1,
+     "z": 10942.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 14853.1,
+       "y": 254.26,
+       "z": 10942.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 11928.1,
+     "z": 10642.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 11928.1,
+       "y": 277.4,
+       "z": 10642.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 4090.6,
+     "z": 4979.9,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 4090.6,
+       "y": 358.98,
+       "z": 4979.9,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 20140.6,
+     "z": 15779.9,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 20140.6,
+       "y": 320.16,
+       "z": 15779.9,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 18490.6,
+     "z": 12929.9,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 18490.6,
+       "y": 261.02,
+       "z": 12929.9,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 5928.1,
+     "z": 6517.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 5928.1,
+       "y": 263.6,
+       "z": 6517.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 7990.6,
+     "z": 4454.9,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 7990.6,
+       "y": 260.58,
+       "z": 4454.9,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 2553.1,
+     "z": 4642.4,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 2553.1,
+       "y": 253.57,
+       "z": 4642.4,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    },
+    {
+     "label": "DOC hut stash",
+     "x": 11365.6,
+     "z": 8354.9,
+     "objects": [
+      {
+       "cls": "StaticObj_Misc_BoxWooden",
+       "x": 11365.6,
+       "y": 251.86,
+       "z": 8354.9,
+       "yaw": 0.0
+      }
+     ],
+     "loot": {
+      "r": 3.0,
+      "minItems": 3,
+      "maxItems": 5,
+      "items": [
+       "MountainBag_Green",
+       "MountainBag_Orange",
+       "Compass",
+       "Canteen",
+       "Matchbox",
+       "HuntingKnife",
+       "Heatpack",
+       "Raincoat_Orange",
+       "HikingBoots_Brown",
+       "Pot",
+       "FishingRod",
+       "Rope",
+       "Aotearoa_RiceRisotto",
+       "Aotearoa_WeetBix",
+       "Aotearoa_Marmite",
+       "Aotearoa_Watties_BakedBeans",
+       "Aotearoa_Watties_Spaghetti",
+       "Aotearoa_Watties_Peaches",
+       "Aotearoa_Palm_CornedBeef",
+       "Aotearoa_Hellers_Bacon",
+       "Aotearoa_Chips_BluebirdReadySalted",
+       "Aotearoa_Chips_BluebirdSaltVinegar",
+       "Aotearoa_Chips_BluebirdChicken",
+       "Aotearoa_Chips_MunchosTomato",
+       "Aotearoa_Biscuits_ToffeePops",
+       "Aotearoa_Biscuits_Shrewsburys",
+       "Aotearoa_Biscuits_ChocolateThins",
+       "Aotearoa_Lollies_PineappleLumps",
+       "Aotearoa_Whittakers_CreamyMilk",
+       "Aotearoa_Whittakers_DarkGhana",
+       "Aotearoa_Whittakers_PeanutSlab",
+       "BandageDressing"
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

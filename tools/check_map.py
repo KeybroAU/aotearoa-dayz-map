@@ -154,6 +154,18 @@ def food() -> None:
           + (f" (bad: {bad[:3]})" if bad else ""))
     check("aotearoa/food_stashes.json" in (MISSION / "init.c").read_text(encoding="utf-8"),
           "init.c restocks the food stashes")
+    path = MISSION / "aotearoa" / "dynamic_events.json"
+    events = json.loads(path.read_text(encoding="utf-8"))["events"] if path.exists() else []
+    known = _names(MAP_DIR / "tools" / "dayz_classes.txt")
+    used = {o["cls"] for e in events for s in e["sites"] for o in s["objects"]}
+    used |= {i for e in events for s in e["sites"] for i in s["loot"]["items"]}
+    bad = sorted(c for c in used if c.lower() not in known and c not in nz_food.ITEM_CLASSES)
+    empty = [e["label"] for e in events if len(e["sites"]) < e["active"]]
+    check(bool(events) and not bad and not empty, f"{len(events)} dynamic events, "
+          f"{sum(len(e['sites']) for e in events)} sites, {len(used)} classes exist"
+          + (f" (unknown: {', '.join(bad[:5])})" if bad else "") + (f" (too few sites: {empty})" if empty else ""))
+    check("aotearoa/dynamic_events.json" in (MISSION / "init.c").read_text(encoding="utf-8"),
+          "init.c starts the dynamic events")
 
 
 def main() -> None:
