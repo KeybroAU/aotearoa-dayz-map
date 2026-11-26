@@ -1,6 +1,6 @@
 name = "Aotearoa";
 author = "KeybroAU";
-version = "0.6.3";
+version = "0.6.4";
 overview = "A 25.6 km terrain shaped on New Zealand, with bilingual place names, volcanoes, the Interislander and the main trunk railway. Designed by Keybro, Keybrogaming.com";
 picture = "maps\aotearoa\data\branding\logo_512_ca.paa";
 logo = "maps\aotearoa\data\branding\icon_128_ca.paa";
