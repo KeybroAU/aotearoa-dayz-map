@@ -68,6 +68,7 @@ Spawn each one with your admin tool by its class name, or find it in loot. For e
 | Foxton Fizz Creaming Soda | `Aotearoa_SodaCan_FoxtonCream` | SodaCan_Spite |  |
 | Foxton Fizz Raspberry | `Aotearoa_SodaCan_FoxtonRaspberry` | SodaCan_Pipsi |  |
 | Lift Plus | `Aotearoa_SodaCan_LiftPlus` | SodaCan_Kvass |  |
+| V Energy | `Aotearoa_SodaCan_V` | SodaCan_Cola (own 500 ml can once built) |  |
 | Bluebird Ready Salted | `Aotearoa_Chips_BluebirdReadySalted` | Chips |  |
 | Bluebird Salt & Vinegar | `Aotearoa_Chips_BluebirdSaltVinegar` | Chips |  |
 | Bluebird Chicken | `Aotearoa_Chips_BluebirdChicken` | Chips |  |
@@ -102,6 +103,7 @@ Things to look at closely, because their texture layouts are guessed or approxim
 - [ ] **Pams Sardines, Palm Corned Beef and Marmite:** the label should wrap the side of the tin, and the lid should look like plain metal.
 - [ ] **Weet-Bix:** the front of the box should show the bowl and the wordmark.
 - [ ] **Rice Risotto:** vanilla rice doesn't retexture its bag, so check the packet shows the green band and the "Rice Risotto" label rather than the plain vanilla bag or a missing texture.
+- [ ] **V Energy:** until its model is built it is a vanilla can with a green V label; check it holds 500 ml (drink it twice from full). Once `structures\food\v_can\v_can.p3d` is in, check the tall can shows in the inventory preview, in your hands (held like a vanilla can, not floating or sideways), dropped on the ground (standing on its base, not sunk or hovering), and that the V and "ENERGY DRINK" face you on the front and aren't mirrored.
 - [ ] **Anchor Milk Powder, Airborne Honey and Pump Water Bottle:** these also use the model's `zbytek` selection. The milk label runs down the bag, the honey jar repeats its label all over (its layout isn't published), and the Pump label should wrap the bottle with the blue cap on top. Also fill, drink from and empty the bottle to check it still works as a water bottle.
 
 If a texture is sideways, mirrored or in the wrong place, take a screenshot. For a fix, convert the vanilla texture to PNG with DayZ Tools' ImageToPAA (for example `P:\DZ\gear\food\data\zagorky_milk_ca.paa`) and send it; the labels can then be lined up exactly with the vanilla layout.

@@ -49,7 +49,7 @@ STORE_BACK_M = 13.0  # from the store's centre to the yard behind it
 GROUPS = {
     "snacks": ["bluebird_salted", "bluebird_vinegar", "bluebird_chicken", "munchos", "toffeepops", "shrewsburys",
                "chocthins", "pineapplelumps", "whittakers_milk", "whittakers_dark", "whittakers_peanut"],
-    "fizzy": ["lp", "freshup", "foxton_cream", "foxton_rasp", "liftplus", "pump_water"],
+    "fizzy": ["lp", "freshup", "foxton_cream", "foxton_rasp", "liftplus", "v_energy", "pump_water"],
     "dairy": ["anchor_milk", "airborne_honey"],
     "fish": ["sealord_tuna", "pams_sardines"],
     "pantry": ["risotto", "weetbix", "marmite", "watties_beans", "watties_spaghetti", "watties_peaches",

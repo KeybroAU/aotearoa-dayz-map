@@ -19,8 +19,9 @@ Sizes are in game metres. The map is about 60 times smaller than New Zealand, bu
 | 9 | Sky Tower | Auckland skyline | none | 8 x 8 x 120 (scaled) |
 | 10 | Beehive | Wellington | none | 30 x 30 x 25 |
 | 11 | Chateau Tongariro | Landmark | `Land_Tenement_Big` | 50 x 18 x 14 |
+| 12 | V Energy can (500 ml) | The Kiwi energy drink, in its tall can | vanilla soda can with a V label | 0.066 x 0.066 x 0.168 |
 
-Items 1 and 2 matter most. Items 3 to 6 replace stand-ins used hundreds of times, so they change the feel of the whole map. Items 7 to 11 are single landmarks.
+Items 1 and 2 matter most. Items 3 to 6 replace stand-ins used hundreds of times, so they change the feel of the whole map. Items 7 to 11 are single landmarks. Item 12 is a loot item, and its sources are ready to build.
 
 ---
 
@@ -161,6 +162,33 @@ For each one:
 
 - A grand 1920s hotel: long three-storey neo-Georgian front, a central portico, a red roof, and Ruapehu behind it.
 - **Swap in:** in `LANDMARK_LAYOUTS["hotel"]` in `tools/pois.py`, replace `Land_Tenement_Big`.
+
+## 12. V Energy can
+
+**Sources done; the `.p3d` is the only step left.** `tools/drink_models.py` writes everything:
+
+| File | What it is |
+|---|---|
+| `docs/models/v_can.obj` | LOD 0: 32 sides, 770 triangles, with the rolled base, neck, rim, lid and ring pull |
+| `docs/models/v_can_lod1.obj`, `v_can_lod2.obj` | LODs 1 and 2: 16 and 8 sides |
+| `docs/models/v_can_geometry.obj` | Geometry: one closed convex 8-sided prism |
+| `data/food/models/v_can.png` | The texture (1024 x 1024): label round the top 68%, metal bands, then the lid and base discs |
+| `data/food/models/v_can.rvmat` | Shiny aluminium (Super shader) |
+| `preview/models_v_can.png` | Front, side and back renders and the texture |
+
+The can is 66 mm across and 168 mm tall, with its origin at its centre. The front of the label (the big V) faces +z.
+
+1. In Object Builder, create a new model. **File → Import → Wavefront OBJ** `docs/models/v_can.obj` into the resolution LOD 0. Units are metres and y is up; if it comes in 100 times too big or small, scale it to 0.168 m tall.
+2. Select all faces and name the selection **`camo`**. The ring pull's faces also make a selection **`tab`**.
+3. Set the faces' texture to `maps\aotearoa\data\food\models\v_can_co.paa` and the material to `maps\aotearoa\data\food\models\v_can.rvmat`. The UVs are already set.
+4. Add resolution LODs 1 and 2 and import `v_can_lod1.obj` and `v_can_lod2.obj` into them. Name their selections `camo` too and give them the same texture and material.
+5. Add a **Geometry** LOD and import `v_can_geometry.obj`. Name the selection `Component01`, set the mass to 0.5 kg, and add the named property `autocenter` = `0`. Copy it to **Fire Geometry** and **View Geometry** LODs.
+6. If you have the vanilla can unpacked (`P:\DZ\gear\drinks\`), open its `.p3d` and copy any Memory LOD it has across, so the can sits in the hand the same way. Otherwise leave the Memory LOD out and check the grip in game.
+7. Save as `P:\maps\aotearoa\structures\food\v_can\v_can.p3d` and commit it.
+8. Run `python tools/nz_food.py`. `config/food.hpp` then gives `Aotearoa_SodaCan_V` the new model, the `camo` selection, the texture and the material. `pack.bat` converts the texture and packs `structures\`.
+9. Check it in game with the **V Energy** lines in [IN_GAME_TEST_CHECKLIST.md](IN_GAME_TEST_CHECKLIST.md). If the label reads backwards, the importer has mirrored the model: mirror it back along x (or flip the U of the UVs) and save again. If the can floats or sinks when dropped, the Geometry LOD's centre is off; check `autocenter = 0`.
+
+Change the can's shape or label in `tools/drink_models.py` and run it again; `nz_food.py --verify` (run before each release) fails if the committed texture is out of date.
 
 ---
 

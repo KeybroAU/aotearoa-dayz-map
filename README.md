@@ -16,7 +16,7 @@ A 25.6 km DayZ terrain based on New Zealand, for a new server. The coastline and
 - forests, hedgerows, farm fences and rocks; street lamps, bus stops, back fences, garden trees and abandoned cars
 - a satellite texture coloured from a real satellite photo
 - the server mission files: spawns, loot positions and tiers, New Zealand loot changes, animals, weather, starting gear, server messages and launch scripts
-- 31 New Zealand food and drink items (L&P, Whittaker's, Weet-Bix, Marmite, Wattie's and more) that replace vanilla food in the loot, plus food stashes: crashed Countdown trucks on the highways, dairy stock rooms and bach pantries
+- 32 New Zealand food and drink items (L&P, V, Whittaker's, Weet-Bix, Marmite, Wattie's and more) that replace vanilla food in the loot, plus food stashes: crashed Countdown trucks on the highways, dairy stock rooms and bach pantries
 - versioned GitHub releases with every old release backed up, so a server can roll back
 - a printable player map, a logo and loading screens, and map checks that run on GitHub. The loading screens, map picture, player map, map item, Steam Workshop image and the in-game map screen carry a "Designed by Keybro" and Keybrogaming.com watermark (`tools/watermark.py`, `scripts/5_Mission/AotearoaMapMenu.c`)
 
@@ -321,7 +321,7 @@ Loot scales every item's `nominal` and `min` in `types.xml`. `--loot X` sets the
 
 **Custom buildings:** `tools/make_models.py` writes enterable blockout models, ready to import into Object Builder, for a Kiwi bach, a DOC hut, a woolshed and a corner dairy, with their textures and config classes. See [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md).
 
-**Food and drink:** `pack.bat` converts the 31 label textures in `data\food\` to `.paa` and packs them, with `config\food.hpp` and the food script, into `aotearoa.pbo`, so the New Zealand food needs nothing extra on clients or the server. `pack.bat --wip` also packs the work-in-progress copy as a separate test mod, `dist\@AotearoaFoodWIP` (run `python tools\wip_food.py` first). It is never put in the server folder or a release.
+**Food and drink:** `pack.bat` converts the 32 label textures in `data\food\` (and the V can's texture in `data\food\models\`) to `.paa` and packs them, with `config\food.hpp` and the food script, into `aotearoa.pbo`, so the New Zealand food needs nothing extra on clients or the server. `pack.bat --wip` also packs the work-in-progress copy as a separate test mod, `dist\@AotearoaFoodWIP` (run `python tools\wip_food.py` first). It is never put in the server folder or a release.
 
 **Food stashes:** the server folder's `cfggameplay.json` loads the Countdown truck crashes (`aotearoa\foodstash_spawner.json`), and `init.c` stocks the stashes. Nothing to set up.
 
@@ -367,7 +367,7 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 | `cfgEffectArea.json` | The Whakaari and Waiouru Ammunition Area contaminated zones and their safe positions |
 | `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
-| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (72 items, plus 31 food and drink items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; canned fish; New Zealand food and drink (see below); fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
+| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (72 items, plus 32 food and drink items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; canned fish; New Zealand food and drink (see below); fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
 | `loot_tiers.json` | The loot tier of every town and site |
 | `env/*_territories.xml` | Animals: red deer and wild pigs in the bush, sheep on pasture and goats in the high country, cattle, pigs and hens at farms, hares on farmland. No wolves, bears, foxes or roe deer. |
 | `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog (the seasons come from the world scripts, see below) |
@@ -390,6 +390,7 @@ The mod retextures vanilla cans, tins and snack packets as Kiwi brands, and the 
 | Item | Replaces |
 |---|---|
 | L&P, Fresh Up Apple, Foxton Fizz Creaming Soda, Foxton Fizz Raspberry, Lift Plus | the five vanilla soda cans |
+| V Energy (500 ml) | Cola, on its own tall can model (the vanilla can until the model is built) |
 | Bluebird Ready Salted, Salt & Vinegar, Chicken; Munchos Tomato | Chips |
 | Griffin's Toffee Pops, Shrewsburys, Chocolate Thins; Pascall Pineapple Lumps | Crackers |
 | Whittaker's Creamy Milk, Dark Ghana, Peanut Slab | the three Zagorky bars |
@@ -405,6 +406,10 @@ The mod retextures vanilla cans, tins and snack packets as Kiwi brands, and the 
 | Marmite | Brisket Spread (100 g tin) |
 
 The labels are drawn by `tools/nz_food.py`, which also writes `preview/nz_food_showcase.png` (the Workshop card's shop shelf), `config/food.hpp` and `scripts/4_World/AotearoaFood.c`. To add or rename an item, or change its loot, edit `ITEMS` there and run `python tools/nz_food.py`, then rebuild the mission. The artwork is original but the names are real brands; rename them in `ITEMS` if a trademark holder objects.
+
+V Energy has its own model: a tall 500 ml can (66 x 168 mm) instead of the vanilla 355 ml one. `python tools/drink_models.py` writes its sources: three resolution LODs and a Geometry LOD as OBJ files in `docs/models/v_can*.obj`, the texture in its own UV layout and an aluminium material in `data/food/models/`, and `preview/models_v_can.png`. Build the `.p3d` in Object Builder as in [docs/CUSTOM_MODELS.md](docs/CUSTOM_MODELS.md) (item 12) and save it as `structures\food\v_can\v_can.p3d`. Then run `python tools/nz_food.py` and V switches to the new can. Until then it is a vanilla can with a V label, so it works in game either way.
+
+![V Energy can](preview/models_v_can.png)
 
 Where it turns up follows New Zealand habits (`SPAWN` in `nz_food.py`): snacks and fizzy in shops, schools and offices, milk powder and honey on farms, tinned fish on the coast, pantry tins in houses and huts, pet food on farms. There are also food stashes, written by `tools/food_stashes.py`:
 
@@ -614,6 +619,7 @@ python tools/build_satellite.py --size 25600
 python tools/upscale_mask.py 25600
 python tools/png_to_asc.py
 python tools/nz_food.py               # food and drink labels, config/food.hpp, the food script
+python tools/drink_models.py          # the V Energy can model sources and texture
 python tools/wip_food.py              # the work-in-progress food copy in wip/food/
 python tools/build_mission.py         # mission, starting gear, messages, launch scripts, food stashes
 python tools/build_player_map.py      # preview/player_map_4096.jpg
@@ -637,5 +643,6 @@ python tools/check_map.py
 | `labelplace.py` | Keeps map labels from overlapping (player map, map item, towns preview) |
 | `economy.py` | Loot changes (`NZ_TYPES`), tier rules, animal herds (`HERDS`), weather |
 | `nz_food.py` | New Zealand food and drink: names, descriptions, label artwork, loot (`ITEMS`) and where it spawns (`SPAWN`) |
+| `drink_models.py` | The V Energy can: its outline (`PROFILE`), size, sides per LOD and texture layout |
 | `wip_food.py` | The work-in-progress food copy: label fitting (`TILED`, `EXTRA_BANDS`, `MAX_FRONTS`) and the label templates |
 | `food_stashes.py` | Food stashes: truck crash count and spacing (`TRUCKS`, `TRUCK_GAP_M`), what each stash holds and how much (`KINDS`), restock time (`RESTOCK_MINUTES`) |

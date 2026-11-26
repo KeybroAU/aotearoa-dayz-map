@@ -2,6 +2,13 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
+## Unreleased
+
+### Added
+
+- V Energy (`Aotearoa_SodaCan_V`), a 500 ml can of the Kiwi guarana energy drink, in shops, schools, offices and the food stashes
+- A custom model for it: a tall 500 ml can (`tools/drink_models.py` writes three LODs, the Geometry, the texture, the material and a render, and docs/CUSTOM_MODELS.md item 12 has the Object Builder steps). V uses the new can as soon as `structures/food/v_can/v_can.p3d` is committed, and a V-labelled vanilla can until then
+
 ## 0.6.8 - 2026-11-26
 
 ### Changed

@@ -63,6 +63,16 @@ class Aotearoa_SodaCan_FoxtonRaspberry: SodaCan_Pipsi
 	descriptionShort = "A 355 ml can. Raspberry soda from Foxton.";
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\foxton_rasp_co.paa"};
 };
+class Aotearoa_SodaCan_V: SodaCan_Cola
+{
+	scope = 2;
+	displayName = "V Energy";
+	descriptionShort = "A 500 ml can of V, the original Kiwi guarana energy drink. Sweet, fizzy and full of caffeine.";
+	varQuantityInit = 500;
+	varQuantityMax = 500;
+	weight = 30;
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\v_energy_co.paa"};
+};
 class Aotearoa_SodaCan_LiftPlus: SodaCan_Kvass
 {
 	scope = 2;

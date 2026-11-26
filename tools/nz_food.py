@@ -82,6 +82,7 @@ class Item:
     art: dict
     opened: str | None = None
     usages: list[str] | None = None
+    model: str | None = None
 
     @property
     def paa(self) -> str:
@@ -107,6 +108,10 @@ ITEMS = [
          SODA + "Raspberry soda from Foxton.", (20, 16),
          dict(brand="Foxton Fizz", sub="RASPBERRY", tag="Est. 1918", bg=(196, 22, 60), bg2=(250, 160, 190),
               fg=(255, 255, 255), motif="windmill")),
+    Item("v_energy", "Aotearoa_SodaCan_V", "SodaCan_Cola", "soda", "V Energy",
+         "A 500 ml can of V, the original Kiwi guarana energy drink. Sweet, fizzy and full of caffeine.", (14, 10),
+         dict(brand="V", sub="ENERGY DRINK", tag="with guarana", bg=(88, 182, 34), bg2=(16, 46, 14),
+              fg=(255, 255, 255), motif="v"), model="v_can"),
     Item("liftplus", "Aotearoa_SodaCan_LiftPlus", "SodaCan_Kvass", "soda", "Lift Plus",
          SODA + "Lemon energy drink with guarana.", (20, 16),
          dict(brand="Lift Plus", sub="ENERGY", tag="with guarana", bg=(250, 222, 40), bg2=(20, 70, 160),
@@ -241,7 +246,7 @@ SPAWN = {
                ["bluebird_salted", "bluebird_vinegar", "bluebird_chicken", "munchos", "toffeepops", "shrewsburys",
                 "chocthins", "pineapplelumps", "whittakers_milk", "whittakers_dark", "whittakers_peanut"]),
     "fizzy": (["Town", "Village", "Industrial", "School", "Office"], ["lp", "freshup", "foxton_cream", "foxton_rasp",
-                                                                       "liftplus"]),
+                                                                       "liftplus", "v_energy"]),
     "dairy": (["Farm", "Village"], ["anchor_milk", "airborne_honey"]),
     "fish": (["Coast", "Town", "Village"], ["sealord_tuna", "pams_sardines"]),
     "pantry": (["Town", "Village", "Farm", "Hunting"], ["risotto", "weetbix", "marmite", "watties_beans",
@@ -257,7 +262,23 @@ for _usages, _keys in SPAWN.values():
             _item.usages = _usages
 for _item in ITEMS:
     _item.loot = LOOT.get(_item.key, _item.loot)
+# Items with their own model (tools/drink_models.py). The config uses the model once its .p3d is in
+# structures/; until then the item is a retextured vanilla can like the others.
+MODELS = {
+    "v_can": dict(p3d="structures/food/v_can/v_can.p3d", texture="maps\\aotearoa\\data\\food\\models\\v_can_co.paa",
+                  rvmat="maps\\aotearoa\\data\\food\\models\\v_can.rvmat", selection="camo",
+                  extra=["varQuantityInit = 500;", "varQuantityMax = 500;", "weight = 30;"]),
+}
 ITEM_CLASSES = {i.cls for i in ITEMS} | {i.cls + "_Opened" for i in ITEMS if i.opened}
+
+
+def model_ready(item: Item) -> bool:
+    return bool(item.model) and (MAP_DIR / MODELS[item.model]["p3d"]).exists()
+
+
+def item_texture(item: Item) -> str:
+    """The texture path the config gives the item: its own model's once that exists, else its label."""
+    return MODELS[item.model]["texture"] if model_ready(item) else TEXTURE.format(item.paa)
 
 
 def replaced() -> list[str]:
@@ -419,6 +440,17 @@ def m_bolt(d, box, a, rng):
     d.polygon([(x0 + px * w, y0 + py * h) for px, py in pts], fill=a["bg2"], outline=(255, 255, 255))
 
 
+def m_v(d, box, a, rng):
+    """Energy streaks rising across the lower half, in lime."""
+    x0, y0, x1, y1 = box
+    w, h = x1 - x0, y1 - y0
+    for k in range(5):
+        x = x0 + (0.05 + 0.2 * k) * w
+        wid = (0.05 + 0.03 * (k % 2)) * w
+        d.polygon([(x, y1), (x + wid, y1), (x + wid + 0.3 * w, y0), (x + 0.3 * w, y0)],
+                  fill=(186, 240, 60) if k % 2 == 0 else (130, 210, 40))
+
+
 def m_lp(d, box, a, rng):
     x0, y0, x1, y1 = box
     w = x1 - x0
@@ -567,7 +599,7 @@ def m_windmill(d, box, a, rng):
 
 
 MOTIFS = {"windmill": m_windmill, "bacon": m_bacon, "dog": m_paws, "cat": m_paws, "lumps": m_lumps, "fish": m_fish, "chips": m_chips, "tomatoes": m_tomatoes, "toffeepops": m_biscuits, "shrewsburys": m_biscuits,
-          "chocthins": m_biscuits, "bubbles": m_bubbles, "apples": m_apples, "bolt": m_bolt, "lp": m_lp,
+          "chocthins": m_biscuits, "bubbles": m_bubbles, "apples": m_apples, "bolt": m_bolt, "v": m_v, "lp": m_lp,
           "beans": m_beans, "spaghetti": m_spaghetti, "peaches": m_peaches, "palm": m_palm, "marmite": m_marmite}
 
 
@@ -1002,11 +1034,18 @@ def config_text() -> str:
 
     def block(cls, base, item, display=True):
         lines = [f"class {cls}: {base}", "{", "\tscope = 2;"]
-        if item.layout in SELECTIONS:
+        own = MODELS[item.model] if model_ready(item) else None
+        if own:
+            lines += [f'\tmodel = "\\maps\\aotearoa\\{own["p3d"].replace("/", chr(92))}";',
+                      f'\thiddenSelections[] = {{"{own["selection"]}"}};',
+                      f'\thiddenSelectionsMaterials[] = {{"{own["rvmat"]}"}};']
+        elif item.layout in SELECTIONS:
             lines += [f'\thiddenSelections[] = {{"{SELECTIONS[item.layout]}"}};']
         if display:
             lines += [f'\tdisplayName = "{item.name}";', f'\tdescriptionShort = "{item.desc}";']
-        lines += [f'\thiddenSelectionsTextures[] = {{"{TEXTURE.format(item.paa)}"}};', "};"]
+        if item.model:
+            lines += ["\t" + x for x in MODELS[item.model]["extra"]]
+        lines += [f'\thiddenSelectionsTextures[] = {{"{item_texture(item)}"}};', "};"]
         return lines
 
     for item in ITEMS:
@@ -1151,6 +1190,11 @@ def verify() -> list[str]:
         face = have[int(y0 * h):int(y1 * h), int(x0 * w):int(x1 * w), :3]
         if face.size == 0 or face.std() < 15:
             problems.append(f"{item.name}: the front of the pack is blank")
+    import drink_models
+    p = drink_models.TEX_DIR / f"{drink_models.NAME}.png"
+    if not p.exists() or np.abs(np.asarray(Image.open(p).convert("RGB")).astype(int)
+                                - np.asarray(drink_models.texture().convert("RGB")).astype(int)).max() > 2:
+        problems.append(f"{p.relative_to(MAP_DIR)} is out of date (run python tools/drink_models.py)")
     for path, want in ((MAP_DIR / "config" / "food.hpp", config_text()),
                        (MAP_DIR / "scripts" / "4_World" / "AotearoaFood.c", script_text())):
         if not path.exists() or path.read_text(encoding="utf-8").replace("\r\n", "\n") != want:

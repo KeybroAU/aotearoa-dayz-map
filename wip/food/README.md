@@ -16,6 +16,7 @@ Tins whose UV layout isn't published (the Whittaker's bars and the honey jar) re
 | Fresh Up Apple | `freshup` | `AotearoaWIP_SodaCan_FreshUp` | 313 x 492 (313:492) |
 | Foxton Fizz Creaming Soda | `foxton_cream` | `AotearoaWIP_SodaCan_FoxtonCream` | 313 x 492 (313:492) |
 | Foxton Fizz Raspberry | `foxton_rasp` | `AotearoaWIP_SodaCan_FoxtonRaspberry` | 313 x 492 (313:492) |
+| V Energy | `v_energy` | `AotearoaWIP_SodaCan_V` | 313 x 492 (313:492) |
 | Lift Plus | `liftplus` | `AotearoaWIP_SodaCan_LiftPlus` | 313 x 492 (313:492) |
 | Bluebird Ready Salted | `bluebird_salted` | `AotearoaWIP_Chips_BluebirdReadySalted` | 1024 x 1024 (1:1) |
 | Bluebird Salt & Vinegar | `bluebird_vinegar` | `AotearoaWIP_Chips_BluebirdSaltVinegar` | 1024 x 1024 (1:1) |
