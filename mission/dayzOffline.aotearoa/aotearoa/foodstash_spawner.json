@@ -1,0 +1,1204 @@
+{
+ "Objects": [
+  {
+   "name": "Land_wreck_truck01_aban1_green_DE",
+   "pos": [
+    15112.144,
+    3.108,
+    23504.464
+   ],
+   "ypr": [
+    145.854,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wreck_Trailer_Closed_DE",
+   "pos": [
+    15102.71,
+    3.185,
+    23513.409
+   ],
+   "ypr": [
+    184.984,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Wreck_Decal_Small1_DE",
+   "pos": [
+    15106.848,
+    3.15,
+    23510.227
+   ],
+   "ypr": [
+    290.097,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    15093.162,
+    3.308,
+    23515.438
+   ],
+   "ypr": [
+    30.617,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small",
+   "pos": [
+    15093.519,
+    3.296,
+    23519.843
+   ],
+   "ypr": [
+    214.304,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallets1",
+   "pos": [
+    15090.157,
+    3.337,
+    23520.436
+   ],
+   "ypr": [
+    264.9,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallet",
+   "pos": [
+    15088.264,
+    3.374,
+    23520.033
+   ],
+   "ypr": [
+    137.705,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small_Stack",
+   "pos": [
+    15083.528,
+    3.415,
+    23515.489
+   ],
+   "ypr": [
+    231.019,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_BoxWooden",
+   "pos": [
+    15081.265,
+    3.451,
+    23517.513
+   ],
+   "ypr": [
+    256.611,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    15079.063,
+    3.475,
+    23521.224
+   ],
+   "ypr": [
+    141.379,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_wreck_truck01_aban1_green_DE",
+   "pos": [
+    4365.36,
+    88.611,
+    3845.082
+   ],
+   "ypr": [
+    80.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wreck_Trailer_Closed_DE",
+   "pos": [
+    4353.34,
+    88.038,
+    3840.132
+   ],
+   "ypr": [
+    116.593,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Wreck_Decal_Small1_DE",
+   "pos": [
+    4357.936,
+    88.222,
+    3842.607
+   ],
+   "ypr": [
+    221.68,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    4346.099,
+    87.396,
+    3834.645
+   ],
+   "ypr": [
+    42.946,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small",
+   "pos": [
+    4345.719,
+    87.12,
+    3830.86
+   ],
+   "ypr": [
+    277.797,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallets1",
+   "pos": [
+    4344.67,
+    87.008,
+    3829.457
+   ],
+   "ypr": [
+    86.977,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallet",
+   "pos": [
+    4341.622,
+    86.924,
+    3828.54
+   ],
+   "ypr": [
+    50.386,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small_Stack",
+   "pos": [
+    4343.396,
+    86.978,
+    3823.571
+   ],
+   "ypr": [
+    351.915,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_BoxWooden",
+   "pos": [
+    4338.391,
+    86.761,
+    3823.906
+   ],
+   "ypr": [
+    85.148,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    4340.223,
+    86.92,
+    3820.206
+   ],
+   "ypr": [
+    6.2,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_wreck_truck01_aban1_green_DE",
+   "pos": [
+    18410.804,
+    6.414,
+    12214.452
+   ],
+   "ypr": [
+    298.248,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wreck_Trailer_Closed_DE",
+   "pos": [
+    18423.309,
+    6.967,
+    12210.898
+   ],
+   "ypr": [
+    325.59,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Wreck_Decal_Small1_DE",
+   "pos": [
+    18418.167,
+    6.734,
+    12211.8
+   ],
+   "ypr": [
+    306.92,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    18432.513,
+    7.177,
+    12207.742
+   ],
+   "ypr": [
+    91.398,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small",
+   "pos": [
+    18435.068,
+    7.443,
+    12213.517
+   ],
+   "ypr": [
+    16.914,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallets1",
+   "pos": [
+    18436.475,
+    7.608,
+    12215.997
+   ],
+   "ypr": [
+    119.792,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallet",
+   "pos": [
+    18440.198,
+    7.768,
+    12211.296
+   ],
+   "ypr": [
+    280.971,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small_Stack",
+   "pos": [
+    18441.545,
+    7.866,
+    12214.96
+   ],
+   "ypr": [
+    174.795,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_BoxWooden",
+   "pos": [
+    18444.417,
+    8.006,
+    12212.297
+   ],
+   "ypr": [
+    302.208,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    18447.827,
+    8.194,
+    12214.464
+   ],
+   "ypr": [
+    99.892,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_wreck_truck01_aban1_green_DE",
+   "pos": [
+    24242.174,
+    4.367,
+    18154.948
+   ],
+   "ypr": [
+    209.535,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wreck_Trailer_Closed_DE",
+   "pos": [
+    24246.008,
+    4.578,
+    18167.37
+   ],
+   "ypr": [
+    238.689,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Wreck_Decal_Small1_DE",
+   "pos": [
+    24244.991,
+    4.491,
+    18162.25
+   ],
+   "ypr": [
+    270.247,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    24245.227,
+    4.763,
+    18176.986
+   ],
+   "ypr": [
+    168.027,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small",
+   "pos": [
+    24249.357,
+    4.793,
+    18179.052
+   ],
+   "ypr": [
+    202.565,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallets1",
+   "pos": [
+    24247.862,
+    4.843,
+    18181.199
+   ],
+   "ypr": [
+    184.1,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallet",
+   "pos": [
+    24242.417,
+    4.878,
+    18182.738
+   ],
+   "ypr": [
+    126.631,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small_Stack",
+   "pos": [
+    24243.435,
+    4.968,
+    18185.805
+   ],
+   "ypr": [
+    299.159,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_BoxWooden",
+   "pos": [
+    24241.875,
+    5.133,
+    18188.922
+   ],
+   "ypr": [
+    30.039,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    24239.553,
+    5.247,
+    18190.325
+   ],
+   "ypr": [
+    130.525,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_wreck_truck01_aban1_green_DE",
+   "pos": [
+    10982.982,
+    4.181,
+    6872.01
+   ],
+   "ypr": [
+    259.964,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wreck_Trailer_Closed_DE",
+   "pos": [
+    10995.0,
+    4.347,
+    6876.967
+   ],
+   "ypr": [
+    294.582,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Wreck_Decal_Small1_DE",
+   "pos": [
+    10990.405,
+    4.277,
+    6874.489
+   ],
+   "ypr": [
+    100.728,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    11001.719,
+    4.466,
+    6881.755
+   ],
+   "ypr": [
+    196.935,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small",
+   "pos": [
+    11005.673,
+    4.471,
+    6881.15
+   ],
+   "ypr": [
+    214.076,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallets1",
+   "pos": [
+    11007.964,
+    4.535,
+    6884.285
+   ],
+   "ypr": [
+    184.964,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallet",
+   "pos": [
+    11008.704,
+    4.576,
+    6887.285
+   ],
+   "ypr": [
+    118.605,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small_Stack",
+   "pos": [
+    11012.306,
+    4.57,
+    6886.81
+   ],
+   "ypr": [
+    70.653,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_BoxWooden",
+   "pos": [
+    11011.739,
+    4.629,
+    6890.394
+   ],
+   "ypr": [
+    31.984,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    11011.486,
+    4.657,
+    6893.088
+   ],
+   "ypr": [
+    52.345,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_wreck_truck01_aban1_green_DE",
+   "pos": [
+    18762.207,
+    2.458,
+    19289.101
+   ],
+   "ypr": [
+    205.704,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wreck_Trailer_Closed_DE",
+   "pos": [
+    18765.203,
+    2.57,
+    19301.751
+   ],
+   "ypr": [
+    239.022,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Wreck_Decal_Small1_DE",
+   "pos": [
+    18764.53,
+    2.524,
+    19296.574
+   ],
+   "ypr": [
+    204.202,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    18759.051,
+    2.67,
+    19310.635
+   ],
+   "ypr": [
+    241.879,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small",
+   "pos": [
+    18759.271,
+    2.722,
+    19312.788
+   ],
+   "ypr": [
+    251.063,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallets1",
+   "pos": [
+    18767.499,
+    2.712,
+    19316.696
+   ],
+   "ypr": [
+    327.534,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallet",
+   "pos": [
+    18764.306,
+    2.743,
+    19318.863
+   ],
+   "ypr": [
+    2.609,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small_Stack",
+   "pos": [
+    18765.404,
+    2.753,
+    19320.988
+   ],
+   "ypr": [
+    84.547,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_BoxWooden",
+   "pos": [
+    18758.118,
+    2.791,
+    19322.569
+   ],
+   "ypr": [
+    95.012,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    18762.457,
+    2.795,
+    19324.74
+   ],
+   "ypr": [
+    30.909,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_wreck_truck01_aban1_green_DE",
+   "pos": [
+    13557.453,
+    1.711,
+    12843.26
+   ],
+   "ypr": [
+    298.528,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wreck_Trailer_Closed_DE",
+   "pos": [
+    13569.94,
+    1.877,
+    12839.644
+   ],
+   "ypr": [
+    332.298,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Wreck_Decal_Small1_DE",
+   "pos": [
+    13564.803,
+    1.81,
+    12840.571
+   ],
+   "ypr": [
+    256.813,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    13579.526,
+    2.004,
+    12842.054
+   ],
+   "ypr": [
+    224.835,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small",
+   "pos": [
+    13580.069,
+    1.997,
+    12845.642
+   ],
+   "ypr": [
+    321.856,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallets1",
+   "pos": [
+    13585.082,
+    2.095,
+    12838.516
+   ],
+   "ypr": [
+    278.415,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallet",
+   "pos": [
+    13585.974,
+    2.091,
+    12844.126
+   ],
+   "ypr": [
+    79.385,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small_Stack",
+   "pos": [
+    13589.453,
+    2.168,
+    12839.787
+   ],
+   "ypr": [
+    92.989,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_BoxWooden",
+   "pos": [
+    13590.736,
+    2.168,
+    12844.388
+   ],
+   "ypr": [
+    214.156,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    13594.084,
+    2.171,
+    12847.158
+   ],
+   "ypr": [
+    170.634,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_wreck_truck01_aban1_green_DE",
+   "pos": [
+    6793.714,
+    1.538,
+    7652.294
+   ],
+   "ypr": [
+    306.129,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "Land_Wreck_Trailer_Closed_DE",
+   "pos": [
+    6805.613,
+    1.487,
+    7647.059
+   ],
+   "ypr": [
+    349.532,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Wreck_Decal_Small1_DE",
+   "pos": [
+    6800.643,
+    1.509,
+    7648.657
+   ],
+   "ypr": [
+    336.987,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    6815.451,
+    1.446,
+    7645.894
+   ],
+   "ypr": [
+    214.965,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small",
+   "pos": [
+    6816.616,
+    1.435,
+    7649.601
+   ],
+   "ypr": [
+    301.757,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallets1",
+   "pos": [
+    6819.126,
+    1.432,
+    7641.925
+   ],
+   "ypr": [
+    308.742,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_Pallet",
+   "pos": [
+    6822.341,
+    1.401,
+    7651.638
+   ],
+   "ypr": [
+    242.922,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Crates_Small_Stack",
+   "pos": [
+    6823.808,
+    1.404,
+    7647.792
+   ],
+   "ypr": [
+    90.588,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_BoxWooden",
+   "pos": [
+    6826.197,
+    1.39,
+    7647.729
+   ],
+   "ypr": [
+    271.245,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  },
+  {
+   "name": "StaticObj_Misc_WoodenCrate",
+   "pos": [
+    6829.065,
+    1.141,
+    7649.779
+   ],
+   "ypr": [
+    357.504,
+    0.0,
+    0.0
+   ],
+   "scale": 1.0,
+   "enableCEPersistency": 0
+  }
+ ]
+}

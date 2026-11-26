@@ -387,6 +387,16 @@ The mod retextures vanilla cans, tins and snack packets as Kiwi brands, and the 
 
 The labels are drawn by `tools/nz_food.py`, which also writes `preview/nz_food_showcase.png` (the Workshop card's shop shelf), `config/food.hpp` and `scripts/4_World/AotearoaFood.c`. To add or rename an item, or change its loot, edit `ITEMS` there and run `python tools/nz_food.py`, then rebuild the mission. The artwork is original but the names are real brands; rename them in `ITEMS` if a trademark holder objects.
 
+Where it turns up follows New Zealand habits (`SPAWN` in `nz_food.py`): snacks and fizzy in shops, schools and offices, milk powder and honey on farms, tinned fish on the coast, pantry tins in houses and huts, pet food on farms. There are also food stashes, written by `tools/food_stashes.py`:
+
+| Stash | Where | Holds |
+|---|---|---|
+| Countdown truck crash (8) | State highways in the open country: a jack-knifed truck and trailer with spilled crates | 6 to 10 of anything |
+| Dairy stock room (20) | Behind every dairy (corner shop) | 2 to 4 snacks, fizzy, milk powder or honey |
+| Bach pantry (15) | Beside the baches | 2 to 4 pantry tins, tinned fish, milk powder, honey or fizzy |
+
+The server's `init.c` stocks them at start-up and every 45 minutes tops up any stash that has fallen below its minimum, so they refill slowly and never pile up. The food is extra to the central economy's counts. Delete `aotearoa/food_stashes.json` from the server mission to turn them off.
+
 `wip/food/` is a work-in-progress copy of every item, for trying real label artwork without touching the live items. `python tools/wip_food.py` builds it, and `python tools/pack_mod.py --wip` packs it as a separate test mod, `@AotearoaFoodWIP`, with `AotearoaWIP_*` classes that aren't in the loot. Drop a label image named after the item's key into `wip/food/labels/` and it is fitted onto every front of that pack. Those images are ignored by git, so brand artwork stays out of this public repo. See `wip/food/README.md` for the keys and label shapes.
 
 `mission/serverDZ.cfg` is a server config template pointing at the mission.
@@ -606,3 +616,4 @@ python tools/check_map.py
 | `labelplace.py` | Keeps map labels from overlapping (player map, map item, towns preview) |
 | `economy.py` | Loot changes (`NZ_TYPES`), tier rules, animal herds (`HERDS`), weather |
 | `nz_food.py` | New Zealand food and drink: names, descriptions, label artwork and loot (`ITEMS`) |
+| `food_stashes.py` | Countdown truck crashes, dairy stock rooms and bach pantries (food stashes restocked by `init.c`) |

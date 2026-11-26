@@ -2,6 +2,18 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
+## Unreleased
+
+### Added
+
+- Food stashes: eight crashed Countdown trucks on the state highways, the stock room behind every dairy and the pantry at each bach, holding New Zealand food and topped up every 45 minutes (`tools/food_stashes.py`, run by the server's `init.c`)
+- Label templates for the work-in-progress food (`wip/food/templates/`): each pack's label at twice its size, with the hidden areas and a safe area marked, to draw real label artwork on
+
+### Changed
+
+- Food labels styled closer to the real packs: L&P's "World Famous in New Zealand" lozenge, Foxton's windmill, "Kiwi kids are Weet-Bix kids", Whittaker's gold rules and dog and cat paws on the pet food
+- New Zealand food spawns where you'd expect it: snacks and fizzy in shops, schools and offices, milk powder and honey on farms, tinned fish on the coast, pet food on farms
+
 ## 0.6.6 - 2026-11-26
 
 ### Added

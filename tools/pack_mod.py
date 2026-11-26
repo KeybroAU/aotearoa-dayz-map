@@ -345,6 +345,8 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[st
             (dest / spawner).unlink(missing_ok=True)
             warnings.append(f"No {model}, so the {what} are left out. Make it from docs/models/ "
                             "(docs/CUSTOM_MODELS.md, item 2) and pack again.")
+    if (dest / "aotearoa" / "foodstash_spawner.json").exists():
+        spawner_files.append("aotearoa/foodstash_spawner.json")
     if "traders" in mods:
         spawner_files.append("aotearoa/traders_spawner.json")
     else:

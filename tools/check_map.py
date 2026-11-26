@@ -138,6 +138,14 @@ def food() -> None:
     wip = set(re.findall(r"^\tclass (AotearoaWIP_\w+):", wip_cfg.read_text(encoding="utf-8"), re.M)) if wip_cfg.exists() else set()
     check(wip == {c.replace("Aotearoa_", "AotearoaWIP_", 1) for c in nz_food.ITEM_CLASSES},
           "the work-in-progress food copy (wip/food/) matches the food items; run tools/wip_food.py")
+    path = MISSION / "aotearoa" / "food_stashes.json"
+    stashes = json.loads(path.read_text(encoding="utf-8"))["stashes"] if path.exists() else []
+    bad = [s["label"] for s in stashes if not s["items"] or not set(s["items"]) <= nz_food.ITEM_CLASSES
+           or not 0 < s["minItems"] <= s["maxItems"]]
+    check(bool(stashes) and not bad, f"{len(stashes)} food stashes hold New Zealand food"
+          + (f" (bad: {bad[:3]})" if bad else ""))
+    check("aotearoa/food_stashes.json" in (MISSION / "init.c").read_text(encoding="utf-8"),
+          "init.c restocks the food stashes")
 
 
 def main() -> None:

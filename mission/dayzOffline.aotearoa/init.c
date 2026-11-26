@@ -23,8 +23,85 @@ void main()
 	// GetCEApi().ExportClusterData();
 }
 
+// Food stashes (tools/food_stashes.py): Countdown truck crashes, dairy stock rooms and bach
+// pantries. Each is topped up when it runs low; delete aotearoa/food_stashes.json to turn them off.
+class AotearoaStash
+{
+	string kind;
+	string label;
+	float x;
+	float z;
+	float r;
+	int minItems;
+	int maxItems;
+	ref array<string> items;
+}
+
+class AotearoaStashFile
+{
+	int restockMinutes;
+	ref array<ref AotearoaStash> stashes;
+}
+
+class AotearoaStashes
+{
+	ref AotearoaStashFile m_File;
+
+	void AotearoaStashes()
+	{
+		string path = "$mission:aotearoa/food_stashes.json";
+		if ( !FileExist( path ) )
+			return;
+		JsonFileLoader<AotearoaStashFile>.JsonLoadFile( path, m_File );
+		if ( !m_File || !m_File.stashes )
+			return;
+		Restock();
+		int minutes = m_File.restockMinutes;
+		if ( minutes < 5 )
+			minutes = 5;
+		GetGame().GetCallQueue( CALL_CATEGORY_GAMEPLAY ).CallLater( Restock, minutes * 60000, true );
+	}
+
+	void Restock()
+	{
+		foreach ( AotearoaStash s : m_File.stashes )
+		{
+			if ( !s.items || s.items.Count() == 0 )
+				continue;
+			vector centre = Vector( s.x, GetGame().SurfaceY( s.x, s.z ), s.z );
+			array<Object> near = new array<Object>;
+			GetGame().GetObjectsAtPosition( centre, s.r + 2, near, null );
+			int have = 0;
+			foreach ( Object o : near )
+			{
+				if ( s.items.Find( o.GetType() ) != -1 )
+					have++;
+			}
+			if ( have >= s.minItems )
+				continue;
+			int want = Math.RandomIntInclusive( s.minItems, s.maxItems ) - have;
+			for ( int i = 0; i < want; i++ )
+			{
+				float a = Math.RandomFloat( 0, Math.PI2 );
+				float d = Math.RandomFloat( 0, s.r );
+				float px = s.x + Math.Cos( a ) * d;
+				float pz = s.z + Math.Sin( a ) * d;
+				GetGame().CreateObjectEx( s.items.GetRandomElement(), Vector( px, GetGame().SurfaceY( px, pz ), pz ), ECE_PLACE_ON_SURFACE );
+			}
+		}
+	}
+}
+
 class CustomMission: MissionServer
 {
+	ref AotearoaStashes m_FoodStashes;
+
+	override void OnInit()
+	{
+		super.OnInit();
+		m_FoodStashes = new AotearoaStashes();
+	}
+
 	void SetRandomHealth(EntityAI itemEnt)
 	{
 		if ( itemEnt )

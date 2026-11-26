@@ -50,6 +50,7 @@ Keep the logs: the server's `profiles\` folder and the client's `%localappdata%\
 - [ ] Civilian towns don't have military loot in every house (check Palmerston North, Queenstown and Rakaia)
 - [ ] Gumboots, raincoats, wool jumpers and beanies turn up in houses
 - [ ] Food shelves hold the New Zealand food and drink, and no vanilla soda cans, Chips, Crackers, Zagorky bars, Crunchin cereal or the replaced tins (search about ten shops and houses)
+- [ ] Food stashes: a Countdown truck crash on a state highway has New Zealand food around the trailer, the yard behind a dairy and the ground beside a bach have a few items, and a looted stash refills within about 45 minutes (coordinates in `mission/dayzOffline.aotearoa/aotearoa/food_stashes.json`). The server log has no script errors from `AotearoaStashes`
 
 ## New Zealand food and drink
 
