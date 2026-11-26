@@ -510,7 +510,11 @@ First it runs `python tools/nz_food.py --verify`, which stops the release if a f
 
 ### Old releases and rolling back
 
-Releases are never replaced or deleted. `release.py` refuses a version whose tag exists, and the release workflow refuses to publish over an existing release, so every version stays downloadable from the releases page and as a git tag. `python tools/backup_releases.py <folder>` also copies every release's files, notes and checksums to a folder outside GitHub. It skips files it already has, so run it after each release.
+Releases are never replaced or deleted. `release.py` refuses a version whose tag exists, and the release workflow refuses to publish over an existing release, so every version stays downloadable from the releases page and as a git tag. There are also backup copies:
+
+- **`release-archive`:** after each release, and weekly (`.github/workflows/backup.yml`, which can also be run from the Actions tab), `tools/archive_releases.sh` copies every version's files into the `release-archive` pre-release. If a version's own release is deleted or edited, its files are still there.
+- **A second repo (optional):** create a repo you own with at least one commit (a README is enough), set the repo variable `BACKUP_REPO` to `owner/name` (Settings > Secrets and variables > Actions > Variables), and add a secret `BACKUP_TOKEN` holding a fine-grained token with Contents read and write on that repo. Every release is then mirrored there too.
+- **A local folder:** `python tools/backup_releases.py <folder>` copies every release's files, notes and checksums to a folder outside GitHub. It skips files it already has, so run it after each release.
 
 To roll back, either give servers an older release's files, or run `python tools/release.py --revert-to v0.6.2 --push`. That puts every file back as it was in v0.6.2 (except the release tooling and version numbers) and publishes it as a new version, so the version number keeps going up and nothing is lost.
 

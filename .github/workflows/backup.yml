@@ -1,0 +1,25 @@
+name: Back up releases
+
+# Copies every release's files into the release-archive release (and, if the BACKUP_REPO variable
+# and BACKUP_TOKEN secret are set, mirrors them to that repo). The release workflow runs the same
+# step after each release; this catches anything missed and can be run by hand from the Actions tab.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Back up every release into release-archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BACKUP_REPO: ${{ vars.BACKUP_REPO }}
+          BACKUP_TOKEN: ${{ secrets.BACKUP_TOKEN }}
+        run: bash tools/archive_releases.sh

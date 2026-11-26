@@ -13,6 +13,8 @@ on:
 
 jobs:
   notify:
+    # The release-archive release only holds backup copies.
+    if: github.event_name != 'release' || github.event.release.tag_name != 'release-archive'
     runs-on: ubuntu-latest
     steps:
       - name: Post to Discord

@@ -55,3 +55,9 @@ jobs:
             release/*.zip
             release/*.jpg
             release/SHA256SUMS
+      - name: Back up every release into release-archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BACKUP_REPO: ${{ vars.BACKUP_REPO }}
+          BACKUP_TOKEN: ${{ secrets.BACKUP_TOKEN }}
+        run: bash tools/archive_releases.sh
