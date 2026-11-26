@@ -203,12 +203,23 @@ Change a shape or a label in `tools/drink_models.py` and run it again; `nz_food.
 
 ## Building models from the OBJ files
 
-`tools/make_models.py` writes blockout models for the bach, DOC hut, woolshed and corner dairy. Each is a complete, enterable building with open doorways (no doors, so it needs no `model.cfg` or memory points), textured with tiling textures it also generates in `data/models/`. They are simple, a few hundred triangles each. You can use them as they are to get New Zealand buildings in game, or as a correctly sized base to model over.
+`tools/make_models.py` writes blockout models for the bach, DOC hut, woolshed and corner dairy. Each is a complete, enterable building with open doorways (no doors, so it needs no `model.cfg` or memory points), textured with tiling textures it also generates in `data/models/`. They have 800 to 1,400 triangles each, with trim round the windows and doors, and furniture and fittings inside:
+
+| Building | Detail |
+|---|---|
+| Bach | Corner boards, fascias, deck rail with balusters, brick chimney, kitchen bench, table, couch, bed, wardrobe, and the long drop out the back |
+| DOC hut | Hut sign over the door, intentions book box, veranda bench, woodpile, mattresses on the six bunks, table with bench seats, gutter and downpipe to the tank |
+| Woolshed | Five shearing stands (pole, overhead gear, drop tube, catching pen board), slatted wool table, sorting bins, wool bales by the press, railed sheep yard |
+| Dairy | Stock on every shelf, a cold drinks fridge, the till, an ice cream sign board on the footpath, bench seat, letterbox, back room with a table and cartons |
+
+You can use them as they are to get New Zealand buildings in game, or as a correctly sized base to model over.
+
+**Loot points:** `make_models.py` also writes `mission/dayzOffline.aotearoa/mapgroupproto.aotearoa.xml`, a loot group for each building: floor points in every room, shelf points on benches, bunks, tables and shelves, and a few outside (the bach's deck and long drop, the hut's veranda, the woolshed's yard). The points are in the model's own coordinates, so the Geometry LOD needs the named property `autocenter` = `0`. `pack.bat` adds a building's group to the server's `mapgroupproto.xml` as soon as its `.p3d` is in `structures\`. Change the points in `LOOT` in `tools/make_models.py`; `check_map.py` checks they all sit inside their building.
 
 For each building:
 
 1. **LOD 0 (resolution):** import `docs/models/<name>.obj`. The groups (walls, roof, floor, deck and so on) become named selections. Faces carry their texture from the `.mtl` file. If Object Builder drops the textures, set them from the group names: `maps\aotearoa\data\models\<texture>_co.paa`.
-2. **Geometry:** import `<name>_geometry.obj` into a new Geometry LOD. Each group is one closed convex box. Name them `Component01` and up, set the mass (10,000 for a house), and add the named property `class` = `house`.
+2. **Geometry:** import `<name>_geometry.obj` into a new Geometry LOD. Each group is one closed convex box. Name them `Component01` and up, set the mass (10,000 for a house), and add the named properties `class` = `house` and `autocenter` = `0` (the loot points rely on it).
 3. **Fire Geometry** and **View Geometry:** copies of the Geometry LOD.
 4. **Roadway:** import `<name>_roadway.obj`, which holds the floors, deck, veranda, steps, bunks and ramp.
 5. **Land Contact:** one point at each corner of the footprint at y = 0.
@@ -229,5 +240,5 @@ Leave Māori carvings, wharenui (meeting houses) and pou whenua out of the map u
 - [ ] Opens and works in Buldozer (doors, walking on floors, can't see through walls)
 - [ ] Added to a Terrain Builder library
 - [ ] The stand-in name replaced in `tools/` as described above, and the map regenerated
-- [ ] Loot points added in the economy editor
+- [ ] Loot points added: the four generated buildings have theirs already (`mapgroupproto.aotearoa.xml`); for others, use the economy editor
 - [ ] `python tools/check_models.py models.txt` (with a fresh listing) reports it as found

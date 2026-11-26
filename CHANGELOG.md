@@ -10,7 +10,12 @@ Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/m
 - Dynamic events (`tools/dynamic_events.py`), picked at random each restart: 2 Air New Zealand cargo plane crashes (from 10 sites), a stranded Interislander ferry with its lifeboat and freight on the beach (from 9), and 4 DOC hut stashes (from 16), each with its own loot
 - L&P 1.5 L (`Aotearoa_LP_Bottle`), a 1.5 litre bottle in shops, schools, offices and the stashes
 - Custom models, ready to build in Object Builder like the V can: a Wattie's 420 g tin for the three Wattie's flavours, the L&P 1.5 L bottle, and a Whittaker's 250 g block for the three Whittaker's bars (docs/CUSTOM_MODELS.md item 12)
+- The bach, DOC hut, woolshed and dairy models are detailed and furnished (window and door trim, chimney, long drop, bunks with mattresses, shearing stands, wool bales, stocked shelves, a drinks fridge and more), and each has loot points (`mission/dayzOffline.aotearoa/mapgroupproto.aotearoa.xml`), which `pack.bat` adds to the server once the building's model is built
 - A weekly Discord digest (`.github/workflows/discord-weekly.yml`, Sunday 9 am NZ time): the week's releases, their main changes and what's coming next
+
+### Fixed
+
+- The bach's roof sat 1 m too far forward, leaving the back of the house open to the sky, and the DOC hut's walls poked through its roof
 
 ### Changed
 

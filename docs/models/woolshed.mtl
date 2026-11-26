@@ -1,3 +1,6 @@
+newmtl aotearoa_burlap
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_burlap.png
 newmtl aotearoa_concrete
 Kd 1 1 1
 map_Kd ../../data/models/aotearoa_concrete.png

@@ -79,7 +79,7 @@ WIP_PREFIX = "aotearoa_food_wip"
 WIP_MOD = "@AotearoaFoodWIP"
 STEAM_DIRS = [Path(r"C:\Program Files (x86)\Steam\steamapps\common"), Path(r"C:\Program Files\Steam\steamapps\common")]
 SETPIECES = "setpieces_spawner.json"
-MERGED_AWAY = ["cfggameplay.worldsdata.json", "cfgeconomycore.aotearoa.xml"]
+MERGED_AWAY = ["cfggameplay.worldsdata.json", "cfgeconomycore.aotearoa.xml", "mapgroupproto.aotearoa.xml"]
 # Vanilla mission files that hold Chernarus positions. Bohemia's custom terrain guide says to replace
 # them: the clusters (fruit trees, mushrooms) come from ExportClusterData once the world is built,
 # and areaflags.map is painted for this map in the economy editor (or left out).
@@ -374,6 +374,7 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[st
         warnings.append("No cfggameplay.json in the vanilla mission; wrote one with only the Aotearoa settings.")
     gameplay.write_text(json.dumps(merge_dicts(data, extra), indent=4) + "\n", encoding="utf-8")
 
+    warnings += merge_mapgroupproto(gen, dest)
     core = dest / "cfgeconomycore.xml"
     block = re.sub(r"<!--.*?-->\s*", "", (gen / "cfgeconomycore.aotearoa.xml").read_text(encoding="utf-8"), flags=re.S)
     blocks = [("aotearoa_ce", block)]
@@ -395,6 +396,30 @@ def build_mission(dest: Path, vanilla: Path | None, spawners: bool, mods: set[st
         warnings.append("No cfgeconomycore.xml in the mission; the New Zealand loot changes won't load until you "
                         "add the aotearoa_ce block from mission/dayzOffline.aotearoa/cfgeconomycore.aotearoa.xml.")
     return warnings
+
+
+def merge_mapgroupproto(gen: Path, dest: Path) -> list[str]:
+    """Add each Aotearoa building's loot group to the server's mapgroupproto.xml once its model exists."""
+    src = gen / "mapgroupproto.aotearoa.xml"
+    target = dest / "mapgroupproto.xml"
+    if not src.exists():
+        return []
+    groups = re.findall(r'(    <group name="Land_Aotearoa_(\w+)".*?</group>)', src.read_text(encoding="utf-8"), flags=re.S)
+    import make_models
+
+    folder = {cls: name for name, cls in make_models.BUILDINGS.items()}
+    ready = [(g, cls) for g, cls in groups if (MAP_DIR / "structures" / folder[cls] / f"{folder[cls]}.p3d").exists()]
+    if not ready:
+        return []
+    if not target.exists() or "</prototype>" not in target.read_text(encoding="utf-8"):
+        return ["No mapgroupproto.xml with a </prototype> in the mission; add the groups in "
+                "mission/dayzOffline.aotearoa/mapgroupproto.aotearoa.xml by hand."]
+    text = target.read_text(encoding="utf-8")
+    for g, cls in ready:
+        if f'name="Land_Aotearoa_{cls}"' not in text:
+            text = text.replace("</prototype>", g + "\n</prototype>", 1)
+    target.write_text(text, encoding="utf-8")
+    return []
 
 
 def _xml(path: Path):

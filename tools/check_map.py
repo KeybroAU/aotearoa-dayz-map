@@ -310,6 +310,30 @@ def main() -> None:
     check(all((MAP_DIR / "data" / "signs" / f"{n}.rvmat").exists() for n in ("sign_town", "sign_post"))
           and (MAP_DIR / "docs" / "models" / "SIGNS_BRIEF.md").exists(), "sign materials and modeller brief")
     check('#include "config\\structures.hpp"' in cfg, "config.cpp includes config\\structures.hpp")
+    import make_models
+
+    proto = MISSION / "mapgroupproto.aotearoa.xml"
+    groups = {g.get("name"): g for g in ET.parse(proto).getroot().iter("group")} if proto.exists() else {}
+    bad = []
+    for name, cls in make_models.BUILDINGS.items():
+        g = groups.get(f"Land_Aotearoa_{cls}")
+        if g is None:
+            bad.append(f"{cls}: no group")
+            continue
+        v = np.array(make_models.MODELS[name]().verts)
+        lo, hi = v.min(0), v.max(0)
+        for pt in g.iter("point"):
+            x, y, z = map(float, pt.get("pos").split())
+            if not (lo[0] <= x <= hi[0] and lo[1] <= y <= hi[1] and lo[2] <= z <= hi[2]):
+                bad.append(f"{cls} point {x} {y} {z}")
+        bad += [f"{cls} usage {u.get('name')}" for u in g.iter("usage") if u.get("name") not in USAGES]
+        bad += [f"{cls} category {c.get('name')}" for c in g.iter("category")
+                if c.get("name") not in ("tools", "containers", "clothes", "food", "weapons", "books", "explosives")]
+        names = [c.get("name") for c in g.iter("container")]
+        if len(set(names)) != len(names):
+            bad.append(f"{cls}: two containers with one name")
+    check(not bad, f"loot points for the {len(make_models.BUILDINGS)} custom buildings sit inside them"
+          + (f" ({', '.join(bad[:4])})" if bad else ""))
     check(bool(signs) and all(o["name"] in classes for o in signs), f"{len(signs)} signs, all with a config class")
     check(all(on_map(o["pos"][0], o["pos"][2]) and ground(o["pos"][0], o["pos"][2]) > 0.0 for o in signs),
           "signs all on land")

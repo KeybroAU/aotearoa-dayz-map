@@ -1,3 +1,6 @@
+newmtl aotearoa_doc_sign
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_doc_sign.png
 newmtl aotearoa_iron_doc_orange
 Kd 1 1 1
 map_Kd ../../data/models/aotearoa_iron_doc_orange.png
@@ -7,6 +10,9 @@ map_Kd ../../data/models/aotearoa_iron_grey.png
 newmtl aotearoa_timber
 Kd 1 1 1
 map_Kd ../../data/models/aotearoa_timber.png
+newmtl aotearoa_vinyl
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_vinyl.png
 newmtl aotearoa_window
 Kd 1 1 1
 map_Kd ../../data/models/aotearoa_window.png

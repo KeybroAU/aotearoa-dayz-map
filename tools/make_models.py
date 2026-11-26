@@ -8,6 +8,9 @@ Object Builder imports Wavefront OBJ, so each model is written as OBJ files plus
   docs/models/<name>.mtl           materials, pointing at data/models/*.png
   data/models/<texture>.png        tiling textures (pack.bat turns them into _co.paa)
   config/structures.hpp            CfgVehicles classes Land_Aotearoa_<Name>
+  mission/dayzOffline.aotearoa/mapgroupproto.aotearoa.xml
+                                   loot points for each building (pack.bat adds a building's group to the
+                                   server's mapgroupproto.xml once its .p3d exists)
   preview/models_<name>.png        a quick render of each model
 
 Units are metres, y is up and the model's front faces +z (north when placed with yaw 0). The origin is
@@ -122,6 +125,111 @@ def _window():
     return img
 
 
+@texture("aotearoa_trim_white", 1.0)
+def _trim_white():
+    rng = np.random.default_rng(8)
+    return _tint((236, 234, 226), _noise(rng, 512, 2, 0.06) + _noise(rng, 512, 30, 0.08))
+
+
+@texture("aotearoa_brick", 1.2)
+def _brick():
+    rng = np.random.default_rng(9)
+    y, x = np.mgrid[0:512, 0:512]
+    row = y // 32
+    mortar = ((y % 32) < 3) | (((x + (row % 2) * 64) % 128) < 3)
+    shade = _noise(rng, 512, 2, 0.18) + 0.12 * np.sin(row * 2.7 + (x + (row % 2) * 64) // 128 * 1.9)
+    img = np.asarray(_tint((150, 70, 52), shade)).copy()
+    img[mortar] = (190, 184, 172)
+    return Image.fromarray(img)
+
+
+@texture("aotearoa_vinyl", 1.0)
+def _vinyl():
+    rng = np.random.default_rng(10)
+    return _tint((40, 92, 110), _noise(rng, 512, 1, 0.08) + _noise(rng, 512, 50, 0.12))
+
+
+@texture("aotearoa_burlap", 0.6)
+def _burlap():
+    rng = np.random.default_rng(11)
+    y, x = np.mgrid[0:512, 0:512]
+    weave = 0.1 * np.sin(x / 2.5) * np.sin(y / 2.5) + _noise(rng, 512, 1, 0.16)
+    return _tint((196, 176, 132), weave)
+
+
+@texture("aotearoa_shelf_goods", 1.0)
+def _shelf_goods():
+    """Rows of packets and tins on shelves, seen from the aisle."""
+    rng = np.random.default_rng(12)
+    img = Image.new("RGB", (512, 512), (120, 96, 70))
+    d = ImageDraw.Draw(img)
+    colours = [(220, 40, 40), (250, 200, 30), (40, 90, 170), (60, 150, 60), (240, 240, 235), (230, 120, 30),
+               (120, 60, 30), (30, 30, 30), (200, 60, 140)]
+    for r in range(4):
+        y1 = 128 * (r + 1) - 10
+        d.rectangle([0, y1, 512, y1 + 10], fill=(200, 200, 196))
+        x = 4
+        while x < 508:
+            w = int(rng.integers(18, 44))
+            h = int(rng.integers(50, 108))
+            c = colours[int(rng.integers(len(colours)))]
+            d.rectangle([x, y1 - h, min(x + w, 508), y1], fill=c, outline=tuple(int(v * 0.7) for v in c))
+            d.rectangle([x + 3, y1 - h + 8, min(x + w, 508) - 3, y1 - h + 18], fill=(250, 250, 250))
+            x += w + 2
+    return img
+
+
+@texture("aotearoa_fridge", 1.0)
+def _fridge():
+    img = Image.new("RGB", (512, 512), (236, 236, 236))
+    d = ImageDraw.Draw(img)
+    rng = np.random.default_rng(13)
+    for k in range(2):
+        x0 = 20 + k * 246
+        d.rectangle([x0, 60, x0 + 226, 492], fill=(70, 96, 110))
+        for r in range(4):
+            y1 = 160 + r * 100
+            d.rectangle([x0 + 8, y1, x0 + 218, y1 + 5], fill=(200, 205, 210))
+            for i in range(7):
+                c = [(250, 205, 30), (60, 170, 40), (220, 40, 40), (240, 240, 240), (40, 90, 170)][int(rng.integers(5))]
+                d.rounded_rectangle([x0 + 12 + i * 29, y1 - 70, x0 + 34 + i * 29, y1], radius=5, fill=c)
+        d.rectangle([x0 + 200, 240, x0 + 210, 320], fill=(180, 180, 184))
+    from signs import FONTS_BOLD, _font
+    d.rectangle([0, 0, 512, 50], fill=(220, 30, 40))
+    d.text((256, 25), "COLD DRINKS", font=_font(FONTS_BOLD, 36), fill=(255, 255, 255), anchor="mm")
+    return img
+
+
+@texture("aotearoa_icecream_sign", 1.0)
+def _icecream_sign():
+    from signs import FONTS_BOLD, _font
+    img = Image.new("RGB", (512, 512), (250, 250, 246))
+    d = ImageDraw.Draw(img)
+    d.rectangle([12, 12, 500, 500], outline=(30, 80, 160), width=14)
+    d.text((256, 92), "ICE CREAM", font=_font(FONTS_BOLD, 70), fill=(30, 80, 160), anchor="mm")
+    d.polygon([(206, 300), (306, 300), (256, 470)], fill=(214, 160, 90), outline=(150, 100, 50))
+    for i in range(5):
+        d.line([(214 + i * 20, 300), (256, 460)], fill=(170, 120, 60), width=3)
+    for (cx, cy, c) in ((256, 270, (240, 220, 160)), (226, 230, (250, 180, 190)), (286, 230, (120, 80, 50)),
+                        (256, 190, (250, 240, 200))):
+        d.ellipse([cx - 46, cy - 42, cx + 46, cy + 42], fill=c, outline=tuple(int(v * 0.8) for v in c), width=3)
+    d.text((256, 140), "Hokey Pokey", font=_font(FONTS_BOLD, 34), fill=(200, 40, 40), anchor="mm")
+    return img
+
+
+@texture("aotearoa_doc_sign", 1.0)
+def _doc_sign():
+    from signs import FONTS_BOLD, FONTS, _font
+    img = Image.new("RGB", (512, 512), (36, 78, 52))
+    d = ImageDraw.Draw(img)
+    d.rectangle([10, 10, 501, 245], outline=(236, 214, 150), width=8)
+    d.text((256, 90), "BACKCOUNTRY HUT", font=_font(FONTS_BOLD, 46), fill=(236, 214, 150), anchor="mm")
+    d.text((256, 160), "6 bunks  ·  Fill in the intentions book", font=_font(FONTS, 22), fill=(236, 214, 150),
+           anchor="mm")
+    d.rectangle([0, 256, 512, 512], fill=(116, 88, 60))
+    return img
+
+
 @texture("aotearoa_dairy_sign", 1.0)
 def _dairy_sign():
     from signs import FONTS_BOLD, _font
@@ -219,9 +327,12 @@ class Mesh:
         if z < z1:
             self.box(x - t / 2, x + t / 2, y0, y1, z, z1, mat, group)
 
-    def gable_roof(self, w, d, eave_y, ridge_y, overhang, thick, mat, end_mat, along_x=True):
-        """Two sloping slabs meeting at a ridge, plus gable-end triangles. Ridge runs along x by default."""
+    def gable_roof(self, w, d, eave_y, ridge_y, overhang, thick, mat, end_mat, along_x=True, z0=0.0):
+        """Two sloping slabs meeting at a ridge, plus gable-end triangles. Ridge runs along x by default,
+        over z = z0."""
         hw, hd = w / 2 + overhang, d / 2 + overhang
+        start_v = len(self.verts)
+        start_c = len(self.components)
         if along_x:
             for side in (1, -1):
                 # Slab from the eave (z = side * hd) up to the ridge (z = 0).
@@ -242,6 +353,11 @@ class Mesh:
                     self.verts.append(np.array(p, dtype=float))
                     self.uvs.append((p[2] / tile, p[1] / tile))
                 self.faces.append(("walls", end_mat, [(start + i + 1, start + i + 1) for i in range(3)]))
+        if z0:
+            for i in range(start_v, len(self.verts)):
+                self.verts[i] = self.verts[i] + np.array([0.0, 0.0, z0])
+            for i in range(start_c, len(self.components)):
+                self.components[i] = [(x, y, z + z0) for x, y, z in self.components[i]]
 
     def write(self):
         MODEL_DIR.mkdir(parents=True, exist_ok=True)
@@ -350,6 +466,27 @@ def window(m: Mesh, x0, x1, y0, y1, z, along_x=True):
         m.stretched([(z, y0, x0), (z, y0, x1), (z, y1, x1), (z, y1, x0)], "aotearoa_window", "glass")
 
 
+def frame(m: Mesh, x0, x1, y0, y1, z, t, along_x=True, sill=True, mat="aotearoa_trim_white", w=0.08, out=0.03):
+    """Trim round an opening on both faces of a wall of thickness t (head, jambs and, for windows, a sill)."""
+    for side in (1, -1):
+        f0, f1 = sorted((z + side * t / 2, z + side * (t / 2 + out)))
+        parts = [(x0 - w, x0, y0, y1 + w), (x1, x1 + w, y0, y1 + w), (x0 - w, x1 + w, y1, y1 + w)]
+        if sill:
+            parts.append((x0 - w, x1 + w, y0 - w, y0))
+        for a, b, lo, hi in parts:
+            if along_x:
+                m.box(a, b, lo, hi, f0, f1, mat, "trim", solid=False)
+            else:
+                m.box(f0, f1, lo, hi, a, b, mat, "trim", solid=False)
+
+
+def table(m: Mesh, x0, x1, z0, z1, y, h=0.75, mat="aotearoa_timber", group="furniture"):
+    m.box(x0, x1, y + h - 0.05, y + h, z0, z1, mat, group, solid=False)
+    for x in (x0 + 0.03, x1 - 0.08):
+        for zz in (z0 + 0.03, z1 - 0.08):
+            m.box(x, x + 0.05, y, y + h - 0.05, zz, zz + 0.05, mat, group, solid=False)
+
+
 def bach() -> Mesh:
     """9 x 7 m 1960s bach: raised floor, two rooms, front deck, low gable roof."""
     m = Mesh("bach")
@@ -371,8 +508,46 @@ def bach() -> Mesh:
     m.box(-0.6, 1.4, 0, 0.22, 3.5, 3.85, "aotearoa_timber", "deck", walk=True)
     for x in (-W / 2 + 0.1, W / 2 - 0.1):
         m.box(x - 0.05, x + 0.05, F, F + 0.9, front, 3.45, "aotearoa_timber", "deck")
-    m.gable_roof(W, D, top, top + 1.1, 0.45, 0.06, "aotearoa_iron_roof_red", wb)
+    m.gable_roof(W, D, top, top + 1.1, 0.45, 0.06, "aotearoa_iron_roof_red", wb, z0=zb)
     m.box(-W / 2, W / 2, top, top + 0.02, back, front, "aotearoa_timber", "ceiling", solid=False, skip=("top",))
+    trim = "aotearoa_trim_white"
+    for x0, x1, y0, y1 in ((-3.4, -1.4, F + 0.9, F + 2.0), (2.4, 4.0, F + 0.9, F + 2.0)):
+        frame(m, x0, x1, y0, y1, front, T)
+    frame(m, -0.6, 1.4, F, F + 2.1, front, T, sill=False)
+    frame(m, -3.0, -1.8, F + 1.0, F + 1.8, back, T)
+    frame(m, 1.0, 1.8, F, F + 2.0, back, T, sill=False)
+    frame(m, zb - 0.6, zb + 0.6, F + 0.9, F + 1.9, -W / 2, T, along_x=False)
+    for x in (-W / 2, W / 2):  # corner boards
+        for z in (back, front):
+            m.box(x - 0.08, x + 0.08, F, top, z - 0.08, z + 0.08, trim, "trim", solid=False)
+    for z in (back - 0.45, front + 0.45):  # fascia boards along the eaves
+        m.box(-W / 2 - 0.45, W / 2 + 0.45, top - 0.2, top - 0.02, z - 0.02, z + 0.02, trim, "trim", solid=False)
+    # Deck rail along the front, open at the steps.
+    for a, b in ((-W / 2, -0.6), (1.4, W / 2)):
+        m.box(a, b, F + 0.85, F + 0.93, 3.4, 3.48, "aotearoa_timber", "deck", solid=False)
+        for x in np.arange(a + 0.05, b, 0.6):
+            m.box(x, x + 0.05, F, F + 0.85, 3.42, 3.47, "aotearoa_timber", "deck", solid=False)
+    # Brick chimney on the right-hand end wall, above the ridge.
+    m.box(W / 2 + T / 2, W / 2 + 0.6, 0, top + 1.6, zb - 0.9, zb - 0.2, "aotearoa_brick", "chimney")
+    # Inside: kitchen bench, table and chairs, couch in the living room; bed and wardrobe in the bedroom.
+    m.box(-W / 2 + 0.1, -2.2, F, F + 0.9, back + 0.08, back + 0.7, "aotearoa_trim_white", "furniture", walk=True)
+    m.box(-W / 2 + 0.1, -2.2, F + 0.9, F + 0.94, back + 0.06, back + 0.72, "aotearoa_timber", "furniture", solid=False)
+    table(m, -2.6, -1.4, zb - 0.1, zb + 0.7, F)
+    m.box(-4.3, -2.4, F, F + 0.45, front - 0.95, front - 0.15, "aotearoa_vinyl", "furniture")
+    m.box(-4.3, -2.4, F + 0.45, F + 0.85, front - 0.3, front - 0.15, "aotearoa_vinyl", "furniture", solid=False)
+    m.box(1.6, 3.6, F, F + 0.5, back + 0.1, back + 2.1, "aotearoa_vinyl", "furniture", walk=True)
+    m.box(3.9, 4.4, F, F + 1.9, front - 1.1, front - 0.15, "aotearoa_timber", "furniture")
+    # The long drop out the back: a 1.1 m square dunny with its door facing the house.
+    lz = back - 2.6
+    m.box(2.4, 3.5, 0, 0.15, lz - 0.55, lz + 0.55, "aotearoa_timber", "longdrop", walk=True)
+    m.wall_x(2.4, 3.5, lz + 0.55, 0.06, 0.15, 2.2, wb, "longdrop", openings=[(2.65, 3.25, 0.15, 2.0)])
+    m.wall_x(2.4, 3.5, lz - 0.55, 0.06, 0.15, 2.1, wb, "longdrop")
+    m.wall_z(lz - 0.52, lz + 0.52, 2.4, 0.06, 0.15, 2.15, wb, "longdrop")
+    m.wall_z(lz - 0.52, lz + 0.52, 3.5, 0.06, 0.15, 2.15, wb, "longdrop")
+    c = [(2.3, 2.1, lz - 0.7), (3.6, 2.1, lz - 0.7), (3.6, 2.25, lz + 0.7), (2.3, 2.25, lz + 0.7)]
+    c = [c[3], c[2], c[1], c[0]]
+    m.hexa(c + [(x, y + 0.04, z) for x, y, z in c], "aotearoa_iron_roof_red", "longdrop")
+    m.box(2.5, 3.4, 0.15, 0.6, lz - 0.5, lz - 0.05, "aotearoa_timber", "longdrop", solid=False)
     return m
 
 
@@ -392,8 +567,8 @@ def doc_hut() -> Mesh:
     window(m, 1.2, 2.4, F + 0.9, F + 1.8, front)
     # Mono-pitch roof: high at the front, low at the back.
     oh = 0.4
-    c = [(-W / 2 - oh, top - 0.1, back - oh), (W / 2 + oh, top - 0.1, back - oh), (W / 2 + oh, top + 0.45, front + 1.5),
-         (-W / 2 - oh, top + 0.45, front + 1.5)]
+    c = [(-W / 2 - oh, top + 0.05, back - oh), (W / 2 + oh, top + 0.05, back - oh), (W / 2 + oh, top + 0.6, front + 1.5),
+         (-W / 2 - oh, top + 0.6, front + 1.5)]
     c = [c[3], c[2], c[1], c[0]]
     m.hexa(c + [(x, y + 0.06, z) for x, y, z in c], "aotearoa_iron_grey", "roof")
     for sx in (-1, 1):  # side gussets between wall top and sloping roof
@@ -406,7 +581,7 @@ def doc_hut() -> Mesh:
         m.faces.append(("walls", iron, [(start + i + 1, start + i + 1) for i in range(3)]))
     m.box(-W / 2, W / 2, 0, F - 0.05, front, front + 1.5, "aotearoa_timber", "veranda", walk=True)
     for x in (-W / 2 + 0.1, W / 2 - 0.1):
-        m.box(x - 0.06, x + 0.06, F, top + 0.4, front + 1.35, front + 1.47, "aotearoa_timber", "veranda")
+        m.box(x - 0.06, x + 0.06, F, top + 0.58, front + 1.35, front + 1.47, "aotearoa_timber", "veranda")
     for y in (F + 0.4, F + 1.4):  # double bunks along the back wall
         m.box(-W / 2 + 0.1, W / 2 - 0.1, y, y + 0.12, back + 0.1, back + 0.9, "aotearoa_timber", "bunks", walk=True)
     m.box(-W / 2 + 0.1, -W / 2 + 0.7, F, F + 0.8, front - 0.9, front - 0.3, "aotearoa_iron_grey", "stove")
@@ -421,6 +596,29 @@ def doc_hut() -> Mesh:
         m.quad([(cx, 2.1, cz), (bx, 2.1, bz), (ax, 2.1, az), (cx, 2.1, cz)], "aotearoa_iron_grey", "tank")
     m.components.append([(cx - r, 0.9, cz + r), (cx + r, 0.9, cz + r), (cx + r, 0.9, cz - r), (cx - r, 0.9, cz - r),
                          (cx - r, 2.1, cz + r), (cx + r, 2.1, cz + r), (cx + r, 2.1, cz - r), (cx - r, 2.1, cz - r)])
+    frame(m, -0.4, 0.5, F, F + 2.0, front, T, sill=False, mat="aotearoa_timber")
+    frame(m, 1.2, 2.4, F + 0.9, F + 1.8, front, T, mat="aotearoa_timber")
+    frame(m, zb - 0.5, zb + 0.5, F + 0.9, F + 1.7, -W / 2, T, along_x=False, mat="aotearoa_timber")
+    # Hut sign over the door, the intentions book box beside it, and a bench and woodpile on the veranda.
+    m.stretched([(-1.0, F + 2.1, front + T / 2 + 0.01), (1.0, F + 2.1, front + T / 2 + 0.01),
+                 (1.0, F + 2.6, front + T / 2 + 0.01), (-1.0, F + 2.6, front + T / 2 + 0.01)], "aotearoa_doc_sign", "sign")
+    m.box(-1.1, -0.7, F + 1.1, F + 1.45, front + T / 2, front + T / 2 + 0.18, "aotearoa_iron_grey", "veranda", solid=False)
+    m.box(-2.6, -1.3, F, F + 0.45, front + 0.2, front + 0.55, "aotearoa_timber", "veranda", walk=True)
+    for k in range(4):
+        y = F + 0.12 + k * 0.2
+        m.box(1.4, 2.8, y - 0.1, y + 0.1, front + 0.15 + (k % 2) * 0.05, front + 0.75, "aotearoa_timber", "woodpile",
+              solid=k == 0)
+    # Mattresses on the bunks, a table with bench seats, and a gutter and downpipe to the tank.
+    for y in (F + 0.52, F + 1.52):
+        for x0 in (-W / 2 + 0.15, -1.0, 1.0):
+            m.box(x0, x0 + 1.85, y, y + 0.1, back + 0.15, back + 0.85, "aotearoa_vinyl", "bunks", solid=False)
+    table(m, 0.2, 2.0, zb - 0.1, zb + 0.6, F)
+    for z0 in (zb - 0.45, zb + 0.75):
+        m.box(0.2, 2.0, F + 0.4, F + 0.45, z0, z0 + 0.3, "aotearoa_timber", "furniture", solid=False)
+    m.box(-W / 2 - oh, W / 2 + oh, top - 0.07, top + 0.05, back - oh - 0.12, back - oh, "aotearoa_iron_grey", "roof",
+          solid=False)
+    m.box(W / 2 + 0.25, W / 2 + 0.33, 2.1, top - 0.07, back - oh - 0.1, back - oh - 0.02, "aotearoa_iron_grey", "tank",
+          solid=False)
     return m
 
 
@@ -456,6 +654,27 @@ def woolshed() -> Mesh:
     for x in np.arange(-W / 2, -1.9, 3.0):
         m.box(x - 0.06, x + 0.06, 0.12, 1.1, -D / 2 - 5.0, -D / 2 - 4.9, "aotearoa_timber", "yard")
     m.box(-W / 2, -2.0, 0.12, 1.1, -D / 2 - 5.0, -D / 2 - 4.92, "aotearoa_timber", "yard", solid=False)
+    for y in (0.5, 0.9):
+        m.box(-W / 2, -2.0, y, y + 0.08, -D / 2 - 5.0, -D / 2 - 4.94, "aotearoa_timber", "yard", solid=False)
+    for x0 in (2.0, 8.0):
+        frame(m, x0, x0 + 2.0, F + 1.2, F + 2.2, D / 2, T, mat="aotearoa_timber")
+    frame(m, -9.0, -6.0, F, F + 2.8, D / 2, T, sill=False, mat="aotearoa_timber", w=0.15)
+    # Shearing stands along the board: a pole, the overhead gear box and the drop to the handpiece.
+    for x in (-10.0, -6.0, -2.0, 2.0, 6.0):
+        m.box(x - 0.06, x + 0.06, F, top, D / 2 - 0.5, D / 2 - 0.38, "aotearoa_timber", "stands", solid=False)
+        m.box(x - 0.25, x + 0.25, top - 0.8, top - 0.5, D / 2 - 1.4, D / 2 - 0.4, "aotearoa_iron_grey", "stands", solid=False)
+        m.box(x - 0.03, x + 0.03, F + 1.0, top - 0.8, D / 2 - 1.3, D / 2 - 1.24, "aotearoa_iron_grey", "stands", solid=False)
+        m.box(x - 0.4, x + 0.4, F, F + 1.0, D / 2 - 0.3, D / 2 - 0.2, "aotearoa_timber", "stands", solid=False)
+    # The wool table (slatted top), the sorting bins, and the bales by the press.
+    table(m, 6.0, 9.0, -0.6, 1.4, F, h=0.9, group="wooltable")
+    for x in np.arange(6.05, 9.0, 0.15):
+        m.box(x, x + 0.08, F + 0.9, F + 0.93, -0.6, 1.4, "aotearoa_timber", "wooltable", solid=False)
+    for k in range(4):
+        x0 = 4.0 + k * 1.6
+        m.box(x0, x0 + 1.5, F, F + 1.2, -D / 2 + 0.2, -D / 2 + 0.28, "aotearoa_timber", "bins", solid=False)
+        m.box(x0 - 0.04, x0, F, F + 1.2, -D / 2 + 0.2, -D / 2 + 1.6, "aotearoa_timber", "bins", solid=False)
+    for k, (bx, bz) in enumerate(((W / 2 - 4.0, -D / 2 + 0.6), (W / 2 - 4.0, -D / 2 + 1.5), (W / 2 - 5.0, -D / 2 + 0.6))):
+        m.box(bx - 0.4, bx + 0.4, F, F + 1.2, bz - 0.4, bz + 0.4, "aotearoa_burlap", "bales")
     return m
 
 
@@ -491,16 +710,105 @@ def dairy() -> Mesh:
     for x in (-1.0, 1.5, 4.0):
         m.box(x, x + 0.5, 0.15, 1.9, back + 3.4, front - 1.2, "aotearoa_timber", "shelves")
     m.box(-W / 2 - 0.1, W / 2 + 0.1, H - 0.02, H, back, front, "aotearoa_concrete", "ceiling", solid=False, skip=("top",))
+    for x0, x1 in ((-5.0, -0.5), (2.6, 5.2)):
+        frame(m, x0, x1, 0.7, 2.6, front, T, w=0.1)
+    frame(m, 0.5, 2.0, 0.15, 2.3, front, T, sill=False, w=0.1)
+    frame(m, 3.5, 4.4, 0.15, 2.1, back, T, sill=False)
+    # Stock on both faces of each shelf unit, a drinks fridge on the right wall, the till on the counter.
+    for x in (-1.0, 1.5, 4.0):
+        for fx, order in ((x - 0.01, (0, 1)), (x + 0.51, (1, 0))):
+            z0, z1 = back + 3.5, front - 1.3
+            zs = (z0, z1) if order == (0, 1) else (z1, z0)
+            m.stretched([(fx, 0.2, zs[0]), (fx, 0.2, zs[1]), (fx, 1.85, zs[1]), (fx, 1.85, zs[0])], "aotearoa_shelf_goods",
+                        "shelves")
+    m.box(W / 2 - T / 2 - 0.75, W / 2 - T / 2, 0.15, 2.15, -1.6, 1.6, "aotearoa_trim_white", "fridge")
+    m.stretched([(W / 2 - T / 2 - 0.76, 0.2, 1.55), (W / 2 - T / 2 - 0.76, 0.2, -1.55),
+                 (W / 2 - T / 2 - 0.76, 2.1, -1.55), (W / 2 - T / 2 - 0.76, 2.1, 1.55)], "aotearoa_fridge", "fridge")
+    m.box(-3.0, -2.5, 1.05, 1.3, back + 2.9, back + 3.3, "aotearoa_iron_grey", "counter", solid=False)
+    # Out front: an ice cream sign board on the footpath, a bench seat and a letterbox.
+    for side in (1, -1):
+        zf = front + 1.2 + side * 0.2
+        pts = [(4.4, 0.15, zf), (5.2, 0.15, zf), (5.2, 1.1, front + 1.2), (4.4, 1.1, front + 1.2)]
+        if side < 0:
+            pts = [pts[1], pts[0], pts[3], pts[2]]
+        m.stretched(pts, "aotearoa_icecream_sign", "sign")
+    m.box(-5.5, -3.5, 0.15, 0.6, front + 0.3, front + 0.7, "aotearoa_timber", "bench", walk=True)
+    m.box(-W / 2 + 0.3, -W / 2 + 0.38, 0, 1.0, front + 0.9, front + 0.98, "aotearoa_timber", "letterbox", solid=False)
+    m.box(-W / 2 + 0.15, -W / 2 + 0.55, 1.0, 1.3, front + 0.75, front + 1.15, "aotearoa_iron_roof_red", "letterbox",
+          solid=False)
+    # Back room: a table and a stack of cartons.
+    table(m, -2.0, -0.6, back + 0.6, back + 1.6, 0.15)
+    for k in range(3):
+        m.box(2.0, 2.6, 0.15 + k * 0.4, 0.55 + k * 0.4, back + 0.3, back + 0.9, "aotearoa_burlap", "stock", solid=k == 0)
     return m
 
 
 MODELS = {"sign_town": sign_town, "sign_post": sign_post, "bach": bach, "doc_hut": doc_hut, "woolshed": woolshed,
           "dairy": dairy}
 BUILDINGS = {"bach": "Bach", "doc_hut": "DocHut", "woolshed": "Woolshed", "dairy": "Dairy"}
+MAPGROUPPROTO = MAP_DIR / "mission" / "dayzOffline.aotearoa" / "mapgroupproto.aotearoa.xml"
+
+# Loot points in model coordinates (x, height, z), the same as the OBJ files. The Geometry LOD needs the
+# named property autocenter = 0 so the game keeps this origin. Each container: (name, categories, tags,
+# lootmax, [(x, y, z, range, height), ...]); y is the surface the loot lies on.
+LOOT = {
+    "bach": dict(usages=["Village", "Town"], lootmax=7, containers=[
+        ("lootFloor", ["food", "tools", "clothes", "containers"], ["floor"], 4,
+         [(-3.5, 0.45, -1.0, 0.6, 1.0), (-1.0, 0.45, 0.6, 0.6, 1.0), (1.2, 0.45, 0.8, 0.5, 1.0),
+          (3.0, 0.45, -0.6, 0.5, 1.0), (2.6, 0.45, 2.6, 0.6, 1.0), (2.95, 0.15, -6.0, 0.25, 1.0)]),
+        ("lootshelves", ["food", "tools", "clothes"], ["shelves"], 3,
+         [(-3.4, 1.39, -3.1, 0.25, 0.4), (-2.6, 1.39, -3.1, 0.25, 0.4), (-2.0, 1.2, -0.7, 0.3, 0.4),
+          (2.6, 0.95, -2.4, 0.4, 0.4)]),
+    ]),
+    "doc_hut": dict(usages=["Hunting"], lootmax=6, containers=[
+        ("lootFloor", ["food", "tools", "clothes", "containers"], ["floor"], 3,
+         [(-1.5, 0.3, -1.0, 0.5, 1.0), (1.0, 0.3, 0.6, 0.5, 1.0), (-2.3, 0.3, 0.3, 0.4, 1.0), (0.0, 0.3, 2.2, 0.5, 1.0)]),
+        ("lootshelves", ["food", "tools", "clothes"], ["shelves"], 3,
+         [(-2.0, 0.92, -2.5, 0.4, 0.4), (0.0, 0.92, -2.5, 0.4, 0.4), (2.0, 0.92, -2.5, 0.4, 0.4),
+          (-2.0, 1.92, -2.5, 0.4, 0.4), (0.0, 1.92, -2.5, 0.4, 0.4), (2.0, 1.92, -2.5, 0.4, 0.4),
+          (1.1, 1.05, -0.45, 0.3, 0.4)]),
+    ]),
+    "woolshed": dict(usages=["Farm"], lootmax=7, containers=[
+        ("lootFloor", ["tools", "clothes", "containers"], ["floor"], 5,
+         [(-8.0, 1.25, 4.5, 0.8, 1.0), (0.0, 1.25, 4.5, 0.8, 1.0), (5.0, 1.2, -2.0, 0.8, 1.0),
+          (-6.0, 1.2, -4.0, 0.8, 1.0), (2.0, 1.2, -4.0, 0.8, 1.0), (11.5, 1.2, -3.2, 0.5, 1.0),
+          (-8.0, 0.12, -8.5, 1.5, 1.0)]),
+        ("lootshelves", ["tools", "clothes"], ["shelves"], 2, [(7.5, 2.13, 0.4, 0.8, 0.4), (6.5, 2.13, -0.2, 0.4, 0.4)]),
+    ]),
+    "dairy": dict(usages=["Town", "Village"], lootmax=9, containers=[
+        ("lootFloor", ["food", "tools", "containers"], ["floor"], 4,
+         [(-3.0, 0.15, 1.5, 0.6, 1.0), (0.7, 0.15, 0.0, 0.4, 1.0), (3.2, 0.15, 0.0, 0.4, 1.0), (-4.5, 0.15, 2.6, 0.5, 1.0),
+          (-1.3, 0.9, -3.4, 0.4, 0.4), (2.3, 1.35, -3.9, 0.3, 0.4), (0.5, 0.15, -3.2, 0.6, 1.0)]),
+        ("lootshelves", ["food"], ["shelves"], 5,
+         [(-0.75, 1.9, 0.5, 0.3, 0.3), (1.75, 1.9, 0.5, 0.3, 0.3), (4.25, 1.9, 0.5, 0.3, 0.3),
+          (-4.0, 1.05, -1.4, 0.4, 0.3), (4.7, 0.15, 0.8, 0.4, 1.0), (4.7, 0.15, -0.8, 0.4, 1.0)]),
+    ]),
+}
+
+
+def mapgroupproto_text() -> str:
+    out = ['<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>',
+           "<!-- Loot points for the Aotearoa buildings, generated by tools/make_models.py. pack.bat adds each",
+           "     group to the server's mapgroupproto.xml once the building's .p3d exists. -->",
+           "<prototype>"]
+    for name, cls in BUILDINGS.items():
+        spec = LOOT[name]
+        out.append(f'    <group name="Land_Aotearoa_{cls}" lootmax="{spec["lootmax"]}">')
+        out += [f'        <usage name="{u}" />' for u in spec["usages"]]
+        for cname, cats, tags, lootmax, points in spec["containers"]:
+            out.append(f'        <container name="{cname}" lootmax="{lootmax}">')
+            out += [f'            <category name="{c}" />' for c in cats]
+            out += [f'            <tag name="{t}" />' for t in tags]
+            out += [f'            <point pos="{x:.3f} {y:.3f} {z:.3f}" range="{r:.3f}" height="{h:.3f}" flags="32" />'
+                    for x, y, z, r, h in points]
+            out.append("        </container>")
+        out.append("    </group>")
+    out.append("</prototype>")
+    return "\n".join(out) + "\n"
 
 
 def render(m: Mesh, path: Path) -> None:
-    """Flat-shaded three-quarter view, painter's algorithm, using each material's average colour."""
+    """Flat-shaded three-quarter view with a z-buffer, using each material's average colour."""
     colours = {}
     for name, (_, fn) in TEXTURES.items():
         colours[name] = np.asarray(fn().resize((1, 1), Image.BOX))[0, 0].astype(float)
@@ -510,28 +818,47 @@ def render(m: Mesh, path: Path) -> None:
     view = tilt @ rot
     verts = np.array(m.verts) @ view.T
     span = max(np.ptp(verts[:, 0]), np.ptp(verts[:, 1])) or 1.0
+    size = 640
     scale = 560 / span
     cx, cy = verts[:, 0].mean(), verts[:, 1].mean()
     light = np.array([0.4, 0.8, 0.45])
     light /= np.linalg.norm(light)
-    polys = []
+    img = np.ones((size, size, 3)) * np.array([214.0, 226.0, 236.0])
+    zbuf = np.full((size, size), -np.inf)
     for group, mat, idx in m.faces:
-        pts = np.array([verts[v - 1] for v, _ in idx])
         world = np.array([m.verts[v - 1] for v, _ in idx])
         n = np.cross(world[1] - world[0], world[-1] - world[0])
         if np.linalg.norm(n) == 0:
             continue
         n /= np.linalg.norm(n)
-        shade = 0.45 + 0.55 * abs(float(n @ light))
-        base = colours.get(mat, np.array([200, 200, 200]))
-        polys.append((pts[:, 2].mean(), [(320 + (x - cx) * scale, 320 - (y - cy) * scale) for x, y, _ in pts],
-                      tuple(int(c) for c in np.clip(base * shade, 0, 255))))
-    img = Image.new("RGB", (640, 640), (214, 226, 236))
-    d = ImageDraw.Draw(img)
-    for _, pts, col in sorted(polys, key=lambda p: p[0]):
-        d.polygon(pts, fill=col, outline=tuple(max(0, c - 40) for c in col))
-    d.text((10, 10), f"{m.name}: {m.tris()} triangles, {len(m.components)} geometry components", fill=(30, 30, 30))
-    img.save(path, optimize=True)
+        col = np.clip(colours.get(mat, np.array([200.0, 200.0, 200.0])) * (0.45 + 0.55 * abs(float(n @ light))), 0, 255)
+        pts = np.array([verts[v - 1] for v, _ in idx])
+        sx = size / 2 + (pts[:, 0] - cx) * scale
+        sy = size / 2 - (pts[:, 1] - cy) * scale
+        for k in range(1, len(pts) - 1):
+            tri = (0, k, k + 1)
+            xs_, ys_, zs_ = sx[list(tri)], sy[list(tri)], pts[list(tri), 2]
+            x0, x1 = int(max(xs_.min(), 0)), int(min(xs_.max() + 1, size))
+            y0, y1 = int(max(ys_.min(), 0)), int(min(ys_.max() + 1, size))
+            if x0 >= x1 or y0 >= y1:
+                continue
+            (ax, bx, cx_), (ay, by, cy_) = xs_, ys_
+            den = (by - cy_) * (ax - cx_) + (cx_ - bx) * (ay - cy_)
+            if abs(den) < 1e-9:
+                continue
+            yy, xx = np.mgrid[y0:y1, x0:x1] + 0.5
+            w0 = ((by - cy_) * (xx - cx_) + (cx_ - bx) * (yy - cy_)) / den
+            w1 = ((cy_ - ay) * (xx - cx_) + (ax - cx_) * (yy - cy_)) / den
+            w2 = 1 - w0 - w1
+            z = w0 * zs_[0] + w1 * zs_[1] + w2 * zs_[2]
+            sub = zbuf[y0:y1, x0:x1]
+            hit = (w0 >= -1e-6) & (w1 >= -1e-6) & (w2 >= -1e-6) & (z > sub + 1e-4)
+            sub[hit] = z[hit]
+            img[y0:y1, x0:x1][hit] = col
+    out = Image.fromarray(img.astype(np.uint8))
+    ImageDraw.Draw(out).text((10, 10), f"{m.name}: {m.tris()} triangles, {len(m.components)} geometry components",
+                             fill=(30, 30, 30))
+    out.save(path, optimize=True)
 
 
 def write_config() -> None:
@@ -553,6 +880,8 @@ def main() -> None:
         render(m, MAP_DIR / "preview" / f"models_{name}.png")
         print(f"{name}: {m.tris()} triangles, {len(m.components)} geometry components, {len(m.roadway)} roadway faces")
     write_config()
+    MAPGROUPPROTO.write_text(mapgroupproto_text(), encoding="utf-8")
+    print(f"Wrote {MAPGROUPPROTO.relative_to(MAP_DIR)}: loot points for {len(LOOT)} buildings")
 
 
 if __name__ == "__main__":

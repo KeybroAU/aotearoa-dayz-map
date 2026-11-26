@@ -1,12 +1,33 @@
+newmtl aotearoa_burlap
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_burlap.png
 newmtl aotearoa_concrete
 Kd 1 1 1
 map_Kd ../../data/models/aotearoa_concrete.png
 newmtl aotearoa_dairy_sign
 Kd 1 1 1
 map_Kd ../../data/models/aotearoa_dairy_sign.png
+newmtl aotearoa_fridge
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_fridge.png
+newmtl aotearoa_icecream_sign
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_icecream_sign.png
+newmtl aotearoa_iron_grey
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_iron_grey.png
+newmtl aotearoa_iron_roof_red
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_iron_roof_red.png
+newmtl aotearoa_shelf_goods
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_shelf_goods.png
 newmtl aotearoa_timber
 Kd 1 1 1
 map_Kd ../../data/models/aotearoa_timber.png
+newmtl aotearoa_trim_white
+Kd 1 1 1
+map_Kd ../../data/models/aotearoa_trim_white.png
 newmtl aotearoa_weatherboard_cream
 Kd 1 1 1
 map_Kd ../../data/models/aotearoa_weatherboard_cream.png
