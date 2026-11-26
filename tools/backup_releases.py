@@ -10,6 +10,7 @@ GITHUB_TOKEN to avoid the API's anonymous rate limit.
 import hashlib
 import json
 import os
+import re
 import sys
 import urllib.request
 from pathlib import Path
@@ -47,6 +48,8 @@ def main():
         sys.exit(__doc__)
     root = Path(sys.argv[1])
     for rel in releases():
+        if not re.match(r"v\d", rel["tag_name"]):
+            continue
         folder = root / rel["tag_name"]
         folder.mkdir(parents=True, exist_ok=True)
         (folder / "notes.md").write_text((rel.get("body") or "") + "\n", encoding="utf-8")
