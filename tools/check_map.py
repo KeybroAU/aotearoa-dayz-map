@@ -134,6 +134,10 @@ def food() -> None:
     tins = [i for i in items if i.opened]
     check(all(f'ReplaceEdibleWithNew("{i.cls}_Opened")' in script for i in tins),
           f"{len(tins)} tins open into their own opened class")
+    wip_cfg = MAP_DIR / "wip" / "food" / "config.cpp"
+    wip = set(re.findall(r"^\tclass (AotearoaWIP_\w+):", wip_cfg.read_text(encoding="utf-8"), re.M)) if wip_cfg.exists() else set()
+    check(wip == {c.replace("Aotearoa_", "AotearoaWIP_", 1) for c in nz_food.ITEM_CLASSES},
+          "the work-in-progress food copy (wip/food/) matches the food items; run tools/wip_food.py")
 
 
 def main() -> None:

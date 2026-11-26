@@ -2,6 +2,12 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
+## Unreleased
+
+### Added
+
+- `wip/food/`: a work-in-progress copy of the food and drink as a separate test mod (`@AotearoaFoodWIP`, `AotearoaWIP_*` classes, not in the loot), built by `tools/wip_food.py` and packed with `pack_mod.py --wip`. Label images dropped into `wip/food/labels/` (ignored by git) are fitted onto each pack's fronts
+
 ## 0.6.5 - 2026-11-26
 
 ### Added

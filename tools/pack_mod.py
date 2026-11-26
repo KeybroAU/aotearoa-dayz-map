@@ -35,6 +35,8 @@ Options:
   --vanilla-loot          keep vanilla loot amounts. Without it, loot is scaled to this map's loot points
                           (about half of Chernarus's), so each building holds as much as on Chernarus.
   --loot/--vehicles/--infected X   fine-tune one of those by a factor (overrides the difficulty for it)
+  --wip                   also pack the work-in-progress food test mod, dist/@AotearoaFoodWIP, from wip/food/
+                          (run tools/wip_food.py first). It is never added to the server folder or a release.
   --traders               load the four trader compounds (vanilla objects) from their spawner file
   --expansion             set the server up for DayZ Expansion: trader NPCs, trader zones, and the safe zone
                           and spawn snippets (implies --traders; see mission/mods/README.md)
@@ -72,6 +74,9 @@ BRANDING = [("logo_512.png", "logo_512_ca.paa"), ("icon_128.png", "icon_128_ca.p
 MAPITEM = MAP_DIR / "mapitem"
 MAPITEM_PREFIX = "aotearoa_map"
 MAPITEM_MOD = "@AotearoaMap"
+WIP_FOOD = MAP_DIR / "wip" / "food"
+WIP_PREFIX = "aotearoa_food_wip"
+WIP_MOD = "@AotearoaFoodWIP"
 STEAM_DIRS = [Path(r"C:\Program Files (x86)\Steam\steamapps\common"), Path(r"C:\Program Files\Steam\steamapps\common")]
 SETPIECES = "setpieces_spawner.json"
 MERGED_AWAY = ["cfggameplay.worldsdata.json", "cfgeconomycore.aotearoa.xml"]
@@ -213,6 +218,33 @@ def pack_map_item(tools: Path, mod_dir: Path) -> Path:
         shutil.rmtree(stage.parent, ignore_errors=True)
         shutil.copy2(MAPITEM / "mod.cpp", mod_dir / "mod.cpp")
     return mod_dir / "addons" / f"{MAPITEM_PREFIX}.pbo"
+
+
+def pack_wip_food(tools: Path, mod_dir: Path) -> Path:
+    """The work-in-progress food test mod from wip/food/ (built by tools/wip_food.py)."""
+    import nz_food
+
+    if not (WIP_FOOD / "textures").exists() and not DRY:
+        sys.exit("No wip/food/textures/. Run tools/wip_food.py first.")
+    exe = tool(tools, "ImageToPAA", "ImageToPAA.exe")
+    stage = MAP_DIR.parent / "_aotearoa_wip_pack" / WIP_PREFIX
+    print(f"  staging the WIP food in {stage}")
+    if not DRY:
+        shutil.rmtree(stage.parent, ignore_errors=True)
+        (stage / "data").mkdir(parents=True)
+        for name in ("config.cpp", "$PBOPREFIX$"):
+            shutil.copy2(WIP_FOOD / name, stage / name)
+        shutil.copytree(WIP_FOOD / "scripts", stage / "scripts")
+        (mod_dir / "addons").mkdir(parents=True, exist_ok=True)
+        (stage.parent / "include.txt").write_text("*.paa,*.c")
+    for item in nz_food.ITEMS:
+        run([exe, WIP_FOOD / "textures" / f"{item.key}.png", stage / "data" / f"{item.paa}.paa"])
+    run([tool(tools, "AddonBuilder", "AddonBuilder.exe"), stage, mod_dir / "addons", "-clear",
+         f"-prefix={WIP_PREFIX}", f"-include={stage.parent / 'include.txt'}", "-project=P:\\"])
+    if not DRY:
+        shutil.rmtree(stage.parent, ignore_errors=True)
+        shutil.copy2(WIP_FOOD / "mod.cpp", mod_dir / "mod.cpp")
+    return mod_dir / "addons" / f"{WIP_PREFIX}.pbo"
 
 
 def stage_and_pack(tools: Path, out_addons: Path) -> Path:
@@ -549,6 +581,7 @@ def main() -> None:
     ap.add_argument("--expansion", action="store_true")
     ap.add_argument("--traderplus", action="store_true")
     ap.add_argument("--no-map-item", action="store_true")
+    ap.add_argument("--wip", action="store_true")
     ap.add_argument("--skip-pbo", action="store_true")
     ap.add_argument("--zip", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
@@ -578,11 +611,19 @@ def main() -> None:
             if not DRY:
                 shutil.rmtree(map_dir, ignore_errors=True)
             map_pbo = pack_map_item(tools, map_dir)
+        wip_pbo = None
+        if args.wip:
+            wip_dir = out / WIP_MOD
+            if not DRY:
+                shutil.rmtree(wip_dir, ignore_errors=True)
+            wip_pbo = pack_wip_food(tools, wip_dir)
         print("[3/4] Signing")
         if args.key:
             sign(tools, args.key, pbo, mod_dir)
             if map_pbo:
                 sign(tools, args.key, map_pbo, map_dir)
+            if wip_pbo:
+                sign(tools, args.key, wip_pbo, out / WIP_MOD)
         else:
             print("  skipped (no --key). Servers with verifySignatures = 2 need a signed PBO.")
     print("[4/4] Server folder")

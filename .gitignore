@@ -10,3 +10,9 @@ dist/
 keys/
 data/mapitem/
 mapitem/data/*.paa
+# Work-in-progress food labels may be brand artwork: keep them out of the public repo.
+wip/food/labels/*
+!wip/food/labels/.gitkeep
+wip/food/textures/
+wip/food/preview.png
+wip/food/*.paa

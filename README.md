@@ -387,6 +387,8 @@ The mod retextures vanilla cans, tins and snack packets as Kiwi brands, and the 
 
 The labels are drawn by `tools/nz_food.py`, which also writes `preview/nz_food_showcase.png` (the Workshop card's shop shelf), `config/food.hpp` and `scripts/4_World/AotearoaFood.c`. To add or rename an item, or change its loot, edit `ITEMS` there and run `python tools/nz_food.py`, then rebuild the mission. The artwork is original but the names are real brands; rename them in `ITEMS` if a trademark holder objects.
 
+`wip/food/` is a work-in-progress copy of every item, for trying real label artwork without touching the live items. `python tools/wip_food.py` builds it, and `python tools/pack_mod.py --wip` packs it as a separate test mod, `@AotearoaFoodWIP`, with `AotearoaWIP_*` classes that aren't in the loot. Drop a label image named after the item's key into `wip/food/labels/` and it is fitted onto every front of that pack. Those images are ignored by git, so brand artwork stays out of this public repo. See `wip/food/README.md` for the keys and label shapes.
+
 `mission/serverDZ.cfg` is a server config template pointing at the mission.
 
 To set up a server:
