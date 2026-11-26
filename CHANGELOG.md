@@ -1,12 +1,18 @@
 # Changelog
 
-Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
+Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
 ## Unreleased
 
 ### Changed
 
 - The rice packet is now Rice Risotto (`Aotearoa_RiceRisotto`), with arborio rice on the label. It replaces vanilla rice in the loot
+
+### Added
+
+- `tools/release.py` cuts a release from the Unreleased changelog notes, and `--revert-to vX.Y.Z` re-releases an older version's files as a new version
+- `tools/backup_releases.py` backs up every release's files, notes and checksums outside GitHub
+- The release workflow refuses to replace an existing release and publishes a `SHA256SUMS` file
 
 ## 0.6.3 - 2026-11-26
 

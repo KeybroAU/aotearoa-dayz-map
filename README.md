@@ -495,13 +495,20 @@ Each version is a [GitHub release](https://github.com/KeybroAU/aotearoa-dayz-map
 - the map item source (`mapitem/`)
 - a source zip
 
-To make one:
+To make one, note each change under `## Unreleased` at the top of `CHANGELOG.md`, then on `main` run:
 
-1. Add a section for the new version at the top of `CHANGELOG.md`.
-2. Put the same version in `VERSION` and in `mod/mod.cpp`. The checks fail if they differ.
-3. Commit, then tag and push: `git tag v0.5.0 && git push origin v0.5.0`.
+```
+python tools/release.py            # dry run: shows the next version and its notes
+python tools/release.py --push     # next patch; add --minor for 0.x.0
+```
 
-GitHub runs the checks, builds the files and publishes the release with that version's changelog as its notes.
+It bumps `VERSION`, `mod/mod.cpp` and `mapitem/mod.cpp`, turns the Unreleased section into the new version's section, runs the checks, then commits, tags and pushes. GitHub builds the files and publishes the release with that section as its notes and a `SHA256SUMS` file.
+
+### Old releases and rolling back
+
+Releases are never replaced or deleted. `release.py` refuses a version whose tag exists, and the release workflow refuses to publish over an existing release, so every version stays downloadable from the releases page and as a git tag. `python tools/backup_releases.py <folder>` also copies every release's files, notes and checksums to a folder outside GitHub. It skips files it already has, so run it after each release.
+
+To roll back, either give servers an older release's files, or run `python tools/release.py --revert-to v0.6.2 --push`. That puts every file back as it was in v0.6.2 (except the release tooling and version numbers) and publishes it as a new version, so the version number keeps going up and nothing is lost.
 
 ## Discord updates
 

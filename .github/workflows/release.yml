@@ -18,6 +18,14 @@ jobs:
       - run: pip install -r tools/requirements.txt
       - name: Check the tag matches VERSION
         run: test "v$(cat VERSION)" = "${GITHUB_REF_NAME}"
+      - name: Refuse to replace an existing release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "$GITHUB_REF_NAME is already released; old releases are kept as backups, so cut a new version instead"
+            exit 1
+          fi
       - run: python tools/check_map.py
       - name: Build release files
         run: |
@@ -31,6 +39,7 @@ jobs:
           zip -qr "release/aotearoa-${V}-models.zip" docs/models data/models data/signs docs/CUSTOM_MODELS.md preview/signs_reference.png
           zip -qr "release/aotearoa-${V}-map-item.zip" mapitem
           cp preview/player_map_4096.jpg "release/aotearoa-${V}-player-map.jpg"
+          (cd release && sha256sum *.zip *.jpg > SHA256SUMS)
           python - <<'PY'
           import re, pathlib
           v = pathlib.Path("VERSION").read_text().strip()
@@ -45,3 +54,4 @@ jobs:
           files: |
             release/*.zip
             release/*.jpg
+            release/SHA256SUMS
