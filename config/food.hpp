@@ -2,6 +2,7 @@
 // Each class inherits a vanilla item and only swaps its label texture.
 class BakedBeansCan;
 class BakedBeansCan_Opened;
+class BoxCerealCrunchin;
 class BrisketSpread;
 class BrisketSpread_Opened;
 class Chips;
@@ -10,6 +11,8 @@ class PeachesCan;
 class PeachesCan_Opened;
 class PorkCan;
 class PorkCan_Opened;
+class SardinesCan;
+class SardinesCan_Opened;
 class SodaCan_Cola;
 class SodaCan_Fronta;
 class SodaCan_Kvass;
@@ -17,6 +20,11 @@ class SodaCan_Pipsi;
 class SodaCan_Spite;
 class SpaghettiCan;
 class SpaghettiCan_Opened;
+class TunaCan;
+class TunaCan_Opened;
+class Zagorky;
+class ZagorkyChocolate;
+class ZagorkyPeanuts;
 class Aotearoa_SodaCan_LP: SodaCan_Cola
 {
 	scope = 2;
@@ -101,6 +109,41 @@ class Aotearoa_Biscuits_ChocolateThins: Crackers
 	descriptionShort = "Griffin's Chocolate Thins: thin crisp chocolate biscuits.";
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\chocthins_co.paa"};
 };
+class Aotearoa_Lollies_PineappleLumps: Crackers
+{
+	scope = 2;
+	displayName = "Pascall Pineapple Lumps";
+	descriptionShort = "Pascall Pineapple Lumps: chewy pineapple lollies coated in chocolate.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\pineapplelumps_co.paa"};
+};
+class Aotearoa_Whittakers_CreamyMilk: Zagorky
+{
+	scope = 2;
+	displayName = "Whittaker's Creamy Milk";
+	descriptionShort = "Whittaker's Creamy Milk chocolate, made in Porirua.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\whittakers_milk_ca.paa"};
+};
+class Aotearoa_Whittakers_DarkGhana: ZagorkyChocolate
+{
+	scope = 2;
+	displayName = "Whittaker's Dark Ghana";
+	descriptionShort = "Whittaker's Dark Ghana 72% cocoa chocolate, made in Porirua.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\whittakers_dark_ca.paa"};
+};
+class Aotearoa_Whittakers_PeanutSlab: ZagorkyPeanuts
+{
+	scope = 2;
+	displayName = "Whittaker's Peanut Slab";
+	descriptionShort = "Whittaker's Peanut Slab: milk chocolate packed with peanuts.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\whittakers_peanut_ca.paa"};
+};
+class Aotearoa_WeetBix: BoxCerealCrunchin
+{
+	scope = 2;
+	displayName = "Sanitarium Weet-Bix";
+	descriptionShort = "Sanitarium Weet-Bix whole grain wheat biscuits. Three with milk will keep you going.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\weetbix_co.paa"};
+};
 class Aotearoa_Watties_BakedBeans: BakedBeansCan
 {
 	scope = 2;
@@ -170,4 +213,32 @@ class Aotearoa_Marmite_Opened: BrisketSpread_Opened
 	displayName = "Marmite";
 	descriptionShort = "Marmite yeast spread. You either love it or you hate it.";
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\marmite_co.paa"};
+};
+class Aotearoa_Sealord_Tuna: TunaCan
+{
+	scope = 2;
+	displayName = "Sealord Tuna";
+	descriptionShort = "Sealord tuna chunks in spring water. 185 g.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\sealord_tuna_co.paa"};
+};
+class Aotearoa_Sealord_Tuna_Opened: TunaCan_Opened
+{
+	scope = 2;
+	displayName = "Sealord Tuna";
+	descriptionShort = "Sealord tuna chunks in spring water. 185 g.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\sealord_tuna_co.paa"};
+};
+class Aotearoa_Pams_Sardines: SardinesCan
+{
+	scope = 2;
+	displayName = "Pams Sardines";
+	descriptionShort = "Pams sardines in soybean oil. 106 g.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\pams_sardines_co.paa"};
+};
+class Aotearoa_Pams_Sardines_Opened: SardinesCan_Opened
+{
+	scope = 2;
+	displayName = "Pams Sardines";
+	descriptionShort = "Pams sardines in soybean oil. 106 g.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\pams_sardines_co.paa"};
 };

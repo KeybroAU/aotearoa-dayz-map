@@ -30,7 +30,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 MAP_DIR = Path(__file__).resolve().parents[1]
 OUT = MAP_DIR / "data" / "food"
-TEXTURE = "maps\\aotearoa\\data\\food\\{}_co.paa"
+TEXTURE = "maps\\aotearoa\\data\\food\\{}.paa"
 FONTS = {
     "sans": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
     "italic": "/usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf",
@@ -47,7 +47,14 @@ LAYOUTS = {
     "tin250": ((0.0, 0.758, 1.0, 0.961), (1024, 512), 3),
     "tin100": ((0.0, 0.0, 1.0, 1.0), (1024, 512), 2),
     "bag": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
+    "tuna": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
+    "sardines": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 3),
+    "cereal": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
+    "bar": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
 }
+# Vanilla chocolate bar textures carry alpha (_ca); the rest are plain colour maps (_co). The bar's UV
+# layout isn't published, so its wrapper is a repeating pattern that reads from any part of the texture.
+SUFFIX = {"bar": "_ca"}
 
 
 @dataclass
@@ -62,6 +69,10 @@ class Item:
     art: dict
     opened: str | None = None
     usages: list[str] | None = None
+
+    @property
+    def paa(self) -> str:
+        return self.key + SUFFIX.get(self.layout, "_co")
 
 
 SODA = "A 355 ml can. "
@@ -117,6 +128,27 @@ ITEMS = [
          "Griffin's Chocolate Thins: thin crisp chocolate biscuits.", (8, 6),
          dict(brand="Griffin's", sub="CHOCOLATE THINS", tag="thin & crispy", bg=(50, 30, 90), bg2=(200, 160, 80),
               fg=(255, 255, 255), motif="chocthins")),
+    Item("pineapplelumps", "Aotearoa_Lollies_PineappleLumps", "Crackers", "bag", "Pascall Pineapple Lumps",
+         "Pascall Pineapple Lumps: chewy pineapple lollies coated in chocolate.", (8, 6),
+         dict(brand="Pascall", sub="PINEAPPLE LUMPS", tag="a Kiwi classic", bg=(250, 205, 30), bg2=(110, 60, 25),
+              fg=(110, 60, 25), motif="lumps")),
+    # Whittaker's chocolate, on the vanilla Zagorky bars.
+    Item("whittakers_milk", "Aotearoa_Whittakers_CreamyMilk", "Zagorky", "bar", "Whittaker's Creamy Milk",
+         "Whittaker's Creamy Milk chocolate, made in Porirua.", (15, 12),
+         dict(brand="Whittaker's", sub="CREAMY MILK", tag="33% cocoa", bg=(40, 60, 150), bg2=(215, 175, 80),
+              fg=(255, 255, 255))),
+    Item("whittakers_dark", "Aotearoa_Whittakers_DarkGhana", "ZagorkyChocolate", "bar", "Whittaker's Dark Ghana",
+         "Whittaker's Dark Ghana 72% cocoa chocolate, made in Porirua.", (15, 12),
+         dict(brand="Whittaker's", sub="DARK GHANA", tag="72% cocoa", bg=(60, 25, 20), bg2=(215, 175, 80),
+              fg=(255, 255, 255))),
+    Item("whittakers_peanut", "Aotearoa_Whittakers_PeanutSlab", "ZagorkyPeanuts", "bar", "Whittaker's Peanut Slab",
+         "Whittaker's Peanut Slab: milk chocolate packed with peanuts.", (15, 12),
+         dict(brand="Whittaker's", sub="PEANUT SLAB", tag="since 1951", bg=(250, 200, 30), bg2=(190, 30, 35),
+              fg=(120, 20, 25))),
+    Item("weetbix", "Aotearoa_WeetBix", "BoxCerealCrunchin", "cereal", "Sanitarium Weet-Bix",
+         "Sanitarium Weet-Bix whole grain wheat biscuits. Three with milk will keep you going.", (23, 18),
+         dict(brand="Weet-Bix", sub="WHOLE GRAIN WHEAT BISCUITS", tag="Sanitarium", bg=(250, 200, 35),
+              bg2=(25, 70, 160), fg=(205, 30, 35))),
     # Wattie's tins.
     Item("watties_beans", "Aotearoa_Watties_BakedBeans", "BakedBeansCan", "tin", "Wattie's Baked Beans",
          "Wattie's baked beans in tomato sauce. 420 g.", (25, 18),
@@ -143,6 +175,16 @@ ITEMS = [
          dict(brand="Marmite", sub="YEAST SPREAD", tag="made in NZ", bg=(250, 200, 20), bg2=(200, 20, 30),
               fg=(20, 20, 20), motif="marmite"),
          opened="BrisketSpread_Opened"),
+    Item("sealord_tuna", "Aotearoa_Sealord_Tuna", "TunaCan", "tuna", "Sealord Tuna",
+         "Sealord tuna chunks in spring water. 185 g.", (30, 20),
+         dict(brand="Sealord", sub="TUNA", tag="in spring water", bg=(20, 45, 100), bg2=(250, 200, 40),
+              fg=(255, 255, 255)),
+         opened="TunaCan_Opened", usages=["Coast", "Town", "Office"]),
+    Item("pams_sardines", "Aotearoa_Pams_Sardines", "SardinesCan", "sardines", "Pams Sardines",
+         "Pams sardines in soybean oil. 106 g.", (30, 20),
+         dict(brand="Pams", sub="SARDINES", tag="in soybean oil", bg=(250, 250, 245), bg2=(30, 90, 170),
+              fg=(210, 30, 40), motif="fish"),
+         opened="SardinesCan_Opened", usages=["Coast", "Town", "Village"]),
 ]
 ITEM_CLASSES = {i.cls for i in ITEMS} | {i.cls + "_Opened" for i in ITEMS if i.opened}
 
@@ -384,7 +426,34 @@ def m_marmite(d, box, a, rng):
                             fill=(50, 22, 10))
 
 
-MOTIFS = {"chips": m_chips, "tomatoes": m_tomatoes, "toffeepops": m_biscuits, "shrewsburys": m_biscuits,
+def m_lumps(d, box, a, rng):
+    x0, y0, x1, y1 = box
+    w, h = x1 - x0, y1 - y0
+    for _ in range(14):
+        X, Y = rng.uniform(x0 + 0.12 * w, x1 - 0.12 * w), rng.uniform(y0 + 0.25 * h, y1 - 0.08 * h)
+        R = rng.uniform(0.07, 0.1) * w
+        d.rounded_rectangle((X - R, Y - R * 0.7, X + R, Y + R * 0.7), radius=int(R * 0.6), fill=(90, 50, 25),
+                            outline=(50, 25, 10), width=3)
+        if rng.random() < 0.5:
+            d.ellipse((X - R * 0.5, Y - R * 0.35, X + R * 0.5, Y + R * 0.35), fill=(250, 215, 60))
+        d.arc((X - R * 0.7, Y - R * 0.5, X + R * 0.2, Y), 190, 280, fill=(160, 110, 70), width=4)
+
+
+def fish(d, X, Y, L, body, belly):
+    d.ellipse((X - L / 2, Y - L * 0.14, X + L * 0.35, Y + L * 0.14), fill=body)
+    d.chord((X - L / 2, Y - L * 0.02, X + L * 0.35, Y + L * 0.14), 0, 180, fill=belly)
+    d.polygon([(X + L * 0.3, Y), (X + L / 2, Y - L * 0.14), (X + L / 2, Y + L * 0.14)], fill=body)
+    d.ellipse((X - L * 0.4, Y - L * 0.05, X - L * 0.34, Y + L * 0.01), fill=(15, 15, 25))
+
+
+def m_fish(d, box, a, rng):
+    x0, y0, x1, y1 = box
+    w, h = x1 - x0, y1 - y0
+    for k, (cx, cy) in enumerate(((0.3, 0.45), (0.65, 0.6), (0.4, 0.8))):
+        fish(d, x0 + cx * w, y0 + cy * h, 0.45 * w, (90, 110, 140), (200, 210, 225))
+
+
+MOTIFS = {"lumps": m_lumps, "fish": m_fish, "chips": m_chips, "tomatoes": m_tomatoes, "toffeepops": m_biscuits, "shrewsburys": m_biscuits,
           "chocthins": m_biscuits, "bubbles": m_bubbles, "apples": m_apples, "bolt": m_bolt, "lp": m_lp,
           "beans": m_beans, "spaghetti": m_spaghetti, "peaches": m_peaches, "palm": m_palm, "marmite": m_marmite}
 
@@ -397,7 +466,7 @@ def front(w: int, h: int, item: Item, rng) -> Image.Image:
     for y in range(h):
         k = 1.06 - 0.14 * y / h
         d.line((0, y, w, y), fill=shade(a["bg"], k))
-    tin = item.layout.startswith("tin")
+    tin = item.layout.startswith("tin") or item.layout == "sardines"
     if tin:
         # Wattie's-style: white label, coloured band across the middle, red wordmark.
         d.rectangle((0, int(0.40 * h), w, int(0.62 * h)), fill=a["bg2"])
@@ -425,7 +494,7 @@ def front(w: int, h: int, item: Item, rng) -> Image.Image:
         text(d, (0.55 * w, 0.32 * h), a["brand"], "script", 0.6 * w, 0.48 * h, a["fg"], 3, (90, 10, 15))
         text(d, (0.55 * w, 0.78 * h), a["sub"], "sans", 0.62 * w, 0.3 * h, (255, 255, 255), 2, (90, 10, 15))
     else:
-        kind = "script" if a["brand"] in ("Wattie's", "Griffin's", "Foxton Fizz") else "italic"
+        kind = "script" if a["brand"] in ("Wattie's", "Griffin's", "Foxton Fizz", "Pascall", "Pams") else "italic"
         stroke = shade(a["bg"], 0.45) if a["fg"] == (255, 255, 255) else (255, 255, 255)
         text(d, (0.5 * w, brand_y * h), a["brand"], kind, 0.86 * w, brand_h * h, a["fg"], max(3, w // 120), stroke)
         sub_y = 0.42 if not tin else 0.51
@@ -486,8 +555,143 @@ def crimp(im: Image.Image, frac: float, rng) -> None:
             d.line((x + 5, y0, x + 5, y0 + band), fill=(255, 255, 255, 50), width=2)
 
 
+def tinted_metal(size, rng, tint) -> Image.Image:
+    g = metal(size, rng).convert("L")
+    return Image.merge("RGB", [g.point(lambda v, k=k: min(255, int(v * k))) for k in tint])
+
+
+def tuna(item: Item, rng) -> Image.Image:
+    """Flat rectangular tin: base panel top left, the printed ring-pull lid top right (its long side runs
+    down the texture), the inside under the base, and the side band along the bottom."""
+    a = item.art
+    w = h = 1024
+    im = tinted_metal((w, h), rng, (1.05, 0.88, 0.55))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle((0.02 * w, 0.02 * h, 0.55 * w, 0.4 * h), radius=60, outline=(120, 95, 45), width=10)
+    d.rounded_rectangle((0.05 * w, 0.05 * h, 0.52 * w, 0.37 * h), radius=50, outline=(205, 175, 105), width=6)
+    inside = metal((int(0.53 * w), int(0.36 * h)), rng)
+    im.paste(inside, (0, int(0.4 * h)))
+    lx0, ly0, lx1, ly1 = int(0.57 * w), int(0.04 * h), int(0.98 * w), int(0.64 * h)
+    lab = Image.new("RGB", (ly1 - ly0, lx1 - lx0), a["bg"])
+    ld = ImageDraw.Draw(lab)
+    lw_, lh_ = lab.size
+    ld.rectangle((0, int(0.72 * lh_), lw_, int(0.8 * lh_)), fill=a["bg2"])
+    fish(ld, 0.62 * lw_, 0.5 * lh_, 0.5 * lw_, (150, 175, 205), (225, 232, 240))
+    text(ld, (0.6 * lw_, 0.2 * lh_), a["brand"], "script", 0.62 * lw_, 0.3 * lh_, a["fg"], 4, shade(a["bg"], 0.5))
+    text(ld, (0.6 * lw_, 0.88 * lh_), f"{a['sub']}  {a['tag'].upper()}", "sans", 0.62 * lw_, 0.12 * lh_, a["fg"])
+    lab = wear(lab, rng).rotate(-90, expand=True)
+    mask = Image.new("L", lab.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, lab.width - 1, lab.height - 1), radius=50, fill=255)
+    im.paste(lab, (lx0, ly0), mask)
+    d.rounded_rectangle((lx0, ly0, lx1, ly1), radius=50, outline=(150, 120, 60), width=10)
+    rx, ry, rr = 0.775 * w, 0.13 * h, 0.06 * w
+    d.ellipse((rx - rr, ry - rr, rx + rr, ry + rr), outline=(205, 205, 210), width=14)
+    d.ellipse((rx - rr * 0.35, ry + rr * 0.9, rx + rr * 0.35, ry + rr * 1.6), fill=(195, 195, 200))
+    sx0, sy0, sx1, sy1 = int(0.02 * w), int(0.8 * h), int(0.74 * w), int(0.98 * h)
+    band = Image.new("RGB", (sx1 - sx0, sy1 - sy0), a["bg"])
+    bd = ImageDraw.Draw(band)
+    for k in range(3):
+        cx = (k + 0.5) * band.width / 3
+        text(bd, (cx, band.height * 0.5), f"{a['brand']} {a['sub'].title()}", "script", band.width / 3.4,
+             band.height * 0.6, a["fg"], 2, shade(a["bg"], 0.5))
+    im.paste(wear(band, rng), (sx0, sy0))
+    return im
+
+
+def sardines(item: Item, rng) -> Image.Image:
+    """Oval tin: the inside and the ringed lid across the top, two label bands round the side below."""
+    w = h = 1024
+    im = metal((w, h), rng)
+    d = ImageDraw.Draw(im)
+    d.ellipse((0.0, 0.07 * h, 0.4 * w, 0.47 * h), fill=(150, 150, 155), outline=(110, 110, 115), width=8)
+    cx, cy, r = 0.62 * w, 0.27 * h, 0.19 * w
+    for k in range(6):
+        rr = r * (1 - k * 0.14)
+        d.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), outline=(130 + 12 * (k % 2), 130, 135), width=8)
+    for y0, y1 in ((0.51, 0.72), (0.77, 0.98)):
+        box = (0, int(y0 * h), w, int(y1 * h))
+        im.paste(wear(label(w, box[3] - box[1], item, 3, rng), rng), box[:2])
+    return im
+
+
+def cereal(item: Item, rng) -> Image.Image:
+    """Cereal box: the front on the right, the back on the left, sides and flaps along the top."""
+    a = item.art
+    w = h = 1024
+    im = Image.new("RGB", (w, h), a["bg"])
+    d = ImageDraw.Draw(im)
+    for y in range(h):
+        d.line((0, y, w, y), fill=shade(a["bg"], 1.05 - 0.1 * y / h))
+    for row in range(4):
+        for col in range(5):
+            text(d, ((col + 0.5) * w / 5, (row + 0.5) * 0.3 * h / 4), a["brand"], "italic", w / 6, 0.05 * h,
+                 a["fg"], 2, (255, 255, 255))
+    fx0, fy0, fx1, fy1 = int(0.51 * w), int(0.31 * h), w, h
+    fw, fh = fx1 - fx0, fy1 - fy0
+    f = Image.new("RGB", (fw, fh), a["bg"])
+    fd = ImageDraw.Draw(f)
+    fd.polygon([(0, 0.3 * fh), (fw, 0.18 * fh), (fw, 0.34 * fh), (0, 0.46 * fh)], fill=a["bg2"])
+    text(fd, (0.5 * fw, 0.13 * fh), a["brand"], "italic", 0.9 * fw, 0.2 * fh, a["fg"], 6, (255, 255, 255))
+    text(fd, (0.5 * fw, 0.32 * fh), a["sub"], "sans", 0.86 * fw, 0.06 * fh, (255, 255, 255))
+    text(fd, (0.85 * fw, 0.04 * fh), a["tag"], "italic", 0.28 * fw, 0.04 * fh, (40, 90, 40))
+    bx, by, br = 0.5 * fw, 0.72 * fh, 0.38 * fw
+    fd.ellipse((bx - br, by - br * 0.5, bx + br, by + br * 0.75), fill=(245, 245, 250), outline=(170, 170, 180), width=6)
+    fd.ellipse((bx - br * 0.9, by - br * 0.42, bx + br * 0.9, by + br * 0.3), fill=(250, 250, 240))
+    for k in range(3):
+        x = bx - br * 0.55 + k * br * 0.5
+        fd.rounded_rectangle((x - br * 0.22, by - br * 0.32 - k * 6, x + br * 0.22, by + br * 0.05 - k * 6),
+                             radius=16, fill=(205, 150, 80), outline=(150, 100, 45), width=4)
+        for j in range(5):
+            fd.line((x - br * 0.18, by - br * 0.26 + j * br * 0.06 - k * 6, x + br * 0.18,
+                     by - br * 0.26 + j * br * 0.06 - k * 6), fill=(175, 120, 60), width=3)
+    im.paste(wear(f, rng), (fx0, fy0))
+    bx0, by0, bx1, by1 = int(0.03 * w), int(0.37 * h), int(0.47 * w), h
+    back = Image.new("RGB", (bx1 - bx0, by1 - by0), shade(a["bg"], 0.97))
+    bd = ImageDraw.Draw(back)
+    bwid, bhei = back.size
+    text(bd, (0.5 * bwid, 0.08 * bhei), a["brand"], "italic", 0.8 * bwid, 0.1 * bhei, a["fg"], 3, (255, 255, 255))
+    bd.rectangle((0.1 * bwid, 0.2 * bhei, 0.9 * bwid, 0.62 * bhei), fill=(255, 255, 255), outline=(30, 30, 30), width=3)
+    small = font("plain", int(0.03 * bhei))
+    rows = ["Nutrition Information", "Servings per pack: 20", "Energy  549 kJ", "Protein  4.2 g", "Fat  0.5 g",
+            "Carbohydrate  22 g", "Dietary fibre  3.7 g", "Sodium  97 mg"]
+    for i, r in enumerate(rows):
+        bd.text((0.14 * bwid, 0.23 * bhei + i * 0.048 * bhei), r, font=small, fill=(20, 20, 20))
+    bd.text((0.5 * bwid, 0.7 * bhei), "Made in Auckland, New Zealand", font=small, fill=(20, 20, 20), anchor="mm")
+    im.paste(wear(back, rng), (bx0, by0))
+    return im
+
+
+def bar(item: Item, rng) -> Image.Image:
+    """Chocolate bar wrapper: rows of the wordmark and the flavour between foil bands, repeated so the
+    front reads whichever part of the texture the model maps."""
+    a = item.art
+    w = h = 1024
+    im = Image.new("RGB", (w, h), a["bg"])
+    d = ImageDraw.Draw(im)
+    rows = 8
+    rh = h / rows
+    for r in range(rows):
+        y = r * rh
+        if r % 2 == 0:
+            for c in range(2):
+                text(d, ((c + 0.5) * w / 2, y + rh * 0.5), a["brand"], "script",
+                     w / 2.3, rh * 0.75, a["fg"], 3, shade(a["bg"], 0.5))
+        else:
+            d.rectangle((0, y + rh * 0.08, w, y + rh * 0.92), fill=a["bg2"])
+            for c in range(3):
+                text(d, ((c + 0.5) * w / 3, y + rh * 0.5), f"{a['sub']} · {a['tag']}", "sans", w / 3.3, rh * 0.4,
+                     shade(a["bg"], 0.6) if sum(a["bg"]) < 400 else (255, 255, 255))
+    im = wear(im, rng, 6)
+    return im.convert("RGBA")
+
+
+CUSTOM = {"tuna": tuna, "sardines": sardines, "cereal": cereal, "bar": bar}
+
+
 def texture(item: Item) -> Image.Image:
     rng = random.Random(item.key)
+    if item.layout in CUSTOM:
+        return CUSTOM[item.layout](item, rng)
     (fx0, fy0, fx1, fy1), (w, h), repeats = LAYOUTS[item.layout]
     box = (int(fx0 * w), int(fy0 * h), int(fx1 * w), int(fy1 * h))
     lw, lh = box[2] - box[0], box[3] - box[1]
@@ -531,7 +735,7 @@ def write_config() -> Path:
         lines = [f"class {cls}: {base}", "{", "\tscope = 2;"]
         if display:
             lines += [f'\tdisplayName = "{item.name}";', f'\tdescriptionShort = "{item.desc}";']
-        lines += [f'\thiddenSelectionsTextures[] = {{"{TEXTURE.format(item.key)}"}};', "};"]
+        lines += [f'\thiddenSelectionsTextures[] = {{"{TEXTURE.format(item.paa)}"}};', "};"]
         return lines
 
     for item in ITEMS:
@@ -574,11 +778,56 @@ def write_preview(paths: list[Path]) -> Path:
     return p
 
 
+# The front of each pack on its texture, for the shelf picture: (x0, y0, x1, y1) and a rotation.
+FRONTS = {
+    "soda": ((0.0, 0.466, 0.306, 0.946), 0), "tin": ((0.0, 0.571, 0.36, 0.973), 0),
+    "tin250": ((0.0, 0.758, 0.333, 0.961), 0), "tin100": ((0.0, 0.0, 0.5, 1.0), 0), "bag": ((0.0, 0.0, 1.0, 1.0), 0),
+    "tuna": ((0.57, 0.04, 0.98, 0.64), 90), "sardines": ((0.0, 0.51, 0.333, 0.72), 0),
+    "cereal": ((0.51, 0.31, 1.0, 1.0), 0), "bar": ((0.0, 0.0, 1.0, 0.25), 0),
+}
+SHELVES = [("soda", "bar"), ("bag",), ("tin", "tin250", "tin100", "tuna", "sardines", "cereal")]
+
+
+def write_showcase(paths: list[Path]) -> Path:
+    """The pack fronts on three shop shelves (preview/nz_food_showcase.png, used for a Workshop card)."""
+    W, H = 1800, 1140
+    im = Image.new("RGB", (W, H), (34, 30, 28))
+    d = ImageDraw.Draw(im)
+    row_h = H // len(SHELVES)
+    for r, layouts in enumerate(SHELVES):
+        packs = []
+        for p, item in zip(paths, ITEMS):
+            if item.layout in layouts:
+                (x0, y0, x1, y1), rot = FRONTS[item.layout]
+                tex = Image.open(p).convert("RGB")
+                tw, th = tex.size
+                packs.append(tex.crop((int(x0 * tw), int(y0 * th), int(x1 * tw), int(y1 * th))).rotate(rot, expand=True))
+        max_h = row_h - 70
+        scaled = [pk.resize((max(1, int(pk.width * min(max_h / pk.height, 1.6 * max_h / pk.width))),
+                             int(pk.height * min(max_h / pk.height, 1.6 * max_h / pk.width)))) for pk in packs]
+        total = sum(s.width for s in scaled)
+        k = min(1.0, (W - 60 - 14 * len(scaled)) / total)
+        scaled = [s.resize((int(s.width * k), int(s.height * k))) for s in scaled]
+        gap = (W - sum(s.width for s in scaled)) / (len(scaled) + 1)
+        base = (r + 1) * row_h - 40
+        x = gap
+        for s in scaled:
+            im.paste(s, (int(x), base - s.height))
+            d.rectangle((int(x), base - s.height, int(x) + s.width - 1, base - 1), outline=(0, 0, 0), width=2)
+            x += s.width + gap
+        d.rectangle((0, base, W, base + 26), fill=(120, 80, 45))
+        d.rectangle((0, base + 26, W, base + 36), fill=(70, 45, 25))
+    p = MAP_DIR / "preview" / "nz_food_showcase.png"
+    im.save(p, optimize=True)
+    return p
+
+
 def main() -> None:
     paths = write_textures()
     write_config()
     write_script()
     write_preview(paths)
+    write_showcase(paths)
     print(f"{len(ITEMS)} New Zealand food and drink items, {len(paths)} textures in {OUT.relative_to(MAP_DIR)}")
 
 

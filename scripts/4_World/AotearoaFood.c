@@ -41,3 +41,19 @@ class Aotearoa_Marmite : BrisketSpread
 		ReplaceEdibleWithNew("Aotearoa_Marmite_Opened");
 	}
 }
+
+class Aotearoa_Sealord_Tuna : TunaCan
+{
+	override void Open()
+	{
+		ReplaceEdibleWithNew("Aotearoa_Sealord_Tuna_Opened");
+	}
+}
+
+class Aotearoa_Pams_Sardines : SardinesCan
+{
+	override void Open()
+	{
+		ReplaceEdibleWithNew("Aotearoa_Pams_Sardines_Opened");
+	}
+}

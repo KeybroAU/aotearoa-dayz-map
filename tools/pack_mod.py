@@ -166,9 +166,14 @@ def convert_textures(tools: Path) -> None:
     jobs = [(p, "_co") for p in sorted((MAP_DIR / "data" / "signs").glob("sign_*.png"))]
     jobs += [(p, "_ca") for p in sorted((MAP_DIR / "data" / "signs").glob("post_*.png"))]
     jobs += [(p, "_co") for p in sorted((MAP_DIR / "data" / "models").glob("*.png"))]
-    jobs += [(p, "_co") for p in sorted((MAP_DIR / "data" / "food").glob("*.png"))]
     for png, suffix in jobs:
         run([exe, png, png.with_name(png.stem + suffix + ".paa")])
+    import nz_food
+
+    for item in nz_food.ITEMS:
+        png = MAP_DIR / "data" / "food" / f"{item.key}.png"
+        run([exe, png, png.with_name(item.paa + ".paa")])
+        jobs.append((png, item.paa))
     print(f"  {len(jobs)} sign, model and food textures")
 
 

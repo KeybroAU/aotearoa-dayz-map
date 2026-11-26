@@ -68,8 +68,6 @@ NZ_TYPES = {
     # Dairy country, mānuka honey, kaimoana and tramping-hut food.
     "Honey": (30, 22, ["Farm", "Village", "Town"], ["Tier1", "Tier2", "Tier3"]),
     "PowderedMilk": (30, 22, ["Farm", "Town", "Village"], ["Tier1", "Tier2", "Tier3"]),
-    "SardinesCan": (30, 20, ["Coast", "Town", "Village"], None),
-    "TunaCan": (30, 20, ["Coast", "Town", "Office"], None),
     "Rice": (25, 18, ["Village", "Town", "Hunting"], None),
     "Marmalade": (25, 18, ["Village", "Town", "School"], None),
     "Tomato": (25, 18, ["Farm", "Village"], None),

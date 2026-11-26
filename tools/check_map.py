@@ -124,11 +124,13 @@ def food() -> None:
     bases = {i.base for i in items} | {i.opened for i in items if i.opened}
     check(all(b.lower() in vanilla for b in bases), "every food item inherits a vanilla class")
     missing = [i.key for i in items if not (MAP_DIR / "data" / "food" / f"{i.key}.png").exists()
-               or nz_food.TEXTURE.format(i.key) not in hpp]
+               or nz_food.TEXTURE.format(i.paa) not in hpp]
     check(not missing, f"{len(items)} food label textures" + (f" (missing: {missing})" if missing else ""))
     sizes = {i.key: Image.open(MAP_DIR / "data" / "food" / f"{i.key}.png").size for i in items if i.key not in missing}
     check(all(sizes[i.key] == nz_food.LAYOUTS[i.layout][1] for i in items if i.key in sizes),
           "food textures match their vanilla layout size")
+    checklist = (MAP_DIR / "docs" / "IN_GAME_TEST_CHECKLIST.md").read_text(encoding="utf-8")
+    check(all(f"`{i.cls}`" in checklist for i in items), "the in-game test checklist lists every food item")
     tins = [i for i in items if i.opened]
     check(all(f'ReplaceEdibleWithNew("{i.cls}_Opened")' in script for i in tins),
           f"{len(tins)} tins open into their own opened class")
