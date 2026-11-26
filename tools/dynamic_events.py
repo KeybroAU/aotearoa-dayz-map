@@ -24,6 +24,7 @@ import numpy as np
 
 import food_stashes as fs
 import generate_terrain as g
+import nz_gear
 import setpieces
 
 MISSION = fs.MISSION
@@ -41,15 +42,18 @@ TOOLS = ["Flashlight", "Battery9V", "Rope", "DuctTape", "CanOpener", "Hatchet", 
          "PersonalRadio"]
 TRAMPING = ["MountainBag_Green", "MountainBag_Orange", "Compass", "Canteen", "Matchbox", "HuntingKnife",
             "Heatpack", "Raincoat_Orange", "HikingBoots_Brown", "Pot", "FishingRod", "Rope"]
+GEAR = [i.cls for i in nz_gear.ITEMS if i.key in ("swanndri_shirt", "swanndri_ranger", "stubbies", "jandals",
+                                                  "allblacks_tee", "canterbury_jersey")]
 FREIGHT = ["CarBattery", "SparkPlug", "TireRepairKit", "FieldShovel", "Raincoat_Orange", "Rope"]
 
 # kind: (label, loot radius m, min, max, item list builder)
 LOOT = {
     "planecrash": ("Air New Zealand cargo plane crash", 16.0, 8, 12,
-                   lambda: fs.classes(["snacks", "fizzy", "dairy", "pantry"]) + MEDICAL + TOOLS),
+                   lambda: fs.classes(["snacks", "fizzy", "dairy", "pantry"]) + MEDICAL + TOOLS + GEAR),
     "ferry": ("Stranded Interislander ferry", 10.0, 6, 9,
               lambda: fs.classes(["snacks", "fizzy", "fish", "pantry"]) + FREIGHT + MEDICAL[:2]),
-    "dochut": ("DOC hut stash", 3.0, 3, 5, lambda: TRAMPING + fs.classes(["pantry", "snacks"]) + MEDICAL[:1]),
+    "dochut": ("DOC hut stash", 3.0, 3, 5,
+               lambda: TRAMPING + fs.classes(["pantry", "snacks"]) + MEDICAL[:1] + GEAR[:3]),
 }
 
 

@@ -8,7 +8,7 @@ class CfgPatches
 		units[] = {"aotearoa"};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"DZ_Data", "DZ_Scripts", "DZ_Structures", "DZ_Gear_Food", "DZ_Gear_Drinks", "DZ_Worlds_Chernarusplus_World"};
+		requiredAddons[] = {"DZ_Data", "DZ_Scripts", "DZ_Structures", "DZ_Gear_Food", "DZ_Gear_Drinks", "DZ_Characters_Tops", "DZ_Characters_Pants", "DZ_Characters_Shoes", "DZ_Worlds_Chernarusplus_World"};
 	};
 };
 
@@ -44,6 +44,7 @@ class CfgVehicles
 	#include "config\signs.hpp"
 	#include "config\structures.hpp"
 	#include "config\food.hpp"
+	#include "config\gear.hpp"
 };
 
 class CfgWorldList

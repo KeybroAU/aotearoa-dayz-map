@@ -27,6 +27,7 @@ from scipy import ndimage
 
 import generate_terrain as g
 import nz_food
+import nz_gear
 
 TIER_COLOURS = {1: (60, 170, 60), 2: (230, 210, 60), 3: (240, 130, 40), 4: (210, 40, 40)}
 
@@ -211,11 +212,12 @@ def _entry(src, name: str, nominal: int, mn: int, usages, values):
 
 def write_types(path: Path) -> None:
     """NZ_TYPES, then the New Zealand food and drink (tools/nz_food.py) in place of the vanilla
-    items they retexture, which drop to nominal 0."""
+    items they retexture, which drop to nominal 0, then the New Zealand clothing (tools/nz_gear.py)
+    alongside the vanilla clothes."""
     import xml.etree.ElementTree as ET
 
     vanilla = {e.get("name"): e for e in ET.parse(VANILLA_TYPES).getroot().iter("type")}
-    missing = sorted((set(NZ_TYPES) | set(nz_food.replaced())) - set(vanilla))
+    missing = sorted((set(NZ_TYPES) | set(nz_food.replaced()) | {i.base for i in nz_gear.ITEMS}) - set(vanilla))
     if missing:
         raise SystemExit(f"Not in {VANILLA_TYPES.name}: {', '.join(missing)}. Run refresh_vanilla_types.py.")
     clash = sorted(set(NZ_TYPES) & set(nz_food.replaced()))
@@ -228,6 +230,8 @@ def write_types(path: Path) -> None:
         root.append(_entry(vanilla[name], name, 0, 0, None, None))
     for item in nz_food.ITEMS:
         root.append(_entry(vanilla[item.base], item.cls, item.loot[0], item.loot[1], item.usages, None))
+    for gear in nz_gear.ITEMS:
+        root.append(_entry(vanilla[gear.base], gear.cls, gear.loot[0], gear.loot[1], gear.usages, None))
     ET.indent(root, space="    ")
     body = ET.tostring(root, encoding="unicode")
     path.parent.mkdir(parents=True, exist_ok=True)

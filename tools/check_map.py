@@ -89,9 +89,11 @@ def loot() -> None:
     types = list(ET.parse(MISSION / "aotearoa_ce" / "types.xml").getroot().iter("type"))
     names = [e.get("name") for e in types]
     check(bool(types) and len(set(names)) == len(names), f"{len(types)} New Zealand loot types, no duplicates")
-    base = {i.cls: i.base for i in nz_food.ITEMS}
+    import nz_gear
+
+    base = {i.cls: i.base for i in nz_food.ITEMS + nz_gear.ITEMS}
     check(all(n in base or (n.lower() in classes and n in vanilla) for n in names),
-          "every loot type is a vanilla DayZ type or a New Zealand food item")
+          "every loot type is a vanilla DayZ type or a New Zealand food or clothing item")
     bad_limits = sorted({u.get("name") for e in types for u in e.iter("usage")} - USAGES
                         | {v.get("name") for e in types for v in e.iter("value")} - VALUES)
     check(not bad_limits, "usages and values are in cfglimitsdefinition.xml" + (f" (unknown: {bad_limits})" if bad_limits else ""))
@@ -159,13 +161,32 @@ def food() -> None:
     known = _names(MAP_DIR / "tools" / "dayz_classes.txt")
     used = {o["cls"] for e in events for s in e["sites"] for o in s["objects"]}
     used |= {i for e in events for s in e["sites"] for i in s["loot"]["items"]}
-    bad = sorted(c for c in used if c.lower() not in known and c not in nz_food.ITEM_CLASSES)
+    import nz_gear
+
+    bad = sorted(c for c in used if c.lower() not in known and c not in nz_food.ITEM_CLASSES | nz_gear.ITEM_CLASSES)
     empty = [e["label"] for e in events if len(e["sites"]) < e["active"]]
     check(bool(events) and not bad and not empty, f"{len(events)} dynamic events, "
           f"{sum(len(e['sites']) for e in events)} sites, {len(used)} classes exist"
           + (f" (unknown: {', '.join(bad[:5])})" if bad else "") + (f" (too few sites: {empty})" if empty else ""))
     check("aotearoa/dynamic_events.json" in (MISSION / "init.c").read_text(encoding="utf-8"),
           "init.c starts the dynamic events")
+
+
+def gear() -> None:
+    """Every New Zealand clothing item has its class, a texture and a loot entry."""
+    import nz_gear
+
+    hpp = MAP_DIR / "config" / "gear.hpp"
+    text = hpp.read_text(encoding="utf-8").replace("\r\n", "\n") if hpp.exists() else ""
+    check(text == nz_gear.config_text(), "config/gear.hpp is up to date with tools/nz_gear.py")
+    check('#include "config\\gear.hpp"' in (MAP_DIR / "config.cpp").read_text(encoding="utf-8"),
+          "config.cpp includes gear.hpp")
+    missing = [i.key for i in nz_gear.ITEMS if not (MAP_DIR / "data" / "gear" / f"{i.key}.png").exists()]
+    check(not missing, f"{len(nz_gear.ITEMS)} clothing textures" + (f" (missing: {missing})" if missing else ""))
+    types = (MISSION / "aotearoa_ce" / "types.xml").read_text(encoding="utf-8")
+    check(all(f'name="{i.cls}"' in types for i in nz_gear.ITEMS), "every clothing item is in the loot")
+    checklist = (MAP_DIR / "docs" / "IN_GAME_TEST_CHECKLIST.md").read_text(encoding="utf-8")
+    check(all(f"`{i.cls}`" in checklist for i in nz_gear.ITEMS), "the in-game test checklist lists every clothing item")
 
 
 def main() -> None:
@@ -347,6 +368,8 @@ def main() -> None:
 
     print("Food and drink")
     food()
+    print("Clothing")
+    gear()
 
     print()
     if failures:

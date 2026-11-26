@@ -108,6 +108,22 @@ Things to look at closely, because their texture layouts are guessed or approxim
 
 If a texture is sideways, mirrored or in the wrong place, take a screenshot. For a fix, convert the vanilla texture to PNG with DayZ Tools' ImageToPAA (for example `P:\DZ\gear\food\data\zagorky_milk_ca.paa`) and send it; the labels can then be lined up exactly with the vanilla layout.
 
+## New Zealand clothing
+
+Spawn each one by its class name, or find it in loot (farms, hunting spots, houses, shops, schools). For each, check the texture in the inventory preview, worn (male and female) and dropped on the ground, with no white, black or stretched patches. The vanilla clothing texture layouts aren't published, so the textures are repeating patterns: look for a pattern that's far too big or tiny, or seams that don't line up.
+
+| Item | Class name | Built on |
+|---|---|---|
+| Swanndri Bush Shirt | `Aotearoa_Swanndri_BushShirt` | Shirt_RedCheck |
+| Swanndri Ranger Jacket | `Aotearoa_Swanndri_RangerJacket` | WoolCoat_BlueCheck |
+| Stubbies | `Aotearoa_Stubbies` | ShortJeans_Darkblue |
+| Jandals | `Aotearoa_Jandals` | SandalsShoes_Black |
+| All Blacks Tee | `Aotearoa_AllBlacks_Tee` | TShirt_Black |
+| Canterbury Rugby Jersey | `Aotearoa_Canterbury_Jersey` | TShirt_RedBlackStripes |
+
+- [ ] **Canterbury Rugby Jersey:** the hoops should run round the body, not up and down. If they run vertically, send a screenshot; the texture just needs turning.
+- [ ] **Jandals:** a plain blue rubber texture over the vanilla sandal model.
+
 ## Weather, seasons and wildlife
 
 - [ ] The weather changes: westerly rain, clear spells and wind

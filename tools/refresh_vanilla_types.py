@@ -1,4 +1,4 @@
-"""Copy the vanilla types.xml entries that economy.NZ_TYPES changes and nz_food.ITEMS retexture into tools/vanilla_types.xml.
+"""Copy the vanilla types.xml entries that economy.NZ_TYPES changes and nz_food.ITEMS and nz_gear.ITEMS retexture into tools/vanilla_types.xml.
 
     python refresh_vanilla_types.py [--xml path/to/types.xml]
 
@@ -15,6 +15,7 @@ from pathlib import Path
 
 import economy
 import nz_food
+import nz_gear
 
 URL = ("https://raw.githubusercontent.com/BohemiaInteractive/DayZ-Central-Economy/master/"
        "dayzOffline.chernarusplus/db/types.xml")
@@ -30,7 +31,7 @@ def main() -> None:
         with urllib.request.urlopen(URL, timeout=60) as r:
             text = r.read().decode("utf-8")
     vanilla = {e.get("name"): e for e in ET.fromstring(text).iter("type")}
-    names = set(economy.NZ_TYPES) | set(nz_food.replaced())
+    names = set(economy.NZ_TYPES) | set(nz_food.replaced()) | {i.base for i in nz_gear.ITEMS}
     missing = sorted(names - set(vanilla))
     if missing:
         raise SystemExit(f"Not in vanilla types.xml: {', '.join(missing)}")
