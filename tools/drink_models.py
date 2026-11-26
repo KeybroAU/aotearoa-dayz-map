@@ -346,6 +346,7 @@ def main() -> None:
     (MODEL_DIR / f"{NAME}.mtl").write_text(f"newmtl {NAME}\nKd 1 1 1\nmap_Kd ../../data/food/models/{NAME}.png\n")
     tex = texture()
     tex.save(TEX_DIR / f"{NAME}.png", optimize=True)
+    nf.record(["models/" + NAME])
     (TEX_DIR / f"{NAME}.rvmat").write_text(rvmat(0.6, 70, False), encoding="utf-8", newline="\r\n")
     with np.errstate(invalid="ignore"):
         sheet = render(tex)

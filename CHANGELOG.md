@@ -2,6 +2,14 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
+## Unreleased
+
+### Fixed
+
+- `build_all.bat` failed on Windows with every food texture "out of date". The generators drew text with Linux font files, so on Windows they fell back to Pillow's tiny built-in font. The fonts (DejaVu and Liberation, both free to redistribute) now ship in `tools/fonts/`, and every generator uses them, so labels, maps, signs and branding come out the same on any computer
+- The food check now compares what drew each texture (the item, the drawing code and the fonts, recorded in `data/food/inputs.json`) instead of the pixels, which differ slightly between computers
+- The player map's sea, lake and river names are in italics again (the italic font was missing, so they were in the fallback font)
+
 ## 0.6.9 - 2026-11-26
 
 ### Added

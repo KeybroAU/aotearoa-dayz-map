@@ -21,6 +21,8 @@ import labelplace
 from PIL import Image, ImageDraw
 from scipy import ndimage
 
+import fontpaths
+
 TOWNS_CSV = Path(__file__).resolve().parent / "towns.csv"
 
 TIERS = {
@@ -419,8 +421,7 @@ def _font(size: int):
     from PIL import ImageFont
 
     # Pillow's built-in font has no macrons, so prefer a system font that does.
-    for name in ("DejaVuSans.ttf", "arial.ttf", "Arial.ttf", "LiberationSans-Regular.ttf",
-                 "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"):
+    for name in (fontpaths.path("DejaVuSans.ttf"), "DejaVuSans.ttf", "arial.ttf", "Arial.ttf"):
         try:
             return ImageFont.truetype(name, size)
         except OSError:

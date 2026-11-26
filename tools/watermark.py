@@ -4,10 +4,12 @@ from __future__ import annotations
 
 from PIL import Image, ImageDraw, ImageFont
 
+import fontpaths
+
 CREDIT = "Designed by Keybro"
 SITE = "Keybrogaming.com"
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT = fontpaths.path("DejaVuSans.ttf")
+FONT_BOLD = fontpaths.path("DejaVuSans-Bold.ttf")
 
 
 def _font(path: str, size: int) -> ImageFont.ImageFont:

@@ -11,8 +11,10 @@ keeps the vanilla model, nutrition, sounds and actions. It writes:
   preview/nz_food.png                every texture on one sheet
   preview/nz_food_layouts.png        every texture with its vanilla UV regions outlined
 
-`python nz_food.py --verify` rebuilds everything in memory and fails if a committed texture, the
-config or the script is out of date, a texture is the wrong size, or a pack front is blank.
+`python nz_food.py --verify` fails if a committed texture, the config or the script is out of date, a
+texture is the wrong size, or a pack front is blank. Textures count as out of date when the code, item
+or fonts that drew them have changed since (data/food/inputs.json), so the check gives the same answer
+on every computer even though text renders slightly differently from one to another.
 tools/release.py runs it before every release.
 
 economy.py takes the loot entries from ITEMS: each item copies its vanilla class's types.xml entry,
@@ -34,15 +36,17 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
+import fontpaths
+
 MAP_DIR = Path(__file__).resolve().parents[1]
 OUT = MAP_DIR / "data" / "food"
 TEXTURE = "maps\\aotearoa\\data\\food\\{}.paa"
 FONTS = {
-    "sans": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-    "italic": "/usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf",
-    "serif": "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
-    "script": "/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf",
-    "plain": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "sans": fontpaths.path("DejaVuSans-Bold.ttf"),
+    "italic": fontpaths.path("LiberationSans-BoldItalic.ttf"),
+    "serif": fontpaths.path("DejaVuSerif-Bold.ttf"),
+    "script": fontpaths.path("LiberationSerif-BoldItalic.ttf"),
+    "plain": fontpaths.path("DejaVuSans.ttf"),
 }
 
 # Label band of each vanilla layout as fractions of the texture (x0, y0, x1, y1), the texture size,
@@ -287,10 +291,11 @@ def replaced() -> list[str]:
 
 
 def font(kind: str, size: int) -> ImageFont.FreeTypeFont:
+    # No fallback: Pillow's built-in font would quietly redraw every label in tiny bitmap text.
     try:
         return ImageFont.truetype(FONTS[kind], max(6, int(size)))
     except OSError:
-        return ImageFont.load_default()
+        sys.exit(f"Missing font {FONTS[kind]}. It ships in tools/fonts/; restore it from the repo.")
 
 
 def fit(d: ImageDraw.ImageDraw, text: str, kind: str, width: float, height: float) -> ImageFont.FreeTypeFont:
@@ -1023,6 +1028,7 @@ def write_textures() -> list[Path]:
         p = OUT / f"{item.key}.png"
         texture(item).save(p)
         paths.append(p)
+    record(i.key for i in ITEMS)
     return paths
 
 
@@ -1168,22 +1174,64 @@ def write_layouts(paths: list[Path]) -> Path:
     return p
 
 
+INPUTS = OUT / "inputs.json"
+
+
+def _source(path: Path) -> bytes:
+    return path.read_bytes().replace(b"\r\n", b"\n")
+
+
+def fingerprints() -> dict[str, str]:
+    """A hash of everything that draws each texture: its item, the drawing code and the fonts. Text
+    rendering differs a little between computers (Pillow builds, FreeType, text layout engines), so the
+    release check compares these rather than the pixels."""
+    import hashlib
+
+    tools = Path(__file__).resolve().parent
+    common = hashlib.sha256(_source(tools / "nz_food.py"))
+    for f in sorted(fontpaths.FONT_DIR.glob("*.ttf")):
+        common.update(f.read_bytes())
+    out = {}
+    for item in ITEMS:
+        h = common.copy()
+        h.update(repr((item.key, item.layout, item.art)).encode("utf-8"))
+        out[item.key] = h.hexdigest()
+    h = common.copy()
+    h.update(_source(tools / "drink_models.py"))
+    out["models/v_can"] = h.hexdigest()
+    return out
+
+
+def record(keys) -> None:
+    """Note the inputs of the textures just written, keeping the others' entries."""
+    import json
+
+    have = json.loads(INPUTS.read_text(encoding="utf-8")) if INPUTS.exists() else {}
+    now = fingerprints()
+    have.update({k: now[k] for k in keys})
+    INPUTS.write_text(json.dumps({k: have[k] for k in sorted(have) if k in now}, indent=1) + "\n", encoding="utf-8")
+
+
 def verify() -> list[str]:
-    """Problems that should stop a release: textures, config or script out of date with ITEMS, a texture
-    the wrong size for its layout, or a pack whose front is blank."""
+    """Problems that should stop a release: a texture, the config or the script out of date with the
+    code that makes them, a texture the wrong size for its layout, or a pack whose front is blank."""
+    import json
+
     problems = []
+    recorded = json.loads(INPUTS.read_text(encoding="utf-8")) if INPUTS.exists() else {}
+    now = fingerprints()
     for item in ITEMS:
         p = OUT / f"{item.key}.png"
         if not p.exists():
             problems.append(f"{item.name}: {p.relative_to(MAP_DIR)} is missing")
             continue
         have = np.asarray(Image.open(p).convert("RGBA")).astype(int)
-        want = np.asarray(texture(item).convert("RGBA")).astype(int)
-        if have.shape != want.shape:
+        size = LAYOUTS[item.layout][1]
+        if (have.shape[1], have.shape[0]) != size:
             problems.append(f"{item.name}: texture is {have.shape[1]}x{have.shape[0]}, the {item.layout} layout "
-                            f"needs {want.shape[1]}x{want.shape[0]}")
+                            f"needs {size[0]}x{size[1]}")
             continue
-        if np.abs(have - want).max() > 2:
+        if recorded.get(item.key) != now[item.key]:
             problems.append(f"{item.name}: {p.relative_to(MAP_DIR)} is out of date")
         h, w = have.shape[:2]
         (x0, y0, x1, y1), _ = FRONTS[item.layout]
@@ -1192,8 +1240,7 @@ def verify() -> list[str]:
             problems.append(f"{item.name}: the front of the pack is blank")
     import drink_models
     p = drink_models.TEX_DIR / f"{drink_models.NAME}.png"
-    if not p.exists() or np.abs(np.asarray(Image.open(p).convert("RGB")).astype(int)
-                                - np.asarray(drink_models.texture().convert("RGB")).astype(int)).max() > 2:
+    if not p.exists() or recorded.get("models/v_can") != now["models/v_can"]:
         problems.append(f"{p.relative_to(MAP_DIR)} is out of date (run python tools/drink_models.py)")
     for path, want in ((MAP_DIR / "config" / "food.hpp", config_text()),
                        (MAP_DIR / "scripts" / "4_World" / "AotearoaFood.c", script_text())):

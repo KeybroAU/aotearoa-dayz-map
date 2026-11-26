@@ -18,13 +18,14 @@ from PIL import Image, ImageDraw, ImageFont
 
 import labelplace
 import watermark
+import fontpaths
 
 MAP_DIR = Path(__file__).resolve().parents[1]
 SOURCE = MAP_DIR / "source"
 PREVIEW = MAP_DIR / "preview"
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-FONT_ITALIC = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf"
+FONT = fontpaths.path("DejaVuSans.ttf")
+FONT_BOLD = fontpaths.path("DejaVuSans-Bold.ttf")
+FONT_ITALIC = fontpaths.path("DejaVuSans-Oblique.ttf")
 TIER_STYLE = {  # font scale, dot radius scale
     "capital": (1.8, 1.6), "city": (1.45, 1.3), "town": (1.15, 1.0), "village": (0.9, 0.8), "military": (1.0, 1.0),
 }
@@ -117,7 +118,7 @@ def render(satellite: Image.Image, size: int, text_scale: float = 1.0, legend: b
             for pos in ((4 * s, v + 6 * s), (size - 34 * s, v + 6 * s)) if i else ():
                 d.text(pos, label, font=grid_font, fill=(255, 255, 255, 220), stroke_width=2, stroke_fill=(0, 0, 0, 200))
 
-    sym_font = font("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", int(22 * s))
+    sym_font = font(fontpaths.path("DejaVuSans.ttf"), int(22 * s))
     site_font = font(FONT, int(15 * s))
     water_font = font(FONT_ITALIC, int(15 * s))
     sea_font = font(FONT_ITALIC, int(30 * s))

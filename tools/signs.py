@@ -29,6 +29,8 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from scipy.spatial import cKDTree
 
+import fontpaths
+
 MAP_DIR = Path(__file__).resolve().parents[1]
 SOURCE = MAP_DIR / "source"
 SIGN_DIR = MAP_DIR / "data" / "signs"
@@ -64,8 +66,8 @@ BUILDINGS = [SOURCE / "objects" / "towns_spawner.json", SOURCE / "objects" / "po
 GREEN = (0, 104, 71)
 WHITE = (255, 255, 255)
 BACK_GREY = (128, 130, 132)
-FONTS_BOLD = ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "C:/Windows/Fonts/arialbd.ttf"]
-FONTS = ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "C:/Windows/Fonts/arial.ttf"]
+FONTS_BOLD = [fontpaths.path("DejaVuSans-Bold.ttf"), "C:/Windows/Fonts/arialbd.ttf"]
+FONTS = [fontpaths.path("DejaVuSans.ttf"), "C:/Windows/Fonts/arial.ttf"]
 
 
 def class_name(name: str) -> str:

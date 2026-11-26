@@ -17,6 +17,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 import watermark
+import fontpaths
 
 MAP_DIR = Path(__file__).resolve().parents[1]
 OUT = MAP_DIR / "data" / "branding"
@@ -24,7 +25,7 @@ ART = OUT / "art"
 WORKSHOP = MAP_DIR / "workshop"
 BANNER = MAP_DIR / ".github" / "banner.png"
 STRAPLINE = "A New Zealand survival terrain"
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT = fontpaths.path("DejaVuSans-Bold.ttf")
 
 
 def main() -> None:

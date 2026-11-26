@@ -6,3 +6,4 @@
 *.shp binary
 *.shx binary
 *.dbf binary
+*.ttf binary
