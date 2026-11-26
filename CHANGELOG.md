@@ -2,13 +2,26 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, add a section here, bump both files, and push a tag `vX.Y.Z`; GitHub builds the release.
 
-## Unreleased
+## 0.6.2 - 2026-11-26
 
 ### Added
 - "Designed by Keybro" and Keybrogaming.com in the corner of the in-game map screen on Aotearoa (`scripts/5_Mission/AotearoaMapMenu.c`, `gui/layouts/aotearoa_map_watermark.layout`)
 - Steam Workshop preview image and description (`workshop/`), with the Discord link and the no-repack notice
 - GitHub banner with "Designed by Keybro" and Keybrogaming.com (`.github/banner.png`), in the README and for the repo's social preview
 - Commits, pull requests and releases post to Discord (`.github/workflows/discord.yml`, secret `DISCORD_WEBHOOK`)
+- The map checks make sure every spawner class, Terrain Builder template and starting gear item exists in DayZ, using lists from Sam's DayZ Object Finder (`tools/dayz_classes.txt`, `tools/dayz_models.txt`; refresh with `tools/refresh_object_list.py`)
+- The world's own navmesh settings, keeping the South and Stewart Islands (`filterIsolatedIslands = 0`)
+- Takistan pines and cycads, and Livonia buildings, from the DLC data; the Terrain Builder guide lists the DLC template libraries
+
+### Fixed
+- `config/names.hpp` was missing a closing brace, which stopped the config from building
+- Buildings and props with class names DayZ does not have, so they never spawned: warehouses (now `Land_Factory_Small`), power poles, churches, tanks, the transformer and the trader fences
+- About 125,000 trees, rocks, guardrails, rail bridges and props used Terrain Builder templates that do not exist
+- The Interislander wreck's lifeboat used the wrong model name
+- The terrain inherited the Chernarus 2D map overlay (`userMapPath`) and navmesh
+- Chernarus-only mission files (area flags, dirt and fruit clusters, underground triggers) were merged into the server mission; `cfgEffectArea.json` is now named as DayZ expects, so Linux servers no longer load the Chernarus gas zones
+- Sakhal surface materials Terrain Builder could not open (`sa_volcanic_red.rvmat` and others) replaced with Chernarus ones
+- Artillery sounds played over land; they now come from offshore
 
 ## 0.6.1 - 2026-11-25
 

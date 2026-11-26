@@ -391,7 +391,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     17063.075,
     3.904,
@@ -691,7 +691,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     16437.281,
     1.709,
@@ -1021,7 +1021,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     12731.825,
     4.688,
@@ -1366,7 +1366,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     9188.125,
     1.757,
@@ -1681,7 +1681,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     19549.325,
     2.194,
@@ -2026,7 +2026,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     21545.625,
     2.084,
@@ -2326,7 +2326,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     15858.531,
     1.777,
@@ -2641,7 +2641,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     15148.531,
     2.053,
@@ -2881,7 +2881,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     4663.125,
     2.095,
@@ -3196,7 +3196,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     10121.125,
     1.809,
@@ -3526,7 +3526,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     15252.375,
     2.238,
@@ -3556,7 +3556,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     5024.559,
     418.718,
@@ -3571,7 +3571,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     4991.617,
     420.737,
@@ -3586,7 +3586,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     4958.676,
     401.426,
@@ -3601,7 +3601,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     4925.735,
     360.478,
@@ -3616,7 +3616,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     4892.793,
     320.466,
@@ -3631,7 +3631,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     4859.852,
     294.877,
@@ -3646,7 +3646,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     4826.911,
     283.646,
@@ -3661,7 +3661,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     4793.97,
     299.106,
@@ -3691,7 +3691,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     7238.664,
     439.058,
@@ -3706,7 +3706,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     7282.936,
     408.153,
@@ -3721,7 +3721,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     7327.209,
     379.079,
@@ -3736,7 +3736,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     7371.481,
     355.975,
@@ -3751,7 +3751,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     7415.753,
     322.652,
@@ -3766,7 +3766,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     7460.026,
     309.351,
@@ -3781,7 +3781,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     7504.298,
     335.652,
@@ -3796,7 +3796,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     7548.571,
     374.67,
@@ -3826,7 +3826,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     8886.375,
     508.091,
@@ -3841,7 +3841,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     8875.628,
     489.852,
@@ -3856,7 +3856,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     8864.881,
     450.873,
@@ -3871,7 +3871,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     8854.133,
     410.846,
@@ -3886,7 +3886,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     8843.386,
     371.05,
@@ -3901,7 +3901,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     8832.639,
     331.721,
@@ -3916,7 +3916,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     8821.891,
     292.867,
@@ -3931,7 +3931,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     8811.144,
     254.358,
@@ -3961,7 +3961,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     18745.83,
     409.956,
@@ -3976,7 +3976,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     18748.37,
     370.661,
@@ -3991,7 +3991,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     18750.91,
     334.091,
@@ -4006,7 +4006,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     18753.449,
     300.416,
@@ -4021,7 +4021,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     18755.989,
     274.416,
@@ -4036,7 +4036,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     18758.529,
     254.049,
@@ -4051,7 +4051,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     18761.068,
     243.988,
@@ -4066,7 +4066,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_Pole_Wood1",
+   "name": "Land_Power_Pole_Wood1_Amp",
    "pos": [
     18763.608,
     239.19,
@@ -4081,7 +4081,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     16503.975,
     16.748,
@@ -4096,7 +4096,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     16528.724,
     16.727,
@@ -4111,7 +4111,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     16553.472,
     16.706,
@@ -4291,7 +4291,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     16479.113,
     50.944,
@@ -4306,7 +4306,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     16503.861,
     50.989,
@@ -4321,7 +4321,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     16528.61,
     51.033,
@@ -4546,7 +4546,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Tank_Medium",
+   "name": "Land_Tank_Medium_Stairs",
    "pos": [
     16600.547,
     2.553,
@@ -4561,7 +4561,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Tank_Medium",
+   "name": "Land_Tank_Medium_Stairs",
    "pos": [
     16625.547,
     2.544,
@@ -4606,7 +4606,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     16655.547,
     2.745,
@@ -4711,7 +4711,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_TransformerStation",
+   "name": "Land_Power_Transformer_Build",
    "pos": [
     17784.316,
     16.292,
@@ -4816,7 +4816,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     17245.15,
     3.691,
@@ -4831,7 +4831,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     17245.15,
     3.963,
@@ -4846,7 +4846,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     17245.15,
     4.235,
@@ -4966,7 +4966,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     19455.343,
     91.205,
@@ -4981,7 +4981,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     19480.091,
     91.465,
@@ -4996,7 +4996,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     19504.84,
     91.725,
@@ -5116,7 +5116,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     4782.833,
     2.113,
@@ -5131,7 +5131,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     4827.833,
     2.093,
@@ -5146,7 +5146,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     4872.833,
     2.074,
@@ -5161,7 +5161,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     4782.833,
     2.354,
@@ -5191,7 +5191,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Power_TransformerStation",
+   "name": "Land_Power_Transformer_Build",
    "pos": [
     4887.833,
     2.377,
@@ -5296,7 +5296,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     17640.768,
     2.297,
@@ -6091,7 +6091,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     18086.875,
     2.46,
@@ -6226,7 +6226,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Warehouse",
+   "name": "Land_Factory_Small",
    "pos": [
     15879.64,
     2.473,

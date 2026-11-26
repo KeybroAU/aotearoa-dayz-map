@@ -16,9 +16,11 @@ void main()
 		GetGame().GetWorld().SetDate(year, pin_month, 10, hour, minute);
 	}
 
-	// Loot positions: once the world is built, uncomment the next line, start the server once,
-	// and copy storage_1/export/mapgrouppos.xml into this mission folder. Then comment it out.
+	// Loot positions: once the world is built, uncomment the next two lines, start the server
+	// once, and copy storage_1/export/mapgrouppos.xml and the mapgroupcluster*.xml files (fruit
+	// trees, mushrooms) into this mission folder. Then comment them out again.
 	// GetCEApi().ExportProxyData(Vector(12800, 0, 12800), 25600);
+	// GetCEApi().ExportClusterData();
 }
 
 class CustomMission: MissionServer

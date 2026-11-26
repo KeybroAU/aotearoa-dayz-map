@@ -390,14 +390,27 @@ def occupied(pois, traders) -> list[tuple[float, float, float]]:
     return occ
 
 
+# Classes whose model file is not the class name without its prefix.
+MODEL_NAMES = {"StaticObj_Wreck_Ship_Big_Lifeboat": "ship_big_lifeboat"}
+
+
+def model_name(cls: str) -> str:
+    """Terrain Builder template for a class: its p3d name."""
+    if cls in MODEL_NAMES:
+        return MODEL_NAMES[cls]
+    for prefix in ("Land_", "StaticObj_"):
+        if cls.startswith(prefix):
+            return cls[len(prefix):].lower()
+    return cls.lower()
+
+
 def write(pieces: list[Piece]) -> int:
     meta = json.loads((g.SOURCE_DIR / "heightmap.json").read_text())
     easting, northing = meta["easting"], meta["northing"]
     objs = [o for p in pieces for o in p.objects]
     with (g.SOURCE_DIR / "objects" / "setpieces_tb.txt").open("w", newline="\r\n") as f:
         for cls, x, y, z, yaw in objs:
-            template = cls[5:].lower() if cls.startswith("Land_") else cls[10:].lower() if cls.startswith("StaticObj_") \
-                else cls.lower()
+            template = model_name(cls)
             offset = z - _ground(x, y)
             f.write(f'"{template}";{x + easting:.3f};{y + northing:.3f};{yaw:.3f};0;0;1;{offset:.3f};\n')
     spawner = [{"name": cls, "pos": [round(x, 3), round(z, 3), round(y, 3)], "ypr": [round(yaw, 3), 0.0, 0.0],

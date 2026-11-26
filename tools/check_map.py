@@ -4,7 +4,7 @@
 
 Checks that the heightmap, mask and config agree on size, that every XML and JSON file parses,
 that buildings, spawns and events sit on the map and on land, that the Terrain Builder files are
-well formed, and that every road kind has a RoadsLib entry. Exits non-zero on any failure.
+well formed, that every road kind has a RoadsLib entry, and that every object name exists in DayZ. Exits non-zero on any failure.
 """
 
 from __future__ import annotations
@@ -32,6 +32,45 @@ def check(ok: bool, msg: str) -> None:
     print(("  ok    " if ok else "  FAIL  ") + msg)
     if not ok:
         failures.append(msg)
+
+
+def _names(path: Path) -> set[str]:
+    return {line.strip().lower() for line in path.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.startswith("#")}
+
+
+def object_names() -> None:
+    """Every spawner class and Terrain Builder template is a DayZ object (tools/dayz_*.txt) or one of the mod's own."""
+    classes, models = _names(MAP_DIR / "tools" / "dayz_classes.txt"), _names(MAP_DIR / "tools" / "dayz_models.txt")
+    own = ("land_aotearoa_", "aotearoa_")
+    for path in sorted(list(SOURCE.glob("objects/*_spawner.json")) + list(MISSION.rglob("*_spawner.json"))):
+        names = {o["name"] for o in json.loads(path.read_text(encoding="utf-8"))["Objects"]}
+        bad = sorted(n for n in names if n.lower() not in classes and not n.lower().startswith(own))
+        check(not bad, f"{path.relative_to(MAP_DIR)}: {len(names)} classes exist in DayZ"
+              + (f" (unknown: {', '.join(bad[:5])})" if bad else ""))
+    gear: set[str] = set()
+
+    def walk(node) -> None:
+        if isinstance(node, dict):
+            if isinstance(node.get("itemType"), str):
+                gear.add(node["itemType"])
+            for v in node.values():
+                walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v)
+
+    for path in MISSION.glob("*spawngear*.json"):
+        walk(json.loads(path.read_text(encoding="utf-8")))
+    # "" is an empty slot; AotearoaMap is the map item mod's paper map.
+    bad = sorted(n for n in gear if n and n.lower() not in classes and n != "AotearoaMap")
+    check(bool(gear) and not bad, f"{len(gear)} starting gear items exist in DayZ"
+          + (f" (unknown: {', '.join(bad[:5])})" if bad else ""))
+    for path in sorted(SOURCE.glob("objects/*_tb.txt")):
+        names = {line.split(";", 1)[0].strip('"').lower() for line in path.read_text(encoding="utf-8").splitlines() if line}
+        bad = sorted(n for n in names if n not in models and not n.startswith(own))
+        check(not bad, f"{path.relative_to(MAP_DIR)}: {len(names)} templates exist in DayZ"
+              + (f" (unknown: {', '.join(bad[:5])})" if bad else ""))
 
 
 def main() -> None:
@@ -204,6 +243,9 @@ def main() -> None:
     check(layout.exists() and "maps/aotearoa/gui/layouts/aotearoa_map_watermark.layout" in menu
           and layout.read_text(encoding="utf-8").count("{") == layout.read_text(encoding="utf-8").count("}"),
           "in-game map watermark layout is in the mod")
+
+    print("Object names")
+    object_names()
 
     print()
     if failures:

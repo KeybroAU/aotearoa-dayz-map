@@ -110,9 +110,9 @@ def _compound(site: TraderSite) -> None:
             if side == "front" and abs(t) < 6.0:  # the gate
                 continue
             if along_x:
-                put("Land_Wall_Fen1_5", t, fixed, 90.0)
+                put("StaticObj_Wall_Fen1_5", t, fixed, 90.0)
             else:
-                put("Land_Wall_Fen1_5", fixed, t, 0.0)
+                put("StaticObj_Wall_Fen1_5", fixed, t, 0.0)
     stalls = STALLS if site.kind == "trader" else BLACK_MARKET_STALLS
     for lx, ly, file, role, npc in stalls:
         if file == "Vehicles":
@@ -249,7 +249,7 @@ def build(h, towns, roads, pois, cell, size_m) -> list[TraderSite]:
 
 FOOT = {"Land_Mil_Tent_Big1_1": (6.0, 12.0), "Land_Shed_W4": (9.0, 12.0), "Land_Container_1Bo": (2.5, 6.0),
         "Land_Container_1Mo": (2.5, 6.0), "Land_Container_1Aoh": (2.5, 6.0), "Land_Tank_Medium_Stairs": (5.0, 5.0),
-        "Land_Wall_Fen1_5": (0.3, 5.0)}
+        "StaticObj_Wall_Fen1_5": (0.3, 5.0)}
 
 
 def preview(sites, roads, size_m) -> None:
@@ -283,7 +283,7 @@ def preview(sites, roads, size_m) -> None:
             ux, uy, vx, vy = math.sin(a), math.cos(a), math.cos(a), -math.sin(a)
             pts = [P(x + ux * l / 2 * i + vx * w / 2 * j, y + uy * l / 2 * i + vy * w / 2 * j)
                    for i, j in ((1, 1), (1, -1), (-1, -1), (-1, 1))]
-            d.polygon(pts, fill=(120, 120, 110) if cls != "Land_Wall_Fen1_5" else (60, 60, 60),
+            d.polygon(pts, fill=(120, 120, 110) if cls != "StaticObj_Wall_Fen1_5" else (60, 60, 60),
                       outline=(30, 30, 30))
         for npc, file, role, x, y, yaw in s.npcs:
             a, b = P(x, y)

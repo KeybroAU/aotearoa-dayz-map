@@ -15,7 +15,7 @@ Menu names are from the Steam version of DayZ Tools. If a menu has moved in your
 - [ ] **DayZ Tools** installed from Steam (Library → Tools → DayZ Tools).
 - [ ] **Python 3.10+** installed with "Add python.exe to PATH" ticked.
 - [ ] **P: drive mounted.** Open DayZ Tools → **Settings**, set the Work Drive path (for example `D:\DayZWork`), click **Mount**.
-- [ ] **Game data extracted to P:.** DayZ Tools → **Tools → Extract Game Data**. When it finishes, `P:\DZ\structures`, `P:\DZ\plants` and `P:\DZ\surfaces` should exist.
+- [ ] **Game data extracted to P:.** DayZ Tools → **Tools → Extract Game Data**. When it finishes, `P:\DZ\structures`, `P:\DZ\plants` and `P:\DZ\surfaces` should exist, and the DLC folders `P:\DZ\structures_bliss` and `P:\DZ\plants_takistan`. Install the DLC in Steam first (DayZ → Properties → DLC) and re-run the extraction after big game updates.
 
 > Check: open `P:\DZ\surfaces\data\terrain` in Explorer and confirm `cp_grass.rvmat` is there. If it isn't, extraction didn't finish.
 
@@ -155,12 +155,15 @@ Terrain Builder places objects by **template name**, which is the model file nam
 | bushes | `P:\DZ\plants\bush` | understorey, hedgerows |
 | rocks | `P:\DZ\rocks` | rocks and stones |
 | wrecks | `P:\DZ\structures\wrecks` | roadside and town wrecks |
+| trees_takistan | `P:\DZ\plants_takistan\tree` | pine plantations (Brutian pine), garden plum trees |
+| bushes_takistan | `P:\DZ\plants_takistan\bush` | tree ferns in the native bush (cycads) |
+| bliss | `P:\DZ\structures_bliss` | bunkers, control tower, guardhouse, church ruin |
 
 Folder names can differ slightly between DayZ versions. If one doesn't exist, search P:\DZ for the model (for example `rail_track`) and use the folder it's in.
 
 - [ ] Save the project.
 
-> Check: in the library list, search for `house_1w01`, `t_pinussylvestris_3d` and `wall_fen1_5`. All three should be found.
+> Check: in the library list, search for `house_1w01`, `t_pinusbrutia_2s`, `b_cycas_2s` and `wall_fen1_5`. All four should be found.
 
 ---
 

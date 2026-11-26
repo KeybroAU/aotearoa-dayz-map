@@ -5,7 +5,7 @@
     <group name="Land_City_Hospital" pos="17137.820 4.204 20146.875" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_City_PoliceStation" pos="17178.125 3.880 20187.180" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_City_FireStation" pos="17178.125 3.879 20106.570" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Church1" pos="17218.430 3.520 20146.875" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Church1_Yellow" pos="17218.430 3.520 20146.875" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_Village_Pub" pos="17097.515 4.537 20187.180" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Village_Pub" pos="17137.820 4.224 20227.485" rpy="0 0 315.000" a="135.000" />
     <group name="Land_City_Store" pos="17097.515 4.472 20106.570" rpy="0 0 225.000" a="-135.000" />
@@ -156,7 +156,7 @@
     <group name="Land_City_Hospital" pos="17206.570 3.581 12028.125" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_City_PoliceStation" pos="17246.875 4.158 12068.430" rpy="0 0 315.000" a="135.000" />
     <group name="Land_City_FireStation" pos="17166.265 3.911 12068.430" rpy="0 0 225.000" a="-135.000" />
-    <group name="Land_Church1" pos="17206.570 4.480 12108.735" rpy="0 0 45.000" a="45.000" />
+    <group name="Land_Church1_Yellow" pos="17206.570 4.480 12108.735" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Village_Pub" pos="17166.265 3.312 11987.820" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_Village_Pub" pos="17287.180 4.792 12108.735" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_City_Store" pos="17206.570 3.120 11947.515" rpy="0 0 315.000" a="135.000" />
@@ -253,7 +253,7 @@
     <group name="Land_City_Hospital" pos="12968.375 5.195 7799.625" rpy="0 0 90.000" a="0.000" />
     <group name="Land_City_PoliceStation" pos="12968.375 4.302 7856.625" rpy="0 0 90.000" a="0.000" />
     <group name="Land_City_FireStation" pos="13025.375 4.954 7799.625" rpy="0 0 0.000" a="90.000" />
-    <group name="Land_Church1" pos="13025.375 4.067 7856.625" rpy="0 0 270.000" a="-180.000" />
+    <group name="Land_Church1_Yellow" pos="13025.375 4.067 7856.625" rpy="0 0 270.000" a="-180.000" />
     <group name="Land_Village_Pub" pos="12911.375 5.369 7799.625" rpy="0 0 270.000" a="-180.000" />
     <group name="Land_Village_Pub" pos="12911.375 4.513 7856.625" rpy="0 0 0.000" a="90.000" />
     <group name="Land_City_Store" pos="12968.375 6.444 7742.625" rpy="0 0 180.000" a="-90.000" />
@@ -434,7 +434,7 @@
     <group name="Land_City_Hospital" pos="18156.570 4.102 18415.625" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_City_PoliceStation" pos="18196.875 3.668 18455.930" rpy="0 0 45.000" a="45.000" />
     <group name="Land_City_FireStation" pos="18196.875 4.051 18375.320" rpy="0 0 225.000" a="-135.000" />
-    <group name="Land_Church1" pos="18237.180 3.588 18415.625" rpy="0 0 135.000" a="-45.000" />
+    <group name="Land_Church1_Yellow" pos="18237.180 3.588 18415.625" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Village_Pub" pos="18116.265 4.035 18455.930" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Village_Pub" pos="18156.570 3.631 18496.235" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_City_Store" pos="18116.265 4.588 18375.320" rpy="0 0 315.000" a="135.000" />
@@ -3151,7 +3151,7 @@
     <group name="Land_Container_1Mo" pos="17032.669 3.517 20590.917" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Aoh" pos="17053.882 3.632 20569.703" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Aoh" pos="17075.096 3.747 20548.490" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Warehouse" pos="17063.075 3.904 20536.469" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Factory_Small" pos="17063.075 3.904 20536.469" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_Container_1Mo" pos="16353.135 2.500 12221.154" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Bo" pos="16363.741 2.414 12231.761" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Aoh" pos="16374.348 2.328 12242.368" rpy="0 0 45.000" a="45.000" />
@@ -3171,7 +3171,7 @@
     <group name="Land_Container_1Aoh" pos="16404.047 2.021 12233.882" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Moh" pos="16414.653 1.934 12244.489" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Bo" pos="16425.260 1.848 12255.096" rpy="0 0 45.000" a="45.000" />
-    <group name="Land_Warehouse" pos="16437.281 1.709 12243.075" rpy="0 0 135.000" a="-45.000" />
+    <group name="Land_Factory_Small" pos="16437.281 1.709 12243.075" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Aoh" pos="12720.511 5.201 7541.259" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Bo" pos="12731.118 5.182 7530.652" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Aoh" pos="12741.724 5.163 7520.045" rpy="0 0 135.000" a="-45.000" />
@@ -3193,7 +3193,7 @@
     <group name="Land_Container_1Mo" pos="12722.632 4.895 7500.953" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Mo" pos="12733.239 4.875 7490.347" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Mo" pos="12743.846 4.856 7479.740" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Warehouse" pos="12731.825 4.688 7467.719" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Factory_Small" pos="12731.825 4.688 7467.719" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_Container_1Moh" pos="9113.125 2.389 3559.125" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Bo" pos="9128.125 2.347 3559.125" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Bo" pos="9143.125 2.306 3559.125" rpy="0 0 90.000" a="0.000" />
@@ -3216,7 +3216,7 @@
     <group name="Land_Container_1Mo" pos="9158.125 2.004 3532.125" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="9173.125 1.962 3532.125" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="9188.125 1.921 3532.125" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="9188.125 1.757 3515.125" rpy="0 0 180.000" a="-90.000" />
+    <group name="Land_Factory_Small" pos="9188.125 1.757 3515.125" rpy="0 0 180.000" a="-90.000" />
     <group name="Land_Container_1Bo" pos="19538.011 1.720 18766.259" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Mo" pos="19548.618 1.729 18755.652" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Aoh" pos="19559.224 1.738 18745.045" rpy="0 0 135.000" a="-45.000" />
@@ -3237,7 +3237,7 @@
     <group name="Land_Container_1Bo" pos="19540.132 2.007 18725.953" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Bo" pos="19550.739 2.016 18715.347" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Moh" pos="19561.346 2.024 18704.740" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Warehouse" pos="19549.325 2.194 18692.719" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Factory_Small" pos="19549.325 2.194 18692.719" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_Container_1Moh" pos="21470.625 2.020 15015.375" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Bo" pos="21485.625 1.954 15015.375" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="21500.625 1.888 15015.375" rpy="0 0 90.000" a="0.000" />
@@ -3260,7 +3260,7 @@
     <group name="Land_Container_1Bo" pos="21515.625 2.064 14988.375" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Bo" pos="21530.625 1.998 14988.375" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Aoh" pos="21545.625 1.932 14988.375" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="21545.625 2.084 14971.375" rpy="0 0 180.000" a="-90.000" />
+    <group name="Land_Factory_Small" pos="21545.625 2.084 14971.375" rpy="0 0 180.000" a="-90.000" />
     <group name="Land_Container_1Bo" pos="15774.385 2.349 11822.404" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Bo" pos="15784.991 2.321 11833.011" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Bo" pos="15795.598 2.293 11843.618" rpy="0 0 45.000" a="45.000" />
@@ -3280,7 +3280,7 @@
     <group name="Land_Container_1Aoh" pos="15825.297 2.000 11835.132" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Moh" pos="15835.903 1.972 11845.739" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Moh" pos="15846.510 1.944 11856.346" rpy="0 0 45.000" a="45.000" />
-    <group name="Land_Warehouse" pos="15858.531 1.777 11844.325" rpy="0 0 135.000" a="-45.000" />
+    <group name="Land_Factory_Small" pos="15858.531 1.777 11844.325" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Bo" pos="15074.991 1.926 12434.261" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Aoh" pos="15085.598 1.969 12444.868" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Moh" pos="15106.811 2.055 12466.081" rpy="0 0 45.000" a="45.000" />
@@ -3301,7 +3301,7 @@
     <group name="Land_Container_1Aoh" pos="15104.690 1.942 12425.776" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Mo" pos="15115.297 1.985 12436.382" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Bo" pos="15136.510 2.070 12457.596" rpy="0 0 45.000" a="45.000" />
-    <group name="Land_Warehouse" pos="15148.531 2.053 12445.575" rpy="0 0 135.000" a="-45.000" />
+    <group name="Land_Factory_Small" pos="15148.531 2.053 12445.575" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Bo" pos="4588.125 2.606 2241.625" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Aoh" pos="4603.125 2.592 2241.625" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Moh" pos="4618.125 2.577 2241.625" rpy="0 0 90.000" a="0.000" />
@@ -3317,7 +3317,7 @@
     <group name="Land_Container_1Aoh" pos="4633.125 2.294 2214.625" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Moh" pos="4648.125 2.279 2214.625" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Aoh" pos="4663.125 2.264 2214.625" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="4663.125 2.095 2197.625" rpy="0 0 180.000" a="-90.000" />
+    <group name="Land_Factory_Small" pos="4663.125 2.095 2197.625" rpy="0 0 180.000" a="-90.000" />
     <group name="Land_Container_1Aoh" pos="10077.125 2.282 5434.375" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Mo" pos="10077.125 2.269 5464.375" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Mo" pos="10077.125 2.262 5479.375" rpy="0 0 0.000" a="90.000" />
@@ -3338,7 +3338,7 @@
     <group name="Land_Container_1Mo" pos="10104.125 1.992 5479.375" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Aoh" pos="10104.125 1.985 5494.375" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Moh" pos="10104.125 1.979 5509.375" rpy="0 0 0.000" a="90.000" />
-    <group name="Land_Warehouse" pos="10121.125 1.809 5509.375" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="10121.125 1.809 5509.375" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Moh" pos="15208.375 -2.371 15540.625" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Bo" pos="15208.375 1.697 15570.625" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Mo" pos="15208.375 1.175 15585.625" rpy="0 0 0.000" a="90.000" />
@@ -3360,46 +3360,46 @@
     <group name="Land_Container_1Bo" pos="15235.375 1.997 15585.625" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Moh" pos="15235.375 2.035 15600.625" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Bo" pos="15235.375 2.074 15615.625" rpy="0 0 0.000" a="90.000" />
-    <group name="Land_Warehouse" pos="15252.375 2.238 15615.625" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="15252.375 2.238 15615.625" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Village_Pub" pos="5077.265 429.643 5980.707" rpy="0 0 0.000" a="90.000" />
-    <group name="Land_Power_Pole_Wood1" pos="5024.559 418.718 6040.891" rpy="0 0 318.790" a="131.210" />
-    <group name="Land_Power_Pole_Wood1" pos="4991.617 420.737 6078.506" rpy="0 0 318.790" a="131.210" />
-    <group name="Land_Power_Pole_Wood1" pos="4958.676 401.426 6116.121" rpy="0 0 318.790" a="131.210" />
-    <group name="Land_Power_Pole_Wood1" pos="4925.735 360.478 6153.735" rpy="0 0 318.790" a="131.210" />
-    <group name="Land_Power_Pole_Wood1" pos="4892.793 320.466 6191.350" rpy="0 0 318.790" a="131.210" />
-    <group name="Land_Power_Pole_Wood1" pos="4859.852 294.877 6228.965" rpy="0 0 318.790" a="131.210" />
-    <group name="Land_Power_Pole_Wood1" pos="4826.911 283.646 6266.580" rpy="0 0 318.790" a="131.210" />
-    <group name="Land_Power_Pole_Wood1" pos="4793.970 299.106 6304.194" rpy="0 0 318.790" a="131.210" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="5024.559 418.718 6040.891" rpy="0 0 318.790" a="131.210" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="4991.617 420.737 6078.506" rpy="0 0 318.790" a="131.210" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="4958.676 401.426 6116.121" rpy="0 0 318.790" a="131.210" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="4925.735 360.478 6153.735" rpy="0 0 318.790" a="131.210" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="4892.793 320.466 6191.350" rpy="0 0 318.790" a="131.210" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="4859.852 294.877 6228.965" rpy="0 0 318.790" a="131.210" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="4826.911 283.646 6266.580" rpy="0 0 318.790" a="131.210" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="4793.970 299.106 6304.194" rpy="0 0 318.790" a="131.210" />
     <group name="Land_Village_Pub" pos="7167.828 445.409 6776.680" rpy="0 0 0.000" a="90.000" />
-    <group name="Land_Power_Pole_Wood1" pos="7238.664 439.058 6813.859" rpy="0 0 62.307" a="27.693" />
-    <group name="Land_Power_Pole_Wood1" pos="7282.936 408.153 6837.096" rpy="0 0 62.307" a="27.693" />
-    <group name="Land_Power_Pole_Wood1" pos="7327.209 379.079 6860.332" rpy="0 0 62.307" a="27.693" />
-    <group name="Land_Power_Pole_Wood1" pos="7371.481 355.975 6883.569" rpy="0 0 62.307" a="27.693" />
-    <group name="Land_Power_Pole_Wood1" pos="7415.753 322.652 6906.806" rpy="0 0 62.307" a="27.693" />
-    <group name="Land_Power_Pole_Wood1" pos="7460.026 309.351 6930.043" rpy="0 0 62.307" a="27.693" />
-    <group name="Land_Power_Pole_Wood1" pos="7504.298 335.652 6953.280" rpy="0 0 62.307" a="27.693" />
-    <group name="Land_Power_Pole_Wood1" pos="7548.571 374.670 6976.517" rpy="0 0 62.307" a="27.693" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="7238.664 439.058 6813.859" rpy="0 0 62.307" a="27.693" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="7282.936 408.153 6837.096" rpy="0 0 62.307" a="27.693" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="7327.209 379.079 6860.332" rpy="0 0 62.307" a="27.693" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="7371.481 355.975 6883.569" rpy="0 0 62.307" a="27.693" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="7415.753 322.652 6906.806" rpy="0 0 62.307" a="27.693" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="7460.026 309.351 6930.043" rpy="0 0 62.307" a="27.693" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="7504.298 335.652 6953.280" rpy="0 0 62.307" a="27.693" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="7548.571 374.670 6976.517" rpy="0 0 62.307" a="27.693" />
     <group name="Land_Village_Pub" pos="8903.571 510.384 7773.492" rpy="0 0 0.000" a="90.000" />
-    <group name="Land_Power_Pole_Wood1" pos="8886.375 508.091 7851.622" rpy="0 0 347.588" a="102.412" />
-    <group name="Land_Power_Pole_Wood1" pos="8875.628 489.852 7900.453" rpy="0 0 347.588" a="102.412" />
-    <group name="Land_Power_Pole_Wood1" pos="8864.881 450.873 7949.285" rpy="0 0 347.588" a="102.412" />
-    <group name="Land_Power_Pole_Wood1" pos="8854.133 410.846 7998.116" rpy="0 0 347.588" a="102.412" />
-    <group name="Land_Power_Pole_Wood1" pos="8843.386 371.050 8046.947" rpy="0 0 347.588" a="102.412" />
-    <group name="Land_Power_Pole_Wood1" pos="8832.639 331.721 8095.779" rpy="0 0 347.588" a="102.412" />
-    <group name="Land_Power_Pole_Wood1" pos="8821.891 292.867 8144.610" rpy="0 0 347.588" a="102.412" />
-    <group name="Land_Power_Pole_Wood1" pos="8811.144 254.358 8193.441" rpy="0 0 347.588" a="102.412" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="8886.375 508.091 7851.622" rpy="0 0 347.588" a="102.412" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="8875.628 489.852 7900.453" rpy="0 0 347.588" a="102.412" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="8864.881 450.873 7949.285" rpy="0 0 347.588" a="102.412" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="8854.133 410.846 7998.116" rpy="0 0 347.588" a="102.412" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="8843.386 371.050 8046.947" rpy="0 0 347.588" a="102.412" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="8832.639 331.721 8095.779" rpy="0 0 347.588" a="102.412" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="8821.891 292.867 8144.610" rpy="0 0 347.588" a="102.412" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="8811.144 254.358 8193.441" rpy="0 0 347.588" a="102.412" />
     <group name="Land_Village_Pub" pos="18741.767 449.473 15753.766" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Power_Pole_Wood1" pos="18745.830 409.956 15673.869" rpy="0 0 177.088" a="-87.088" />
-    <group name="Land_Power_Pole_Wood1" pos="18748.370 370.661 15623.934" rpy="0 0 177.088" a="-87.088" />
-    <group name="Land_Power_Pole_Wood1" pos="18750.910 334.091 15573.998" rpy="0 0 177.088" a="-87.088" />
-    <group name="Land_Power_Pole_Wood1" pos="18753.449 300.416 15524.063" rpy="0 0 177.088" a="-87.088" />
-    <group name="Land_Power_Pole_Wood1" pos="18755.989 274.416 15474.127" rpy="0 0 177.088" a="-87.088" />
-    <group name="Land_Power_Pole_Wood1" pos="18758.529 254.049 15424.192" rpy="0 0 177.088" a="-87.088" />
-    <group name="Land_Power_Pole_Wood1" pos="18761.068 243.988 15374.256" rpy="0 0 177.088" a="-87.088" />
-    <group name="Land_Power_Pole_Wood1" pos="18763.608 239.190 15324.321" rpy="0 0 177.088" a="-87.088" />
-    <group name="Land_Warehouse" pos="16503.975 16.748 15072.592" rpy="0 0 225.000" a="-135.000" />
-    <group name="Land_Warehouse" pos="16528.724 16.727 15047.844" rpy="0 0 225.000" a="-135.000" />
-    <group name="Land_Warehouse" pos="16553.472 16.706 15023.095" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="18745.830 409.956 15673.869" rpy="0 0 177.088" a="-87.088" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="18748.370 370.661 15623.934" rpy="0 0 177.088" a="-87.088" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="18750.910 334.091 15573.998" rpy="0 0 177.088" a="-87.088" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="18753.449 300.416 15524.063" rpy="0 0 177.088" a="-87.088" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="18755.989 274.416 15474.127" rpy="0 0 177.088" a="-87.088" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="18758.529 254.049 15424.192" rpy="0 0 177.088" a="-87.088" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="18761.068 243.988 15374.256" rpy="0 0 177.088" a="-87.088" />
+    <group name="Land_Power_Pole_Wood1_Amp" pos="18763.608 239.190 15324.321" rpy="0 0 177.088" a="-87.088" />
+    <group name="Land_Factory_Small" pos="16503.975 16.748 15072.592" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Factory_Small" pos="16528.724 16.727 15047.844" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Factory_Small" pos="16553.472 16.706 15023.095" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_Barn_Metal_Big" pos="16574.686 16.636 14994.811" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_Office2" pos="16537.209 17.270 15112.897" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Shed_W4" pos="16581.757 17.264 15072.592" rpy="0 0 135.000" a="-45.000" />
@@ -3411,9 +3411,9 @@
     <group name="Land_Container_1Bo" pos="16610.748 17.304 15052.086" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Bo" pos="16621.355 17.295 15041.480" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Aoh" pos="16631.961 17.286 15030.873" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Warehouse" pos="16479.113 50.944 15535.561" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Warehouse" pos="16503.861 50.989 15560.310" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Warehouse" pos="16528.610 51.033 15585.059" rpy="0 0 135.000" a="-45.000" />
+    <group name="Land_Factory_Small" pos="16479.113 50.944 15535.561" rpy="0 0 135.000" a="-45.000" />
+    <group name="Land_Factory_Small" pos="16503.861 50.989 15560.310" rpy="0 0 135.000" a="-45.000" />
+    <group name="Land_Factory_Small" pos="16528.610 51.033 15585.059" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Barn_Metal_Big" pos="16556.894 51.028 15606.272" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Office2" pos="16438.807 51.453 15568.795" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Shed_W4" pos="16479.113 51.560 15613.343" rpy="0 0 45.000" a="45.000" />
@@ -3428,27 +3428,27 @@
     <group name="Land_Tank_Big" pos="16600.547 2.258 22071.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Tank_Big" pos="16635.547 2.245 22071.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Tank_Big" pos="16670.547 2.232 22071.253" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Tank_Medium" pos="16600.547 2.553 22106.253" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Tank_Medium" pos="16625.547 2.544 22106.253" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Tank_Medium_Stairs" pos="16600.547 2.553 22106.253" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Tank_Medium_Stairs" pos="16625.547 2.544 22106.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Workshop1" pos="16710.547 2.260 22076.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Office2" pos="16710.547 2.682 22126.253" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="16655.547 2.745 22131.253" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="16655.547 2.745 22131.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Bo" pos="16680.547 2.710 22128.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="16695.547 2.705 22128.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="16710.547 2.699 22128.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Moh" pos="16725.547 2.694 22128.253" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Power_Station" pos="17710.069 16.642 18757.951" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Smokestack_Big" pos="17748.960 16.702 18697.847" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Power_TransformerStation" pos="17784.316 16.292 18719.060" rpy="0 0 135.000" a="-45.000" />
+    <group name="Land_Power_Transformer_Build" pos="17784.316 16.292 18719.060" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Office2" pos="17731.283 16.171 18807.448" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Workshop1" pos="17777.245 16.089 18761.486" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Aoh" pos="17785.730 16.099 18748.758" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Aoh" pos="17796.336 16.080 18738.152" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Moh" pos="17806.943 16.061 18727.545" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Mo" pos="17817.550 16.042 18716.939" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Warehouse" pos="17245.150 3.691 19371.923" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="17245.150 3.963 19406.923" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="17245.150 4.235 19441.923" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="17245.150 3.691 19371.923" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="17245.150 3.963 19406.923" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="17245.150 4.235 19441.923" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Smokestack_Big" pos="17250.150 4.499 19471.923" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Office2" pos="17193.150 3.208 19351.923" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Workshop1" pos="17193.150 3.674 19411.923" rpy="0 0 0.000" a="90.000" />
@@ -3456,9 +3456,9 @@
     <group name="Land_Container_1Aoh" pos="17193.150 3.946 19446.923" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Bo" pos="17193.150 4.063 19461.923" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Container_1Mo" pos="17193.150 4.180 19476.923" rpy="0 0 0.000" a="90.000" />
-    <group name="Land_Warehouse" pos="19455.343 91.205 17614.166" rpy="0 0 225.000" a="-135.000" />
-    <group name="Land_Warehouse" pos="19480.091 91.465 17589.417" rpy="0 0 225.000" a="-135.000" />
-    <group name="Land_Warehouse" pos="19504.840 91.725 17564.668" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Factory_Small" pos="19455.343 91.205 17614.166" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Factory_Small" pos="19480.091 91.465 17589.417" rpy="0 0 225.000" a="-135.000" />
+    <group name="Land_Factory_Small" pos="19504.840 91.725 17564.668" rpy="0 0 225.000" a="-135.000" />
     <group name="Land_Smokestack_Big" pos="19522.518 91.915 17539.919" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Office2" pos="19477.970 91.405 17665.077" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Workshop1" pos="19520.396 91.851 17622.651" rpy="0 0 135.000" a="-45.000" />
@@ -3466,19 +3466,19 @@
     <group name="Land_Container_1Moh" pos="19545.145 92.111 17597.902" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Bo" pos="19555.752 92.222 17587.296" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Container_1Moh" pos="19566.358 92.333 17576.689" rpy="0 0 135.000" a="-45.000" />
-    <group name="Land_Warehouse" pos="4782.833 2.113 2209.038" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="4827.833 2.093 2209.038" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="4872.833 2.074 2209.038" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="4782.833 2.354 2244.038" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="4782.833 2.113 2209.038" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="4827.833 2.093 2209.038" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="4872.833 2.074 2209.038" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="4782.833 2.354 2244.038" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Office2" pos="4772.833 2.530 2269.038" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Power_TransformerStation" pos="4887.833 2.377 2254.038" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Power_Transformer_Build" pos="4887.833 2.377 2254.038" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="4852.833 2.441 2261.038" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Bo" pos="4867.833 2.434 2261.038" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="4882.833 2.428 2261.038" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Bo" pos="4897.833 2.421 2261.038" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Mil_Barracks1" pos="17575.768 1.892 19985.780" rpy="0 0 180.000" a="-90.000" />
     <group name="Land_Mil_Barracks2" pos="17600.768 2.047 19985.780" rpy="0 0 180.000" a="-90.000" />
-    <group name="Land_Warehouse" pos="17640.768 2.297 19985.780" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="17640.768 2.297 19985.780" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Mil_Guardhouse1" pos="17565.768 1.516 20025.780" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Mil_ATC_Small" pos="17615.768 1.844 20023.780" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="17635.768 1.984 20021.780" rpy="0 0 90.000" a="0.000" />
@@ -3531,7 +3531,7 @@
     <group name="Land_House_1W02" pos="19075.169 21.575 18063.366" rpy="0 0 270.000" a="-180.000" />
     <group name="Land_House_1W03" pos="19101.827 20.436 18076.363" rpy="0 0 0.000" a="90.000" />
     <group name="Land_Village_Pub" pos="19067.355 20.027 18100.789" rpy="0 0 0.000" a="90.000" />
-    <group name="Land_Warehouse" pos="18086.875 2.460 11980.125" rpy="0 0 90.000" a="0.000" />
+    <group name="Land_Factory_Small" pos="18086.875 2.460 11980.125" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Office2" pos="18151.875 2.630 11978.125" rpy="0 0 180.000" a="-90.000" />
     <group name="Land_Mil_ATC_Small" pos="18156.875 2.252 12018.125" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="18066.875 2.063 12016.125" rpy="0 0 90.000" a="0.000" />
@@ -3540,7 +3540,7 @@
     <group name="Land_Container_1Aoh" pos="18066.875 1.976 12025.125" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Mo" pos="18081.875 2.010 12025.125" rpy="0 0 90.000" a="0.000" />
     <group name="Land_Container_1Bo" pos="18096.875 2.045 12025.125" rpy="0 0 90.000" a="0.000" />
-    <group name="Land_Warehouse" pos="15879.640 2.473 11925.434" rpy="0 0 45.000" a="45.000" />
+    <group name="Land_Factory_Small" pos="15879.640 2.473 11925.434" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Office2" pos="15927.016 2.419 11969.982" rpy="0 0 135.000" a="-45.000" />
     <group name="Land_Mil_ATC_Small" pos="15902.267 2.816 12001.801" rpy="0 0 45.000" a="45.000" />
     <group name="Land_Container_1Moh" pos="15840.042 2.842 11936.748" rpy="0 0 45.000" a="45.000" />

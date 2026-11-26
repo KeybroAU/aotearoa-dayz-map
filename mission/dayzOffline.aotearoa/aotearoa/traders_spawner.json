@@ -1,7 +1,7 @@
 {
  "Objects": [
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17685.05,
     12.73,
@@ -16,7 +16,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17681.22,
     13.182,
@@ -31,7 +31,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17677.39,
     13.639,
@@ -46,7 +46,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17673.56,
     14.073,
@@ -61,7 +61,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17669.73,
     14.499,
@@ -76,7 +76,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17658.24,
     15.648,
@@ -91,7 +91,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17654.41,
     15.985,
@@ -106,7 +106,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17650.58,
     16.287,
@@ -121,7 +121,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17646.75,
     16.561,
@@ -136,7 +136,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17642.92,
     16.803,
@@ -151,7 +151,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17713.33,
     11.92,
@@ -166,7 +166,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17709.5,
     12.224,
@@ -181,7 +181,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17705.67,
     12.521,
@@ -196,7 +196,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17701.84,
     12.824,
@@ -211,7 +211,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17698.01,
     13.124,
@@ -226,7 +226,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17694.18,
     13.422,
@@ -241,7 +241,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17690.35,
     13.724,
@@ -256,7 +256,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17686.52,
     14.019,
@@ -271,7 +271,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17682.69,
     14.315,
@@ -286,7 +286,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17678.86,
     14.604,
@@ -301,7 +301,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17675.03,
     14.892,
@@ -316,7 +316,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17671.2,
     15.17,
@@ -331,7 +331,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17713.64,
     11.801,
@@ -346,7 +346,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17710.43,
     11.867,
@@ -361,7 +361,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17707.21,
     11.935,
@@ -376,7 +376,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17704.0,
     12.023,
@@ -391,7 +391,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17700.78,
     12.107,
@@ -406,7 +406,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17697.57,
     12.2,
@@ -421,7 +421,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17694.36,
     12.287,
@@ -436,7 +436,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17691.14,
     12.38,
@@ -451,7 +451,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17667.68,
     15.383,
@@ -466,7 +466,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17664.46,
     15.547,
@@ -481,7 +481,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17661.25,
     15.721,
@@ -496,7 +496,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17658.04,
     15.907,
@@ -511,7 +511,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17654.82,
     16.095,
@@ -526,7 +526,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17651.61,
     16.286,
@@ -541,7 +541,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17648.39,
     16.482,
@@ -556,7 +556,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     17645.18,
     16.671,
@@ -691,7 +691,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Tank_Medium",
+   "name": "Land_Tank_Medium_Stairs",
    "pos": [
     17649.33,
     16.426,
@@ -706,7 +706,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20494.33,
     148.052,
@@ -721,7 +721,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20497.2,
     147.683,
@@ -736,7 +736,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20500.07,
     147.337,
@@ -751,7 +751,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20502.93,
     147.004,
@@ -766,7 +766,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20505.8,
     146.702,
@@ -781,7 +781,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20514.41,
     145.901,
@@ -796,7 +796,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20517.27,
     145.662,
@@ -811,7 +811,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20520.14,
     145.429,
@@ -826,7 +826,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20523.01,
     145.195,
@@ -841,7 +841,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20525.88,
     144.964,
@@ -856,7 +856,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20530.37,
     148.72,
@@ -871,7 +871,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20533.24,
     148.371,
@@ -886,7 +886,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20536.11,
     148.014,
@@ -901,7 +901,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20538.98,
     147.654,
@@ -916,7 +916,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20541.84,
     147.296,
@@ -931,7 +931,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20544.71,
     146.944,
@@ -946,7 +946,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20547.58,
     146.605,
@@ -961,7 +961,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20550.45,
     146.274,
@@ -976,7 +976,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20553.32,
     145.941,
@@ -991,7 +991,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20556.18,
     145.617,
@@ -1006,7 +1006,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20559.05,
     145.292,
@@ -1021,7 +1021,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20561.92,
     144.965,
@@ -1036,7 +1036,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20526.89,
     148.856,
@@ -1051,7 +1051,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20522.8,
     148.794,
@@ -1066,7 +1066,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20518.7,
     148.732,
@@ -1081,7 +1081,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20514.6,
     148.674,
@@ -1096,7 +1096,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20510.51,
     148.611,
@@ -1111,7 +1111,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20506.41,
     148.544,
@@ -1126,7 +1126,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20502.32,
     148.466,
@@ -1141,7 +1141,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20498.22,
     148.377,
@@ -1156,7 +1156,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20561.31,
     144.805,
@@ -1171,7 +1171,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20557.21,
     144.813,
@@ -1186,7 +1186,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20553.11,
     144.824,
@@ -1201,7 +1201,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20549.02,
     144.839,
@@ -1216,7 +1216,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20544.92,
     144.851,
@@ -1231,7 +1231,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20540.83,
     144.862,
@@ -1246,7 +1246,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20536.73,
     144.874,
@@ -1261,7 +1261,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     20532.64,
     144.872,
@@ -1396,7 +1396,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Tank_Medium",
+   "name": "Land_Tank_Medium_Stairs",
    "pos": [
     20530.18,
     145.125,
@@ -1411,7 +1411,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11288.13,
     62.987,
@@ -1426,7 +1426,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11284.59,
     62.793,
@@ -1441,7 +1441,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11281.06,
     62.592,
@@ -1456,7 +1456,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11277.52,
     62.369,
@@ -1471,7 +1471,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11273.98,
     62.141,
@@ -1486,7 +1486,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11263.38,
     61.42,
@@ -1501,7 +1501,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11259.84,
     61.174,
@@ -1516,7 +1516,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11256.31,
     60.932,
@@ -1531,7 +1531,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11252.77,
     60.692,
@@ -1546,7 +1546,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11249.24,
     60.457,
@@ -1561,7 +1561,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11257.01,
     65.467,
@@ -1576,7 +1576,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11253.48,
     65.191,
@@ -1591,7 +1591,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11249.94,
     64.918,
@@ -1606,7 +1606,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11246.41,
     64.656,
@@ -1621,7 +1621,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11242.87,
     64.394,
@@ -1636,7 +1636,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11239.34,
     64.142,
@@ -1651,7 +1651,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11235.8,
     63.889,
@@ -1666,7 +1666,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11232.27,
     63.641,
@@ -1681,7 +1681,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11228.73,
     63.4,
@@ -1696,7 +1696,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11225.19,
     63.161,
@@ -1711,7 +1711,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11221.66,
     62.936,
@@ -1726,7 +1726,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11218.12,
     62.717,
@@ -1741,7 +1741,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11260.55,
     65.477,
@@ -1756,7 +1756,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11264.09,
     65.219,
@@ -1771,7 +1771,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11267.62,
     64.96,
@@ -1786,7 +1786,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11271.16,
     64.692,
@@ -1801,7 +1801,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11274.69,
     64.418,
@@ -1816,7 +1816,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11278.23,
     64.125,
@@ -1831,7 +1831,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11281.76,
     63.828,
@@ -1846,7 +1846,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11285.3,
     63.508,
@@ -1861,7 +1861,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11218.12,
     62.463,
@@ -1876,7 +1876,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11221.66,
     62.184,
@@ -1891,7 +1891,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11225.19,
     61.911,
@@ -1906,7 +1906,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11228.73,
     61.654,
@@ -1921,7 +1921,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11232.27,
     61.396,
@@ -1936,7 +1936,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11235.8,
     61.148,
@@ -1951,7 +1951,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11239.34,
     60.9,
@@ -1966,7 +1966,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     11242.87,
     60.657,
@@ -2101,7 +2101,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Tank_Medium",
+   "name": "Land_Tank_Medium_Stairs",
    "pos": [
     11246.05,
     60.917,
@@ -2116,7 +2116,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7007.97,
     223.239,
@@ -2131,7 +2131,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7011.51,
     223.118,
@@ -2146,7 +2146,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7025.65,
     222.478,
@@ -2161,7 +2161,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7029.19,
     222.279,
@@ -2176,7 +2176,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7026.36,
     223.097,
@@ -2191,7 +2191,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7029.89,
     222.941,
@@ -2206,7 +2206,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7033.43,
     222.797,
@@ -2221,7 +2221,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7036.96,
     222.672,
@@ -2236,7 +2236,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7040.5,
     222.548,
@@ -2251,7 +2251,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7044.03,
     222.437,
@@ -2266,7 +2266,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7047.57,
     222.332,
@@ -2281,7 +2281,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7022.82,
     223.227,
@@ -2296,7 +2296,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7019.29,
     223.299,
@@ -2311,7 +2311,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7015.75,
     223.334,
@@ -2326,7 +2326,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7012.22,
     223.346,
@@ -2341,7 +2341,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7008.68,
     223.326,
@@ -2356,7 +2356,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7048.28,
     222.259,
@@ -2371,7 +2371,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7044.74,
     222.242,
@@ -2386,7 +2386,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7041.21,
     222.213,
@@ -2401,7 +2401,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7037.67,
     222.179,
@@ -2416,7 +2416,7 @@
    "enableCEPersistency": 0
   },
   {
-   "name": "Land_Wall_Fen1_5",
+   "name": "StaticObj_Wall_Fen1_5",
    "pos": [
     7034.14,
     222.158,
