@@ -42,6 +42,30 @@ class Aotearoa_Marmite : BrisketSpread
 	}
 }
 
+class Aotearoa_Hellers_Bacon : TacticalBaconCan
+{
+	override void Open()
+	{
+		ReplaceEdibleWithNew("Aotearoa_Hellers_Bacon_Opened");
+	}
+}
+
+class Aotearoa_Tux_DogFood : DogFoodCan
+{
+	override void Open()
+	{
+		ReplaceEdibleWithNew("Aotearoa_Tux_DogFood_Opened");
+	}
+}
+
+class Aotearoa_Jellimeat : CatFoodCan
+{
+	override void Open()
+	{
+		ReplaceEdibleWithNew("Aotearoa_Jellimeat_Opened");
+	}
+}
+
 class Aotearoa_Sealord_Tuna : TunaCan
 {
 	override void Open()

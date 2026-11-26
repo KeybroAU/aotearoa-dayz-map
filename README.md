@@ -348,7 +348,7 @@ The world inherits lighting and sounds from Chernarus Plus. It sets a southern l
 | `cfgEffectArea.json` | The Whakaari and Waiouru Ammunition Area contaminated zones and their safe positions |
 | `cfggameplay.worldsdata.json` | Settings to merge into `cfggameplay.json`: New Zealand temperatures and the starting gear |
 | `mapgrouppos.xml` | Every town and site building, so loot spawns from the first start |
-| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (74 items, plus 25 food and drink items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; honey, milk powder and canned fish; New Zealand food and drink (see below); fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
+| `aotearoa_ce/types.xml`, `cfgeconomycore.aotearoa.xml` | New Zealand loot changes (72 items, plus 31 food and drink items): hunting rifles, shotguns, .22 and .308 ammo on farms; NZDF Steyr AUGs, M4s and FALs at the bases; handguns rare except police Glocks; canned fish; New Zealand food and drink (see below); fishing, fencing and tramping gear; gumboots, raincoats, jumpers and beanies |
 | `loot_tiers.json` | The loot tier of every town and site |
 | `env/*_territories.xml` | Animals: red deer and wild pigs in the bush, sheep on pasture and goats in the high country, cattle, pigs and hens at farms, hares on farmland. No wolves, bears, foxes or roe deer. |
 | `cfgweather.xml` | Windy, changeable weather with frequent showers and light fog (the seasons come from the world scripts, see below) |
@@ -376,9 +376,13 @@ The mod retextures vanilla cans, tins and snack packets as Kiwi brands, and the 
 | Whittaker's Creamy Milk, Dark Ghana, Peanut Slab | the three Zagorky bars |
 | Sanitarium Weet-Bix | Crunchin cereal |
 | Rice Risotto | Rice |
+| Anchor Milk Powder | Powdered Milk |
+| Airborne Mānuka Honey | Honey |
+| Pump Water Bottle | Water Bottle |
 | Wattie's Baked Beans, Spaghetti, Peach Slices | Baked Beans, Spaghetti, Peaches |
 | Sealord Tuna, Pams Sardines | Tuna, Sardines |
-| Palm Corned Beef | Pork (250 g tin) |
+| Palm Corned Beef, Tux Dog Food, Jellimeat | Pork, Dog Food and Cat Food (250 g tins) |
+| Hellers Bacon | Tactical Bacon |
 | Marmite | Brisket Spread (100 g tin) |
 
 The labels are drawn by `tools/nz_food.py`, which also writes `preview/nz_food_showcase.png` (the Workshop card's shop shelf), `config/food.hpp` and `scripts/4_World/AotearoaFood.c`. To add or rename an item, or change its loot, edit `ITEMS` there and run `python tools/nz_food.py`, then rebuild the mission. The artwork is original but the names are real brands; rename them in `ITEMS` if a trademark holder objects.

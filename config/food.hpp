@@ -5,12 +5,18 @@ class BakedBeansCan_Opened;
 class BoxCerealCrunchin;
 class BrisketSpread;
 class BrisketSpread_Opened;
+class CatFoodCan;
+class CatFoodCan_Opened;
 class Chips;
 class Crackers;
+class DogFoodCan;
+class DogFoodCan_Opened;
+class Honey;
 class PeachesCan;
 class PeachesCan_Opened;
 class PorkCan;
 class PorkCan_Opened;
+class PowderedMilk;
 class Rice;
 class SardinesCan;
 class SardinesCan_Opened;
@@ -21,8 +27,11 @@ class SodaCan_Pipsi;
 class SodaCan_Spite;
 class SpaghettiCan;
 class SpaghettiCan_Opened;
+class TacticalBaconCan;
+class TacticalBaconCan_Opened;
 class TunaCan;
 class TunaCan_Opened;
+class WaterBottle;
 class Zagorky;
 class ZagorkyChocolate;
 class ZagorkyPeanuts;
@@ -146,6 +155,22 @@ class Aotearoa_RiceRisotto: Rice
 	descriptionShort = "Arborio rice for a creamy risotto. Cook it in a pot with water.";
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\risotto_co.paa"};
 };
+class Aotearoa_Anchor_MilkPowder: PowderedMilk
+{
+	scope = 2;
+	hiddenSelections[] = {"zbytek"};
+	displayName = "Anchor Milk Powder";
+	descriptionShort = "Anchor whole milk powder, from New Zealand dairy farms. Mix it with water.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\anchor_milk_co.paa"};
+};
+class Aotearoa_Airborne_Honey: Honey
+{
+	scope = 2;
+	hiddenSelections[] = {"zbytek"};
+	displayName = "Airborne Mānuka Honey";
+	descriptionShort = "Airborne mānuka honey from the Canterbury plains.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\airborne_honey_co.paa"};
+};
 class Aotearoa_WeetBix: BoxCerealCrunchin
 {
 	scope = 2;
@@ -223,6 +248,48 @@ class Aotearoa_Marmite_Opened: BrisketSpread_Opened
 	descriptionShort = "Marmite yeast spread. You either love it or you hate it.";
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\marmite_co.paa"};
 };
+class Aotearoa_Hellers_Bacon: TacticalBaconCan
+{
+	scope = 2;
+	displayName = "Hellers Bacon";
+	descriptionShort = "Hellers streaky bacon in a tin. Made in Canterbury.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\hellers_bacon_co.paa"};
+};
+class Aotearoa_Hellers_Bacon_Opened: TacticalBaconCan_Opened
+{
+	scope = 2;
+	displayName = "Hellers Bacon";
+	descriptionShort = "Hellers streaky bacon in a tin. Made in Canterbury.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\hellers_bacon_co.paa"};
+};
+class Aotearoa_Tux_DogFood: DogFoodCan
+{
+	scope = 2;
+	displayName = "Tux Dog Food";
+	descriptionShort = "Tux dog food. Meant for working dogs, but it'll keep you going.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\tux_dogfood_co.paa"};
+};
+class Aotearoa_Tux_DogFood_Opened: DogFoodCan_Opened
+{
+	scope = 2;
+	displayName = "Tux Dog Food";
+	descriptionShort = "Tux dog food. Meant for working dogs, but it'll keep you going.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\tux_dogfood_co.paa"};
+};
+class Aotearoa_Jellimeat: CatFoodCan
+{
+	scope = 2;
+	displayName = "Jellimeat";
+	descriptionShort = "Jellimeat cat food. Desperate times.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\jellimeat_co.paa"};
+};
+class Aotearoa_Jellimeat_Opened: CatFoodCan_Opened
+{
+	scope = 2;
+	displayName = "Jellimeat";
+	descriptionShort = "Jellimeat cat food. Desperate times.";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\jellimeat_co.paa"};
+};
 class Aotearoa_Sealord_Tuna: TunaCan
 {
 	scope = 2;
@@ -236,6 +303,14 @@ class Aotearoa_Sealord_Tuna_Opened: TunaCan_Opened
 	displayName = "Sealord Tuna";
 	descriptionShort = "Sealord tuna chunks in spring water. 185 g.";
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\sealord_tuna_co.paa"};
+};
+class Aotearoa_Pump_Water: WaterBottle
+{
+	scope = 2;
+	hiddenSelections[] = {"zbytek"};
+	displayName = "Pump Water Bottle";
+	descriptionShort = "A Pump water bottle. Refill it at a tap, a well or a stream (boil stream water first).";
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\pump_water_co.paa"};
 };
 class Aotearoa_Pams_Sardines: SardinesCan
 {

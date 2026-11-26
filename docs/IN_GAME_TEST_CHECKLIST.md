@@ -80,10 +80,16 @@ Spawn each one with your admin tool by its class name, or find it in loot. For e
 | Whittaker's Peanut Slab | `Aotearoa_Whittakers_PeanutSlab` | ZagorkyPeanuts |  |
 | Sanitarium Weet-Bix | `Aotearoa_WeetBix` | BoxCerealCrunchin |  |
 | Rice Risotto | `Aotearoa_RiceRisotto` | Rice |  |
+| Anchor Milk Powder | `Aotearoa_Anchor_MilkPowder` | PowderedMilk |  |
+| Airborne Mānuka Honey | `Aotearoa_Airborne_Honey` | Honey |  |
+| Pump Water Bottle | `Aotearoa_Pump_Water` | WaterBottle |  |
 | Wattie's Baked Beans | `Aotearoa_Watties_BakedBeans` | BakedBeansCan | yes |
 | Wattie's Spaghetti | `Aotearoa_Watties_Spaghetti` | SpaghettiCan | yes |
 | Wattie's Peach Slices | `Aotearoa_Watties_Peaches` | PeachesCan | yes |
 | Palm Corned Beef | `Aotearoa_Palm_CornedBeef` | PorkCan | yes |
+| Tux Dog Food | `Aotearoa_Tux_DogFood` | DogFoodCan | yes |
+| Jellimeat | `Aotearoa_Jellimeat` | CatFoodCan | yes |
+| Hellers Bacon | `Aotearoa_Hellers_Bacon` | TacticalBaconCan | yes |
 | Marmite | `Aotearoa_Marmite` | BrisketSpread | yes |
 | Sealord Tuna | `Aotearoa_Sealord_Tuna` | TunaCan | yes |
 | Pams Sardines | `Aotearoa_Pams_Sardines` | SardinesCan | yes |
@@ -95,6 +101,7 @@ Things to look at closely, because their texture layouts are guessed or approxim
 - [ ] **Pams Sardines, Palm Corned Beef and Marmite:** the label should wrap the side of the tin, and the lid should look like plain metal.
 - [ ] **Weet-Bix:** the front of the box should show the bowl and the wordmark.
 - [ ] **Rice Risotto:** vanilla rice doesn't retexture its bag, so check the packet shows the green band and the "Rice Risotto" label rather than the plain vanilla bag or a missing texture.
+- [ ] **Anchor Milk Powder, Airborne Honey and Pump Water Bottle:** these also use the model's `zbytek` selection. The milk label runs down the bag, the honey jar repeats its label all over (its layout isn't published), and the Pump label should wrap the bottle with the blue cap on top. Also fill, drink from and empty the bottle to check it still works as a water bottle.
 
 If a texture is sideways, mirrored or in the wrong place, take a screenshot. For a fix, convert the vanilla texture to PNG with DayZ Tools' ImageToPAA (for example `P:\DZ\gear\food\data\zagorky_milk_ca.paa`) and send it; the labels can then be lined up exactly with the vanilla layout.
 

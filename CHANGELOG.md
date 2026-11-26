@@ -2,6 +2,12 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
+## Unreleased
+
+### Added
+
+- More New Zealand food and drink, replacing their vanilla items in the loot: Anchor Milk Powder, Airborne Mānuka Honey, Pump Water Bottle, Hellers Bacon, Tux Dog Food and Jellimeat (31 items in all)
+
 ## 0.6.4 - 2026-11-26
 
 ### Changed

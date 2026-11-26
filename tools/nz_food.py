@@ -52,10 +52,13 @@ LAYOUTS = {
     "cereal": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
     "bar": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
     "rice": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
+    "milk": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
+    "honey": ((0.0, 0.0, 1.0, 1.0), (1024, 1024), 1),
+    "bottle": ((0.0, 0.06, 1.0, 0.3), (512, 512), 3),
 }
-# Vanilla configs that don't declare the model's retexturable selection: the rice bag's whole model
-# is the "zbytek" selection.
-SELECTIONS = {"rice": "zbytek"}
+# Vanilla configs that don't declare the model's retexturable selection: on these models the whole
+# mesh is the "zbytek" selection.
+SELECTIONS = {"rice": "zbytek", "milk": "zbytek", "honey": "zbytek", "bottle": "zbytek"}
 # Vanilla chocolate bar textures carry alpha (_ca); the rest are plain colour maps (_co). The bar's UV
 # layout isn't published, so its wrapper is a repeating pattern that reads from any part of the texture.
 SUFFIX = {"bar": "_ca"}
@@ -154,6 +157,16 @@ ITEMS = [
          dict(brand="Rice Risotto", sub="ARBORIO RICE", tag="creamy & quick", bg=(248, 244, 232),
               bg2=(40, 120, 60), fg=(150, 30, 35)),
          usages=["Village", "Town", "Hunting"]),
+    Item("anchor_milk", "Aotearoa_Anchor_MilkPowder", "PowderedMilk", "milk", "Anchor Milk Powder",
+         "Anchor whole milk powder, from New Zealand dairy farms. Mix it with water.", (30, 22),
+         dict(brand="Anchor", sub="WHOLE MILK POWDER", tag="NZ dairy", bg=(0, 85, 165), bg2=(250, 250, 250),
+              fg=(255, 255, 255)),
+         usages=["Farm", "Town", "Village"]),
+    Item("airborne_honey", "Aotearoa_Airborne_Honey", "Honey", "honey", "Airborne Mānuka Honey",
+         "Airborne mānuka honey from the Canterbury plains.", (30, 22),
+         dict(brand="Airborne", sub="MĀNUKA HONEY", tag="Canterbury", bg=(225, 150, 30), bg2=(40, 40, 40),
+              fg=(30, 30, 30)),
+         usages=["Farm", "Village", "Town"]),
     Item("weetbix", "Aotearoa_WeetBix", "BoxCerealCrunchin", "cereal", "Sanitarium Weet-Bix",
          "Sanitarium Weet-Bix whole grain wheat biscuits. Three with milk will keep you going.", (23, 18),
          dict(brand="Weet-Bix", sub="WHOLE GRAIN WHEAT BISCUITS", tag="Sanitarium", bg=(250, 200, 35),
@@ -184,11 +197,30 @@ ITEMS = [
          dict(brand="Marmite", sub="YEAST SPREAD", tag="made in NZ", bg=(250, 200, 20), bg2=(200, 20, 30),
               fg=(20, 20, 20), motif="marmite"),
          opened="BrisketSpread_Opened"),
+    Item("hellers_bacon", "Aotearoa_Hellers_Bacon", "TacticalBaconCan", "tin", "Hellers Bacon",
+         "Hellers streaky bacon in a tin. Made in Canterbury.", (10, 6),
+         dict(brand="Hellers", sub="STREAKY BACON", tag="Canterbury", bg=(250, 245, 230), bg2=(20, 90, 50),
+              fg=(180, 25, 35), motif="bacon"),
+         opened="TacticalBaconCan_Opened"),
+    Item("tux_dogfood", "Aotearoa_Tux_DogFood", "DogFoodCan", "tin250", "Tux Dog Food",
+         "Tux dog food. Meant for working dogs, but it'll keep you going.", (15, 10),
+         dict(brand="Tux", sub="DOG FOOD", tag="", bg=(20, 60, 140), bg2=(250, 200, 30),
+              fg=(255, 210, 40), motif="dog"),
+         opened="DogFoodCan_Opened"),
+    Item("jellimeat", "Aotearoa_Jellimeat", "CatFoodCan", "tin250", "Jellimeat",
+         "Jellimeat cat food. Desperate times.", (15, 10),
+         dict(brand="Jellimeat", sub="CAT FOOD", tag="", bg=(120, 40, 140), bg2=(250, 250, 250),
+              fg=(255, 255, 255), motif="cat"),
+         opened="CatFoodCan_Opened"),
     Item("sealord_tuna", "Aotearoa_Sealord_Tuna", "TunaCan", "tuna", "Sealord Tuna",
          "Sealord tuna chunks in spring water. 185 g.", (30, 20),
          dict(brand="Sealord", sub="TUNA", tag="in spring water", bg=(20, 45, 100), bg2=(250, 200, 40),
               fg=(255, 255, 255)),
          opened="TunaCan_Opened", usages=["Coast", "Town", "Office"]),
+    Item("pump_water", "Aotearoa_Pump_Water", "WaterBottle", "bottle", "Pump Water Bottle",
+         "A Pump water bottle. Refill it at a tap, a well or a stream (boil stream water first).", (100, 80),
+         dict(brand="pump", sub="PURE NZ WATER", tag="refill me", bg=(0, 150, 215), bg2=(255, 255, 255),
+              fg=(255, 255, 255))),
     Item("pams_sardines", "Aotearoa_Pams_Sardines", "SardinesCan", "sardines", "Pams Sardines",
          "Pams sardines in soybean oil. 106 g.", (30, 20),
          dict(brand="Pams", sub="SARDINES", tag="in soybean oil", bg=(250, 250, 245), bg2=(30, 90, 170),
@@ -462,7 +494,29 @@ def m_fish(d, box, a, rng):
         fish(d, x0 + cx * w, y0 + cy * h, 0.45 * w, (90, 110, 140), (200, 210, 225))
 
 
-MOTIFS = {"lumps": m_lumps, "fish": m_fish, "chips": m_chips, "tomatoes": m_tomatoes, "toffeepops": m_biscuits, "shrewsburys": m_biscuits,
+def paw(d, X, Y, s, fill):
+    d.ellipse((X - s, Y - 0.7 * s, X + s, Y + 0.9 * s), fill=fill)
+    for dx, dy in ((-1.05, -1.0), (-0.38, -1.45), (0.38, -1.45), (1.05, -1.0)):
+        d.ellipse((X + dx * s - 0.35 * s, Y + dy * s - 0.45 * s, X + dx * s + 0.35 * s, Y + dy * s + 0.45 * s), fill=fill)
+
+
+def m_paws(d, box, a, rng):
+    x0, y0, x1, y1 = box
+    w, h = x1 - x0, y1 - y0
+    paw(d, x0 + 0.5 * w, y0 + 0.62 * h, 0.24 * min(w, h), a["bg2"])
+
+
+def m_bacon(d, box, a, rng):
+    x0, y0, x1, y1 = box
+    w, h = x1 - x0, y1 - y0
+    for k in range(3):
+        y = y0 + (0.35 + 0.2 * k) * h
+        pts = [(x0 + (0.12 + 0.76 * t / 8) * w, y + math.sin(t * 1.3 + k) * 0.05 * h) for t in range(9)]
+        d.line(pts, fill=(185, 60, 60), width=int(0.13 * h), joint="curve")
+        d.line([(x, yy - 0.025 * h) for x, yy in pts], fill=(245, 215, 200), width=int(0.03 * h), joint="curve")
+
+
+MOTIFS = {"bacon": m_bacon, "dog": m_paws, "cat": m_paws, "lumps": m_lumps, "fish": m_fish, "chips": m_chips, "tomatoes": m_tomatoes, "toffeepops": m_biscuits, "shrewsburys": m_biscuits,
           "chocthins": m_biscuits, "bubbles": m_bubbles, "apples": m_apples, "bolt": m_bolt, "lp": m_lp,
           "beans": m_beans, "spaghetti": m_spaghetti, "peaches": m_peaches, "palm": m_palm, "marmite": m_marmite}
 
@@ -737,7 +791,101 @@ def rice(item: Item, rng) -> Image.Image:
     return wear(im, rng, 6)
 
 
-CUSTOM = {"rice": rice, "tuna": tuna, "sardines": sardines, "cereal": cereal, "bar": bar}
+def milk(item: Item, rng) -> Image.Image:
+    """Powdered milk bag: plain body on the left, the label running down the texture (rotated a quarter
+    turn) in the middle, and a coloured side band on the right."""
+    a = item.art
+    w = h = 1024
+    im = Image.new("RGB", (w, h), a["bg"])
+    d = ImageDraw.Draw(im)
+    for x in range(int(0.56 * w)):
+        d.line((x, 0, x, h), fill=shade(a["bg"], 1.0 + 0.08 * math.sin(x / 40)))
+    lab_w, lab_h = h, int(0.26 * w)
+    lab = Image.new("RGB", (lab_w, lab_h), a["bg2"])
+    ld = ImageDraw.Draw(lab)
+    text(ld, (0.5 * lab_w, 0.38 * lab_h), a["brand"], "serif", 0.5 * lab_w, 0.5 * lab_h, a["bg"], 4, (255, 255, 255))
+    text(ld, (0.5 * lab_w, 0.78 * lab_h), a["sub"], "sans", 0.55 * lab_w, 0.18 * lab_h, shade(a["bg"], 0.8))
+    for side in (0.12, 0.88):
+        X, Y, R = side * lab_w, 0.5 * lab_h, 0.32 * lab_h
+        d2 = ld
+        d2.ellipse((X - R, Y - R, X + R, Y + R), fill=a["bg"])
+        d2.polygon([(X - 0.6 * R, Y + 0.5 * R), (X - 0.2 * R, Y - 0.6 * R), (X + 0.2 * R, Y + 0.1 * R),
+                    (X + 0.6 * R, Y - 0.6 * R), (X + 0.8 * R, Y + 0.5 * R)], fill=(90, 170, 70))
+    im.paste(lab.rotate(-90, expand=True), (int(0.56 * w), 0))
+    d.rectangle((int(0.82 * w), 0, w, h), fill=shade(a["bg"], 0.8))
+    band = Image.new("RGB", (h, w - int(0.82 * w)), shade(a["bg"], 0.8))
+    text(ImageDraw.Draw(band), (0.5 * h, 0.5 * band.height), f"{a['sub']}  ·  {a['tag'].upper()}  ·  1 kg", "sans",
+         0.8 * h, 0.4 * band.height, (255, 255, 255))
+    im.paste(band.rotate(-90, expand=True), (int(0.82 * w), 0))
+    for k in range(4):
+        text(d, (0.28 * w, (k + 0.5) * h / 4), a["brand"], "serif", 0.4 * w, 0.1 * h, shade(a["bg"], 1.18))
+    return wear(im, rng, 6)
+
+
+def honey(item: Item, rng) -> Image.Image:
+    """Honey jar: the jar's UV layout isn't published, so like the chocolate bars it repeats the label
+    across the whole texture over a honey-coloured ground, and reads from any part the model maps."""
+    a = item.art
+    w = h = 1024
+    im = Image.new("RGB", (w, h), a["bg"])
+    d = ImageDraw.Draw(im)
+    for y in range(h):
+        d.line((0, y, w, y), fill=shade(a["bg"], 0.9 + 0.2 * (0.5 + 0.5 * math.sin(y / 60))))
+    rows = 4
+    rh = h / rows
+    for r in range(rows):
+        y = r * rh
+        d.rectangle((0, y + 0.18 * rh, w, y + 0.82 * rh), fill=(250, 245, 230))
+        d.rectangle((0, y + 0.18 * rh, w, y + 0.24 * rh), fill=a["bg2"])
+        d.rectangle((0, y + 0.76 * rh, w, y + 0.82 * rh), fill=a["bg2"])
+        for c in range(2):
+            cx = (c + 0.5) * w / 2
+            text(d, (cx, y + 0.42 * rh), a["brand"], "serif", w / 2.6, 0.24 * rh, a["fg"])
+            text(d, (cx, y + 0.62 * rh), a["sub"], "sans", w / 3, 0.1 * rh, (190, 120, 20))
+            bx = cx - w / 5
+            for k in range(6):
+                t = math.radians(60 * k)
+                hx, hy, hr = bx + math.cos(t) * 0.07 * rh, y + 0.5 * rh + math.sin(t) * 0.07 * rh, 0.05 * rh
+                d.regular_polygon((hx, hy, hr), 6, fill=(235, 170, 40), outline=(160, 100, 20))
+    return wear(im, rng, 6)
+
+
+def bottle(item: Item, rng) -> Image.Image:
+    """Water bottle: the wrap-around label across the top, the ribbed plastic below it on the left, the
+    cap and its ring under that, and the bottle's base on the right."""
+    a = item.art
+    w = h = 512
+    im = Image.new("RGB", (w, h), (225, 235, 242))
+    d = ImageDraw.Draw(im)
+    for k in range(10):
+        y = 0.32 * h + k * 0.045 * h
+        d.line((0, y, 0.48 * w, y), fill=(200, 212, 222), width=3)
+    d.rectangle((0, 0.3 * h, w, 0.32 * h), fill=(190, 200, 210))
+    d.ellipse((0.18 * w, 0.75 * h, 0.36 * w, 0.88 * h), fill=a["bg"], outline=shade(a["bg"], 0.6), width=3)
+    d.rectangle((0.02 * w, 0.88 * h, 0.45 * w, 0.97 * h), fill=a["bg"])
+    for x in range(int(0.03 * w), int(0.45 * w), 6):
+        d.line((x, 0.885 * h, x, 0.965 * h), fill=shade(a["bg"], 0.75), width=2)
+    cx, cy, r = 0.74 * w, 0.62 * h, 0.27 * w
+    d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=(205, 215, 225), outline=(160, 170, 180), width=4)
+    d.ellipse((cx - 0.45 * r, cy - 0.45 * r, cx + 0.45 * r, cy + 0.45 * r), fill=(240, 245, 250))
+    box = (0, int(0.06 * h), w, int(0.3 * h))
+    lab_w, lab_h = box[2] - box[0], box[3] - box[1]
+    lab = Image.new("RGB", (lab_w, lab_h), a["bg"])
+    ld = ImageDraw.Draw(lab)
+    for y in range(lab_h):
+        ld.line((0, y, lab_w, y), fill=shade(a["bg"], 1.08 - 0.2 * y / lab_h))
+    period = lab_w / 3
+    for k in range(3):
+        x = k * period
+        ld.rectangle((x, 0.66 * lab_h, x + period, 0.9 * lab_h), fill=a["bg2"])
+        text(ld, (x + 0.5 * period, 0.34 * lab_h), a["brand"], "sans", 0.7 * period, 0.46 * lab_h, a["fg"], 2,
+             shade(a["bg"], 0.5))
+        text(ld, (x + 0.5 * period, 0.78 * lab_h), a["sub"], "sans", 0.8 * period, 0.16 * lab_h, shade(a["bg"], 0.8))
+    im.paste(wear(lab, rng, 6), box[:2])
+    return im
+
+
+CUSTOM = {"milk": milk, "honey": honey, "bottle": bottle, "rice": rice, "tuna": tuna, "sardines": sardines, "cereal": cereal, "bar": bar}
 
 
 def texture(item: Item) -> Image.Image:
@@ -838,9 +986,10 @@ FRONTS = {
     "tin250": ((0.0, 0.758, 0.333, 0.961), 0), "tin100": ((0.0, 0.0, 0.5, 1.0), 0), "bag": ((0.0, 0.0, 1.0, 1.0), 0),
     "tuna": ((0.57, 0.04, 0.98, 0.64), 90), "sardines": ((0.0, 0.51, 0.333, 0.72), 0),
     "cereal": ((0.51, 0.31, 1.0, 1.0), 0), "bar": ((0.0, 0.0, 1.0, 0.25), 0),
-    "rice": ((0.15, 0.33, 0.65, 0.78), 0),
+    "rice": ((0.15, 0.33, 0.65, 0.78), 0), "milk": ((0.56, 0.0, 0.82, 1.0), 90),
+    "honey": ((0.0, 0.0, 0.5, 0.25), 0), "bottle": ((0.0, 0.06, 0.333, 0.3), 0),
 }
-SHELVES = [("soda", "bar"), ("bag",), ("tin", "tin250", "tin100", "tuna", "sardines", "cereal", "rice")]
+SHELVES = [("soda", "bar", "bottle", "honey"), ("bag", "milk"), ("tin", "tin250", "tin100", "tuna", "sardines", "cereal", "rice")]
 
 
 def write_showcase(paths: list[Path]) -> Path:
