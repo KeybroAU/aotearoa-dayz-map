@@ -1,0 +1,33 @@
+name: Discord weekly digest
+
+# Every Sunday at 9:00 New Zealand time (20:00 UTC Saturday in summer, 21:00 in winter, so it runs at
+# 20:00 UTC), posts the week's releases, commit count and upcoming changes to Discord. Needs the repo
+# secret DISCORD_WEBHOOK; without it, or in a week with no changes, it posts nothing. Run it by hand
+# from the Actions tab to post now.
+
+on:
+  schedule:
+    - cron: "0 20 * * 6"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days to cover"
+        default: "7"
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Post the digest
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DAYS: ${{ github.event.inputs.days || '7' }}
+        run: |
+          set -e
+          if [ -z "$WEBHOOK" ]; then echo "DISCORD_WEBHOOK is not set, skipping"; exit 0; fi
+          payload=$(python3 tools/weekly_digest.py --days "$DAYS")
+          if [ -z "$payload" ]; then echo "Nothing happened this week"; exit 0; fi
+          curl -sSf -H "Content-Type: application/json" -d "$payload" "$WEBHOOK"
