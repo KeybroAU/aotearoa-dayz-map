@@ -13,6 +13,7 @@ Tins whose UV layout isn't published (the Whittaker's bars and the honey jar) re
 | Item | Key (label file name) | WIP class | Label shape in pixels |
 |---|---|---|---|
 | L&P | `lp` | `AotearoaWIP_SodaCan_LP` | 313 x 492 (313:492) |
+| L&P 1.5 L | `lp_bottle` | `AotearoaWIP_LP_Bottle` | 313 x 492 (313:492) |
 | Fresh Up Apple | `freshup` | `AotearoaWIP_SodaCan_FreshUp` | 313 x 492 (313:492) |
 | Foxton Fizz Creaming Soda | `foxton_cream` | `AotearoaWIP_SodaCan_FoxtonCream` | 313 x 492 (313:492) |
 | Foxton Fizz Raspberry | `foxton_rasp` | `AotearoaWIP_SodaCan_FoxtonRaspberry` | 313 x 492 (313:492) |

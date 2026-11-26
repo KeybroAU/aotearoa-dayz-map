@@ -1,0 +1,3 @@
+newmtl watties_tin
+Kd 1 1 1
+map_Kd ../../data/food/models/watties_beans.png

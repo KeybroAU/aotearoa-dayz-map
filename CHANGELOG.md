@@ -2,6 +2,20 @@
 
 Versions follow `MAJOR.MINOR.PATCH`. `VERSION` holds the current one, and `mod/mod.cpp` must match it (the map checks enforce this). To release, note changes under `## Unreleased` and run `python tools/release.py --push`; GitHub builds the release. Old releases are never replaced (see "Releases" in the README).
 
+## Unreleased
+
+### Added
+
+- New Zealand clothing (`tools/nz_gear.py`): Swanndri Bush Shirt, Swanndri Ranger Jacket, Stubbies, Jandals, All Blacks Tee and a Canterbury Rugby Jersey, retextured vanilla clothes added to the loot alongside them
+- Dynamic events (`tools/dynamic_events.py`), picked at random each restart: 2 Air New Zealand cargo plane crashes (from 10 sites), a stranded Interislander ferry with its lifeboat and freight on the beach (from 9), and 4 DOC hut stashes (from 16), each with its own loot
+- L&P 1.5 L (`Aotearoa_LP_Bottle`), a 1.5 litre bottle in shops, schools, offices and the stashes
+- Custom models, ready to build in Object Builder like the V can: a Wattie's 420 g tin for the three Wattie's flavours, the L&P 1.5 L bottle, and a Whittaker's 250 g block for the three Whittaker's bars (docs/CUSTOM_MODELS.md item 12)
+- A weekly Discord digest (`.github/workflows/discord-weekly.yml`, Sunday 9 am NZ time): the week's releases, their main changes and what's coming next
+
+### Changed
+
+- `tools/drink_models.py` builds every custom food and drink model from one table, and each item on a model has its own texture (the V can's texture is now `data/food/models/v_energy.png`)
+
 ## 0.6.10 - 2026-11-26
 
 ### Fixed

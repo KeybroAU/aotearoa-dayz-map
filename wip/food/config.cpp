@@ -6,7 +6,7 @@ class CfgPatches
 {
 	class Aotearoa_Food_WIP
 	{
-		units[] = {"AotearoaWIP_SodaCan_LP", "AotearoaWIP_SodaCan_FreshUp", "AotearoaWIP_SodaCan_FoxtonCream", "AotearoaWIP_SodaCan_FoxtonRaspberry", "AotearoaWIP_SodaCan_V", "AotearoaWIP_SodaCan_LiftPlus", "AotearoaWIP_Chips_BluebirdReadySalted", "AotearoaWIP_Chips_BluebirdSaltVinegar", "AotearoaWIP_Chips_BluebirdChicken", "AotearoaWIP_Chips_MunchosTomato", "AotearoaWIP_Biscuits_ToffeePops", "AotearoaWIP_Biscuits_Shrewsburys", "AotearoaWIP_Biscuits_ChocolateThins", "AotearoaWIP_Lollies_PineappleLumps", "AotearoaWIP_Whittakers_CreamyMilk", "AotearoaWIP_Whittakers_DarkGhana", "AotearoaWIP_Whittakers_PeanutSlab", "AotearoaWIP_RiceRisotto", "AotearoaWIP_Anchor_MilkPowder", "AotearoaWIP_Airborne_Honey", "AotearoaWIP_WeetBix", "AotearoaWIP_Watties_BakedBeans", "AotearoaWIP_Watties_Spaghetti", "AotearoaWIP_Watties_Peaches", "AotearoaWIP_Palm_CornedBeef", "AotearoaWIP_Marmite", "AotearoaWIP_Hellers_Bacon", "AotearoaWIP_Tux_DogFood", "AotearoaWIP_Jellimeat", "AotearoaWIP_Sealord_Tuna", "AotearoaWIP_Pump_Water", "AotearoaWIP_Pams_Sardines"};
+		units[] = {"AotearoaWIP_SodaCan_LP", "AotearoaWIP_LP_Bottle", "AotearoaWIP_SodaCan_FreshUp", "AotearoaWIP_SodaCan_FoxtonCream", "AotearoaWIP_SodaCan_FoxtonRaspberry", "AotearoaWIP_SodaCan_V", "AotearoaWIP_SodaCan_LiftPlus", "AotearoaWIP_Chips_BluebirdReadySalted", "AotearoaWIP_Chips_BluebirdSaltVinegar", "AotearoaWIP_Chips_BluebirdChicken", "AotearoaWIP_Chips_MunchosTomato", "AotearoaWIP_Biscuits_ToffeePops", "AotearoaWIP_Biscuits_Shrewsburys", "AotearoaWIP_Biscuits_ChocolateThins", "AotearoaWIP_Lollies_PineappleLumps", "AotearoaWIP_Whittakers_CreamyMilk", "AotearoaWIP_Whittakers_DarkGhana", "AotearoaWIP_Whittakers_PeanutSlab", "AotearoaWIP_RiceRisotto", "AotearoaWIP_Anchor_MilkPowder", "AotearoaWIP_Airborne_Honey", "AotearoaWIP_WeetBix", "AotearoaWIP_Watties_BakedBeans", "AotearoaWIP_Watties_Spaghetti", "AotearoaWIP_Watties_Peaches", "AotearoaWIP_Palm_CornedBeef", "AotearoaWIP_Marmite", "AotearoaWIP_Hellers_Bacon", "AotearoaWIP_Tux_DogFood", "AotearoaWIP_Jellimeat", "AotearoaWIP_Sealord_Tuna", "AotearoaWIP_Pump_Water", "AotearoaWIP_Pams_Sardines"};
 		weapons[] = {};
 		requiredVersion = 0.1;
 		requiredAddons[] = {"aotearoa"};
@@ -48,6 +48,7 @@ class CfgVehicles
 	class Aotearoa_Hellers_Bacon_Opened;
 	class Aotearoa_Jellimeat;
 	class Aotearoa_Jellimeat_Opened;
+	class Aotearoa_LP_Bottle;
 	class Aotearoa_Lollies_PineappleLumps;
 	class Aotearoa_Marmite;
 	class Aotearoa_Marmite_Opened;
@@ -82,6 +83,12 @@ class CfgVehicles
 		scope = 2;
 		displayName = "[WIP] L&P";
 		hiddenSelectionsTextures[] = {"aotearoa_food_wip\data\lp_co.paa"};
+	};
+	class AotearoaWIP_LP_Bottle: Aotearoa_LP_Bottle
+	{
+		scope = 2;
+		displayName = "[WIP] L&P 1.5 L";
+		hiddenSelectionsTextures[] = {"aotearoa_food_wip\data\lp_bottle_co.paa"};
 	};
 	class AotearoaWIP_SodaCan_FreshUp: Aotearoa_SodaCan_FreshUp
 	{

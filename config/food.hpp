@@ -42,6 +42,17 @@ class Aotearoa_SodaCan_LP: SodaCan_Cola
 	descriptionShort = "Lemon & Paeroa. A 355 ml can. Sweet, lemony and made in Paeroa since 1907.";
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\lp_co.paa"};
 };
+class Aotearoa_LP_Bottle: SodaCan_Cola
+{
+	scope = 2;
+	displayName = "L&P 1.5 L";
+	descriptionShort = "Lemon & Paeroa in a 1.5 litre bottle. A 355 ml can. One to share, or not.";
+	varQuantityInit = 1500;
+	varQuantityMax = 1500;
+	weight = 80;
+	itemSize[] = {2, 3};
+	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\lp_bottle_co.paa"};
+};
 class Aotearoa_SodaCan_FreshUp: SodaCan_Fronta
 {
 	scope = 2;
@@ -141,6 +152,7 @@ class Aotearoa_Whittakers_CreamyMilk: Zagorky
 	scope = 2;
 	displayName = "Whittaker's Creamy Milk";
 	descriptionShort = "Whittaker's Creamy Milk chocolate, made in Porirua.";
+	itemSize[] = {2, 1};
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\whittakers_milk_ca.paa"};
 };
 class Aotearoa_Whittakers_DarkGhana: ZagorkyChocolate
@@ -148,6 +160,7 @@ class Aotearoa_Whittakers_DarkGhana: ZagorkyChocolate
 	scope = 2;
 	displayName = "Whittaker's Dark Ghana";
 	descriptionShort = "Whittaker's Dark Ghana 72% cocoa chocolate, made in Porirua.";
+	itemSize[] = {2, 1};
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\whittakers_dark_ca.paa"};
 };
 class Aotearoa_Whittakers_PeanutSlab: ZagorkyPeanuts
@@ -155,6 +168,7 @@ class Aotearoa_Whittakers_PeanutSlab: ZagorkyPeanuts
 	scope = 2;
 	displayName = "Whittaker's Peanut Slab";
 	descriptionShort = "Whittaker's Peanut Slab: milk chocolate packed with peanuts.";
+	itemSize[] = {2, 1};
 	hiddenSelectionsTextures[] = {"maps\aotearoa\data\food\whittakers_peanut_ca.paa"};
 };
 class Aotearoa_RiceRisotto: Rice

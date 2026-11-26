@@ -64,6 +64,7 @@ Spawn each one with your admin tool by its class name, or find it in loot. For e
 | Item | Class name | Built on | Opens |
 |---|---|---|---|
 | L&P | `Aotearoa_SodaCan_LP` | SodaCan_Cola |  |
+| L&P 1.5 L | `Aotearoa_LP_Bottle` | SodaCan_Cola (own 1.5 L bottle once built) |  |
 | Fresh Up Apple | `Aotearoa_SodaCan_FreshUp` | SodaCan_Fronta |  |
 | Foxton Fizz Creaming Soda | `Aotearoa_SodaCan_FoxtonCream` | SodaCan_Spite |  |
 | Foxton Fizz Raspberry | `Aotearoa_SodaCan_FoxtonRaspberry` | SodaCan_Pipsi |  |
@@ -77,17 +78,17 @@ Spawn each one with your admin tool by its class name, or find it in loot. For e
 | Griffin's Shrewsburys | `Aotearoa_Biscuits_Shrewsburys` | Crackers |  |
 | Griffin's Chocolate Thins | `Aotearoa_Biscuits_ChocolateThins` | Crackers |  |
 | Pascall Pineapple Lumps | `Aotearoa_Lollies_PineappleLumps` | Crackers |  |
-| Whittaker's Creamy Milk | `Aotearoa_Whittakers_CreamyMilk` | Zagorky |  |
-| Whittaker's Dark Ghana | `Aotearoa_Whittakers_DarkGhana` | ZagorkyChocolate |  |
-| Whittaker's Peanut Slab | `Aotearoa_Whittakers_PeanutSlab` | ZagorkyPeanuts |  |
+| Whittaker's Creamy Milk | `Aotearoa_Whittakers_CreamyMilk` | Zagorky (own 250 g block once built) |  |
+| Whittaker's Dark Ghana | `Aotearoa_Whittakers_DarkGhana` | ZagorkyChocolate (own 250 g block once built) |  |
+| Whittaker's Peanut Slab | `Aotearoa_Whittakers_PeanutSlab` | ZagorkyPeanuts (own 250 g block once built) |  |
 | Sanitarium Weet-Bix | `Aotearoa_WeetBix` | BoxCerealCrunchin |  |
 | Rice Risotto | `Aotearoa_RiceRisotto` | Rice |  |
 | Anchor Milk Powder | `Aotearoa_Anchor_MilkPowder` | PowderedMilk |  |
 | Airborne Mānuka Honey | `Aotearoa_Airborne_Honey` | Honey |  |
 | Pump Water Bottle | `Aotearoa_Pump_Water` | WaterBottle |  |
-| Wattie's Baked Beans | `Aotearoa_Watties_BakedBeans` | BakedBeansCan | yes |
-| Wattie's Spaghetti | `Aotearoa_Watties_Spaghetti` | SpaghettiCan | yes |
-| Wattie's Peach Slices | `Aotearoa_Watties_Peaches` | PeachesCan | yes |
+| Wattie's Baked Beans | `Aotearoa_Watties_BakedBeans` | BakedBeansCan (own 420 g tin once built) | yes |
+| Wattie's Spaghetti | `Aotearoa_Watties_Spaghetti` | SpaghettiCan (own 420 g tin once built) | yes |
+| Wattie's Peach Slices | `Aotearoa_Watties_Peaches` | PeachesCan (own 420 g tin once built) | yes |
 | Palm Corned Beef | `Aotearoa_Palm_CornedBeef` | PorkCan | yes |
 | Tux Dog Food | `Aotearoa_Tux_DogFood` | DogFoodCan | yes |
 | Jellimeat | `Aotearoa_Jellimeat` | CatFoodCan | yes |
@@ -104,6 +105,9 @@ Things to look at closely, because their texture layouts are guessed or approxim
 - [ ] **Weet-Bix:** the front of the box should show the bowl and the wordmark.
 - [ ] **Rice Risotto:** vanilla rice doesn't retexture its bag, so check the packet shows the green band and the "Rice Risotto" label rather than the plain vanilla bag or a missing texture.
 - [ ] **V Energy:** until its model is built it is a vanilla can with a green V label; check it holds 500 ml (drink it twice from full). Once `structures\food\v_can\v_can.p3d` is in, check the tall can shows in the inventory preview, in your hands (held like a vanilla can, not floating or sideways), dropped on the ground (standing on its base, not sunk or hovering), and that the V and "ENERGY DRINK" face you on the front and aren't mirrored.
+- [ ] **L&P 1.5 L:** until its model is built it looks like the L&P can; check it holds 1500 ml and takes 2 x 3 slots. Once `structures\food\lp_bottle\lp_bottle.p3d` is in, check the bottle shows upright in the inventory preview, in your hands and on the ground, with the label reading the right way round.
+- [ ] **Wattie's tins:** once `structures\food\watties_tin\watties_tin.p3d` is in, check each of the three flavours shows its own label on the new tin, and that opening one swaps to the vanilla opened tin with the flat label.
+- [ ] **Whittaker's blocks:** once `structures\food\whittakers_block\whittakers_block.p3d` is in, check each block lies flat on the ground with the brand facing up, and takes 2 x 1 slots.
 - [ ] **Anchor Milk Powder, Airborne Honey and Pump Water Bottle:** these also use the model's `zbytek` selection. The milk label runs down the bag, the honey jar repeats its label all over (its layout isn't published), and the Pump label should wrap the bottle with the blue cap on top. Also fill, drink from and empty the bottle to check it still works as a water bottle.
 
 If a texture is sideways, mirrored or in the wrong place, take a screenshot. For a fix, convert the vanilla texture to PNG with DayZ Tools' ImageToPAA (for example `P:\DZ\gear\food\data\zagorky_milk_ca.paa`) and send it; the labels can then be lined up exactly with the vanilla layout.

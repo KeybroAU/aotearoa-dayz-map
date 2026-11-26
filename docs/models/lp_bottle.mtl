@@ -1,0 +1,3 @@
+newmtl lp_bottle
+Kd 1 1 1
+map_Kd ../../data/food/models/lp_bottle.png

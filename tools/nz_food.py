@@ -100,6 +100,10 @@ ITEMS = [
          "Lemon & Paeroa. " + SODA + "Sweet, lemony and made in Paeroa since 1907.", (20, 16),
          dict(brand="L&P", sub="LEMON & PAEROA", tag="World Famous in New Zealand", bg=(247, 205, 30), bg2=(120, 72, 30),
               fg=(70, 40, 18), motif="lp")),
+    Item("lp_bottle", "Aotearoa_LP_Bottle", "SodaCan_Cola", "soda", "L&P 1.5 L",
+         "Lemon & Paeroa in a 1.5 litre bottle. " + SODA + "One to share, or not.", (6, 4),
+         dict(brand="L&P", sub="LEMON & PAEROA", tag="World Famous in New Zealand", bg=(247, 205, 30), bg2=(120, 72, 30),
+              fg=(70, 40, 18), motif="lp"), model="lp_bottle"),
     Item("freshup", "Aotearoa_SodaCan_FreshUp", "SodaCan_Fronta", "soda", "Fresh Up Apple",
          SODA + "Sparkling apple juice drink.", (20, 16),
          dict(brand="Fresh Up", sub="SPARKLING APPLE", tag="NZ apples", bg=(46, 150, 60), bg2=(200, 230, 90),
@@ -158,15 +162,15 @@ ITEMS = [
     Item("whittakers_milk", "Aotearoa_Whittakers_CreamyMilk", "Zagorky", "bar", "Whittaker's Creamy Milk",
          "Whittaker's Creamy Milk chocolate, made in Porirua.", (15, 12),
          dict(brand="Whittaker's", sub="CREAMY MILK", tag="33% cocoa", bg=(40, 60, 150), bg2=(215, 175, 80),
-              fg=(255, 255, 255))),
+              fg=(255, 255, 255)), model="whittakers_block"),
     Item("whittakers_dark", "Aotearoa_Whittakers_DarkGhana", "ZagorkyChocolate", "bar", "Whittaker's Dark Ghana",
          "Whittaker's Dark Ghana 72% cocoa chocolate, made in Porirua.", (15, 12),
          dict(brand="Whittaker's", sub="DARK GHANA", tag="72% cocoa", bg=(60, 25, 20), bg2=(215, 175, 80),
-              fg=(255, 255, 255))),
+              fg=(255, 255, 255)), model="whittakers_block"),
     Item("whittakers_peanut", "Aotearoa_Whittakers_PeanutSlab", "ZagorkyPeanuts", "bar", "Whittaker's Peanut Slab",
          "Whittaker's Peanut Slab: milk chocolate packed with peanuts.", (15, 12),
          dict(brand="Whittaker's", sub="PEANUT SLAB", tag="since 1951", bg=(250, 200, 30), bg2=(190, 30, 35),
-              fg=(120, 20, 25))),
+              fg=(120, 20, 25)), model="whittakers_block"),
     Item("risotto", "Aotearoa_RiceRisotto", "Rice", "rice", "Rice Risotto",
          "Arborio rice for a creamy risotto. Cook it in a pot with water.", (25, 18),
          dict(brand="Rice Risotto", sub="ARBORIO RICE", tag="creamy & quick", bg=(248, 244, 232),
@@ -191,17 +195,17 @@ ITEMS = [
          "Wattie's baked beans in tomato sauce. 420 g.", (25, 18),
          dict(brand="Wattie's", sub="BAKED BEANS", tag="in tomato sauce", bg=(250, 250, 245), bg2=(200, 30, 40),
               fg=(200, 30, 40), motif="beans"),
-         opened="BakedBeansCan_Opened", usages=["Town", "Village", "Hunting"]),
+         opened="BakedBeansCan_Opened", model="watties_tin", usages=["Town", "Village", "Hunting"]),
     Item("watties_spaghetti", "Aotearoa_Watties_Spaghetti", "SpaghettiCan", "tin", "Wattie's Spaghetti",
          "Wattie's spaghetti in tomato sauce. 420 g.", (18, 14),
          dict(brand="Wattie's", sub="SPAGHETTI", tag="in tomato sauce", bg=(250, 250, 245), bg2=(230, 120, 20),
               fg=(200, 30, 40), motif="spaghetti"),
-         opened="SpaghettiCan_Opened"),
+         opened="SpaghettiCan_Opened", model="watties_tin"),
     Item("watties_peaches", "Aotearoa_Watties_Peaches", "PeachesCan", "tin", "Wattie's Peach Slices",
          "Wattie's Hawke's Bay peach slices in juice. 410 g.", (25, 18),
          dict(brand="Wattie's", sub="PEACH SLICES", tag="Hawke's Bay", bg=(250, 250, 245), bg2=(250, 150, 50),
               fg=(200, 30, 40), motif="peaches"),
-         opened="PeachesCan_Opened", usages=["Town", "Village", "School"]),
+         opened="PeachesCan_Opened", usages=["Town", "Village", "School"], model="watties_tin"),
     Item("palm_cornedbeef", "Aotearoa_Palm_CornedBeef", "PorkCan", "tin250", "Palm Corned Beef",
          "Palm corned beef. A Kiwi and Pacific favourite, fried with onion.", (18, 14),
          dict(brand="Palm", sub="CORNED BEEF", tag="", bg=(190, 20, 30), bg2=(240, 200, 60),
@@ -250,7 +254,7 @@ SPAWN = {
                ["bluebird_salted", "bluebird_vinegar", "bluebird_chicken", "munchos", "toffeepops", "shrewsburys",
                 "chocthins", "pineapplelumps", "whittakers_milk", "whittakers_dark", "whittakers_peanut"]),
     "fizzy": (["Town", "Village", "Industrial", "School", "Office"], ["lp", "freshup", "foxton_cream", "foxton_rasp",
-                                                                       "liftplus", "v_energy"]),
+                                                                       "liftplus", "v_energy", "lp_bottle"]),
     "dairy": (["Farm", "Village"], ["anchor_milk", "airborne_honey"]),
     "fish": (["Coast", "Town", "Village"], ["sealord_tuna", "pams_sardines"]),
     "pantry": (["Town", "Village", "Farm", "Hunting"], ["risotto", "weetbix", "marmite", "watties_beans",
@@ -267,12 +271,21 @@ for _usages, _keys in SPAWN.values():
 for _item in ITEMS:
     _item.loot = LOOT.get(_item.key, _item.loot)
 # Items with their own model (tools/drink_models.py). The config uses the model once its .p3d is in
-# structures/; until then the item is a retextured vanilla can like the others.
+# structures/; until then the item is a retextured vanilla pack like the others. Every item on a model has
+# its own texture in the model's UV layout, data/food/models/<item key>.png.
+def _model(name, extra):
+    return dict(p3d=f"structures/food/{name}/{name}.p3d", rvmat=f"maps\\aotearoa\\data\\food\\models\\{name}.rvmat",
+                selection="camo", extra=extra)
+
+
 MODELS = {
-    "v_can": dict(p3d="structures/food/v_can/v_can.p3d", texture="maps\\aotearoa\\data\\food\\models\\v_can_co.paa",
-                  rvmat="maps\\aotearoa\\data\\food\\models\\v_can.rvmat", selection="camo",
-                  extra=["varQuantityInit = 500;", "varQuantityMax = 500;", "weight = 30;"]),
+    "v_can": _model("v_can", ["varQuantityInit = 500;", "varQuantityMax = 500;", "weight = 30;"]),
+    "watties_tin": _model("watties_tin", []),
+    "lp_bottle": _model("lp_bottle", ["varQuantityInit = 1500;", "varQuantityMax = 1500;", "weight = 80;",
+                                      "itemSize[] = {2, 3};"]),
+    "whittakers_block": _model("whittakers_block", ["itemSize[] = {2, 1};"]),
 }
+MODEL_TEXTURE = "maps\\aotearoa\\data\\food\\models\\{}_co.paa"
 ITEM_CLASSES = {i.cls for i in ITEMS} | {i.cls + "_Opened" for i in ITEMS if i.opened}
 
 
@@ -280,9 +293,10 @@ def model_ready(item: Item) -> bool:
     return bool(item.model) and (MAP_DIR / MODELS[item.model]["p3d"]).exists()
 
 
-def item_texture(item: Item) -> str:
-    """The texture path the config gives the item: its own model's once that exists, else its label."""
-    return MODELS[item.model]["texture"] if model_ready(item) else TEXTURE.format(item.paa)
+def item_texture(item: Item, opened: bool = False) -> str:
+    """The texture path the config gives the item: its own model's once that exists, else its label.
+    Opened tins keep the vanilla opened model, so they always use the label."""
+    return MODEL_TEXTURE.format(item.key) if model_ready(item) and not opened else TEXTURE.format(item.paa)
 
 
 def replaced() -> list[str]:
@@ -1038,26 +1052,25 @@ def config_text() -> str:
            "// Each class inherits a vanilla item and only swaps its label texture."]
     out += [f"class {b};" for b in bases]
 
-    def block(cls, base, item, display=True):
+    def block(cls, base, item, opened=False):
         lines = [f"class {cls}: {base}", "{", "\tscope = 2;"]
-        own = MODELS[item.model] if model_ready(item) else None
+        own = MODELS[item.model] if model_ready(item) and not opened else None
         if own:
             lines += [f'\tmodel = "\\maps\\aotearoa\\{own["p3d"].replace("/", chr(92))}";',
                       f'\thiddenSelections[] = {{"{own["selection"]}"}};',
                       f'\thiddenSelectionsMaterials[] = {{"{own["rvmat"]}"}};']
         elif item.layout in SELECTIONS:
             lines += [f'\thiddenSelections[] = {{"{SELECTIONS[item.layout]}"}};']
-        if display:
-            lines += [f'\tdisplayName = "{item.name}";', f'\tdescriptionShort = "{item.desc}";']
+        lines += [f'\tdisplayName = "{item.name}";', f'\tdescriptionShort = "{item.desc}";']
         if item.model:
             lines += ["\t" + x for x in MODELS[item.model]["extra"]]
-        lines += [f'\thiddenSelectionsTextures[] = {{"{item_texture(item)}"}};', "};"]
+        lines += [f'\thiddenSelectionsTextures[] = {{"{item_texture(item, opened)}"}};', "};"]
         return lines
 
     for item in ITEMS:
         out += block(item.cls, item.base, item)
         if item.opened:
-            out += block(item.cls + "_Opened", item.opened, item)
+            out += block(item.cls + "_Opened", item.opened, item, opened=True)
     return "\n".join(out) + "\n"
 
 
@@ -1196,9 +1209,12 @@ def fingerprints() -> dict[str, str]:
         h = common.copy()
         h.update(repr((item.key, item.layout, item.art)).encode("utf-8"))
         out[item.key] = h.hexdigest()
-    h = common.copy()
-    h.update(_source(tools / "drink_models.py"))
-    out["models/v_can"] = h.hexdigest()
+    for item in ITEMS:
+        if item.model:
+            h = common.copy()
+            h.update(_source(tools / "drink_models.py"))
+            h.update(repr((item.key, item.model, item.layout, item.art)).encode("utf-8"))
+            out["models/" + item.key] = h.hexdigest()
     return out
 
 
@@ -1238,10 +1254,11 @@ def verify() -> list[str]:
         face = have[int(y0 * h):int(y1 * h), int(x0 * w):int(x1 * w), :3]
         if face.size == 0 or face.std() < 15:
             problems.append(f"{item.name}: the front of the pack is blank")
-    import drink_models
-    p = drink_models.TEX_DIR / f"{drink_models.NAME}.png"
-    if not p.exists() or recorded.get("models/v_can") != now["models/v_can"]:
-        problems.append(f"{p.relative_to(MAP_DIR)} is out of date (run python tools/drink_models.py)")
+    for item in ITEMS:
+        if item.model:
+            p = OUT / "models" / f"{item.key}.png"
+            if not p.exists() or recorded.get("models/" + item.key) != now["models/" + item.key]:
+                problems.append(f"{p.relative_to(MAP_DIR)} is out of date (run python tools/drink_models.py)")
     for path, want in ((MAP_DIR / "config" / "food.hpp", config_text()),
                        (MAP_DIR / "scripts" / "4_World" / "AotearoaFood.c", script_text())):
         if not path.exists() or path.read_text(encoding="utf-8").replace("\r\n", "\n") != want:

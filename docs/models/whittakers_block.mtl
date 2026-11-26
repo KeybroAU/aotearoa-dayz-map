@@ -1,0 +1,3 @@
+newmtl whittakers_block
+Kd 1 1 1
+map_Kd ../../data/food/models/whittakers_milk.png

@@ -136,11 +136,12 @@ def food() -> None:
     own = sorted({i.model for i in items if i.model})
     gaps = [f"{m}{part}" for m in own for part in (".obj", "_lod1.obj", "_lod2.obj", "_geometry.obj")
             if not (MAP_DIR / "docs" / "models" / f"{m}{part}").exists()]
-    gaps += [f"{m}{ext}" for m in own for ext in (".png", ".rvmat") if not (MAP_DIR / "data" / "food" / "models" / f"{m}{ext}").exists()]
+    gaps += [f"{m}.rvmat" for m in own if not (MAP_DIR / "data" / "food" / "models" / f"{m}.rvmat").exists()]
+    gaps += [f"{i.key}.png" for i in items if i.model and not (MAP_DIR / "data" / "food" / "models" / f"{i.key}.png").exists()]
     ready = [m for m in own if (MAP_DIR / nz_food.MODELS[m]["p3d"]).exists()]
-    check(not gaps, f"{len(own)} custom drink model sources (tools/drink_models.py)"
+    check(not gaps, f"{len(own)} custom food and drink model sources (tools/drink_models.py)"
           + (f" (missing: {', '.join(gaps)})" if gaps else "") + (f"; built: {', '.join(ready)}" if ready else
-                                                                  "; waiting for the .p3d, so the vanilla can stands in"))
+                                                                  "; waiting for the .p3d files, so the vanilla packs stand in"))
     tins = [i for i in items if i.opened]
     check(all(f'ReplaceEdibleWithNew("{i.cls}_Opened")' in script for i in tins),
           f"{len(tins)} tins open into their own opened class")
